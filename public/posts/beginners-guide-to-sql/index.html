@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=36669&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="http://localhost:36669/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:36669/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:36669/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:36669/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:36669/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to SQL | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="http://localhost:36669/posts/beginners-guide-to-sql/"/>
+
+<meta property="og:url" content="http://localhost:36669/posts/beginners-guide-to-sql/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to SQL">
+  <meta property="og:description" content="Introduction to SQL # What is SQL? # SQL (Structured Query Language) is a domain-specific language used for managing and manipulating databases. It’s not a general-purpose programming language like Python or Java; instead, it’s designed specifically for interacting with relational database management systems (RDBMS). These systems organize data into tables with rows (records) and columns (fields), establishing relationships between different tables. SQL provides a standardized way to perform tasks such as creating databases, defining tables, inserting data, querying data (retrieving specific information), updating data, and deleting data. Essentially, SQL is the language you use to “talk” to your database.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-15T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-sql/">Beginner&#39;s Guide to SQL</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to SQL</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-03-15T00:00:00&#43;00:00">March 15, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      14 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-sql">Introduction to SQL</a>
+      <ul>
+        <li><a href="#what-is-sql">What is SQL?</a></li>
+        <li><a href="#why-learn-sql">Why Learn SQL?</a></li>
+        <li><a href="#sql-vs-nosql">SQL vs. NoSQL</a></li>
+        <li><a href="#setting-up-a-sql-environment">Setting up a SQL Environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-sql-syntax">Basic SQL Syntax</a>
+      <ul>
+        <li><a href="#connecting-to-a-database">Connecting to a Database</a></li>
+        <li><a href="#select-statements">SELECT Statements</a></li>
+        <li><a href="#where-clause">WHERE Clause</a></li>
+        <li><a href="#order-by-clause">ORDER BY Clause</a></li>
+        <li><a href="#limit-clause">LIMIT Clause</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-manipulation-with-sql">Data Manipulation with SQL</a>
+      <ul>
+        <li><a href="#insert-statements">INSERT Statements</a></li>
+        <li><a href="#delete-statements">DELETE Statements</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-multiple-tables">Working with Multiple Tables</a>
+      <ul>
+        <li><a href="#join-operations-inner-left-right-full">JOIN Operations (INNER, LEFT, RIGHT, FULL)</a></li>
+        <li><a href="#union-and-intersect-operations">UNION and INTERSECT Operations</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-sql-concepts">Advanced SQL Concepts</a>
+      <ul>
+        <li><a href="#group-by-and-aggregate-functions">GROUP BY and Aggregate Functions</a></li>
+        <li><a href="#having-clause">HAVING Clause</a></li>
+        <li><a href="#subqueries">Subqueries</a></li>
+        <li><a href="#common-table-expressions-ctes">Common Table Expressions (CTEs)</a></li>
+        <li><a href="#transactions">Transactions</a></li>
+      </ul>
+    </li>
+    <li><a href="#practical-examples-and-exercises">Practical Examples and Exercises</a>
+      <ul>
+        <li><a href="#example-queries">Example Queries</a></li>
+        <li><a href="#practice-exercises">Practice Exercises</a></li>
+        <li><a href="#solutions-to-exercises">Solutions to Exercises</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-sql">
+  Introduction to SQL
+  <a class="anchor" href="#introduction-to-sql">#</a>
+</h2>
+<h3 class="heading" id="what-is-sql">
+  What is SQL?
+  <a class="anchor" href="#what-is-sql">#</a>
+</h3>
+<p>SQL (Structured Query Language) is a domain-specific language used for managing and manipulating databases.  It&rsquo;s not a general-purpose programming language like Python or Java; instead, it&rsquo;s designed specifically for interacting with relational database management systems (RDBMS).  These systems organize data into tables with rows (records) and columns (fields), establishing relationships between different tables. SQL provides a standardized way to perform tasks such as creating databases, defining tables, inserting data, querying data (retrieving specific information), updating data, and deleting data.  Essentially, SQL is the language you use to &ldquo;talk&rdquo; to your database.</p>
+<h3 class="heading" id="why-learn-sql">
+  Why Learn SQL?
+  <a class="anchor" href="#why-learn-sql">#</a>
+</h3>
+<p>In today&rsquo;s data-driven world, the ability to work with databases is incredibly valuable.  Learning SQL offers numerous advantages:</p>
+<ul>
+<li><strong>Data Management:</strong> SQL allows you to efficiently manage large amounts of structured data.  You can organize, store, retrieve, and modify this data with ease.</li>
+<li><strong>Data Analysis:</strong> SQL provides powerful querying capabilities, enabling you to extract meaningful insights from your data.  This is crucial for business intelligence, data science, and many other fields.</li>
+<li><strong>Career Opportunities:</strong> SQL skills are highly sought after in various industries.  Many jobs in software development, data analysis, database administration, and business intelligence require a strong understanding of SQL.</li>
+<li><strong>Versatility:</strong> SQL is used with numerous database systems, making it a highly transferable skill.  Whether you&rsquo;re working with MySQL, PostgreSQL, Oracle, or SQL Server, the core concepts remain largely the same.</li>
+<li><strong>Foundation for Advanced Skills:</strong> SQL forms a solid foundation for learning more advanced database technologies and data manipulation techniques.</li>
+</ul>
+<h3 class="heading" id="sql-vs-nosql">
+  SQL vs. NoSQL
+  <a class="anchor" href="#sql-vs-nosql">#</a>
+</h3>
+<p>While SQL databases are relational and highly structured, NoSQL databases are non-relational and offer more flexibility in terms of data models.  Here&rsquo;s a brief comparison:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>SQL (Relational)</th>
+          <th>NoSQL (Non-Relational)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Data Model</td>
+          <td>Tables with rows and columns, relationships</td>
+          <td>Various models (document, key-value, graph)</td>
+      </tr>
+      <tr>
+          <td>Schema</td>
+          <td>Fixed schema (defined beforehand)</td>
+          <td>Flexible schema (can evolve over time)</td>
+      </tr>
+      <tr>
+          <td>Scalability</td>
+          <td>Can be challenging to scale horizontally</td>
+          <td>Typically scales horizontally more easily</td>
+      </tr>
+      <tr>
+          <td>Data Consistency</td>
+          <td>Strong data consistency</td>
+          <td>Often prioritizes availability over consistency</td>
+      </tr>
+      <tr>
+          <td>Use Cases</td>
+          <td>Transactional systems, financial data</td>
+          <td>Big data, social media, real-time analytics</td>
+      </tr>
+  </tbody>
+</table>
+<p>The best choice between SQL and NoSQL depends on your specific needs and the nature of your data.</p>
+<h3 class="heading" id="setting-up-a-sql-environment">
+  Setting up a SQL Environment
+  <a class="anchor" href="#setting-up-a-sql-environment">#</a>
+</h3>
+<p>To begin working with SQL, you&rsquo;ll need a database system and a tool to interact with it.  There are many options available, both commercial and open-source:</p>
+<ul>
+<li><strong>Popular Database Systems:</strong> MySQL, PostgreSQL, SQLite, Microsoft SQL Server, Oracle Database.</li>
+<li><strong>Tools:</strong>
+<ul>
+<li><strong>Command-Line Interface (CLI):</strong> Most database systems provide a CLI for interacting directly with the database. This is a text-based interface, but it&rsquo;s powerful and efficient.</li>
+<li><strong>Graphical User Interfaces (GUIs):</strong>  Many GUI tools offer a more user-friendly way to manage and query databases.  Popular examples include DB Browser for SQLite, pgAdmin for PostgreSQL, and MySQL Workbench for MySQL.</li>
+<li><strong>Integrated Development Environments (IDEs):</strong> Some IDEs, like DBeaver, provide support for multiple database systems and offer features like SQL code completion and debugging.</li>
+</ul>
+</li>
+</ul>
+<p>The exact steps for setting up your environment will depend on your chosen database system and tool.  Consult the documentation for your specific system for detailed instructions.  Many tutorials and online resources are available to guide you through the installation and configuration process. Remember to download the appropriate drivers if you are using a GUI tool to connect to the database server.</p>
+<h2 class="heading" id="basic-sql-syntax">
+  Basic SQL Syntax
+  <a class="anchor" href="#basic-sql-syntax">#</a>
+</h2>
+<h3 class="heading" id="connecting-to-a-database">
+  Connecting to a Database
+  <a class="anchor" href="#connecting-to-a-database">#</a>
+</h3>
+<p>Before you can execute SQL queries, you need to establish a connection to your database.  The specific method depends on the database system and the tool you&rsquo;re using.  However, the general steps usually involve providing the following information:</p>
+<ul>
+<li><strong>Database Host:</strong> The address (IP address or hostname) of the database server.</li>
+<li><strong>Database Name:</strong> The name of the database you want to connect to.</li>
+<li><strong>Username:</strong> Your database username.</li>
+<li><strong>Password:</strong> Your database password.</li>
+<li><strong>Port (optional):</strong> The port number the database server is listening on (often the default port for the specific database system).</li>
+</ul>
+<p>For command-line tools, you might use a command like this (the exact syntax will vary depending on the system):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -u your_username -p your_database_name
+</span></span></code></pre></div><p>GUI tools typically have a visual interface where you can enter this connection information.  Once connected, you&rsquo;re ready to execute SQL queries.</p>
+<h3 class="heading" id="select-statements">
+  SELECT Statements
+  <a class="anchor" href="#select-statements">#</a>
+</h3>
+<p>The <code>SELECT</code> statement is fundamental for retrieving data from a database.  Its basic syntax is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">table_name</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><code>SELECT</code>: Specifies the columns you want to retrieve. You can use <code>*</code> to select all columns.</li>
+<li><code>FROM</code>: Specifies the table from which to retrieve the data.</li>
+</ul>
+<p>Example:  To select the <code>name</code> and <code>age</code> columns from a <code>customers</code> table:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>name,<span style="color:#bbb"> </span>age<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers;<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="where-clause">
+  WHERE Clause
+  <a class="anchor" href="#where-clause">#</a>
+</h3>
+<p>The <code>WHERE</code> clause filters the results of a <code>SELECT</code> statement based on a specified condition.  It allows you to retrieve only the rows that meet certain criteria.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">table_name</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>condition;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Conditions can use comparison operators like <code>=</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>. You can also use logical operators like <code>AND</code>, <code>OR</code>, and <code>NOT</code> to combine multiple conditions.</p>
+<p>Example: To select customers older than 30:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>name,<span style="color:#bbb"> </span>age<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>age<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">30</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="order-by-clause">
+  ORDER BY Clause
+  <a class="anchor" href="#order-by-clause">#</a>
+</h3>
+<p>The <code>ORDER BY</code> clause sorts the results of a <code>SELECT</code> statement in ascending or descending order based on one or more columns.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">table_name</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">ORDER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>column1<span style="color:#bbb"> </span>[<span style="color:#007020;font-weight:bold">ASC</span><span style="color:#bbb"> </span><span style="color:#666">|</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">DESC</span>],<span style="color:#bbb"> </span>column2<span style="color:#bbb"> </span>[<span style="color:#007020;font-weight:bold">ASC</span><span style="color:#bbb"> </span><span style="color:#666">|</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">DESC</span>],<span style="color:#bbb"> </span>...;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><code>ASC</code>: Ascending order (default).</li>
+<li><code>DESC</code>: Descending order.</li>
+</ul>
+<p>Example: To sort customers by age in descending order:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>name,<span style="color:#bbb"> </span>age<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">ORDER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>age<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">DESC</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="limit-clause">
+  LIMIT Clause
+  <a class="anchor" href="#limit-clause">#</a>
+</h3>
+<p>The <code>LIMIT</code> clause restricts the number of rows returned by a <code>SELECT</code> statement.  This is useful for pagination or retrieving a specific number of results.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">table_name</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">LIMIT</span><span style="color:#bbb"> </span>number_of_rows;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Example: To retrieve only the first 5 customers:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>name,<span style="color:#bbb"> </span>age<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">LIMIT</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Many database systems also support an <code>OFFSET</code> clause to skip a certain number of rows before starting the selection (e.g., <code>LIMIT 5 OFFSET 10</code> would return rows 11-15).  The specific syntax for <code>OFFSET</code> might vary slightly depending on your database system.</p>
+<h2 class="heading" id="data-manipulation-with-sql">
+  Data Manipulation with SQL
+  <a class="anchor" href="#data-manipulation-with-sql">#</a>
+</h2>
+<h3 class="heading" id="insert-statements">
+  INSERT Statements
+  <a class="anchor" href="#insert-statements">#</a>
+</h3>
+<p><code>INSERT</code> statements add new rows of data into a table.  The basic syntax is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">table_name</span><span style="color:#bbb"> </span>(column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">VALUES</span><span style="color:#bbb"> </span>(value1,<span style="color:#bbb"> </span>value2,<span style="color:#bbb"> </span>...);<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><code>INSERT INTO</code>: Specifies the table to insert data into.</li>
+<li><code>column1, column2, ...</code>:  Lists the columns you&rsquo;re inserting values into.  If you omit the column list, you must provide values for all columns in the table, and they must be in the order of the columns as defined in the table schema.</li>
+<li><code>VALUES</code>: Specifies the values to be inserted, corresponding to the listed columns.  Data types must match the column definitions.</li>
+</ul>
+<p>Example: To insert a new customer into the <code>customers</code> table:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>customers<span style="color:#bbb"> </span>(name,<span style="color:#bbb"> </span>age,<span style="color:#bbb"> </span>city)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">VALUES</span><span style="color:#bbb"> </span>(<span style="color:#4070a0">&#39;John Doe&#39;</span>,<span style="color:#bbb"> </span><span style="color:#40a070">30</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;New York&#39;</span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>If you are inserting values for all columns, you can omit the column list:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>customers<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">VALUES</span><span style="color:#bbb"> </span>(<span style="color:#4070a0">&#39;Jane Doe&#39;</span>,<span style="color:#bbb"> </span><span style="color:#40a070">25</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;London&#39;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;jane.doe@email.com&#39;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">```</span><span style="color:#bbb">  </span>(Assuming<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">table</span><span style="color:#bbb"> </span>has<span style="color:#bbb"> </span>columns:<span style="color:#bbb"> </span>name,<span style="color:#bbb"> </span>age,<span style="color:#bbb"> </span>city,<span style="color:#bbb"> </span>email)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">###</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>Statements<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">`</span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#666">`</span><span style="color:#bbb"> </span>statements<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">modify</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">existing</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">data</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">in</span><span style="color:#bbb"> </span>a<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">table</span>.<span style="color:#bbb">  </span>The<span style="color:#bbb"> </span>basic<span style="color:#bbb"> </span>syntax<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">is</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">```</span><span style="color:#007020;font-weight:bold">sql</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">table_name</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span>column1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>value1,<span style="color:#bbb"> </span>column2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>value2,<span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>condition;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><code>UPDATE</code>: Specifies the table to update.</li>
+<li><code>SET</code>: Specifies the columns to update and their new values.</li>
+<li><code>WHERE</code>:  Specifies the condition to filter which rows are updated.  <strong>Crucially, a <code>WHERE</code> clause is highly recommended to prevent unintended updates to all rows in the table.</strong></li>
+</ul>
+<p>Example: To update the city for a specific customer:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span>city<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Los Angeles&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;John Doe&#39;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Without a <code>WHERE</code> clause, this would update the <code>city</code> for <em>all</em> customers.</p>
+<h3 class="heading" id="delete-statements">
+  DELETE Statements
+  <a class="anchor" href="#delete-statements">#</a>
+</h3>
+<p><code>DELETE</code> statements remove rows from a table. The basic syntax is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">table_name</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>condition;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><code>DELETE FROM</code>: Specifies the table to delete rows from.</li>
+<li><code>WHERE</code>: Specifies the condition to filter which rows are deleted.  <strong>A <code>WHERE</code> clause is absolutely essential to prevent accidental deletion of all data in the table.</strong></li>
+</ul>
+<p>Example: To delete a customer from the <code>customers</code> table:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Jane Doe&#39;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Without a <code>WHERE</code> clause, this would delete <em>all</em> rows from the <code>customers</code> table.  Exercise extreme caution when using <code>DELETE</code> statements without a <code>WHERE</code> clause.  It&rsquo;s generally good practice to back up your data before performing any <code>DELETE</code> operations.</p>
+<h2 class="heading" id="working-with-multiple-tables">
+  Working with Multiple Tables
+  <a class="anchor" href="#working-with-multiple-tables">#</a>
+</h2>
+<h3 class="heading" id="join-operations-inner-left-right-full">
+  JOIN Operations (INNER, LEFT, RIGHT, FULL)
+  <a class="anchor" href="#join-operations-inner-left-right-full">#</a>
+</h3>
+<p>JOIN operations combine rows from two or more tables based on a related column between them.  Different types of JOINs exist, each with its own behavior:</p>
+<ul>
+<li><strong>INNER JOIN:</strong> Returns rows only when there is a match in both tables based on the join condition.  Rows without a match in either table are excluded.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">INNER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>table2<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span>table1.<span style="color:#007020;font-weight:bold">column_name</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>table2.<span style="color:#007020;font-weight:bold">column_name</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong>LEFT (OUTER) JOIN:</strong> Returns all rows from the left table (the one specified before <code>LEFT JOIN</code>), even if there is no match in the right table.  For rows without a match in the right table, the columns from the right table will have <code>NULL</code> values.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">LEFT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>table2<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span>table1.<span style="color:#007020;font-weight:bold">column_name</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>table2.<span style="color:#007020;font-weight:bold">column_name</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong>RIGHT (OUTER) JOIN:</strong>  Similar to <code>LEFT JOIN</code>, but returns all rows from the right table, even if there is no match in the left table.  For rows without a match in the left table, the columns from the left table will have <code>NULL</code> values.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">RIGHT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>table2<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span>table1.<span style="color:#007020;font-weight:bold">column_name</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>table2.<span style="color:#007020;font-weight:bold">column_name</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong>FULL (OUTER) JOIN:</strong> Returns all rows from both tables.  If there&rsquo;s a match, the corresponding columns are combined; otherwise, <code>NULL</code> values are used for the unmatched columns.  Support for <code>FULL OUTER JOIN</code> varies across database systems; some may use a different syntax or not support it at all.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FULL</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OUTER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>table2<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span>table1.<span style="color:#007020;font-weight:bold">column_name</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>table2.<span style="color:#007020;font-weight:bold">column_name</span>;<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Syntax may vary
+</span></span></span></code></pre></div><p><strong>Example:</strong> Consider two tables: <code>Customers</code> (CustomerID, Name, City) and <code>Orders</code> (OrderID, CustomerID, OrderDate). To get customer names along with their order details, you would use a JOIN:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>Customers.Name,<span style="color:#bbb"> </span>Orders.OrderID,<span style="color:#bbb"> </span>Orders.OrderDate<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">INNER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>Orders<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span>Customers.CustomerID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Orders.CustomerID;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This <code>INNER JOIN</code> would only show customers who have placed orders. A <code>LEFT JOIN</code> would show all customers, including those without orders (with <code>NULL</code> values for OrderID and OrderDate for those customers).</p>
+<h3 class="heading" id="union-and-intersect-operations">
+  UNION and INTERSECT Operations
+  <a class="anchor" href="#union-and-intersect-operations">#</a>
+</h3>
+<p><code>UNION</code> and <code>INTERSECT</code> combine the result sets of two or more <code>SELECT</code> statements.</p>
+<ul>
+<li><strong>UNION:</strong> Combines the result sets of two or more <code>SELECT</code> statements, removing duplicate rows.  The <code>SELECT</code> statements must have the same number of columns, and the corresponding columns must have compatible data types.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">UNION</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table2;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong>INTERSECT:</strong> Returns only the rows that are common to the result sets of two or more <code>SELECT</code> statements.  Similar to <code>UNION</code>, the <code>SELECT</code> statements must have the same number of columns and compatible data types.  Support for <code>INTERSECT</code> varies across database systems.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">INTERSECT</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>column2,<span style="color:#bbb"> </span>...<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>table2;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Example:</strong> To find all unique city names from two tables, <code>Customers</code> and <code>Suppliers</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>City<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">UNION</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>City<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Suppliers;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>To find cities that appear in both <code>Customers</code> and <code>Suppliers</code> tables:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>City<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">INTERSECT</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>City<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Suppliers;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Remember that <code>UNION ALL</code> will include all rows from both result sets, including duplicates, unlike <code>UNION</code>.  Similarly, the specific syntax and availability of <code>INTERSECT</code> and <code>EXCEPT</code> (which returns rows in one set but not the other) can vary among different database systems.</p>
+<h2 class="heading" id="advanced-sql-concepts">
+  Advanced SQL Concepts
+  <a class="anchor" href="#advanced-sql-concepts">#</a>
+</h2>
+<h3 class="heading" id="group-by-and-aggregate-functions">
+  GROUP BY and Aggregate Functions
+  <a class="anchor" href="#group-by-and-aggregate-functions">#</a>
+</h3>
+<p><code>GROUP BY</code> groups rows with the same values in specified columns into summary rows, like &ldquo;find the average age of customers in each city&rdquo;.  Aggregate functions compute values from these groups.  Common aggregate functions include:</p>
+<ul>
+<li><code>COUNT(*)</code>: Counts the number of rows in a group.</li>
+<li><code>SUM(column)</code>: Sums the values in a specified column.</li>
+<li><code>AVG(column)</code>: Calculates the average of values in a specified column.</li>
+<li><code>MIN(column)</code>: Finds the minimum value in a specified column.</li>
+<li><code>MAX(column)</code>: Finds the maximum value in a specified column.</li>
+</ul>
+<p><strong>Syntax:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>aggregate_function(column2),<span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">table_name</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">GROUP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>column1;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Example:</strong> Find the average age of customers in each city:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>city,<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AVG</span>(age)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>average_age<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">GROUP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>city;<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="having-clause">
+  HAVING Clause
+  <a class="anchor" href="#having-clause">#</a>
+</h3>
+<p>The <code>HAVING</code> clause filters groups created by <code>GROUP BY</code>, similar to how <code>WHERE</code> filters individual rows.  It&rsquo;s essential for filtering aggregated results.  You cannot use aggregate functions within a <code>WHERE</code> clause; you must use <code>HAVING</code>.</p>
+<p><strong>Syntax:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>column1,<span style="color:#bbb"> </span>aggregate_function(column2),<span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">table_name</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">GROUP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>column1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">HAVING</span><span style="color:#bbb"> </span>condition;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Example:</strong> Find cities with an average customer age greater than 35:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>city,<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AVG</span>(age)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>average_age<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">GROUP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>city<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">HAVING</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AVG</span>(age)<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">35</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="subqueries">
+  Subqueries
+  <a class="anchor" href="#subqueries">#</a>
+</h3>
+<p>Subqueries are queries nested inside other queries. They can appear in various parts of a query, such as in the <code>WHERE</code> clause or <code>SELECT</code> list, allowing for complex filtering and data manipulation.</p>
+<p><strong>Example (in WHERE clause):</strong> Find customers who are older than the average age of all customers:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>name,<span style="color:#bbb"> </span>age<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>age<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span>(<span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AVG</span>(age)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers);<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Example (in SELECT list):</strong> Show each customer&rsquo;s name and how much older they are than the youngest customer:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>name,<span style="color:#bbb"> </span>age<span style="color:#bbb"> </span><span style="color:#666">-</span><span style="color:#bbb"> </span>(<span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">MIN</span>(age)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>age_difference<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers;<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="common-table-expressions-ctes">
+  Common Table Expressions (CTEs)
+  <a class="anchor" href="#common-table-expressions-ctes">#</a>
+</h3>
+<p>CTEs (Common Table Expressions) are temporary, named result sets that exist only within the scope of a single query. They improve readability and help break down complex queries into smaller, more manageable parts.</p>
+<p><strong>Syntax:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">WITH</span><span style="color:#bbb"> </span>cte_name<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>cte_name;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Example:</strong> Find customers who live in cities with more than 10 customers:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">WITH</span><span style="color:#bbb"> </span>CityCounts<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>city,<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">COUNT</span>(<span style="color:#666">*</span>)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>customer_count<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">GROUP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>city<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">HAVING</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">COUNT</span>(<span style="color:#666">*</span>)<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.name,<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.city<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>customers<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>CityCounts<span style="color:#bbb"> </span>cc<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.city<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>cc.city;<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="transactions">
+  Transactions
+  <a class="anchor" href="#transactions">#</a>
+</h3>
+<p>Transactions ensure data integrity by treating a series of operations as a single unit of work.  If all operations succeed, the changes are committed; otherwise, they&rsquo;re rolled back, leaving the database in its original state.  Key features include:</p>
+<ul>
+<li><strong>Atomicity:</strong> All operations within a transaction are treated as a single unit.</li>
+<li><strong>Consistency:</strong> Transactions maintain the database&rsquo;s consistency constraints.</li>
+<li><strong>Isolation:</strong> Concurrent transactions appear to execute serially.</li>
+<li><strong>Durability:</strong> Once committed, transaction changes persist even in case of system failures.</li>
+</ul>
+<p>Most database systems support <code>BEGIN TRANSACTION</code>, <code>COMMIT</code>, and <code>ROLLBACK</code> statements for managing transactions.  The exact syntax might vary slightly depending on the specific database system.  Example (using SQL Server syntax):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TRANSACTION</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>accounts<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span>balance<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>balance<span style="color:#bbb"> </span><span style="color:#666">-</span><span style="color:#bbb"> </span><span style="color:#40a070">100</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>account_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>accounts<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span>balance<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>balance<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#40a070">100</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>account_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">2</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">COMMIT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TRANSACTION</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">-- Or ROLLBACK TRANSACTION if an error occurs
+</span></span></span></code></pre></div><p>These advanced concepts significantly expand the power and capabilities of SQL, enabling complex data manipulation and analysis.  Understanding them is crucial for building robust and efficient database applications.</p>
+<h2 class="heading" id="practical-examples-and-exercises">
+  Practical Examples and Exercises
+  <a class="anchor" href="#practical-examples-and-exercises">#</a>
+</h2>
+<h3 class="heading" id="example-queries">
+  Example Queries
+  <a class="anchor" href="#example-queries">#</a>
+</h3>
+<p>This section provides several example SQL queries demonstrating common tasks.  Assume we have tables <code>Customers</code> (CustomerID, Name, City, Country, Email), <code>Orders</code> (OrderID, CustomerID, OrderDate, TotalAmount), and <code>Products</code> (ProductID, ProductName, Price).</p>
+<p><strong>Example 1: Finding Customers in a Specific Country:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>CustomerID,<span style="color:#bbb"> </span>Name,<span style="color:#bbb"> </span>Email<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Customers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>Country<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;USA&#39;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Example 2: Finding Orders over a Certain Amount:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>OrderID,<span style="color:#bbb"> </span>OrderDate,<span style="color:#bbb"> </span>TotalAmount<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Orders<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>TotalAmount<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">1000</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Example 3:  Joining Tables to Show Customer Orders:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.Name,<span style="color:#bbb"> </span>o.OrderID,<span style="color:#bbb"> </span>o.OrderDate,<span style="color:#bbb"> </span>o.TotalAmount<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Customers<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>Orders<span style="color:#bbb"> </span>o<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.CustomerID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>o.CustomerID;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Example 4:  Finding the Average Order Amount:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AVG</span>(TotalAmount)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>AverageOrderAmount<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Orders;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Example 5:  Grouping Orders by Customer and finding the total amount spent per customer:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.Name,<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">SUM</span>(o.TotalAmount)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>TotalSpent<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Customers<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>Orders<span style="color:#bbb"> </span>o<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.CustomerID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>o.CustomerID<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">GROUP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.Name;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>These examples showcase basic <code>SELECT</code>, <code>WHERE</code>, <code>JOIN</code>, and aggregate functions.  More complex examples involving subqueries, CTEs, and other advanced features will be explored in later sections of this guide.</p>
+<h3 class="heading" id="practice-exercises">
+  Practice Exercises
+  <a class="anchor" href="#practice-exercises">#</a>
+</h3>
+<p>The following exercises are designed to test your understanding of the concepts covered so far.  Use the <code>Customers</code>, <code>Orders</code>, and <code>Products</code> tables described above.</p>
+<p><strong>Exercise 1:</strong>  Find the names and cities of all customers who placed an order in 2023.</p>
+<p><strong>Exercise 2:</strong> Find the total revenue generated from all orders placed in January 2023.</p>
+<p><strong>Exercise 3:</strong>  Find the top 5 customers who spent the most money. (Hint:  You might need to use <code>ORDER BY</code> and <code>LIMIT</code>).</p>
+<p><strong>Exercise 4:</strong>  Find the products that have never been ordered. (Hint: You might need a subquery or <code>LEFT JOIN</code> and check for <code>NULL</code> values).</p>
+<p><strong>Exercise 5:</strong>  Find the average price of products in each category (assume a <code>Category</code> column exists in the <code>Products</code> table).</p>
+<h3 class="heading" id="solutions-to-exercises">
+  Solutions to Exercises
+  <a class="anchor" href="#solutions-to-exercises">#</a>
+</h3>
+<p><strong>Exercise 1 Solution:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.Name,<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.City<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Customers<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>Orders<span style="color:#bbb"> </span>o<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.CustomerID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>o.CustomerID<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>strftime(<span style="color:#4070a0">&#39;%Y&#39;</span>,<span style="color:#bbb"> </span>o.OrderDate)<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;2023&#39;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>(Note: <code>strftime('%Y', o.OrderDate)</code> extracts the year from the OrderDate.  The specific date/time functions might vary depending on your database system.)</strong></p>
+<p><strong>Exercise 2 Solution:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">SUM</span>(TotalAmount)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>TotalRevenue<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Orders<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>strftime(<span style="color:#4070a0">&#39;%Y-%m&#39;</span>,<span style="color:#bbb"> </span>OrderDate)<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;2023-01&#39;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Exercise 3 Solution:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.Name,<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">SUM</span>(o.TotalAmount)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>TotalSpent<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Customers<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>Orders<span style="color:#bbb"> </span>o<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.CustomerID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>o.CustomerID<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">GROUP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.Name<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">ORDER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>TotalSpent<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">DESC</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">LIMIT</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Exercise 4 Solution (using LEFT JOIN):</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>ProductName<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">LEFT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>Orders<span style="color:#bbb"> </span>o<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span>Products.ProductID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>o.ProductID<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>o.OrderID<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IS</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">NULL</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Exercise 5 Solution:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>Category,<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AVG</span>(Price)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>AveragePrice<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">GROUP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>Category;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>These solutions provide one way to solve each problem. There might be other valid and equally efficient approaches.  Remember to adapt the SQL code to your specific database system if necessary.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-go/">
+                        Beginner&#39;s Guide to Go
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-typescript/">
+                        Beginner&#39;s Guide to TypeScript
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>
