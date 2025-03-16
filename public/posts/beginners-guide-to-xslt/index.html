@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to XSLT | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-xslt/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-xslt/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to XSLT">
+  <meta property="og:description" content="Introduction to XSLT # What is XSLT? # XSLT (Extensible Stylesheet Language Transformations) is a language used for transforming XML documents into other formats, most commonly HTML, but also plain text, other XML formats, or even other data formats like JSON with the help of additional technologies. It’s a W3C standard, meaning it’s widely supported and well-defined. XSLT uses a declarative approach, specifying what transformation should happen rather than how it should be done. This makes XSLT stylesheets relatively concise and easier to maintain compared to procedural transformation techniques. The transformation process is handled by an XSLT processor, a software component that reads both the XML source document and the XSLT stylesheet, applying the rules in the stylesheet to produce the output.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-23T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-xslt/">Beginner&#39;s Guide to XSLT</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to XSLT</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-12-23T00:00:00&#43;00:00">December 23, 2024</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      16 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-xslt">Introduction to XSLT</a>
+      <ul>
+        <li><a href="#what-is-xslt">What is XSLT?</a></li>
+        <li><a href="#why-use-xslt">Why use XSLT?</a></li>
+        <li><a href="#xslt-vs-other-transformation-technologies">XSLT vs. Other Transformation Technologies</a></li>
+        <li><a href="#setting-up-your-environment">Setting up your environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-xslt-syntax">Basic XSLT Syntax</a>
+      <ul>
+        <li><a href="#xml-input-documents">XML Input Documents</a></li>
+        <li><a href="#the-xslt-stylesheet-structure">The XSLT Stylesheet Structure</a></li>
+        <li><a href="#templates-and-matching">Templates and Matching</a></li>
+        <li><a href="#basic-xslt-elements-xsltemplate-xslvalue-of-xslfor-each">Basic XSLT Elements: <code>&lt;xsl:template&gt;</code>, <code>&lt;xsl:value-of&gt;</code>, <code>&lt;xsl:for-each&gt;</code></a></li>
+        <li><a href="#selecting-nodes-with-xpath">Selecting nodes with XPath</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-data">Working with Data</a>
+      <ul>
+        <li><a href="#accessing-attributes">Accessing Attributes</a></li>
+        <li><a href="#selecting-specific-nodes">Selecting Specific Nodes</a></li>
+        <li><a href="#filtering-nodes-with-predicates">Filtering Nodes with Predicates</a></li>
+        <li><a href="#working-with-node-sets">Working with Node Sets</a></li>
+      </ul>
+    </li>
+    <li><a href="#outputting-html">Outputting HTML</a>
+      <ul>
+        <li><a href="#creating-html-elements">Creating HTML elements</a></li>
+        <li><a href="#adding-attributes-to-html-elements">Adding attributes to HTML elements</a></li>
+        <li><a href="#inserting-text-into-html-elements">Inserting text into HTML elements</a></li>
+        <li><a href="#formatting-output">Formatting output</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-techniques">Advanced Techniques</a>
+      <ul>
+        <li><a href="#using-variables">Using Variables</a></li>
+        <li><a href="#using-parameters">Using Parameters</a></li>
+        <li><a href="#conditional-processing-with-xslif-and-xslchoose">Conditional processing with <code>&lt;xsl:if&gt;</code> and <code>&lt;xsl:choose&gt;</code></a></li>
+        <li><a href="#recursive-templates">Recursive Templates</a></li>
+        <li><a href="#sorting-and-grouping-data">Sorting and grouping data</a></li>
+        <li><a href="#including-external-xslt-files">Including external XSLT files</a></li>
+      </ul>
+    </li>
+    <li><a href="#debugging-and-troubleshooting">Debugging and Troubleshooting</a>
+      <ul>
+        <li><a href="#common-errors">Common Errors</a></li>
+        <li><a href="#using-browser-developer-tools">Using browser developer tools</a></li>
+        <li><a href="#using-an-xslt-debugger">Using an XSLT debugger</a></li>
+      </ul>
+    </li>
+    <li><a href="#real-world-examples">Real-World Examples</a>
+      <ul>
+        <li><a href="#transforming-xml-to-html">Transforming XML to HTML</a></li>
+        <li><a href="#generating-different-output-formats">Generating different output formats</a></li>
+        <li><a href="#data-transformations">Data transformations</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-xslt">
+  Introduction to XSLT
+  <a class="anchor" href="#introduction-to-xslt">#</a>
+</h2>
+<h3 class="heading" id="what-is-xslt">
+  What is XSLT?
+  <a class="anchor" href="#what-is-xslt">#</a>
+</h3>
+<p>XSLT (Extensible Stylesheet Language Transformations) is a language used for transforming XML documents into other formats, most commonly HTML, but also plain text,  other XML formats, or even other data formats like JSON with the help of additional technologies.  It&rsquo;s a W3C standard, meaning it&rsquo;s widely supported and well-defined.  XSLT uses a declarative approach, specifying <em>what</em> transformation should happen rather than <em>how</em> it should be done.  This makes XSLT stylesheets relatively concise and easier to maintain compared to procedural transformation techniques.  The transformation process is handled by an XSLT processor, a software component that reads both the XML source document and the XSLT stylesheet, applying the rules in the stylesheet to produce the output.</p>
+<h3 class="heading" id="why-use-xslt">
+  Why use XSLT?
+  <a class="anchor" href="#why-use-xslt">#</a>
+</h3>
+<p>XSLT offers several key advantages for XML transformation:</p>
+<ul>
+<li><strong>Standard and Widely Supported:</strong> XSLT is a well-established standard, ensuring broad compatibility across different platforms and programming languages.</li>
+<li><strong>Declarative Approach:</strong>  Focusing on <em>what</em> to transform simplifies development and makes stylesheets more readable and maintainable.  Changes to the transformation logic are typically easier to implement.</li>
+<li><strong>Powerful Transformation Capabilities:</strong> XSLT provides a rich set of functions and features for complex data manipulation, including sorting, filtering, conditional processing, and recursive processing of hierarchical XML data.</li>
+<li><strong>Separation of Concerns:</strong> XSLT separates the data (XML) from the presentation (output format), promoting better organization and reusability.  The same XML data can be transformed into various formats using different XSLT stylesheets.</li>
+<li><strong>Mature Ecosystem:</strong>  Many tools and libraries exist to support XSLT development, simplifying debugging and deployment.</li>
+</ul>
+<h3 class="heading" id="xslt-vs-other-transformation-technologies">
+  XSLT vs. Other Transformation Technologies
+  <a class="anchor" href="#xslt-vs-other-transformation-technologies">#</a>
+</h3>
+<p>Several technologies can transform XML, but XSLT stands out for specific reasons:</p>
+<ul>
+<li><strong>Compared to XQuery:</strong> While XQuery is also powerful for querying and transforming XML, XSLT focuses specifically on transforming XML to different formats.  XQuery might be preferred for complex data retrieval from large XML databases, while XSLT is more suited to presentation-oriented transformations.</li>
+<li><strong>Compared to General-Purpose Programming Languages (e.g., Python, Java):</strong> Using general-purpose languages for XML transformation requires writing more code to handle XML parsing and manipulation explicitly.  XSLT provides built-in support for XML processing, simplifying development.  However, for extremely complex transformations requiring algorithms beyond XSLT&rsquo;s capabilities, a general-purpose language might be necessary.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-environment">
+  Setting up your environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h3>
+<p>To start working with XSLT, you will need:</p>
+<ol>
+<li><strong>An XML Parser:</strong>  Most XSLT processors include an XML parser, but you may need to ensure one is available in your environment.  Many programming languages have built-in XML libraries.</li>
+<li><strong>An XSLT Processor:</strong>  Several XSLT processors are available, many are open-source and freely available. Popular choices include Saxon (a Java-based processor), libxslt (C-based), and various processors integrated into web servers or programming languages.  Choose a processor that&rsquo;s compatible with your chosen development environment.</li>
+<li><strong>A Text Editor or IDE:</strong>  Any text editor can be used to create XSLT stylesheets.  However, an IDE with features like syntax highlighting and XML validation can significantly improve development productivity.</li>
+<li><strong>(Optional) XML Schema:</strong> For larger, more complex projects, it is beneficial to define an XML schema (XSD) to ensure the XML data is well-formed and valid.  This will help prevent errors during transformation.</li>
+</ol>
+<p>The exact steps for installing and configuring your environment will vary depending on the XSLT processor and development tools you choose. Consult the documentation of your chosen tools for specific instructions.  Many online tutorials and examples can also guide you through this process.</p>
+<h2 class="heading" id="basic-xslt-syntax">
+  Basic XSLT Syntax
+  <a class="anchor" href="#basic-xslt-syntax">#</a>
+</h2>
+<h3 class="heading" id="xml-input-documents">
+  XML Input Documents
+  <a class="anchor" href="#xml-input-documents">#</a>
+</h3>
+<p>XSLT transforms XML documents.  Your input XML document must be well-formed (correct syntax) and, ideally, valid (conforms to a defined schema).  A well-formed XML document has a single root element, properly nested elements, and correctly paired tags.  The structure of your XML document dictates how you&rsquo;ll write your XSLT to select and transform specific data.  Consider this example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#007020">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;books&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;book&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;title&gt;</span>The Lord of the Rings<span style="color:#062873;font-weight:bold">&lt;/title&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;author&gt;</span>J.R.R. Tolkien<span style="color:#062873;font-weight:bold">&lt;/author&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;/book&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;book&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;title&gt;</span>Pride and Prejudice<span style="color:#062873;font-weight:bold">&lt;/title&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;author&gt;</span>Jane Austen<span style="color:#062873;font-weight:bold">&lt;/author&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;/book&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/books&gt;</span>
+</span></span></code></pre></div><p>This simple XML represents a list of books, each with a title and author.  Your XSLT will use XPath expressions (discussed later) to target specific elements within this structure.</p>
+<h3 class="heading" id="the-xslt-stylesheet-structure">
+  The XSLT Stylesheet Structure
+  <a class="anchor" href="#the-xslt-stylesheet-structure">#</a>
+</h3>
+<p>An XSLT stylesheet is itself an XML document. It typically starts with an XML declaration, followed by the root element <code>&lt;xsl:stylesheet&gt;</code>.  This root element contains attributes specifying the XSLT version and namespace:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#007020">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:stylesheet</span> <span style="color:#4070a0">version=</span><span style="color:#4070a0">&#34;1.0&#34;</span> <span style="color:#4070a0">xmlns:xsl=</span><span style="color:#4070a0">&#34;http://www.w3.org/1999/XSL/Transform&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">&lt;!-- XSLT instructions go here --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:stylesheet&gt;</span>
+</span></span></code></pre></div><p>The <code>xmlns:xsl</code> attribute declares the XSLT namespace, essential for the XSLT processor to correctly interpret the elements within the stylesheet.  The <code>version</code> attribute specifies the XSLT version you are using (1.0 or later).</p>
+<h3 class="heading" id="templates-and-matching">
+  Templates and Matching
+  <a class="anchor" href="#templates-and-matching">#</a>
+</h3>
+<p>XSLT uses <em>templates</em> to define how different parts of the XML input document should be transformed.  Each template consists of a <em>match pattern</em> (using XPath) and a set of instructions on how to process the selected nodes.  The XSLT processor matches the patterns in your templates against nodes in the input XML, applying the corresponding instructions.  Templates often recursively process nested elements, transforming the entire XML tree.</p>
+<h3 class="heading" id="basic-xslt-elements-xsltemplate-xslvalue-of-xslfor-each">
+  Basic XSLT Elements: <code>&lt;xsl:template&gt;</code>, <code>&lt;xsl:value-of&gt;</code>, <code>&lt;xsl:for-each&gt;</code>
+  <a class="anchor" href="#basic-xslt-elements-xsltemplate-xslvalue-of-xslfor-each">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>&lt;xsl:template&gt;</code>:</strong>  This element defines a template. The <code>match</code> attribute specifies the XPath expression defining which nodes the template should process.</p>
+</li>
+<li>
+<p><strong><code>&lt;xsl:value-of&gt;</code>:</strong> This element selects a node&rsquo;s value and inserts it into the output.  It requires a <code>select</code> attribute specifying the XPath expression for the node whose value should be used.</p>
+</li>
+<li>
+<p><strong><code>&lt;xsl:for-each&gt;</code>:</strong> This element iterates over a node set (a collection of nodes). The <code>select</code> attribute defines the node set. Inside the <code>&lt;xsl:for-each&gt;</code> block, you can process each node individually.</p>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;/books/book&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>Title: <span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;title&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>Author: <span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;author&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span></code></pre></div><p>This template matches each <code>&lt;book&gt;</code> element under the <code>/books</code> root. For each match, it creates a paragraph for the title and another for the author.</p>
+<h3 class="heading" id="selecting-nodes-with-xpath">
+  Selecting nodes with XPath
+  <a class="anchor" href="#selecting-nodes-with-xpath">#</a>
+</h3>
+<p>XPath is a query language for selecting nodes in an XML document. It&rsquo;s fundamental to XSLT.  Here are some basic XPath expressions:</p>
+<ul>
+<li><strong><code>/books</code>:</strong> Selects the root element named &ldquo;books.&rdquo;</li>
+<li><strong><code>/books/book</code>:</strong> Selects all &ldquo;book&rdquo; elements that are direct children of the &ldquo;books&rdquo; element.</li>
+<li><strong><code>book/title</code>:</strong> Selects all &ldquo;title&rdquo; elements that are direct children of any &ldquo;book&rdquo; element.</li>
+<li><strong><code>//title</code>:</strong> Selects all &ldquo;title&rdquo; elements anywhere in the document (regardless of their position in the hierarchy).</li>
+<li><strong><code>@attributeName</code>:</strong> Selects the value of an attribute named <code>attributeName</code>.</li>
+</ul>
+<p>XPath allows for far more complex selections, including predicates (<code>[condition]</code>) to filter nodes based on specific criteria, and functions to manipulate node sets.  You will find XPath essential for precisely selecting the data you want to transform within your XSLT stylesheets.</p>
+<h2 class="heading" id="working-with-data">
+  Working with Data
+  <a class="anchor" href="#working-with-data">#</a>
+</h2>
+<h3 class="heading" id="accessing-attributes">
+  Accessing Attributes
+  <a class="anchor" href="#accessing-attributes">#</a>
+</h3>
+<p>XML elements can have attributes.  To access attribute values within your XSLT, use the <code>@</code> symbol within your XPath expression. For instance, consider an XML snippet:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;book</span> <span style="color:#4070a0">isbn=</span><span style="color:#4070a0">&#34;978-0321765723&#34;</span> <span style="color:#4070a0">category=</span><span style="color:#4070a0">&#34;Fiction&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;title&gt;</span>The Hobbit<span style="color:#062873;font-weight:bold">&lt;/title&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/book&gt;</span>
+</span></span></code></pre></div><p>To get the <code>isbn</code> attribute value in your XSLT:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;@isbn&#34;</span><span style="color:#062873;font-weight:bold">/&gt;</span>  <span style="color:#60a0b0;font-style:italic">&lt;!-- Output: 978-0321765723 --&gt;</span>
+</span></span></code></pre></div><p>Similarly, to access the <code>category</code> attribute:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;@category&#34;</span><span style="color:#062873;font-weight:bold">/&gt;</span> <span style="color:#60a0b0;font-style:italic">&lt;!-- Output: Fiction --&gt;</span>
+</span></span></code></pre></div><h3 class="heading" id="selecting-specific-nodes">
+  Selecting Specific Nodes
+  <a class="anchor" href="#selecting-specific-nodes">#</a>
+</h3>
+<p>XPath allows for precise selection of nodes within your XML document.  Recall the basic path expressions, and consider using more sophisticated techniques like predicates (explained in the next section) to filter the results to a subset of nodes.</p>
+<p>For example, given the following XML:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;library&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;book</span> <span style="color:#4070a0">genre=</span><span style="color:#4070a0">&#34;Fantasy&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>...<span style="color:#062873;font-weight:bold">&lt;/book&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;book</span> <span style="color:#4070a0">genre=</span><span style="color:#4070a0">&#34;Science Fiction&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>...<span style="color:#062873;font-weight:bold">&lt;/book&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;magazine</span> <span style="color:#4070a0">title=</span><span style="color:#4070a0">&#34;Sci-Fi Monthly&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>...<span style="color:#062873;font-weight:bold">&lt;/magazine&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/library&gt;</span>
+</span></span></code></pre></div><p>The XPath expression <code>/library/book</code> selects all <code>&lt;book&gt;</code> elements within the <code>&lt;library&gt;</code> element.  The expression <code>/library/book[@genre=&quot;Fantasy&quot;]</code> selects only the <code>&lt;book&gt;</code> element with the <code>genre</code> attribute equal to &ldquo;Fantasy&rdquo;.</p>
+<h3 class="heading" id="filtering-nodes-with-predicates">
+  Filtering Nodes with Predicates
+  <a class="anchor" href="#filtering-nodes-with-predicates">#</a>
+</h3>
+<p>Predicates, enclosed in square brackets <code>[]</code>, allow you to filter node sets based on specified conditions.  Predicates use XPath expressions to test conditions.  This allows selecting only the nodes that satisfy a given criteria.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:for-each</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;books/book[author=&#39;J.R.R. Tolkien&#39;]&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>Book by Tolkien: <span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;title&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:for-each&gt;</span>
+</span></span></code></pre></div><p>This will only process and output books where the author element&rsquo;s value is &lsquo;J.R.R. Tolkien&rsquo;. You can use various operators like <code>=</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, etc. within predicates.  You can also combine multiple predicates to refine your selection.</p>
+<h3 class="heading" id="working-with-node-sets">
+  Working with Node Sets
+  <a class="anchor" href="#working-with-node-sets">#</a>
+</h3>
+<p>XSLT frequently works with <em>node sets</em>, collections of nodes selected by an XPath expression.  Several XSLT elements implicitly operate on node sets, while others explicitly take node sets as input.  Understanding how to process node sets efficiently is crucial.</p>
+<p>The <code>&lt;xsl:for-each&gt;</code> element is designed to process node sets iteratively, handling each node one by one.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:for-each</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;//book&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;xsl:if</span> <span style="color:#4070a0">test=</span><span style="color:#4070a0">&#34;@category = &#39;Fiction&#39;&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;p&gt;&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;title&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;/xsl:if&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:for-each&gt;</span>
+</span></span></code></pre></div><p>This iterates over all <code>&lt;book&gt;</code> elements in the document and only outputs the title for books with the <code>category</code> attribute set to &ldquo;Fiction&rdquo;.  Note that the XPath expression <code>//book</code> selects all <code>&lt;book&gt;</code> elements regardless of their position in the XML tree.   Efficiently selecting and processing node sets is key to writing optimized XSLT stylesheets. Using appropriate XPath expressions and choosing correct XSLT elements to process the data, taking into account performance considerations, especially when dealing with large XML documents, is crucial.</p>
+<h2 class="heading" id="outputting-html">
+  Outputting HTML
+  <a class="anchor" href="#outputting-html">#</a>
+</h2>
+<p>XSLT is frequently used to transform XML data into HTML for web display. This section details how to generate HTML output using XSLT.</p>
+<h3 class="heading" id="creating-html-elements">
+  Creating HTML elements
+  <a class="anchor" href="#creating-html-elements">#</a>
+</h3>
+<p>To create HTML elements in your XSLT output, simply use the corresponding HTML tag names within your XSLT templates. The XSLT processor will generate the HTML structure as part of the output.</p>
+<p>Example:  To create a heading and paragraph:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;/&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;h1&gt;</span>My Book List<span style="color:#062873;font-weight:bold">&lt;/h1&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>Here are some books:<span style="color:#062873;font-weight:bold">&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span></code></pre></div><p>This will generate:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#062873;font-weight:bold">h1</span>&gt;My Book List&lt;/<span style="color:#062873;font-weight:bold">h1</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#062873;font-weight:bold">p</span>&gt;Here are some books:&lt;/<span style="color:#062873;font-weight:bold">p</span>&gt;
+</span></span></code></pre></div><p>Remember that the structure of your output HTML will largely depend on the structure of your input XML and the way you use templates to process it.</p>
+<h3 class="heading" id="adding-attributes-to-html-elements">
+  Adding attributes to HTML elements
+  <a class="anchor" href="#adding-attributes-to-html-elements">#</a>
+</h3>
+<p>You can add attributes to HTML elements using standard XML attribute syntax within your XSLT.</p>
+<p>Example:  Creating a linked image:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;book&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;img</span> <span style="color:#4070a0">src=</span><span style="color:#4070a0">&#34;{title}.jpg&#34;</span> <span style="color:#4070a0">alt=</span><span style="color:#4070a0">&#34;{title}&#34;</span><span style="color:#062873;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span></code></pre></div><p>This will produce (assuming the title is &ldquo;The Hobbit&rdquo;):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#062873;font-weight:bold">img</span> <span style="color:#4070a0">src</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;The Hobbit.jpg&#34;</span> <span style="color:#4070a0">alt</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;The Hobbit&#34;</span>/&gt;
+</span></span></code></pre></div><p>Note the use of curly braces <code>{}</code> around the XPath expressions. This is an XSLT shorthand for inserting the <em>value</em> of the selected node into the attribute.  This is crucial for dynamically generating HTML attributes based on your XML data.</p>
+<h3 class="heading" id="inserting-text-into-html-elements">
+  Inserting text into HTML elements
+  <a class="anchor" href="#inserting-text-into-html-elements">#</a>
+</h3>
+<p>Text content within HTML elements is added using <code>&lt;xsl:value-of&gt;</code> or by directly including text nodes within your templates.</p>
+<p>Example:  Creating a paragraph with dynamically generated text:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;book&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>Title: <span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;title&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span></code></pre></div><p>This would insert the title from the XML into the <code>&lt;p&gt;</code> element. If the XML <code>&lt;book&gt;</code> element contained <code>&lt;title&gt;The Hobbit&lt;/title&gt;</code>, the output would be:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#062873;font-weight:bold">p</span>&gt;Title: The Hobbit&lt;/<span style="color:#062873;font-weight:bold">p</span>&gt;
+</span></span></code></pre></div><p>Directly including text:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;/&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>This is some static text in a paragraph.<span style="color:#062873;font-weight:bold">&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span></code></pre></div><p>This inserts literal text.  This combination of dynamic text insertion and direct text inclusion gives you great flexibility in constructing your HTML output.</p>
+<h3 class="heading" id="formatting-output">
+  Formatting output
+  <a class="anchor" href="#formatting-output">#</a>
+</h3>
+<p>While XSLT itself doesn&rsquo;t have extensive formatting capabilities like CSS, you can generate HTML that incorporates CSS stylesheets. You can either directly include CSS within <code>&lt;style&gt;</code> tags in your HTML output or by linking to external CSS files using the <code>&lt;link&gt;</code> tag.</p>
+<p>Example:  Including an inline style:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;book&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;p</span> <span style="color:#4070a0">style=</span><span style="color:#4070a0">&#34;font-weight: bold;&#34;</span><span style="color:#062873;font-weight:bold">&gt;&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;title&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span></code></pre></div><p>This adds bold styling to the title.  It is generally recommended to use external CSS files for better maintainability and separation of concerns.  Using external CSS files is best practice as this allows for clearer separation of concerns in your code and improved maintenance as the CSS can easily be modified without changing the XSLT.</p>
+<h2 class="heading" id="advanced-techniques">
+  Advanced Techniques
+  <a class="anchor" href="#advanced-techniques">#</a>
+</h2>
+<p>This section covers more advanced XSLT features to handle complex transformations.</p>
+<h3 class="heading" id="using-variables">
+  Using Variables
+  <a class="anchor" href="#using-variables">#</a>
+</h3>
+<p>XSLT variables store values that can be reused within your stylesheet.  Variables are defined using the <code>&lt;xsl:variable&gt;</code> element. The <code>name</code> attribute specifies the variable&rsquo;s name, and the <code>select</code> attribute (optional, but commonly used) specifies the XPath expression to determine the variable&rsquo;s value.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:variable</span> <span style="color:#4070a0">name=</span><span style="color:#4070a0">&#34;authorName&#34;</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;/books/book[1]/author&#34;</span><span style="color:#062873;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;/&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>The first book&#39;s author is: <span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;$authorName&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span></code></pre></div><p>This defines a variable <code>authorName</code> and then uses it to display the author of the first book. Note that variable names are preceded by a dollar sign ($) when used.</p>
+<h3 class="heading" id="using-parameters">
+  Using Parameters
+  <a class="anchor" href="#using-parameters">#</a>
+</h3>
+<p>Parameters allow passing values into your stylesheet from external sources, making stylesheets more reusable and flexible. They are defined within the <code>&lt;xsl:stylesheet&gt;</code> element and used similarly to variables.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:stylesheet</span> <span style="color:#4070a0">version=</span><span style="color:#4070a0">&#34;1.0&#34;</span> <span style="color:#4070a0">xmlns:xsl=</span><span style="color:#4070a0">&#34;http://www.w3.org/1999/XSL/Transform&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;xsl:param</span> <span style="color:#4070a0">name=</span><span style="color:#4070a0">&#34;bookCategory&#34;</span><span style="color:#062873;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;/&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>Books in category: <span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;$bookCategory&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:stylesheet&gt;</span>
+</span></span></code></pre></div><p>The value for <code>$bookCategory</code> would be provided when the stylesheet is processed.  The specific mechanism for parameter passing varies based on the XSLT processor.</p>
+<h3 class="heading" id="conditional-processing-with-xslif-and-xslchoose">
+  Conditional processing with <code>&lt;xsl:if&gt;</code> and <code>&lt;xsl:choose&gt;</code>
+  <a class="anchor" href="#conditional-processing-with-xslif-and-xslchoose">#</a>
+</h3>
+<p>Conditional statements control which parts of the stylesheet execute based on conditions.</p>
+<ul>
+<li>
+<p><strong><code>&lt;xsl:if&gt;</code>:</strong> Executes a block of instructions only if a condition is true.</p>
+</li>
+<li>
+<p><strong><code>&lt;xsl:choose&gt;</code>:</strong>  A more general conditional statement;  it allows specifying multiple conditions using <code>&lt;xsl:when&gt;</code> and a default case with <code>&lt;xsl:otherwise&gt;</code>.</p>
+</li>
+</ul>
+<p>Example using <code>&lt;xsl:if&gt;</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;book&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;xsl:if</span> <span style="color:#4070a0">test=</span><span style="color:#4070a0">&#34;@inStock = &#39;yes&#39;&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>Available: <span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;title&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;/xsl:if&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span></code></pre></div><p>Example using <code>&lt;xsl:choose&gt;</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;book&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;xsl:choose&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;xsl:when</span> <span style="color:#4070a0">test=</span><span style="color:#4070a0">&#34;@inStock = &#39;yes&#39;&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>In stock: <span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;title&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;/xsl:when&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;xsl:otherwise&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>Out of stock: <span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;title&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;/xsl:otherwise&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;/xsl:choose&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span></code></pre></div><h3 class="heading" id="recursive-templates">
+  Recursive Templates
+  <a class="anchor" href="#recursive-templates">#</a>
+</h3>
+<p>Recursive templates call themselves to process hierarchical data. This is useful for traversing nested XML structures.  A recursive template must have a base case (a condition that stops the recursion) to prevent infinite loops.</p>
+<p>Example (simplified, assumes a nested structure of categories and books):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;category&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;h3&gt;&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;name&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/h3&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;xsl:apply-templates</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;book&#34;</span><span style="color:#062873;font-weight:bold">/&gt;</span>  <span style="color:#60a0b0;font-style:italic">&lt;!-- Process child books --&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;xsl:apply-templates</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;category&#34;</span><span style="color:#062873;font-weight:bold">/&gt;</span> <span style="color:#60a0b0;font-style:italic">&lt;!-- Recursively process child categories --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;book&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;p&gt;&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;title&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span></code></pre></div><h3 class="heading" id="sorting-and-grouping-data">
+  Sorting and grouping data
+  <a class="anchor" href="#sorting-and-grouping-data">#</a>
+</h3>
+<p>XSLT can sort and group data using the <code>&lt;xsl:sort&gt;</code> element within <code>&lt;xsl:for-each&gt;</code> and the <code>&lt;xsl:key&gt;</code> element for grouping.  <code>&lt;xsl:sort&gt;</code> specifies the sorting criteria (e.g., by author, title, date), and <code>&lt;xsl:key&gt;</code> defines keys to group nodes based on specific values.  This allows more complex manipulations of data.</p>
+<h3 class="heading" id="including-external-xslt-files">
+  Including external XSLT files
+  <a class="anchor" href="#including-external-xslt-files">#</a>
+</h3>
+<p>You can modularize your XSLT by including external stylesheets using the <code>&lt;xsl:include&gt;</code> element. This improves reusability and organization.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:include</span> <span style="color:#4070a0">href=</span><span style="color:#4070a0">&#34;my-functions.xsl&#34;</span><span style="color:#062873;font-weight:bold">/&gt;</span>
+</span></span></code></pre></div><p>This would include the stylesheet <code>my-functions.xsl</code> in your main stylesheet.  This allows for the creation of reusable components and better organization of your XSLT code.  Ensure the path to the external file is correct relative to the location of the main stylesheet.</p>
+<h2 class="heading" id="debugging-and-troubleshooting">
+  Debugging and Troubleshooting
+  <a class="anchor" href="#debugging-and-troubleshooting">#</a>
+</h2>
+<p>Debugging XSLT can be challenging, but several techniques can help identify and resolve issues.</p>
+<h3 class="heading" id="common-errors">
+  Common Errors
+  <a class="anchor" href="#common-errors">#</a>
+</h3>
+<p>Some frequently encountered errors include:</p>
+<ul>
+<li>
+<p><strong>Syntax Errors:</strong>  These are caused by incorrect XML syntax in your XSLT stylesheet.  Ensure your tags are properly nested and closed, and attribute values are correctly quoted.  XML validators can greatly assist in finding these errors.</p>
+</li>
+<li>
+<p><strong>XPath Errors:</strong>  Incorrect XPath expressions are a common source of problems.  Double-check your XPath expressions carefully, ensuring that they correctly target the desired nodes in your XML input document.  Many XSLT processors provide informative error messages when XPath expressions are invalid.</p>
+</li>
+<li>
+<p><strong>Type Errors:</strong>  Attempting to perform operations on incompatible data types can lead to errors.  For example, trying to perform arithmetic on a node that contains text that isn&rsquo;t a valid number will often cause an error.</p>
+</li>
+<li>
+<p><strong>Missing Templates:</strong>  If your stylesheet lacks templates that match nodes in your XML input, those nodes will not be processed, often leading to unexpected output or missing data.  Carefully check that your templates are correctly defined and their <code>match</code> attributes cover all the relevant nodes.</p>
+</li>
+<li>
+<p><strong>Logic Errors:</strong>  Incorrect logic within your XSLT templates can result in incorrect transformations.  Carefully review the flow of control in your stylesheet to ensure that it processes data according to your requirements.</p>
+</li>
+</ul>
+<h3 class="heading" id="using-browser-developer-tools">
+  Using browser developer tools
+  <a class="anchor" href="#using-browser-developer-tools">#</a>
+</h3>
+<p>If your XSLT transforms XML into HTML for web display, browser developer tools are invaluable.  They allow inspecting the generated HTML, identifying discrepancies between the expected and actual output, and tracking down problems in the transformation process.</p>
+<p>Most modern browsers (Chrome, Firefox, Edge, Safari) provide developer tools accessible through a keyboard shortcut (often F12). These tools typically have features for:</p>
+<ul>
+<li>
+<p><strong>Inspecting HTML:</strong> Examining the structure and content of the generated HTML to pinpoint incorrect elements or missing content.</p>
+</li>
+<li>
+<p><strong>Viewing the Network Tab:</strong> Watching the HTTP requests and responses can help if the problem stems from how the XSLT is loaded or the XML data is fetched.</p>
+</li>
+<li>
+<p><strong>Console Logging:</strong>  While not directly related to XSLT, you can use Javascript&rsquo;s <code>console.log()</code> within the resulting HTML if it is dynamically built with the help of JS and other related tech to provide debugging information.</p>
+</li>
+</ul>
+<p>By using the developer tools, you can systematically trace the XSLT transformation process and identify where things go wrong.</p>
+<h3 class="heading" id="using-an-xslt-debugger">
+  Using an XSLT debugger
+  <a class="anchor" href="#using-an-xslt-debugger">#</a>
+</h3>
+<p>Dedicated XSLT debuggers provide advanced features for stepping through the execution of your stylesheet, inspecting variables, and tracking the flow of control.  While browser developer tools are useful for general debugging, a dedicated debugger offers deeper insights.</p>
+<p>Many XSLT processors (like Saxon) include or integrate with debuggers.  These debuggers provide capabilities such as:</p>
+<ul>
+<li>
+<p><strong>Step-by-step execution:</strong> Allows you to execute your stylesheet one step at a time, examining the state of variables and the output at each stage.</p>
+</li>
+<li>
+<p><strong>Breakpoints:</strong> Setting breakpoints to pause execution at specific points in your stylesheet, enabling detailed examination of variables and data at that point.</p>
+</li>
+<li>
+<p><strong>Variable inspection:</strong>  Inspecting the values of variables at any point during execution, allowing you to track data transformations.</p>
+</li>
+<li>
+<p><strong>Output tracing:</strong>  Tracing the generation of the output, observing how your templates manipulate the XML input.</p>
+</li>
+</ul>
+<p>Using an XSLT debugger significantly speeds up the debugging process compared to relying solely on examining the final output. The debugging features can vary depending on your chosen XSLT processor and debugger, so consult its documentation for detailed instructions.</p>
+<h2 class="heading" id="real-world-examples">
+  Real-World Examples
+  <a class="anchor" href="#real-world-examples">#</a>
+</h2>
+<p>This section presents practical examples demonstrating XSLT&rsquo;s capabilities in various scenarios.</p>
+<h3 class="heading" id="transforming-xml-to-html">
+  Transforming XML to HTML
+  <a class="anchor" href="#transforming-xml-to-html">#</a>
+</h3>
+<p>This is a common use case for XSLT.  Consider an XML document representing a list of products:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#007020">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;products&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;product&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;name&gt;</span>Widget A<span style="color:#062873;font-weight:bold">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;price&gt;</span>19.99<span style="color:#062873;font-weight:bold">&lt;/price&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;description&gt;</span>A useful widget.<span style="color:#062873;font-weight:bold">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;/product&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;product&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;name&gt;</span>Widget B<span style="color:#062873;font-weight:bold">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;price&gt;</span>29.99<span style="color:#062873;font-weight:bold">&lt;/price&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;description&gt;</span>A more advanced widget.<span style="color:#062873;font-weight:bold">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;/product&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/products&gt;</span>
+</span></span></code></pre></div><p>The following XSLT transforms this XML into an HTML product catalog:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#007020">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:stylesheet</span> <span style="color:#4070a0">version=</span><span style="color:#4070a0">&#34;1.0&#34;</span> <span style="color:#4070a0">xmlns:xsl=</span><span style="color:#4070a0">&#34;http://www.w3.org/1999/XSL/Transform&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;/&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;html&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#062873;font-weight:bold">&lt;body&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&lt;h1&gt;</span>Product Catalog<span style="color:#062873;font-weight:bold">&lt;/h1&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&lt;xsl:for-each</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;products/product&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#062873;font-weight:bold">&lt;h2&gt;&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;name&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/h2&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>Price: $<span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;price&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#062873;font-weight:bold">&lt;p&gt;&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;description&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&lt;/xsl:for-each&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#062873;font-weight:bold">&lt;/body&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;/html&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:stylesheet&gt;</span>
+</span></span></code></pre></div><p>This stylesheet iterates through each product and creates an HTML structure with a heading, price, and description for each product.</p>
+<h3 class="heading" id="generating-different-output-formats">
+  Generating different output formats
+  <a class="anchor" href="#generating-different-output-formats">#</a>
+</h3>
+<p>XSLT&rsquo;s flexibility extends beyond HTML.  You can generate other formats like plain text, JSON (with supporting technologies), or even other XML formats.  The key is to adapt your XSLT templates to produce the desired output structure.</p>
+<p>For instance, to generate a plain text list of product names, you would modify the stylesheet to output text directly without HTML tags:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#007020">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:stylesheet</span> <span style="color:#4070a0">version=</span><span style="color:#4070a0">&#34;1.0&#34;</span> <span style="color:#4070a0">xmlns:xsl=</span><span style="color:#4070a0">&#34;http://www.w3.org/1999/XSL/Transform&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;/&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;xsl:for-each</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;products/product&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;name&#34;</span><span style="color:#062873;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#062873;font-weight:bold">&lt;xsl:text&gt;</span><span style="color:#d55537;font-weight:bold">&amp;#xa;</span><span style="color:#062873;font-weight:bold">&lt;/xsl:text&gt;</span>  <span style="color:#60a0b0;font-style:italic">&lt;!-- Add newline character --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;/xsl:for-each&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:stylesheet&gt;</span>
+</span></span></code></pre></div><p>Generating JSON requires additional technologies; XSLT itself doesn&rsquo;t directly produce JSON.  You&rsquo;d typically use XSLT to transform the XML into an intermediate format easily converted to JSON using a scripting language (like Python or Javascript) or a dedicated JSON library.</p>
+<h3 class="heading" id="data-transformations">
+  Data transformations
+  <a class="anchor" href="#data-transformations">#</a>
+</h3>
+<p>XSLT excels at data manipulation.  Beyond simple output generation, you can use XSLT for complex data transformations.  For example, you might need to:</p>
+<ul>
+<li>
+<p><strong>Filter data:</strong> Select only specific products based on criteria (e.g., price range).  Use XPath predicates for this.</p>
+</li>
+<li>
+<p><strong>Sort data:</strong> Arrange products alphabetically by name or by price.  The <code>&lt;xsl:sort&gt;</code> element provides sorting capabilities.</p>
+</li>
+<li>
+<p><strong>Calculate values:</strong>  Compute totals, averages, or other derived values from your XML data. XSLT has built-in functions for this.</p>
+</li>
+<li>
+<p><strong>Restructure data:</strong> Change the XML structure to a different format.  This involves careful use of templates and recursive processing.</p>
+</li>
+</ul>
+<p>Consider an example where you need to calculate the total price of all products:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#007020">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;xsl:stylesheet</span> <span style="color:#4070a0">version=</span><span style="color:#4070a0">&#34;1.0&#34;</span> <span style="color:#4070a0">xmlns:xsl=</span><span style="color:#4070a0">&#34;http://www.w3.org/1999/XSL/Transform&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;xsl:template</span> <span style="color:#4070a0">match=</span><span style="color:#4070a0">&#34;/&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;xsl:variable</span> <span style="color:#4070a0">name=</span><span style="color:#4070a0">&#34;totalPrice&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#062873;font-weight:bold">&lt;xsl:for-each</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;products/product&#34;</span><span style="color:#062873;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;sum(price)&#34;</span><span style="color:#062873;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#062873;font-weight:bold">&lt;/xsl:for-each&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;/xsl:variable&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#062873;font-weight:bold">&lt;p&gt;</span>Total price of all products: $<span style="color:#062873;font-weight:bold">&lt;xsl:value-of</span> <span style="color:#4070a0">select=</span><span style="color:#4070a0">&#34;$totalPrice&#34;</span><span style="color:#062873;font-weight:bold">/&gt;&lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&lt;/xsl:template&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">&lt;/xsl:stylesheet&gt;</span>
+</span></span></code></pre></div><p>This demonstrates how XSLT can perform calculations on the input data and include the result in the output.  These examples highlight XSLT&rsquo;s versatility for various data transformation needs.  Remember that complex transformations may require more advanced techniques like recursive templates, variables, and parameters to manage the data efficiently.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-idris/">
+                        Beginner&#39;s Guide to Idris
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-j/">
+                        Beginner&#39;s Guide to J
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

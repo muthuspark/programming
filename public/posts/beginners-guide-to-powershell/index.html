@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to PowerShell | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-powershell/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-powershell/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to PowerShell">
+  <meta property="og:description" content="Introduction to PowerShell # What is PowerShell? # PowerShell is a cross-platform task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language. Unlike the older command prompt (cmd.exe), which primarily works with text-based commands, PowerShell uses cmdlets (pronounced “command-lets”). Cmdlets are specialized commands that interact with .NET objects, enabling more powerful and flexible scripting. This object-based approach allows for more complex manipulation and automation of system tasks. PowerShell’s scripting language is built on top of the .NET framework (and .NET Core for cross-platform compatibility), allowing access to a vast library of functions and capabilities.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-27T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-powershell/">Beginner&#39;s Guide to PowerShell</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to PowerShell</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-02-27T00:00:00&#43;00:00">February 27, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      22 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-powershell">Introduction to PowerShell</a>
+      <ul>
+        <li><a href="#what-is-powershell">What is PowerShell?</a></li>
+        <li><a href="#why-use-powershell">Why use PowerShell?</a></li>
+        <li><a href="#powershell-vs-command-prompt">PowerShell vs. Command Prompt</a></li>
+        <li><a href="#installing-powershell">Installing PowerShell</a></li>
+        <li><a href="#opening-powershell">Opening PowerShell</a></li>
+      </ul>
+    </li>
+    <li><a href="#navigating-the-powershell-console">Navigating the PowerShell Console</a>
+      <ul>
+        <li><a href="#understanding-the-powershell-prompt">Understanding the PowerShell prompt</a></li>
+        <li><a href="#basic-navigation-commands-cd-dir-ls">Basic navigation commands (<code>cd</code>, <code>dir</code>, <code>ls</code>)</a></li>
+        <li><a href="#using-wildcards--">Using wildcards (*, ?)</a></li>
+        <li><a href="#getting-help-get-help">Getting help (<code>Get-Help</code>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-cmdlets">Working with Cmdlets</a>
+      <ul>
+        <li><a href="#what-are-cmdlets">What are cmdlets?</a></li>
+        <li><a href="#common-cmdlet-verbs">Common cmdlet verbs</a></li>
+        <li><a href="#cmdlet-parameters-and-syntax">Cmdlet parameters and syntax</a></li>
+        <li><a href="#running-cmdlets">Running cmdlets</a></li>
+        <li><a href="#piping-cmdlets-together">Piping cmdlets together</a></li>
+      </ul>
+    </li>
+    <li><a href="#managing-files-and-folders">Managing Files and Folders</a>
+      <ul>
+        <li><a href="#creating-directories-new-item">Creating directories (<code>New-Item</code>)</a></li>
+        <li><a href="#listing-files-and-folders-get-childitem">Listing files and folders (<code>Get-ChildItem</code>)</a></li>
+        <li><a href="#copying-and-moving-files-copy-item-move-item">Copying and moving files (<code>Copy-Item</code>, <code>Move-Item</code>)</a></li>
+        <li><a href="#deleting-files-and-folders-remove-item">Deleting files and folders (<code>Remove-Item</code>)</a></li>
+        <li><a href="#renaming-files-and-folders-rename-item">Renaming files and folders (<code>Rename-Item</code>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-text">Working with Text</a>
+      <ul>
+        <li><a href="#outputting-text-to-the-console-write-host">Outputting text to the console (<code>Write-Host</code>)</a></li>
+        <li><a href="#reading-text-from-files-get-content">Reading text from files (<code>Get-Content</code>)</a></li>
+        <li><a href="#writing-text-to-files-set-content">Writing text to files (<code>Set-Content</code>)</a></li>
+        <li><a href="#string-manipulation">String manipulation</a></li>
+      </ul>
+    </li>
+    <li><a href="#variables-and-data-types">Variables and Data Types</a>
+      <ul>
+        <li><a href="#declaring-variables">Declaring variables</a></li>
+        <li><a href="#working-with-different-data-types-strings-numbers-booleans">Working with different data types (strings, numbers, booleans)</a></li>
+        <li><a href="#variable-scope">Variable scope</a></li>
+      </ul>
+    </li>
+    <li><a href="#loops-and-conditional-statements">Loops and Conditional Statements</a>
+      <ul>
+        <li><a href="#for-loops">For loops</a></li>
+        <li><a href="#while-loops">While loops</a></li>
+        <li><a href="#if-else-statements">If-else statements</a></li>
+        <li><a href="#switch-statements">Switch statements</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions">Functions</a>
+      <ul>
+        <li><a href="#creating-functions">Creating functions</a></li>
+        <li><a href="#function-parameters">Function parameters</a></li>
+        <li><a href="#returning-values-from-functions">Returning values from functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-objects">Working with Objects</a>
+      <ul>
+        <li><a href="#understanding-powershell-objects">Understanding PowerShell objects</a></li>
+        <li><a href="#selecting-properties-select-object">Selecting properties (<code>Select-Object</code>)</a></li>
+        <li><a href="#filtering-objects-where-object">Filtering objects (<code>Where-Object</code>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#modules-and-aliases">Modules and Aliases</a>
+      <ul>
+        <li><a href="#using-modules">Using modules</a></li>
+        <li><a href="#creating-aliases">Creating aliases</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-techniques">Advanced Techniques</a>
+      <ul>
+        <li><a href="#using-powershell-remoting">Using PowerShell remoting</a></li>
+        <li><a href="#writing-powershell-scripts-ps1-files">Writing PowerShell scripts (.ps1 files)</a></li>
+        <li><a href="#error-handling">Error handling</a></li>
+        <li><a href="#debugging">Debugging</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-powershell">
+  Introduction to PowerShell
+  <a class="anchor" href="#introduction-to-powershell">#</a>
+</h2>
+<h3 class="heading" id="what-is-powershell">
+  What is PowerShell?
+  <a class="anchor" href="#what-is-powershell">#</a>
+</h3>
+<p>PowerShell is a cross-platform task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language. Unlike the older command prompt (cmd.exe), which primarily works with text-based commands, PowerShell uses cmdlets (pronounced &ldquo;command-lets&rdquo;).  Cmdlets are specialized commands that interact with .NET objects, enabling more powerful and flexible scripting. This object-based approach allows for more complex manipulation and automation of system tasks.  PowerShell&rsquo;s scripting language is built on top of the .NET framework (and .NET Core for cross-platform compatibility), allowing access to a vast library of functions and capabilities.</p>
+<h3 class="heading" id="why-use-powershell">
+  Why use PowerShell?
+  <a class="anchor" href="#why-use-powershell">#</a>
+</h3>
+<p>PowerShell offers numerous advantages over traditional command-line interfaces:</p>
+<ul>
+<li><strong>Object-based processing:</strong>  PowerShell manipulates objects, not just text. This makes data processing significantly more efficient and powerful.  You can easily filter, sort, and transform data using built-in cmdlets.</li>
+<li><strong>Unified interface:</strong> It manages various aspects of Windows (and other supported operating systems) through a consistent interface, including file system management, registry manipulation, and Active Directory administration.</li>
+<li><strong>Automation capabilities:</strong> Its scripting language allows for the creation of robust and reusable scripts to automate repetitive tasks, reducing manual effort and improving efficiency.</li>
+<li><strong>Extensive cmdlets:</strong>  A vast library of pre-built cmdlets provides ready-to-use functionality for a wide range of tasks.</li>
+<li><strong>Cross-platform support:</strong> PowerShell is no longer limited to Windows.  It is available on macOS, Linux, and other operating systems, allowing for consistent scripting across diverse environments.</li>
+<li><strong>Extensibility:</strong> You can extend PowerShell&rsquo;s functionality by creating your own cmdlets, functions, and modules.</li>
+</ul>
+<h3 class="heading" id="powershell-vs-command-prompt">
+  PowerShell vs. Command Prompt
+  <a class="anchor" href="#powershell-vs-command-prompt">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>PowerShell</th>
+          <th>Command Prompt (cmd.exe)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Data Handling</strong></td>
+          <td>Object-based</td>
+          <td>Text-based</td>
+      </tr>
+      <tr>
+          <td><strong>Scripting</strong></td>
+          <td>Powerful, flexible scripting language</td>
+          <td>Limited batch scripting capabilities</td>
+      </tr>
+      <tr>
+          <td><strong>Cmdlets</strong></td>
+          <td>Specialized commands interacting with objects</td>
+          <td>Basic internal commands</td>
+      </tr>
+      <tr>
+          <td><strong>Interface</strong></td>
+          <td>More user-friendly, tab completion, etc.</td>
+          <td>Simpler, but less intuitive</td>
+      </tr>
+      <tr>
+          <td><strong>Automation</strong></td>
+          <td>Highly automatable</td>
+          <td>Limited automation capabilities</td>
+      </tr>
+      <tr>
+          <td><strong>Cross-platform</strong></td>
+          <td>Available on Windows, macOS, Linux</td>
+          <td>Primarily Windows</td>
+      </tr>
+  </tbody>
+</table>
+<h3 class="heading" id="installing-powershell">
+  Installing PowerShell
+  <a class="anchor" href="#installing-powershell">#</a>
+</h3>
+<p>PowerShell is included in most modern versions of Windows. However, for older versions or to ensure you have the latest version, including PowerShell 7 for cross-platform compatibility, you need to download and install it.  Check the official Microsoft documentation for the latest installation instructions and download links. The instructions will vary slightly depending on your operating system and whether you&rsquo;re installing PowerShell Core (cross-platform) or Windows PowerShell (Windows-only).</p>
+<h3 class="heading" id="opening-powershell">
+  Opening PowerShell
+  <a class="anchor" href="#opening-powershell">#</a>
+</h3>
+<p>The method for opening PowerShell depends on your operating system:</p>
+<ul>
+<li><strong>Windows:</strong> Search for &ldquo;PowerShell&rdquo; in the Start menu. You&rsquo;ll likely see options like &ldquo;PowerShell&rdquo; (Windows PowerShell), &ldquo;PowerShell ISE&rdquo; (PowerShell Integrated Scripting Environment – a graphical editor), and potentially &ldquo;PowerShell 7&rdquo;.  Right-click the option you want and select &ldquo;Run as administrator&rdquo; if you need elevated privileges.</li>
+<li><strong>macOS and Linux:</strong>  The process will depend on how you installed PowerShell.  Typically, you can open a terminal and type <code>pwsh</code> to launch PowerShell.  You might need to use <code>sudo pwsh</code> for administrative privileges.</li>
+</ul>
+<h2 class="heading" id="navigating-the-powershell-console">
+  Navigating the PowerShell Console
+  <a class="anchor" href="#navigating-the-powershell-console">#</a>
+</h2>
+<h3 class="heading" id="understanding-the-powershell-prompt">
+  Understanding the PowerShell prompt
+  <a class="anchor" href="#understanding-the-powershell-prompt">#</a>
+</h3>
+<p>The PowerShell prompt displays information about your current session.  A typical prompt might look like this:</p>
+<p><code>PS C:\Users\YourUserName&gt;</code></p>
+<p>Let&rsquo;s break it down:</p>
+<ul>
+<li><code>PS</code>:  Indicates that you&rsquo;re in the PowerShell console.</li>
+<li><code>C:\Users\YourUserName</code>: This is your current working directory or path. It shows where PowerShell is currently focused.  This path indicates the location of files and folders that PowerShell will access by default unless you specify a different path.</li>
+<li><code>&gt;</code>: This is the command prompt, indicating that PowerShell is ready to receive your command.</li>
+</ul>
+<h3 class="heading" id="basic-navigation-commands-cd-dir-ls">
+  Basic navigation commands (<code>cd</code>, <code>dir</code>, <code>ls</code>)
+  <a class="anchor" href="#basic-navigation-commands-cd-dir-ls">#</a>
+</h3>
+<p>PowerShell provides several cmdlets for navigating your file system.  These are analogous to the <code>cd</code> (change directory) and <code>dir</code> (directory listing) commands in the command prompt, but with enhanced functionality.  <code>ls</code> is an alias for <code>Get-ChildItem</code> that behaves similarly to <code>dir</code>.</p>
+<ul>
+<li><code>cd &lt;path&gt;</code>: Changes the current working directory to the specified path.  For example, <code>cd C:\Windows</code> changes the directory to the Windows system directory.  <code>cd ..</code> moves up one directory level. <code>cd \</code> moves to the root directory.</li>
+<li><code>dir</code> or <code>Get-ChildItem &lt;path&gt;</code>: Lists the contents of the current directory (or the specified path).  You can use parameters to customize the output, for example <code>dir -File</code> to show only files, or <code>dir | Sort-Object Name</code> to sort the listing by name.  <code>ls</code> is a shorter alias for <code>Get-ChildItem</code>.</li>
+<li><code>ls -recurse</code>: lists all files and folders recursively from the specified path.</li>
+</ul>
+<h3 class="heading" id="using-wildcards--">
+  Using wildcards (*, ?)
+  <a class="anchor" href="#using-wildcards--">#</a>
+</h3>
+<p>Wildcards allow you to specify patterns for file names, making it easier to work with multiple files at once.</p>
+<ul>
+<li><code>*</code>: Matches zero or more characters. For example, <code>dir *.txt</code> lists all files ending with &ldquo;.txt&rdquo;. <code>dir *.*</code> lists all files.</li>
+<li><code>?</code>: Matches a single character. For example, <code>dir file?.txt</code> would list <code>file1.txt</code>, <code>fileA.txt</code>, etc., but not <code>file12.txt</code>.</li>
+</ul>
+<p>These wildcards can be combined to create more complex patterns. For instance, <code>dir report*.txt</code> would list all files starting with &ldquo;report&rdquo; and ending with &ldquo;.txt&rdquo;.</p>
+<h3 class="heading" id="getting-help-get-help">
+  Getting help (<code>Get-Help</code>)
+  <a class="anchor" href="#getting-help-get-help">#</a>
+</h3>
+<p>PowerShell&rsquo;s built-in help system is extremely valuable.  The <code>Get-Help</code> cmdlet provides detailed information about any cmdlet, function, or other element in PowerShell.</p>
+<ul>
+<li><code>Get-Help &lt;cmdlet-name&gt;</code>: Displays comprehensive help for the specified cmdlet.  For example, <code>Get-Help Get-ChildItem</code> provides help on the <code>Get-ChildItem</code> cmdlet.</li>
+<li><code>Get-Help &lt;cmdlet-name&gt; -Examples</code>: Shows examples of how to use the cmdlet.</li>
+<li><code>Get-Help &lt;cmdlet-name&gt; -Detailed</code>: Provides a more detailed explanation, including parameters and their uses.</li>
+<li><code>Get-Help -Name *</code>:  This shows help for every available cmdlet (can take some time to complete).</li>
+</ul>
+<p>Using <code>Get-Help</code> is crucial for learning how to use different cmdlets effectively.  Take advantage of this powerful tool whenever you need assistance with a particular command or concept.</p>
+<h2 class="heading" id="working-with-cmdlets">
+  Working with Cmdlets
+  <a class="anchor" href="#working-with-cmdlets">#</a>
+</h2>
+<h3 class="heading" id="what-are-cmdlets">
+  What are cmdlets?
+  <a class="anchor" href="#what-are-cmdlets">#</a>
+</h3>
+<p>Cmdlets (pronounced &ldquo;command-lets&rdquo;) are the fundamental building blocks of PowerShell. They are specialized commands that perform specific actions, interacting with .NET objects rather than simply manipulating text.  This object-based approach is a key differentiator between PowerShell and older command-line interfaces.  Cmdlets typically follow a verb-noun naming convention (e.g., <code>Get-Process</code>, <code>Set-Location</code>, <code>Remove-Item</code>), making them relatively easy to understand and remember.  They are designed to be chained together using pipes for complex operations.</p>
+<h3 class="heading" id="common-cmdlet-verbs">
+  Common cmdlet verbs
+  <a class="anchor" href="#common-cmdlet-verbs">#</a>
+</h3>
+<p>PowerShell uses a standardized set of verbs at the beginning of cmdlet names. These verbs provide consistency and help predict the function of a cmdlet.  Some of the most common verbs include:</p>
+<ul>
+<li><strong>Get-</strong>: Retrieves data or objects.  (e.g., <code>Get-Process</code>, <code>Get-ChildItem</code>)</li>
+<li><strong>Set-</strong>: Modifies or sets values. (e.g., <code>Set-Location</code>, <code>Set-ItemProperty</code>)</li>
+<li><strong>Add-</strong>: Adds items to a collection. (e.g., <code>Add-Content</code>, <code>Add-Member</code>)</li>
+<li><strong>Remove-</strong>: Deletes or removes items. (e.g., <code>Remove-Item</code>, <code>Remove-Process</code>)</li>
+<li><strong>New-</strong>: Creates new items. (e.g., <code>New-Item</code>, <code>New-Object</code>)</li>
+<li><strong>Import-</strong>: Imports data from a file or source. (e.g., <code>Import-Csv</code>, <code>Import-Module</code>)</li>
+<li><strong>Export-</strong>: Exports data to a file or source. (e.g., <code>Export-Csv</code>, <code>Export-Clixml</code>)</li>
+<li><strong>Start-</strong>: Starts a process or service. (e.g., <code>Start-Process</code>, <code>Start-Service</code>)</li>
+<li><strong>Stop-</strong>: Stops a process or service. (e.g., <code>Stop-Process</code>, <code>Stop-Service</code>)</li>
+</ul>
+<h3 class="heading" id="cmdlet-parameters-and-syntax">
+  Cmdlet parameters and syntax
+  <a class="anchor" href="#cmdlet-parameters-and-syntax">#</a>
+</h3>
+<p>Cmdlets accept parameters that modify their behavior.  Parameters are specified after the cmdlet name using the <code>-ParameterName</code> syntax. For example:</p>
+<p><code>Get-ChildItem -Path C:\Windows -Filter *.txt</code></p>
+<p>In this example:</p>
+<ul>
+<li><code>Get-ChildItem</code>: The cmdlet.</li>
+<li><code>-Path C:\Windows</code>: The <code>-Path</code> parameter specifies the directory to search.</li>
+<li><code>-Filter *.txt</code>: The <code>-Filter</code> parameter specifies that only files ending with &ldquo;.txt&rdquo; should be returned.</li>
+</ul>
+<p>Many cmdlets support positional parameters, meaning you don&rsquo;t always need to specify the parameter name.  The order of positional parameters is defined in the cmdlet&rsquo;s help documentation.</p>
+<h3 class="heading" id="running-cmdlets">
+  Running cmdlets
+  <a class="anchor" href="#running-cmdlets">#</a>
+</h3>
+<p>To run a cmdlet, simply type its name followed by any parameters at the PowerShell prompt and press Enter. For example:</p>
+<p><code>Get-Process</code> (lists all running processes)
+<code>Get-Date</code> (displays the current date and time)
+<code>dir</code> (or <code>Get-ChildItem</code>) (lists the contents of the current directory)</p>
+<p>Remember to use <code>Get-Help &lt;cmdlet-name&gt;</code> to learn about a specific cmdlet&rsquo;s parameters and usage.</p>
+<h3 class="heading" id="piping-cmdlets-together">
+  Piping cmdlets together
+  <a class="anchor" href="#piping-cmdlets-together">#</a>
+</h3>
+<p>PowerShell&rsquo;s piping mechanism (<code>|</code>) allows you to chain cmdlets together, passing the output of one cmdlet as the input to the next.  This enables complex operations to be constructed from simpler building blocks.  For example:</p>
+<p><code>Get-Process | Where-Object {$_.Name -match &quot;chrome&quot;} | Select-Object Name, ID</code></p>
+<p>This command does the following:</p>
+<ol>
+<li><code>Get-Process</code>: Retrieves all running processes.</li>
+<li><code>|</code>: Pipes the output (a collection of process objects) to the next cmdlet.</li>
+<li><code>Where-Object {$_.Name -match &quot;chrome&quot;}</code>: Filters the processes, keeping only those whose name matches &ldquo;chrome&rdquo;.</li>
+<li><code>|</code>: Pipes the filtered processes to the next cmdlet.</li>
+<li><code>Select-Object Name, ID</code>: Selects only the Name and ID properties of the filtered processes.</li>
+</ol>
+<p>Piping is a powerful technique for creating efficient and readable PowerShell scripts.</p>
+<h2 class="heading" id="managing-files-and-folders">
+  Managing Files and Folders
+  <a class="anchor" href="#managing-files-and-folders">#</a>
+</h2>
+<h3 class="heading" id="creating-directories-new-item">
+  Creating directories (<code>New-Item</code>)
+  <a class="anchor" href="#creating-directories-new-item">#</a>
+</h3>
+<p>The <code>New-Item</code> cmdlet is used to create new files and directories. To create a new directory, use the <code>-ItemType Directory</code> parameter. For example:</p>
+<p><code>New-Item -ItemType Directory -Path C:\Users\YourUserName\NewFolder</code></p>
+<p>This command creates a new folder named &ldquo;NewFolder&rdquo; within the specified path.  If the path doesn&rsquo;t exist, it will create the necessary parent directories as well (provided you have sufficient permissions).  You can also create the directory without specifying the type using the <code>mkdir</code> alias.  For example <code>mkdir C:\Users\YourUserName\AnotherFolder</code> achieves the same result.</p>
+<h3 class="heading" id="listing-files-and-folders-get-childitem">
+  Listing files and folders (<code>Get-ChildItem</code>)
+  <a class="anchor" href="#listing-files-and-folders-get-childitem">#</a>
+</h3>
+<p><code>Get-ChildItem</code> (or its alias <code>dir</code> or <code>ls</code>) lists the contents of a directory. It provides detailed information about files and folders, including their names, sizes, creation dates, and more.  Here are some examples:</p>
+<ul>
+<li><code>Get-ChildItem C:\Users\YourUserName\Documents</code>: Lists the contents of the &ldquo;Documents&rdquo; folder.</li>
+<li><code>Get-ChildItem -Path C:\Windows -Filter *.exe</code>: Lists only the executable files (<code>.exe</code>) within the Windows directory.</li>
+<li><code>Get-ChildItem -Recurse C:\Temp</code>: Lists all files and folders within the &ldquo;Temp&rdquo; directory and all its subdirectories.</li>
+<li><code>Get-ChildItem | Sort-Object LastWriteTime</code>: Lists all items in the current directory, sorted by their last write time.</li>
+</ul>
+<h3 class="heading" id="copying-and-moving-files-copy-item-move-item">
+  Copying and moving files (<code>Copy-Item</code>, <code>Move-Item</code>)
+  <a class="anchor" href="#copying-and-moving-files-copy-item-move-item">#</a>
+</h3>
+<p><code>Copy-Item</code> copies files and folders, and <code>Move-Item</code> moves them.  Both accept <code>-Destination</code> and <code>-Path</code> parameters.</p>
+<ul>
+<li><code>Copy-Item -Path C:\source\myfile.txt -Destination C:\destination</code>: Copies <code>myfile.txt</code> from the source to the destination.</li>
+<li><code>Move-Item -Path C:\source\myfile.txt -Destination C:\destination</code>: Moves <code>myfile.txt</code> from the source to the destination.</li>
+<li><code>Copy-Item -Path C:\source\*.* -Destination D:\backup</code>: Copies all files in <code>C:\source</code> to <code>D:\backup</code></li>
+</ul>
+<h3 class="heading" id="deleting-files-and-folders-remove-item">
+  Deleting files and folders (<code>Remove-Item</code>)
+  <a class="anchor" href="#deleting-files-and-folders-remove-item">#</a>
+</h3>
+<p><code>Remove-Item</code> (or its alias <code>rm</code>) deletes files and folders. Use caution with this cmdlet, as deleted items are usually not recoverable easily.  The <code>-Recurse</code> parameter is crucial when deleting folders, ensuring that all subfolders and files are removed.</p>
+<ul>
+<li><code>Remove-Item C:\temp\oldfile.txt</code>: Deletes the specified file.</li>
+<li><code>Remove-Item -Path C:\temp\oldfolder -Recurse -Force</code>: Deletes the specified folder and its contents. The <code>-Force</code> parameter bypasses confirmation prompts.  Use <code>-Force</code> cautiously!</li>
+</ul>
+<h3 class="heading" id="renaming-files-and-folders-rename-item">
+  Renaming files and folders (<code>Rename-Item</code>)
+  <a class="anchor" href="#renaming-files-and-folders-rename-item">#</a>
+</h3>
+<p><code>Rename-Item</code> (or <code>ren</code>) changes the name of files and folders.  It uses the <code>-NewName</code> parameter to specify the new name.</p>
+<ul>
+<li><code>Rename-Item -Path C:\temp\mydocument.txt -NewName report.txt</code>: Renames <code>mydocument.txt</code> to <code>report.txt</code>.</li>
+<li><code>Rename-Item -Path C:\temp\oldfolder -NewName newfolder</code>: Renames the folder &ldquo;oldfolder&rdquo; to &ldquo;newfolder&rdquo;.</li>
+</ul>
+<p>Remember to always use caution when working with commands that modify the file system.  It&rsquo;s a good practice to test these cmdlets with sample files and folders before applying them to critical data.  <code>Get-Help</code> is your friend for detailed parameter information and examples.</p>
+<h2 class="heading" id="working-with-text">
+  Working with Text
+  <a class="anchor" href="#working-with-text">#</a>
+</h2>
+<h3 class="heading" id="outputting-text-to-the-console-write-host">
+  Outputting text to the console (<code>Write-Host</code>)
+  <a class="anchor" href="#outputting-text-to-the-console-write-host">#</a>
+</h3>
+<p>The <code>Write-Host</code> cmdlet sends text directly to the PowerShell console.  It&rsquo;s useful for displaying messages, results, or debugging information.  Unlike other cmdlets that output objects, <code>Write-Host</code> outputs only text, making it unsuitable for further processing within a pipeline.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;The current time is: </span>$(<span style="color:#bb60d5">$date</span>)<span style="color:#4070a0">&#34;</span> <span style="color:#60a0b0;font-style:italic">#Using variable interpolation</span>
+</span></span></code></pre></div><p>The second example uses variable interpolation (<code>$(...)</code>) to embed the value of the <code>$date</code> variable within the output string.</p>
+<h3 class="heading" id="reading-text-from-files-get-content">
+  Reading text from files (<code>Get-Content</code>)
+  <a class="anchor" href="#reading-text-from-files-get-content">#</a>
+</h3>
+<p><code>Get-Content</code> reads the contents of a text file.  It returns the content as an array of strings, with each line of the file represented as a separate string element.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$fileContent</span> = <span style="color:#007020">Get-Content</span> C:\path\to\myfile.txt
+</span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#bb60d5">$fileContent</span> <span style="color:#60a0b0;font-style:italic">#Displays the entire file content</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#bb60d5">$fileContent</span>[<span style="color:#40a070">0</span>] <span style="color:#60a0b0;font-style:italic">#Displays the first line</span>
+</span></span></code></pre></div><p>You can also use <code>Get-Content</code> with parameters to modify its behavior, such as <code>-Raw</code> to read the entire file into a single string instead of an array of lines.</p>
+<h3 class="heading" id="writing-text-to-files-set-content">
+  Writing text to files (<code>Set-Content</code>)
+  <a class="anchor" href="#writing-text-to-files-set-content">#</a>
+</h3>
+<p><code>Set-Content</code> writes text to a file, overwriting any existing content.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#4070a0">&#34;This is some text.&#34;</span> | <span style="color:#007020">Set-Content</span> C:\path\to\myfile.txt
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myText</span> = <span style="color:#4070a0">&#34;This is another line.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myText</span> | <span style="color:#007020">Set-Content</span> -Path C:\path\to\myfile.txt <span style="color:#60a0b0;font-style:italic">#Overwrites previous content</span>
+</span></span></code></pre></div><p>The first example pipes a string directly to <code>Set-Content</code>. The second example uses a variable containing the text.  If the file doesn&rsquo;t exist, <code>Set-Content</code> creates it.  To append text to a file instead of overwriting, use <code>Add-Content</code>.</p>
+<h3 class="heading" id="string-manipulation">
+  String manipulation
+  <a class="anchor" href="#string-manipulation">#</a>
+</h3>
+<p>PowerShell provides several operators and methods for manipulating strings:</p>
+<ul>
+<li><strong>String concatenation:</strong> The <code>+</code> operator concatenates strings.  <code>$string1 = &quot;Hello&quot;; $string2 = &quot; world!&quot;; $combined = $string1 + $string2</code></li>
+<li><strong>Substrings:</strong> The <code>substring</code> method extracts a portion of a string.  <code>$string = &quot;PowerShell&quot;; $substring = $string.Substring(0, 7)</code> (results in &ldquo;PowerSh&rdquo;)</li>
+<li><strong>String length:</strong> The <code>Length</code> property gets the length of a string.  <code>$string = &quot;PowerShell&quot;; $length = $string.Length</code></li>
+<li><strong>String comparison:</strong>  Use operators like <code>-eq</code>, <code>-ne</code>, <code>-contains</code>, <code>-like</code> for string comparisons.  <code>$string -eq &quot;PowerShell&quot;</code></li>
+<li><strong>String methods:</strong> PowerShell strings have numerous methods (e.g., <code>ToUpper()</code>, <code>ToLower()</code>, <code>Replace()</code>, <code>Trim()</code>, <code>Split()</code>).  Experiment with these methods to perform various string operations.  For example <code>$string.ToUpper()</code> converts a string to uppercase. <code>$string.Replace(&quot;Power&quot;,&quot;Super&quot;)</code> replaces &ldquo;Power&rdquo; with &ldquo;Super&rdquo;.  <code>$string.Split(&quot;,&quot;)</code> splits a string based on a comma delimiter.</li>
+</ul>
+<p>Understanding string manipulation is essential for many PowerShell tasks, such as processing log files, parsing data, and creating custom reports.  Use <code>Get-Help about_Operators</code> and <code>Get-Help about_String</code> for more information on PowerShell string operators and methods.</p>
+<h2 class="heading" id="variables-and-data-types">
+  Variables and Data Types
+  <a class="anchor" href="#variables-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="declaring-variables">
+  Declaring variables
+  <a class="anchor" href="#declaring-variables">#</a>
+</h3>
+<p>In PowerShell, you declare variables using the <code>$</code> symbol followed by the variable name.  Variable names are case-insensitive but it&rsquo;s good practice to use consistent capitalization for readability.  You don&rsquo;t need to explicitly declare the data type; PowerShell infers it based on the assigned value.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$myString</span> = <span style="color:#4070a0">&#34;Hello, PowerShell!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myNumber</span> = <span style="color:#40a070">123</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myBoolean</span> = $true
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myDate</span> = <span style="color:#007020">Get-Date</span>
+</span></span></code></pre></div><p>This code declares four variables: a string, an integer, a boolean, and a date.</p>
+<h3 class="heading" id="working-with-different-data-types-strings-numbers-booleans">
+  Working with different data types (strings, numbers, booleans)
+  <a class="anchor" href="#working-with-different-data-types-strings-numbers-booleans">#</a>
+</h3>
+<p>PowerShell supports various data types, including:</p>
+<ul>
+<li><strong>Strings:</strong> Represent text.  Enclosed in double quotes (<code>&quot;&quot;</code>) or single quotes (<code>''</code>).  Double-quoted strings support variable interpolation (embedding variables within strings using <code>$variableName</code>).</li>
+<li><strong>Numbers:</strong> Represent numerical values (integers, floating-point numbers).</li>
+<li><strong>Booleans:</strong> Represent true/false values (<code>$true</code> or <code>$false</code>).</li>
+<li><strong>Arrays:</strong> Ordered collections of values.  Created using <code>@()</code> or comma-separated values within parentheses <code>( )</code>.</li>
+<li><strong>Hashtables:</strong> Unordered collections of key-value pairs.  Created using <code>@{}</code> or <code>[ordered]@{ }</code>.</li>
+<li><strong>Dates:</strong> Represent dates and times.  Often obtained using <code>Get-Date</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Example of different data types and operations</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$string1</span> = <span style="color:#4070a0">&#34;Hello&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$string2</span> = <span style="color:#4070a0">&#34; World&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$combinedString</span> = <span style="color:#bb60d5">$string1</span> + <span style="color:#bb60d5">$string2</span> <span style="color:#60a0b0;font-style:italic">#String concatenation</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$number1</span> = <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$number2</span> = <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$sum</span> = <span style="color:#bb60d5">$number1</span> + <span style="color:#bb60d5">$number2</span> <span style="color:#60a0b0;font-style:italic">#Addition</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$booleanValue</span> = $true
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$booleanValue</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;The value is true&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myArray</span> = @(<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;The third element of the array is: </span>$(<span style="color:#bb60d5">$myArray</span>[<span style="color:#40a070">2</span>])<span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myHashTable</span> = @{Name = <span style="color:#4070a0">&#34;John&#34;</span>; Age = <span style="color:#40a070">30</span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;John&#39;s age is: </span>$(<span style="color:#bb60d5">$myHashTable</span>.Age)<span style="color:#4070a0">&#34;</span>
+</span></span></code></pre></div><h3 class="heading" id="variable-scope">
+  Variable scope
+  <a class="anchor" href="#variable-scope">#</a>
+</h3>
+<p>Variable scope determines where a variable is accessible within a PowerShell script or session.  PowerShell has several scopes:</p>
+<ul>
+<li><strong>Global scope:</strong> Variables declared without any scope modifier are global; accessible from anywhere in the current session.</li>
+<li><strong>Local scope:</strong> Variables declared within a function or script block are local; only accessible within that function or block.</li>
+<li><strong>Script scope:</strong> Variables declared at the top level of a script are script-scoped.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Global scope variable</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$globalVariable</span> = <span style="color:#4070a0">&#34;I&#39;m global!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#007020">MyFunction</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic"># Local scope variable</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$localVariable</span> = <span style="color:#4070a0">&#34;I&#39;m local!&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Inside function: </span><span style="color:#bb60d5">$localVariable</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Inside function: </span><span style="color:#bb60d5">$globalVariable</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>MyFunction
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Outside function: </span><span style="color:#bb60d5">$globalVariable</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#Write-Host &#34;Outside function: $localVariable&#34;  # This will result in an error</span>
+</span></span></code></pre></div><p>Understanding scope is crucial for writing well-structured and maintainable PowerShell scripts to avoid unintended variable overwriting. Using meaningful variable names and appropriate scoping significantly improves code clarity and reduces errors.</p>
+<h2 class="heading" id="loops-and-conditional-statements">
+  Loops and Conditional Statements
+  <a class="anchor" href="#loops-and-conditional-statements">#</a>
+</h2>
+<h3 class="heading" id="for-loops">
+  For loops
+  <a class="anchor" href="#for-loops">#</a>
+</h3>
+<p><code>For</code> loops iterate over a collection of items (array, list, etc.).  There are two main forms:</p>
+<ul>
+<li><strong><code>for</code> loop with a counter:</strong>  Useful when you know the number of iterations in advance.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#bb60d5">$i</span> = <span style="color:#40a070">0</span>; <span style="color:#bb60d5">$i</span> <span style="color:#666">-lt</span> <span style="color:#40a070">5</span>; <span style="color:#bb60d5">$i</span>++) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Iteration: </span><span style="color:#bb60d5">$i</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This loop iterates five times, with <code>$i</code> taking values 0, 1, 2, 3, and 4.  The loop continues as long as <code>$i</code> is less than 5 (<code>-lt</code>).  <code>$i++</code> increments <code>$i</code> by 1 in each iteration.</p>
+<ul>
+<li><strong><code>for</code> loop with <code>in</code>:</strong> Iterates over each element in a collection.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$myArray</span> = <span style="color:#4070a0">&#34;apple&#34;</span>, <span style="color:#4070a0">&#34;banana&#34;</span>, <span style="color:#4070a0">&#34;cherry&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#bb60d5">$fruit</span> <span style="color:#007020;font-weight:bold">in</span> <span style="color:#bb60d5">$myArray</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Fruit: </span><span style="color:#bb60d5">$fruit</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This loop iterates through each element in <code>$myArray</code>, assigning it to the <code>$fruit</code> variable in each iteration.</p>
+<h3 class="heading" id="while-loops">
+  While loops
+  <a class="anchor" href="#while-loops">#</a>
+</h3>
+<p><code>While</code> loops repeat a block of code as long as a specified condition is true.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$count</span> = <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (<span style="color:#bb60d5">$count</span> <span style="color:#666">-lt</span> <span style="color:#40a070">3</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Count: </span><span style="color:#bb60d5">$count</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$count</span>++
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This loop executes three times, incrementing <code>$count</code> until it&rsquo;s no longer less than 3.</p>
+<h3 class="heading" id="if-else-statements">
+  If-else statements
+  <a class="anchor" href="#if-else-statements">#</a>
+</h3>
+<p><code>If-else</code> statements execute different blocks of code based on a condition.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$age</span> = <span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$age</span> <span style="color:#666">-ge</span> <span style="color:#40a070">18</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;You are an adult.&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">elseif</span> (<span style="color:#bb60d5">$age</span> <span style="color:#666">-ge</span> <span style="color:#40a070">13</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;You are a teenager.&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;You are a child.&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This code checks the value of <code>$age</code> and displays a different message based on the result.  <code>-ge</code> represents &ldquo;greater than or equal to&rdquo;.  You can use other comparison operators like <code>-lt</code> (less than), <code>-gt</code> (greater than), <code>-eq</code> (equal to), <code>-ne</code> (not equal to).</p>
+<h3 class="heading" id="switch-statements">
+  Switch statements
+  <a class="anchor" href="#switch-statements">#</a>
+</h3>
+<p><code>Switch</code> statements provide a concise way to handle multiple conditions based on the value of an expression.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$dayOfWeek</span> = <span style="color:#4070a0">&#34;Monday&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">switch</span> (<span style="color:#bb60d5">$dayOfWeek</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Monday&#34;</span> { <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;It&#39;s the start of the work week.&#34;</span> }
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Friday&#34;</span> { <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Almost weekend!&#34;</span> }
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Saturday&#34;</span>, <span style="color:#4070a0">&#34;Sunday&#34;</span> { <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;It&#39;s the weekend!&#34;</span> }
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">default</span> { <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;It&#39;s a weekday.&#34;</span> }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This <code>switch</code> statement checks the value of <code>$dayOfWeek</code> and executes the corresponding block of code. The <code>default</code> block executes if none of the other cases match.  You can use wildcard characters like <code>*</code> within the switch cases to match patterns.</p>
+<p>Mastering loops and conditional statements is fundamental to building powerful and flexible PowerShell scripts.  Remember to use consistent indentation to enhance readability and maintainability of your code.  Use comments liberally to explain the logic within your loops and conditional blocks.</p>
+<h2 class="heading" id="functions">
+  Functions
+  <a class="anchor" href="#functions">#</a>
+</h2>
+<h3 class="heading" id="creating-functions">
+  Creating functions
+  <a class="anchor" href="#creating-functions">#</a>
+</h3>
+<p>Functions are reusable blocks of code that perform specific tasks.  They help organize your scripts, improve readability, and promote code reusability.  You create functions using the <code>function</code> keyword (or the shorthand <code>function &lt;function-name&gt;</code>), followed by a script block (<code>{ }</code>).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#007020">Get-Greeting</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">param</span>(
+</span></span><span style="display:flex;"><span>    [<span style="color:#60add5">string</span>]<span style="color:#bb60d5">$name</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Hello, </span><span style="color:#bb60d5">$name</span><span style="color:#4070a0">!&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">Get-Greeting</span> -name <span style="color:#4070a0">&#34;World&#34;</span> <span style="color:#60a0b0;font-style:italic">#Calling the function</span>
+</span></span></code></pre></div><p>This defines a function named <code>Get-Greeting</code> that takes a string parameter <code>$name</code> and displays a greeting.  The <code>param()</code> block is used to define parameters (explained in the next section).</p>
+<h3 class="heading" id="function-parameters">
+  Function parameters
+  <a class="anchor" href="#function-parameters">#</a>
+</h3>
+<p>Function parameters allow you to pass data into your functions, making them more versatile.  You define parameters within the <code>param()</code> block, specifying the parameter name and optionally its data type.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#007020">Add-Numbers</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">param</span>(
+</span></span><span style="display:flex;"><span>    [<span style="color:#60add5">int</span>]<span style="color:#bb60d5">$number1</span>,
+</span></span><span style="display:flex;"><span>    [<span style="color:#60add5">int</span>]<span style="color:#bb60d5">$number2</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#bb60d5">$number1</span> + <span style="color:#bb60d5">$number2</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$result</span> = <span style="color:#007020">Add-Numbers</span> -number1 <span style="color:#40a070">5</span> -number2 <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;The sum is: </span><span style="color:#bb60d5">$result</span><span style="color:#4070a0">&#34;</span>
+</span></span></code></pre></div><p>This function <code>Add-Numbers</code> takes two integer parameters and returns their sum. Note that the parameter names are optional if you provide the parameter values in the order defined in the function.  For example <code>Add-Numbers 5 10</code> would also work.</p>
+<h3 class="heading" id="returning-values-from-functions">
+  Returning values from functions
+  <a class="anchor" href="#returning-values-from-functions">#</a>
+</h3>
+<p>Functions typically return a value using the <code>return</code> keyword.  The returned value can then be assigned to a variable or used in other parts of your script.  If no <code>return</code> statement is used, the function implicitly returns <code>$null</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#007020">Get-FullName</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">param</span>(
+</span></span><span style="display:flex;"><span>    [<span style="color:#60add5">string</span>]<span style="color:#bb60d5">$firstName</span>,
+</span></span><span style="display:flex;"><span>    [<span style="color:#60add5">string</span>]<span style="color:#bb60d5">$lastName</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$firstName</span><span style="color:#4070a0"> </span><span style="color:#bb60d5">$lastName</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$fullName</span> = <span style="color:#007020">Get-FullName</span> -firstName <span style="color:#4070a0">&#34;John&#34;</span> -lastName <span style="color:#4070a0">&#34;Doe&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Full name: </span><span style="color:#bb60d5">$fullName</span><span style="color:#4070a0">&#34;</span>
+</span></span></code></pre></div><p>The <code>Get-FullName</code> function concatenates the first and last names and returns the result.  The returned value is stored in the <code>$fullName</code> variable.</p>
+<p>Well-designed functions are key to creating maintainable and efficient PowerShell scripts.  They improve code organization, promote reusability, and make your scripts easier to understand and debug.  Use descriptive names for your functions and parameters to improve readability.  Always include comments to explain the purpose and functionality of your functions.</p>
+<h2 class="heading" id="working-with-objects">
+  Working with Objects
+  <a class="anchor" href="#working-with-objects">#</a>
+</h2>
+<h3 class="heading" id="understanding-powershell-objects">
+  Understanding PowerShell objects
+  <a class="anchor" href="#understanding-powershell-objects">#</a>
+</h3>
+<p>PowerShell is fundamentally object-oriented.  Almost everything you work with in PowerShell—from files and processes to registry entries and Active Directory users—is represented as an object.  Each object has properties (data attributes) and methods (actions that can be performed on the object).  Understanding this object model is crucial for effectively using PowerShell.</p>
+<p>When you run a cmdlet like <code>Get-Process</code>, it doesn&rsquo;t just return a list of process names; it returns a collection of <em>process objects</em>. Each object contains properties like <code>Id</code>, <code>Name</code>, <code>CPU</code>, <code>Memory</code>, and more.  You can access these properties to get specific information about each process.</p>
+<h3 class="heading" id="selecting-properties-select-object">
+  Selecting properties (<code>Select-Object</code>)
+  <a class="anchor" href="#selecting-properties-select-object">#</a>
+</h3>
+<p>The <code>Select-Object</code> cmdlet allows you to choose specific properties from a collection of objects.  This is useful for simplifying output and focusing on relevant information.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Get-Process</span> | <span style="color:#007020">Select-Object</span> -Property Name, Id, CPU
+</span></span></code></pre></div><p>This command retrieves all running processes (<code>Get-Process</code>) and then selects only the <code>Name</code>, <code>Id</code>, and <code>CPU</code> properties from each process object, resulting in a more concise output.  You can select multiple properties by separating them with commas.  If you omit <code>-Property</code>, it will return all properties.  The <code>-ExpandProperty</code> parameter can return only a single property as a list of simple values rather than objects.</p>
+<h3 class="heading" id="filtering-objects-where-object">
+  Filtering objects (<code>Where-Object</code>)
+  <a class="anchor" href="#filtering-objects-where-object">#</a>
+</h3>
+<p>The <code>Where-Object</code> cmdlet filters a collection of objects, selecting only those that meet a specified condition.  Conditions are expressed using script blocks (<code>{ }</code>).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Get-Process</span> | <span style="color:#007020">Where-Object</span> {<span style="color:#bb60d5">$_</span>.CPU <span style="color:#666">-gt</span> <span style="color:#40a070">10</span>} | <span style="color:#007020">Select-Object</span> Name, CPU
+</span></span></code></pre></div><p>This command filters the list of running processes, selecting only those consuming more than 10% CPU (<code>$_.CPU -gt 10</code>).  <code>$_.CPU</code> refers to the <code>CPU</code> property of each process object. The <code>Select-Object</code> part is then used to make the output more readable, showing only the process name and its CPU usage.  You can use various comparison operators within the script block (e.g., <code>-lt</code>, <code>-eq</code>, <code>-ne</code>, <code>-like</code>).  <code>-like</code> is particularly useful for pattern matching within strings.</p>
+<p>Combining <code>Select-Object</code> and <code>Where-Object</code> allows you to efficiently extract and manipulate specific data from object collections, a key aspect of PowerShell&rsquo;s power and flexibility.  Mastering these cmdlets is crucial for effective data processing and management within PowerShell.</p>
+<h2 class="heading" id="modules-and-aliases">
+  Modules and Aliases
+  <a class="anchor" href="#modules-and-aliases">#</a>
+</h2>
+<h3 class="heading" id="using-modules">
+  Using modules
+  <a class="anchor" href="#using-modules">#</a>
+</h3>
+<p>PowerShell modules are collections of cmdlets, functions, providers, and variables that extend PowerShell&rsquo;s functionality.  Modules provide a structured way to organize and manage related commands.  To use a module, you need to import it using the <code>Import-Module</code> cmdlet.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Import-Module</span> ActiveDirectory
+</span></span><span style="display:flex;"><span><span style="color:#007020">Get-ADUser</span> -Filter * <span style="color:#60a0b0;font-style:italic">#Now you can use Active Directory cmdlets</span>
+</span></span></code></pre></div><p>This imports the <code>ActiveDirectory</code> module, making its cmdlets (like <code>Get-ADUser</code>) available in your current session.  After importing, you can use the cmdlets provided by that module.  If you try to use a cmdlet from a module that isn&rsquo;t imported, you will get an error.  The location of modules can vary depending on your system configuration. You can check available modules using <code>Get-Module -ListAvailable</code>.</p>
+<p>Once imported, cmdlets from the module are available for use until the session ends. If you need to use the cmdlets in a new session, you must import the module again. You can also specify the path to a module when importing. This is useful if the module is not in a standard location.  For example, if your module is located in <code>C:\MyModules\MyCustomModule.psm1</code>, you would use <code>Import-Module -Name &quot;C:\MyModules\MyCustomModule.psm1&quot;</code>.</p>
+<h3 class="heading" id="creating-aliases">
+  Creating aliases
+  <a class="anchor" href="#creating-aliases">#</a>
+</h3>
+<p>Aliases are shortcuts for cmdlets or functions. They provide a more concise way to type commands, particularly for frequently used ones. You create aliases using the <code>New-Alias</code> cmdlet:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">New-Alias</span> -Name ga -Value <span style="color:#007020">Get-Alias</span>  <span style="color:#60a0b0;font-style:italic"># ga is now an alias for Get-Alias</span>
+</span></span><span style="display:flex;"><span>ga <span style="color:#60a0b0;font-style:italic">#Using the alias</span>
+</span></span></code></pre></div><p>This creates an alias <code>ga</code> for the <code>Get-Alias</code> cmdlet. Now, typing <code>ga</code> is equivalent to typing <code>Get-Alias</code>.  Aliases are session-specific; they are lost when the PowerShell session ends.  PowerShell has many built-in aliases, such as <code>dir</code> (for <code>Get-ChildItem</code>) and <code>ls</code> (also for <code>Get-ChildItem</code>).  You can list existing aliases with <code>Get-Alias</code>.  To remove an alias, use <code>Remove-Alias -Name &lt;alias-name&gt;</code>.</p>
+<p>Using aliases and modules is crucial for managing and expanding your PowerShell capabilities.  They streamline your commands, making them more efficient to use and more readable.  Organize your scripts and cmdlets effectively using modules.  Use aliases judiciously to create shorter, more memorable command names without sacrificing clarity.</p>
+<h2 class="heading" id="advanced-techniques">
+  Advanced Techniques
+  <a class="anchor" href="#advanced-techniques">#</a>
+</h2>
+<h3 class="heading" id="using-powershell-remoting">
+  Using PowerShell remoting
+  <a class="anchor" href="#using-powershell-remoting">#</a>
+</h3>
+<p>PowerShell Remoting allows you to run PowerShell commands on remote computers.  It&rsquo;s a powerful feature for managing multiple systems and automating tasks across a network.  To enable remoting, you first need to configure the target computer(s) to accept remote connections.  This typically involves running the <code>Enable-PSRemoting</code> cmdlet on the remote machine.  You&rsquo;ll likely need administrative privileges on the remote machine to do this.  The remote machine will also require a firewall exception to permit the necessary network traffic for PowerShell remoting.</p>
+<p>Once remoting is enabled, you can connect to remote computers using the <code>Invoke-Command</code> cmdlet.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Invoke-Command</span> -ComputerName remotecomputer -ScriptBlock {<span style="color:#007020">Get-Process</span>}
+</span></span></code></pre></div><p>This runs the <code>Get-Process</code> cmdlet on the computer named &ldquo;remotecomputer&rdquo; and displays the results on your local machine.  <code>-ScriptBlock</code> specifies the command to be executed remotely.   You can use other parameters such as <code>-Credential</code> to specify credentials if you don&rsquo;t have access to the remote machine with your current credentials.  For increased security, consider using certificates for authentication instead of simple passwords.</p>
+<p>PowerShell Remoting is crucial for managing and automating tasks across multiple computers. Securely configuring remoting and understanding its capabilities is key to successfully administrating networks and automating complex IT operations.  Explore the various parameters of <code>Invoke-Command</code> for greater control and flexibility in your remote management.</p>
+<h3 class="heading" id="writing-powershell-scripts-ps1-files">
+  Writing PowerShell scripts (.ps1 files)
+  <a class="anchor" href="#writing-powershell-scripts-ps1-files">#</a>
+</h3>
+<p>PowerShell scripts are saved as <code>.ps1</code> files.  These files contain a sequence of PowerShell commands that can be executed as a single unit.  This is essential for automating complex tasks and creating reusable tools.</p>
+<p>Create a simple script (e.g., <code>myScript.ps1</code>):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># This script displays a greeting.</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Hello from my script!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">Get-ChildItem</span> C:\temp
+</span></span></code></pre></div><p>To execute the script:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>.\myScript.ps1
+</span></span></code></pre></div><p>The <code>.\</code> is crucial; it tells PowerShell to execute the script from the current directory.  Without it, PowerShell might try to find and run an executable file (which might not be safe!).  Scripts can contain variables, functions, loops, and other PowerShell constructs to create more sophisticated automation.  You can run PowerShell scripts from the command line, scheduled tasks, or even integrate them into other applications.  Always test your scripts thoroughly before deploying them to a production environment.</p>
+<h3 class="heading" id="error-handling">
+  Error handling
+  <a class="anchor" href="#error-handling">#</a>
+</h3>
+<p>Robust scripts include error handling to gracefully manage unexpected situations.  The <code>try-catch</code> statement is used for this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">try</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic"># Code that might throw an error</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Get-Content</span> C:\path\to\nonexistentfile.txt
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">catch</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Error</span> <span style="color:#4070a0">&#34;Error: File not found or other issue </span><span style="color:#bb60d5">$_</span><span style="color:#4070a0">&#34;</span> <span style="color:#60a0b0;font-style:italic">#$_ contains the error message</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">finally</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;This always executes.&#34;</span> <span style="color:#60a0b0;font-style:italic">#Cleanup actions could be here</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>try</code> block contains the code that might generate an error.  If an error occurs, the <code>catch</code> block is executed.  The <code>finally</code> block (optional) executes regardless of whether an error occurred.</p>
+<h3 class="heading" id="debugging">
+  Debugging
+  <a class="anchor" href="#debugging">#</a>
+</h3>
+<p>Debugging is essential for identifying and fixing errors in your scripts.  PowerShell provides several debugging tools:</p>
+<ul>
+<li><strong><code>Set-PSDebug -Step</code>:</strong> Enables step-by-step debugging.  PowerShell will pause before executing each line, allowing you to examine variables and trace execution flow.</li>
+<li><strong>Breakpoints:</strong> You can set breakpoints in your scripts using <code>Set-PSBreakpoint</code>.  This causes execution to pause at a specific line.</li>
+<li><strong><code>Get-Variable</code>:</strong> Displays the values of variables at a breakpoint.</li>
+</ul>
+<p>Debugging is a critical skill for developing reliable and robust PowerShell scripts. Utilize these tools to inspect variable values, trace execution flow, and understand the root cause of any error encountered within your scripts.  Regular testing and the effective use of debugging techniques are vital for producing high-quality, error-free PowerShell code.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-assembly/">
+                        Beginner&#39;s Guide to Assembly
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-haskell/">
+                        Beginner&#39;s Guide to Haskell
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

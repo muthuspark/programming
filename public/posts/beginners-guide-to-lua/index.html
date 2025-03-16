@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Lua | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-lua/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-lua/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Lua">
+  <meta property="og:description" content="Introduction to Lua # What is Lua? # Lua is a powerful, lightweight, and embeddable scripting language. Its design emphasizes simplicity, efficiency, and ease of use. It’s often used to extend the functionality of applications, games, and other software, but it’s also perfectly capable of standing on its own as a general-purpose scripting language. Lua’s syntax is relatively straightforward and easy to learn, making it accessible to both beginners and experienced programmers. Its small footprint means it can be readily integrated into resource-constrained environments.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-02T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-lua/">Beginner&#39;s Guide to Lua</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Lua</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-03-02T00:00:00&#43;00:00">March 2, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      17 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-lua">Introduction to Lua</a>
+      <ul>
+        <li><a href="#what-is-lua">What is Lua?</a></li>
+        <li><a href="#why-learn-lua">Why Learn Lua?</a></li>
+        <li><a href="#setting-up-your-lua-environment">Setting up your Lua environment</a></li>
+        <li><a href="#running-your-first-lua-script">Running your first Lua script</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#variables-and-data-types-numbers-strings-booleans">Variables and Data Types (Numbers, Strings, Booleans)</a></li>
+        <li><a href="#operators-arithmetic-comparison-logical">Operators (Arithmetic, Comparison, Logical)</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#basic-input-and-output">Basic Input and Output</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-structures">Control Structures</a>
+      <ul>
+        <li><a href="#conditional-statements-if-else-elseif">Conditional Statements (if, else, elseif)</a></li>
+        <li><a href="#loops-for-while-repeat-until">Loops (for, while, repeat-until)</a></li>
+      </ul>
+    </li>
+    <li><a href="#tables">Tables</a>
+      <ul>
+        <li><a href="#creating-and-accessing-tables">Creating and Accessing Tables</a></li>
+        <li><a href="#table-iterators">Table Iterators</a></li>
+        <li><a href="#using-tables-as-arrays-and-dictionaries">Using Tables as Arrays and Dictionaries</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions">Functions</a>
+      <ul>
+        <li><a href="#defining-functions">Defining Functions</a></li>
+        <li><a href="#function-arguments-and-return-values">Function Arguments and Return Values</a></li>
+        <li><a href="#anonymous-functions-closures">Anonymous Functions (Closures)</a></li>
+        <li><a href="#variadic-functions">Variadic Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#modules-and-packages">Modules and Packages</a>
+      <ul>
+        <li><a href="#creating-modules">Creating Modules</a></li>
+        <li><a href="#requiring-modules">Requiring Modules</a></li>
+        <li><a href="#packages-and-paths">Packages and Paths</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-files">Working with Files</a>
+      <ul>
+        <li><a href="#reading-from-files">Reading from Files</a></li>
+        <li><a href="#writing-to-files">Writing to Files</a></li>
+      </ul>
+    </li>
+    <li><a href="#error-handling">Error Handling</a>
+      <ul>
+        <li><a href="#catching-errors-with-pcall-and-xpcall">Catching Errors with <code>pcall</code> and <code>xpcall</code></a></li>
+        <li><a href="#debugging-lua-code">Debugging Lua Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics-optional">Advanced Topics (Optional)</a>
+      <ul>
+        <li><a href="#metatables-and-metamethods">Metatables and Metamethods</a></li>
+        <li><a href="#coroutines">Coroutines</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-lua">
+  Introduction to Lua
+  <a class="anchor" href="#introduction-to-lua">#</a>
+</h2>
+<h3 class="heading" id="what-is-lua">
+  What is Lua?
+  <a class="anchor" href="#what-is-lua">#</a>
+</h3>
+<p>Lua is a powerful, lightweight, and embeddable scripting language.  Its design emphasizes simplicity, efficiency, and ease of use.  It&rsquo;s often used to extend the functionality of applications, games, and other software, but it&rsquo;s also perfectly capable of standing on its own as a general-purpose scripting language. Lua&rsquo;s syntax is relatively straightforward and easy to learn, making it accessible to both beginners and experienced programmers.  Its small footprint means it can be readily integrated into resource-constrained environments.</p>
+<h3 class="heading" id="why-learn-lua">
+  Why Learn Lua?
+  <a class="anchor" href="#why-learn-lua">#</a>
+</h3>
+<p>Learning Lua offers several benefits:</p>
+<ul>
+<li><strong>Easy to learn:</strong> Lua&rsquo;s syntax is clean and concise, making it relatively quick to pick up, even for those new to programming.</li>
+<li><strong>Versatile:</strong>  It can be used for a wide variety of tasks, from simple scripting to complex game development and data manipulation.</li>
+<li><strong>Embeddable:</strong> Lua&rsquo;s small size and efficient design make it ideal for embedding within other applications.  This allows you to add scripting capabilities to existing software without significant overhead.</li>
+<li><strong>Large Community:</strong> Lua has a supportive and active community, providing ample resources, libraries, and assistance.</li>
+<li><strong>Good Performance:</strong> Lua is known for its speed and efficiency, making it suitable for performance-critical applications.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-lua-environment">
+  Setting up your Lua environment
+  <a class="anchor" href="#setting-up-your-lua-environment">#</a>
+</h3>
+<p>To begin working with Lua, you&rsquo;ll need a Lua interpreter.  The simplest way is to download the official Lua distribution from the Lua website (<a href="https://www.lua.org/">https://www.lua.org/</a>).  This provides a command-line interpreter and necessary libraries.  Download the appropriate version for your operating system (Windows, macOS, Linux, etc.).</p>
+<p>After downloading, extract the archive to a suitable location.  The directory will contain the <code>lua</code> executable (or similar, depending on your operating system).  You can then run the interpreter from your command line or terminal by navigating to that directory and typing <code>lua</code> (or <code>lua.exe</code> on Windows).  This will open an interactive Lua prompt where you can type and execute Lua code directly.</p>
+<p>Alternatively, various Integrated Development Environments (IDEs) offer excellent support for Lua development.  These often provide features like syntax highlighting, debugging tools, and code completion, significantly enhancing your development experience.  Popular choices include ZeroBrane Studio and VS Code with the appropriate Lua extensions.</p>
+<h3 class="heading" id="running-your-first-lua-script">
+  Running your first Lua script
+  <a class="anchor" href="#running-your-first-lua-script">#</a>
+</h3>
+<p>Once you have the Lua interpreter set up, create a new text file (e.g., <code>hello.lua</code>) and add the following code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;Hello, world!&#34;</span>)
+</span></span></code></pre></div><p>Save the file.  To run this script, open your command line or terminal, navigate to the directory where you saved <code>hello.lua</code>, and type <code>lua hello.lua</code> (or <code>lua.exe hello.lua</code> on Windows).  Press Enter.  You should see the message &ldquo;Hello, world!&rdquo; printed to the console. This simple program demonstrates the basic structure of a Lua script and the use of the <code>print</code> function to display output.  Congratulations, you&rsquo;ve run your first Lua program!</p>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="variables-and-data-types-numbers-strings-booleans">
+  Variables and Data Types (Numbers, Strings, Booleans)
+  <a class="anchor" href="#variables-and-data-types-numbers-strings-booleans">#</a>
+</h3>
+<p>Lua is dynamically typed, meaning you don&rsquo;t explicitly declare the type of a variable.  The type is determined at runtime.  Lua&rsquo;s primary data types include:</p>
+<ul>
+<li><strong>Numbers:</strong> Lua handles both integers and floating-point numbers seamlessly.  There&rsquo;s no distinction between the two types.</li>
+<li><strong>Strings:</strong> Strings are sequences of characters enclosed in double quotes (<code>&quot;</code>) or single quotes (<code>'</code>).  Both work identically.  You can use escape sequences within strings (e.g., <code>\n</code> for newline).</li>
+<li><strong>Booleans:</strong> Lua uses the keywords <code>true</code> and <code>false</code> to represent boolean values.</li>
+</ul>
+<p>Variable assignment is done using the <code>=</code> operator.  For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#40a070">10</span>          <span style="color:#60a0b0;font-style:italic">-- Number</span>
+</span></span><span style="display:flex;"><span>name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Lua&#34;</span>    <span style="color:#60a0b0;font-style:italic">-- String</span>
+</span></span><span style="display:flex;"><span>is_active <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span> <span style="color:#60a0b0;font-style:italic">-- Boolean</span>
+</span></span></code></pre></div><p>You can also declare multiple variables on a single line:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>a, b, c <span style="color:#666">=</span> <span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>
+</span></span></code></pre></div><h3 class="heading" id="operators-arithmetic-comparison-logical">
+  Operators (Arithmetic, Comparison, Logical)
+  <a class="anchor" href="#operators-arithmetic-comparison-logical">#</a>
+</h3>
+<p>Lua supports a standard set of operators:</p>
+<ul>
+<li><strong>Arithmetic Operators:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>^</code> (exponentiation), <code>%</code> (modulo)</li>
+<li><strong>Comparison Operators:</strong> <code>==</code> (equal to), <code>~=</code> (not equal to), <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></li>
+<li><strong>Logical Operators:</strong> <code>and</code>, <code>or</code>, <code>not</code></li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>result <span style="color:#666">=</span> <span style="color:#40a070">10</span> <span style="color:#666">+</span> <span style="color:#40a070">5</span> <span style="color:#666">*</span> <span style="color:#40a070">2</span>  <span style="color:#60a0b0;font-style:italic">-- Arithmetic</span>
+</span></span><span style="display:flex;"><span>equal <span style="color:#666">=</span> (a <span style="color:#666">==</span> b)     <span style="color:#60a0b0;font-style:italic">-- Comparison</span>
+</span></span><span style="display:flex;"><span>is_true <span style="color:#666">=</span> (a <span style="color:#666">&gt;</span> <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">and</span> b <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>) <span style="color:#60a0b0;font-style:italic">-- Logical</span>
+</span></span></code></pre></div><h3 class="heading" id="comments">
+  Comments
+  <a class="anchor" href="#comments">#</a>
+</h3>
+<p>Comments in Lua are used to explain the code and improve readability.  There are two types:</p>
+<ul>
+<li><strong>Single-line comments:</strong> Begin with <code>--</code> and extend to the end of the line.</li>
+<li><strong>Multi-line comments:</strong> Enclose text within <code>--[[</code> and <code>]]</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- This is a single-line comment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">--[[
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">This is a
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">multi-line comment
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">]]</span>
+</span></span></code></pre></div><h3 class="heading" id="basic-input-and-output">
+  Basic Input and Output
+  <a class="anchor" href="#basic-input-and-output">#</a>
+</h3>
+<p>The primary function for outputting data to the console is <code>print()</code>.  It can accept multiple arguments, separated by commas:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;The value of x is:&#34;</span>, x)
+</span></span></code></pre></div><p>For basic input, Lua provides the <code>io.read()</code> function. This function typically reads a single line from the console:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>name <span style="color:#666">=</span> io.read()
+</span></span><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;Hello, &#34;</span> <span style="color:#666">..</span> name <span style="color:#666">..</span> <span style="color:#4070a0">&#34;!&#34;</span>)  <span style="color:#60a0b0;font-style:italic">-- String concatenation using &#34;..&#34;</span>
+</span></span></code></pre></div><p>Note that <code>io.read()</code> will wait for the user to type something and press Enter before proceeding.  More sophisticated input methods are available using modules like <code>io</code> for file input/output or other libraries for more interactive input.</p>
+<h2 class="heading" id="control-structures">
+  Control Structures
+  <a class="anchor" href="#control-structures">#</a>
+</h2>
+<h3 class="heading" id="conditional-statements-if-else-elseif">
+  Conditional Statements (if, else, elseif)
+  <a class="anchor" href="#conditional-statements-if-else-elseif">#</a>
+</h3>
+<p>Lua provides <code>if</code>, <code>else</code>, and <code>elseif</code> statements for controlling the flow of execution based on conditions.  The syntax is straightforward:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> condition1 <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute if condition1 is true</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">elseif</span> condition2 <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute if condition2 is true</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute if none of the above conditions are true</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><p>Conditions are boolean expressions that evaluate to <code>true</code> or <code>false</code>.  For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> x <span style="color:#666">&gt;</span> <span style="color:#40a070">5</span> <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;x is greater than 5&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">elseif</span> x <span style="color:#666">==</span> <span style="color:#40a070">5</span> <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;x is equal to 5&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;x is less than 5&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><p>Note that the <code>elseif</code> part is optional, and you can have multiple <code>elseif</code> blocks.  The <code>else</code> block is also optional; if omitted, nothing happens if none of the conditions are met.</p>
+<h3 class="heading" id="loops-for-while-repeat-until">
+  Loops (for, while, repeat-until)
+  <a class="anchor" href="#loops-for-while-repeat-until">#</a>
+</h3>
+<p>Lua offers several types of loops to repeat blocks of code:</p>
+<ul>
+<li>
+<p><strong><code>for</code> loop (numeric):</strong> This loop iterates a specific number of times.  It has two forms:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Form 1:  Iterates from start to end, incrementing by step</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#666">=</span> start, <span style="color:#007020;font-weight:bold">end</span>, step <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute in each iteration</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Form 2:  Iterates over a set of values</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i, value <span style="color:#007020;font-weight:bold">in</span> ipairs(my_table) <span style="color:#007020;font-weight:bold">do</span>  <span style="color:#60a0b0;font-style:italic">-- Requires understanding of tables (covered later)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute for each element in my_table</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><p>Example of Form 1:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#666">=</span> <span style="color:#40a070">1</span>, <span style="color:#40a070">10</span>, <span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">do</span>  <span style="color:#60a0b0;font-style:italic">-- Iterates 1, 3, 5, 7, 9</span>
+</span></span><span style="display:flex;"><span>  print(i)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong><code>while</code> loop:</strong> This loop repeats as long as a condition is true.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> condition <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute while condition is true</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>count <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> count <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span> <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  print(count)
+</span></span><span style="display:flex;"><span>  count <span style="color:#666">=</span> count <span style="color:#666">+</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong><code>repeat-until</code> loop:</strong> This loop executes the code block at least once, and then repeats as long as a condition is false.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">repeat</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">until</span> condition
+</span></span></code></pre></div><p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>count <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">repeat</span>
+</span></span><span style="display:flex;"><span>  print(count)
+</span></span><span style="display:flex;"><span>  count <span style="color:#666">=</span> count <span style="color:#666">+</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">until</span> count <span style="color:#666">&gt;</span> <span style="color:#40a070">5</span>
+</span></span></code></pre></div><p>Remember to carefully design your loop conditions to avoid infinite loops.  In <code>while</code> and <code>repeat-until</code> loops, ensure the condition eventually becomes false to terminate the loop.  In <code>for</code> loops (Form 1), ensure <code>step</code> is not zero to avoid infinite loops and that <code>end</code> eventually exceeds <code>start</code>.</p>
+</li>
+</ul>
+<h2 class="heading" id="tables">
+  Tables
+  <a class="anchor" href="#tables">#</a>
+</h2>
+<h3 class="heading" id="creating-and-accessing-tables">
+  Creating and Accessing Tables
+  <a class="anchor" href="#creating-and-accessing-tables">#</a>
+</h3>
+<p>Tables in Lua are the primary data structure.  They&rsquo;re associative arrays, meaning they can store key-value pairs.  Keys can be any Lua value, while values can be any Lua value.  Tables are created using curly braces <code>{}</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Creating an empty table</span>
+</span></span><span style="display:flex;"><span>empty_table <span style="color:#666">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Creating a table with some key-value pairs</span>
+</span></span><span style="display:flex;"><span>my_table <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;John Doe&#34;</span>,
+</span></span><span style="display:flex;"><span>  age <span style="color:#666">=</span> <span style="color:#40a070">30</span>,
+</span></span><span style="display:flex;"><span>  city <span style="color:#666">=</span> <span style="color:#4070a0">&#34;New York&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Accessing table values using keys</span>
+</span></span><span style="display:flex;"><span>print(my_table.name)       <span style="color:#60a0b0;font-style:italic">-- Accessing using dot notation</span>
+</span></span><span style="display:flex;"><span>print(my_table[<span style="color:#4070a0">&#34;age&#34;</span>])     <span style="color:#60a0b0;font-style:italic">-- Accessing using bracket notation (can handle keys with spaces or special characters)</span>
+</span></span></code></pre></div><p>Both dot notation and bracket notation achieve the same result for simple keys that are valid identifiers (alphanumeric, starting with a letter or underscore).  Bracket notation is necessary when keys are not valid identifiers or are calculated values.</p>
+<h3 class="heading" id="table-iterators">
+  Table Iterators
+  <a class="anchor" href="#table-iterators">#</a>
+</h3>
+<p>Iterators allow you to traverse through the elements of a table. Lua provides <code>pairs()</code> and <code>ipairs()</code> for this purpose.</p>
+<ul>
+<li>
+<p><strong><code>pairs()</code>:</strong> This iterator goes through all key-value pairs in a table, regardless of their order.  It&rsquo;s suitable for tables used as dictionaries.</p>
+</li>
+<li>
+<p><strong><code>ipairs()</code>:</strong> This iterator goes through the elements of a table in numerical order (1, 2, 3,&hellip;), starting from index 1. It&rsquo;s best suited for tables used as arrays where keys are sequential integers. If the table doesn&rsquo;t have sequential integer keys starting from 1, <code>ipairs()</code> will stop when it encounters a non-sequential key.</p>
+</li>
+</ul>
+<p>Example using <code>pairs()</code> and <code>ipairs()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>my_table <span style="color:#666">=</span> {name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>, age <span style="color:#666">=</span> <span style="color:#40a070">25</span>, city <span style="color:#666">=</span> <span style="color:#4070a0">&#34;London&#34;</span>}
+</span></span><span style="display:flex;"><span>array_table <span style="color:#666">=</span> {<span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>, <span style="color:#40a070">30</span>, <span style="color:#40a070">40</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Iterating with pairs()</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> key, value <span style="color:#007020;font-weight:bold">in</span> pairs(my_table) <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  print(key <span style="color:#666">..</span> <span style="color:#4070a0">&#34;: &#34;</span> <span style="color:#666">..</span> value)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Iterating with ipairs()</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i, value <span style="color:#007020;font-weight:bold">in</span> ipairs(array_table) <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  print(i <span style="color:#666">..</span> <span style="color:#4070a0">&#34;: &#34;</span> <span style="color:#666">..</span> value)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- ipairs will stop at the first non-sequential key:</span>
+</span></span><span style="display:flex;"><span>mixed_table <span style="color:#666">=</span> {<span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>, foo <span style="color:#666">=</span> <span style="color:#4070a0">&#34;bar&#34;</span>, <span style="color:#40a070">40</span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i, value <span style="color:#007020;font-weight:bold">in</span> ipairs(mixed_table) <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  print(i <span style="color:#666">..</span> <span style="color:#4070a0">&#34;: &#34;</span> <span style="color:#666">..</span> value)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><h3 class="heading" id="using-tables-as-arrays-and-dictionaries">
+  Using Tables as Arrays and Dictionaries
+  <a class="anchor" href="#using-tables-as-arrays-and-dictionaries">#</a>
+</h3>
+<p>Tables in Lua are versatile and can be used to represent both arrays and dictionaries:</p>
+<ul>
+<li><strong>Arrays:</strong>  When used as arrays, table keys are sequential integers (1, 2, 3,&hellip;).  You can create arrays directly or by adding elements to a table using numerical indexes.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Array creation</span>
+</span></span><span style="display:flex;"><span>my_array <span style="color:#666">=</span> {<span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>, <span style="color:#40a070">30</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Accessing array elements</span>
+</span></span><span style="display:flex;"><span>print(my_array[<span style="color:#40a070">1</span>]) <span style="color:#60a0b0;font-style:italic">-- Accesses the first element (10)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Adding elements to an array</span>
+</span></span><span style="display:flex;"><span>my_array[<span style="color:#40a070">4</span>] <span style="color:#666">=</span> <span style="color:#40a070">40</span>  <span style="color:#60a0b0;font-style:italic">-- Appends 40 to the array</span>
+</span></span></code></pre></div><ul>
+<li><strong>Dictionaries:</strong>  When used as dictionaries, tables store data using arbitrary keys (strings, numbers, etc.). Keys act as labels or identifiers for the corresponding values.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Dictionary creation</span>
+</span></span><span style="display:flex;"><span>my_dictionary <span style="color:#666">=</span> {name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Bob&#34;</span>, age <span style="color:#666">=</span> <span style="color:#40a070">40</span>, city <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Paris&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Accessing dictionary values</span>
+</span></span><span style="display:flex;"><span>print(my_dictionary.name) <span style="color:#60a0b0;font-style:italic">-- Accesses the value associated with the key &#34;name&#34;</span>
+</span></span></code></pre></div><p>A single table can even combine array-like and dictionary-like usage.  However, for large arrays it is generally more efficient to explicitly utilize sequential integer keys, allowing <code>ipairs</code> to be used. Using <code>pairs</code> on such structures would be far slower for large tables.</p>
+<h2 class="heading" id="functions">
+  Functions
+  <a class="anchor" href="#functions">#</a>
+</h2>
+<h3 class="heading" id="defining-functions">
+  Defining Functions
+  <a class="anchor" href="#defining-functions">#</a>
+</h3>
+<p>Functions in Lua are defined using the <code>function</code> keyword.  They can accept arguments and return values.  The basic syntax is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">function_name</span>(argument1, argument2, ...)
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Function body: code to be executed</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> value1, value2, ...
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">add</span>(a, b)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">+</span> b
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>result <span style="color:#666">=</span> add(<span style="color:#40a070">5</span>, <span style="color:#40a070">3</span>)  <span style="color:#60a0b0;font-style:italic">-- Call the function</span>
+</span></span><span style="display:flex;"><span>print(result)      <span style="color:#60a0b0;font-style:italic">-- Output: 8</span>
+</span></span></code></pre></div><p>Lua functions are first-class citizens, meaning they can be passed as arguments to other functions, returned from functions, and stored in variables.</p>
+<h3 class="heading" id="function-arguments-and-return-values">
+  Function Arguments and Return Values
+  <a class="anchor" href="#function-arguments-and-return-values">#</a>
+</h3>
+<p>Functions can accept zero or more arguments.  Arguments are passed by value (except for tables, which are passed by reference).  A function can return zero or more values.  If no <code>return</code> statement is specified, the function implicitly returns <code>nil</code>.</p>
+<p>Example with multiple return values:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">get_coordinates</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x, y <span style="color:#666">=</span> get_coordinates()
+</span></span><span style="display:flex;"><span>print(x, y) <span style="color:#60a0b0;font-style:italic">-- Output: 10 20</span>
+</span></span></code></pre></div><h3 class="heading" id="anonymous-functions-closures">
+  Anonymous Functions (Closures)
+  <a class="anchor" href="#anonymous-functions-closures">#</a>
+</h3>
+<p>Anonymous functions are functions that are not named.  They are often used as arguments to other functions or created on the fly.  In Lua, they&rsquo;re defined using the <code>function</code> keyword without a name:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> doubler <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">function</span>(x)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> x <span style="color:#666">*</span> <span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(doubler(<span style="color:#40a070">5</span>)) <span style="color:#60a0b0;font-style:italic">-- Output: 10</span>
+</span></span></code></pre></div><p>Anonymous functions can access variables from their surrounding scope (lexical scoping), creating closures. A closure &ldquo;closes over&rdquo; variables from its enclosing environment.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">create_counter</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">local</span> count <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">function</span>()
+</span></span><span style="display:flex;"><span>    count <span style="color:#666">=</span> count <span style="color:#666">+</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> count
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>counter <span style="color:#666">=</span> create_counter()
+</span></span><span style="display:flex;"><span>print(counter()) <span style="color:#60a0b0;font-style:italic">-- Output: 1</span>
+</span></span><span style="display:flex;"><span>print(counter()) <span style="color:#60a0b0;font-style:italic">-- Output: 2</span>
+</span></span><span style="display:flex;"><span>print(counter()) <span style="color:#60a0b0;font-style:italic">-- Output: 3</span>
+</span></span></code></pre></div><p>Here, <code>create_counter()</code> returns an anonymous function (the inner function) that maintains its own private <code>count</code> variable (even after <code>create_counter()</code> has finished executing), demonstrating closure behavior.</p>
+<h3 class="heading" id="variadic-functions">
+  Variadic Functions
+  <a class="anchor" href="#variadic-functions">#</a>
+</h3>
+<p>Variadic functions can accept a variable number of arguments.  This is achieved using the three dots (<code>...</code>) as the last parameter:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">sum</span>(...)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">local</span> total <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">for</span> i, v <span style="color:#007020;font-weight:bold">in</span> ipairs{...} <span style="color:#007020;font-weight:bold">do</span>  <span style="color:#60a0b0;font-style:italic">-- The three dots unpack the arguments into an array</span>
+</span></span><span style="display:flex;"><span>    total <span style="color:#666">=</span> total <span style="color:#666">+</span> v
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> total
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(sum(<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>)) <span style="color:#60a0b0;font-style:italic">-- Output: 15</span>
+</span></span></code></pre></div><p>The <code>...</code> parameter gathers all the arguments passed to the function into a list that can be iterated using <code>ipairs</code>.  You can access individual arguments using indexing (<code>select('#', ...)</code> gives the number of arguments and <code>select(i, ...)</code> gives the i-th argument).</p>
+<h2 class="heading" id="modules-and-packages">
+  Modules and Packages
+  <a class="anchor" href="#modules-and-packages">#</a>
+</h2>
+<h3 class="heading" id="creating-modules">
+  Creating Modules
+  <a class="anchor" href="#creating-modules">#</a>
+</h3>
+<p>Modules in Lua provide a way to organize code into reusable units.  A module is simply a Lua file that defines functions, variables, and other entities.  To create a module, write your Lua code in a file (e.g., <code>mymodule.lua</code>) and then use the <code>return</code> statement to export the elements you want to make available to other parts of your program.</p>
+<p>Example: <code>mymodule.lua</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> my_variable <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello from module&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">my_function</span>(x)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> x <span style="color:#666">*</span> <span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">return</span> {
+</span></span><span style="display:flex;"><span>  my_variable <span style="color:#666">=</span> my_variable,
+</span></span><span style="display:flex;"><span>  my_function <span style="color:#666">=</span> my_function
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>return</code> statement creates a table containing the elements to be exported.  This table is then made available when the module is required.</p>
+<h3 class="heading" id="requiring-modules">
+  Requiring Modules
+  <a class="anchor" href="#requiring-modules">#</a>
+</h3>
+<p>To use a module in another Lua file, you use the <code>require()</code> function.  <code>require()</code> searches for the module file (adding <code>.lua</code> if necessary) in a predefined search path.</p>
+<p>Example: <code>main.lua</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> mymodule <span style="color:#666">=</span> require(<span style="color:#4070a0">&#34;mymodule&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(mymodule.my_variable) <span style="color:#60a0b0;font-style:italic">-- Accessing the variable from the module</span>
+</span></span><span style="display:flex;"><span>print(mymodule.my_function(<span style="color:#40a070">5</span>)) <span style="color:#60a0b0;font-style:italic">-- Calling the function from the module</span>
+</span></span></code></pre></div><p>This code first requires the <code>mymodule</code> and then accesses the exported <code>my_variable</code> and <code>my_function</code>.</p>
+<h3 class="heading" id="packages-and-paths">
+  Packages and Paths
+  <a class="anchor" href="#packages-and-paths">#</a>
+</h3>
+<p>Lua&rsquo;s <code>package.path</code> variable specifies the search path for modules. It&rsquo;s a string with semicolons (<code>;</code>) separating paths on Windows and colons (<code>:</code>) on other systems. Each path entry can include <code>%s</code> which will be replaced with the module name being required.</p>
+<p>For example, a typical path might be:</p>
+<pre tabindex="0"><code>./?.lua;./?/init.lua;;
+</code></pre><p>This means Lua will first search in the current directory (<code>.</code>) for a file named after the module, then for an <code>init.lua</code> file within the module subdirectory.  The two consecutive semicolons signify the end of standard search locations.</p>
+<p>You can modify <code>package.path</code> to include additional directories where your modules are located.  This is often done at the start of your main script:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>package.path <span style="color:#666">=</span> package.path <span style="color:#666">..</span> <span style="color:#4070a0">&#34;;/path/to/my/modules/?.lua&#34;</span>  <span style="color:#60a0b0;font-style:italic">-- Adjust the path as needed</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> mymodule <span style="color:#666">=</span> require <span style="color:#4070a0">&#34;mymodule&#34;</span> <span style="color:#60a0b0;font-style:italic">-- Now require will search the new directory as well.</span>
+</span></span></code></pre></div><p>Lua also uses <code>package.cpath</code> for searching C-based modules (shared libraries).  The mechanics are similar, but involve shared object files (<code>.so</code>, <code>.dll</code>, etc.) instead of <code>.lua</code> files.  Properly setting these paths is crucial for your Lua application to successfully locate and load modules, particularly in larger projects.</p>
+<h2 class="heading" id="working-with-files">
+  Working with Files
+  <a class="anchor" href="#working-with-files">#</a>
+</h2>
+<h3 class="heading" id="reading-from-files">
+  Reading from Files
+  <a class="anchor" href="#reading-from-files">#</a>
+</h3>
+<p>Lua provides the <code>io</code> library for file input and output. To read from a file, you first need to open it using <code>io.open()</code>. This function returns a file handle, which is used for subsequent read operations.  If the file doesn&rsquo;t exist, <code>io.open()</code> will return <code>nil</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> file <span style="color:#666">=</span> io.open(<span style="color:#4070a0">&#34;mydata.txt&#34;</span>, <span style="color:#4070a0">&#34;r&#34;</span>)  <span style="color:#60a0b0;font-style:italic">-- Open the file in read mode (&#34;r&#34;)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> file <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Read the entire file contents as a single string</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">local</span> contents <span style="color:#666">=</span> file:read(<span style="color:#4070a0">&#34;*a&#34;</span>)  
+</span></span><span style="display:flex;"><span>  print(contents)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  file:close() <span style="color:#60a0b0;font-style:italic">-- Always close the file when finished</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">elseif</span> file <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">nil</span> <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Error opening file.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Unknown error.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><p>The <code>:read(&quot;*a&quot;)</code> method reads the entire file content.  You can also read line by line using <code>file:read(&quot;*l&quot;)</code> which will return nil once the end of file is reached.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> file <span style="color:#666">=</span> io.open(<span style="color:#4070a0">&#34;mydata.txt&#34;</span>, <span style="color:#4070a0">&#34;r&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> file <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">local</span> line
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">repeat</span>
+</span></span><span style="display:flex;"><span>        line <span style="color:#666">=</span> file:read(<span style="color:#4070a0">&#34;*l&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span> line <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>            print(line)
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">until</span> line <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span>    file:close()
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Error opening file.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><h3 class="heading" id="writing-to-files">
+  Writing to Files
+  <a class="anchor" href="#writing-to-files">#</a>
+</h3>
+<p>To write to a file, open it in write mode (&ldquo;w&rdquo;) or append mode (&ldquo;a&rdquo;). &ldquo;w&rdquo; overwrites the file if it exists; &ldquo;a&rdquo; adds to the end of the file if it exists.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> file <span style="color:#666">=</span> io.open(<span style="color:#4070a0">&#34;output.txt&#34;</span>, <span style="color:#4070a0">&#34;w&#34;</span>)  <span style="color:#60a0b0;font-style:italic">-- Open in write mode</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> file <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  file:write(<span style="color:#4070a0">&#34;This is some text.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>  file:write(<span style="color:#4070a0">&#34;This is another line.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>  file:close()
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Error opening file.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><p>The <code>:write()</code> method writes the given string to the file. You can write multiple strings in sequence. Remember to always close the file using <code>file:close()</code> to ensure data is properly flushed to disk.  Error handling (checking for <code>nil</code> return from <code>io.open</code>) is crucial, especially when dealing with file operations.</p>
+<h2 class="heading" id="error-handling">
+  Error Handling
+  <a class="anchor" href="#error-handling">#</a>
+</h2>
+<h3 class="heading" id="catching-errors-with-pcall-and-xpcall">
+  Catching Errors with <code>pcall</code> and <code>xpcall</code>
+  <a class="anchor" href="#catching-errors-with-pcall-and-xpcall">#</a>
+</h3>
+<p>Lua provides the <code>pcall()</code> and <code>xpcall()</code> functions for handling errors gracefully.  <code>pcall()</code> calls a function and catches any errors that occur within that function. <code>xpcall()</code> is similar, but it allows you to specify an error handling function.</p>
+<ul>
+<li><strong><code>pcall()</code>:</strong>  <code>pcall()</code> takes a function and its arguments as input. It returns <code>true</code> if the function executes successfully, or <code>false</code> if an error occurs. If an error happens, the error message is returned as the second value.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> status, result <span style="color:#666">=</span> pcall(<span style="color:#007020;font-weight:bold">function</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">local</span> a <span style="color:#666">=</span> <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">local</span> b <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">/</span> b <span style="color:#60a0b0;font-style:italic">-- This will cause a division by zero error</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> status <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Function executed successfully:&#34;</span>, result)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Error:&#34;</span>, result)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><ul>
+<li><strong><code>xpcall()</code>:</strong> <code>xpcall()</code> is similar to <code>pcall()</code>, but it allows you to specify an error handler function.  This function is called if an error occurs.  It receives the error message as an argument.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">my_error_handler</span>(err)
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;An error occurred:&#34;</span>, err)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Error handled&#34;</span> <span style="color:#60a0b0;font-style:italic">-- The return value of the error handler is returned by xpcall</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> status, result <span style="color:#666">=</span> xpcall(<span style="color:#007020;font-weight:bold">function</span>()
+</span></span><span style="display:flex;"><span>  error(<span style="color:#4070a0">&#34;This is a deliberate error&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>, my_error_handler)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> status <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Function executed successfully:&#34;</span>, result)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Error handler returned:&#34;</span>, result) <span style="color:#60a0b0;font-style:italic">--Note result is now from my_error_handler</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><p>Using <code>pcall</code> and <code>xpcall</code> is essential for robust error handling in your Lua programs, preventing unexpected crashes and providing informative error messages.</p>
+<h3 class="heading" id="debugging-lua-code">
+  Debugging Lua Code
+  <a class="anchor" href="#debugging-lua-code">#</a>
+</h3>
+<p>Debugging is crucial for identifying and fixing errors in your code.  Lua offers several approaches to debugging:</p>
+<ul>
+<li>
+<p><strong>Print Statements:</strong>  The simplest method is to insert <code>print()</code> statements at various points in your code to check the values of variables and the flow of execution.  While basic, this approach is quick and effective for simple debugging tasks.</p>
+</li>
+<li>
+<p><strong>Interactive Debugger:</strong>  More advanced debuggers offer features such as setting breakpoints, stepping through code line by line, inspecting variables, and evaluating expressions during runtime.  Popular IDEs (like ZeroBrane Studio or VS Code with a Lua extension) often include integrated debuggers. These provide a much more powerful debugging experience than simple print statements.</p>
+</li>
+<li>
+<p><strong>Error Messages:</strong>  Pay close attention to error messages produced by Lua.  They often pinpoint the location and type of error, making it easier to understand the problem. The <code>debug</code> library (see Lua&rsquo;s documentation) offers more advanced debugging features.</p>
+</li>
+<li>
+<p><strong>Logging:</strong> For larger programs, implementing a logging system can significantly aid in debugging.  You can record events, variable values, and other relevant information to a file, making it easier to analyze program behavior and identify problems after the fact.</p>
+</li>
+</ul>
+<p>By combining these techniques, you can efficiently debug your Lua code, ensuring its correctness and reliability. Remember to use a combination of simple techniques (print statements) to quickly check small issues and more advanced methods such as IDE-based debuggers for more complex programs and debugging tasks.</p>
+<h2 class="heading" id="advanced-topics-optional">
+  Advanced Topics (Optional)
+  <a class="anchor" href="#advanced-topics-optional">#</a>
+</h2>
+<h3 class="heading" id="metatables-and-metamethods">
+  Metatables and Metamethods
+  <a class="anchor" href="#metatables-and-metamethods">#</a>
+</h3>
+<p>Metatables and metamethods provide a powerful mechanism for extending Lua&rsquo;s behavior and customizing the way operators and functions interact with your data. A metatable is a regular Lua table that is associated with another table (its &ldquo;child table&rdquo;).  Metamethods are functions defined within the metatable that are automatically called when certain operations are performed on the child table.</p>
+<p>For example, to redefine addition for a custom type, you would create a metatable with an <code>__add</code> metamethod:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> my_table <span style="color:#666">=</span> {}  <span style="color:#60a0b0;font-style:italic">--Our child table</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- create a metatable</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> mt <span style="color:#666">=</span> {}
+</span></span><span style="display:flex;"><span>mt.__add <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">function</span>(a, b)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> a.value <span style="color:#666">+</span> b.value
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">--Set the metatable</span>
+</span></span><span style="display:flex;"><span>setmetatable(my_table, mt)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">--Define some sample data using our custom data structures</span>
+</span></span><span style="display:flex;"><span>my_table.value <span style="color:#666">=</span> <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span>other_table <span style="color:#666">=</span> {value <span style="color:#666">=</span> <span style="color:#40a070">5</span>}
+</span></span><span style="display:flex;"><span>setmetatable(other_table, mt)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(my_table <span style="color:#666">+</span> other_table) <span style="color:#60a0b0;font-style:italic">-- Calls mt.__add automatically, printing 15</span>
+</span></span></code></pre></div><p>Metamethods control the behavior of many operations: arithmetic (<code>__add</code>, <code>__sub</code>, etc.), string concatenation (<code>__concat</code>), indexing (<code>__index</code>, <code>__newindex</code>), comparisons (<code>__eq</code>, <code>__lt</code>, etc.), and more.   Using metatables allows you to create custom types with operator overloading and specialized behavior.  Understanding metatables is crucial for creating advanced data structures and extending Lua&rsquo;s functionality.</p>
+<h3 class="heading" id="coroutines">
+  Coroutines
+  <a class="anchor" href="#coroutines">#</a>
+</h3>
+<p>Coroutines in Lua are a form of concurrency that enables cooperative multitasking.  Unlike threads, which run concurrently, coroutines cooperate by explicitly yielding control to each other. This makes them easier to manage and reduces the risk of race conditions.</p>
+<p>A coroutine is created using <code>coroutine.create()</code>.  It&rsquo;s started using <code>coroutine.resume()</code>, and it can yield control back to the caller using <code>coroutine.yield()</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> co <span style="color:#666">=</span> coroutine.create(<span style="color:#007020;font-weight:bold">function</span>()
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Coroutine started&#34;</span>)
+</span></span><span style="display:flex;"><span>  coroutine.yield(<span style="color:#4070a0">&#34;Hello from coroutine&#34;</span>)
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Coroutine resuming&#34;</span>)
+</span></span><span style="display:flex;"><span>  coroutine.yield(<span style="color:#4070a0">&#34;Another message&#34;</span>)
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Coroutine finished&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> status, result <span style="color:#666">=</span> coroutine.resume(co)
+</span></span><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;Main: &#34;</span>, result)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>status, result <span style="color:#666">=</span> coroutine.resume(co)
+</span></span><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;Main: &#34;</span>, result)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>status, result <span style="color:#666">=</span> coroutine.resume(co) <span style="color:#60a0b0;font-style:italic">-- will print &#34;Coroutine finished&#34; and return true and nil</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;Main: &#34;</span>, result)
+</span></span></code></pre></div><p>Coroutines are particularly useful for implementing state machines, asynchronous operations, and other scenarios where cooperative multitasking is beneficial.  They offer a lightweight and efficient approach to concurrency within Lua, different from the more complex paradigms of multithreading or multiprocessing.  However, coroutines should not be used as a solution to CPU-bound tasks, only for I/O-bound operations.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-groovy/">
+                        Beginner&#39;s Guide to Groovy
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-perl/">
+                        Beginner&#39;s Guide to Perl
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Bash | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-bash/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-bash/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Bash">
+  <meta property="og:description" content="Introduction to Bash # What is Bash? # Bash, which stands for “Bourne Again Shell,” is a command-line interpreter (CLI) for Unix-like operating systems such as Linux and macOS. It’s the most common shell used on these systems. Essentially, Bash acts as a translator between you and your computer’s operating system. You type commands into the Bash shell, and it executes those commands, interacting with the underlying system to perform actions like creating files, running programs, and managing your system’s resources. It’s a powerful tool for automating tasks and interacting directly with your system at a fundamental level.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-01T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-bash/">Beginner&#39;s Guide to Bash</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Bash</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-02-01T00:00:00&#43;00:00">February 1, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      17 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-bash">Introduction to Bash</a>
+      <ul>
+        <li><a href="#what-is-bash">What is Bash?</a></li>
+        <li><a href="#why-learn-bash">Why learn Bash?</a></li>
+        <li><a href="#setting-up-your-environment">Setting up your environment</a></li>
+        <li><a href="#opening-a-terminal">Opening a terminal</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-navigation-and-commands">Basic Navigation and Commands</a>
+      <ul>
+        <li><a href="#understanding-the-file-system">Understanding the file system</a></li>
+        <li><a href="#navigating-directories-with-cd">Navigating directories with <code>cd</code></a></li>
+        <li><a href="#listing-files-and-directories-with-ls">Listing files and directories with <code>ls</code></a></li>
+        <li><a href="#creating-and-removing-directories-with-mkdir-and-rmdir">Creating and removing directories with <code>mkdir</code> and <code>rmdir</code></a></li>
+        <li><a href="#creating-and-deleting-files-with-touch-and-rm">Creating and deleting files with <code>touch</code> and <code>rm</code></a></li>
+        <li><a href="#getting-help-with-man-and-help">Getting help with <code>man</code> and <code>help</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-files">Working with Files</a>
+      <ul>
+        <li><a href="#viewing-file-contents-with-cat-head-tail">Viewing file contents with <code>cat</code>, <code>head</code>, <code>tail</code></a></li>
+        <li><a href="#searching-file-contents-with-grep">Searching file contents with <code>grep</code></a></li>
+        <li><a href="#copying-and-moving-files-with-cp-and-mv">Copying and moving files with <code>cp</code> and <code>mv</code></a></li>
+        <li><a href="#file-permissions-with-chmod">File permissions with <code>chmod</code></a></li>
+        <li><a href="#redirecting-output-with--and-">Redirecting output with <code>&gt;</code> and <code>&gt;&gt;</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#bash-variables-and-input">Bash Variables and Input</a>
+      <ul>
+        <li><a href="#creating-and-using-variables">Creating and using variables</a></li>
+        <li><a href="#variable-types-and-scope">Variable types and scope</a></li>
+        <li><a href="#user-input-with-read">User input with <code>read</code></a></li>
+        <li><a href="#string-manipulation">String manipulation</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-flow">Control Flow</a>
+      <ul>
+        <li><a href="#conditional-statements-with-if-elif-else">Conditional statements with <code>if</code>, <code>elif</code>, <code>else</code></a></li>
+        <li><a href="#loops-with-for-and-while">Loops with <code>for</code> and <code>while</code></a></li>
+        <li><a href="#loop-control-statements-break-continue">Loop control statements (<code>break</code>, <code>continue</code>)</a></li>
+        <li><a href="#case-statements">Case statements</a></li>
+      </ul>
+    </li>
+    <li><a href="#bash-functions">Bash Functions</a>
+      <ul>
+        <li><a href="#defining-and-calling-functions">Defining and calling functions</a></li>
+        <li><a href="#function-arguments-and-return-values">Function arguments and return values</a></li>
+        <li><a href="#function-scope">Function scope</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-scripts">Working with Scripts</a>
+      <ul>
+        <li><a href="#creating-and-executing-bash-scripts">Creating and executing bash scripts</a></li>
+        <li><a href="#shebang-line">Shebang line</a></li>
+        <li><a href="#commenting-your-scripts">Commenting your scripts</a></li>
+        <li><a href="#debugging-scripts">Debugging scripts</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics">Advanced Topics</a>
+      <ul>
+        <li><a href="#regular-expressions">Regular expressions</a></li>
+        <li><a href="#working-with-pipes-and-filters">Working with pipes and filters</a></li>
+        <li><a href="#background-processes">Background processes</a></li>
+        <li><a href="#signal-handling">Signal handling</a></li>
+        <li><a href="#aliases">Aliases</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-bash">
+  Introduction to Bash
+  <a class="anchor" href="#introduction-to-bash">#</a>
+</h2>
+<h3 class="heading" id="what-is-bash">
+  What is Bash?
+  <a class="anchor" href="#what-is-bash">#</a>
+</h3>
+<p>Bash, which stands for &ldquo;Bourne Again Shell,&rdquo; is a command-line interpreter (CLI) for Unix-like operating systems such as Linux and macOS.  It&rsquo;s the most common shell used on these systems.  Essentially, Bash acts as a translator between you and your computer&rsquo;s operating system. You type commands into the Bash shell, and it executes those commands, interacting with the underlying system to perform actions like creating files, running programs, and managing your system&rsquo;s resources.  It&rsquo;s a powerful tool for automating tasks and interacting directly with your system at a fundamental level.</p>
+<h3 class="heading" id="why-learn-bash">
+  Why learn Bash?
+  <a class="anchor" href="#why-learn-bash">#</a>
+</h3>
+<p>Learning Bash is beneficial for several reasons:</p>
+<ul>
+<li><strong>System Administration:</strong> Bash is crucial for system administrators who need to manage servers and perform complex system tasks.</li>
+<li><strong>Automation:</strong>  Bash scripting allows you to automate repetitive tasks, saving time and reducing errors.  This is invaluable for developers, system administrators, and anyone working with computers frequently.</li>
+<li><strong>Increased Efficiency:</strong>  Command-line tools are generally faster and more efficient than graphical user interfaces (GUIs) for many tasks.</li>
+<li><strong>Improved Understanding of the Operating System:</strong>  Working with Bash gives you a deeper understanding of how your operating system works.</li>
+<li><strong>Wide Applicability:</strong>  Bash is a standard on most Unix-like systems, making your skills portable across different platforms.</li>
+<li><strong>Debugging and Troubleshooting:</strong> Bash is invaluable when diagnosing and resolving issues related to system processes and configurations.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-environment">
+  Setting up your environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h3>
+<p>Before you begin, ensure you have a suitable environment for running Bash.  This usually means having a Unix-like operating system (like Linux or macOS) or a suitable emulator (like Windows Subsystem for Linux (WSL) on Windows).  No additional software is typically required, as Bash is usually included by default. However, depending on your OS distribution, you may need to install specific packages for certain commands. If you encounter errors using specific commands, check your distribution&rsquo;s package manager for relevant installations. For instance, on Debian/Ubuntu, you might use <code>apt install &lt;package_name&gt;</code>, while on Fedora/CentOS/RHEL you might use <code>dnf install &lt;package_name&gt;</code> (or <code>yum</code> in older versions).</p>
+<h3 class="heading" id="opening-a-terminal">
+  Opening a terminal
+  <a class="anchor" href="#opening-a-terminal">#</a>
+</h3>
+<p>The method for opening a terminal varies depending on your operating system:</p>
+<ul>
+<li>
+<p><strong>Linux:</strong>  The method depends on your desktop environment (GNOME, KDE, etc.).  Common methods include using the applications menu, pressing Ctrl+Alt+T, or searching for &ldquo;Terminal&rdquo; using your desktop&rsquo;s search functionality.</p>
+</li>
+<li>
+<p><strong>macOS:</strong>  You can open Terminal by searching for it in Spotlight (Cmd+Space) or finding it in the Utilities folder within Applications.</p>
+</li>
+<li>
+<p><strong>Windows (using WSL):</strong> Open the Start Menu, search for &ldquo;WSL,&rdquo; and select the appropriate distribution. This will open a terminal window running your chosen WSL distribution, which in turn is using Bash.</p>
+</li>
+</ul>
+<p>Once opened, you should see a prompt that looks something like this: <code>username@hostname:~$</code>.  This indicates that you are now ready to start using the Bash shell.</p>
+<h2 class="heading" id="basic-navigation-and-commands">
+  Basic Navigation and Commands
+  <a class="anchor" href="#basic-navigation-and-commands">#</a>
+</h2>
+<h3 class="heading" id="understanding-the-file-system">
+  Understanding the file system
+  <a class="anchor" href="#understanding-the-file-system">#</a>
+</h3>
+<p>The file system is how your operating system organizes files and directories (folders) on your storage devices (hard drive, SSD, etc.).  It&rsquo;s hierarchical, meaning it&rsquo;s structured like an upside-down tree.  The top of the tree is the root directory, represented by a forward slash (<code>/</code>).  From the root, you have various directories, and within those directories, you can have more directories and files.  For example, <code>/home/user/documents</code> indicates a file path starting from the root directory (<code>/</code>), then going into the <code>home</code> directory, then the <code>user</code> directory (a user&rsquo;s home directory), and finally the <code>documents</code> directory.  Files reside within these directories.  Understanding this structure is key to navigating your system.</p>
+<h3 class="heading" id="navigating-directories-with-cd">
+  Navigating directories with <code>cd</code>
+  <a class="anchor" href="#navigating-directories-with-cd">#</a>
+</h3>
+<p>The <code>cd</code> command (change directory) allows you to move around the file system.</p>
+<ul>
+<li><code>cd /</code>: Changes to the root directory.</li>
+<li><code>cd ..</code>: Moves up one directory level.</li>
+<li><code>cd ~</code>: Moves to your home directory.</li>
+<li><code>cd &lt;directory_name&gt;</code>: Moves into the specified directory within your current location.  For example, <code>cd Documents</code> would move into a <code>Documents</code> directory (if one exists in your current location).</li>
+<li><code>cd /path/to/directory</code>: Changes to the specified directory using its full path from the root. For example, <code>cd /home/user/documents</code>.</li>
+</ul>
+<h3 class="heading" id="listing-files-and-directories-with-ls">
+  Listing files and directories with <code>ls</code>
+  <a class="anchor" href="#listing-files-and-directories-with-ls">#</a>
+</h3>
+<p>The <code>ls</code> command (list) displays the contents of the current directory.</p>
+<ul>
+<li><code>ls</code>: Lists files and directories in the current directory.</li>
+<li><code>ls -l</code>: Lists files and directories in a long listing format, showing permissions, owner, size, and modification time.</li>
+<li><code>ls -a</code>: Shows hidden files and directories (those whose names begin with a dot &ldquo;.&rdquo;).</li>
+<li><code>ls -lh</code>: Combines long listing with human-readable sizes (e.g., KB, MB, GB).</li>
+</ul>
+<h3 class="heading" id="creating-and-removing-directories-with-mkdir-and-rmdir">
+  Creating and removing directories with <code>mkdir</code> and <code>rmdir</code>
+  <a class="anchor" href="#creating-and-removing-directories-with-mkdir-and-rmdir">#</a>
+</h3>
+<ul>
+<li><code>mkdir &lt;directory_name&gt;</code>: Creates a new directory with the specified name.  You can create multiple nested directories using <code>mkdir -p &lt;directory_path&gt;</code>. For instance, <code>mkdir -p mydir/subdir1/subdir2</code> will create <code>mydir</code>, <code>mydir/subdir1</code>, and <code>mydir/subdir1/subdir2</code>.</li>
+<li><code>rmdir &lt;directory_name&gt;</code>: Removes an empty directory.  It will fail if the directory is not empty.</li>
+</ul>
+<h3 class="heading" id="creating-and-deleting-files-with-touch-and-rm">
+  Creating and deleting files with <code>touch</code> and <code>rm</code>
+  <a class="anchor" href="#creating-and-deleting-files-with-touch-and-rm">#</a>
+</h3>
+<ul>
+<li><code>touch &lt;file_name&gt;</code>: Creates an empty file. If a file with that name already exists, it updates the file&rsquo;s timestamp.</li>
+<li><code>rm &lt;file_name&gt;</code>: Deletes a file.  Use with caution!  There is typically no recycle bin or undo.</li>
+<li><code>rm -r &lt;directory_name&gt;</code>: Recursively deletes a directory and all its contents. <strong>Use with extreme caution!</strong>  This action is irreversible.</li>
+</ul>
+<h3 class="heading" id="getting-help-with-man-and-help">
+  Getting help with <code>man</code> and <code>help</code>
+  <a class="anchor" href="#getting-help-with-man-and-help">#</a>
+</h3>
+<ul>
+<li><code>man &lt;command_name&gt;</code>: Displays the manual page for a command, providing detailed information about its usage, options, and examples.  Exit the manual page with <code>q</code>.</li>
+<li><code>help &lt;command_name&gt;</code>: (Available for some built-in Bash commands) Provides a brief summary of a command&rsquo;s usage.  This is less comprehensive than <code>man</code>.</li>
+</ul>
+<p>Remember to always be careful when using commands that delete files or directories.  It&rsquo;s a good practice to double-check your commands before executing them, especially with <code>rm -r</code>.</p>
+<h2 class="heading" id="working-with-files">
+  Working with Files
+  <a class="anchor" href="#working-with-files">#</a>
+</h2>
+<h3 class="heading" id="viewing-file-contents-with-cat-head-tail">
+  Viewing file contents with <code>cat</code>, <code>head</code>, <code>tail</code>
+  <a class="anchor" href="#viewing-file-contents-with-cat-head-tail">#</a>
+</h3>
+<p>These commands allow you to view the contents of files:</p>
+<ul>
+<li><code>cat &lt;file_name&gt;</code>: Displays the entire contents of a file to the terminal.  Useful for smaller files. For large files, it might overwhelm your terminal.</li>
+<li><code>head &lt;file_name&gt;</code>: Displays the first 10 lines of a file.  You can specify a different number of lines using <code>head -n &lt;number&gt; &lt;file_name&gt;</code>, for example <code>head -n 20 myfile.txt</code>.</li>
+<li><code>tail &lt;file_name&gt;</code>: Displays the last 10 lines of a file.  Similar to <code>head</code>, you can specify a number of lines using <code>tail -n &lt;number&gt; &lt;file_name&gt;</code>, or even follow a log file in real-time with <code>tail -f &lt;file_name&gt;</code>.</li>
+</ul>
+<h3 class="heading" id="searching-file-contents-with-grep">
+  Searching file contents with <code>grep</code>
+  <a class="anchor" href="#searching-file-contents-with-grep">#</a>
+</h3>
+<p><code>grep</code> (global regular expression print) is a powerful command for searching text within files.</p>
+<ul>
+<li><code>grep &lt;pattern&gt; &lt;file_name&gt;</code>: Searches for lines containing the specified pattern in the file.  The pattern can be a simple string or a regular expression.</li>
+<li><code>grep -i &lt;pattern&gt; &lt;file_name&gt;</code>: Performs a case-insensitive search.</li>
+<li><code>grep -n &lt;pattern&gt; &lt;file_name&gt;</code>: Displays line numbers along with matching lines.</li>
+<li><code>grep -r &lt;pattern&gt; &lt;directory&gt;</code>: Recursively searches for the pattern in all files within the specified directory.</li>
+</ul>
+<h3 class="heading" id="copying-and-moving-files-with-cp-and-mv">
+  Copying and moving files with <code>cp</code> and <code>mv</code>
+  <a class="anchor" href="#copying-and-moving-files-with-cp-and-mv">#</a>
+</h3>
+<ul>
+<li><code>cp &lt;source&gt; &lt;destination&gt;</code>: Copies a file or directory.  If the destination is a directory, the file is copied into that directory.  To copy a directory recursively, use <code>cp -r &lt;source_directory&gt; &lt;destination_directory&gt;</code>.</li>
+<li><code>mv &lt;source&gt; &lt;destination&gt;</code>: Moves (renames or relocates) a file or directory.  If the destination is a directory, the file is moved into that directory.</li>
+</ul>
+<h3 class="heading" id="file-permissions-with-chmod">
+  File permissions with <code>chmod</code>
+  <a class="anchor" href="#file-permissions-with-chmod">#</a>
+</h3>
+<p>File permissions control who can read, write, and execute a file.  They are represented using three sets of permissions: owner, group, and others.  Each set has read (r), write (w), and execute (x) permissions.  <code>chmod</code> modifies these permissions.</p>
+<ul>
+<li><code>chmod u+x &lt;file_name&gt;</code>: Adds execute permission for the owner.</li>
+<li><code>chmod g-w &lt;file_name&gt;</code>: Removes write permission for the group.</li>
+<li><code>chmod o=r &lt;file_name&gt;</code>: Sets read permission for others, and removes write and execute permissions.</li>
+<li><code>chmod 755 &lt;file_name&gt;</code>: Sets permissions using octal notation (owner: read, write, execute; group: read, execute; others: read, execute).  This is a common permission setting for executable files.</li>
+</ul>
+<h3 class="heading" id="redirecting-output-with--and-">
+  Redirecting output with <code>&gt;</code> and <code>&gt;&gt;</code>
+  <a class="anchor" href="#redirecting-output-with--and-">#</a>
+</h3>
+<p>Redirection allows you to send the output of a command to a file instead of displaying it on the terminal.</p>
+<ul>
+<li><code>command &gt; file_name</code>: Overwrites the contents of <code>file_name</code> with the output of the command.</li>
+<li><code>command &gt;&gt; file_name</code>: Appends the output of the command to the end of <code>file_name</code>.  This is useful for adding data to a log file.</li>
+</ul>
+<p>Example: <code>ls -l &gt; file_listing.txt</code> will save the output of <code>ls -l</code> into a file named <code>file_listing.txt</code>.  <code>date &gt;&gt; mylog.txt</code> will append the current date and time to <code>mylog.txt</code>.</p>
+<h2 class="heading" id="bash-variables-and-input">
+  Bash Variables and Input
+  <a class="anchor" href="#bash-variables-and-input">#</a>
+</h2>
+<h3 class="heading" id="creating-and-using-variables">
+  Creating and using variables
+  <a class="anchor" href="#creating-and-using-variables">#</a>
+</h3>
+<p>Variables in Bash store data that your scripts can use.  They are created by assigning a value to a name, without any spaces around the equals sign.</p>
+<ul>
+<li><code>variable_name=value</code></li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#bb60d5">name</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;John Doe&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">age</span><span style="color:#666">=</span><span style="color:#40a070">30</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">city</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;New York&#34;</span>
+</span></span></code></pre></div><p>To use a variable, precede its name with a dollar sign (<code>$</code>).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;My name is </span><span style="color:#bb60d5">$name</span><span style="color:#4070a0">. I am </span><span style="color:#bb60d5">$age</span><span style="color:#4070a0"> years old and live in </span><span style="color:#bb60d5">$city</span><span style="color:#4070a0">.&#34;</span>
+</span></span></code></pre></div><p>This will output:  <code>My name is John Doe. I am 30 years old and live in New York.</code></p>
+<p>It&rsquo;s good practice to use uppercase letters for variable names to distinguish them from commands and functions.</p>
+<h3 class="heading" id="variable-types-and-scope">
+  Variable types and scope
+  <a class="anchor" href="#variable-types-and-scope">#</a>
+</h3>
+<p>Bash doesn&rsquo;t have explicitly declared variable types like many programming languages (e.g., integer, string, float).  Variables are dynamically typed; their type is determined by the value assigned to them.</p>
+<ul>
+<li><strong>Scope:</strong>  Variables can have either global or local scope. Global variables are accessible from anywhere in your script. Local variables are only accessible within the function or block of code where they are defined.  Local variables are declared using the <code>local</code> keyword inside a function.  For example:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#bb60d5">my_global_var</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;This is global&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_function<span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">local</span> <span style="color:#bb60d5">my_local_var</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;This is local&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Inside function: </span><span style="color:#bb60d5">$my_global_var</span><span style="color:#4070a0">, </span><span style="color:#bb60d5">$my_local_var</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_function
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Outside function: </span><span style="color:#bb60d5">$my_global_var</span><span style="color:#4070a0">, </span><span style="color:#bb60d5">$my_local_var</span><span style="color:#4070a0">&#34;</span> <span style="color:#60a0b0;font-style:italic"># my_local_var is not accessible here.</span>
+</span></span></code></pre></div><h3 class="heading" id="user-input-with-read">
+  User input with <code>read</code>
+  <a class="anchor" href="#user-input-with-read">#</a>
+</h3>
+<p>The <code>read</code> command allows you to get input from the user.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020">read</span> -p <span style="color:#4070a0">&#34;Enter your name: &#34;</span> username
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Hello, </span><span style="color:#bb60d5">$username</span><span style="color:#4070a0">!&#34;</span>
+</span></span></code></pre></div><p>The <code>-p</code> option displays a prompt before waiting for user input.</p>
+<h3 class="heading" id="string-manipulation">
+  String manipulation
+  <a class="anchor" href="#string-manipulation">#</a>
+</h3>
+<p>Bash offers basic string manipulation capabilities:</p>
+<ul>
+<li><strong>Length:</strong> <code>${#variable_name}</code> gives the length of a string.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#bb60d5">my_string</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;Hello World&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">string_length</span><span style="color:#666">=</span><span style="color:#70a0d0">${#</span><span style="color:#bb60d5">my_string</span><span style="color:#70a0d0">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Length of string: </span><span style="color:#bb60d5">$string_length</span><span style="color:#4070a0">&#34;</span>
+</span></span></code></pre></div><ul>
+<li><strong>Substrings:</strong> <code>${variable_name:offset:length}</code> extracts a substring.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#bb60d5">my_string</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;Hello World&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">substring</span><span style="color:#666">=</span><span style="color:#70a0d0">${</span><span style="color:#bb60d5">my_string</span>:<span style="color:#bb60d5">6</span>:<span style="color:#bb60d5">5</span><span style="color:#70a0d0">}</span> <span style="color:#60a0b0;font-style:italic"># Extract &#34;World&#34; (starting at offset 6, length 5)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Substring: </span><span style="color:#bb60d5">$substring</span><span style="color:#4070a0">&#34;</span>
+</span></span></code></pre></div><ul>
+<li><strong>Concatenation:</strong> Strings can be concatenated using the <code>+</code> operator or by simply placing them next to each other.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#bb60d5">first_name</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;John&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">last_name</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;Doe&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">full_name</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$first_name</span><span style="color:#4070a0">&#34;&#34; &#34;&#34;</span><span style="color:#bb60d5">$last_name</span><span style="color:#4070a0">&#34;</span> <span style="color:#60a0b0;font-style:italic"># Note the extra spaces for clarity</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Full name: </span><span style="color:#bb60d5">$full_name</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">full_name2</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$first_name</span><span style="color:#4070a0"> + </span><span style="color:#bb60d5">$last_name</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Full name2: </span><span style="color:#bb60d5">$full_name2</span><span style="color:#4070a0">&#34;</span>
+</span></span></code></pre></div><p>These are fundamental string operations. More advanced techniques often involve using external commands or more advanced tools like <code>sed</code> or <code>awk</code>.</p>
+<h2 class="heading" id="control-flow">
+  Control Flow
+  <a class="anchor" href="#control-flow">#</a>
+</h2>
+<h3 class="heading" id="conditional-statements-with-if-elif-else">
+  Conditional statements with <code>if</code>, <code>elif</code>, <code>else</code>
+  <a class="anchor" href="#conditional-statements-with-if-elif-else">#</a>
+</h3>
+<p>Conditional statements allow you to execute different blocks of code based on certain conditions.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">[</span> condition <span style="color:#666">]</span>; <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic"># Code to execute if the condition is true</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">elif</span> <span style="color:#666">[</span> another_condition <span style="color:#666">]</span>; <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic"># Code to execute if the first condition is false and this one is true</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic"># Code to execute if none of the above conditions are true</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fi</span>
+</span></span></code></pre></div><p><strong>Important Note:</strong>  There must be spaces around the square brackets <code>[ ]</code>.  <code>[</code> is actually an alias for the <code>test</code> command.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Checking if a file exists:</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">[</span> -f <span style="color:#4070a0">&#34;/path/to/file.txt&#34;</span> <span style="color:#666">]</span>; <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;File exists&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;File does not exist&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fi</span>
+</span></span></code></pre></div><ul>
+<li><strong>Comparing numbers:</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#bb60d5">num1</span><span style="color:#666">=</span><span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">num2</span><span style="color:#666">=</span><span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">[</span> <span style="color:#bb60d5">$num1</span> -gt <span style="color:#bb60d5">$num2</span> <span style="color:#666">]</span>; <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$num1</span><span style="color:#4070a0"> is greater than </span><span style="color:#bb60d5">$num2</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fi</span>
+</span></span></code></pre></div><p>Use <code>-eq</code> (equal), <code>-ne</code> (not equal), <code>-lt</code> (less than), <code>-le</code> (less than or equal), <code>-ge</code> (greater than or equal) for numerical comparisons.</p>
+<ul>
+<li><strong>String Comparisons:</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#bb60d5">name</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;John&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">[</span> <span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$name</span><span style="color:#4070a0">&#34;</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;John&#34;</span> <span style="color:#666">]</span>; <span style="color:#007020;font-weight:bold">then</span>  <span style="color:#60a0b0;font-style:italic">#Always quote variables in conditional statements to prevent word splitting and globbing</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Name is John&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fi</span>
+</span></span></code></pre></div><p>Use <code>=</code> (equal), <code>!=</code> (not equal) for string comparisons.</p>
+<h3 class="heading" id="loops-with-for-and-while">
+  Loops with <code>for</code> and <code>while</code>
+  <a class="anchor" href="#loops-with-for-and-while">#</a>
+</h3>
+<p>Loops allow you to repeat a block of code multiple times.</p>
+<ul>
+<li><strong><code>for</code> loop (iterating over a list):</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i in <span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span> 5; <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Number: </span><span style="color:#bb60d5">$i</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span>
+</span></span></code></pre></div><p>You can also iterate over files in a directory:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> file in /path/to/directory/*; <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;File: </span><span style="color:#bb60d5">$file</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span>
+</span></span></code></pre></div><ul>
+<li><strong><code>while</code> loop (repeating as long as a condition is true):</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#666">[</span> <span style="color:#bb60d5">$count</span> -lt <span style="color:#40a070">5</span> <span style="color:#666">]</span>; <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Count: </span><span style="color:#bb60d5">$count</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$((</span>count <span style="color:#666">+</span> <span style="color:#40a070">1</span><span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span>
+</span></span></code></pre></div><p><code>$((...))</code> performs arithmetic expansion.</p>
+<h3 class="heading" id="loop-control-statements-break-continue">
+  Loop control statements (<code>break</code>, <code>continue</code>)
+  <a class="anchor" href="#loop-control-statements-break-continue">#</a>
+</h3>
+<ul>
+<li><code>break</code>: Exits the loop entirely.</li>
+<li><code>continue</code>: Skips the rest of the current iteration and proceeds to the next iteration.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i in <span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span> 5; <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">[</span> <span style="color:#bb60d5">$i</span> -eq <span style="color:#40a070">3</span> <span style="color:#666">]</span>; <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">continue</span>  <span style="color:#60a0b0;font-style:italic"># Skip iteration 3</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">[</span> <span style="color:#bb60d5">$i</span> -eq <span style="color:#40a070">5</span> <span style="color:#666">]</span>; <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">break</span>     <span style="color:#60a0b0;font-style:italic"># Exit the loop entirely at iteration 5</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Number: </span><span style="color:#bb60d5">$i</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span>
+</span></span></code></pre></div><h3 class="heading" id="case-statements">
+  Case statements
+  <a class="anchor" href="#case-statements">#</a>
+</h3>
+<p>Case statements provide a way to select a block of code to execute based on the value of a variable.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$variable</span><span style="color:#4070a0">&#34;</span> in
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;value1&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># Code for value1</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;value2&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># Code for value2</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>  *<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># Default case (if none of the above match)</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">esac</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020">read</span> -p <span style="color:#4070a0">&#34;Enter a day of the week: &#34;</span> day
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$day</span><span style="color:#4070a0">&#34;</span> in
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Monday&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;It&#39;s the start of the work week!&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Friday&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Almost the weekend!&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Saturday&#34;</span> | <span style="color:#4070a0">&#34;Sunday&#34;</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic"># Multiple values can be separated by &#39;|&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Enjoy your weekend!&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>  *<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Invalid day.&#34;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">esac</span>
+</span></span></code></pre></div><p>Remember to always quote your variables within the <code>case</code> statement to avoid unexpected behavior.</p>
+<h2 class="heading" id="bash-functions">
+  Bash Functions
+  <a class="anchor" href="#bash-functions">#</a>
+</h2>
+<h3 class="heading" id="defining-and-calling-functions">
+  Defining and calling functions
+  <a class="anchor" href="#defining-and-calling-functions">#</a>
+</h3>
+<p>Functions in Bash allow you to modularize your code, making it more organized, reusable, and readable.  A function is defined using the following syntax:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> function_name <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic"># Function body (commands to be executed)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>or, more concisely:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>function_name<span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic"># Function body</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>To call a function, simply use its name followed by parentheses:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>function_name
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>greet<span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Hello, </span><span style="color:#bb60d5">$1</span><span style="color:#4070a0">!&#34;</span>  <span style="color:#60a0b0;font-style:italic"># $1 refers to the first argument passed to the function</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>greet <span style="color:#4070a0">&#34;World&#34;</span> <span style="color:#60a0b0;font-style:italic"># Calling the function with an argument</span>
+</span></span></code></pre></div><h3 class="heading" id="function-arguments-and-return-values">
+  Function arguments and return values
+  <a class="anchor" href="#function-arguments-and-return-values">#</a>
+</h3>
+<p>Functions can accept arguments, which are passed to the function when it&rsquo;s called.  Arguments are accessed within the function using positional parameters (<code>$1</code>, <code>$2</code>, <code>$3</code>, etc.).  <code>$0</code> represents the function name itself. <code>$@</code> represents all the arguments passed to the function as separate words, while <code>$*</code> represents all the arguments passed to the function as a single word.</p>
+<p>Bash functions don&rsquo;t have a direct return value in the same way as functions in other programming languages. Instead, the exit status of the last command executed within the function is used as the return value.  A return value of 0 typically indicates success, while a non-zero value indicates an error.  You can explicitly set the exit status using the <code>return</code> command (with integer values from 0-255).</p>
+<p><strong>Example with return value:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>add<span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">sum</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$((</span> <span style="color:#bb60d5">$1</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$2</span> <span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;The sum is: </span><span style="color:#bb60d5">$sum</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span> <span style="color:#60a0b0;font-style:italic"># Indicate success</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>add <span style="color:#40a070">5</span> <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#bb60d5">$?</span> <span style="color:#60a0b0;font-style:italic"># Check the return status (should be 0)</span>
+</span></span></code></pre></div><p>Here <code>$?</code> is a special variable that contains the exit status of the last command.</p>
+<h3 class="heading" id="function-scope">
+  Function scope
+  <a class="anchor" href="#function-scope">#</a>
+</h3>
+<p>Variables defined within a function are local to that function by default. They are not accessible outside the function&rsquo;s scope.  If you want a variable to be accessible outside the function, you need to declare it as a global variable <em>before</em> defining the function, or use the <code>export</code> command.</p>
+<p><strong>Example illustrating scope:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#bb60d5">global_var</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;I&#39;m global&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_function<span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">local</span> <span style="color:#bb60d5">local_var</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;I&#39;m local&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">global_var</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;Modified global within function&#34;</span> <span style="color:#60a0b0;font-style:italic"># Modifies the global variable</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Inside function: global_var=</span><span style="color:#bb60d5">$global_var</span><span style="color:#4070a0">, local_var=</span><span style="color:#bb60d5">$local_var</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_function
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Outside function: global_var=</span><span style="color:#bb60d5">$global_var</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;Outside function: local_var=</span><span style="color:#bb60d5">$local_var</span><span style="color:#4070a0">&#34;</span>  <span style="color:#60a0b0;font-style:italic"># This will result in an error because local_var is not in scope</span>
+</span></span></code></pre></div><p>In this example, <code>local_var</code> is only visible inside <code>my_function</code>, while <code>global_var</code> is modified within the function and the change is visible outside.  If you intend for the function to leave the global variable unchanged, either avoid referencing it directly inside the function or save the initial value of the global variable, manipulate it as a local variable, and assign the final value back to the global variable upon exiting the function.</p>
+<h2 class="heading" id="working-with-scripts">
+  Working with Scripts
+  <a class="anchor" href="#working-with-scripts">#</a>
+</h2>
+<h3 class="heading" id="creating-and-executing-bash-scripts">
+  Creating and executing bash scripts
+  <a class="anchor" href="#creating-and-executing-bash-scripts">#</a>
+</h3>
+<p>Bash scripts are files containing a sequence of Bash commands.  To create a script:</p>
+<ol>
+<li>
+<p><strong>Create a file:</strong> Use a text editor (like <code>nano</code>, <code>vim</code>, or <code>emacs</code>) to create a new file.  For example: <code>nano my_script.sh</code>.</p>
+</li>
+<li>
+<p><strong>Write your script:</strong> Add your Bash commands to the file.</p>
+</li>
+<li>
+<p><strong>Make it executable:</strong> Use the <code>chmod</code> command to make the script executable: <code>chmod +x my_script.sh</code>.</p>
+</li>
+<li>
+<p><strong>Run the script:</strong> Execute the script by typing its path in the terminal: <code>./my_script.sh</code>.  The <code>./</code> is crucial; it tells the shell to execute the script in the current directory.</p>
+</li>
+</ol>
+<h3 class="heading" id="shebang-line">
+  Shebang line
+  <a class="anchor" href="#shebang-line">#</a>
+</h3>
+<p>The shebang line is the first line of your script, specifying the interpreter that should execute the script.  It starts with <code>#!</code> followed by the path to the interpreter.  For Bash scripts, it&rsquo;s typically:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020">#!/bin/bash
+</span></span></span></code></pre></div><p>This ensures that your script is run with the correct Bash interpreter, even if you have multiple shell versions installed.</p>
+<h3 class="heading" id="commenting-your-scripts">
+  Commenting your scripts
+  <a class="anchor" href="#commenting-your-scripts">#</a>
+</h3>
+<p>Comments are crucial for readability and maintainability.  In Bash, comments start with a <code>#</code> symbol:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span><span style="color:#60a0b0;font-style:italic"># This is a comment.  It&#39;s ignored by the shell.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># This script calculates the sum of two numbers.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">num1</span><span style="color:#666">=</span><span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">num2</span><span style="color:#666">=</span><span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">sum</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$((</span>num1 <span style="color:#666">+</span> num2<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;The sum is: </span><span style="color:#bb60d5">$sum</span><span style="color:#4070a0">&#34;</span>
+</span></span></code></pre></div><p>Good commenting practices significantly improve the understandability of your scripts, especially as they grow in complexity.</p>
+<h3 class="heading" id="debugging-scripts">
+  Debugging scripts
+  <a class="anchor" href="#debugging-scripts">#</a>
+</h3>
+<p>Debugging helps you find and fix errors in your scripts.  Here are some useful techniques:</p>
+<ul>
+<li>
+<p><strong><code>echo</code> statements:</strong>  Strategically place <code>echo</code> statements to print the values of variables or to indicate the flow of execution. This helps you track the state of your script at various points.</p>
+</li>
+<li>
+<p><strong><code>set -x</code>:</strong> This option enables tracing, printing each command before it&rsquo;s executed.  Use <code>set +x</code> to disable tracing.</p>
+</li>
+<li>
+<p><strong><code>set -v</code>:</strong> This option enables verbose mode, printing each line of the script as it&rsquo;s read. This is very useful to find syntax errors, especially when dealing with complex conditional statements or loops.</p>
+</li>
+<li>
+<p><strong>Using a debugger:</strong> More advanced debugging involves using a dedicated debugger, such as <code>bashdb</code> (requires installation).</p>
+</li>
+</ul>
+<p><strong>Example using <code>echo</code> and <code>set -x</code>:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span><span style="color:#007020">set</span> -x  <span style="color:#60a0b0;font-style:italic"># Enable tracing</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">num1</span><span style="color:#666">=</span><span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">num2</span><span style="color:#666">=</span><span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;num1: </span><span style="color:#bb60d5">$num1</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;num2: </span><span style="color:#bb60d5">$num2</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">sum</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$((</span>num1 <span style="color:#666">+</span> num2<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;sum: </span><span style="color:#bb60d5">$sum</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">set</span> +x  <span style="color:#60a0b0;font-style:italic"># Disable tracing</span>
+</span></span></code></pre></div><p>Running this script will print each command before execution, allowing you to visually track the flow and values. Remember to remove or comment out debugging statements once your script is working correctly to improve performance.</p>
+<h2 class="heading" id="advanced-topics">
+  Advanced Topics
+  <a class="anchor" href="#advanced-topics">#</a>
+</h2>
+<h3 class="heading" id="regular-expressions">
+  Regular expressions
+  <a class="anchor" href="#regular-expressions">#</a>
+</h3>
+<p>Regular expressions (regex or regexp) are powerful patterns used to match and manipulate text.  Bash uses regular expressions with commands like <code>grep</code>, <code>sed</code>, and <code>awk</code>.  A regular expression is a sequence of characters that define a search pattern.  Mastering regular expressions significantly enhances your ability to process and analyze text data.  Here are a few basic examples:</p>
+<ul>
+<li><code>^</code>: Matches the beginning of a line.</li>
+<li><code>$</code>: Matches the end of a line.</li>
+<li><code>.</code> : Matches any single character (except newline).</li>
+<li><code>*</code>: Matches zero or more occurrences of the preceding character.</li>
+<li><code>+</code>: Matches one or more occurrences of the preceding character.</li>
+<li><code>?</code>: Matches zero or one occurrence of the preceding character.</li>
+<li><code>[abc]</code>: Matches any of the characters within the brackets.</li>
+<li><code>[a-z]</code>: Matches any lowercase letter.</li>
+<li><code>\</code>: Escapes special characters.</li>
+</ul>
+<p>Example using <code>grep</code>:  <code>grep &quot;^[0-9]&quot; myfile.txt</code> will find lines in <code>myfile.txt</code> that start with a digit.  More complex patterns allow for sophisticated text searching and manipulation.  Refer to resources on regular expression syntax for a complete understanding.</p>
+<h3 class="heading" id="working-with-pipes-and-filters">
+  Working with pipes and filters
+  <a class="anchor" href="#working-with-pipes-and-filters">#</a>
+</h3>
+<p>Pipes (<code>|</code>) are used to connect the output of one command to the input of another, creating a chain of commands. This is often referred to as &ldquo;piping&rdquo; or using a &ldquo;pipeline.&rdquo;  Each command in the pipeline acts as a filter, transforming the data as it passes through.</p>
+<p>Example:  <code>ls -l | grep txt</code> lists all files in the current directory in long format and then filters the output to show only lines containing &ldquo;txt&rdquo;.  The output of <code>ls -l</code> becomes the input of <code>grep txt</code>. This is extremely useful for chaining commands to achieve complex data processing tasks efficiently.</p>
+<h3 class="heading" id="background-processes">
+  Background processes
+  <a class="anchor" href="#background-processes">#</a>
+</h3>
+<p>You can run commands in the background using the ampersand (&amp;) symbol.  This allows you to continue working in the terminal while the command executes concurrently.</p>
+<p>Example: <code>long_running_command &amp;</code> runs <code>long_running_command</code> in the background.  You&rsquo;ll get a process ID (PID) indicating that it is running in the background.  Use <code>jobs</code> to list background jobs and <code>fg</code> to bring a background job to the foreground, or <code>kill %job_number</code> to kill a background job.</p>
+<h3 class="heading" id="signal-handling">
+  Signal handling
+  <a class="anchor" href="#signal-handling">#</a>
+</h3>
+<p>Signals are software interrupts sent to processes.  Bash allows you to handle signals (e.g., <code>SIGINT</code> – interrupt, <code>SIGTERM</code> – termination).  The <code>trap</code> command is used to specify how a script should respond to signals.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020">trap</span> <span style="color:#4070a0">&#34;echo &#39;Script interrupted!&#39; ; exit 1&#34;</span> INT  <span style="color:#60a0b0;font-style:italic"># Handle the INT signal (Ctrl+C)</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ... your script commands ...</span>
+</span></span></code></pre></div><p>This sets up a handler that prints a message and exits with an error code if the script receives an interrupt signal (<code>Ctrl+C</code>).  Other signals can be handled similarly.  Careful signal handling improves the robustness of your scripts.</p>
+<h3 class="heading" id="aliases">
+  Aliases
+  <a class="anchor" href="#aliases">#</a>
+</h3>
+<p>Aliases create shortcuts for frequently used commands.  You define an alias using the <code>alias</code> command.</p>
+<p>Example:  <code>alias la='ls -la'</code> creates an alias <code>la</code> that executes <code>ls -la</code> (long listing with hidden files).  Aliases are typically defined in your shell configuration files (like <code>.bashrc</code> or <code>.bash_profile</code>) to be available every time you start a new shell session.  Use <code>unalias la</code> to remove an alias.  Aliases can make your command line more efficient and user friendly.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-tcl/">
+                        Beginner&#39;s Guide to Tcl
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-actionscript/">
+                        Beginner&#39;s Guide to ActionScript
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

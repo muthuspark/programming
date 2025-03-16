@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Groovy | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-groovy/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-groovy/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Groovy">
+  <meta property="og:description" content="Introduction to Groovy # What is Groovy? # Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM). It’s built on top of Java and seamlessly integrates with existing Java libraries and frameworks. Groovy aims to be a more concise and expressive alternative to Java, offering features like dynamic typing, closures (anonymous functions), and built-in support for working with lists and maps. It’s often used for scripting, building web applications (with frameworks like Grails), and improving the productivity of Java developers. While syntactically similar to Java in many respects, Groovy allows for a more flexible and less verbose coding style.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-01T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-groovy/">Beginner&#39;s Guide to Groovy</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Groovy</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-03-01T00:00:00&#43;00:00">March 1, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      13 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-groovy">Introduction to Groovy</a>
+      <ul>
+        <li><a href="#what-is-groovy">What is Groovy?</a></li>
+        <li><a href="#why-use-groovy">Why use Groovy?</a></li>
+        <li><a href="#groovy-vs-java">Groovy vs. Java</a></li>
+        <li><a href="#setting-up-your-environment">Setting up your environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#variables-and-data-types">Variables and Data Types</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#control-structures-if-else-loops">Control Structures (if-else, loops)</a></li>
+        <li><a href="#working-with-strings">Working with Strings</a></li>
+        <li><a href="#working-with-collections-lists-maps">Working with Collections (Lists, Maps)</a></li>
+      </ul>
+    </li>
+    <li><a href="#object-oriented-programming-in-groovy">Object-Oriented Programming in Groovy</a>
+      <ul>
+        <li><a href="#classes-and-objects">Classes and Objects</a></li>
+        <li><a href="#constructors">Constructors</a></li>
+        <li><a href="#inheritance">Inheritance</a></li>
+        <li><a href="#polymorphism">Polymorphism</a></li>
+        <li><a href="#interfaces">Interfaces</a></li>
+      </ul>
+    </li>
+    <li><a href="#groovys-powerful-features">Groovy&rsquo;s Powerful Features</a>
+      <ul>
+        <li><a href="#closures">Closures</a></li>
+        <li><a href="#metaprogramming">Metaprogramming</a></li>
+        <li><a href="#builders">Builders</a></li>
+        <li><a href="#using-groovys-built-in-methods">Using Groovy&rsquo;s built-in methods</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-files-and-external-resources">Working with Files and External Resources</a>
+      <ul>
+        <li><a href="#reading-and-writing-files">Reading and Writing Files</a></li>
+        <li><a href="#working-with-json-and-xml">Working with JSON and XML</a></li>
+        <li><a href="#making-http-requests">Making HTTP Requests</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics">Advanced Topics</a>
+      <ul>
+        <li><a href="#testing-with-groovy">Testing with Groovy</a></li>
+        <li><a href="#using-groovy-with-grails-or-spring-boot">Using Groovy with Grails or Spring Boot</a></li>
+        <li><a href="#working-with-databases">Working with Databases</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-groovy">
+  Introduction to Groovy
+  <a class="anchor" href="#introduction-to-groovy">#</a>
+</h2>
+<h3 class="heading" id="what-is-groovy">
+  What is Groovy?
+  <a class="anchor" href="#what-is-groovy">#</a>
+</h3>
+<p>Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&rsquo;s built on top of Java and seamlessly integrates with existing Java libraries and frameworks.  Groovy aims to be a more concise and expressive alternative to Java, offering features like dynamic typing, closures (anonymous functions), and built-in support for working with lists and maps.  It&rsquo;s often used for scripting, building web applications (with frameworks like Grails), and improving the productivity of Java developers.  While syntactically similar to Java in many respects, Groovy allows for a more flexible and less verbose coding style.</p>
+<h3 class="heading" id="why-use-groovy">
+  Why use Groovy?
+  <a class="anchor" href="#why-use-groovy">#</a>
+</h3>
+<p>Groovy offers several compelling advantages:</p>
+<ul>
+<li><strong>Increased Productivity:</strong> Groovy&rsquo;s concise syntax and powerful features enable developers to write less code to achieve the same functionality as in Java. This leads to faster development cycles.</li>
+<li><strong>Improved Readability:</strong>  Groovy&rsquo;s syntax is often considered more readable and easier to understand than Java, leading to better maintainability.</li>
+<li><strong>Seamless Java Interoperability:</strong> Groovy runs on the JVM and can use any Java library without modification.  This allows for easy integration with existing Java projects.</li>
+<li><strong>Dynamic Typing:</strong>  While static typing is supported, Groovy&rsquo;s dynamic typing allows for quicker prototyping and experimentation.</li>
+<li><strong>Powerful Metaprogramming Features:</strong> Groovy provides advanced metaprogramming capabilities that let you modify the behavior of your code at runtime.  This is extremely useful for tasks like creating Domain-Specific Languages (DSLs).</li>
+<li><strong>Scripting Capabilities:</strong> Groovy is excellent for writing scripts for automating tasks or integrating with other systems.</li>
+</ul>
+<h3 class="heading" id="groovy-vs-java">
+  Groovy vs. Java
+  <a class="anchor" href="#groovy-vs-java">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Groovy</th>
+          <th>Java</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Typing</td>
+          <td>Dynamic (with static typing support)</td>
+          <td>Statically typed</td>
+      </tr>
+      <tr>
+          <td>Syntax</td>
+          <td>More concise and expressive</td>
+          <td>More verbose</td>
+      </tr>
+      <tr>
+          <td>Development Speed</td>
+          <td>Faster</td>
+          <td>Slower (generally)</td>
+      </tr>
+      <tr>
+          <td>Learning Curve</td>
+          <td>Relatively easier</td>
+          <td>Steeper</td>
+      </tr>
+      <tr>
+          <td>Interoperability</td>
+          <td>Seamless with Java</td>
+          <td>N/A</td>
+      </tr>
+      <tr>
+          <td>Metaprogramming</td>
+          <td>Rich support</td>
+          <td>Limited</td>
+      </tr>
+  </tbody>
+</table>
+<h3 class="heading" id="setting-up-your-environment">
+  Setting up your environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h3>
+<p>To begin developing with Groovy, you&rsquo;ll need the Groovy SDK installed.  The easiest way to do this is typically using SDKMAN!:</p>
+<ol>
+<li>
+<p><strong>Install SDKMAN!:</strong> Follow the instructions on the SDKMAN! website (<a href="https://sdkman.io/">https://sdkman.io/</a>) to install it for your operating system.</p>
+</li>
+<li>
+<p><strong>Install Groovy:</strong> Once SDKMAN! is installed, open your terminal or command prompt and run:  <code>sdk install groovy</code></p>
+</li>
+<li>
+<p><strong>Verify Installation:</strong> After installation, run <code>groovy -version</code> to confirm that Groovy is installed correctly and check its version number.</p>
+</li>
+</ol>
+<p>Alternatively, you can download the Groovy distribution directly from the official website and manually configure it. However, using SDKMAN! is generally recommended for ease of installation and management.  You&rsquo;ll also need a text editor or IDE.  Many popular IDEs such as IntelliJ IDEA, Eclipse, and NetBeans offer excellent support for Groovy development, including syntax highlighting, code completion, and debugging.</p>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="variables-and-data-types">
+  Variables and Data Types
+  <a class="anchor" href="#variables-and-data-types">#</a>
+</h3>
+<p>Groovy is dynamically typed, meaning you don&rsquo;t explicitly declare the data type of a variable.  The type is inferred at runtime.  Variable names start with a letter or underscore and can contain letters, numbers, and underscores.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;John Doe&#34;</span> <span style="color:#60a0b0;font-style:italic">// String
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">def</span> age <span style="color:#666">=</span> <span style="color:#40a070">30</span>          <span style="color:#60a0b0;font-style:italic">// Integer
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">def</span> height <span style="color:#666">=</span> <span style="color:#40a070">5.11</span>     <span style="color:#60a0b0;font-style:italic">// Double
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">def</span> isAdult <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span>    <span style="color:#60a0b0;font-style:italic">// Boolean
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">def</span> list <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">]</span>  <span style="color:#60a0b0;font-style:italic">// List
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">def</span> map <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#002070;font-weight:bold">name:</span><span style="color:#4070a0">&#34;John&#34;</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">age:</span><span style="color:#40a070">30</span><span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Map
+</span></span></span></code></pre></div><p><code>def</code> is the most common way to declare variables.  However, you can explicitly specify types for better readability and compile-time checks:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>String city <span style="color:#666">=</span> <span style="color:#4070a0">&#34;New York&#34;</span>
+</span></span><span style="display:flex;"><span>Integer zipCode <span style="color:#666">=</span> <span style="color:#40a070">10001</span>
+</span></span></code></pre></div><h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>Groovy supports standard arithmetic operators (+, -, *, /, %), comparison operators (==, !=, &gt;, &lt;, &gt;=, &lt;=), logical operators (&amp;&amp;, ||, !), and assignment operators (=, +=, -=, etc.).  It also provides several specialized operators:</p>
+<ul>
+<li><strong>Range Operator (<code>..</code>)</strong>: Creates a range of numbers.  <code>1..5</code> creates a range from 1 to 5 (inclusive).</li>
+<li><strong>Elvis Operator (<code>?:</code>)</strong>:  Provides a concise way to handle null values. <code>value ?: &quot;default&quot;</code> returns <code>value</code> if it&rsquo;s not null, otherwise it returns &ldquo;default&rdquo;.</li>
+<li><strong>Safe Navigation Operator (<code>?.</code>)</strong>: Prevents <code>NullPointerExceptions</code> by safely accessing properties of potentially null objects.  <code>person?.name</code> will not throw an exception if <code>person</code> is null.</li>
+</ul>
+<h3 class="heading" id="control-structures-if-else-loops">
+  Control Structures (if-else, loops)
+  <a class="anchor" href="#control-structures-if-else-loops">#</a>
+</h3>
+<p>Groovy&rsquo;s control structures are similar to Java&rsquo;s, but often more concise:</p>
+<p><strong>if-else:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> x <span style="color:#666">=</span> <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>x <span style="color:#666">&gt;</span> <span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    println <span style="color:#4070a0">&#34;x is greater than 5&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    println <span style="color:#4070a0">&#34;x is not greater than 5&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p><strong>Loops:</strong></p>
+<ul>
+<li><strong>for loop (iterating over a range):</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span>i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1</span><span style="color:#666">..</span><span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    println i
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><ul>
+<li><strong>for loop (iterating over a collection):</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> names <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;Bob&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;Charlie&#34;</span><span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span>name <span style="color:#007020;font-weight:bold">in</span> names<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    println name
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><ul>
+<li><strong>while loop:</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#666">(</span>i <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    println i
+</span></span><span style="display:flex;"><span>    i<span style="color:#666">++</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><ul>
+<li><strong>each loop (for collections):</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#666">[</span><span style="color:#4070a0">&#34;apple&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;banana&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;cherry&#34;</span><span style="color:#666">].</span><span style="color:#4070a0">each</span> <span style="color:#666">{</span> fruit <span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span>    println fruit<span style="color:#666">.</span><span style="color:#4070a0">toUpperCase</span><span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><h3 class="heading" id="working-with-strings">
+  Working with Strings
+  <a class="anchor" href="#working-with-strings">#</a>
+</h3>
+<p>Groovy provides convenient methods for string manipulation:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> message <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
+</span></span><span style="display:flex;"><span>println message<span style="color:#666">.</span><span style="color:#4070a0">toUpperCase</span><span style="color:#666">()</span>      <span style="color:#60a0b0;font-style:italic">// HELLO, WORLD!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println message<span style="color:#666">.</span><span style="color:#4070a0">toLowerCase</span><span style="color:#666">()</span>      <span style="color:#60a0b0;font-style:italic">// hello, world!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println message<span style="color:#666">.</span><span style="color:#4070a0">length</span><span style="color:#666">()</span>           <span style="color:#60a0b0;font-style:italic">// 13
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println message<span style="color:#666">.</span><span style="color:#4070a0">substring</span><span style="color:#666">(</span><span style="color:#40a070">7</span><span style="color:#666">)</span>      <span style="color:#60a0b0;font-style:italic">// world!
+</span></span></span></code></pre></div><p>String interpolation is supported using <code>${}</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>
+</span></span><span style="display:flex;"><span>println <span style="color:#4070a0">&#34;Hello, ${name}!&#34;</span>       <span style="color:#60a0b0;font-style:italic">// Hello, Alice!
+</span></span></span></code></pre></div><h3 class="heading" id="working-with-collections-lists-maps">
+  Working with Collections (Lists, Maps)
+  <a class="anchor" href="#working-with-collections-lists-maps">#</a>
+</h3>
+<p>Groovy simplifies working with lists and maps:</p>
+<p><strong>Lists:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> numbers <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">4</span><span style="color:#666">,</span> <span style="color:#40a070">5</span><span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span>println numbers<span style="color:#666">[</span><span style="color:#40a070">0</span><span style="color:#666">]</span>             <span style="color:#60a0b0;font-style:italic">// Accessing element at index 0 (1)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>numbers <span style="color:#666">&lt;&lt;</span> <span style="color:#40a070">6</span>                  <span style="color:#60a0b0;font-style:italic">// Adding an element
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>numbers<span style="color:#666">.</span><span style="color:#4070a0">add</span><span style="color:#666">(</span><span style="color:#40a070">7</span><span style="color:#666">)</span>                <span style="color:#60a0b0;font-style:italic">// Adding an element using add()
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>numbers<span style="color:#666">.</span><span style="color:#4070a0">remove</span><span style="color:#666">(</span><span style="color:#40a070">2</span><span style="color:#666">)</span>             <span style="color:#60a0b0;font-style:italic">// Removing element 2
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println numbers<span style="color:#666">.</span><span style="color:#4070a0">size</span><span style="color:#666">()</span>         <span style="color:#60a0b0;font-style:italic">// Getting size of the list
+</span></span></span></code></pre></div><p><strong>Maps:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> person <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#002070;font-weight:bold">name:</span> <span style="color:#4070a0">&#34;Bob&#34;</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">age:</span> <span style="color:#40a070">30</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">city:</span> <span style="color:#4070a0">&#34;London&#34;</span><span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span>println person<span style="color:#666">.</span><span style="color:#4070a0">name</span>            <span style="color:#60a0b0;font-style:italic">// Accessing value using key
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>person<span style="color:#666">.</span><span style="color:#4070a0">country</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;UK&#34;</span>         <span style="color:#60a0b0;font-style:italic">// Adding a new key-value pair
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println person<span style="color:#666">.</span><span style="color:#4070a0">containsKey</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;age&#34;</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Checking if a key exists
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println person<span style="color:#666">.</span><span style="color:#4070a0">size</span><span style="color:#666">()</span>         <span style="color:#60a0b0;font-style:italic">// Getting size of the map
+</span></span></span></code></pre></div><p>Lists and Maps are dynamically sized and can contain elements of different data types.  Many useful methods are available for manipulating collections.</p>
+<h2 class="heading" id="object-oriented-programming-in-groovy">
+  Object-Oriented Programming in Groovy
+  <a class="anchor" href="#object-oriented-programming-in-groovy">#</a>
+</h2>
+<h3 class="heading" id="classes-and-objects">
+  Classes and Objects
+  <a class="anchor" href="#classes-and-objects">#</a>
+</h3>
+<p>Groovy fully supports object-oriented programming.  Classes are defined using the <code>class</code> keyword:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    String name
+</span></span><span style="display:flex;"><span>    String breed
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">bark</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        println <span style="color:#4070a0">&#34;Woof!&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> myDog <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Dog<span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span>myDog<span style="color:#666">.</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Buddy&#34;</span>
+</span></span><span style="display:flex;"><span>myDog<span style="color:#666">.</span><span style="color:#4070a0">breed</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Golden Retriever&#34;</span>
+</span></span><span style="display:flex;"><span>myDog<span style="color:#666">.</span><span style="color:#4070a0">bark</span><span style="color:#666">()</span> <span style="color:#60a0b0;font-style:italic">// Output: Woof!
+</span></span></span></code></pre></div><p>Groovy allows for concise class definitions.  You can omit the <code>public</code> keyword as it is the default access modifier.  Fields can be declared without explicit type declarations (using <code>def</code>) and property access is simplified.</p>
+<h3 class="heading" id="constructors">
+  Constructors
+  <a class="anchor" href="#constructors">#</a>
+</h3>
+<p>Constructors in Groovy are similar to Java, but Groovy offers a more concise syntax.  A constructor with no arguments is automatically generated if you don&rsquo;t define one.  You can define constructors with parameters:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    String name
+</span></span><span style="display:flex;"><span>    String color
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">Cat</span><span style="color:#666">(</span>String name<span style="color:#666">,</span> String color<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> name
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">color</span> <span style="color:#666">=</span> color
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">meow</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        println <span style="color:#4070a0">&#34;Meow!&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> myCat <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Cat<span style="color:#666">(</span><span style="color:#4070a0">&#34;Whiskers&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;Gray&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>myCat<span style="color:#666">.</span><span style="color:#4070a0">meow</span><span style="color:#666">()</span> <span style="color:#60a0b0;font-style:italic">// Output: Meow!
+</span></span></span></code></pre></div><p>Groovy also supports constructor overloading.</p>
+<h3 class="heading" id="inheritance">
+  Inheritance
+  <a class="anchor" href="#inheritance">#</a>
+</h3>
+<p>Inheritance is achieved using the <code>extends</code> keyword:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    String name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">eat</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        println <span style="color:#4070a0">&#34;Eating...&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> <span style="color:#007020;font-weight:bold">extends</span> Animal <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">bark</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        println <span style="color:#4070a0">&#34;Woof!&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> myDog <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Dog<span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span>myDog<span style="color:#666">.</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Rover&#34;</span>
+</span></span><span style="display:flex;"><span>myDog<span style="color:#666">.</span><span style="color:#4070a0">eat</span><span style="color:#666">()</span>   <span style="color:#60a0b0;font-style:italic">// Output: Eating...
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>myDog<span style="color:#666">.</span><span style="color:#4070a0">bark</span><span style="color:#666">()</span> <span style="color:#60a0b0;font-style:italic">// Output: Woof!
+</span></span></span></code></pre></div><p>Groovy supports single inheritance (a class can extend only one other class).</p>
+<h3 class="heading" id="polymorphism">
+  Polymorphism
+  <a class="anchor" href="#polymorphism">#</a>
+</h3>
+<p>Polymorphism allows objects of different classes to be treated as objects of a common type.  This is readily achieved in Groovy through method overriding:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">makeSound</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        println <span style="color:#4070a0">&#34;Generic animal sound&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> <span style="color:#007020;font-weight:bold">extends</span> Animal <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#555;font-weight:bold">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">makeSound</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        println <span style="color:#4070a0">&#34;Woof!&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span> <span style="color:#007020;font-weight:bold">extends</span> Animal <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#555;font-weight:bold">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">makeSound</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        println <span style="color:#4070a0">&#34;Meow!&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> animals <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#007020;font-weight:bold">new</span> Dog<span style="color:#666">(),</span> <span style="color:#007020;font-weight:bold">new</span> Cat<span style="color:#666">()]</span>
+</span></span><span style="display:flex;"><span>animals<span style="color:#666">.</span><span style="color:#4070a0">each</span> <span style="color:#666">{</span> animal <span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span>    animal<span style="color:#666">.</span><span style="color:#4070a0">makeSound</span><span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Output:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Woof!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Meow!
+</span></span></span></code></pre></div><h3 class="heading" id="interfaces">
+  Interfaces
+  <a class="anchor" href="#interfaces">#</a>
+</h3>
+<p>Interfaces are defined using the <code>interface</code> keyword.  Classes can implement multiple interfaces using the <code>implements</code> keyword:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">Pet</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">play</span><span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">HousePet</span> <span style="color:#007020;font-weight:bold">extends</span> Pet <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">feed</span><span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> <span style="color:#007020;font-weight:bold">implements</span> HousePet <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">play</span><span style="color:#666">()</span> <span style="color:#666">{</span> println <span style="color:#4070a0">&#34;Dog playing fetch&#34;</span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">feed</span><span style="color:#666">()</span> <span style="color:#666">{</span> println <span style="color:#4070a0">&#34;Feeding dog kibble&#34;</span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> myDog <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Dog<span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span>myDog<span style="color:#666">.</span><span style="color:#4070a0">play</span><span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span>myDog<span style="color:#666">.</span><span style="color:#4070a0">feed</span><span style="color:#666">()</span>
+</span></span></code></pre></div><p>Groovy interfaces are similar to Java interfaces, defining a contract for classes that implement them.  Methods declared within an interface are implicitly public and abstract.</p>
+<h2 class="heading" id="groovys-powerful-features">
+  Groovy&rsquo;s Powerful Features
+  <a class="anchor" href="#groovys-powerful-features">#</a>
+</h2>
+<h3 class="heading" id="closures">
+  Closures
+  <a class="anchor" href="#closures">#</a>
+</h3>
+<p>Closures are anonymous functions that can be passed as arguments to methods or assigned to variables. They are a powerful feature that enables functional programming paradigms in Groovy.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> greet <span style="color:#666">=</span> <span style="color:#666">{</span> name <span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span>    println <span style="color:#4070a0">&#34;Hello, ${name}!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>greet<span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: Hello, Alice!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> numbers <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">4</span><span style="color:#666">,</span> <span style="color:#40a070">5</span><span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span>numbers<span style="color:#666">.</span><span style="color:#4070a0">each</span> <span style="color:#666">{</span> number <span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span>    println number <span style="color:#666">*</span> <span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span> <span style="color:#60a0b0;font-style:italic">// Output: 2, 4, 6, 8, 10
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> sum <span style="color:#666">=</span> numbers<span style="color:#666">.</span><span style="color:#4070a0">inject</span><span style="color:#666">(</span><span style="color:#40a070">0</span><span style="color:#666">)</span> <span style="color:#666">{</span> acc<span style="color:#666">,</span> num <span style="color:#666">-&gt;</span> acc <span style="color:#666">+</span> num <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>println sum <span style="color:#60a0b0;font-style:italic">// Output: 15
+</span></span></span></code></pre></div><p>Closures can access variables from their enclosing scope (closures have lexical closures).  The <code>it</code> variable implicitly represents the closure&rsquo;s single parameter if only one is used.  <code>inject</code> is a method demonstrating the power of closures for functional operations.</p>
+<h3 class="heading" id="metaprogramming">
+  Metaprogramming
+  <a class="anchor" href="#metaprogramming">#</a>
+</h3>
+<p>Groovy&rsquo;s metaprogramming capabilities allow you to modify the behavior of your code at runtime. This can be used to create DSLs (Domain-Specific Languages), generate code dynamically, and add methods to classes at runtime.  This is primarily achieved through <code>ExpandoMetaClass</code>.  However, since Groovy 3.0, using <code>ExpandoMetaClass</code> is discouraged, and alternative approaches (like using categories) should be favored for improved maintainability and to avoid potential runtime conflicts.</p>
+<p><strong>Using Categories (Preferred):</strong></p>
+<p>Categories allow you to extend existing classes without modifying the original class code.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">StringCategory</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">static</span> String <span style="color:#06287e">reverse</span><span style="color:#666">(</span>String str<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        str<span style="color:#666">.</span><span style="color:#4070a0">reverse</span><span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>use<span style="color:#666">(</span>StringCategory<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    println <span style="color:#4070a0">&#34;hello&#34;</span><span style="color:#666">.</span><span style="color:#4070a0">reverse</span><span style="color:#666">()</span> <span style="color:#60a0b0;font-style:italic">// Output: olleh
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#666">}</span>
+</span></span></code></pre></div><p><strong>Note:</strong> While <code>ExpandoMetaClass</code> is less recommended, understanding its basic functionality can still be useful for encountering legacy code.  It should be used cautiously, ideally only in well-defined, controlled contexts and with rigorous testing.</p>
+<h3 class="heading" id="builders">
+  Builders
+  <a class="anchor" href="#builders">#</a>
+</h3>
+<p>Groovy&rsquo;s builders provide a fluent, declarative syntax for creating complex objects.  They offer an alternative to nested constructor calls, making code more readable and maintainable.  The most common builder is the <code>MarkupBuilder</code>, used for generating XML or HTML.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> writer <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> StringWriter<span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> xml <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> MarkupBuilder<span style="color:#666">(</span>writer<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>xml<span style="color:#666">.</span><span style="color:#4070a0">person</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    name<span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>    age<span style="color:#666">(</span><span style="color:#40a070">30</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>println writer<span style="color:#666">.</span><span style="color:#4070a0">toString</span><span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Output: &lt;person&gt;&lt;name&gt;Alice&lt;/name&gt;&lt;age&gt;30&lt;/age&gt;&lt;/person&gt;
+</span></span></span></code></pre></div><p>Custom builders can be created to generate other types of objects or structures.</p>
+<h3 class="heading" id="using-groovys-built-in-methods">
+  Using Groovy&rsquo;s built-in methods
+  <a class="anchor" href="#using-groovys-built-in-methods">#</a>
+</h3>
+<p>Groovy provides a rich set of built-in methods that simplify common programming tasks.  Many of these methods extend the functionality of standard Java classes.  Examples include:</p>
+<ul>
+<li><strong><code>each()</code>:</strong> Iterates over collections.</li>
+<li><strong><code>collect()</code>:</strong>  Transforms collections, applying a closure to each element.</li>
+<li><strong><code>find()</code>:</strong> Finds the first element matching a condition.</li>
+<li><strong><code>findAll()</code>:</strong> Finds all elements matching a condition.</li>
+<li><strong><code>groupBy()</code>:</strong> Groups elements based on a criteria.</li>
+<li><strong><code>sum()</code>:</strong> Calculates the sum of elements in a numeric collection.</li>
+<li><strong><code>max()</code> and <code>min()</code>:</strong> Finds the maximum and minimum elements in a collection.</li>
+<li><strong>String manipulation methods:</strong> Numerous methods for working with strings (e.g., <code>toUpperCase()</code>, <code>toLowerCase()</code>, <code>substring()</code>).</li>
+<li><strong>File I/O methods:</strong> Simplified methods for reading and writing files.</li>
+</ul>
+<p>These built-in methods significantly reduce the boilerplate code required to accomplish common programming tasks and promote conciseness.  Extensive documentation on available methods for different data types is readily accessible in the Groovy documentation.</p>
+<h2 class="heading" id="working-with-files-and-external-resources">
+  Working with Files and External Resources
+  <a class="anchor" href="#working-with-files-and-external-resources">#</a>
+</h2>
+<h3 class="heading" id="reading-and-writing-files">
+  Reading and Writing Files
+  <a class="anchor" href="#reading-and-writing-files">#</a>
+</h3>
+<p>Groovy offers convenient methods for reading and writing files.  The <code>File</code> class provides a straightforward interface:</p>
+<p><strong>Reading a file:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> file <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> File<span style="color:#666">(</span><span style="color:#4070a0">&#34;my_file.txt&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>file<span style="color:#666">.</span><span style="color:#4070a0">exists</span><span style="color:#666">())</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    file<span style="color:#666">.</span><span style="color:#4070a0">eachLine</span> <span style="color:#666">{</span> line <span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span>        println line
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    println <span style="color:#4070a0">&#34;File not found.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Alternatively, read the entire file content into a String:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">def</span> content <span style="color:#666">=</span> file<span style="color:#666">.</span><span style="color:#4070a0">text</span>
+</span></span><span style="display:flex;"><span>println content
+</span></span></code></pre></div><p><strong>Writing to a file:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> file <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> File<span style="color:#666">(</span><span style="color:#4070a0">&#34;output.txt&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>file<span style="color:#666">.</span><span style="color:#4070a0">withWriter</span> <span style="color:#666">{</span> writer <span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span>    writer<span style="color:#666">.</span><span style="color:#4070a0">writeLine</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;This is the first line.&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>    writer<span style="color:#666">.</span><span style="color:#4070a0">writeLine</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;This is the second line.&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Or using &lt;&lt; operator for simple appending:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>file <span style="color:#666">&lt;&lt;</span> <span style="color:#4070a0">&#34;This line is appended.&#34;</span>
+</span></span></code></pre></div><p>Remember to handle potential exceptions (e.g., <code>FileNotFoundException</code>) when working with files.</p>
+<h3 class="heading" id="working-with-json-and-xml">
+  Working with JSON and XML
+  <a class="anchor" href="#working-with-json-and-xml">#</a>
+</h3>
+<p>Groovy provides built-in support for handling JSON and XML data.  The <code>JsonOutput</code> and <code>XmlSlurper</code> classes are commonly used:</p>
+<p><strong>JSON:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">groovy.json.JsonOutput</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> data <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#002070;font-weight:bold">name:</span> <span style="color:#4070a0">&#34;John&#34;</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">age:</span> <span style="color:#40a070">30</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">city:</span> <span style="color:#4070a0">&#34;New York&#34;</span><span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> jsonString <span style="color:#666">=</span> JsonOutput<span style="color:#666">.</span><span style="color:#4070a0">toJson</span><span style="color:#666">(</span>data<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println jsonString <span style="color:#60a0b0;font-style:italic">// Output: {&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;New York&#34;}
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">groovy.json.JsonSlurper</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> slurper <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> JsonSlurper<span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> parsedJson <span style="color:#666">=</span> slurper<span style="color:#666">.</span><span style="color:#4070a0">parseText</span><span style="color:#666">(</span>jsonString<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println parsedJson<span style="color:#666">.</span><span style="color:#4070a0">name</span> <span style="color:#60a0b0;font-style:italic">// Output: John
+</span></span></span></code></pre></div><p><strong>XML:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">groovy.xml.XmlSlurper</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> xmlString <span style="color:#666">=</span> <span style="color:#4070a0">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">&lt;person&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &lt;name&gt;Jane&lt;/name&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &lt;age&gt;25&lt;/age&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">&lt;/person&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> xml <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> XmlSlurper<span style="color:#666">().</span><span style="color:#4070a0">parseText</span><span style="color:#666">(</span>xmlString<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println xml<span style="color:#666">.</span><span style="color:#4070a0">name</span><span style="color:#666">.</span><span style="color:#4070a0">text</span><span style="color:#666">()</span> <span style="color:#60a0b0;font-style:italic">// Output: Jane
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println xml<span style="color:#666">.</span><span style="color:#4070a0">age</span><span style="color:#666">.</span><span style="color:#4070a0">text</span><span style="color:#666">()</span>  <span style="color:#60a0b0;font-style:italic">// Output: 25
+</span></span></span></code></pre></div><p>These classes simplify parsing and generating JSON and XML data.  For more complex scenarios, consider using libraries like <code>jackson</code> (for JSON) for enhanced performance and features.</p>
+<h3 class="heading" id="making-http-requests">
+  Making HTTP Requests
+  <a class="anchor" href="#making-http-requests">#</a>
+</h3>
+<p>Groovy offers several ways to make HTTP requests, including using the built-in <code>HttpURLConnection</code> or dedicated libraries like <code>HttpBuilder</code> or <code>OkHttp</code>.  <code>HttpBuilder</code> is frequently preferred for its ease of use.  You&rsquo;ll likely need to add the <code>http-builder</code> dependency to your project (e.g., using Gradle or Maven).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">groovyx.net.http.HTTPBuilder</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> http <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> HTTPBuilder<span style="color:#666">(</span><span style="color:#4070a0">&#39;https://api.example.com&#39;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>http<span style="color:#666">.</span><span style="color:#4070a0">request</span><span style="color:#666">(</span>GET<span style="color:#666">,</span> JSON<span style="color:#666">)</span> <span style="color:#666">{</span> req <span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span>    response<span style="color:#666">.</span><span style="color:#4070a0">success</span> <span style="color:#666">=</span> <span style="color:#666">{</span> resp<span style="color:#666">,</span> json <span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span>        println <span style="color:#4070a0">&#34;Status: ${resp.status}&#34;</span>
+</span></span><span style="display:flex;"><span>        println <span style="color:#4070a0">&#34;Data: ${json}&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    response<span style="color:#666">.</span><span style="color:#4070a0">failure</span> <span style="color:#666">=</span> <span style="color:#666">{</span> resp <span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span>        println <span style="color:#4070a0">&#34;Error: ${resp.status}&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>This example uses <code>HttpBuilder</code> to make a GET request to a specified URL. The response is handled using closures for success and failure scenarios.  The <code>JSON</code> type handler indicates the expectation of a JSON response.  Remember to replace <code>'https://api.example.com'</code> with your actual API endpoint.  Error handling and appropriate dependencies are crucial aspects of robust HTTP request implementation.</p>
+<h2 class="heading" id="advanced-topics">
+  Advanced Topics
+  <a class="anchor" href="#advanced-topics">#</a>
+</h2>
+<h3 class="heading" id="testing-with-groovy">
+  Testing with Groovy
+  <a class="anchor" href="#testing-with-groovy">#</a>
+</h3>
+<p>Groovy integrates well with various testing frameworks.  Spock is a popular choice, offering a more expressive and readable syntax compared to JUnit.</p>
+<p><strong>Spock Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">spock.lang.*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">CalculatorSpec</span> <span style="color:#007020;font-weight:bold">extends</span> Specification <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">def</span> <span style="color:#4070a0">&#34;addition of two numbers&#34;</span><span style="color:#666">(</span><span style="color:#902000">int</span> a<span style="color:#666">,</span> <span style="color:#902000">int</span> b<span style="color:#666">,</span> <span style="color:#902000">int</span> expected<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#002070;font-weight:bold">expect:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">new</span> <span style="color:#06287e">Calculator</span><span style="color:#666">().</span><span style="color:#4070a0">add</span><span style="color:#666">(</span>a<span style="color:#666">,</span> b<span style="color:#666">)</span> <span style="color:#666">==</span> expected
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#002070;font-weight:bold">where:</span>
+</span></span><span style="display:flex;"><span>        a <span style="color:#666">|</span> b <span style="color:#666">|</span> expected
+</span></span><span style="display:flex;"><span>        <span style="color:#40a070">1</span> <span style="color:#666">|</span> <span style="color:#40a070">2</span> <span style="color:#666">|</span> <span style="color:#40a070">3</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#40a070">5</span> <span style="color:#666">|</span> <span style="color:#40a070">10</span><span style="color:#666">|</span> <span style="color:#40a070">15</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#40a070">0</span> <span style="color:#666">|</span> <span style="color:#40a070">0</span> <span style="color:#666">|</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Calculator</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> <span style="color:#06287e">add</span><span style="color:#666">(</span><span style="color:#902000">int</span> a<span style="color:#666">,</span> <span style="color:#902000">int</span> b<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">+</span> b
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>This Spock specification tests the <code>add</code> method of a <code>Calculator</code> class.  The <code>where</code> block provides data for multiple test cases.  Other testing frameworks, like JUnit, can also be used with Groovy, but Spock&rsquo;s features often lead to more concise and readable test specifications.  To use Spock, you&rsquo;ll need to add the appropriate Spock dependency to your project.</p>
+<h3 class="heading" id="using-groovy-with-grails-or-spring-boot">
+  Using Groovy with Grails or Spring Boot
+  <a class="anchor" href="#using-groovy-with-grails-or-spring-boot">#</a>
+</h3>
+<p>Groovy is often used with Grails for building web applications.  Grails is a full-stack framework that leverages Groovy&rsquo;s features for rapid development.  Spring Boot applications can also use Groovy, providing a more concise and expressive approach compared to Java.</p>
+<p><strong>Grails Example (Conceptual):</strong></p>
+<p>In Grails, you&rsquo;d typically define controllers, services, and domain classes using Groovy.  The framework handles much of the underlying plumbing, allowing developers to focus on the application logic.</p>
+<p><strong>Spring Boot Example (Conceptual):</strong></p>
+<p>In Spring Boot, Groovy can be used for configuring beans, writing controllers, and other components.  The annotation-based configuration of Spring is supported seamlessly with Groovy&rsquo;s concise syntax.  You would typically use Groovy classes annotated with Spring annotations.</p>
+<h3 class="heading" id="working-with-databases">
+  Working with Databases
+  <a class="anchor" href="#working-with-databases">#</a>
+</h3>
+<p>Groovy supports database interactions through various methods:</p>
+<ul>
+<li>
+<p><strong>Using JDBC directly:</strong>  You can interact with databases directly using JDBC connections in Groovy, similar to how it is done in Java.</p>
+</li>
+<li>
+<p><strong>Using GORM (Grails Object-Relational Mapping):</strong>  If using Grails, GORM provides an object-relational mapping framework, making database interactions easier and more object-oriented.</p>
+</li>
+<li>
+<p><strong>Using Spring Data:</strong> If working with Spring Boot, Spring Data simplifies database access using repositories and other abstractions.  This approach is often preferred for its flexibility and integration with the Spring ecosystem.</p>
+</li>
+<li>
+<p><strong>Using other ORMs:</strong>  Other ORMs compatible with Java can be used with Groovy.</p>
+</li>
+</ul>
+<p><strong>Example (using JDBC - conceptual):</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">java.sql.*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> connection <span style="color:#666">=</span> DriverManager<span style="color:#666">.</span><span style="color:#4070a0">getConnection</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;jdbc:mysql://localhost:3306/mydatabase&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;user&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;password&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> statement <span style="color:#666">=</span> connection<span style="color:#666">.</span><span style="color:#4070a0">createStatement</span><span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">def</span> resultSet <span style="color:#666">=</span> statement<span style="color:#666">.</span><span style="color:#4070a0">executeQuery</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;SELECT * FROM mytable&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#666">(</span>resultSet<span style="color:#666">.</span><span style="color:#4070a0">next</span><span style="color:#666">())</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    println resultSet<span style="color:#666">.</span><span style="color:#4070a0">getString</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;column1&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>connection<span style="color:#666">.</span><span style="color:#4070a0">close</span><span style="color:#666">()</span>
+</span></span></code></pre></div><p>This is a basic example illustrating the use of JDBC. Remember to handle potential exceptions and use appropriate connection pooling strategies in a production environment.  Using ORMs like GORM or Spring Data is typically recommended over direct JDBC usage due to improved productivity, maintainability, and error handling.  Choose the database interaction method best suited to your application architecture and framework.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-haskell/">
+                        Beginner&#39;s Guide to Haskell
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-lua/">
+                        Beginner&#39;s Guide to Lua
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

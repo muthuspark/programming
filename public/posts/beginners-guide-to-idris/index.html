@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Idris | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-idris/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-idris/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Idris">
+  <meta property="og:description" content="Introduction to Idris # What is Idris? # Idris is a purely functional programming language with dependent types. This means it combines the benefits of functional programming (like immutability, referential transparency, and higher-order functions) with the power of dependent types, allowing you to express complex program properties and prove them correct within the type system. Unlike languages like Haskell, which have a separate type system, Idris’s type system is deeply integrated, allowing for powerful compile-time guarantees and enhanced code reliability. This makes Idris particularly well-suited for projects requiring high levels of correctness, such as formal verification and compiler development. It also excels in areas where precise control over data structures and their invariants is critical.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-21T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-idris/">Beginner&#39;s Guide to Idris</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Idris</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-12-21T00:00:00&#43;00:00">December 21, 2024</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      15 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-idris">Introduction to Idris</a>
+      <ul>
+        <li><a href="#what-is-idris">What is Idris?</a></li>
+        <li><a href="#why-learn-idris">Why learn Idris?</a></li>
+        <li><a href="#setting-up-your-idris-development-environment">Setting up your Idris development environment</a></li>
+        <li><a href="#your-first-idris-program">Your first Idris program</a></li>
+      </ul>
+    </li>
+    <li><a href="#idris-basics">Idris Basics</a>
+      <ul>
+        <li><a href="#types-and-type-inference">Types and Type Inference</a></li>
+        <li><a href="#basic-data-types-integers-booleans-strings">Basic Data Types (Integers, Booleans, Strings)</a></li>
+        <li><a href="#functions-and-function-definitions">Functions and Function Definitions</a></li>
+        <li><a href="#pattern-matching">Pattern Matching</a></li>
+        <li><a href="#working-with-lists">Working with Lists</a></li>
+      </ul>
+    </li>
+    <li><a href="#dependent-types">Dependent Types</a>
+      <ul>
+        <li><a href="#understanding-dependent-types">Understanding Dependent Types</a></li>
+        <li><a href="#vectors-and-their-dependent-types">Vectors and Their Dependent Types</a></li>
+        <li><a href="#type-level-computation">Type-Level Computation</a></li>
+        <li><a href="#using-dependent-types-for-data-validation">Using Dependent Types for Data Validation</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-concepts">Advanced Concepts</a>
+      <ul>
+        <li><a href="#type-classes">Type Classes</a></li>
+        <li><a href="#data-types-records-variants">Data Types (Records, Variants)</a></li>
+        <li><a href="#modules-and-namespaces">Modules and Namespaces</a></li>
+        <li><a href="#error-handling-with-exceptions">Error Handling with Exceptions</a></li>
+        <li><a href="#writing-your-own-types">Writing Your Own Types</a></li>
+      </ul>
+    </li>
+    <li><a href="#practical-examples">Practical Examples</a>
+      <ul>
+        <li><a href="#building-a-simple-calculator">Building a Simple Calculator</a></li>
+        <li><a href="#implementing-a-small-game">Implementing a Small Game</a></li>
+        <li><a href="#working-with-external-libraries">Working with External Libraries</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion-and-further-learning">Conclusion and Further Learning</a>
+      <ul>
+        <li><a href="#where-to-go-from-here">Where to Go From Here</a></li>
+        <li><a href="#useful-resources-and-documentation">Useful Resources and Documentation</a></li>
+        <li><a href="#idris-community-and-support">Idris Community and Support</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-idris">
+  Introduction to Idris
+  <a class="anchor" href="#introduction-to-idris">#</a>
+</h2>
+<h3 class="heading" id="what-is-idris">
+  What is Idris?
+  <a class="anchor" href="#what-is-idris">#</a>
+</h3>
+<p>Idris is a purely functional programming language with dependent types.  This means it combines the benefits of functional programming (like immutability, referential transparency, and higher-order functions) with the power of dependent types, allowing you to express complex program properties and prove them correct within the type system.  Unlike languages like Haskell, which have a separate type system, Idris&rsquo;s type system is deeply integrated, allowing for powerful compile-time guarantees and enhanced code reliability. This makes Idris particularly well-suited for projects requiring high levels of correctness, such as formal verification and compiler development.  It also excels in areas where precise control over data structures and their invariants is critical.</p>
+<h3 class="heading" id="why-learn-idris">
+  Why learn Idris?
+  <a class="anchor" href="#why-learn-idris">#</a>
+</h3>
+<p>Learning Idris offers several compelling advantages:</p>
+<ul>
+<li><strong>Enhanced Code Correctness:</strong> Dependent types allow you to specify and verify properties about your data and functions during compilation.  This drastically reduces the likelihood of runtime errors.</li>
+<li><strong>Improved Code Readability and Maintainability:</strong>  The expressiveness of the type system allows for more concise and self-documenting code.  The compiler helps catch errors early, reducing debugging time.</li>
+<li><strong>Deep Understanding of Programming Fundamentals:</strong>  Learning Idris necessitates a deeper understanding of functional programming principles and type theory, which benefits your programming skills in other languages.</li>
+<li><strong>Formal Methods Exploration:</strong>  Idris provides a practical entry point to the field of formal methods and program verification.</li>
+<li><strong>Unique Problem Solving Abilities:</strong>  Idris allows you to solve problems in ways impossible or impractical in other languages due to its expressive type system.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-idris-development-environment">
+  Setting up your Idris development environment
+  <a class="anchor" href="#setting-up-your-idris-development-environment">#</a>
+</h3>
+<p>The simplest way to get started with Idris is using the official installer for your operating system. You can find the latest installers and instructions on the official Idris website <a href="https://www.idris-lang.org/">https://www.idris-lang.org/</a>.  The installation process usually involves downloading and running an installer specific to your operating system (Windows, macOS, or Linux).</p>
+<p>Alternatively, you can use a package manager such as <code>apt</code> (Debian/Ubuntu), <code>brew</code> (macOS), or <code>pacman</code> (Arch Linux). Consult the Idris website for the most up-to-date package manager instructions.</p>
+<p>Once Idris is installed, you&rsquo;ll need a text editor or IDE.  While a simple text editor will suffice for small programs, an IDE with Idris support offers significant benefits like syntax highlighting, code completion, and type checking.  Popular choices include:</p>
+<ul>
+<li><strong>VS Code with the Idris plugin:</strong> This provides a lightweight but powerful development experience.</li>
+<li><strong>Emacs/Vim with appropriate plugins:</strong>  These editors, known for their extensibility, offer excellent Idris support through community-maintained plugins.</li>
+</ul>
+<p>After installation, verify your Idris installation by opening a terminal or command prompt and typing <code>idris --version</code>. This should display the version number of your Idris installation.</p>
+<h3 class="heading" id="your-first-idris-program">
+  Your first Idris program
+  <a class="anchor" href="#your-first-idris-program">#</a>
+</h3>
+<p>Let&rsquo;s write a simple &ldquo;Hello, world!&rdquo; program in Idris:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span>main <span style="color:#007020;font-weight:bold">=</span> putStrLn <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
+</span></span></code></pre></div><p>Save this code as a file named <code>hello.idr</code>.  Then, compile and run it from your terminal using:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>idris hello.idr
+</span></span><span style="display:flex;"><span>./hello
+</span></span></code></pre></div><p>This will compile your code and then execute the <code>main</code> function, printing &ldquo;Hello, world!&rdquo; to the console.  The <code>main</code> function&rsquo;s type signature <code>IO ()</code> indicates that it performs input/output operations and returns no value (represented by <code>()</code>). <code>putStrLn</code> is a function that prints a string to the console and adds a newline character. This simple example introduces basic Idris syntax and the compilation/execution process.</p>
+<h2 class="heading" id="idris-basics">
+  Idris Basics
+  <a class="anchor" href="#idris-basics">#</a>
+</h2>
+<h3 class="heading" id="types-and-type-inference">
+  Types and Type Inference
+  <a class="anchor" href="#types-and-type-inference">#</a>
+</h3>
+<p>Idris is a statically-typed language, meaning that the type of every expression is known at compile time.  Idris uses a powerful type system based on dependent types, but even without delving into the complexities of dependent types, understanding basic type declarations and inference is crucial.</p>
+<p>Type annotations in Idris are usually optional. Idris&rsquo;s type inference system is sophisticated enough to deduce the types of many expressions automatically.  However, providing explicit type annotations improves code readability, aids in understanding complex code, and can help catch errors early.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">x</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>y <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">10</span>  <span style="color:#60a0b0;font-style:italic">-- Idris infers y to be of type Int</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">add</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
+</span></span><span style="display:flex;"><span>add x y <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#007020;font-weight:bold">+</span> y
+</span></span></code></pre></div><p>In this example, <code>x</code> is explicitly declared to be of type <code>Int</code>.  <code>y</code>&rsquo;s type is inferred as <code>Int</code> by Idris. The function <code>add</code> is explicitly given the type signature <code>Int -&gt; Int -&gt; Int</code>, indicating it takes two integers as input and returns an integer.</p>
+<h3 class="heading" id="basic-data-types-integers-booleans-strings">
+  Basic Data Types (Integers, Booleans, Strings)
+  <a class="anchor" href="#basic-data-types-integers-booleans-strings">#</a>
+</h3>
+<p>Idris provides several built-in data types:</p>
+<ul>
+<li>
+<p><strong>Integers (<code>Int</code>):</strong> Represent whole numbers.  Idris supports various integer types with different precisions (e.g., <code>Int8</code>, <code>Int16</code>, <code>Int32</code>, <code>Int64</code>).  If not specified, <code>Int</code> is usually a system-dependent integer size.</p>
+</li>
+<li>
+<p><strong>Booleans (<code>Bool</code>):</strong> Represent truth values, with the literals <code>True</code> and <code>False</code>.</p>
+</li>
+<li>
+<p><strong>Strings (<code>String</code>):</strong> Represent sequences of characters. String literals are enclosed in double quotes, e.g., <code>&quot;Hello, world!&quot;</code>.</p>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">myInt</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span>
+</span></span><span style="display:flex;"><span>myInt <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">42</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">myBool</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Bool</span>
+</span></span><span style="display:flex;"><span>myBool <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">myString</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span>
+</span></span><span style="display:flex;"><span>myString <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">&#34;Idris is awesome!&#34;</span>
+</span></span></code></pre></div><h3 class="heading" id="functions-and-function-definitions">
+  Functions and Function Definitions
+  <a class="anchor" href="#functions-and-function-definitions">#</a>
+</h3>
+<p>Functions in Idris are defined using the <code>=</code> symbol.  The type signature (the type of the function&rsquo;s input and output) is optional, but recommended for clarity and to aid type inference.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">addOne</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
+</span></span><span style="display:flex;"><span>addOne x <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#007020;font-weight:bold">+</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">greet</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">String</span>
+</span></span><span style="display:flex;"><span>greet name <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">&#34;Hello, &#34;</span> <span style="color:#007020;font-weight:bold">++</span> name <span style="color:#007020;font-weight:bold">++</span> <span style="color:#4070a0">&#34;!&#34;</span>
+</span></span></code></pre></div><p>The <code>addOne</code> function takes an integer <code>x</code> as input and returns <code>x + 1</code>. The <code>greet</code> function concatenates strings using the <code>++</code> operator.</p>
+<h3 class="heading" id="pattern-matching">
+  Pattern Matching
+  <a class="anchor" href="#pattern-matching">#</a>
+</h3>
+<p>Pattern matching is a powerful feature in Idris that allows you to define functions that behave differently based on the structure of their input. It&rsquo;s often used with algebraic data types (discussed later), but can also be used with simpler types like integers.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">factorial</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Nat</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Nat</span>
+</span></span><span style="display:flex;"><span>factorial <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>factorial n <span style="color:#007020;font-weight:bold">=</span> n <span style="color:#007020;font-weight:bold">*</span> factorial <span style="color:#007020;font-weight:bold">(</span>n <span style="color:#007020;font-weight:bold">-</span> <span style="color:#40a070">1</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span></code></pre></div><p>This defines the factorial function using pattern matching. If the input <code>n</code> is 0, it returns 1; otherwise, it recursively calls itself with <code>n-1</code>. <code>Nat</code> is a natural number type (non-negative integers).</p>
+<h3 class="heading" id="working-with-lists">
+  Working with Lists
+  <a class="anchor" href="#working-with-lists">#</a>
+</h3>
+<p>Lists in Idris are represented using the <code>List</code> type constructor.  A list of integers would be denoted as <code>List Int</code>.  You can create lists using square brackets <code>[]</code> or by using the <code>::</code> (cons) operator to add an element to the head of a list.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">myList</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">List</span> <span style="color:#902000">Int</span>
+</span></span><span style="display:flex;"><span>myList <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">[</span><span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span><span style="color:#007020;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">anotherList</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">List</span> <span style="color:#902000">Int</span>
+</span></span><span style="display:flex;"><span>anotherList <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">1</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#40a070">3</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#007020;font-weight:bold">[]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">sumList</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">List</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
+</span></span><span style="display:flex;"><span>sumList <span style="color:#007020;font-weight:bold">[]</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>sumList <span style="color:#007020;font-weight:bold">(</span>x <span style="color:#007020;font-weight:bold">::</span> xs<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#007020;font-weight:bold">+</span> sumList xs
+</span></span></code></pre></div><p><code>myList</code> shows a list literal.  <code>anotherList</code> demonstrates using the <code>::</code> operator to construct a list.  <code>sumList</code> recursively calculates the sum of elements in a list using pattern matching.  The empty list <code>[]</code> is handled as the base case.</p>
+<h2 class="heading" id="dependent-types">
+  Dependent Types
+  <a class="anchor" href="#dependent-types">#</a>
+</h2>
+<h3 class="heading" id="understanding-dependent-types">
+  Understanding Dependent Types
+  <a class="anchor" href="#understanding-dependent-types">#</a>
+</h3>
+<p>Dependent types are types that depend on values.  This is a powerful concept that allows you to express relationships between data and types within the type system itself.  In contrast to ordinary types, where the type of an expression is independent of the values it manipulates, a dependent type&rsquo;s definition involves values.  This allows for stronger compile-time guarantees and more expressive type specifications.  For example, a vector of a specific length can be represented with a type that depends on the length value. This prevents you from accidentally accessing elements beyond the vector&rsquo;s bounds at compile time.</p>
+<h3 class="heading" id="vectors-and-their-dependent-types">
+  Vectors and Their Dependent Types
+  <a class="anchor" href="#vectors-and-their-dependent-types">#</a>
+</h3>
+<p>A prime example of dependent types in Idris is the <code>Vect</code> type.  <code>Vect n a</code> represents a vector of length <code>n</code> containing elements of type <code>a</code>.  The length <code>n</code> is a <em>value</em> that affects the <em>type</em>.  You can&rsquo;t create a <code>Vect 5 Int</code> and then try to access its 6th element; the type system will prevent this at compile time.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">myVector</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Vect</span> <span style="color:#40a070">3</span> <span style="color:#902000">Int</span>
+</span></span><span style="display:flex;"><span>myVector <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">[</span><span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span><span style="color:#007020;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- This will cause a type error:</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- invalidVector : Vect 3 Int</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- invalidVector = [1,2,3,4]</span>
+</span></span></code></pre></div><p>The compiler ensures that the length specified in the <code>Vect</code> type matches the actual length of the vector at compile time.</p>
+<h3 class="heading" id="type-level-computation">
+  Type-Level Computation
+  <a class="anchor" href="#type-level-computation">#</a>
+</h3>
+<p>Dependent types enable type-level computation.  This means you can perform calculations and logic <em>within</em> the type system itself, before runtime. This is often used to enforce constraints and perform sophisticated static analysis.  For example, you can define a type that represents the result of a computation, and the type system will guarantee that the computation has been performed correctly at compile time.</p>
+<p>Consider a function that calculates the factorial:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">factorial</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Nat</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Nat</span>
+</span></span><span style="display:flex;"><span>factorial zero <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>factorial <span style="color:#007020;font-weight:bold">(</span>suc n<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=</span> suc n <span style="color:#007020;font-weight:bold">*</span> factorial n
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- We could define a type representing the result of a factorial calculation:</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#902000">FactorialResult</span> <span style="color:#007020;font-weight:bold">(</span>n <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Nat</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Type</span> <span style="color:#007020;font-weight:bold">where</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">FactorialResult</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#007020;font-weight:bold">(</span>result <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Nat</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">FactorialResult</span> n
+</span></span></code></pre></div><p>While a full exploration of this example would be quite advanced,  the key idea is that <code>FactorialResult</code> is a type that depends on the input <code>n</code>. It would require further work to properly connect it with a verified <code>factorial</code> function.</p>
+<h3 class="heading" id="using-dependent-types-for-data-validation">
+  Using Dependent Types for Data Validation
+  <a class="anchor" href="#using-dependent-types-for-data-validation">#</a>
+</h3>
+<p>Dependent types are exceptionally useful for data validation. You can use them to ensure that data structures adhere to specific invariants at compile time. This eliminates the need for runtime checks, improving performance and reliability.</p>
+<p>For example, you could define a type for a date that includes validation constraints (e.g., ensuring the month is between 1 and 12, and the day is valid for the given month and year). The type system would then prevent the creation of invalid dates.  This proactive error prevention is one of the main strengths of dependent types.  Note that building such a robust date type would involve more advanced Idris concepts like records, dependent pairs, and potentially even custom type classes.</p>
+<h2 class="heading" id="advanced-concepts">
+  Advanced Concepts
+  <a class="anchor" href="#advanced-concepts">#</a>
+</h2>
+<h3 class="heading" id="type-classes">
+  Type Classes
+  <a class="anchor" href="#type-classes">#</a>
+</h3>
+<p>Type classes in Idris provide a way to define a set of operations that can be applied to different types.  They are similar to interfaces or traits in other languages but are integrated more deeply into the type system.  A type class defines a signature (a set of functions with specified types), and types can be declared as <em>instances</em> of a type class by providing implementations for those functions.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#902000">Show</span> a <span style="color:#007020;font-weight:bold">where</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">show</span> <span style="color:#007020;font-weight:bold">:</span> a <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">String</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">instance</span> showInt <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Show</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">where</span>
+</span></span><span style="display:flex;"><span>  show x <span style="color:#007020;font-weight:bold">=</span> showIntDec x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">instance</span> showBool <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Show</span> <span style="color:#902000">Bool</span> <span style="color:#007020;font-weight:bold">where</span>
+</span></span><span style="display:flex;"><span>  show <span style="color:#902000">True</span>  <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">&#34;True&#34;</span>
+</span></span><span style="display:flex;"><span>  show <span style="color:#902000">False</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">&#34;False&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span>main <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  putStrLn <span style="color:#007020;font-weight:bold">(</span>show <span style="color:#40a070">5</span><span style="color:#007020;font-weight:bold">)</span>       <span style="color:#60a0b0;font-style:italic">-- Output: 5</span>
+</span></span><span style="display:flex;"><span>  putStrLn <span style="color:#007020;font-weight:bold">(</span>show <span style="color:#902000">True</span><span style="color:#007020;font-weight:bold">)</span>    <span style="color:#60a0b0;font-style:italic">-- Output: True</span>
+</span></span></code></pre></div><p>This defines a <code>Show</code> type class with a <code>show</code> function that converts a value to a string.  We then define instances for <code>Int</code> and <code>Bool</code>, providing implementations of <code>show</code> for each type.</p>
+<h3 class="heading" id="data-types-records-variants">
+  Data Types (Records, Variants)
+  <a class="anchor" href="#data-types-records-variants">#</a>
+</h3>
+<p>Idris supports several ways to define custom data types:</p>
+<ul>
+<li><strong>Records:</strong>  Records group together named fields of potentially different types.  They are useful for representing structured data.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#902000">Person</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Person</span> <span style="color:#007020;font-weight:bold">{</span> name <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span>, age <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">myPerson</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Person</span>
+</span></span><span style="display:flex;"><span>myPerson <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Person</span> <span style="color:#007020;font-weight:bold">{</span> name <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>, age <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">30</span> <span style="color:#007020;font-weight:bold">}</span>
+</span></span></code></pre></div><ul>
+<li><strong>Variants (Algebraic Data Types):</strong> Variants represent values that can be one of several possible types. They are fundamental to expressing complex data structures.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#902000">Shape</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Circle</span> <span style="color:#902000">Float</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#902000">Rectangle</span> <span style="color:#902000">Float</span> <span style="color:#902000">Float</span>
+</span></span></code></pre></div><p>This defines a <code>Shape</code> type that can be either a <code>Circle</code> (with a radius) or a <code>Rectangle</code> (with width and height).</p>
+<h3 class="heading" id="modules-and-namespaces">
+  Modules and Namespaces
+  <a class="anchor" href="#modules-and-namespaces">#</a>
+</h3>
+<p>Modules in Idris organize code into separate files, providing namespaces and preventing naming collisions.  A module declaration starts with <code>module</code>.  You can export specific items from a module using the <code>export</code> keyword.</p>
+<p>Example (file: <code>MyModule.idr</code>):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span> <span style="color:#007020;font-weight:bold">where</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export
+</span></span><span style="display:flex;"><span><span style="color:#06287e">myFunction</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
+</span></span><span style="display:flex;"><span>myFunction x <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#007020;font-weight:bold">*</span> <span style="color:#40a070">2</span>
+</span></span></code></pre></div><p>To use <code>myFunction</code> in another file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span>main <span style="color:#007020;font-weight:bold">=</span> putStrLn <span style="color:#007020;font-weight:bold">(</span>show <span style="color:#007020;font-weight:bold">(</span><span style="color:#902000">MyModule</span><span style="color:#007020;font-weight:bold">.</span>myFunction <span style="color:#40a070">5</span><span style="color:#007020;font-weight:bold">))</span> <span style="color:#60a0b0;font-style:italic">-- Output: 10</span>
+</span></span></code></pre></div><h3 class="heading" id="error-handling-with-exceptions">
+  Error Handling with Exceptions
+  <a class="anchor" href="#error-handling-with-exceptions">#</a>
+</h3>
+<p>Idris uses exceptions for error handling.  The <code>IO</code> monad provides facilities for exception handling.  The <code>try</code> and <code>catch</code> keywords are used to handle exceptions.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">System.IO</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span>main <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  result <span style="color:#007020;font-weight:bold">&lt;-</span> try <span style="color:#007020;font-weight:bold">(</span>unsafePerformIO <span style="color:#007020;font-weight:bold">(</span>readFile <span style="color:#4070a0">&#34;nonexistent_file.txt&#34;</span><span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> result <span style="color:#007020;font-weight:bold">of</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">Left</span> e  <span style="color:#007020;font-weight:bold">=&gt;</span> putStrLn <span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Error: &#34;</span> <span style="color:#007020;font-weight:bold">++</span> show e<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">Right</span> s <span style="color:#007020;font-weight:bold">=&gt;</span> putStrLn s
+</span></span></code></pre></div><p>This attempts to read a file. If the file doesn&rsquo;t exist, it catches the exception and prints an error message.</p>
+<h3 class="heading" id="writing-your-own-types">
+  Writing Your Own Types
+  <a class="anchor" href="#writing-your-own-types">#</a>
+</h3>
+<p>Creating custom types is a core part of Idris programming.  You&rsquo;ve already seen examples with records and variants.  However, the power of Idris truly shines when you combine these with dependent types to create types that enforce complex invariants.  The design of custom types is driven by the specific problem domain and the invariants that need to be enforced.  This often requires a solid understanding of type theory and functional programming paradigms.</p>
+<h2 class="heading" id="practical-examples">
+  Practical Examples
+  <a class="anchor" href="#practical-examples">#</a>
+</h2>
+<h3 class="heading" id="building-a-simple-calculator">
+  Building a Simple Calculator
+  <a class="anchor" href="#building-a-simple-calculator">#</a>
+</h3>
+<p>Let&rsquo;s build a simple calculator that can perform addition, subtraction, multiplication, and division. We&rsquo;ll use pattern matching to handle different operations:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#902000">Operation</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Add</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#902000">Subtract</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#902000">Multiply</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#902000">Divide</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">calculate</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Operation</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Maybe</span> <span style="color:#902000">Int</span>
+</span></span><span style="display:flex;"><span>calculate <span style="color:#902000">Add</span> x y <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Just</span> <span style="color:#007020;font-weight:bold">(</span>x <span style="color:#007020;font-weight:bold">+</span> y<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>calculate <span style="color:#902000">Subtract</span> x y <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Just</span> <span style="color:#007020;font-weight:bold">(</span>x <span style="color:#007020;font-weight:bold">-</span> y<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>calculate <span style="color:#902000">Multiply</span> x y <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Just</span> <span style="color:#007020;font-weight:bold">(</span>x <span style="color:#007020;font-weight:bold">*</span> y<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>calculate <span style="color:#902000">Divide</span> x y <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">if</span> y <span style="color:#007020;font-weight:bold">==</span> <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">then</span> <span style="color:#902000">Nothing</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#902000">Just</span> <span style="color:#007020;font-weight:bold">(</span>x <span style="color:#007020;font-weight:bold">/</span> y<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span>main <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  putStrLn <span style="color:#4070a0">&#34;Enter first number:&#34;</span>
+</span></span><span style="display:flex;"><span>  input1 <span style="color:#007020;font-weight:bold">&lt;-</span> readLn
+</span></span><span style="display:flex;"><span>  putStrLn <span style="color:#4070a0">&#34;Enter operation (+, -, *, /):&#34;</span>
+</span></span><span style="display:flex;"><span>  opStr <span style="color:#007020;font-weight:bold">&lt;-</span> getLine
+</span></span><span style="display:flex;"><span>  putStrLn <span style="color:#4070a0">&#34;Enter second number:&#34;</span>
+</span></span><span style="display:flex;"><span>  input2 <span style="color:#007020;font-weight:bold">&lt;-</span> readLn
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> op <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">case</span> opStr <span style="color:#007020;font-weight:bold">of</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#4070a0">&#34;+&#34;</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Add</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#4070a0">&#34;-&#34;</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Subtract</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#4070a0">&#34;*&#34;</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Multiply</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#4070a0">&#34;/&#34;</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Divide</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#007020;font-weight:bold">_</span>   <span style="color:#007020;font-weight:bold">-&gt;</span> error <span style="color:#4070a0">&#34;Invalid operation&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> calculate op input1 input2 <span style="color:#007020;font-weight:bold">of</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">Just</span> result <span style="color:#007020;font-weight:bold">-&gt;</span> putStrLn <span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Result: &#34;</span> <span style="color:#007020;font-weight:bold">++</span> show result<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">Nothing</span>     <span style="color:#007020;font-weight:bold">-&gt;</span> putStrLn <span style="color:#4070a0">&#34;Division by zero!&#34;</span>
+</span></span></code></pre></div><p>This code defines an <code>Operation</code> data type, a <code>calculate</code> function using pattern matching, and a <code>main</code> function to handle user input and output.  Error handling for division by zero is included using the <code>Maybe</code> type.  Note that robust error handling and input validation would require more sophisticated techniques in a production-ready calculator.</p>
+<h3 class="heading" id="implementing-a-small-game">
+  Implementing a Small Game
+  <a class="anchor" href="#implementing-a-small-game">#</a>
+</h3>
+<p>Let&rsquo;s create a simple number guessing game:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">System.Random</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span>main <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  secret <span style="color:#007020;font-weight:bold">&lt;-</span> uniform <span style="color:#40a070">1</span> <span style="color:#40a070">100</span>
+</span></span><span style="display:flex;"><span>  putStrLn <span style="color:#4070a0">&#34;I&#39;ve chosen a number between 1 and 100. Guess it!&#34;</span>
+</span></span><span style="display:flex;"><span>  guessingLoop secret
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">guessingLoop</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span>guessingLoop secret <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  putStrLn <span style="color:#4070a0">&#34;Enter your guess:&#34;</span>
+</span></span><span style="display:flex;"><span>  guess <span style="color:#007020;font-weight:bold">&lt;-</span> readLn
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> guess <span style="color:#007020;font-weight:bold">==</span> secret <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    putStrLn <span style="color:#4070a0">&#34;Congratulations! You guessed it!&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> guess <span style="color:#007020;font-weight:bold">&lt;</span> secret <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    putStrLn <span style="color:#4070a0">&#34;Too low! Try again.&#34;</span> <span style="color:#007020;font-weight:bold">&gt;&gt;</span> guessingLoop secret
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    putStrLn <span style="color:#4070a0">&#34;Too high! Try again.&#34;</span> <span style="color:#007020;font-weight:bold">&gt;&gt;</span> guessingLoop secret
+</span></span></code></pre></div><p>This uses <code>System.Random</code> to generate a random number. The <code>guessingLoop</code> function recursively prompts the user for guesses until the correct number is entered.</p>
+<h3 class="heading" id="working-with-external-libraries">
+  Working with External Libraries
+  <a class="anchor" href="#working-with-external-libraries">#</a>
+</h3>
+<p>Idris can interact with external libraries through the use of Foreign Function Interfaces (FFIs).  The specifics depend on the library and its availability as an Idris binding.  If a direct Idris binding isn&rsquo;t available, you might need to create one, which can be a complex undertaking.</p>
+<p>A simplified example (assuming a hypothetical library for image processing):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Assuming an Idris binding exists for the hypothetical image library</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ImageProcessing</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span>main <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Load an image</span>
+</span></span><span style="display:flex;"><span>  image <span style="color:#007020;font-weight:bold">&lt;-</span> loadImage <span style="color:#4070a0">&#34;my_image.png&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Process the image (hypothetical function)</span>
+</span></span><span style="display:flex;"><span>  processedImage <span style="color:#007020;font-weight:bold">&lt;-</span> applyFilter image blurFilter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Save the processed image</span>
+</span></span><span style="display:flex;"><span>  saveImage processedImage <span style="color:#4070a0">&#34;blurred_image.png&#34;</span>
+</span></span></code></pre></div><p>This example demonstrates the basic interaction with a hypothetical image processing library. The actual implementation of such a binding would involve a significant amount of work to handle data marshaling between Idris and the foreign library.  You&rsquo;d typically need to consult the specific library&rsquo;s documentation and any available Idris bindings.  The Idris community provides packages and tutorials for interfacing with various external libraries; check the official package repository for details.</p>
+<h2 class="heading" id="conclusion-and-further-learning">
+  Conclusion and Further Learning
+  <a class="anchor" href="#conclusion-and-further-learning">#</a>
+</h2>
+<h3 class="heading" id="where-to-go-from-here">
+  Where to Go From Here
+  <a class="anchor" href="#where-to-go-from-here">#</a>
+</h3>
+<p>This Beginner&rsquo;s Guide has provided a foundational understanding of Idris.  To further your skills, consider focusing on these areas:</p>
+<ul>
+<li><strong>Advanced Type Theory:</strong> Deepen your understanding of dependent types, type classes, and more advanced type-level programming techniques. Explore concepts like type families and higher-kinded types.</li>
+<li><strong>Idris Libraries:</strong> Familiarize yourself with the available Idris libraries to expand your programming capabilities.  Many libraries provide functions for common tasks, such as working with data structures, interacting with the operating system, and more.</li>
+<li><strong>Formal Verification:</strong> Learn how to use Idris to formally verify the correctness of programs. This is a powerful application of Idris&rsquo;s type system and a key reason why many choose to learn the language.</li>
+<li><strong>Larger Projects:</strong>  Undertake more substantial programming projects to consolidate your understanding and apply your knowledge in realistic scenarios.  This could involve building a compiler, a formal verification tool, or any project that benefits from Idris&rsquo;s strong type system.</li>
+<li><strong>Contributing to the Idris Community:</strong>  Contribute to the Idris compiler, libraries, or documentation.  This is a great way to improve your Idris skills and help the community grow.</li>
+</ul>
+<h3 class="heading" id="useful-resources-and-documentation">
+  Useful Resources and Documentation
+  <a class="anchor" href="#useful-resources-and-documentation">#</a>
+</h3>
+<ul>
+<li><strong>Official Idris Website:</strong> The official website (<a href="https://www.idris-lang.org/">https://www.idris-lang.org/</a>) provides comprehensive documentation, tutorials, and links to the community.</li>
+<li><strong>Idris Book:</strong>  Explore the official Idris book (available online) for a more in-depth treatment of various aspects of the language.</li>
+<li><strong>Idris Package Repository:</strong> The Idris package repository (<a href="https://idris-lang.org/packages/">https://idris-lang.org/packages/</a>) hosts numerous community-contributed libraries and tools.</li>
+<li><strong>Online Tutorials and Blog Posts:</strong> Search online for tutorials, blog posts, and articles on specific aspects of Idris. Many resources are available for different skill levels.</li>
+</ul>
+<h3 class="heading" id="idris-community-and-support">
+  Idris Community and Support
+  <a class="anchor" href="#idris-community-and-support">#</a>
+</h3>
+<p>The Idris community is active and supportive.  You can find help and interact with other Idris users through various channels:</p>
+<ul>
+<li><strong>Idris Discourse Forum:</strong> The official Idris discourse forum is a great place to ask questions, discuss topics, and share your knowledge.</li>
+<li><strong>Idris Mailing List:</strong> The Idris mailing list provides another avenue for communication and support.</li>
+<li><strong>GitHub Issues:</strong>  Report bugs or feature requests on the official Idris GitHub repository.</li>
+<li><strong>Stack Overflow:</strong> While not exclusively dedicated to Idris, Stack Overflow often has helpful answers to Idris-related questions.</li>
+</ul>
+<p>Don&rsquo;t hesitate to reach out to the community for assistance.  The Idris community is generally welcoming and eager to help newcomers learn and use the language effectively.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-dylan/">
+                        Beginner&#39;s Guide to Dylan
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-xslt/">
+                        Beginner&#39;s Guide to XSLT
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

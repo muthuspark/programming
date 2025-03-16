@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to ActionScript | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-actionscript/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-actionscript/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to ActionScript">
+  <meta property="og:description" content="Introduction to ActionScript # What is ActionScript? # ActionScript is a programming language based on ECMAScript (the standard upon which JavaScript is also based) that’s used to create interactive content and applications within the Adobe Flash platform (now largely superseded by Adobe Animate and technologies like HTML5 Canvas). While Flash Player itself is largely deprecated, understanding ActionScript remains valuable for working with legacy Flash projects and for grasping fundamental programming concepts applicable to other languages. ActionScript allows developers to control animations, handle user input, interact with external data sources, and create complex interactive experiences. It offers features like object-oriented programming, event handling, and a rich library of classes for creating multimedia applications.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-02T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-actionscript/">Beginner&#39;s Guide to ActionScript</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to ActionScript</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-02-02T00:00:00&#43;00:00">February 2, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      20 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-actionscript">Introduction to ActionScript</a>
+      <ul>
+        <li><a href="#what-is-actionscript">What is ActionScript?</a></li>
+        <li><a href="#actionscript-versions-and-compatibility">ActionScript Versions and Compatibility</a></li>
+        <li><a href="#setting-up-your-development-environment">Setting up your Development Environment</a></li>
+        <li><a href="#hello-world-in-actionscript">Hello World in ActionScript</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#variables-and-constants">Variables and Constants</a></li>
+        <li><a href="#data-types-number-string-boolean-etc">Data Types (Number, String, Boolean, etc.)</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#comments">Comments</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-the-stage">Working with the Stage</a>
+      <ul>
+        <li><a href="#display-objects-sprite-movieclip">Display Objects (Sprite, MovieClip)</a></li>
+        <li><a href="#adding-and-removing-display-objects">Adding and Removing Display Objects</a></li>
+        <li><a href="#positioning-and-transforming-objects">Positioning and Transforming Objects</a></li>
+        <li><a href="#event-handling-mouse-events">Event Handling (Mouse Events)</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-flow-and-loops">Control Flow and Loops</a>
+      <ul>
+        <li><a href="#conditional-statements-if-else-if-else">Conditional Statements (if, else if, else)</a></li>
+        <li><a href="#loops-for-while-dowhile">Loops (for, while, do&hellip;while)</a></li>
+        <li><a href="#break-and-continue-statements">Break and Continue Statements</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions-and-methods">Functions and Methods</a>
+      <ul>
+        <li><a href="#creating-functions">Creating Functions</a></li>
+        <li><a href="#function-parameters-and-return-values">Function Parameters and Return Values</a></li>
+        <li><a href="#using-built-in-methods">Using Built-in Methods</a></li>
+        <li><a href="#object-oriented-programming-concepts-brief-introduction">Object-Oriented Programming Concepts (brief introduction)</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-timeline-and-animations">Working with Timeline and Animations</a>
+      <ul>
+        <li><a href="#understanding-the-timeline">Understanding the Timeline</a></li>
+        <li><a href="#frame-by-frame-animation">Frame-by-Frame Animation</a></li>
+        <li><a href="#tweening">Tweening</a></li>
+        <li><a href="#using-tweens-for-animations">Using Tweens for Animations</a></li>
+      </ul>
+    </li>
+    <li><a href="#event-handling-and-user-interaction">Event Handling and User Interaction</a>
+      <ul>
+        <li><a href="#event-listeners">Event Listeners</a></li>
+        <li><a href="#common-events-mouseevent-keyboardevent">Common Events (MouseEvent, KeyboardEvent)</a></li>
+        <li><a href="#handling-user-input">Handling User Input</a></li>
+        <li><a href="#creating-interactive-elements">Creating Interactive Elements</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics-brief-overview">Advanced Topics (Brief Overview)</a>
+      <ul>
+        <li><a href="#classes-and-objects">Classes and Objects</a></li>
+        <li><a href="#inheritance-and-polymorphism">Inheritance and Polymorphism</a></li>
+        <li><a href="#working-with-external-libraries">Working with External Libraries</a></li>
+        <li><a href="#debugging-actionscript-code">Debugging ActionScript Code</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-actionscript">
+  Introduction to ActionScript
+  <a class="anchor" href="#introduction-to-actionscript">#</a>
+</h2>
+<h3 class="heading" id="what-is-actionscript">
+  What is ActionScript?
+  <a class="anchor" href="#what-is-actionscript">#</a>
+</h3>
+<p>ActionScript is a programming language based on ECMAScript (the standard upon which JavaScript is also based) that&rsquo;s used to create interactive content and applications within the Adobe Flash platform (now largely superseded by Adobe Animate and technologies like HTML5 Canvas).  While Flash Player itself is largely deprecated, understanding ActionScript remains valuable for working with legacy Flash projects and for grasping fundamental programming concepts applicable to other languages.  ActionScript allows developers to control animations, handle user input, interact with external data sources, and create complex interactive experiences.  It offers features like object-oriented programming, event handling, and a rich library of classes for creating multimedia applications.</p>
+<h3 class="heading" id="actionscript-versions-and-compatibility">
+  ActionScript Versions and Compatibility
+  <a class="anchor" href="#actionscript-versions-and-compatibility">#</a>
+</h3>
+<p>ActionScript has evolved through several versions, each with its own features and improvements.  Understanding version compatibility is crucial when working with existing projects or integrating ActionScript into different platforms.  Key versions include:</p>
+<ul>
+<li><strong>ActionScript 1.0:</strong> The original version, quite limited in its capabilities by modern standards.</li>
+<li><strong>ActionScript 2.0:</strong> Introduced object-oriented programming features, making development more structured and maintainable.</li>
+<li><strong>ActionScript 3.0:</strong> A significant overhaul introducing a more robust and efficient object model, improved performance, and enhanced capabilities. This is the most commonly used version for projects still using the Flash platform.</li>
+</ul>
+<p>Compatibility issues can arise when using different versions of ActionScript.  Older code might not function correctly in newer environments, and vice-versa.  It&rsquo;s essential to check the target platform&rsquo;s ActionScript version and ensure your code is compatible.  Generally, ActionScript 3.0 projects will not run under interpreters designed for earlier versions.</p>
+<h3 class="heading" id="setting-up-your-development-environment">
+  Setting up your Development Environment
+  <a class="anchor" href="#setting-up-your-development-environment">#</a>
+</h3>
+<p>To develop ActionScript applications, you&rsquo;ll need an appropriate development environment. While Adobe Flash (and its successor, Animate) remains a primary tool, other editors can be used.  Here’s a basic outline of the process using Adobe Animate (as Flash is deprecated):</p>
+<ol>
+<li><strong>Install Adobe Animate:</strong> Download and install the latest version of Adobe Animate.  A trial version is available if you do not own a license.</li>
+<li><strong>Create a New Document:</strong>  Launch Animate and create a new ActionScript 3.0 document (important to specify the correct ActionScript version).</li>
+<li><strong>Choose your Target:</strong> Selecting your target platform (e.g., HTML5 Canvas, Flash Player) influences how your application will be deployed and its available features.</li>
+<li><strong>Add ActionScript Code:</strong> Use Animate&rsquo;s built-in code editor to write your ActionScript code. The code will typically be placed within event handlers or within the main timeline of your project.</li>
+<li><strong>Test and Debug:</strong>  Animate provides tools for testing and debugging your ActionScript code.  Thorough testing is essential to ensure your application functions correctly and handles errors gracefully.</li>
+</ol>
+<h3 class="heading" id="hello-world-in-actionscript">
+  Hello World in ActionScript
+  <a class="anchor" href="#hello-world-in-actionscript">#</a>
+</h3>
+<p>The classic &ldquo;Hello World&rdquo; program demonstrates the basic syntax of ActionScript. In Animate, you typically add this to a frame&rsquo;s ActionScript panel or within a function attached to an event:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Hello, World!&#34;</span>);
+</span></span></code></pre></div><p>The <code>trace()</code> function outputs text to the output window in Animate.  This is analogous to <code>console.log()</code> in JavaScript.  To view the output, you&rsquo;ll need to open Animate&rsquo;s Output panel (typically found under Window &gt; Output).  This simple line of code demonstrates the fundamental structure of an ActionScript statement and how to produce basic output.  More complex applications build upon this foundation.</p>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="variables-and-constants">
+  Variables and Constants
+  <a class="anchor" href="#variables-and-constants">#</a>
+</h3>
+<p>ActionScript uses variables to store data that can change during the execution of a program.  Variables are declared using the <code>var</code> keyword, followed by the variable name and an optional assignment of an initial value.  Variable names must start with a letter and can contain letters, numbers, and underscores.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myVariable<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Declare a Number variable and assign it the value 10
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> myString<span style="color:#666">:</span><span style="color:#007020">String</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello&#34;</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Declare a String variable
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> myBoolean<span style="color:#666">:</span><span style="color:#007020">Boolean</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Declare a Boolean variable
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Assigning a new value to the variable
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>myVariable <span style="color:#666">=</span> <span style="color:#40a070">20</span><span style="color:#666">;</span>
+</span></span></code></pre></div><p>ActionScript 3.0 also supports constants, which are variables whose values cannot be changed after they are initialized. Constants are declared using the <code>const</code> keyword.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> MY_CONSTANT<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">3.14159</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// MY_CONSTANT = 20; // This will result in a compiler error.
+</span></span></span></code></pre></div><p>It&rsquo;s good practice to use descriptive variable names to improve code readability.  The use of uppercase for constants (like <code>MY_CONSTANT</code>) is a common convention to highlight them as immutable values.</p>
+<h3 class="heading" id="data-types-number-string-boolean-etc">
+  Data Types (Number, String, Boolean, etc.)
+  <a class="anchor" href="#data-types-number-string-boolean-etc">#</a>
+</h3>
+<p>ActionScript has several built-in data types:</p>
+<ul>
+<li><strong>Number:</strong> Represents numeric values, including integers and floating-point numbers (decimal numbers).</li>
+<li><strong>String:</strong> Represents textual data enclosed in double quotes (<code>&quot;</code>) or single quotes (<code>'</code>).</li>
+<li><strong>Boolean:</strong> Represents truth values, either <code>true</code> or <code>false</code>.</li>
+<li><strong>Object:</strong> A complex data type that can contain properties (data) and methods (functions).  Most custom classes and many built-in classes are objects.</li>
+<li><strong>Array:</strong> An ordered collection of values, accessed by index (starting from 0).</li>
+<li><strong>Null:</strong> Represents the intentional absence of a value.</li>
+<li><strong>Undefined:</strong> Represents a variable that has been declared but has not been assigned a value.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> age<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">30</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> name<span style="color:#666">:</span><span style="color:#007020">String</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;John Doe&#34;</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> isAdult<span style="color:#666">:</span><span style="color:#007020">Boolean</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myArray<span style="color:#666">:</span><span style="color:#007020">Array</span> <span style="color:#666">=</span> [<span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;four&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myObject<span style="color:#666">:</span><span style="color:#007020">Object</span> <span style="color:#666">=</span> {name<span style="color:#666">:</span><span style="color:#4070a0">&#34;example&#34;</span><span style="color:#666">,</span> value<span style="color:#666">:</span> <span style="color:#40a070">10</span>};
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> nothing<span style="color:#666">:</span><span style="color:#007020">Object</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">null</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> notSet<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// undefined
+</span></span></span></code></pre></div><p>Type annotations (like <code>:Number</code>, <code>:String</code>) are helpful for readability and can aid in catching errors during development but are not strictly required in all cases.  ActionScript&rsquo;s dynamic typing allows the type to be implicitly determined at runtime if not specified.</p>
+<h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>ActionScript supports various operators for performing calculations and comparisons:</p>
+<ul>
+<li><strong>Arithmetic Operators:</strong>  <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo)</li>
+<li><strong>Assignment Operators:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, etc.</li>
+<li><strong>Comparison Operators:</strong> <code>==</code> (equals), <code>!=</code> (not equals), <code>&gt;</code> (greater than), <code>&lt;</code> (less than), <code>&gt;=</code> (greater than or equals), <code>&lt;=</code> (less than or equals)</li>
+<li><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> x<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> y<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">5</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> sum<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#666">+</span> y<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// sum = 15
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> difference<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#666">-</span> y<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// difference = 5
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> product<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#666">*</span> y<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// product = 50
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> quotient<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#235388">/ y; /</span><span style="color:#666">/</span> quotient <span style="color:#666">=</span> <span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> remainder<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#666">%</span> y<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// remainder = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> isEqual<span style="color:#666">:</span><span style="color:#007020">Boolean</span> <span style="color:#666">=</span> (x <span style="color:#666">==</span> y); <span style="color:#60a0b0;font-style:italic">// isEqual = false
+</span></span></span></code></pre></div><h3 class="heading" id="comments">
+  Comments
+  <a class="anchor" href="#comments">#</a>
+</h3>
+<p>Comments are used to explain code and improve readability. ActionScript supports single-line comments (using <code>//</code>) and multi-line comments (using <code>/* */</code>).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">This is a
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">multi-line comment
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">*/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myVariable<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// This variable stores a number.
+</span></span></span></code></pre></div><p>Using comments effectively is essential for maintaining and understanding your code, especially as projects grow larger and more complex.  They are ignored by the ActionScript compiler.</p>
+<h2 class="heading" id="working-with-the-stage">
+  Working with the Stage
+  <a class="anchor" href="#working-with-the-stage">#</a>
+</h2>
+<h3 class="heading" id="display-objects-sprite-movieclip">
+  Display Objects (Sprite, MovieClip)
+  <a class="anchor" href="#display-objects-sprite-movieclip">#</a>
+</h3>
+<p>The stage in ActionScript represents the visible area of your Flash/Animate application.  Display objects are visual elements that you place on the stage to create your application&rsquo;s interface and content.  Key display object classes include:</p>
+<ul>
+<li>
+<p><strong>Sprite:</strong> A basic display object that serves as a container for other display objects.  Sprites are generally used for grouping and managing related visual elements. They don&rsquo;t have a timeline of their own.</p>
+</li>
+<li>
+<p><strong>MovieClip:</strong>  A more advanced display object that has its own internal timeline, allowing for the creation of animations and complex visual effects within the MovieClip itself.  While still usable,  <code>MovieClip</code> is less frequently used in modern ActionScript 3.0 development, with <code>Sprite</code> and more granular animation techniques often preferred.</p>
+</li>
+</ul>
+<p>Both <code>Sprite</code> and <code>MovieClip</code> inherit from the base <code>DisplayObject</code> class, providing common properties and methods for manipulating their visual appearance and behavior.</p>
+<h3 class="heading" id="adding-and-removing-display-objects">
+  Adding and Removing Display Objects
+  <a class="anchor" href="#adding-and-removing-display-objects">#</a>
+</h3>
+<p>You add display objects to the stage (or to other display objects acting as containers) using the <code>addChild()</code> method.  The order in which you add children affects their stacking order (objects added later are drawn on top).  You remove display objects using the <code>removeChild()</code> method.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Create a new Sprite
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> mySprite<span style="color:#666">:</span><span style="color:#007020">Sprite</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#007020">Sprite</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Create a new shape (example, you would typically use drawing API)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> myShape<span style="color:#666">:</span><span style="color:#007020">Shape</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#007020">Shape</span>();
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// ...add graphic commands to myShape...
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Add the shape to the sprite
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>mySprite.addChild(myShape);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Add the sprite to the stage
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>addChild(mySprite);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Remove the sprite from the stage after a delay (example)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>setTimeout(<span style="color:#007020;font-weight:bold">function</span>()<span style="color:#666">:</span>void{
+</span></span><span style="display:flex;"><span>  removeChild(mySprite);
+</span></span><span style="display:flex;"><span>}<span style="color:#666">,</span> <span style="color:#40a070">3000</span>); <span style="color:#60a0b0;font-style:italic">// Remove after 3 seconds.
+</span></span></span></code></pre></div><p>Remember to replace the example shape creation with actual drawing commands using <code>graphics</code> properties (covered in more advanced tutorials).</p>
+<h3 class="heading" id="positioning-and-transforming-objects">
+  Positioning and Transforming Objects
+  <a class="anchor" href="#positioning-and-transforming-objects">#</a>
+</h3>
+<p>You can control the position and appearance of display objects using their properties:</p>
+<ul>
+<li><strong>x:</strong> The horizontal position of the object&rsquo;s registration point.</li>
+<li><strong>y:</strong> The vertical position of the object&rsquo;s registration point.</li>
+<li><strong>scaleX:</strong> Scales the object horizontally (1.0 is no scaling, 2.0 doubles the width).</li>
+<li><strong>scaleY:</strong> Scales the object vertically.</li>
+<li><strong>rotation:</strong> Rotates the object in degrees (0-360).</li>
+<li><strong>alpha:</strong> Controls the transparency of the object (0.0 is fully transparent, 1.0 is fully opaque).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span>mySprite.x <span style="color:#666">=</span> <span style="color:#40a070">100</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>mySprite.y <span style="color:#666">=</span> <span style="color:#40a070">50</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>mySprite.scaleX <span style="color:#666">=</span> <span style="color:#40a070">1.5</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>mySprite.rotation <span style="color:#666">=</span> <span style="color:#40a070">45</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>mySprite.alpha <span style="color:#666">=</span> <span style="color:#40a070">0.7</span><span style="color:#666">;</span>
+</span></span></code></pre></div><p>These properties can be animated over time to create smooth transitions and dynamic effects.</p>
+<h3 class="heading" id="event-handling-mouse-events">
+  Event Handling (Mouse Events)
+  <a class="anchor" href="#event-handling-mouse-events">#</a>
+</h3>
+<p>ActionScript allows you to respond to user interactions, such as mouse clicks and mouseovers.  You do this by attaching event listeners to display objects.  Common mouse events include:</p>
+<ul>
+<li><strong><code>mouseDown</code>:</strong> Dispatched when the mouse button is pressed over the object.</li>
+<li><strong><code>mouseUp</code>:</strong> Dispatched when the mouse button is released over the object.</li>
+<li><strong><code>mouseOver</code>:</strong> Dispatched when the mouse cursor enters the object&rsquo;s boundary.</li>
+<li><strong><code>mouseOut</code>:</strong> Dispatched when the mouse cursor leaves the object&rsquo;s boundary.</li>
+<li><strong><code>click</code>:</strong> Dispatched when the mouse button is pressed and released over the object (a combination of <code>mouseDown</code> and <code>mouseUp</code>).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span>mySprite.addEventListener(<span style="color:#007020">MouseEvent</span>.CLICK<span style="color:#666">,</span> handleClick);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> handleClick(event<span style="color:#666">:</span><span style="color:#007020">MouseEvent</span>)<span style="color:#666">:</span>void {
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Sprite clicked!&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// Add your code to handle the click event here.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mySprite.addEventListener(<span style="color:#007020">MouseEvent</span>.ROLL_OVER<span style="color:#666">,</span> handleRollOver);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> handleRollOver(event<span style="color:#666">:</span><span style="color:#007020">MouseEvent</span>)<span style="color:#666">:</span>void {
+</span></span><span style="display:flex;"><span>  mySprite.alpha <span style="color:#666">=</span> <span style="color:#40a070">0.5</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">//Make the sprite semi-transparent
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mySprite.addEventListener(<span style="color:#007020">MouseEvent</span>.ROLL_OUT<span style="color:#666">,</span> handleRollOut);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> handleRollOut(event<span style="color:#666">:</span><span style="color:#007020">MouseEvent</span>)<span style="color:#666">:</span>void{
+</span></span><span style="display:flex;"><span>  mySprite.alpha <span style="color:#666">=</span> <span style="color:#40a070">1</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">//Return to full opacity
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p>This code adds event listeners for <code>click</code>, <code>rollOver</code> (mouseOver), and <code>rollOut</code> (mouseOut) events to the <code>mySprite</code> object.  When these events occur, the corresponding handler functions are executed. Remember to remove event listeners when they are no longer needed to prevent memory leaks, especially in larger projects.</p>
+<h2 class="heading" id="control-flow-and-loops">
+  Control Flow and Loops
+  <a class="anchor" href="#control-flow-and-loops">#</a>
+</h2>
+<h3 class="heading" id="conditional-statements-if-else-if-else">
+  Conditional Statements (if, else if, else)
+  <a class="anchor" href="#conditional-statements-if-else-if-else">#</a>
+</h3>
+<p>Conditional statements allow you to execute different blocks of code based on whether a condition is true or false.  ActionScript uses the <code>if</code>, <code>else if</code>, and <code>else</code> keywords to create conditional statements.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> age<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">20</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (age <span style="color:#666">&gt;=</span> <span style="color:#40a070">18</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;You are an adult.&#34;</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> (age <span style="color:#666">&gt;=</span> <span style="color:#40a070">13</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;You are a teenager.&#34;</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;You are a child.&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Conditions are evaluated using comparison operators (<code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>) and logical operators (<code>&amp;&amp;</code>, <code>||</code>, <code>!</code>).  The code within each block is only executed if the corresponding condition is true.  Only one block will be executed within a given <code>if</code>/<code>else if</code>/<code>else</code> construct.</p>
+<h3 class="heading" id="loops-for-while-dowhile">
+  Loops (for, while, do&hellip;while)
+  <a class="anchor" href="#loops-for-while-dowhile">#</a>
+</h3>
+<p>Loops allow you to repeat a block of code multiple times. ActionScript provides several types of loops:</p>
+<ul>
+<li><strong><code>for</code> loop:</strong>  Useful when you know the number of iterations in advance.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span> i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> i<span style="color:#666">++</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Iteration: &#34;</span> <span style="color:#666">+</span> i);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This loop iterates 10 times, with <code>i</code> taking values from 0 to 9.</p>
+<ul>
+<li><strong><code>while</code> loop:</strong> Repeats a block of code as long as a condition is true.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Iteration: &#34;</span> <span style="color:#666">+</span> i);
+</span></span><span style="display:flex;"><span>  i<span style="color:#666">++;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This loop is similar to the <code>for</code> loop above but requires manual incrementing of the counter variable.</p>
+<ul>
+<li><strong><code>do...while</code> loop:</strong> Similar to a <code>while</code> loop, but the code block is executed at least once before the condition is checked.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Iteration: &#34;</span> <span style="color:#666">+</span> i);
+</span></span><span style="display:flex;"><span>  i<span style="color:#666">++;</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">while</span> (i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>);
+</span></span></code></pre></div><p>This loop will execute the code block once even if <code>i</code> is initially greater than or equal to 10.</p>
+<h3 class="heading" id="break-and-continue-statements">
+  Break and Continue Statements
+  <a class="anchor" href="#break-and-continue-statements">#</a>
+</h3>
+<ul>
+<li><strong><code>break</code> statement:</strong>  Immediately exits the current loop.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span> i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> i<span style="color:#666">++</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (i <span style="color:#666">==</span> <span style="color:#40a070">5</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">break</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Exit the loop when i is 5
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Iteration: &#34;</span> <span style="color:#666">+</span> i);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong><code>continue</code> statement:</strong> Skips the rest of the current iteration and proceeds to the next iteration of the loop.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span> i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> i<span style="color:#666">++</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (i <span style="color:#666">%</span> <span style="color:#40a070">2</span> <span style="color:#666">==</span> <span style="color:#40a070">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">continue</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Skip even numbers
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Iteration: &#34;</span> <span style="color:#666">+</span> i);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>break</code> and <code>continue</code> statements offer ways to control the flow within loops, allowing for more flexible and efficient code when handling specific conditions during iteration.  They should be used judiciously to avoid making code harder to read and understand.</p>
+<h2 class="heading" id="functions-and-methods">
+  Functions and Methods
+  <a class="anchor" href="#functions-and-methods">#</a>
+</h2>
+<h3 class="heading" id="creating-functions">
+  Creating Functions
+  <a class="anchor" href="#creating-functions">#</a>
+</h3>
+<p>Functions are reusable blocks of code that perform specific tasks.  They help organize code, improve readability, and avoid redundancy.  In ActionScript, you create functions using the <code>function</code> keyword.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> greet(name<span style="color:#666">:</span><span style="color:#007020">String</span>)<span style="color:#666">:</span><span style="color:#007020">String</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Hello, &#34;</span> <span style="color:#666">+</span> name <span style="color:#666">+</span> <span style="color:#4070a0">&#34;!&#34;</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> message<span style="color:#666">:</span><span style="color:#007020">String</span> <span style="color:#666">=</span> greet(<span style="color:#4070a0">&#34;Alice&#34;</span>); <span style="color:#60a0b0;font-style:italic">// Call the function and store the result
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">trace</span>(message); <span style="color:#60a0b0;font-style:italic">// Output: Hello, Alice!
+</span></span></span></code></pre></div><p>This example defines a function named <code>greet</code> that takes a string argument (<code>name</code>) and returns a greeting string.  The <code>:String</code> after the parameter name indicates the parameter&rsquo;s type, and the <code>:String</code> after the closing parenthesis specifies the return type of the function.  Note that type annotations are not strictly enforced in all ActionScript contexts but are recommended for better code clarity and maintainability.</p>
+<h3 class="heading" id="function-parameters-and-return-values">
+  Function Parameters and Return Values
+  <a class="anchor" href="#function-parameters-and-return-values">#</a>
+</h3>
+<p>Function parameters are values passed to the function when it&rsquo;s called.  Return values are the values the function sends back after it&rsquo;s finished executing.  A function can have zero or more parameters and can return a value of any data type or <code>void</code> if it doesn&rsquo;t return a value.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> add(x<span style="color:#666">:</span><span style="color:#007020">Number</span><span style="color:#666">,</span> y<span style="color:#666">:</span><span style="color:#007020">Number</span>)<span style="color:#666">:</span><span style="color:#007020">Number</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> x <span style="color:#666">+</span> y<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> sum<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> add(<span style="color:#40a070">5</span><span style="color:#666">,</span> <span style="color:#40a070">3</span>); <span style="color:#60a0b0;font-style:italic">// sum will be 8
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">trace</span>(sum);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> displayMessage(message<span style="color:#666">:</span><span style="color:#007020">String</span>)<span style="color:#666">:</span>void{
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">trace</span>(message);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>displayMessage(<span style="color:#4070a0">&#34;This function doesn&#39;t return a value&#34;</span>);
+</span></span></code></pre></div><p>The <code>add</code> function takes two numbers as parameters and returns their sum. The <code>displayMessage</code> function takes a string and does not return any value (indicated by <code>:void</code>).</p>
+<h3 class="heading" id="using-built-in-methods">
+  Using Built-in Methods
+  <a class="anchor" href="#using-built-in-methods">#</a>
+</h3>
+<p>ActionScript provides many built-in methods for working with different data types and objects. For example, the <code>String</code> object has methods like <code>toUpperCase()</code>, <code>toLowerCase()</code>, <code>substring()</code>, and many more.  The <code>Array</code> object has methods for adding, removing, and searching elements, such as <code>push()</code>, <code>pop()</code>, <code>indexOf()</code>, etc.  These built-in methods significantly reduce the amount of code you need to write for common tasks.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myString<span style="color:#666">:</span><span style="color:#007020">String</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello, World!&#34;</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> upperCaseString<span style="color:#666">:</span><span style="color:#007020">String</span> <span style="color:#666">=</span> myString.toUpperCase(); <span style="color:#60a0b0;font-style:italic">// upperCaseString will be &#34;HELLO, WORLD!&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">trace</span>(upperCaseString);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myArray<span style="color:#666">:</span><span style="color:#007020">Array</span> <span style="color:#666">=</span> [<span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">4</span><span style="color:#666">,</span> <span style="color:#40a070">5</span>];
+</span></span><span style="display:flex;"><span>myArray.push(<span style="color:#40a070">6</span>); <span style="color:#60a0b0;font-style:italic">// Add 6 to the end of the array
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">trace</span>(myArray); <span style="color:#60a0b0;font-style:italic">// Output: 1,2,3,4,5,6
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> index<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> myArray.indexOf(<span style="color:#40a070">3</span>); <span style="color:#60a0b0;font-style:italic">// Find the index of 3
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">trace</span>(index); <span style="color:#60a0b0;font-style:italic">// Output: 2
+</span></span></span></code></pre></div><h3 class="heading" id="object-oriented-programming-concepts-brief-introduction">
+  Object-Oriented Programming Concepts (brief introduction)
+  <a class="anchor" href="#object-oriented-programming-concepts-brief-introduction">#</a>
+</h3>
+<p>ActionScript supports object-oriented programming (OOP), a powerful programming paradigm that organizes code into reusable objects.  Key OOP concepts include:</p>
+<ul>
+<li>
+<p><strong>Classes:</strong>  Blueprints for creating objects.  A class defines the properties (data) and methods (functions) that objects of that class will have.</p>
+</li>
+<li>
+<p><strong>Objects:</strong> Instances of classes.  You create objects by using the <code>new</code> keyword followed by the class name.</p>
+</li>
+<li>
+<p><strong>Inheritance:</strong>  Allows you to create new classes based on existing classes, inheriting their properties and methods. This promotes code reuse and organization.</p>
+</li>
+<li>
+<p><strong>Encapsulation:</strong>  Bundling data and methods that operate on that data within a class, protecting data integrity and simplifying code structure.</p>
+</li>
+<li>
+<p><strong>Polymorphism:</strong>  The ability of objects of different classes to respond to the same method call in their own specific way.</p>
+</li>
+</ul>
+<p>A simple example of a class:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> Dog {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">var</span> name<span style="color:#666">:</span><span style="color:#007020">String</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> Dog(name<span style="color:#666">:</span><span style="color:#007020">String</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">this</span>.name <span style="color:#666">=</span> name<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> bark()<span style="color:#666">:</span><span style="color:#007020">String</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Woof!&#34;</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myDog<span style="color:#666">:</span>Dog <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Dog(<span style="color:#4070a0">&#34;Buddy&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#06287e">trace</span>(myDog.name); <span style="color:#60a0b0;font-style:italic">// Output: Buddy
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">trace</span>(myDog.bark()); <span style="color:#60a0b0;font-style:italic">// Output: Woof!
+</span></span></span></code></pre></div><p>This illustrates a basic class <code>Dog</code> with properties and methods. OOP principles are explored more thoroughly in advanced ActionScript tutorials.</p>
+<h2 class="heading" id="working-with-timeline-and-animations">
+  Working with Timeline and Animations
+  <a class="anchor" href="#working-with-timeline-and-animations">#</a>
+</h2>
+<h3 class="heading" id="understanding-the-timeline">
+  Understanding the Timeline
+  <a class="anchor" href="#understanding-the-timeline">#</a>
+</h3>
+<p>In Adobe Animate (and legacy Flash), the timeline is a crucial element for creating animations.  It&rsquo;s a sequence of frames, each representing a single moment in time.  You can add content to individual frames, and by changing the content across frames, you create the illusion of motion.  The timeline controls the duration and sequencing of these frames, effectively determining the animation&rsquo;s playback.  The timeline is organized into layers, allowing you to manage and animate different aspects of your project independently (e.g., background, character, effects).  Each layer has its own set of frames and content.</p>
+<h3 class="heading" id="frame-by-frame-animation">
+  Frame-by-Frame Animation
+  <a class="anchor" href="#frame-by-frame-animation">#</a>
+</h3>
+<p>Frame-by-frame animation involves creating a separate drawing or image for each frame of the animation.  This is a very traditional animation technique, offering complete control but requiring significant manual effort, especially for complex animations.  In Animate, you would typically create your artwork in each frame of a layer.  While this approach provides pixel-perfect precision, it is very time-consuming and unsuitable for complex or lengthy animations.</p>
+<h3 class="heading" id="tweening">
+  Tweening
+  <a class="anchor" href="#tweening">#</a>
+</h3>
+<p>Tweening is a technique that automatically generates intermediate frames between keyframes, creating smooth transitions between different states.  This significantly reduces the amount of manual work required for creating animations.  There are different types of tweens:</p>
+<ul>
+<li>
+<p><strong>Shape Tween:</strong>  Used to animate the shape and properties of a graphic object.  You define the starting and ending states, and Animate interpolates the intermediate frames.</p>
+</li>
+<li>
+<p><strong>Motion Tween:</strong> Used to animate the position and other properties of an object across the timeline.  Keyframes define the position at different points in time.</p>
+</li>
+<li>
+<p><strong>Classic Tween:</strong>  A legacy tweening method, less commonly used in modern ActionScript 3.0 development in favor of more flexible and controlled methods.</p>
+</li>
+</ul>
+<h3 class="heading" id="using-tweens-for-animations">
+  Using Tweens for Animations
+  <a class="anchor" href="#using-tweens-for-animations">#</a>
+</h3>
+<p>Using tweens is generally more efficient than frame-by-frame animation. To create a tween in Animate, you typically:</p>
+<ol>
+<li>
+<p><strong>Create Keyframes:</strong> Define the starting and ending points of your animation by placing keyframes on the timeline.  Modify properties (position, shape, etc.) of your object in these keyframes.</p>
+</li>
+<li>
+<p><strong>Create a Tween:</strong> Select the frames between your keyframes and choose the appropriate tween type (shape or motion) from Animate&rsquo;s menu.</p>
+</li>
+<li>
+<p><strong>Adjust Tween Properties:</strong>  Animate&rsquo;s Properties panel will allow you to fine-tune the tween’s behavior, such as easing (the rate of change of animation speed), interpolation method, and other parameters, to customize the animation&rsquo;s smoothness and timing.</p>
+</li>
+</ol>
+<p>Example (Conceptual – the exact implementation depends on your Animate version and how you&rsquo;ve structured your project):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//This code snippet is highly simplified and would need adaptation based on your setup.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Generally tweening is done visually through Animate&#39;s interface, not exclusively with ActionScript.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//This illustrates a basic concept.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Assume &#39;myMC&#39; is a MovieClip instance on the stage
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> fl.transitions.Tween<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> fl.transitions.easing.<span style="color:#666">*;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myTween<span style="color:#666">:</span>Tween <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Tween(myMC<span style="color:#666">,</span><span style="color:#4070a0">&#34;x&#34;</span><span style="color:#666">,</span>Strong.easeOut<span style="color:#666">,</span><span style="color:#40a070">100</span><span style="color:#666">,</span><span style="color:#40a070">300</span><span style="color:#666">,</span><span style="color:#40a070">2</span><span style="color:#666">,</span><span style="color:#007020;font-weight:bold">true</span>);
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Tween from x=100 to x=300 in 2 seconds using Strong.easeOut easing.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//More advanced scenarios will require more code for handling multiple properties, events, and complex easing functions
+</span></span></span></code></pre></div><p>This ActionScript code uses the <code>Tween</code> class (part of the Flash Professional API – availability and specifics may differ based on your Animate version).  It&rsquo;s important to note that directly creating tweens via ActionScript is less common than using Animate&rsquo;s visual tweening tools. However, using ActionScript provides more dynamic and complex control over animations.  Consult Animate&rsquo;s documentation for specifics on tweening and the API.</p>
+<h2 class="heading" id="event-handling-and-user-interaction">
+  Event Handling and User Interaction
+  <a class="anchor" href="#event-handling-and-user-interaction">#</a>
+</h2>
+<h3 class="heading" id="event-listeners">
+  Event Listeners
+  <a class="anchor" href="#event-listeners">#</a>
+</h3>
+<p>Event listeners are crucial for creating interactive ActionScript applications.  They allow your code to respond to various events, such as mouse clicks, keyboard presses, and other user actions or system events.  An event listener is essentially a function that is executed when a specific event occurs on a particular object.  You attach event listeners to objects using the <code>addEventListener()</code> method.  This method takes two arguments: the type of event you&rsquo;re listening for (specified as a string constant) and the function to execute when that event occurs (the event handler).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Example: Adding a click listener to a button
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>myButton.addEventListener(<span style="color:#007020">MouseEvent</span>.CLICK<span style="color:#666">,</span> handleClick);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> handleClick(event<span style="color:#666">:</span><span style="color:#007020">MouseEvent</span>)<span style="color:#666">:</span>void {
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Button clicked!&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//Add code to handle the button click here.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p>This code adds a click event listener to an object named <code>myButton</code>. When the user clicks <code>myButton</code>, the <code>handleClick</code> function is called.  The <code>event</code> object contains information about the event that triggered the listener.  It&rsquo;s crucial to remove event listeners using <code>removeEventListener()</code> when they are no longer needed, especially in complex projects, to avoid memory leaks and unexpected behavior.</p>
+<h3 class="heading" id="common-events-mouseevent-keyboardevent">
+  Common Events (MouseEvent, KeyboardEvent)
+  <a class="anchor" href="#common-events-mouseevent-keyboardevent">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>MouseEvent</code>:</strong>  This class represents mouse events, including clicks (<code>CLICK</code>), mouseovers (<code>MOUSE_OVER</code>), mouseouts (<code>MOUSE_OUT</code>), mouse downs (<code>MOUSE_DOWN</code>), and mouse ups (<code>MOUSE_UP</code>).</p>
+</li>
+<li>
+<p><strong><code>KeyboardEvent</code>:</strong> This class represents keyboard events such as key presses (<code>KEY_DOWN</code>), key releases (<code>KEY_UP</code>), and key presses that generate characters (<code>KEY_PRESS</code>).</p>
+</li>
+</ul>
+<p>For instance:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Adding a keyboard listener to the stage
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>stage.addEventListener(<span style="color:#007020">KeyboardEvent</span>.KEY_DOWN<span style="color:#666">,</span> handleKeyDown);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> handleKeyDown(event<span style="color:#666">:</span><span style="color:#007020">KeyboardEvent</span>)<span style="color:#666">:</span>void{
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (event.keyCode <span style="color:#666">==</span> <span style="color:#007020">Keyboard</span>.SPACE) {
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Spacebar pressed!&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">//Add your spacebar handling code here.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This example adds a listener for the <code>KEY_DOWN</code> event to the <code>stage</code> object.  When a key is pressed, the <code>handleKeyDown</code> function is called, and it checks if the pressed key is the spacebar (<code>Keyboard.SPACE</code>).</p>
+<h3 class="heading" id="handling-user-input">
+  Handling User Input
+  <a class="anchor" href="#handling-user-input">#</a>
+</h3>
+<p>Handling user input involves responding to events generated by user actions.  This typically involves event listeners, as described above.  You can extract information about the user input from the event object.  For example, a <code>MouseEvent</code> object provides information about the mouse&rsquo;s x and y coordinates, while a <code>KeyboardEvent</code> object provides the key code of the pressed key.</p>
+<h3 class="heading" id="creating-interactive-elements">
+  Creating Interactive Elements
+  <a class="anchor" href="#creating-interactive-elements">#</a>
+</h3>
+<p>Interactive elements are created by combining visual elements (display objects) with event listeners.  A simple example is a button that triggers an action when clicked:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Create a button (using a pre-made button component or by drawing one)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> myButton<span style="color:#666">:</span><span style="color:#007020">Sprite</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#007020">Sprite</span>(); <span style="color:#60a0b0;font-style:italic">//Or use a more appropriate class for a button
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// ... add visual components to myButton (graphics, text, etc.) ...
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>myButton.addEventListener(<span style="color:#007020">MouseEvent</span>.CLICK<span style="color:#666">,</span> buttonClickHandler);
+</span></span><span style="display:flex;"><span>addChild(myButton);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> buttonClickHandler(event<span style="color:#666">:</span><span style="color:#007020">MouseEvent</span>)<span style="color:#666">:</span>void {
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Button Clicked!&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//Perform Actions
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#60a0b0;font-style:italic">//Example: Move a character
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  myCharacter.x <span style="color:#666">+=</span> <span style="color:#40a070">10</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This creates a simple interactive button.  More complex interactive elements can be created by combining multiple event listeners, conditional statements, and other programming techniques.  Remember to properly manage memory by removing event listeners when they are no longer needed.  The approach to creating visual components (<code>myButton</code>) would vary depending on the development tools and techniques used.  This example is a conceptual illustration.</p>
+<h2 class="heading" id="advanced-topics-brief-overview">
+  Advanced Topics (Brief Overview)
+  <a class="anchor" href="#advanced-topics-brief-overview">#</a>
+</h2>
+<h3 class="heading" id="classes-and-objects">
+  Classes and Objects
+  <a class="anchor" href="#classes-and-objects">#</a>
+</h3>
+<p>ActionScript 3.0 is an object-oriented programming language.  Understanding classes and objects is fundamental to building robust and maintainable applications.  A class serves as a blueprint for creating objects. It defines the properties (data) and methods (functions) that objects of that class will possess.  Objects are instances of classes; you create objects using the <code>new</code> keyword.  Classes promote code reusability, organization, and maintainability.  Proper use of encapsulation (bundling data and methods that operate on that data within a class) helps protect data integrity and simplifies code structure.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> Animal {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">var</span> name<span style="color:#666">:</span><span style="color:#007020">String</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> Animal(name<span style="color:#666">:</span><span style="color:#007020">String</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">this</span>.name <span style="color:#666">=</span> name<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> speak()<span style="color:#666">:</span><span style="color:#007020">String</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Generic animal sound&#34;</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> Dog <span style="color:#007020;font-weight:bold">extends</span> Animal {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> Dog(name<span style="color:#666">:</span><span style="color:#007020">String</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">super</span>(name);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> speak()<span style="color:#666">:</span><span style="color:#007020">String</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Woof!&#34;</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myDog<span style="color:#666">:</span>Dog <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Dog(<span style="color:#4070a0">&#34;Fido&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#06287e">trace</span>(myDog.speak()); <span style="color:#60a0b0;font-style:italic">// Output: Woof!
+</span></span></span></code></pre></div><h3 class="heading" id="inheritance-and-polymorphism">
+  Inheritance and Polymorphism
+  <a class="anchor" href="#inheritance-and-polymorphism">#</a>
+</h3>
+<p>Inheritance is a powerful OOP concept that allows you to create new classes (derived classes or subclasses) based on existing classes (base classes or superclasses).  The derived class inherits properties and methods from the base class, and you can add new properties and methods or override existing ones.  Polymorphism allows objects of different classes to respond to the same method call in their own specific way.  This is particularly useful when dealing with a hierarchy of classes.  The example in the previous section demonstrates inheritance (the <code>Dog</code> class extending <code>Animal</code>) and polymorphism (both classes have a <code>speak()</code> method, but they return different values).</p>
+<h3 class="heading" id="working-with-external-libraries">
+  Working with External Libraries
+  <a class="anchor" href="#working-with-external-libraries">#</a>
+</h3>
+<p>External libraries provide pre-built functionality, saving you development time and effort. ActionScript allows you to incorporate external libraries into your projects.  This is typically done by importing classes from the library using the <code>import</code> statement.  Many libraries are available, ranging from game development libraries to specialized UI components and networking tools.  Managing external dependencies and understanding how the library functions are essential aspects of using external code.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> com.example.MyLibraryClass<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">//Example import statement
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myObject<span style="color:#666">:</span>MyLibraryClass <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> MyLibraryClass();
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Use methods and properties of MyLibraryClass
+</span></span></span></code></pre></div><p>This shows a simple import statement; the specific path will vary depending on the location of your library files.</p>
+<h3 class="heading" id="debugging-actionscript-code">
+  Debugging ActionScript Code
+  <a class="anchor" href="#debugging-actionscript-code">#</a>
+</h3>
+<p>Debugging is crucial for identifying and fixing errors in your code.  Adobe Animate provides debugging tools, including breakpoints, stepping through code, and inspecting variables.  The <code>trace()</code> function is useful for outputting values to the Output panel during execution, aiding in tracking the flow and state of your program.  Using a debugger effectively and employing techniques like logging output (<code>trace()</code>) help immensely in identifying issues and improving the reliability of your ActionScript code.  For larger projects, using a dedicated debugger is essential.  The methods and interface for debugging will vary depending on your IDE or development environment.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-bash/">
+                        Beginner&#39;s Guide to Bash
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-solidity/">
+                        Beginner&#39;s Guide to Solidity
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Apex | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-apex/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-apex/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Apex">
+  <meta property="og:description" content="Introduction to Apex # What is Apex? # Apex is a strongly-typed, object-oriented programming language that allows developers to execute flow and transaction control statements on the Salesforce platform. It’s specifically designed for extending the functionality of Salesforce, enabling customization beyond the capabilities of the standard declarative tools like point-and-click configuration. Apex code runs in the Salesforce cloud, directly interacting with Salesforce data and metadata. Think of it as the “back-end” programming language for Salesforce, allowing you to build custom business logic, automate processes, and integrate with external systems. It’s similar to Java in syntax but is tailored to the Salesforce platform’s architecture and data model.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-16T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-apex/">Beginner&#39;s Guide to Apex</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Apex</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-02-16T00:00:00&#43;00:00">February 16, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      15 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-apex">Introduction to Apex</a>
+      <ul>
+        <li><a href="#what-is-apex">What is Apex?</a></li>
+        <li><a href="#why-use-apex">Why use Apex?</a></li>
+        <li><a href="#apex-and-salesforce">Apex and Salesforce</a></li>
+        <li><a href="#setting-up-your-development-environment">Setting up your Development Environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-apex-syntax">Basic Apex Syntax</a>
+      <ul>
+        <li><a href="#data-types">Data Types</a></li>
+        <li><a href="#variables-and-constants">Variables and Constants</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#control-flow-statements">Control Flow Statements</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#dml-operations-insert-update-delete-upsert">DML Operations (<code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>, <code>UPSERT</code>)</a></li>
+        <li><a href="#querying-and-manipulating-data">Querying and Manipulating Data</a></li>
+        <li><a href="#handling-query-results">Handling Query Results</a></li>
+        <li><a href="#bulkification">Bulkification</a></li>
+      </ul>
+    </li>
+    <li><a href="#building-apex-classes-and-triggers">Building Apex Classes and Triggers</a>
+      <ul>
+        <li><a href="#creating-apex-classes">Creating Apex Classes</a></li>
+        <li><a href="#methods-and-constructors">Methods and Constructors</a></li>
+        <li><a href="#access-modifiers">Access Modifiers</a></li>
+        <li><a href="#understanding-triggers-beforeafter-insertupdatedelete">Understanding Triggers (before/after, insert/update/delete)</a></li>
+        <li><a href="#writing-efficient-triggers">Writing Efficient Triggers</a></li>
+        <li><a href="#trigger-context-variables">Trigger Context Variables</a></li>
+      </ul>
+    </li>
+    <li><a href="#error-handling-and-best-practices">Error Handling and Best Practices</a>
+      <ul>
+        <li><a href="#exception-handling-try-catch-blocks">Exception Handling (<code>try-catch</code> blocks)</a></li>
+        <li><a href="#logging-and-debugging">Logging and Debugging</a></li>
+        <li><a href="#testing-your-apex-code">Testing Your Apex Code</a></li>
+        <li><a href="#writing-secure-and-efficient-apex">Writing Secure and Efficient Apex</a></li>
+        <li><a href="#governor-limits">Governor Limits</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-apex-topics">Advanced Apex Topics</a>
+      <ul>
+        <li><a href="#asynchronous-apex-future-queueable">Asynchronous Apex (<code>Future</code>, <code>Queueable</code>)</a></li>
+        <li><a href="#batch-apex">Batch Apex</a></li>
+        <li><a href="#sharing-and-security">Sharing and Security</a></li>
+        <li><a href="#working-with-visualforce-brief-overview">Working with Visualforce (Brief Overview)</a></li>
+        <li><a href="#apex-rest-apis">Apex REST APIs</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-apex">
+  Introduction to Apex
+  <a class="anchor" href="#introduction-to-apex">#</a>
+</h2>
+<h3 class="heading" id="what-is-apex">
+  What is Apex?
+  <a class="anchor" href="#what-is-apex">#</a>
+</h3>
+<p>Apex is a strongly-typed, object-oriented programming language that allows developers to execute flow and transaction control statements on the Salesforce platform.  It&rsquo;s specifically designed for extending the functionality of Salesforce, enabling customization beyond the capabilities of the standard declarative tools like point-and-click configuration. Apex code runs in the Salesforce cloud, directly interacting with Salesforce data and metadata.  Think of it as the &ldquo;back-end&rdquo; programming language for Salesforce, allowing you to build custom business logic, automate processes, and integrate with external systems.  It&rsquo;s similar to Java in syntax but is tailored to the Salesforce platform&rsquo;s architecture and data model.</p>
+<h3 class="heading" id="why-use-apex">
+  Why use Apex?
+  <a class="anchor" href="#why-use-apex">#</a>
+</h3>
+<p>You&rsquo;d use Apex when declarative tools aren&rsquo;t sufficient to meet your specific business requirements.  Here are some key reasons:</p>
+<ul>
+<li><strong>Complex Business Logic:</strong>  When your automation needs extend beyond simple workflows, Apex provides the power to implement intricate logic involving conditional statements, loops, and data manipulation.</li>
+<li><strong>Custom Business Processes:</strong>  Create entirely new processes or significantly enhance existing ones by automating tasks, integrating with external services, and reacting to specific events within Salesforce.</li>
+<li><strong>Data Manipulation:</strong>  Perform complex data operations beyond the capabilities of standard Salesforce tools, such as bulk data imports, updates, and deletions.</li>
+<li><strong>Integration with External Systems:</strong>  Connect Salesforce to other systems through APIs, exchanging data and triggering actions based on external events.</li>
+<li><strong>User Interface Enhancements:</strong>  While not the primary purpose, Apex can be used to enhance user interfaces indirectly by creating custom controllers for Visualforce pages or Lightning Web Components.</li>
+<li><strong>Increased Efficiency and Automation:</strong>  Automate repetitive tasks, reducing manual effort and increasing overall efficiency.</li>
+</ul>
+<h3 class="heading" id="apex-and-salesforce">
+  Apex and Salesforce
+  <a class="anchor" href="#apex-and-salesforce">#</a>
+</h3>
+<p>Apex is deeply integrated into the Salesforce ecosystem. It directly interacts with Salesforce objects, fields, and APIs. Apex code runs within the Salesforce governor limits, ensuring that individual Apex executions don&rsquo;t consume excessive resources and maintain the stability of the platform.  Understanding Salesforce&rsquo;s data model and architecture is essential for writing effective Apex code.  Moreover, Apex leverages Salesforce&rsquo;s security model to ensure data integrity and access control.  Any Apex code you write must adhere to Salesforce&rsquo;s security and governor limits.</p>
+<h3 class="heading" id="setting-up-your-development-environment">
+  Setting up your Development Environment
+  <a class="anchor" href="#setting-up-your-development-environment">#</a>
+</h3>
+<p>To develop Apex code, you&rsquo;ll need a few key components:</p>
+<ol>
+<li>
+<p><strong>Salesforce Developer Account:</strong>  You&rsquo;ll need a Salesforce Developer Edition account or a Developer Org within a paid Salesforce account.  This provides you with a sandbox environment to write, test, and deploy your code without affecting your production data.  You can sign up for a free Developer Edition account on the Salesforce website.</p>
+</li>
+<li>
+<p><strong>Salesforce IDE or Tooling API:</strong> You have several choices for writing and deploying Apex:</p>
+<ul>
+<li><strong>Salesforce&rsquo;s Developer Console:</strong> This is a built-in web-based IDE within Salesforce. It&rsquo;s a good starting point for beginners due to its ease of access and integration with Salesforce.</li>
+<li><strong>Third-Party IDEs (VS Code, IntelliJ, etc.):</strong>  These offer advanced features like code completion, debugging, and integrated version control, significantly enhancing productivity.  You&rsquo;ll need to configure them using the Salesforce DX CLI or the Tooling API.  VS Code with the Salesforce Extension Pack is a particularly popular choice.</li>
+</ul>
+</li>
+<li>
+<p><strong>Salesforce CLI (Optional but Recommended):</strong> The Salesforce CLI (Command Line Interface) provides a powerful way to interact with your Salesforce org from your terminal. It simplifies tasks like deploying code, creating scratch orgs, and managing metadata.</p>
+</li>
+</ol>
+<p>Once you&rsquo;ve set up your account and chosen your development environment, you&rsquo;re ready to begin writing your first Apex code.  Remember to refer to the official Salesforce Apex documentation for comprehensive information and best practices.</p>
+<h2 class="heading" id="basic-apex-syntax">
+  Basic Apex Syntax
+  <a class="anchor" href="#basic-apex-syntax">#</a>
+</h2>
+<h3 class="heading" id="data-types">
+  Data Types
+  <a class="anchor" href="#data-types">#</a>
+</h3>
+<p>Apex supports a variety of data types to represent different kinds of information.  Understanding these data types is crucial for writing well-structured and efficient code.  Here are some fundamental data types:</p>
+<ul>
+<li><strong><code>Id</code>:</strong> A unique identifier for Salesforce records (e.g., Accounts, Contacts).</li>
+<li><strong><code>String</code>:</strong>  Represents text.  Enclosed in double quotes (&quot; &ldquo;).</li>
+<li><strong><code>Integer</code>:</strong> Represents whole numbers (e.g., 10, -5, 0).</li>
+<li><strong><code>Long</code>:</strong> Represents larger whole numbers than Integer.</li>
+<li><strong><code>Double</code>:</strong> Represents floating-point numbers (numbers with decimal points).</li>
+<li><strong><code>Decimal</code>:</strong>  Similar to Double, but specifically designed for currency values.  Provides greater precision.</li>
+<li><strong><code>Boolean</code>:</strong> Represents true or false values.</li>
+<li><strong><code>Date</code>:</strong> Represents a date (year, month, day).</li>
+<li><strong><code>DateTime</code>:</strong> Represents a date and time.</li>
+<li><strong><code>Object</code>:</strong> The base class for all other classes.</li>
+<li><strong><code>List&lt;T&gt;</code>:</strong> An ordered collection of elements of type <code>T</code>.</li>
+<li><strong><code>Set&lt;T&gt;</code>:</strong> An unordered collection of unique elements of type <code>T</code>.</li>
+<li><strong><code>Map&lt;K,V&gt;</code>:</strong> A collection of key-value pairs, where <code>K</code> is the key type and <code>V</code> is the value type.</li>
+</ul>
+<h3 class="heading" id="variables-and-constants">
+  Variables and Constants
+  <a class="anchor" href="#variables-and-constants">#</a>
+</h3>
+<p>Variables are used to store data that can change during the execution of your program.  Constants store values that remain unchanged.</p>
+<p><strong>Declaring Variables:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String<span style="color:#bbb"> </span>name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="">&#39;</span>John<span style="color:#bbb"> </span>Doe<span style="">&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Integer<span style="color:#bbb"> </span>age<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>30;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Boolean<span style="color:#bbb"> </span>isEmployed<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">true</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The syntax is <code>data_type variable_name = value;</code></p>
+<p><strong>Declaring Constants:</strong></p>
+<p>Constants are declared using the <code>final</code> keyword:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">final</span><span style="color:#bbb"> </span>Integer<span style="color:#bbb"> </span>MAX_ATTEMPTS<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>3;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Once a constant is assigned a value, it cannot be changed.</p>
+<h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>Apex supports various operators for performing calculations and comparisons:</p>
+<ul>
+<li><strong>Arithmetic Operators:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo)</li>
+<li><strong>Comparison Operators:</strong> <code>==</code> (equals), <code>!=</code> (not equals), <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+<li><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT)</li>
+<li><strong>Assignment Operators:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%= </code></li>
+</ul>
+<h3 class="heading" id="control-flow-statements">
+  Control Flow Statements
+  <a class="anchor" href="#control-flow-statements">#</a>
+</h3>
+<p>Control flow statements determine the order in which code is executed.</p>
+<p><strong><code>if-else</code> Statement:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer<span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>10;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(x<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span>5)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">debug</span>(<span style="">&#39;</span>x<span style="color:#bbb"> </span>is<span style="color:#bbb"> </span>greater<span style="color:#bbb"> </span>than<span style="color:#bbb"> </span>5<span style="">&#39;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">else</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">debug</span>(<span style="">&#39;</span>x<span style="color:#bbb"> </span>is<span style="color:#bbb"> </span>not<span style="color:#bbb"> </span>greater<span style="color:#bbb"> </span>than<span style="color:#bbb"> </span>5<span style="">&#39;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong><code>for</code> Loop:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(Integer<span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0;<span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">&lt;</span><span style="color:#bbb"> </span>5;<span style="color:#bbb"> </span>i<span style="color:#666">++</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">debug</span>(<span style="">&#39;</span>Iteration:<span style="color:#bbb"> </span><span style="">&#39;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>i);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong><code>while</code> Loop:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer<span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span>(i<span style="color:#bbb"> </span><span style="color:#666">&lt;</span><span style="color:#bbb"> </span>5)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">debug</span>(<span style="">&#39;</span>Iteration:<span style="color:#bbb"> </span><span style="">&#39;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>i);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>i<span style="color:#666">++</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="comments">
+  Comments
+  <a class="anchor" href="#comments">#</a>
+</h3>
+<p>Comments are used to explain your code and make it easier to understand.  Apex supports two types of comments:</p>
+<ul>
+<li><strong>Single-line comments:</strong>  Start with <code>//</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment</span><span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong>Multi-line comments:</strong>  Start with <code>/*</code> and end with <code>*/</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">This is a
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">multi-line comment
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">*/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="">```</span><span style="color:#bbb">  </span>Using<span style="color:#bbb"> </span>comments<span style="color:#bbb"> </span>effectively<span style="color:#bbb"> </span>is<span style="color:#bbb"> </span>crucial<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>code<span style="color:#bbb"> </span>maintainability<span style="color:#bbb"> </span>and<span style="color:#bbb"> </span>collaboration.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="">##</span><span style="color:#bbb"> </span>Working<span style="color:#bbb"> </span>with<span style="color:#bbb"> </span>SOQL<span style="color:#bbb"> </span>and<span style="color:#bbb"> </span>DML<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="">###</span><span style="color:#bbb"> </span>SOQL<span style="color:#bbb"> </span><span style="color:#06287e">Queries</span><span style="color:#bbb"> </span>(<span style="">`</span>SELECT<span style="">`</span>,<span style="color:#bbb"> </span><span style="">`</span>WHERE<span style="">`</span>,<span style="color:#bbb"> </span><span style="">`</span>LIMIT<span style="">`</span>,<span style="color:#bbb"> </span><span style="">`</span>ORDER<span style="color:#bbb"> </span>BY<span style="">`</span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>SOQL<span style="color:#bbb"> </span>(Salesforce<span style="color:#bbb"> </span>Object<span style="color:#bbb"> </span>Query<span style="color:#bbb"> </span>Language)<span style="color:#bbb"> </span>is<span style="color:#bbb"> </span>used<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>retrieve<span style="color:#bbb"> </span>data<span style="color:#bbb"> </span>from<span style="color:#bbb"> </span>Salesforce.<span style="color:#bbb">  </span>It<span style="">&#39;</span>s<span style="color:#bbb"> </span>similar<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>SQL.<span style="color:#bbb">  </span>Here<span style="">&#39;</span>s<span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>breakdown<span style="color:#bbb"> </span>of<span style="color:#bbb"> </span>common<span style="color:#bbb"> </span>clauses:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#666">**</span><span style="">`</span>SELECT<span style="">`</span>:<span style="color:#666">**</span><span style="color:#bbb"> </span>Specifies<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>fields<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>retrieve.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="">```</span>java<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>List<span style="color:#666">&lt;</span>Account<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>accounts<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">[</span>SELECT<span style="color:#bbb"> </span>Name,<span style="color:#bbb"> </span>Industry<span style="color:#bbb"> </span>FROM<span style="color:#bbb"> </span>Account<span style="color:#bbb"> </span>LIMIT<span style="color:#bbb"> </span>10<span style="color:#666">]</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li>
+<p><strong><code>FROM</code>:</strong> Specifies the object to query (e.g., <code>Account</code>, <code>Contact</code>, <code>Opportunity</code>).</p>
+</li>
+<li>
+<p><strong><code>WHERE</code>:</strong> Filters the results based on specified criteria.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#666">&lt;</span>Contact<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>contacts<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">[</span>SELECT<span style="color:#bbb"> </span>FirstName,<span style="color:#bbb"> </span>LastName<span style="color:#bbb"> </span>FROM<span style="color:#bbb"> </span>Contact<span style="color:#bbb"> </span>WHERE<span style="color:#bbb"> </span>AccountId<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="">&#39;</span>001xxxxxxxxxxxxxxx<span style="">&#39;</span><span style="color:#666">]</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li>
+<p><strong><code>LIMIT</code>:</strong> Limits the number of records returned.</p>
+</li>
+<li>
+<p><strong><code>ORDER BY</code>:</strong> Sorts the results.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#666">&lt;</span>Contact<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>contacts<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">[</span>SELECT<span style="color:#bbb"> </span>FirstName,<span style="color:#bbb"> </span>LastName<span style="color:#bbb"> </span>FROM<span style="color:#bbb"> </span>Contact<span style="color:#bbb"> </span>ORDER<span style="color:#bbb"> </span>BY<span style="color:#bbb"> </span>LastName<span style="color:#bbb"> </span>LIMIT<span style="color:#bbb"> </span>10<span style="color:#666">]</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>You can combine these clauses to create complex queries.  For instance, to retrieve the names of the top 5 accounts in the Technology industry, ordered alphabetically:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#666">&lt;</span>Account<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>topAccounts<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">[</span>SELECT<span style="color:#bbb"> </span>Name<span style="color:#bbb"> </span>FROM<span style="color:#bbb"> </span>Account<span style="color:#bbb"> </span>WHERE<span style="color:#bbb"> </span>Industry<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="">&#39;</span>Technology<span style="">&#39;</span><span style="color:#bbb"> </span>ORDER<span style="color:#bbb"> </span>BY<span style="color:#bbb"> </span>Name<span style="color:#bbb"> </span>LIMIT<span style="color:#bbb"> </span>5<span style="color:#666">]</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="dml-operations-insert-update-delete-upsert">
+  DML Operations (<code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>, <code>UPSERT</code>)
+  <a class="anchor" href="#dml-operations-insert-update-delete-upsert">#</a>
+</h3>
+<p>DML (Data Manipulation Language) operations allow you to create, update, and delete records in Salesforce.</p>
+<ul>
+<li><strong><code>INSERT</code>:</strong> Creates new records.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Account<span style="color:#bbb"> </span>newAccount<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Account(Name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="">&#39;</span>Acme<span style="color:#bbb"> </span>Corp<span style="">&#39;</span>,<span style="color:#bbb"> </span>Industry<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="">&#39;</span>Technology<span style="">&#39;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>insert<span style="color:#bbb"> </span>newAccount;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>UPDATE</code>:</strong> Modifies existing records.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Account<span style="color:#bbb"> </span>accToUpdate<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">[</span>SELECT<span style="color:#bbb"> </span>Id,<span style="color:#bbb"> </span>Name<span style="color:#bbb"> </span>FROM<span style="color:#bbb"> </span>Account<span style="color:#bbb"> </span>WHERE<span style="color:#bbb"> </span>Name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="">&#39;</span>Acme<span style="color:#bbb"> </span>Corp<span style="">&#39;</span><span style="color:#bbb"> </span>LIMIT<span style="color:#bbb"> </span>1<span style="color:#666">]</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>accToUpdate.<span style="color:#4070a0">Industry</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="">&#39;</span>Manufacturing<span style="">&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>update<span style="color:#bbb"> </span>accToUpdate;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>DELETE</code>:</strong> Deletes records.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#666">&lt;</span>Account<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>accountsToDelete<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">[</span>SELECT<span style="color:#bbb"> </span>Id<span style="color:#bbb"> </span>FROM<span style="color:#bbb"> </span>Account<span style="color:#bbb"> </span>WHERE<span style="color:#bbb"> </span>Name<span style="color:#bbb"> </span>LIKE<span style="color:#bbb"> </span><span style="">&#39;</span><span style="color:#666">%</span>Old<span style="color:#666">%</span><span style="">&#39;</span><span style="color:#bbb"> </span><span style="color:#666">]</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>delete<span style="color:#bbb"> </span>accountsToDelete;<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>UPSERT</code>:</strong>  Inserts a new record if one doesn&rsquo;t exist based on a unique key, or updates an existing record if one does exist.  Requires specifying the <code>allOrNone</code> parameter to determine behavior for partial failure.  It also requires at least one field specified for matching purposes (typically <code>Id</code> or a unique external Id).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Account<span style="color:#bbb"> </span>accToUpsert<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Account(Name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="">&#39;</span>Acme<span style="color:#bbb"> </span>Corp<span style="">&#39;</span>,<span style="color:#bbb"> </span>Industry<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="">&#39;</span>Technology<span style="">&#39;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>upsert<span style="color:#bbb"> </span>accToUpsert;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">//Will either insert or update</span><span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="querying-and-manipulating-data">
+  Querying and Manipulating Data
+  <a class="anchor" href="#querying-and-manipulating-data">#</a>
+</h3>
+<p>SOQL is used to query data, and the results are typically stored in lists.  DML operations then allow you to modify those records or create new ones based on your query results.</p>
+<h3 class="heading" id="handling-query-results">
+  Handling Query Results
+  <a class="anchor" href="#handling-query-results">#</a>
+</h3>
+<p>Query results are typically stored in lists of SObjects.  You can iterate through these lists using loops to process the data.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#666">&lt;</span>Account<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>accounts<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">[</span>SELECT<span style="color:#bbb"> </span>Name,<span style="color:#bbb"> </span>Industry<span style="color:#bbb"> </span>FROM<span style="color:#bbb"> </span>Account<span style="color:#666">]</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(Account<span style="color:#bbb"> </span>acc<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>accounts)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">debug</span>(<span style="">&#39;</span>Account<span style="color:#bbb"> </span>Name:<span style="color:#bbb"> </span><span style="">&#39;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>acc.<span style="color:#4070a0">Name</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="">&#39;</span>,<span style="color:#bbb"> </span>Industry:<span style="color:#bbb"> </span><span style="">&#39;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>acc.<span style="color:#4070a0">Industry</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>You can also use aggregate functions within SOQL queries to perform calculations on your data like <code>COUNT()</code>, <code>SUM()</code>, <code>AVG()</code>, <code>MIN()</code>, <code>MAX()</code>.</p>
+<h3 class="heading" id="bulkification">
+  Bulkification
+  <a class="anchor" href="#bulkification">#</a>
+</h3>
+<p>Bulkification is a critical concept for writing efficient Apex code.  Instead of performing DML operations on individual records in a loop, you should always work with lists of records.  This significantly reduces the number of database interactions and improves performance.</p>
+<p><strong>Example of Non-Bulkified (Inefficient) Code:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#666">&lt;</span>Account<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>accounts<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">[</span>SELECT<span style="color:#bbb"> </span>Id<span style="color:#bbb"> </span>FROM<span style="color:#bbb"> </span>Account<span style="color:#666">]</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(Account<span style="color:#bbb"> </span>acc<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>accounts)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>acc.<span style="color:#4070a0">Name</span><span style="color:#bbb"> </span><span style="color:#666">+=</span><span style="color:#bbb"> </span><span style="">&#39;</span><span style="color:#bbb"> </span>Inc.<span style="">&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>update<span style="color:#bbb"> </span>acc;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">//Inefficient:  Many individual DML operations</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Example of Bulkified (Efficient) Code:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#666">&lt;</span>Account<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>accounts<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">[</span>SELECT<span style="color:#bbb"> </span>Id,<span style="color:#bbb"> </span>Name<span style="color:#bbb"> </span>FROM<span style="color:#bbb"> </span>Account<span style="color:#666">]</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(Account<span style="color:#bbb"> </span>acc<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>accounts)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>acc.<span style="color:#4070a0">Name</span><span style="color:#bbb"> </span><span style="color:#666">+=</span><span style="color:#bbb"> </span><span style="">&#39;</span><span style="color:#bbb"> </span>Inc.<span style="">&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>update<span style="color:#bbb"> </span>accounts;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">//Efficient: Single DML operation on a list</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>Always strive to process records in batches and execute DML operations on lists instead of individual records to achieve efficient and scalable Apex code.  Remember to also be mindful of Salesforce governor limits when working with large datasets.</p>
+<h2 class="heading" id="building-apex-classes-and-triggers">
+  Building Apex Classes and Triggers
+  <a class="anchor" href="#building-apex-classes-and-triggers">#</a>
+</h2>
+<h3 class="heading" id="creating-apex-classes">
+  Creating Apex Classes
+  <a class="anchor" href="#creating-apex-classes">#</a>
+</h3>
+<p>Apex classes are blueprints for creating objects.  They encapsulate data (fields) and behavior (methods).  To create a class, use the <code>class</code> keyword followed by the class name, and enclose the class body within curly braces <code>{}</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">AccountHelper</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// Class members (fields and methods) go here</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The <code>public</code> keyword indicates that this class can be accessed from other parts of your code.  You&rsquo;ll typically use <code>public</code> for classes that are intended to be used by other parts of your application.</p>
+<h3 class="heading" id="methods-and-constructors">
+  Methods and Constructors
+  <a class="anchor" href="#methods-and-constructors">#</a>
+</h3>
+<p>Methods define the behavior of a class.  They perform actions on the class&rsquo;s data.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">AccountHelper</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span>String<span style="color:#bbb"> </span><span style="color:#06287e">getAccountName</span>(Account<span style="color:#bbb"> </span>acc)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>acc.<span style="color:#4070a0">Name</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Constructors are special methods used to initialize objects of a class.  They have the same name as the class.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Account</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span>String<span style="color:#bbb"> </span>Name;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#06287e">Account</span>(String<span style="color:#bbb"> </span>accName)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>accName;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="access-modifiers">
+  Access Modifiers
+  <a class="anchor" href="#access-modifiers">#</a>
+</h3>
+<p>Access modifiers control the visibility and accessibility of class members (fields and methods).</p>
+<ul>
+<li><strong><code>public</code>:</strong> Accessible from anywhere.</li>
+<li><strong><code>private</code>:</strong> Accessible only within the class itself.</li>
+<li><strong><code>protected</code>:</strong> Accessible within the class and its subclasses (inherited classes).</li>
+<li><strong><code>global</code>:</strong> Accessible from anywhere, including other orgs (typically used for web services).</li>
+</ul>
+<p>It is good practice to use the most restrictive access modifier possible to improve the security and maintainability of your code.</p>
+<h3 class="heading" id="understanding-triggers-beforeafter-insertupdatedelete">
+  Understanding Triggers (before/after, insert/update/delete)
+  <a class="anchor" href="#understanding-triggers-beforeafter-insertupdatedelete">#</a>
+</h3>
+<p>Triggers are Apex code that automatically executes before or after specific DML operations (insert, update, delete) on Salesforce records. They allow you to automate processes and enforce business rules.</p>
+<ul>
+<li><strong><code>before</code> triggers:</strong> Execute before the DML operation. You can modify the records being inserted, updated, or deleted.</li>
+<li><strong><code>after</code> triggers:</strong> Execute after the DML operation.  You can&rsquo;t modify the records in <code>after</code> triggers, but you can perform actions based on the changes.</li>
+<li><strong><code>insert</code>:</strong> Triggered when new records are inserted.</li>
+<li><strong><code>update</code>:</strong> Triggered when existing records are updated.</li>
+<li><strong><code>delete</code>:</strong> Triggered when records are deleted.</li>
+</ul>
+<p>Triggers can respond to a combination of these events (e.g., a <code>before insert</code> and <code>before update</code> trigger).</p>
+<h3 class="heading" id="writing-efficient-triggers">
+  Writing Efficient Triggers
+  <a class="anchor" href="#writing-efficient-triggers">#</a>
+</h3>
+<p>Writing efficient triggers is crucial for performance.  Here are some best practices:</p>
+<ul>
+<li><strong>Bulkify your code:</strong> Process records in lists, not individually.</li>
+<li><strong>Use governor limits wisely:</strong> Avoid exceeding Salesforce&rsquo;s governor limits for CPU time, heap size, SOQL queries, and DML operations.</li>
+<li><strong>Avoid unnecessary SOQL queries:</strong> Retrieve only the data you need.</li>
+<li><strong>Optimize your logic:</strong> Write concise and efficient code.</li>
+<li><strong>Use appropriate trigger context variables:</strong> Access data efficiently using context variables.</li>
+</ul>
+<h3 class="heading" id="trigger-context-variables">
+  Trigger Context Variables
+  <a class="anchor" href="#trigger-context-variables">#</a>
+</h3>
+<p>Trigger context variables provide information about the DML operation and the records involved.  Important context variables include:</p>
+<ul>
+<li><strong><code>Trigger.new</code>:</strong>  A list of the new records (for insert and update).</li>
+<li><strong><code>Trigger.old</code>:</strong> A list of the old records (for update and delete).</li>
+<li><strong><code>Trigger.isBefore</code>:</strong> A boolean indicating whether the trigger is executing before or after the DML operation.</li>
+<li><strong><code>Trigger.isDelete</code>:</strong> A boolean indicating whether the trigger is for a delete operation.</li>
+<li><strong><code>Trigger.isInsert</code>:</strong> A boolean indicating whether the trigger is for an insert operation.</li>
+<li><strong><code>Trigger.isUpdate</code>:</strong> A boolean indicating whether the trigger is for an update operation.</li>
+</ul>
+<p>Understanding and effectively using these context variables is vital for writing robust and efficient triggers.  They provide a direct way to interact with the data being changed, allowing you to make modifications (in <code>before</code> triggers) or react to those changes (in <code>after</code> triggers).</p>
+<h2 class="heading" id="error-handling-and-best-practices">
+  Error Handling and Best Practices
+  <a class="anchor" href="#error-handling-and-best-practices">#</a>
+</h2>
+<h3 class="heading" id="exception-handling-try-catch-blocks">
+  Exception Handling (<code>try-catch</code> blocks)
+  <a class="anchor" href="#exception-handling-try-catch-blocks">#</a>
+</h3>
+<p>Exception handling is crucial for writing robust Apex code.  <code>try-catch</code> blocks allow you to gracefully handle errors that might occur during the execution of your code.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// Code that might throw an exception</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>Account<span style="color:#bbb"> </span>acc<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">[</span>SELECT<span style="color:#bbb"> </span>Id<span style="color:#bbb"> </span>FROM<span style="color:#bbb"> </span>Account<span style="color:#bbb"> </span>WHERE<span style="color:#bbb"> </span>Name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="">&#39;</span>NonExistent<span style="color:#bbb"> </span>Account<span style="">&#39;</span><span style="color:#666">]</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">catch</span><span style="color:#bbb"> </span>(QueryException<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// Handle the QueryException</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">debug</span>(<span style="">&#39;</span>Error<span style="color:#bbb"> </span>querying<span style="color:#bbb"> </span>Account:<span style="color:#bbb"> </span><span style="">&#39;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>e.<span style="color:#4070a0">getMessage</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">catch</span><span style="color:#bbb"> </span>(Exception<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// Handle other exceptions</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">debug</span>(<span style="">&#39;</span>An<span style="color:#bbb"> </span>unexpected<span style="color:#bbb"> </span>error<span style="color:#bbb"> </span>occurred:<span style="color:#bbb"> </span><span style="">&#39;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>e.<span style="color:#4070a0">getMessage</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The <code>try</code> block contains the code that might throw an exception.  If an exception occurs, the appropriate <code>catch</code> block is executed.  Always handle specific exceptions where possible, and include a general <code>catch (Exception e)</code> block to handle unexpected errors.</p>
+<h3 class="heading" id="logging-and-debugging">
+  Logging and Debugging
+  <a class="anchor" href="#logging-and-debugging">#</a>
+</h3>
+<p>Logging and debugging are essential for identifying and resolving issues in your Apex code.</p>
+<ul>
+<li><strong><code>System.debug()</code>:</strong>  This statement writes messages to the Salesforce debug logs.  This is invaluable for tracking the execution flow of your code and identifying potential problems.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>System.<span style="color:#4070a0">debug</span>(<span style="">&#39;</span>Entering<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>method...<span style="">&#39;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">debug</span>(<span style="">&#39;</span>The<span style="color:#bbb"> </span>account<span style="color:#bbb"> </span>name<span style="color:#bbb"> </span>is:<span style="color:#bbb"> </span><span style="">&#39;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>account.<span style="color:#4070a0">Name</span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong>Developer Console:</strong> The Salesforce Developer Console provides tools for viewing debug logs and stepping through your code. Use breakpoints to pause execution at specific points in your code.</li>
+</ul>
+<h3 class="heading" id="testing-your-apex-code">
+  Testing Your Apex Code
+  <a class="anchor" href="#testing-your-apex-code">#</a>
+</h3>
+<p>Thorough testing is crucial to ensure the quality and reliability of your Apex code.  Salesforce provides a testing framework that allows you to write unit tests.  Unit tests verify that individual components of your code function as expected.</p>
+<ul>
+<li>
+<p><strong>Test Classes:</strong> Write test classes that contain test methods.  Test methods should cover various scenarios, including positive and negative cases.</p>
+</li>
+<li>
+<p><strong>Test Coverage:</strong> Salesforce requires a certain level of test coverage (typically 75% or higher) before you can deploy your code to production.</p>
+</li>
+</ul>
+<h3 class="heading" id="writing-secure-and-efficient-apex">
+  Writing Secure and Efficient Apex
+  <a class="anchor" href="#writing-secure-and-efficient-apex">#</a>
+</h3>
+<p>Security and efficiency are paramount when developing Apex code.</p>
+<ul>
+<li>
+<p><strong>Security:</strong> Avoid hardcoding sensitive information directly in your code. Use platform features like custom settings or secure external services for storing sensitive data. Validate all user inputs to prevent injection attacks.  Use appropriate access modifiers to protect data.</p>
+</li>
+<li>
+<p><strong>Efficiency:</strong>  Bulkify your DML operations. Avoid unnecessary SOQL queries. Optimize your algorithms for performance.  Use appropriate data structures.</p>
+</li>
+</ul>
+<h3 class="heading" id="governor-limits">
+  Governor Limits
+  <a class="anchor" href="#governor-limits">#</a>
+</h3>
+<p>Salesforce imposes governor limits to ensure the stability and performance of the platform. These limits restrict the amount of resources (CPU time, heap size, SOQL queries, DML operations, etc.) that your Apex code can consume in a single transaction.  Exceeding governor limits can lead to errors and prevent your code from running correctly.  Understanding and respecting these limits is crucial for developing robust and reliable Apex applications.  Refer to the official Salesforce documentation for the most up-to-date information on governor limits.  Careful planning and efficient coding practices are necessary to avoid exceeding these limits.</p>
+<h2 class="heading" id="advanced-apex-topics">
+  Advanced Apex Topics
+  <a class="anchor" href="#advanced-apex-topics">#</a>
+</h2>
+<h3 class="heading" id="asynchronous-apex-future-queueable">
+  Asynchronous Apex (<code>Future</code>, <code>Queueable</code>)
+  <a class="anchor" href="#asynchronous-apex-future-queueable">#</a>
+</h3>
+<p>Asynchronous Apex allows you to execute long-running processes without blocking the user interface or exceeding governor limits.  This is crucial for tasks that might take a significant amount of time to complete.</p>
+<ul>
+<li><strong><code>@future</code> annotation:</strong>  Marks a method to be executed asynchronously.  These methods cannot directly interact with the database or user interface.  They are ideal for relatively short, independent tasks.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#555;font-weight:bold">@future</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">sendEmailAsync</span>(List<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>emails)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// Send emails asynchronously</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>Queueable</code> interface:</strong> Allows for more complex asynchronous operations, including the ability to process data in batches and resume execution across multiple governor limits.  This is suitable for longer, potentially more resource-intensive tasks.</li>
+</ul>
+<h3 class="heading" id="batch-apex">
+  Batch Apex
+  <a class="anchor" href="#batch-apex">#</a>
+</h3>
+<p>Batch Apex is designed for processing large volumes of data efficiently.  It allows you to divide a large dataset into smaller batches, process each batch individually, and handle failures gracefully.</p>
+<ul>
+<li><strong><code>Database.executeBatch()</code>:</strong>  The core method for executing batch Apex.  You&rsquo;ll create a class that implements the <code>Database.Batchable&lt;SObject&gt;</code> interface.  This interface defines methods for querying data (<code>start</code>), processing individual batches (<code>execute</code>), and performing any necessary cleanup (<code>finish</code>).  Batch Apex is ideal for operations like bulk updates, data imports, and complex data transformations.</li>
+</ul>
+<h3 class="heading" id="sharing-and-security">
+  Sharing and Security
+  <a class="anchor" href="#sharing-and-security">#</a>
+</h3>
+<p>Sharing rules and security best practices are vital for protecting sensitive data.</p>
+<ul>
+<li>
+<p><strong>Sharing Rules:</strong> Define who has access to specific records.  They govern data visibility beyond the standard hierarchy of ownership.</p>
+</li>
+<li>
+<p><strong>Organization-Wide Defaults (OWDs):</strong> Set the default access level for all users.  They provide a baseline level of data access.</p>
+</li>
+<li>
+<p><strong>Role Hierarchy:</strong>  Organize users into roles, establishing inheritance of data access permissions.</p>
+</li>
+<li>
+<p><strong>Apex Security:</strong>  Always validate user inputs and adhere to the principle of least privilege when granting access to data.</p>
+</li>
+</ul>
+<h3 class="heading" id="working-with-visualforce-brief-overview">
+  Working with Visualforce (Brief Overview)
+  <a class="anchor" href="#working-with-visualforce-brief-overview">#</a>
+</h3>
+<p>Visualforce is a framework for building custom user interfaces within Salesforce. While not strictly Apex, it&rsquo;s frequently used in conjunction with Apex controllers.  Visualforce pages are markup-based, and Apex controllers provide the logic that drives the page&rsquo;s behavior.  Visualforce is largely being replaced by Lightning Web Components (LWC), but understanding its fundamental concepts is still helpful for maintaining legacy code.</p>
+<h3 class="heading" id="apex-rest-apis">
+  Apex REST APIs
+  <a class="anchor" href="#apex-rest-apis">#</a>
+</h3>
+<p>Apex REST APIs allow you to create custom web services that expose Salesforce data and functionality to external applications.</p>
+<ul>
+<li>
+<p><strong><code>@RestResource</code> annotation:</strong>  Marks a class as a REST resource.</p>
+</li>
+<li>
+<p><strong>HTTP Methods:</strong>  Use standard HTTP methods like <code>GET</code>, <code>POST</code>, <code>PUT</code>, and <code>DELETE</code> to interact with your REST API.</p>
+</li>
+<li>
+<p><strong>JSON:</strong>  REST APIs typically use JSON (JavaScript Object Notation) for data exchange.</p>
+</li>
+</ul>
+<p>By using Apex REST APIs, you can build custom integrations with external systems, allowing seamless data exchange between Salesforce and other applications.  This unlocks significant possibilities for extending and enhancing the capabilities of your Salesforce org.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-sas/">
+                        Beginner&#39;s Guide to SAS
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-erlang/">
+                        Beginner&#39;s Guide to Erlang
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

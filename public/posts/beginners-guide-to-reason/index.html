@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Reason | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-reason/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-reason/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Reason">
+  <meta property="og:description" content="Introduction to Reason # What is Reason? # Reason is a syntactically delightful, strongly-typed language that compiles to JavaScript. It’s built on top of OCaml, inheriting its powerful type system and functional programming paradigms, but presents a syntax much more familiar to developers coming from languages like JavaScript, C&#43;&#43;, or Java. This makes it easier to learn and adopt for a broader range of developers while retaining the performance and reliability benefits of OCaml. Reason’s syntax aims for clarity and consistency, making code easier to read, write, and maintain. It’s particularly well-suited for building complex web applications, but its capabilities extend beyond the browser.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-22T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-reason/">Beginner&#39;s Guide to Reason</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Reason</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-01-22T00:00:00&#43;00:00">January 22, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      22 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-reason">Introduction to Reason</a>
+      <ul>
+        <li><a href="#what-is-reason">What is Reason?</a></li>
+        <li><a href="#reason-vs-ocaml">Reason vs. OCaml</a></li>
+        <li><a href="#why-learn-reason">Why learn Reason?</a></li>
+        <li><a href="#setting-up-your-environment">Setting up your environment.</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#variables-and-constants">Variables and Constants</a></li>
+        <li><a href="#data-types-int-float-string-bool">Data Types (int, float, string, bool)</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#comments">Comments</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-functions">Working with Functions</a>
+      <ul>
+        <li><a href="#defining-functions">Defining Functions</a></li>
+        <li><a href="#function-arguments-and-return-values">Function Arguments and Return Values</a></li>
+        <li><a href="#anonymous-functions">Anonymous Functions</a></li>
+        <li><a href="#higher-order-functions">Higher-Order Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-flow">Control Flow</a>
+      <ul>
+        <li><a href="#if-else-statements">If-else Statements</a></li>
+        <li><a href="#switch-statements">Switch Statements</a></li>
+        <li><a href="#loops-for-while">Loops (for, while)</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-structures">Data Structures</a>
+      <ul>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#arrays">Arrays</a></li>
+        <li><a href="#tuples">Tuples</a></li>
+        <li><a href="#records">Records</a></li>
+        <li><a href="#variants">Variants</a></li>
+      </ul>
+    </li>
+    <li><a href="#modules-and-namespaces">Modules and Namespaces</a>
+      <ul>
+        <li><a href="#creating-modules">Creating Modules</a></li>
+        <li><a href="#importing-modules">Importing Modules</a></li>
+        <li><a href="#namespaces-and-module-paths">Namespaces and Module Paths</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-react-if-applicable">Working with React (If applicable)</a>
+      <ul>
+        <li><a href="#setting-up-a-reasonreact-project">Setting up a ReasonReact project</a></li>
+        <li><a href="#basic-components">Basic Components</a></li>
+        <li><a href="#props-and-state">Props and State</a></li>
+        <li><a href="#component-lifecycle">Component Lifecycle</a></li>
+      </ul>
+    </li>
+    <li><a href="#error-handling">Error Handling</a>
+      <ul>
+        <li><a href="#exceptions">Exceptions</a></li>
+        <li><a href="#result-type">Result type</a></li>
+        <li><a href="#option-type">Option type</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-concepts-optional">Advanced Concepts (Optional)</a>
+      <ul>
+        <li><a href="#type-inference">Type Inference</a></li>
+        <li><a href="#algebraic-data-types-adts">Algebraic Data Types (ADTs)</a></li>
+        <li><a href="#pattern-matching">Pattern Matching</a></li>
+        <li><a href="#functors">Functors</a></li>
+        <li><a href="#monads">Monads</a></li>
+      </ul>
+    </li>
+    <li><a href="#next-steps-and-resources">Next Steps and Resources</a>
+      <ul>
+        <li><a href="#community-and-support">Community and Support</a></li>
+        <li><a href="#further-learning-resources">Further Learning Resources</a></li>
+        <li><a href="#reason-projects-to-explore">Reason Projects to Explore</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-reason">
+  Introduction to Reason
+  <a class="anchor" href="#introduction-to-reason">#</a>
+</h2>
+<h3 class="heading" id="what-is-reason">
+  What is Reason?
+  <a class="anchor" href="#what-is-reason">#</a>
+</h3>
+<p>Reason is a syntactically delightful, strongly-typed language that compiles to JavaScript.  It&rsquo;s built on top of OCaml, inheriting its powerful type system and functional programming paradigms, but presents a syntax much more familiar to developers coming from languages like JavaScript, C++, or Java. This makes it easier to learn and adopt for a broader range of developers while retaining the performance and reliability benefits of OCaml. Reason&rsquo;s syntax aims for clarity and consistency, making code easier to read, write, and maintain. It&rsquo;s particularly well-suited for building complex web applications, but its capabilities extend beyond the browser.</p>
+<h3 class="heading" id="reason-vs-ocaml">
+  Reason vs. OCaml
+  <a class="anchor" href="#reason-vs-ocaml">#</a>
+</h3>
+<p>Reason and OCaml share the same underlying compiler and runtime, meaning they offer the same performance and robust type safety.  The core difference lies in the syntax. OCaml uses a syntax more traditional to functional programming languages like ML, with significant use of semicolons and parentheses.  Reason, on the other hand, boasts a syntax inspired by JavaScript and other popular languages, employing familiar constructs like curly braces <code>{}</code> for blocks and semicolons only where strictly necessary. This syntactic familiarity lowers the barrier to entry for many developers.  Think of it as OCaml with a JavaScript-inspired facelift.  You can even mix Reason and OCaml code in a single project, leveraging the strengths of both.</p>
+<h3 class="heading" id="why-learn-reason">
+  Why learn Reason?
+  <a class="anchor" href="#why-learn-reason">#</a>
+</h3>
+<p>Reason offers several compelling reasons to learn it:</p>
+<ul>
+<li><strong>Strong Typing:</strong> Reason&rsquo;s powerful type system helps catch errors at compile time, leading to fewer runtime surprises and more robust applications.  This results in higher code quality and reduced debugging time.</li>
+<li><strong>Functional Programming:</strong> Reason embraces functional programming principles, promoting immutability, pure functions, and concise code.  This makes code easier to understand, test, and reason about.</li>
+<li><strong>JavaScript Interoperability:</strong> Reason compiles to highly optimized JavaScript, allowing seamless integration with existing JavaScript codebases and libraries.  This means you can leverage the vast ecosystem of JavaScript while benefiting from Reason&rsquo;s advantages.</li>
+<li><strong>Modern Syntax:</strong> The familiar syntax reduces the learning curve for developers already proficient in languages like JavaScript, making it easier to adopt and contribute to Reason projects.</li>
+<li><strong>Performance:</strong>  Because it compiles to JavaScript, Reason benefits from the performance of modern JavaScript engines.  Moreover, the underlying OCaml compiler performs extensive optimizations.</li>
+<li><strong>Growing Community:</strong> While smaller than some other languages, the Reason community is active, supportive, and growing steadily.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-environment">
+  Setting up your environment.
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h3>
+<p>Setting up your Reason development environment typically involves installing the BuckleScript compiler (the compiler that transforms Reason code into JavaScript) and a build system like npm or yarn.  The specific steps might vary slightly depending on your operating system (Windows, macOS, Linux), but generally follow these steps:</p>
+<ol>
+<li>
+<p><strong>Node.js and npm (or yarn):</strong> Ensure you have Node.js and npm (or yarn, a Node.js package manager) installed on your system. You can download them from the official Node.js website.</p>
+</li>
+<li>
+<p><strong>Create a new project:</strong> Use npm or yarn to create a new project:  <code>npm init</code> (or <code>yarn init</code>).  This will generate a <code>package.json</code> file.</p>
+</li>
+<li>
+<p><strong>Install BuckleScript:</strong> Install the BuckleScript compiler as a development dependency: <code>npm install --save-dev bs-platform</code> (or <code>yarn add --dev bs-platform</code>).</p>
+</li>
+<li>
+<p><strong>Create a Reason file:</strong> Create a new file (e.g., <code>src/index.re</code>) and start writing your Reason code.</p>
+</li>
+<li>
+<p><strong>Configure your build process:</strong> BuckleScript typically requires some configuration to specify the input and output files, and potentially other build options.  This configuration is often done via a <code>bsconfig.json</code> file.  Refer to the official BuckleScript documentation for detailed configuration instructions.</p>
+</li>
+</ol>
+<p>These steps provide a basic setup.  More advanced setups might involve integrating with a build tool like webpack or Parcel for larger projects.  Refer to the official Reason documentation and community resources for more detailed instructions and examples.</p>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="variables-and-constants">
+  Variables and Constants
+  <a class="anchor" href="#variables-and-constants">#</a>
+</h3>
+<p>Reason uses <code>let</code> to declare variables and constants.  The key difference lies in mutability: variables can be reassigned, while constants cannot.  However, Reason strongly encourages immutability, making constants the preferred choice in most situations.</p>
+<p><strong>Constants:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myConstant <span style="color:#007020;font-weight:bold">=</span> 10<span style="color:#007020;font-weight:bold">;</span>
+</span></span></code></pre></div><p><code>myConstant</code> is a constant; attempting to reassign it will result in a compiler error.</p>
+<p><strong>Variables:</strong> (While possible, try to avoid mutable variables where practical)</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#007020;font-weight:bold">mutable</span> myVariable <span style="color:#007020;font-weight:bold">=</span> 5<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>myVariable <span style="color:#007020;font-weight:bold">=</span> 15<span style="color:#007020;font-weight:bold">;</span> <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">This</span> is allowed <span style="color:#007020;font-weight:bold">*)</span>
+</span></span></code></pre></div><p><code>myVariable</code> is a mutable variable.  Note the use of the <code>mutable</code> keyword, which is generally discouraged unless absolutely necessary for performance reasons or specific algorithms.</p>
+<h3 class="heading" id="data-types-int-float-string-bool">
+  Data Types (int, float, string, bool)
+  <a class="anchor" href="#data-types-int-float-string-bool">#</a>
+</h3>
+<p>Reason is statically typed, meaning the type of every variable and expression is known at compile time.  This leads to increased code reliability and early error detection.  Here are some basic data types:</p>
+<ul>
+<li>
+<p><strong><code>int</code> (Integer):</strong> Represents whole numbers (e.g., <code>10</code>, <code>-5</code>, <code>0</code>).</p>
+</li>
+<li>
+<p><strong><code>float</code> (Floating-point):</strong> Represents numbers with decimal points (e.g., <code>3.14</code>, <code>-2.5</code>, <code>0.0</code>).</p>
+</li>
+<li>
+<p><strong><code>string</code> (String):</strong> Represents sequences of characters (e.g., <code>&quot;Hello&quot;</code>, <code>&quot;ReasonML&quot;</code>).  Strings are delimited by double quotes.</p>
+</li>
+<li>
+<p><strong><code>bool</code> (Boolean):</strong> Represents truth values, either <code>true</code> or <code>false</code>.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myInt<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">int</span> <span style="color:#007020;font-weight:bold">=</span> 10<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myFloat<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">float</span> <span style="color:#007020;font-weight:bold">=</span> 3<span style="color:#007020;font-weight:bold">.</span>14<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myString<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">string</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">&#34;Reason&#34;</span><span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myBool<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">bool</span> <span style="color:#007020;font-weight:bold">=</span> true<span style="color:#007020;font-weight:bold">;</span>
+</span></span></code></pre></div><p>Type annotations (like <code>: int</code> above) are optional in many cases; Reason&rsquo;s type inference system will often deduce the type automatically. However, explicit type annotations improve code readability and maintainability.</p>
+<h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>Reason supports a standard set of operators, similar to those found in other languages:</p>
+<ul>
+<li>
+<p><strong>Arithmetic Operators:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo).</p>
+</li>
+<li>
+<p><strong>Comparison Operators:</strong> <code>=</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.</p>
+</li>
+<li>
+<p><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT).</p>
+</li>
+<li>
+<p><strong>Assignment Operator:</strong> <code>=</code> (for constants and mutable variables).</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> sum <span style="color:#007020;font-weight:bold">=</span> 10 <span style="color:#007020;font-weight:bold">+</span> 5<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> isGreater <span style="color:#007020;font-weight:bold">=</span> 10 <span style="color:#007020;font-weight:bold">&gt;</span> 5<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> result <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>10 <span style="color:#007020;font-weight:bold">&gt;</span> 5<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">&amp;&amp;</span> <span style="color:#007020;font-weight:bold">(</span>5 <span style="color:#007020;font-weight:bold">&lt;</span> 10<span style="color:#007020;font-weight:bold">);</span>
+</span></span></code></pre></div><p>Operator precedence follows standard mathematical rules. Parentheses can be used to control the order of evaluation.</p>
+<h3 class="heading" id="comments">
+  Comments
+  <a class="anchor" href="#comments">#</a>
+</h3>
+<p>Reason supports both single-line and multi-line comments:</p>
+<p><strong>Single-line comment:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">This</span> is a single<span style="color:#007020;font-weight:bold">-</span>line comment <span style="color:#007020;font-weight:bold">*)</span>
+</span></span></code></pre></div><p><strong>Multi-line comment:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">(**</span>
+</span></span><span style="display:flex;"><span><span style="color:#0e84b5;font-weight:bold">This</span> is a
+</span></span><span style="display:flex;"><span>multi<span style="color:#007020;font-weight:bold">-</span>line comment<span style="color:#007020;font-weight:bold">.</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">**)</span>
+</span></span></code></pre></div><p>Comments are crucial for documenting your code, making it easier to understand and maintain.  Use comments effectively to explain complex logic or non-obvious code sections.</p>
+<h2 class="heading" id="working-with-functions">
+  Working with Functions
+  <a class="anchor" href="#working-with-functions">#</a>
+</h2>
+<h3 class="heading" id="defining-functions">
+  Defining Functions
+  <a class="anchor" href="#defining-functions">#</a>
+</h3>
+<p>Functions in Reason are defined using the <code>let</code> keyword, followed by the function name, its parameters, and its body enclosed in curly braces <code>{}</code>. The return type is often inferred, but can be explicitly specified.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> add <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">,</span> y<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  x <span style="color:#007020;font-weight:bold">+</span> y
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> greet <span style="color:#007020;font-weight:bold">(</span>name<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">string</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">string</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Hello, &#34;</span> <span style="color:#007020;font-weight:bold">++</span> name <span style="color:#007020;font-weight:bold">++</span> <span style="color:#4070a0">&#34;!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span></code></pre></div><p>The <code>add</code> function takes two integer arguments and returns their sum. The <code>greet</code> function takes a string argument and returns a greeting string, explicitly specifying its return type. Note the use of <code>++</code> for string concatenation.</p>
+<h3 class="heading" id="function-arguments-and-return-values">
+  Function Arguments and Return Values
+  <a class="anchor" href="#function-arguments-and-return-values">#</a>
+</h3>
+<p>Functions can accept multiple arguments, separated by commas.  If a function doesn&rsquo;t explicitly return a value, it implicitly returns <code>unit</code>, which is Reason&rsquo;s equivalent of <code>void</code> in other languages.  The return value is the last expression evaluated within the function&rsquo;s body.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> sumThree <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>a<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">,</span> b<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">,</span> c<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  a <span style="color:#007020;font-weight:bold">+</span> b <span style="color:#007020;font-weight:bold">+</span> c
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> printMessage <span style="color:#007020;font-weight:bold">(</span>message<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">string</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">unit</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span>message<span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span></code></pre></div><p><code>sumThree</code> returns the sum of three integers. <code>printMessage</code> uses <code>Js.log</code> (a JavaScript interop function) to print a message to the console and returns <code>unit</code> because it doesn&rsquo;t have an explicit return statement.</p>
+<h3 class="heading" id="anonymous-functions">
+  Anonymous Functions
+  <a class="anchor" href="#anonymous-functions">#</a>
+</h3>
+<p>Anonymous functions, also known as lambda expressions, are functions without a name.  They are often used as arguments to higher-order functions.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> square <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#007020;font-weight:bold">*</span> x<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> numbers <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">[</span>1<span style="color:#007020;font-weight:bold">,</span> 2<span style="color:#007020;font-weight:bold">,</span> 3<span style="color:#007020;font-weight:bold">,</span> 4<span style="color:#007020;font-weight:bold">,</span> 5<span style="color:#007020;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> squaredNumbers <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">Array</span>.map<span style="color:#007020;font-weight:bold">(</span>square<span style="color:#007020;font-weight:bold">,</span> numbers<span style="color:#007020;font-weight:bold">);</span>
+</span></span></code></pre></div><p>Here, <code>square</code> is an anonymous function that squares its input. It is passed as an argument to <code>Array.map</code>, which applies the function to each element of the <code>numbers</code> array.</p>
+<h3 class="heading" id="higher-order-functions">
+  Higher-Order Functions
+  <a class="anchor" href="#higher-order-functions">#</a>
+</h3>
+<p>Higher-order functions are functions that take other functions as arguments or return functions as their results.  Reason&rsquo;s standard library provides many useful higher-order functions, such as <code>Array.map</code>, <code>Array.filter</code>, and <code>Array.reduce</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> isEven <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#007020;font-weight:bold">mod</span> 2 <span style="color:#007020;font-weight:bold">==</span> 0<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> evenNumbers <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">Array</span>.filter<span style="color:#007020;font-weight:bold">(</span>isEven<span style="color:#007020;font-weight:bold">,</span> numbers<span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> sumArray <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">Array</span>.reduce<span style="color:#007020;font-weight:bold">((</span>acc<span style="color:#007020;font-weight:bold">,</span> x<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> acc <span style="color:#007020;font-weight:bold">+</span> x<span style="color:#007020;font-weight:bold">,</span> 0<span style="color:#007020;font-weight:bold">,</span> numbers<span style="color:#007020;font-weight:bold">);</span>
+</span></span></code></pre></div><p><code>isEven</code> is a function that checks if a number is even.  <code>Array.filter</code> uses it to create a new array containing only the even numbers from <code>numbers</code>.  <code>Array.reduce</code> sums all elements in <code>numbers</code>, starting with an initial accumulator value of 0.  These examples demonstrate the power and elegance of higher-order functions for concise and expressive code.</p>
+<h2 class="heading" id="control-flow">
+  Control Flow
+  <a class="anchor" href="#control-flow">#</a>
+</h2>
+<h3 class="heading" id="if-else-statements">
+  If-else Statements
+  <a class="anchor" href="#if-else-statements">#</a>
+</h3>
+<p>Reason&rsquo;s <code>if-else</code> statements work similarly to those in other languages.  They evaluate a condition and execute different blocks of code based on whether the condition is true or false.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> x <span style="color:#007020;font-weight:bold">=</span> 10<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">(</span>x <span style="color:#007020;font-weight:bold">&gt;</span> 5<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;x is greater than 5&#34;</span><span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;x is not greater than 5&#34;</span><span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> message <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">(</span>x <span style="color:#666">%</span> 2 <span style="color:#007020;font-weight:bold">==</span> 0<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">{</span> <span style="color:#4070a0">&#34;Even&#34;</span> <span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">{</span> <span style="color:#4070a0">&#34;Odd&#34;</span> <span style="color:#007020;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span><span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span>message<span style="color:#007020;font-weight:bold">);</span>
+</span></span></code></pre></div><p>The first example demonstrates a standard <code>if-else</code> block. The second shows a concise way to assign a value based on a conditional expression; the <code>if-else</code> expression itself becomes the value assigned to <code>message</code>.</p>
+<h3 class="heading" id="switch-statements">
+  Switch Statements
+  <a class="anchor" href="#switch-statements">#</a>
+</h3>
+<p>Reason&rsquo;s <code>switch</code> statement provides a way to handle multiple possible values of an expression.  It&rsquo;s particularly useful when dealing with a limited set of known cases.  Note that unlike some languages, Reason&rsquo;s <code>switch</code> requires an exhaustive set of cases (or a default case) to handle all possibilities, which enhances type safety and prevents unexpected behavior.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> day <span style="color:#007020;font-weight:bold">=</span> 3<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">switch</span> <span style="color:#007020;font-weight:bold">(</span>day<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> 1 <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Monday&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> 2 <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Tuesday&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> 3 <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Wednesday&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> 4 <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Thursday&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> 5 <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Friday&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> 6 <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Saturday&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> 7 <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Sunday&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> <span style="color:#007020;font-weight:bold">_</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Invalid day&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span></code></pre></div><p>This <code>switch</code> statement checks the value of <code>day</code> and logs the corresponding day of the week. The <code>_</code> case acts as a default case, handling any values not explicitly listed (though in this case a better approach would be to enforce a type that only allows values 1-7).</p>
+<h3 class="heading" id="loops-for-while">
+  Loops (for, while)
+  <a class="anchor" href="#loops-for-while">#</a>
+</h3>
+<p>Reason provides <code>for</code> and <code>while</code> loops for iterative control flow.</p>
+<p><strong><code>for</code> loop:</strong> Reason&rsquo;s <code>for</code> loop is typically used to iterate over arrays or lists.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> numbers <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">[</span>1<span style="color:#007020;font-weight:bold">,</span> 2<span style="color:#007020;font-weight:bold">,</span> 3<span style="color:#007020;font-weight:bold">,</span> 4<span style="color:#007020;font-weight:bold">,</span> 5<span style="color:#007020;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#0e84b5;font-weight:bold">Array</span>.to_list<span style="color:#007020;font-weight:bold">(</span>numbers<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span>i<span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span></code></pre></div><p>This example iterates through the <code>numbers</code> array (converted to a list using <code>Array.to_list</code> as <code>for</code> loops in Reason work with lists).  Note that you don&rsquo;t directly access the array index within the loop in this manner.  If you need index access, using <code>Array.mapi</code> or similar higher-order functions is generally preferred.</p>
+<p><strong><code>while</code> loop:</strong> The <code>while</code> loop continues executing as long as a specified condition is true.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> i <span style="color:#007020;font-weight:bold">=</span> 0<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">(</span>i <span style="color:#007020;font-weight:bold">&lt;</span> 5<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span>i<span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  i <span style="color:#007020;font-weight:bold">=</span> i <span style="color:#007020;font-weight:bold">+</span> 1<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span></code></pre></div><p>This <code>while</code> loop prints numbers from 0 to 4. Remember to update the loop variable (<code>i</code>) within the loop body to prevent infinite loops.  As with <code>for</code> loops, favor using higher-order functions when appropriate for clearer and often more efficient code.</p>
+<h2 class="heading" id="data-structures">
+  Data Structures
+  <a class="anchor" href="#data-structures">#</a>
+</h2>
+<p>Reason offers a variety of built-in data structures to organize and manage data efficiently.  Understanding these structures is essential for writing effective and maintainable Reason code.</p>
+<h3 class="heading" id="lists">
+  Lists
+  <a class="anchor" href="#lists">#</a>
+</h3>
+<p>Lists are immutable, singly-linked lists.  This means that once a list is created, its elements cannot be changed.  New lists are created by adding elements to existing ones.  They are suitable for situations where frequent modifications are not needed and where immutability is beneficial.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myList <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">[</span>1<span style="color:#007020;font-weight:bold">,</span> 2<span style="color:#007020;font-weight:bold">,</span> 3<span style="color:#007020;font-weight:bold">,</span> 4<span style="color:#007020;font-weight:bold">,</span> 5<span style="color:#007020;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> newList <span style="color:#007020;font-weight:bold">=</span> 0 <span style="color:#007020;font-weight:bold">::</span> myList<span style="color:#007020;font-weight:bold">;</span> <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Add</span> 0 <span style="color:#007020;font-weight:bold">to</span> the beginning <span style="color:#007020;font-weight:bold">*)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> anotherList <span style="color:#007020;font-weight:bold">=</span> myList <span style="color:#666">@</span> <span style="color:#007020;font-weight:bold">[</span>6<span style="color:#007020;font-weight:bold">,</span> 7<span style="color:#007020;font-weight:bold">];</span> <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Concatenate</span> lists <span style="color:#007020;font-weight:bold">*)</span>
+</span></span></code></pre></div><p>The <code>::</code> operator adds an element to the head (beginning) of the list, creating a new list. The <code>@</code> operator concatenates two lists.</p>
+<h3 class="heading" id="arrays">
+  Arrays
+  <a class="anchor" href="#arrays">#</a>
+</h3>
+<p>Arrays are mutable, fixed-size collections of elements.  They are efficient for accessing elements by their index but less efficient for adding or removing elements compared to lists.  Reason&rsquo;s arrays are more similar to those found in other imperative languages (like C++ or JavaScript).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myArray <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">[|</span>1<span style="color:#007020;font-weight:bold">,</span> 2<span style="color:#007020;font-weight:bold">,</span> 3<span style="color:#007020;font-weight:bold">,</span> 4<span style="color:#007020;font-weight:bold">,</span> 5<span style="color:#007020;font-weight:bold">|];</span>
+</span></span><span style="display:flex;"><span><span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span>myArray<span style="color:#007020;font-weight:bold">[</span>0<span style="color:#007020;font-weight:bold">]);</span>  <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Access</span> the first element <span style="color:#007020;font-weight:bold">*)</span>
+</span></span><span style="display:flex;"><span>myArray<span style="color:#007020;font-weight:bold">[</span>0<span style="color:#007020;font-weight:bold">]</span> <span style="color:#007020;font-weight:bold">=</span> 10<span style="color:#007020;font-weight:bold">;</span>     <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Modify</span> the first element <span style="color:#007020;font-weight:bold">(</span><span style="color:#007020;font-weight:bold">mutable</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">*)</span>
+</span></span></code></pre></div><p>Arrays are created using <code>[| ... |]</code> syntax.  Elements are accessed using square brackets <code>[]</code> with their index.  Note that modifying an array&rsquo;s element does not create a new array; it changes the original array in place.</p>
+<h3 class="heading" id="tuples">
+  Tuples
+  <a class="anchor" href="#tuples">#</a>
+</h3>
+<p>Tuples are fixed-size collections of elements of potentially different types.  They are used to group related data together.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myTuple <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>1<span style="color:#007020;font-weight:bold">,</span> <span style="color:#4070a0">&#34;hello&#34;</span><span style="color:#007020;font-weight:bold">,</span> 3<span style="color:#007020;font-weight:bold">.</span>14<span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#007020;font-weight:bold">(</span>intVal<span style="color:#007020;font-weight:bold">,</span> strVal<span style="color:#007020;font-weight:bold">,</span> floatVal<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=</span> myTuple<span style="color:#007020;font-weight:bold">;</span> <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Destructuring</span> <span style="color:#007020;font-weight:bold">*)</span>
+</span></span><span style="display:flex;"><span><span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span>intVal<span style="color:#007020;font-weight:bold">);</span>
+</span></span></code></pre></div><p>Tuples are created using parentheses <code>(...)</code>.  Elements are accessed by their position (starting from 0).  Tuple elements can be destructured using pattern matching as shown.</p>
+<h3 class="heading" id="records">
+  Records
+  <a class="anchor" href="#records">#</a>
+</h3>
+<p>Records are collections of named fields, each with an associated value.  They are useful for representing structured data with meaningful field names.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> person <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">{</span> name<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">string</span><span style="color:#007020;font-weight:bold">,</span> age<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">int</span> <span style="color:#007020;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myPerson <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">{</span> name<span style="color:#007020;font-weight:bold">:</span> <span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#007020;font-weight:bold">,</span> age<span style="color:#007020;font-weight:bold">:</span> 30 <span style="color:#007020;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span><span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span>myPerson<span style="color:#007020;font-weight:bold">.</span>name<span style="color:#007020;font-weight:bold">);</span>
+</span></span></code></pre></div><p>Records are defined using a <code>type</code> declaration.  Fields are accessed using the dot operator <code>.</code>.</p>
+<h3 class="heading" id="variants">
+  Variants
+  <a class="anchor" href="#variants">#</a>
+</h3>
+<p>Variants represent values that can take on one of several possible forms (or types).  They are a powerful tool for modeling data with different structures or states.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> shape <span style="color:#007020;font-weight:bold">=</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Circle</span><span style="color:#007020;font-weight:bold">(</span><span style="color:#902000">float</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Rectangle</span><span style="color:#007020;font-weight:bold">(</span><span style="color:#902000">float</span><span style="color:#007020;font-weight:bold">,</span> <span style="color:#902000">float</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Square</span><span style="color:#007020;font-weight:bold">(</span><span style="color:#902000">float</span><span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myShape <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">Circle</span><span style="color:#007020;font-weight:bold">(</span>5<span style="color:#007020;font-weight:bold">.</span>0<span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">switch</span> <span style="color:#007020;font-weight:bold">(</span>myShape<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Circle</span><span style="color:#007020;font-weight:bold">(</span>radius<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Circle with radius: &#34;</span> <span style="color:#007020;font-weight:bold">++</span> string_of_float<span style="color:#007020;font-weight:bold">(</span>radius<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Rectangle</span><span style="color:#007020;font-weight:bold">(</span>width<span style="color:#007020;font-weight:bold">,</span> height<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Rectangle with width: &#34;</span> <span style="color:#007020;font-weight:bold">++</span> string_of_float<span style="color:#007020;font-weight:bold">(</span>width<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">++</span> <span style="color:#4070a0">&#34;, height: &#34;</span> <span style="color:#007020;font-weight:bold">++</span> string_of_float<span style="color:#007020;font-weight:bold">(</span>height<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Square</span><span style="color:#007020;font-weight:bold">(</span>side<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Square with side: &#34;</span> <span style="color:#007020;font-weight:bold">++</span> string_of_float<span style="color:#007020;font-weight:bold">(</span>side<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span></code></pre></div><p>Variants are defined using a <code>type</code> declaration with <code>|</code> separating different cases.  Each case can have associated data (like the radius of a circle).  Variants are often used in conjunction with pattern matching (in <code>switch</code> statements or other pattern matching constructs).</p>
+<h2 class="heading" id="modules-and-namespaces">
+  Modules and Namespaces
+  <a class="anchor" href="#modules-and-namespaces">#</a>
+</h2>
+<p>Modules in Reason are a way to organize code into logical units, improving code readability, maintainability, and preventing naming conflicts. They provide a form of namespace management.</p>
+<h3 class="heading" id="creating-modules">
+  Creating Modules
+  <a class="anchor" href="#creating-modules">#</a>
+</h3>
+<p>Modules are created by defining a file with the <code>.re</code> extension and using the <code>module</code> keyword.  The module&rsquo;s name is typically the filename (without the extension), though you can explicitly name the module differently if needed.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/* File: myModule.re */</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> myFunction <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#007020;font-weight:bold">*</span> 2<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> myVariable <span style="color:#007020;font-weight:bold">=</span> 10<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span></code></pre></div><p>This creates a module named <code>MyModule</code> containing a function <code>myFunction</code> and a variable <code>myVariable</code>.</p>
+<h3 class="heading" id="importing-modules">
+  Importing Modules
+  <a class="anchor" href="#importing-modules">#</a>
+</h3>
+<p>Modules are imported using the <code>open</code> keyword or explicit path notation.</p>
+<p><strong><code>open</code>:</strong> This imports all of the module&rsquo;s contents into the current scope.  While convenient, overuse can lead to naming conflicts.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">open</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span><span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> result <span style="color:#007020;font-weight:bold">=</span> myFunction<span style="color:#007020;font-weight:bold">(</span>5<span style="color:#007020;font-weight:bold">);</span> <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Accessing</span> myFunction directly <span style="color:#007020;font-weight:bold">*)</span>
+</span></span></code></pre></div><p><strong>Explicit Path:</strong>  This provides more control and avoids naming collisions by explicitly referencing the module&rsquo;s contents.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> result <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span>.myFunction<span style="color:#007020;font-weight:bold">(</span>5<span style="color:#007020;font-weight:bold">);</span> <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Fully</span> qualified name <span style="color:#007020;font-weight:bold">*)</span>
+</span></span></code></pre></div><p>This explicitly calls <code>myFunction</code> from <code>MyModule</code>.  This approach is generally preferred for larger projects.</p>
+<h3 class="heading" id="namespaces-and-module-paths">
+  Namespaces and Module Paths
+  <a class="anchor" href="#namespaces-and-module-paths">#</a>
+</h3>
+<p>Reason&rsquo;s module system provides namespaces.  The module name acts as a namespace, preventing naming collisions between different modules.  Module paths are hierarchical.  Consider this example:</p>
+<pre tabindex="0"><code>src/
+├── utils/
+│   └── stringUtils.re
+└── main.re
+</code></pre><p><code>stringUtils.re</code> might contain:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/* File: src</span><span style="">/</span><span style="color:#60a0b0;font-style:italic">utils</span><span style="">/</span><span style="color:#60a0b0;font-style:italic">stringUtils.re */</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">StringUtils</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> uppercase <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>s<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">string</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.<span style="color:#0e84b5;font-weight:bold">String</span>.uppercase<span style="color:#007020;font-weight:bold">(</span>s<span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span></code></pre></div><p><code>main.re</code> can import it with:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">open</span> <span style="color:#0e84b5;font-weight:bold">Utils</span>.<span style="color:#0e84b5;font-weight:bold">StringUtils</span><span style="color:#007020;font-weight:bold">;</span> <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Opens</span> the nested <span style="color:#007020;font-weight:bold">module</span> <span style="color:#007020;font-weight:bold">*)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> upper <span style="color:#007020;font-weight:bold">=</span> uppercase<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;hello&#34;</span><span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Or</span> using explicit path<span style="color:#007020;font-weight:bold">:</span> <span style="color:#007020;font-weight:bold">*)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> upper2 <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">Utils</span>.<span style="color:#0e84b5;font-weight:bold">StringUtils</span>.uppercase<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;world&#34;</span><span style="color:#007020;font-weight:bold">);</span>
+</span></span></code></pre></div><p>The path <code>Utils.StringUtils</code> uniquely identifies the <code>uppercase</code> function within the project&rsquo;s namespace.  This hierarchical structure allows for the organization of code into logical units, avoiding naming conflicts even with many modules involved.  Long, nested paths can be mitigated by using <code>open</code> judiciously for commonly used sub-modules.</p>
+<h2 class="heading" id="working-with-react-if-applicable">
+  Working with React (If applicable)
+  <a class="anchor" href="#working-with-react-if-applicable">#</a>
+</h2>
+<p>ReasonReact is a ReasonML binding for React, allowing you to build user interfaces with the power of Reason and the flexibility of React.</p>
+<h3 class="heading" id="setting-up-a-reasonreact-project">
+  Setting up a ReasonReact project
+  <a class="anchor" href="#setting-up-a-reasonreact-project">#</a>
+</h3>
+<p>Setting up a ReasonReact project typically involves using a project scaffolding tool like <code>create-reason-app</code> or manually configuring a project with <code>bs-platform</code> and necessary dependencies.  <code>create-reason-app</code> is the recommended approach for beginners.</p>
+<p><strong>Using <code>create-reason-app</code>:</strong></p>
+<ol>
+<li>
+<p><strong>Install Node.js and npm:</strong> Ensure Node.js and npm (or yarn) are installed on your system.</p>
+</li>
+<li>
+<p><strong>Install <code>create-reason-app</code> globally:</strong>  Run <code>npm install -g create-reason-app</code> (or <code>yarn global add create-reason-app</code>).</p>
+</li>
+<li>
+<p><strong>Create a new project:</strong> Use the command <code>create-reason-app my-reason-react-app</code>.  Replace <code>my-reason-react-app</code> with your desired project name.</p>
+</li>
+<li>
+<p><strong>Navigate to the project directory:</strong>  <code>cd my-reason-react-app</code>.</p>
+</li>
+<li>
+<p><strong>Start the development server:</strong> <code>npm start</code> (or <code>yarn start</code>).</p>
+</li>
+</ol>
+<p>This will create a basic ReasonReact application and start a development server.</p>
+<p><strong>Manual Setup (Advanced):</strong>  This involves creating a <code>package.json</code>, installing <code>bs-platform</code> and <code>reason-react</code>, configuring <code>bsconfig.json</code>, and setting up your build process.  This approach is more complex and generally only recommended for experienced developers who need more control over their project configuration.  Refer to the official ReasonReact documentation for detailed instructions on manual setup.</p>
+<h3 class="heading" id="basic-components">
+  Basic Components
+  <a class="anchor" href="#basic-components">#</a>
+</h3>
+<p>ReasonReact components are defined using the <code>ReasonReact.component</code> function.  They take a component definition as an argument, which describes the component&rsquo;s rendering logic and handling of events.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">open</span> <span style="color:#0e84b5;font-weight:bold">ReasonReact</span><span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> component <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">ReasonReact</span>.component<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;MyComponent&#34;</span><span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> make <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(~</span>props<span style="color:#007020;font-weight:bold">:</span> <span style="color:#007020;font-weight:bold">{</span> message<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">string</span> <span style="color:#007020;font-weight:bold">})</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">{</span><span style="color:#60a0b0;font-style:italic">/* Render JSX within ReasonReact */</span> <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0e84b5;font-weight:bold">ReactDOMRe</span>.renderToElementWithId<span style="color:#007020;font-weight:bold">(</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0e84b5;font-weight:bold">ReasonReact</span>.element<span style="color:#007020;font-weight:bold">(</span>component<span style="color:#007020;font-weight:bold">,</span> <span style="color:#007020;font-weight:bold">~</span>props<span style="color:#007020;font-weight:bold">,</span> []<span style="color:#007020;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#4070a0">&#34;root&#34;</span><span style="color:#007020;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#007020;font-weight:bold">(</span><span style="color:#0e84b5;font-weight:bold">MyComponent</span><span style="color:#007020;font-weight:bold">,</span> <span style="color:#007020;font-weight:bold">_)</span> <span style="color:#007020;font-weight:bold">=</span> component<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0e84b5;font-weight:bold">ReactDOMRe</span>.renderToElementWithId<span style="color:#007020;font-weight:bold">(</span><span style="color:#0e84b5;font-weight:bold">ReasonReact</span>.element<span style="color:#007020;font-weight:bold">(</span><span style="color:#0e84b5;font-weight:bold">MyComponent</span><span style="color:#007020;font-weight:bold">,</span> <span style="color:#007020;font-weight:bold">~</span>message<span style="color:#007020;font-weight:bold">:</span> <span style="color:#4070a0">&#34;Hello from ReasonReact!&#34;</span><span style="color:#007020;font-weight:bold">,</span> []<span style="color:#007020;font-weight:bold">),</span> <span style="color:#4070a0">&#34;root&#34;</span><span style="color:#007020;font-weight:bold">);</span>
+</span></span></code></pre></div><p>This creates a component named &ldquo;MyComponent&rdquo; that takes a <code>message</code> prop and renders it to the DOM.  Note the use of ReasonReact&rsquo;s JSX-like syntax within the component&rsquo;s render function.</p>
+<h3 class="heading" id="props-and-state">
+  Props and State
+  <a class="anchor" href="#props-and-state">#</a>
+</h3>
+<p><strong>Props:</strong> Props are immutable values passed from a parent component to a child component. They are similar to React&rsquo;s props.</p>
+<p><strong>State:</strong> State is mutable data that is managed within a component. Changes to the state trigger re-renders of the component.  ReasonReact manages state using the <code>state</code> argument in <code>make</code> and updating it using <code>ReasonReact.update</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">open</span> <span style="color:#0e84b5;font-weight:bold">ReasonReact</span><span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> component <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">ReasonReact</span>.component<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Counter&#34;</span><span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> make <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(~</span>props<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">unit</span><span style="color:#007020;font-weight:bold">,</span> <span style="color:#007020;font-weight:bold">~</span>state<span style="color:#007020;font-weight:bold">:</span> <span style="color:#007020;font-weight:bold">(</span><span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">,</span> <span style="color:#0e84b5;font-weight:bold">ReasonReact</span>.action<span style="color:#007020;font-weight:bold">))</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    state<span style="color:#007020;font-weight:bold">:</span> <span style="color:#007020;font-weight:bold">(</span>state<span style="color:#007020;font-weight:bold">,</span> <span style="color:#007020;font-weight:bold">(</span><span style="color:#007020;font-weight:bold">fun</span> () <span style="color:#007020;font-weight:bold">=&gt;</span> update<span style="color:#007020;font-weight:bold">(</span>state<span style="color:#007020;font-weight:bold">,</span> <span style="color:#007020;font-weight:bold">(</span><span style="color:#007020;font-weight:bold">fun</span> prevCount <span style="color:#007020;font-weight:bold">=&gt;</span> prevCount <span style="color:#007020;font-weight:bold">+</span> 1<span style="color:#007020;font-weight:bold">)))),</span>
+</span></span><span style="display:flex;"><span>    render<span style="color:#007020;font-weight:bold">:</span> <span style="color:#007020;font-weight:bold">(</span>state<span style="color:#007020;font-weight:bold">,</span> <span style="color:#007020;font-weight:bold">~</span>action<span style="color:#007020;font-weight:bold">:</span> action<span style="color:#007020;font-weight:bold">)=&gt;</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">&lt;</span>div<span style="color:#007020;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">&lt;</span>p<span style="color:#007020;font-weight:bold">&gt;</span><span style="color:#0e84b5;font-weight:bold">Count</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#007020;font-weight:bold">{</span>state<span style="color:#007020;font-weight:bold">[</span>0<span style="color:#007020;font-weight:bold">]}&lt;</span><span style="color:#666">/</span>p<span style="color:#007020;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">&lt;</span>button onClick<span style="color:#007020;font-weight:bold">={</span>state<span style="color:#007020;font-weight:bold">[</span>1<span style="color:#007020;font-weight:bold">]}&gt;</span><span style="color:#0e84b5;font-weight:bold">Increment</span><span style="color:#007020;font-weight:bold">&lt;</span><span style="color:#666">/</span>button<span style="color:#007020;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">&lt;</span><span style="color:#666">/</span>div<span style="color:#007020;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#007020;font-weight:bold">(</span><span style="color:#0e84b5;font-weight:bold">Counter</span><span style="color:#007020;font-weight:bold">,</span> <span style="color:#007020;font-weight:bold">_)</span> <span style="color:#007020;font-weight:bold">=</span> component<span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0e84b5;font-weight:bold">ReactDOMRe</span>.renderToElementWithId<span style="color:#007020;font-weight:bold">(</span><span style="color:#0e84b5;font-weight:bold">ReasonReact</span>.element<span style="color:#007020;font-weight:bold">(</span><span style="color:#0e84b5;font-weight:bold">Counter</span><span style="color:#007020;font-weight:bold">,</span> <span style="color:#007020;font-weight:bold">~</span>props<span style="color:#007020;font-weight:bold">:</span>()<span style="color:#007020;font-weight:bold">,~</span>state<span style="color:#007020;font-weight:bold">:(</span>0<span style="color:#007020;font-weight:bold">,(</span><span style="color:#007020;font-weight:bold">fun</span> () <span style="color:#007020;font-weight:bold">=&gt;</span> update<span style="color:#007020;font-weight:bold">(</span>state<span style="color:#007020;font-weight:bold">,</span> <span style="color:#007020;font-weight:bold">(</span><span style="color:#007020;font-weight:bold">fun</span> prevCount <span style="color:#007020;font-weight:bold">=&gt;</span> prevCount <span style="color:#007020;font-weight:bold">+</span> 1<span style="color:#007020;font-weight:bold">))))),</span> <span style="color:#4070a0">&#34;root&#34;</span><span style="color:#007020;font-weight:bold">);</span>
+</span></span></code></pre></div><p>This <code>Counter</code> component manages an internal count using state, which can be incremented by clicking a button.</p>
+<h3 class="heading" id="component-lifecycle">
+  Component Lifecycle
+  <a class="anchor" href="#component-lifecycle">#</a>
+</h3>
+<p>ReasonReact provides lifecycle methods (though with slightly different naming conventions than React) to manage various aspects of a component&rsquo;s behavior:</p>
+<ul>
+<li>
+<p><strong><code>make</code>:</strong> This function is responsible for initializing the component&rsquo;s state and specifying its rendering logic.  It&rsquo;s analogous to React&rsquo;s <code>constructor</code>, <code>render</code>, and certain lifecycle methods.</p>
+</li>
+<li>
+<p><strong><code>update</code>:</strong> This function handles state updates triggered by events or other actions.</p>
+</li>
+<li>
+<p><strong><code>didMount</code>:</strong> Called after the component is mounted to the DOM.</p>
+</li>
+<li>
+<p><strong><code>willUnmount</code>:</strong> Called just before the component is unmounted from the DOM.</p>
+</li>
+</ul>
+<p>Implementing these functions allow you to manage component state and respond to lifecycle events in a structured and predictable manner within a ReasonReact application.  Consult the ReasonReact documentation for detailed examples and explanations.</p>
+<h2 class="heading" id="error-handling">
+  Error Handling
+  <a class="anchor" href="#error-handling">#</a>
+</h2>
+<p>Reason offers several ways to handle errors gracefully, preventing unexpected crashes and improving code robustness.  The primary mechanisms are exceptions, the <code>Result</code> type, and the <code>Option</code> type.</p>
+<h3 class="heading" id="exceptions">
+  Exceptions
+  <a class="anchor" href="#exceptions">#</a>
+</h3>
+<p>Exceptions are used to signal exceptional situations that disrupt the normal flow of execution.  While exceptions exist, Reason&rsquo;s strong typing and functional paradigm encourage alternative approaches like the <code>Result</code> and <code>Option</code> types for more predictable error handling.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">exception</span> <span style="color:#0e84b5;font-weight:bold">MyError</span><span style="color:#007020;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myFunction <span style="color:#007020;font-weight:bold">=</span> () <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">try</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">/* Code that might raise an exception */</span>
+</span></span><span style="display:flex;"><span>    raise<span style="color:#007020;font-weight:bold">(</span><span style="color:#0e84b5;font-weight:bold">MyError</span><span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">MyError</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;MyError caught!&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">|</span> <span style="color:#007020;font-weight:bold">_</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Other error caught!&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>myFunction()<span style="color:#007020;font-weight:bold">;</span>
+</span></span></code></pre></div><p>This code defines a custom exception <code>MyError</code>.  The <code>try...{|}</code> block handles potential exceptions.  The <code>| MyError =&gt; ...</code> clause handles specifically the <code>MyError</code> exception while the <code>| _ =&gt; ...</code> handles any other exception types.  While functional approaches are preferred, exceptions are useful for truly exceptional situations outside the normal control flow.</p>
+<h3 class="heading" id="result-type">
+  Result type
+  <a class="anchor" href="#result-type">#</a>
+</h3>
+<p>The <code>Result</code> type represents an operation that can either succeed with a value or fail with an error.  It&rsquo;s a powerful tool for handling expected errors in a structured way.  A <code>Result</code> is either <code>Ok(value)</code> (success) or <code>Error(error)</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> result<span style="color:#007020;font-weight:bold">&lt;</span><span style="color:#007020;font-weight:bold">&#39;</span>a<span style="color:#007020;font-weight:bold">,</span> <span style="color:#007020;font-weight:bold">&#39;</span>b<span style="color:#007020;font-weight:bold">&gt;</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">Ok</span><span style="color:#007020;font-weight:bold">(</span><span style="color:#007020;font-weight:bold">&#39;</span>a<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Error</span><span style="color:#007020;font-weight:bold">(</span><span style="color:#007020;font-weight:bold">&#39;</span>b<span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myFunction <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">:</span> result<span style="color:#007020;font-weight:bold">&lt;</span><span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">,</span> <span style="color:#902000">string</span><span style="color:#007020;font-weight:bold">&gt;</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">(</span>x <span style="color:#007020;font-weight:bold">&gt;</span> 0<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0e84b5;font-weight:bold">Ok</span><span style="color:#007020;font-weight:bold">(</span>x <span style="color:#007020;font-weight:bold">*</span> 2<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0e84b5;font-weight:bold">Error</span><span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Input must be positive&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> result <span style="color:#007020;font-weight:bold">=</span> myFunction<span style="color:#007020;font-weight:bold">(-</span>5<span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">switch</span> <span style="color:#007020;font-weight:bold">(</span>result<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Ok</span><span style="color:#007020;font-weight:bold">(</span>value<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Success: &#34;</span> <span style="color:#007020;font-weight:bold">++</span> string_of_int<span style="color:#007020;font-weight:bold">(</span>value<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Error</span><span style="color:#007020;font-weight:bold">(</span>message<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Error: &#34;</span> <span style="color:#007020;font-weight:bold">++</span> message<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span></code></pre></div><p>This example defines a function <code>myFunction</code> that returns a <code>Result</code>.  If <code>x</code> is positive, it returns <code>Ok</code> with the doubled value; otherwise, it returns <code>Error</code> with an error message.  The <code>switch</code> statement handles the two possible outcomes. Pattern matching is a key component to working with <code>Result</code> values.</p>
+<h3 class="heading" id="option-type">
+  Option type
+  <a class="anchor" href="#option-type">#</a>
+</h3>
+<p>The <code>Option</code> type represents a value that may or may not be present.  It&rsquo;s useful for handling situations where a value might be missing or undefined.  An <code>Option</code> is either <code>Some(value)</code> (value present) or <code>None</code> (value absent).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myFunction <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">:</span> option<span style="color:#007020;font-weight:bold">&lt;</span><span style="color:#902000">int</span><span style="color:#007020;font-weight:bold">&gt;</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">(</span>x <span style="color:#007020;font-weight:bold">&gt;</span> 0<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0e84b5;font-weight:bold">Some</span><span style="color:#007020;font-weight:bold">(</span>x<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0e84b5;font-weight:bold">None</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> optionValue <span style="color:#007020;font-weight:bold">=</span> myFunction<span style="color:#007020;font-weight:bold">(</span>5<span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">switch</span> <span style="color:#007020;font-weight:bold">(</span>optionValue<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Some</span><span style="color:#007020;font-weight:bold">(</span>value<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Value: &#34;</span> <span style="color:#007020;font-weight:bold">++</span> string_of_int<span style="color:#007020;font-weight:bold">(</span>value<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">None</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Value is None&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span></code></pre></div><p>This shows a function <code>myFunction</code> that returns an <code>Option</code>.  It returns <code>Some(x)</code> if <code>x</code> is positive and <code>None</code> otherwise.  The <code>switch</code> statement handles both possibilities.  Pattern matching on <code>Option</code> is also critical to its usage.  Using <code>Option</code> avoids common errors like trying to access a potentially null or undefined value.  It enforces handling the possibility of missing data explicitly.</p>
+<h2 class="heading" id="advanced-concepts-optional">
+  Advanced Concepts (Optional)
+  <a class="anchor" href="#advanced-concepts-optional">#</a>
+</h2>
+<p>This section covers more advanced concepts in Reason that are beneficial for building more complex and robust applications.</p>
+<h3 class="heading" id="type-inference">
+  Type Inference
+  <a class="anchor" href="#type-inference">#</a>
+</h3>
+<p>Reason possesses a powerful type inference system.  This means the compiler can often deduce the types of variables and expressions without explicit type annotations.  While not strictly required in many cases, type annotations are highly recommended for improved code readability and maintainability, especially in larger projects.  Type inference helps reduce boilerplate code and allows developers to focus on the logic.  However, understanding how type inference works can help you debug type-related issues more efficiently.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> x <span style="color:#007020;font-weight:bold">=</span> 10<span style="color:#007020;font-weight:bold">;</span>  <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Type</span> inferred <span style="color:#007020;font-weight:bold">as</span> <span style="color:#902000">int</span> <span style="color:#007020;font-weight:bold">*)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> y <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">&#34;hello&#34;</span><span style="color:#007020;font-weight:bold">;</span> <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Type</span> inferred <span style="color:#007020;font-weight:bold">as</span> <span style="color:#902000">string</span> <span style="color:#007020;font-weight:bold">*)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> z <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#007020;font-weight:bold">+</span> 5<span style="color:#007020;font-weight:bold">;</span> <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Type</span> inferred <span style="color:#007020;font-weight:bold">as</span> <span style="color:#902000">int</span> <span style="color:#007020;font-weight:bold">*)</span>
+</span></span></code></pre></div><p>In this example, the compiler infers the types of <code>x</code>, <code>y</code>, and <code>z</code> based on their usage.</p>
+<h3 class="heading" id="algebraic-data-types-adts">
+  Algebraic Data Types (ADTs)
+  <a class="anchor" href="#algebraic-data-types-adts">#</a>
+</h3>
+<p>Algebraic Data Types (ADTs) allow you to define types that can represent one of several possible variants.  This is similar to the concept of variants described earlier but extends to more complex data structures.  ADTs are powerful for modeling complex domains and improving code clarity.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> shape <span style="color:#007020;font-weight:bold">=</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Circle</span> <span style="color:#007020;font-weight:bold">of</span> <span style="color:#007020;font-weight:bold">{</span> radius<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">float</span> <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Rectangle</span> <span style="color:#007020;font-weight:bold">of</span> <span style="color:#007020;font-weight:bold">{</span> width<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">float</span><span style="color:#007020;font-weight:bold">;</span> height<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">float</span> <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Square</span> <span style="color:#007020;font-weight:bold">of</span> <span style="color:#007020;font-weight:bold">{</span> side<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">float</span> <span style="color:#007020;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> area <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>shape<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">switch</span> <span style="color:#007020;font-weight:bold">(</span>shape<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Circle</span><span style="color:#007020;font-weight:bold">({</span>radius<span style="color:#007020;font-weight:bold">})</span> <span style="color:#007020;font-weight:bold">=&gt;</span> 3<span style="color:#007020;font-weight:bold">.</span>14 <span style="color:#007020;font-weight:bold">*.</span> radius <span style="color:#007020;font-weight:bold">*.</span> radius
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Rectangle</span><span style="color:#007020;font-weight:bold">({</span>width<span style="color:#007020;font-weight:bold">,</span> height<span style="color:#007020;font-weight:bold">})</span> <span style="color:#007020;font-weight:bold">=&gt;</span> width <span style="color:#007020;font-weight:bold">*.</span> height
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">|</span> <span style="color:#0e84b5;font-weight:bold">Square</span><span style="color:#007020;font-weight:bold">({</span>side<span style="color:#007020;font-weight:bold">})</span> <span style="color:#007020;font-weight:bold">=&gt;</span> side <span style="color:#007020;font-weight:bold">*.</span> side
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span></code></pre></div><p>This defines an ADT <code>shape</code> that can be a <code>Circle</code>, <code>Rectangle</code>, or <code>Square</code>.  The <code>area</code> function uses pattern matching to calculate the area of each shape variant.</p>
+<h3 class="heading" id="pattern-matching">
+  Pattern Matching
+  <a class="anchor" href="#pattern-matching">#</a>
+</h3>
+<p>Pattern matching is a powerful technique for extracting values from data structures like tuples, records, variants, and ADTs. It provides a concise and expressive way to handle different cases in a switch-like manner.  Pattern matching improves code readability and reduces the need for verbose <code>if-else</code> chains.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> myTuple <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>1<span style="color:#007020;font-weight:bold">,</span> <span style="color:#4070a0">&#34;hello&#34;</span><span style="color:#007020;font-weight:bold">,</span> true<span style="color:#007020;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#007020;font-weight:bold">(</span>a<span style="color:#007020;font-weight:bold">,</span> b<span style="color:#007020;font-weight:bold">,</span> c<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=</span> myTuple<span style="color:#007020;font-weight:bold">;</span>  <span style="color:#007020;font-weight:bold">(*</span> <span style="color:#0e84b5;font-weight:bold">Pattern</span> matching <span style="color:#007020;font-weight:bold">in</span> destructuring <span style="color:#007020;font-weight:bold">*)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">switch</span> <span style="color:#007020;font-weight:bold">(</span>myTuple<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> <span style="color:#007020;font-weight:bold">(</span>1<span style="color:#007020;font-weight:bold">,</span> str<span style="color:#007020;font-weight:bold">,</span> true<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Matched!&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">|</span> <span style="color:#007020;font-weight:bold">_</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.log<span style="color:#007020;font-weight:bold">(</span><span style="color:#4070a0">&#34;Not matched&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">};</span>
+</span></span></code></pre></div><p>This example shows pattern matching in tuple destructuring and in a <code>switch</code> statement.</p>
+<h3 class="heading" id="functors">
+  Functors
+  <a class="anchor" href="#functors">#</a>
+</h3>
+<p>A functor is a type constructor that can be mapped over. This enables applying a function to the underlying type within the functor without breaking the structure of the functor itself.  This concept is closely related to higher-order functions and is a building block for more advanced functional programming concepts.</p>
+<h3 class="heading" id="monads">
+  Monads
+  <a class="anchor" href="#monads">#</a>
+</h3>
+<p>Monads are a more advanced functional programming concept. In essence, they&rsquo;re a type constructor with specific methods (<code>bind</code>/<code>&gt;&gt;=</code> and <code>return</code>/<code>&gt;&gt;</code>) for sequencing computations in a controlled manner.  Common examples in Reason include the <code>Result</code> and <code>Option</code> types, which we&rsquo;ve already discussed, showing how they naturally fit into a monadic pattern.  Understanding monads is beneficial for working with asynchronous operations or handling side effects in a functional way.  They provide a way to chain operations that may fail or produce multiple results.</p>
+<p>These advanced concepts provide powerful tools for creating sophisticated and well-structured Reason applications.  They are not strictly required for beginner-level development, but mastering them will significantly enhance your abilities in functional programming and Reason development.</p>
+<h2 class="heading" id="next-steps-and-resources">
+  Next Steps and Resources
+  <a class="anchor" href="#next-steps-and-resources">#</a>
+</h2>
+<p>This section provides pointers to help you continue your Reason journey and stay up-to-date with the latest developments.</p>
+<h3 class="heading" id="community-and-support">
+  Community and Support
+  <a class="anchor" href="#community-and-support">#</a>
+</h3>
+<p>The Reason community is active and supportive.  Several avenues exist for getting help and interacting with other developers:</p>
+<ul>
+<li>
+<p><strong>Reason Discord Server:</strong> The official Reason Discord server is a great place to ask questions, share your work, and connect with other Reason developers.  You&rsquo;ll find many experienced users willing to assist beginners.</p>
+</li>
+<li>
+<p><strong>ReasonML Forum:</strong> The ReasonML forum is another valuable resource for finding answers to your questions and participating in discussions.</p>
+</li>
+<li>
+<p><strong>Stack Overflow:</strong> Stack Overflow is a general-purpose Q&amp;A site, and you&rsquo;ll find many Reason-related questions and answers there.  Remember to search for existing answers before asking a new question.</p>
+</li>
+<li>
+<p><strong>GitHub:</strong> The ReasonML GitHub organization hosts numerous repositories, including the Reason compiler, ReasonReact, and many community-contributed libraries.  It is a good place to report bugs, contribute code, or review existing projects.</p>
+</li>
+</ul>
+<p>Don&rsquo;t hesitate to reach out to the community – most Reason developers are eager to help newcomers.</p>
+<h3 class="heading" id="further-learning-resources">
+  Further Learning Resources
+  <a class="anchor" href="#further-learning-resources">#</a>
+</h3>
+<p>Beyond this Beginner&rsquo;s Guide, numerous resources are available to deepen your understanding of Reason:</p>
+<ul>
+<li>
+<p><strong>Official Reason Website:</strong> The official Reason website (<a href="https://reasonml.github.io/">https://reasonml.github.io/</a>) provides comprehensive documentation, tutorials, and examples.</p>
+</li>
+<li>
+<p><strong>ReasonML Tutorial:</strong>  The official tutorial provides a structured path for learning Reason, covering various aspects of the language and its ecosystem.</p>
+</li>
+<li>
+<p><strong>ReasonReact Documentation:</strong> If you&rsquo;re interested in building web applications, the ReasonReact documentation is a valuable resource.</p>
+</li>
+<li>
+<p><strong>Online Courses:</strong> Several online platforms offer Reason and functional programming courses that might suit your learning style.</p>
+</li>
+</ul>
+<h3 class="heading" id="reason-projects-to-explore">
+  Reason Projects to Explore
+  <a class="anchor" href="#reason-projects-to-explore">#</a>
+</h3>
+<p>Exploring existing Reason projects is a great way to learn practical techniques and see how Reason is used in real-world applications.  Here are a few suggestions:</p>
+<ul>
+<li>
+<p><strong>ReasonReact Examples:</strong> The ReasonReact repository includes several example applications demonstrating various aspects of building React components with Reason.</p>
+</li>
+<li>
+<p><strong>Community-Contributed Libraries:</strong>  Browse the Reason package repository (if applicable) to discover libraries and modules contributed by the community.  These provide insights into best practices and common design patterns.</p>
+</li>
+<li>
+<p><strong>Open-Source Reason Projects:</strong> Search GitHub for open-source projects written in Reason.  Contributing to these projects is an excellent way to learn and gain experience.  Look for projects that align with your interests or skill level.</p>
+</li>
+</ul>
+<p>By actively participating in the community, exploring existing resources, and engaging with open-source projects, you can continually expand your Reason skills and build increasingly sophisticated applications.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-common-lisp/">
+                        Beginner&#39;s Guide to Common Lisp
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-nim/">
+                        Beginner&#39;s Guide to Nim
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

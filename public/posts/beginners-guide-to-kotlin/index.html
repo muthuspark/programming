@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Kotlin | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-kotlin/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-kotlin/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Kotlin">
+  <meta property="og:description" content="Getting Started with Kotlin # Setting up your environment # To start developing Kotlin applications, you’ll need to set up your development environment. The simplest way is using the Kotlin/JVM distribution, which allows you to run Kotlin code on the Java Virtual Machine (JVM). Here’s a breakdown of the process:
+Download the Kotlin distribution: Visit the official Kotlin website (https://kotlinlang.org/) and download the latest version of the Kotlin distribution appropriate for your operating system. This will typically include the Kotlin compiler (kotlinc), standard library, and other tools.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-11T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-kotlin/">Beginner&#39;s Guide to Kotlin</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Kotlin</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-03-11T00:00:00&#43;00:00">March 11, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      20 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#getting-started-with-kotlin">Getting Started with Kotlin</a>
+      <ul>
+        <li><a href="#setting-up-your-environment">Setting up your environment</a></li>
+        <li><a href="#your-first-kotlin-program">Your first Kotlin program</a></li>
+        <li><a href="#running-your-kotlin-code">Running your Kotlin code</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#variables-and-constants">Variables and Constants</a></li>
+        <li><a href="#data-types-int-double-boolean-string-etc">Data Types (Int, Double, Boolean, String, etc.)</a></li>
+        <li><a href="#type-inference">Type Inference</a></li>
+        <li><a href="#operators">Operators</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-flow">Control Flow</a>
+      <ul>
+        <li><a href="#if-else-statements">if-else statements</a></li>
+        <li><a href="#when-expressions">when expressions</a></li>
+        <li><a href="#for-loops">for loops</a></li>
+        <li><a href="#while-loops">while loops</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions">Functions</a>
+      <ul>
+        <li><a href="#defining-functions">Defining functions</a></li>
+        <li><a href="#function-parameters-and-return-types">Function parameters and return types</a></li>
+        <li><a href="#function-overloading">Function overloading</a></li>
+        <li><a href="#lambda-expressions">Lambda expressions</a></li>
+      </ul>
+    </li>
+    <li><a href="#object-oriented-programming-oop-in-kotlin">Object-Oriented Programming (OOP) in Kotlin</a>
+      <ul>
+        <li><a href="#classes-and-objects">Classes and objects</a></li>
+        <li><a href="#constructors">Constructors</a></li>
+        <li><a href="#inheritance">Inheritance</a></li>
+        <li><a href="#interfaces">Interfaces</a></li>
+        <li><a href="#data-classes">Data classes</a></li>
+      </ul>
+    </li>
+    <li><a href="#null-safety">Null Safety</a>
+      <ul>
+        <li><a href="#the-problem-of-null-pointer-exceptions">The problem of null pointer exceptions</a></li>
+        <li><a href="#nullable-types">Nullable types</a></li>
+        <li><a href="#safe-call-operator-">Safe call operator (?.)</a></li>
+        <li><a href="#elvis-operator-">Elvis operator (?:)</a></li>
+        <li><a href="#the--operator">The !! operator</a></li>
+      </ul>
+    </li>
+    <li><a href="#collections">Collections</a>
+      <ul>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#sets">Sets</a></li>
+        <li><a href="#maps">Maps</a></li>
+        <li><a href="#iterating-through-collections">Iterating through collections</a></li>
+      </ul>
+    </li>
+    <li><a href="#extensions">Extensions</a>
+      <ul>
+        <li><a href="#what-are-extensions">What are extensions?</a></li>
+        <li><a href="#how-to-create-extensions">How to create extensions</a></li>
+        <li><a href="#benefits-of-using-extensions">Benefits of using extensions</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-strings">Working with Strings</a>
+      <ul>
+        <li><a href="#string-templates">String templates</a></li>
+        <li><a href="#string-manipulation-functions">String manipulation functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#next-steps">Next Steps</a>
+      <ul>
+        <li><a href="#learning-resources">Learning Resources</a></li>
+        <li><a href="#community-and-support">Community and Support</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="getting-started-with-kotlin">
+  Getting Started with Kotlin
+  <a class="anchor" href="#getting-started-with-kotlin">#</a>
+</h2>
+<h3 class="heading" id="setting-up-your-environment">
+  Setting up your environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h3>
+<p>To start developing Kotlin applications, you&rsquo;ll need to set up your development environment.  The simplest way is using the Kotlin/JVM distribution, which allows you to run Kotlin code on the Java Virtual Machine (JVM).  Here&rsquo;s a breakdown of the process:</p>
+<ol>
+<li>
+<p><strong>Download the Kotlin distribution:</strong> Visit the official Kotlin website (<a href="https://kotlinlang.org/">https://kotlinlang.org/</a>) and download the latest version of the Kotlin distribution appropriate for your operating system.  This will typically include the Kotlin compiler (<code>kotlinc</code>), standard library, and other tools.</p>
+</li>
+<li>
+<p><strong>Install the JDK (Java Development Kit):</strong> Kotlin runs on the JVM, so you&rsquo;ll need a JDK installed on your system. Download and install a compatible JDK from Oracle (<a href="https://www.oracle.com/java/technologies/javase-downloads.html">https://www.oracle.com/java/technologies/javase-downloads.html</a>) or other reputable providers like OpenJDK.  Ensure you have the <code>JAVA_HOME</code> environment variable correctly set.</p>
+</li>
+<li>
+<p><strong>(Optional) Use an IDE:</strong> While you can use a command-line compiler, using an Integrated Development Environment (IDE) significantly improves the development experience. Popular choices include IntelliJ IDEA (with Kotlin plugin), Android Studio (built-in Kotlin support), and Eclipse (with Kotlin plugin).  These IDEs offer features like code completion, debugging, and project management that simplify Kotlin development.</p>
+</li>
+<li>
+<p><strong>(Optional) Setting up a build system:</strong> For larger projects, using a build system like Gradle or Maven is recommended.  These tools automate the build process, making it easier to manage dependencies and build artifacts.  Your chosen IDE will typically have integration with these build systems.</p>
+</li>
+</ol>
+<h3 class="heading" id="your-first-kotlin-program">
+  Your first Kotlin program
+  <a class="anchor" href="#your-first-kotlin-program">#</a>
+</h3>
+<p>Let&rsquo;s write a simple &ldquo;Hello, world!&rdquo; program to get you started.  This program will print the message &ldquo;Hello, world!&rdquo; to the console.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>() {
+</span></span><span style="display:flex;"><span>    println(<span style="color:#4070a0">&#34;Hello, world!&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This code defines a single function, <code>main()</code>, which is the entry point of your Kotlin program.  The <code>println()</code> function prints the string &ldquo;Hello, world!&rdquo; to the console.  Save this code in a file named <code>Main.kt</code>.</p>
+<h3 class="heading" id="running-your-kotlin-code">
+  Running your Kotlin code
+  <a class="anchor" href="#running-your-kotlin-code">#</a>
+</h3>
+<p>There are several ways to run your Kotlin code:</p>
+<p><strong>1. Using the command-line compiler:</strong></p>
+<p>After saving your <code>Main.kt</code> file, open your terminal or command prompt, navigate to the directory containing the file, and use the Kotlin compiler to compile and run your code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kotlinc Main.kt -include-runtime -d Main.jar
+</span></span><span style="display:flex;"><span>java -jar Main.jar
+</span></span></code></pre></div><p>This compiles your Kotlin code into a JAR file (<code>Main.jar</code>) and then runs the JAR file using the Java Runtime Environment (JRE). The <code>-include-runtime</code> flag includes the Kotlin runtime library in the JAR file, making it self-contained.</p>
+<p><strong>2. Using an IDE:</strong></p>
+<p>If you&rsquo;re using an IDE like IntelliJ IDEA or Android Studio, the process is even simpler.  After creating a Kotlin project and writing your code, you can typically run the code by clicking a &ldquo;Run&rdquo; button or selecting a &ldquo;Run&rdquo; option from the menu. The IDE handles the compilation and execution process for you.</p>
+<p>Regardless of the method you choose, the output should be:</p>
+<pre tabindex="0"><code>Hello, world!
+</code></pre><p>This confirms your Kotlin environment is set up correctly and you&rsquo;ve successfully run your first Kotlin program.</p>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="variables-and-constants">
+  Variables and Constants
+  <a class="anchor" href="#variables-and-constants">#</a>
+</h3>
+<p>Kotlin uses <code>val</code> to declare immutable variables (constants) and <code>var</code> to declare mutable variables.  Once a <code>val</code> is assigned a value, it cannot be changed.  A <code>var</code>, on the other hand, can be reassigned.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> name: String = <span style="color:#4070a0">&#34;John Doe&#34;</span> <span style="color:#60a0b0;font-style:italic">// Constant declaration and initialization
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> age: Int = <span style="color:#40a070">30</span>           <span style="color:#60a0b0;font-style:italic">// Mutable variable declaration and initialization
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>age = <span style="color:#40a070">31</span>                     <span style="color:#60a0b0;font-style:italic">// Reassigning the value of a mutable variable
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Type inference:  The compiler can often infer the type
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> city = <span style="color:#4070a0">&#34;New York&#34;</span>  <span style="color:#60a0b0;font-style:italic">// Type is inferred as String
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> count = <span style="color:#40a070">10</span>         <span style="color:#60a0b0;font-style:italic">// Type is inferred as Int
+</span></span></span></code></pre></div><p>It&rsquo;s good practice to initialize variables when you declare them. If you don&rsquo;t provide an initial value for a <code>var</code>, you must explicitly assign a value before using it.  <code>val</code> must be initialized when it is declared.</p>
+<h3 class="heading" id="data-types-int-double-boolean-string-etc">
+  Data Types (Int, Double, Boolean, String, etc.)
+  <a class="anchor" href="#data-types-int-double-boolean-string-etc">#</a>
+</h3>
+<p>Kotlin has several built-in data types:</p>
+<ul>
+<li><strong><code>Int</code>:</strong> Represents 32-bit integers (whole numbers).</li>
+<li><strong><code>Long</code>:</strong> Represents 64-bit integers.</li>
+<li><strong><code>Short</code>:</strong> Represents 16-bit integers.</li>
+<li><strong><code>Byte</code>:</strong> Represents 8-bit integers.</li>
+<li><strong><code>Double</code>:</strong> Represents 64-bit floating-point numbers (numbers with decimal points).</li>
+<li><strong><code>Float</code>:</strong> Represents 32-bit floating-point numbers.</li>
+<li><strong><code>Boolean</code>:</strong> Represents boolean values (<code>true</code> or <code>false</code>).</li>
+<li><strong><code>Char</code>:</strong> Represents single characters (e.g., <code>'A'</code>, <code>'b'</code>).</li>
+<li><strong><code>String</code>:</strong> Represents sequences of characters (text).</li>
+<li><strong><code>Any</code>:</strong>  Represents the supertype of all other types.</li>
+<li><strong><code>Unit</code>:</strong> Represents the absence of a meaningful value (similar to <code>void</code> in other languages).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> age: Int = <span style="color:#40a070">30</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> price: Double = <span style="color:#40a070">99.99</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> isAdult: Boolean = <span style="color:#007020;font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> initial: Char = <span style="color:#4070a0">&#39;J&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> message: String = <span style="color:#4070a0">&#34;Hello, Kotlin!&#34;</span>
+</span></span></code></pre></div><h3 class="heading" id="type-inference">
+  Type Inference
+  <a class="anchor" href="#type-inference">#</a>
+</h3>
+<p>Kotlin&rsquo;s type inference system allows you to omit the explicit type declaration in many cases. The compiler will infer the type based on the value assigned.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> name = <span style="color:#4070a0">&#34;Alice&#34;</span> <span style="color:#60a0b0;font-style:italic">// Type inferred as String
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> quantity = <span style="color:#40a070">10</span>  <span style="color:#60a0b0;font-style:italic">// Type inferred as Int
+</span></span></span></code></pre></div><p>While type inference is convenient, explicitly declaring types can improve code readability and maintainability, especially in larger projects.</p>
+<h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>Kotlin supports standard arithmetic, comparison, logical, and bitwise operators.  Here are some examples:</p>
+<ul>
+<li><strong>Arithmetic Operators:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo)</li>
+<li><strong>Comparison Operators:</strong> <code>==</code> (equals), <code>!=</code> (not equals), <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+<li><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT)</li>
+<li><strong>Assignment Operators:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%= </code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> sum = <span style="color:#40a070">10</span> + <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> difference = <span style="color:#40a070">10</span> - <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> product = <span style="color:#40a070">10</span> * <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> quotient = <span style="color:#40a070">10</span> / <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> remainder = <span style="color:#40a070">10</span> % <span style="color:#40a070">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> isEqual = <span style="color:#40a070">10</span> <span style="color:#666">==</span> <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> isGreater = <span style="color:#40a070">10</span> &gt; <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> isTrue = <span style="color:#007020;font-weight:bold">true</span> <span style="color:#666">&amp;&amp;</span> <span style="color:#007020;font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> isFalse = !<span style="color:#007020;font-weight:bold">true</span>
+</span></span></code></pre></div><p>Kotlin also supports other operators like the Elvis operator (<code>?:</code>), range operators (<code>..</code>, <code>until</code>), and more, which you&rsquo;ll encounter as you progress in your learning.</p>
+<h2 class="heading" id="control-flow">
+  Control Flow
+  <a class="anchor" href="#control-flow">#</a>
+</h2>
+<h3 class="heading" id="if-else-statements">
+  if-else statements
+  <a class="anchor" href="#if-else-statements">#</a>
+</h3>
+<p>Kotlin&rsquo;s <code>if-else</code> statements work similarly to those in other languages.  The <code>else</code> block is optional.  The condition in an <code>if</code> statement must be a Boolean expression.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> age = <span style="color:#40a070">25</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (age <span style="color:#666">&gt;=</span> <span style="color:#40a070">18</span>) {
+</span></span><span style="display:flex;"><span>    println(<span style="color:#4070a0">&#34;Adult&#34;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>    println(<span style="color:#4070a0">&#34;Minor&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> temperature = <span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (temperature &gt; <span style="color:#40a070">25</span>) {
+</span></span><span style="display:flex;"><span>    println(<span style="color:#4070a0">&#34;Hot&#34;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> (temperature &gt; <span style="color:#40a070">15</span>) {
+</span></span><span style="display:flex;"><span>    println(<span style="color:#4070a0">&#34;Warm&#34;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>    println(<span style="color:#4070a0">&#34;Cool&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>if</code> expressions can also be used as expressions, returning a value:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> max = <span style="color:#007020;font-weight:bold">if</span> (a &gt; b) a <span style="color:#007020;font-weight:bold">else</span> b
+</span></span></code></pre></div><h3 class="heading" id="when-expressions">
+  when expressions
+  <a class="anchor" href="#when-expressions">#</a>
+</h3>
+<p><code>when</code> expressions provide a more concise way to handle multiple conditions.  They are similar to <code>switch</code> statements in other languages but offer more flexibility.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> dayOfWeek = <span style="color:#40a070">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">when</span> (dayOfWeek) {
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">1</span> <span style="color:#666">-&gt;</span> println(<span style="color:#4070a0">&#34;Monday&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">2</span> <span style="color:#666">-&gt;</span> println(<span style="color:#4070a0">&#34;Tuesday&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">3</span> <span style="color:#666">-&gt;</span> println(<span style="color:#4070a0">&#34;Wednesday&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">4</span> <span style="color:#666">-&gt;</span> println(<span style="color:#4070a0">&#34;Thursday&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">5</span> <span style="color:#666">-&gt;</span> println(<span style="color:#4070a0">&#34;Friday&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">6</span>, <span style="color:#40a070">7</span> <span style="color:#666">-&gt;</span> println(<span style="color:#4070a0">&#34;Weekend&#34;</span>) <span style="color:#60a0b0;font-style:italic">// Multiple values can be handled together
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">-&gt;</span> println(<span style="color:#4070a0">&#34;Invalid day&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> score = <span style="color:#40a070">95</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">when</span> {
+</span></span><span style="display:flex;"><span>    score <span style="color:#666">&gt;=</span> <span style="color:#40a070">90</span> <span style="color:#666">-&gt;</span> println(<span style="color:#4070a0">&#34;A&#34;</span>)
+</span></span><span style="display:flex;"><span>    score <span style="color:#666">&gt;=</span> <span style="color:#40a070">80</span> <span style="color:#666">-&gt;</span> println(<span style="color:#4070a0">&#34;B&#34;</span>)
+</span></span><span style="display:flex;"><span>    score <span style="color:#666">&gt;=</span> <span style="color:#40a070">70</span> <span style="color:#666">-&gt;</span> println(<span style="color:#4070a0">&#34;C&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">-&gt;</span> println(<span style="color:#4070a0">&#34;F&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In the second example,  <code>when</code> acts as a general conditional expression, without checking a specific variable.</p>
+<h3 class="heading" id="for-loops">
+  for loops
+  <a class="anchor" href="#for-loops">#</a>
+</h3>
+<p>Kotlin provides several ways to iterate using <code>for</code> loops.</p>
+<p><strong>1. Iterating over ranges:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1.</span>.<span style="color:#40a070">5</span>) { <span style="color:#60a0b0;font-style:italic">// Closed range (inclusive)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(i) <span style="color:#60a0b0;font-style:italic">// Prints 1, 2, 3, 4, 5
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1</span> until <span style="color:#40a070">5</span>) { <span style="color:#60a0b0;font-style:italic">// Half-open range (exclusive of 5)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(i) <span style="color:#60a0b0;font-style:italic">// Prints 1, 2, 3, 4
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">5</span> downTo <span style="color:#40a070">1</span>) { <span style="color:#60a0b0;font-style:italic">// Descending range
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(i) <span style="color:#60a0b0;font-style:italic">// Prints 5, 4, 3, 2, 1
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1.</span>.<span style="color:#40a070">5</span> step <span style="color:#40a070">2</span>) { <span style="color:#60a0b0;font-style:italic">// Stepping with a specific increment
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(i) <span style="color:#60a0b0;font-style:italic">// Prints 1, 3, 5
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p><strong>2. Iterating over arrays or collections:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> names = arrayOf(<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;Charlie&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (name <span style="color:#007020;font-weight:bold">in</span> names) {
+</span></span><span style="display:flex;"><span>    println(name)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Using indices:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">for</span> ((index, name) <span style="color:#007020;font-weight:bold">in</span> names.withIndex()) {
+</span></span><span style="display:flex;"><span>    println(<span style="color:#4070a0">&#34;Name at index </span><span style="color:#70a0d0">$index</span><span style="color:#4070a0">: </span><span style="color:#70a0d0">$name</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="while-loops">
+  while loops
+  <a class="anchor" href="#while-loops">#</a>
+</h3>
+<p>Kotlin supports both <code>while</code> and <code>do-while</code> loops:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> i = <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (i &lt; <span style="color:#40a070">5</span>) {
+</span></span><span style="display:flex;"><span>    println(i)
+</span></span><span style="display:flex;"><span>    i<span style="color:#666">++</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> j = <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span> {
+</span></span><span style="display:flex;"><span>    println(j)
+</span></span><span style="display:flex;"><span>    j<span style="color:#666">++</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">while</span> (j &lt; <span style="color:#40a070">5</span>)
+</span></span></code></pre></div><p>The <code>do-while</code> loop executes the block of code at least once, before checking the condition.  The <code>while</code> loop checks the condition before executing the block.</p>
+<h2 class="heading" id="functions">
+  Functions
+  <a class="anchor" href="#functions">#</a>
+</h2>
+<h3 class="heading" id="defining-functions">
+  Defining functions
+  <a class="anchor" href="#defining-functions">#</a>
+</h3>
+<p>Functions in Kotlin are defined using the <code>fun</code> keyword, followed by the function name, parameter list in parentheses <code>()</code>, and the return type (if any) after a colon <code>:</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">greet</span>(name: String): String {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">$name</span><span style="color:#4070a0">!&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">add</span>(a: Int, b: Int): Int {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> a + b
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">printMessage</span>(message: String) { <span style="color:#60a0b0;font-style:italic">//Unit return type is implicit
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(message)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>Unit</code> return type is implicitly returned if there&rsquo;s no explicit return type and the function doesn&rsquo;t explicitly return a value.</p>
+<h3 class="heading" id="function-parameters-and-return-types">
+  Function parameters and return types
+  <a class="anchor" href="#function-parameters-and-return-types">#</a>
+</h3>
+<p>Function parameters are specified by their type and name.  You can provide default values for parameters.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">greet</span>(name: String, greeting: String = <span style="color:#4070a0">&#34;Hello&#34;</span>): String {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">$greeting</span><span style="color:#4070a0">, </span><span style="color:#70a0d0">$name</span><span style="color:#4070a0">!&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">calculateArea</span>(width: Double, height: Double = width): Double { <span style="color:#60a0b0;font-style:italic">//Default value for height
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">return</span> width * height
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>(){
+</span></span><span style="display:flex;"><span>    println(greet(<span style="color:#4070a0">&#34;Alice&#34;</span>)) <span style="color:#60a0b0;font-style:italic">//Uses default greeting
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(greet(<span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;Hi&#34;</span>)) <span style="color:#60a0b0;font-style:italic">//Provides custom greeting
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(calculateArea(<span style="color:#40a070">5.0</span>)) <span style="color:#60a0b0;font-style:italic">//Uses default height (same as width)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(calculateArea(<span style="color:#40a070">5.0</span>, <span style="color:#40a070">10.0</span>)) <span style="color:#60a0b0;font-style:italic">//Provides custom height
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="function-overloading">
+  Function overloading
+  <a class="anchor" href="#function-overloading">#</a>
+</h3>
+<p>Kotlin allows function overloading, meaning you can have multiple functions with the same name but different parameter lists.  The compiler differentiates them based on the number, type, or order of parameters.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">add</span>(a: Int, b: Int): Int = a + b
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">add</span>(a: Double, b: Double): Double = a + b
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">add</span>(a: String, b: String): String = a + b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>(){
+</span></span><span style="display:flex;"><span>    println(add(<span style="color:#40a070">5</span>, <span style="color:#40a070">3</span>))       <span style="color:#60a0b0;font-style:italic">// Calls Int version
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(add(<span style="color:#40a070">5.5</span>, <span style="color:#40a070">2.3</span>))   <span style="color:#60a0b0;font-style:italic">// Calls Double version
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(add(<span style="color:#4070a0">&#34;Hello&#34;</span>, <span style="color:#4070a0">&#34;World&#34;</span>)) <span style="color:#60a0b0;font-style:italic">// Calls String version
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><h3 class="heading" id="lambda-expressions">
+  Lambda expressions
+  <a class="anchor" href="#lambda-expressions">#</a>
+</h3>
+<p>Lambda expressions are anonymous functions that can be passed as arguments to other functions or assigned to variables. They are particularly useful when working with higher-order functions (functions that take other functions as parameters or return functions).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> sum: (Int, Int) <span style="color:#666">-&gt;</span> Int = { a, b <span style="color:#666">-&gt;</span> a + b } <span style="color:#60a0b0;font-style:italic">//Lambda expression defining a function that takes two integers and returns an integer.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">operate</span>(a:Int, b:Int, operation: (Int, Int) <span style="color:#666">-&gt;</span> Int): Int{
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> operation(a,b)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>(){
+</span></span><span style="display:flex;"><span>    println(sum(<span style="color:#40a070">5</span>,<span style="color:#40a070">3</span>)) <span style="color:#60a0b0;font-style:italic">//Calling the lambda expression directly
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(operate(<span style="color:#40a070">10</span>,<span style="color:#40a070">5</span>, sum)) <span style="color:#60a0b0;font-style:italic">//Passing lambda expression as an argument
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(operate(<span style="color:#40a070">7</span>,<span style="color:#40a070">2</span>){a,b <span style="color:#666">-&gt;</span> a - b}) <span style="color:#60a0b0;font-style:italic">//Lambda expression as argument directly in function call
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p>Lambda expressions can be simplified when they have a single parameter or when the parameter types can be inferred. For example: <code>{ a -&gt; a * 2 }</code>  or <code> { it * 2 }</code> (if only one parameter is used).</p>
+<h2 class="heading" id="object-oriented-programming-oop-in-kotlin">
+  Object-Oriented Programming (OOP) in Kotlin
+  <a class="anchor" href="#object-oriented-programming-oop-in-kotlin">#</a>
+</h2>
+<h3 class="heading" id="classes-and-objects">
+  Classes and objects
+  <a class="anchor" href="#classes-and-objects">#</a>
+</h3>
+<p>Classes are blueprints for creating objects.  Objects are instances of classes.  Classes are defined using the <code>class</code> keyword.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span>(<span style="color:#007020;font-weight:bold">val</span> name: String, <span style="color:#007020;font-weight:bold">var</span> age: Int) {  <span style="color:#60a0b0;font-style:italic">// Primary constructor
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">bark</span>() {
+</span></span><span style="display:flex;"><span>        println(<span style="color:#4070a0">&#34;Woof!&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">description</span>():String{
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;My name is </span><span style="color:#70a0d0">$name</span><span style="color:#4070a0"> and I am </span><span style="color:#70a0d0">$age</span><span style="color:#4070a0"> years old.&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> myDog = Dog(<span style="color:#4070a0">&#34;Buddy&#34;</span>, <span style="color:#40a070">3</span>)  <span style="color:#60a0b0;font-style:italic">//Creating an object (instance) of the Dog class
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(myDog.name)         <span style="color:#60a0b0;font-style:italic">//Accessing properties
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    myDog.age = <span style="color:#40a070">4</span>               <span style="color:#60a0b0;font-style:italic">//Modifying a mutable property
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    myDog.bark()                <span style="color:#60a0b0;font-style:italic">//Calling a method
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(myDog.description())
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="constructors">
+  Constructors
+  <a class="anchor" href="#constructors">#</a>
+</h3>
+<p>Constructors initialize objects when they are created.  Kotlin has primary and secondary constructors. The primary constructor is part of the class header.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Person</span>(<span style="color:#007020;font-weight:bold">val</span> name: String, <span style="color:#007020;font-weight:bold">val</span> age: Int) { <span style="color:#60a0b0;font-style:italic">// Primary constructor
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Secondary constructor
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">constructor</span>(name: String, age: Int, city: String) : <span style="color:#007020;font-weight:bold">this</span>(name, age) {
+</span></span><span style="display:flex;"><span>        println(<span style="color:#4070a0">&#34;Person lives in </span><span style="color:#70a0d0">$city</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">greet</span>(){
+</span></span><span style="display:flex;"><span>        println(<span style="color:#4070a0">&#34;Hi, my name is </span><span style="color:#70a0d0">$name</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> person1 = Person(<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#40a070">30</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> person2 = Person(<span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#40a070">25</span>, <span style="color:#4070a0">&#34;New York&#34;</span>)
+</span></span><span style="display:flex;"><span>    person1.greet()
+</span></span><span style="display:flex;"><span>    person2.greet()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this example, the secondary constructor delegates to the primary constructor using <code>this(name, age)</code>.</p>
+<h3 class="heading" id="inheritance">
+  Inheritance
+  <a class="anchor" href="#inheritance">#</a>
+</h3>
+<p>Inheritance allows a class (subclass or derived class) to inherit properties and methods from another class (superclass or base class).  Kotlin uses the <code>:</code> symbol to indicate inheritance.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">open</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span>(<span style="color:#007020;font-weight:bold">val</span> name: String) { <span style="color:#60a0b0;font-style:italic">//open keyword makes the class inheritable
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">open</span> <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">makeSound</span>() {
+</span></span><span style="display:flex;"><span>        println(<span style="color:#4070a0">&#34;Generic animal sound&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span>(name: String) : Animal(name) { <span style="color:#60a0b0;font-style:italic">//Inheriting from Animal
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">makeSound</span>() {
+</span></span><span style="display:flex;"><span>        println(<span style="color:#4070a0">&#34;Woof!&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span>(name: String) : Animal(name) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">makeSound</span>() {
+</span></span><span style="display:flex;"><span>        println(<span style="color:#4070a0">&#34;Meow!&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> myDog = Dog(<span style="color:#4070a0">&#34;Buddy&#34;</span>)
+</span></span><span style="display:flex;"><span>    myDog.makeSound()
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> myCat = Cat(<span style="color:#4070a0">&#34;Whiskers&#34;</span>)
+</span></span><span style="display:flex;"><span>    myCat.makeSound()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>open</code> keyword is required for a class to be inheritable.  The <code>override</code> keyword is used to override methods from the superclass.</p>
+<h3 class="heading" id="interfaces">
+  Interfaces
+  <a class="anchor" href="#interfaces">#</a>
+</h3>
+<p>Interfaces define a contract that classes can implement.  They specify methods that implementing classes must provide.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">Flyable</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">fly</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Bird</span>(<span style="color:#007020;font-weight:bold">val</span> name: String) : Flyable {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">fly</span>() {
+</span></span><span style="display:flex;"><span>        println(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">$name</span><span style="color:#4070a0"> is flying&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Plane</span>(<span style="color:#007020;font-weight:bold">val</span> model:String) : Flyable{
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">fly</span>() {
+</span></span><span style="display:flex;"><span>        println(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">$model</span><span style="color:#4070a0"> is taking off&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> bird = Bird(<span style="color:#4070a0">&#34;Eagle&#34;</span>)
+</span></span><span style="display:flex;"><span>    bird.fly()
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> plane = Plane(<span style="color:#4070a0">&#34;Boeing 747&#34;</span>)
+</span></span><span style="display:flex;"><span>    plane.fly()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="data-classes">
+  Data classes
+  <a class="anchor" href="#data-classes">#</a>
+</h3>
+<p>Data classes are concisely defined classes that automatically generate methods like <code>equals()</code>, <code>hashCode()</code>, <code>toString()</code>, <code>copy()</code>, and <code>componentN()</code> for convenient data representation.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Book</span>(<span style="color:#007020;font-weight:bold">val</span> title: String, <span style="color:#007020;font-weight:bold">val</span> author: String, <span style="color:#007020;font-weight:bold">val</span> year: Int)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> book1 = Book(<span style="color:#4070a0">&#34;The Lord of the Rings&#34;</span>, <span style="color:#4070a0">&#34;J.R.R. Tolkien&#34;</span>, <span style="color:#40a070">1954</span>)
+</span></span><span style="display:flex;"><span>    println(book1) <span style="color:#60a0b0;font-style:italic">// Automatically generated toString() method
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">val</span> book2 = book1.copy(year = <span style="color:#40a070">1965</span>) <span style="color:#60a0b0;font-style:italic">// Using the copy() method
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(book2)
+</span></span><span style="display:flex;"><span>    println(book1 <span style="color:#666">==</span> book2) <span style="color:#60a0b0;font-style:italic">// Using the equals() method
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p>Data classes simplify the creation of classes primarily focused on holding data.</p>
+<h2 class="heading" id="null-safety">
+  Null Safety
+  <a class="anchor" href="#null-safety">#</a>
+</h2>
+<h3 class="heading" id="the-problem-of-null-pointer-exceptions">
+  The problem of null pointer exceptions
+  <a class="anchor" href="#the-problem-of-null-pointer-exceptions">#</a>
+</h3>
+<p>Null pointer exceptions (<code>NullPointerExceptions</code> or <code>NPEs</code>) are a common source of errors in many programming languages, including Java.  They occur when a program attempts to access a member (method or property) of an object that is currently null (does not refer to any object).  This often leads to program crashes.  Kotlin&rsquo;s null safety features aim to mitigate this issue.</p>
+<h3 class="heading" id="nullable-types">
+  Nullable types
+  <a class="anchor" href="#nullable-types">#</a>
+</h3>
+<p>Kotlin distinguishes between non-nullable and nullable types.  A non-nullable type cannot hold a null value. A nullable type can hold either a value or null.  Nullable types are indicated by a question mark <code>?</code> after the type.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> name: String = <span style="color:#4070a0">&#34;Alice&#34;</span>  <span style="color:#60a0b0;font-style:italic">// Non-nullable String
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> age: Int? = <span style="color:#007020;font-weight:bold">null</span>        <span style="color:#60a0b0;font-style:italic">// Nullable Int
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// val message:String = null //This will cause a compilation error because String is not nullable
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> message: String? = <span style="color:#007020;font-weight:bold">null</span> <span style="color:#60a0b0;font-style:italic">//This is allowed because String? is nullable
+</span></span></span></code></pre></div><p>Trying to access a member of a non-nullable variable that is null will result in a compile-time error.  This prevents <code>NullPointerExceptions</code> at runtime.</p>
+<h3 class="heading" id="safe-call-operator-">
+  Safe call operator (?.)
+  <a class="anchor" href="#safe-call-operator-">#</a>
+</h3>
+<p>The safe call operator <code>?.</code> allows you to access members of a nullable type without causing a <code>NullPointerException</code>. If the object on the left side of <code>?.</code> is null, the expression short-circuits and returns null; otherwise, it accesses the member.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> person: Person? = <span style="color:#007020;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> city: String? = person<span style="color:#666">?.</span>address<span style="color:#666">?.</span>city <span style="color:#60a0b0;font-style:italic">//If person or address is null, city will be null
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> person: Person? = Person(<span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;123 Main St&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> city = person<span style="color:#666">?.</span>address<span style="color:#666">?.</span>city <span style="color:#60a0b0;font-style:italic">//If person is not null and address is not null then it&#39;ll access the city
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(city)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Address</span>(<span style="color:#007020;font-weight:bold">val</span> city:String)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Person</span>(<span style="color:#007020;font-weight:bold">val</span> name:String, <span style="color:#007020;font-weight:bold">val</span> address:Address?)
+</span></span></code></pre></div><h3 class="heading" id="elvis-operator-">
+  Elvis operator (?:)
+  <a class="anchor" href="#elvis-operator-">#</a>
+</h3>
+<p>The Elvis operator <code>?:</code> provides a concise way to handle nullable values.  It returns the value on the left side if it&rsquo;s not null; otherwise, it returns the value on the right side.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> name: String? = <span style="color:#007020;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> displayName = name <span style="color:#666">?:</span> <span style="color:#4070a0">&#34;Anonymous&#34;</span> <span style="color:#60a0b0;font-style:italic">// displayName will be &#34;Anonymous&#34; because name is null
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> age: Int? = <span style="color:#40a070">25</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> displayAge = age <span style="color:#666">?:</span> <span style="color:#40a070">0</span> <span style="color:#60a0b0;font-style:italic">// displayAge will be 25
+</span></span></span></code></pre></div><p>The Elvis operator is frequently used to provide default values for nullable variables.</p>
+<h3 class="heading" id="the--operator">
+  The !! operator
+  <a class="anchor" href="#the--operator">#</a>
+</h3>
+<p>The not-null assertion operator <code>!!</code> forces a nullable type to be treated as non-nullable.  It&rsquo;s generally discouraged unless you&rsquo;re absolutely certain the value is not null, because using it can still cause a <code>NullPointerException</code> at runtime if the value is indeed null.  It should be used with caution.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> name: String? = <span style="color:#007020;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> displayName = name<span style="color:#666">!!</span>.uppercase() <span style="color:#60a0b0;font-style:italic">//Throws a NullPointerException at runtime if name is null
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> name:String? = <span style="color:#4070a0">&#34;Alice&#34;</span>
+</span></span><span style="display:flex;"><span>    println(name<span style="color:#666">!!</span>.uppercase()) <span style="color:#60a0b0;font-style:italic">// This is safe because name is not null
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p>The <code>!!</code> operator is a last resort – prefer using safe calls and the Elvis operator whenever possible to avoid runtime crashes.  It is safer to handle potential null values explicitly using the safe call and Elvis operator rather than relying on the <code>!!</code> operator.</p>
+<h2 class="heading" id="collections">
+  Collections
+  <a class="anchor" href="#collections">#</a>
+</h2>
+<p>Kotlin provides several built-in collection types for storing and manipulating data.  These are immutable by default unless explicitly declared as mutable.</p>
+<h3 class="heading" id="lists">
+  Lists
+  <a class="anchor" href="#lists">#</a>
+</h3>
+<p>Lists are ordered collections that can contain duplicate elements.  Kotlin offers both mutable and immutable lists.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> numbers: List&lt;Int&gt; = listOf(<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>) <span style="color:#60a0b0;font-style:italic">// Immutable list
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> mutableNumbers: MutableList&lt;Int&gt; = mutableListOf(<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>) <span style="color:#60a0b0;font-style:italic">//Mutable List
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>(){
+</span></span><span style="display:flex;"><span>    println(numbers) <span style="color:#60a0b0;font-style:italic">//Prints the immutable list
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    mutableNumbers.add(<span style="color:#40a070">6</span>) <span style="color:#60a0b0;font-style:italic">//Adding element to a mutable list
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(mutableNumbers) <span style="color:#60a0b0;font-style:italic">//Prints the modified mutable list
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">//Accessing elements
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(mutableNumbers[<span style="color:#40a070">0</span>]) <span style="color:#60a0b0;font-style:italic">//Accessing element at index 0
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(mutableNumbers.<span style="color:#007020;font-weight:bold">get</span>(<span style="color:#40a070">1</span>)) <span style="color:#60a0b0;font-style:italic">//Another way to access elements
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">//Checking for an element
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(mutableNumbers.contains(<span style="color:#40a070">3</span>)) <span style="color:#60a0b0;font-style:italic">//true
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">//Iterating (see Iterating through collections section)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p><code>listOf()</code> creates an immutable list, while <code>mutableListOf()</code> creates a mutable list.  Mutable lists allow adding, removing, or modifying elements.</p>
+<h3 class="heading" id="sets">
+  Sets
+  <a class="anchor" href="#sets">#</a>
+</h3>
+<p>Sets are unordered collections that do not allow duplicate elements.  Like lists, they can be mutable or immutable.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> names: Set&lt;String&gt; = setOf(<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;Charlie&#34;</span>, <span style="color:#4070a0">&#34;Alice&#34;</span>) <span style="color:#60a0b0;font-style:italic">// Immutable set (duplicates are removed)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> mutableNames: MutableSet&lt;String&gt; = mutableSetOf(<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;Charlie&#34;</span>) <span style="color:#60a0b0;font-style:italic">//Mutable Set
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>(){
+</span></span><span style="display:flex;"><span>    println(names)  <span style="color:#60a0b0;font-style:italic">//Prints the immutable set without duplicates. Order is not guaranteed
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    mutableNames.add(<span style="color:#4070a0">&#34;David&#34;</span>)
+</span></span><span style="display:flex;"><span>    println(mutableNames) <span style="color:#60a0b0;font-style:italic">//Prints the modified mutable set
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">//Checking for an element
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(mutableNames.contains(<span style="color:#4070a0">&#34;Bob&#34;</span>)) <span style="color:#60a0b0;font-style:italic">//True
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">//Iterating (see Iterating through collections section)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>setOf()</code> creates an immutable set, while <code>mutableSetOf()</code> creates a mutable set.</p>
+<h3 class="heading" id="maps">
+  Maps
+  <a class="anchor" href="#maps">#</a>
+</h3>
+<p>Maps are collections of key-value pairs.  Keys must be unique, while values can be duplicated.  Maps can also be mutable or immutable.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> ages: Map&lt;String, Int&gt; = mapOf(<span style="color:#4070a0">&#34;Alice&#34;</span> to <span style="color:#40a070">30</span>, <span style="color:#4070a0">&#34;Bob&#34;</span> to <span style="color:#40a070">25</span>, <span style="color:#4070a0">&#34;Charlie&#34;</span> to <span style="color:#40a070">35</span>) <span style="color:#60a0b0;font-style:italic">// Immutable map
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> mutableAges: MutableMap&lt;String, Int&gt; = mutableMapOf(<span style="color:#4070a0">&#34;Alice&#34;</span> to <span style="color:#40a070">30</span>, <span style="color:#4070a0">&#34;Bob&#34;</span> to <span style="color:#40a070">25</span>) <span style="color:#60a0b0;font-style:italic">//Mutable map
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>(){
+</span></span><span style="display:flex;"><span>    println(ages) <span style="color:#60a0b0;font-style:italic">//Prints the immutable map
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    mutableAges[<span style="color:#4070a0">&#34;Charlie&#34;</span>] = <span style="color:#40a070">35</span> <span style="color:#60a0b0;font-style:italic">//Adding or modifying an entry
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(mutableAges) <span style="color:#60a0b0;font-style:italic">//Prints the modified mutable map
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">//Accessing a value using the key
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(mutableAges[<span style="color:#4070a0">&#34;Alice&#34;</span>]) <span style="color:#60a0b0;font-style:italic">//Prints 30
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">//Checking for a key
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    println(mutableAges.containsKey(<span style="color:#4070a0">&#34;Bob&#34;</span>)) <span style="color:#60a0b0;font-style:italic">//True
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">//Iterating (see Iterating through collections section)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p><code>mapOf()</code> creates an immutable map, while <code>mutableMapOf()</code> creates a mutable map.</p>
+<h3 class="heading" id="iterating-through-collections">
+  Iterating through collections
+  <a class="anchor" href="#iterating-through-collections">#</a>
+</h3>
+<p>There are several ways to iterate through collections:</p>
+<p><strong>1. Using <code>for</code> loops:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> numbers = listOf(<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (number <span style="color:#007020;font-weight:bold">in</span> numbers) {
+</span></span><span style="display:flex;"><span>    println(number)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> names = mapOf(<span style="color:#4070a0">&#34;Alice&#34;</span> to <span style="color:#40a070">30</span>, <span style="color:#4070a0">&#34;Bob&#34;</span> to <span style="color:#40a070">25</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> ((name, age) <span style="color:#007020;font-weight:bold">in</span> names) {
+</span></span><span style="display:flex;"><span>    println(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">$name</span><span style="color:#4070a0"> is </span><span style="color:#70a0d0">$age</span><span style="color:#4070a0"> years old&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>2. Using iterators:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> numbers = listOf(<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> iterator = numbers.iterator()
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (iterator.hasNext()) {
+</span></span><span style="display:flex;"><span>    println(iterator.next())
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>3. Using higher-order functions (more advanced):</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> numbers = listOf(<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>)
+</span></span><span style="display:flex;"><span>numbers.forEach { println(<span style="color:#007020;font-weight:bold">it</span>) } <span style="color:#60a0b0;font-style:italic">//forEach is a higher-order function
+</span></span></span></code></pre></div><p>Higher-order functions like <code>forEach</code>, <code>map</code>, <code>filter</code>, etc., provide more functional ways to process collections.  These will be covered in more advanced sections of this manual.</p>
+<h2 class="heading" id="extensions">
+  Extensions
+  <a class="anchor" href="#extensions">#</a>
+</h2>
+<h3 class="heading" id="what-are-extensions">
+  What are extensions?
+  <a class="anchor" href="#what-are-extensions">#</a>
+</h3>
+<p>Extensions in Kotlin allow you to add new functionality to existing classes without modifying their source code or creating subclasses.  This is achieved by defining functions outside of a class but specifying the class they extend as a receiver.  Extensions don&rsquo;t change the original class; they simply add new methods that can be called as if they were part of the class.</p>
+<h3 class="heading" id="how-to-create-extensions">
+  How to create extensions
+  <a class="anchor" href="#how-to-create-extensions">#</a>
+</h3>
+<p>Extensions are defined using the <code>fun</code> keyword, followed by the receiver type, a dot <code>.</code>, the extension function name, and the parameter list.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">String</span>.addExclamationMark(): String { <span style="color:#60a0b0;font-style:italic">//Extension function for String class
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">this</span> + <span style="color:#4070a0">&#34;!&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">Int</span>.isEven(): Boolean { <span style="color:#60a0b0;font-style:italic">//Extension function for Int class
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">this</span> % <span style="color:#40a070">2</span> <span style="color:#666">==</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> message = <span style="color:#4070a0">&#34;Hello&#34;</span>
+</span></span><span style="display:flex;"><span>    println(message.addExclamationMark()) <span style="color:#60a0b0;font-style:italic">// Calling the extension function
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> number = <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span>    println(number.isEven()) <span style="color:#60a0b0;font-style:italic">// Calling the extension function
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p>In these examples, <code>String.addExclamationMark()</code> adds an exclamation mark to a string, and <code>Int.isEven()</code> checks if an integer is even.  These functions can be called directly on String and Int objects, respectively, even though they are defined outside the String and Int classes.</p>
+<h3 class="heading" id="benefits-of-using-extensions">
+  Benefits of using extensions
+  <a class="anchor" href="#benefits-of-using-extensions">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>Improved code readability:</strong> Extensions can make code more concise and readable by adding methods directly to existing types where they logically belong.  You avoid creating helper classes or utility functions.</p>
+</li>
+<li>
+<p><strong>Increased code reusability:</strong> Extensions are reusable across different parts of your codebase.</p>
+</li>
+<li>
+<p><strong>Avoidance of subclassing:</strong>  Extensions provide a way to extend functionality without the need to create new subclasses, which can be beneficial when you can&rsquo;t modify the original class or when creating subclasses would be overly complex.</p>
+</li>
+<li>
+<p><strong>Improved organization:</strong>  Well-designed extensions can contribute to better code organization, keeping related functionality grouped together logically.</p>
+</li>
+<li>
+<p><strong>Adding functionality to external libraries:</strong> Extensions are particularly useful for adding extra functions to classes defined in external libraries that you cannot modify directly.</p>
+</li>
+</ul>
+<p>However, keep in mind that extensions do not modify the original class. They simply add new functionality that can be called on instances of that class.  If multiple extension functions with the same name exist for a particular type, resolution is determined by the context in which the extension function is called.</p>
+<h2 class="heading" id="working-with-strings">
+  Working with Strings
+  <a class="anchor" href="#working-with-strings">#</a>
+</h2>
+<h3 class="heading" id="string-templates">
+  String templates
+  <a class="anchor" href="#string-templates">#</a>
+</h3>
+<p>String templates in Kotlin provide a concise way to embed expressions within strings.  They are defined using a dollar sign <code>$</code> followed by either a variable name or an expression enclosed in curly braces <code>{}</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> name = <span style="color:#4070a0">&#34;Alice&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> age = <span style="color:#40a070">30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> message = <span style="color:#4070a0">&#34;My name is </span><span style="color:#70a0d0">$name</span><span style="color:#4070a0"> and I am </span><span style="color:#70a0d0">$age</span><span style="color:#4070a0"> years old.&#34;</span> <span style="color:#60a0b0;font-style:italic">//Simple variable interpolation
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println(message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> complexMessage = <span style="color:#4070a0">&#34;The result of 10 + 5 is </span><span style="color:#70a0d0">${10 + 5}</span><span style="color:#4070a0">&#34;</span> <span style="color:#60a0b0;font-style:italic">//Expression interpolation
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println(complexMessage)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Using raw strings for avoiding escaping special characters
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> rawString = <span style="color:#4070a0">&#34;&#34;&#34;This is a raw string.
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">It can contain multiple lines
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">and special characters like \n without escaping.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>println(rawString)
+</span></span></code></pre></div><p>String templates make it easy to create dynamic strings by incorporating values of variables and the result of expressions directly into the string literal.</p>
+<h3 class="heading" id="string-manipulation-functions">
+  String manipulation functions
+  <a class="anchor" href="#string-manipulation-functions">#</a>
+</h3>
+<p>Kotlin provides a rich set of built-in functions for manipulating strings.  Some commonly used functions include:</p>
+<ul>
+<li>
+<p><strong><code>length</code>:</strong> Returns the length of the string.</p>
+</li>
+<li>
+<p><strong><code>uppercase()</code>:</strong> Converts the string to uppercase.</p>
+</li>
+<li>
+<p><strong><code>lowercase()</code>:</strong> Converts the string to lowercase.</p>
+</li>
+<li>
+<p><strong><code>substring(startIndex, endIndex)</code>:</strong> Extracts a substring.</p>
+</li>
+<li>
+<p><strong><code>replace(oldValue, newValue)</code>:</strong> Replaces occurrences of a substring.</p>
+</li>
+<li>
+<p><strong><code>startsWith(prefix)</code>:</strong> Checks if the string starts with a given prefix.</p>
+</li>
+<li>
+<p><strong><code>endsWith(suffix)</code>:</strong> Checks if the string ends with a given suffix.</p>
+</li>
+<li>
+<p><strong><code>contains(substring)</code>:</strong> Checks if the string contains a given substring.</p>
+</li>
+<li>
+<p><strong><code>split(delimiter)</code>:</strong> Splits the string into a list of substrings based on a delimiter.</p>
+</li>
+<li>
+<p><strong><code>trim()</code>:</strong> Removes leading and trailing whitespace.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> message = <span style="color:#4070a0">&#34;Hello, World!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>println(message.length)         <span style="color:#60a0b0;font-style:italic">// Output: 13
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println(message.uppercase())     <span style="color:#60a0b0;font-style:italic">// Output: HELLO, WORLD!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println(message.lowercase())     <span style="color:#60a0b0;font-style:italic">// Output: hello, world!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println(message.substring(<span style="color:#40a070">7</span>, <span style="color:#40a070">12</span>)) <span style="color:#60a0b0;font-style:italic">// Output: World
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println(message.replace(<span style="color:#4070a0">&#34;World&#34;</span>, <span style="color:#4070a0">&#34;Kotlin&#34;</span>)) <span style="color:#60a0b0;font-style:italic">// Output: Hello, Kotlin!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println(message.startsWith(<span style="color:#4070a0">&#34;Hello&#34;</span>)) <span style="color:#60a0b0;font-style:italic">// Output: true
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println(message.endsWith(<span style="color:#4070a0">&#34;!&#34;</span>))     <span style="color:#60a0b0;font-style:italic">// Output: true
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println(message.contains(<span style="color:#4070a0">&#34;World&#34;</span>))   <span style="color:#60a0b0;font-style:italic">// Output: true
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println(message.split(<span style="color:#4070a0">&#34;, &#34;</span>))      <span style="color:#60a0b0;font-style:italic">// Output: [Hello, World!]
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println(message.trim())          <span style="color:#60a0b0;font-style:italic">// Output: Hello, World!
+</span></span></span></code></pre></div><p>These functions are readily available and provide a comprehensive set of tools for string manipulation, improving code efficiency and readability when working with text data.  In addition, Kotlin&rsquo;s standard library offers many more specialized string functions for more advanced scenarios.</p>
+<h2 class="heading" id="next-steps">
+  Next Steps
+  <a class="anchor" href="#next-steps">#</a>
+</h2>
+<h3 class="heading" id="learning-resources">
+  Learning Resources
+  <a class="anchor" href="#learning-resources">#</a>
+</h3>
+<p>This Beginner&rsquo;s Guide provides a foundational understanding of Kotlin.  To further enhance your Kotlin skills and explore more advanced topics, consider these resources:</p>
+<ul>
+<li>
+<p><strong>Official Kotlin Documentation:</strong> The official Kotlin website (<a href="https://kotlinlang.org/">https://kotlinlang.org/</a>) offers comprehensive documentation, tutorials, and guides covering all aspects of the language.  This is your primary resource for detailed information and up-to-date details.</p>
+</li>
+<li>
+<p><strong>Kotlin Koans:</strong>  Kotlin Koans (<a href="https://kotlinlang.org/docs/learning-kotlin.html#try-kotlin-koans">https://kotlinlang.org/docs/learning-kotlin.html#try-kotlin-koans</a>) are a series of interactive exercises that guide you through various Kotlin concepts.  They provide a hands-on approach to learning.</p>
+</li>
+<li>
+<p><strong>Online Courses:</strong> Numerous online platforms (Coursera, Udemy, Udacity, etc.) offer Kotlin courses ranging from beginner to advanced levels.  These courses provide structured learning paths and often include practice projects.</p>
+</li>
+<li>
+<p><strong>Books:</strong> Several books are dedicated to Kotlin programming, providing in-depth coverage of the language and its features. Search for &ldquo;Kotlin programming books&rdquo; to find options suitable for your experience level.</p>
+</li>
+<li>
+<p><strong>Kotlin Blog and Articles:</strong> Stay updated with the latest developments and best practices by following the Kotlin blog and reading articles on various programming websites and publications.</p>
+</li>
+</ul>
+<h3 class="heading" id="community-and-support">
+  Community and Support
+  <a class="anchor" href="#community-and-support">#</a>
+</h3>
+<p>The Kotlin community is active and supportive.  If you encounter problems or have questions, several avenues are available for assistance:</p>
+<ul>
+<li>
+<p><strong>Kotlin Slack:</strong> The official Kotlin Slack channel (<a href="https://surveys.jetbrains.com/s3/kotlin-slack">https://surveys.jetbrains.com/s3/kotlin-slack</a>) (you may need to request an invite) is a great place to ask questions, share knowledge, and connect with other Kotlin developers.</p>
+</li>
+<li>
+<p><strong>Kotlin Forums:</strong> Explore the Kotlin forums (<a href="https://discuss.kotlinlang.org/">https://discuss.kotlinlang.org/</a>) for discussions, troubleshooting, and answers to common questions.</p>
+</li>
+<li>
+<p><strong>Stack Overflow:</strong> Stack Overflow is a valuable resource for finding solutions to coding problems. Search for Kotlin-related questions, and if you can&rsquo;t find an answer, ask your own question, ensuring you provide a clear and concise description of the issue.</p>
+</li>
+<li>
+<p><strong>GitHub:</strong> Kotlin&rsquo;s GitHub repository (<a href="https://github.com/JetBrains/kotlin">https://github.com/JetBrains/kotlin</a>) is a valuable resource for finding code samples, libraries, and contributing to the Kotlin project.  You can also find many open-source Kotlin projects on GitHub that you can study and learn from.</p>
+</li>
+</ul>
+<p>Remember to clearly describe your problem when seeking help, including relevant code snippets and the steps you&rsquo;ve already taken to troubleshoot the issue.  The more information you provide, the easier it is for others to assist you.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-ruby/">
+                        Beginner&#39;s Guide to Ruby
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-swift/">
+                        Beginner&#39;s Guide to Swift
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

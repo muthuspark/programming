@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to J | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-j/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-j/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to J">
+  <meta property="og:description" content="Introduction to J # What is J? # J is a powerful, concise, and array-oriented programming language designed by Kenneth E. Iverson. It’s built upon the principles of APL (A Programming Language), inheriting its expressive notation and ability to handle arrays with remarkable efficiency. Unlike many languages that treat arrays as collections of individual elements, J operates directly on entire arrays, allowing for elegant and compact solutions to complex problems. This approach leads to significantly shorter code and often faster execution speeds for array-based operations. J’s syntax, while initially appearing unconventional, leverages a consistent set of symbols to represent a wide array of operations, fostering a highly expressive and mathematically intuitive coding style.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-24T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-j/">Beginner&#39;s Guide to J</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to J</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-12-24T00:00:00&#43;00:00">December 24, 2024</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      19 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-j">Introduction to J</a>
+      <ul>
+        <li><a href="#what-is-j">What is J?</a></li>
+        <li><a href="#why-learn-j">Why learn J?</a></li>
+        <li><a href="#setting-up-your-j-environment">Setting up your J environment</a></li>
+        <li><a href="#js-unique-features-and-benefits">J&rsquo;s unique features and benefits</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-concepts">Basic Syntax and Concepts</a>
+      <ul>
+        <li><a href="#understanding-js-tacit-programming-paradigm">Understanding J&rsquo;s tacit programming paradigm</a></li>
+        <li><a href="#working-with-verbs-nouns-and-adverbs">Working with verbs, nouns, and adverbs</a></li>
+        <li><a href="#data-types-in-j-numbers-lists-arrays">Data types in J: numbers, lists, arrays</a></li>
+        <li><a href="#basic-arithmetic-operations">Basic arithmetic operations</a></li>
+        <li><a href="#assignment-and-variable-declaration">Assignment and variable declaration</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-arrays">Working with Arrays</a>
+      <ul>
+        <li><a href="#creating-arrays">Creating arrays</a></li>
+        <li><a href="#indexing-and-slicing-arrays">Indexing and slicing arrays</a></li>
+        <li><a href="#array-manipulation-reshaping-and-concatenation">Array manipulation: reshaping and concatenation</a></li>
+        <li><a href="#understanding-ranks-and-shapes">Understanding ranks and shapes</a></li>
+        <li><a href="#common-array-operations">Common array operations</a></li>
+      </ul>
+    </li>
+    <li><a href="#essential-verbs-and-adverbs">Essential Verbs and Adverbs</a>
+      <ul>
+        <li><a href="#key-verbs-for-data-manipulation">Key verbs for data manipulation</a></li>
+        <li><a href="#adverbs-for-modifying-verb-behavior">Adverbs for modifying verb behavior</a></li>
+        <li><a href="#combining-verbs-and-adverbs-for-complex-operations">Combining verbs and adverbs for complex operations</a></li>
+        <li><a href="#understanding-js-rich-verb-library">Understanding J&rsquo;s rich verb library</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-flow">Control Flow</a>
+      <ul>
+        <li><a href="#conditional-statements-if-then-else">Conditional statements: if-then-else</a></li>
+        <li><a href="#loops-while-and-for-loops-or-alternatives-in-j">Loops: while and for loops (or alternatives in J)</a></li>
+        <li><a href="#handling-errors-and-exceptions">Handling errors and exceptions</a></li>
+      </ul>
+    </li>
+    <li><a href="#inputoutput-and-file-handling">Input/Output and File Handling</a>
+      <ul>
+        <li><a href="#reading-data-from-files">Reading data from files</a></li>
+        <li><a href="#writing-data-to-files">Writing data to files</a></li>
+        <li><a href="#working-with-different-file-formats">Working with different file formats</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics-optional">Advanced Topics (Optional)</a>
+      <ul>
+        <li><a href="#user-defined-functions">User-defined functions</a></li>
+        <li><a href="#namespaces-and-modularity">Namespaces and modularity</a></li>
+        <li><a href="#performance-optimization">Performance optimization</a></li>
+        <li><a href="#debugging-j-code">Debugging J code</a></li>
+      </ul>
+    </li>
+    <li><a href="#resources-and-further-learning">Resources and Further Learning</a>
+      <ul>
+        <li><a href="#recommended-books-and-tutorials">Recommended books and tutorials</a></li>
+        <li><a href="#online-j-communities-and-forums">Online J communities and forums</a></li>
+        <li><a href="#contributing-to-j-projects">Contributing to J projects</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-j">
+  Introduction to J
+  <a class="anchor" href="#introduction-to-j">#</a>
+</h2>
+<h3 class="heading" id="what-is-j">
+  What is J?
+  <a class="anchor" href="#what-is-j">#</a>
+</h3>
+<p>J is a powerful, concise, and array-oriented programming language designed by Kenneth E. Iverson. It&rsquo;s built upon the principles of APL (A Programming Language), inheriting its expressive notation and ability to handle arrays with remarkable efficiency.  Unlike many languages that treat arrays as collections of individual elements, J operates directly on entire arrays, allowing for elegant and compact solutions to complex problems.  This approach leads to significantly shorter code and often faster execution speeds for array-based operations. J&rsquo;s syntax, while initially appearing unconventional, leverages a consistent set of symbols to represent a wide array of operations, fostering a highly expressive and mathematically intuitive coding style.</p>
+<h3 class="heading" id="why-learn-j">
+  Why learn J?
+  <a class="anchor" href="#why-learn-j">#</a>
+</h3>
+<p>Learning J offers several compelling advantages:</p>
+<ul>
+<li>
+<p><strong>Conciseness:</strong> J&rsquo;s compact syntax allows you to express complex algorithms in far fewer lines of code than in many other languages.  This improves readability and reduces development time.</p>
+</li>
+<li>
+<p><strong>Array-Oriented Programming:</strong> Mastery of J unlocks the power of array processing, enabling you to tackle data manipulation tasks with unparalleled speed and efficiency.  This is especially beneficial when dealing with large datasets.</p>
+</li>
+<li>
+<p><strong>Improved Problem-Solving Skills:</strong>  J&rsquo;s focus on functional programming and its emphasis on concise expressions encourages a more abstract and systematic approach to problem-solving.</p>
+</li>
+<li>
+<p><strong>Unique Perspective:</strong> J provides a unique lens through which to view programming and mathematics, broadening your understanding of computational principles and fostering creative solutions.</p>
+</li>
+<li>
+<p><strong>Strong Community:</strong> While not as large as some other languages, the J community is highly active and supportive, offering resources and assistance to learners of all skill levels.</p>
+</li>
+</ul>
+<h3 class="heading" id="setting-up-your-j-environment">
+  Setting up your J environment
+  <a class="anchor" href="#setting-up-your-j-environment">#</a>
+</h3>
+<p>The simplest way to start using J is by downloading the J interpreter from the official J Software website.  The website provides installers for various operating systems (Windows, macOS, Linux). After installation, you&rsquo;ll typically have access to a command-line interface (CLI) or an IDE (depending on the chosen installation).  The CLI provides a straightforward way to execute J code interactively. Some users prefer using a text editor for writing larger programs and then running them from the command line.</p>
+<p>Ensure you have the J interpreter correctly configured in your system&rsquo;s PATH environment variable.  This will allow you to run J from any directory in your terminal without specifying the full path to the executable. The official website&rsquo;s documentation usually contains detailed instructions on how to do this for your specific operating system.</p>
+<p>The J Software website also offers various resources, including documentation, tutorials, and examples to assist in getting started.</p>
+<h3 class="heading" id="js-unique-features-and-benefits">
+  J&rsquo;s unique features and benefits
+  <a class="anchor" href="#js-unique-features-and-benefits">#</a>
+</h3>
+<p>J&rsquo;s unique features stem from its array-oriented nature and concise syntax:</p>
+<ul>
+<li>
+<p><strong>Tacit Programming:</strong> J supports tacit programming, where functions are defined without explicitly mentioning their arguments. This leads to very compact code and often more elegant solutions.</p>
+</li>
+<li>
+<p><strong>Rank:</strong> J incorporates the concept of rank, which describes the dimensionality of an array. This allows for operations to be applied consistently to arrays of varying dimensions.</p>
+</li>
+<li>
+<p><strong>Overloadable Operators:</strong>  J&rsquo;s operators are designed to work seamlessly with different data types and array ranks.</p>
+</li>
+<li>
+<p><strong>Extensive Built-in Functions:</strong>  A rich set of built-in functions handles common array operations, making it easier to perform complex manipulations with minimal code.</p>
+</li>
+<li>
+<p><strong>Powerful Verbs:</strong> J&rsquo;s verbs (functions) are highly expressive, allowing for concise representation of many mathematical and logical operations.</p>
+</li>
+</ul>
+<p>These features, combined with J&rsquo;s efficient array handling, make it an excellent choice for tasks involving data analysis, scientific computing, and other applications where efficient array processing is critical.</p>
+<h2 class="heading" id="basic-syntax-and-concepts">
+  Basic Syntax and Concepts
+  <a class="anchor" href="#basic-syntax-and-concepts">#</a>
+</h2>
+<h3 class="heading" id="understanding-js-tacit-programming-paradigm">
+  Understanding J&rsquo;s tacit programming paradigm
+  <a class="anchor" href="#understanding-js-tacit-programming-paradigm">#</a>
+</h3>
+<p>J embraces a tacit programming paradigm, meaning that functions (called &ldquo;verbs&rdquo; in J) are defined without explicitly naming their arguments.  Instead, the operation is defined implicitly through the arrangement of verbs and nouns (data). This leads to highly concise and expressive code.  For example, in many languages, you might write <code>add(x, y)</code>. In J, the equivalent is simply <code>x + y</code>.  The <code>+</code> verb implicitly takes <code>x</code> and <code>y</code> as its arguments. This implicit argument passing is central to J&rsquo;s distinctive style.  The power of tacit programming becomes even more apparent when combining multiple verbs; the order and placement of verbs define the flow of data and operations, creating a highly efficient and readable style once mastered.  This contrasts with explicit programming paradigms where arguments are always explicitly specified.</p>
+<h3 class="heading" id="working-with-verbs-nouns-and-adverbs">
+  Working with verbs, nouns, and adverbs
+  <a class="anchor" href="#working-with-verbs-nouns-and-adverbs">#</a>
+</h3>
+<p>J&rsquo;s fundamental building blocks are:</p>
+<ul>
+<li>
+<p><strong>Nouns:</strong> These are data elements – numbers, lists, arrays, etc.  They are the things that verbs operate on.  Examples include <code>10</code>, <code>1 2 3</code>, <code>1 2 3;4 5 6</code>.</p>
+</li>
+<li>
+<p><strong>Verbs:</strong> These are functions that operate on nouns.  They are denoted by symbols like <code>+</code> (addition), <code>-</code> (subtraction), <code>*</code> (multiplication), <code>%</code> (division), etc.  More complex verbs exist for array manipulation and other operations.</p>
+</li>
+<li>
+<p><strong>Adverbs:</strong> These modify the behavior of verbs. They provide a way to apply verbs in different ways, such as repeatedly or conditionally.  For instance, the adverb <code>/</code> (insert) applies a verb between elements of a list.</p>
+</li>
+</ul>
+<h3 class="heading" id="data-types-in-j-numbers-lists-arrays">
+  Data types in J: numbers, lists, arrays
+  <a class="anchor" href="#data-types-in-j-numbers-lists-arrays">#</a>
+</h3>
+<p>J primarily works with arrays, which can be of various ranks (dimensions):</p>
+<ul>
+<li>
+<p><strong>Scalars (Rank 0):</strong> Single numbers, e.g., <code>5</code>.</p>
+</li>
+<li>
+<p><strong>Vectors (Rank 1):</strong>  One-dimensional arrays, e.g., <code>1 2 3</code>.  These are often referred to as lists.</p>
+</li>
+<li>
+<p><strong>Matrices (Rank 2):</strong> Two-dimensional arrays, e.g., <code>1 2 3;4 5 6</code> (semicolon separates rows).</p>
+</li>
+<li>
+<p><strong>Higher-Rank Arrays:</strong> J supports arrays with more than two dimensions.</p>
+</li>
+</ul>
+<p>J&rsquo;s numbers can be integers, floating-point numbers, and complex numbers.  The type is usually inferred automatically by the interpreter. Lists and arrays are collections of these primitive data types.  There are also more specialized data types such as characters and strings, which are ultimately handled as arrays of characters.</p>
+<h3 class="heading" id="basic-arithmetic-operations">
+  Basic arithmetic operations
+  <a class="anchor" href="#basic-arithmetic-operations">#</a>
+</h3>
+<p>J uses standard symbols for basic arithmetic:</p>
+<ul>
+<li><code>+</code>: Addition</li>
+<li><code>-</code>: Subtraction</li>
+<li><code>*</code>: Multiplication</li>
+<li><code>%</code>: Division</li>
+<li><code>^</code>: Exponentiation</li>
+</ul>
+<p>These operators work element-wise on arrays.  For example, <code>2 3 4 + 1 2 3</code> results in <code>3 5 7</code>.  If the arrays are of different lengths, J typically performs a &ldquo;cyclic&rdquo; or &ldquo;wrap-around&rdquo; operation (depending on the specific verb).</p>
+<h3 class="heading" id="assignment-and-variable-declaration">
+  Assignment and variable declaration
+  <a class="anchor" href="#assignment-and-variable-declaration">#</a>
+</h3>
+<p>J doesn&rsquo;t require explicit variable declarations.  Assignment is done using the <code>=</code> symbol.  For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-j" data-lang="j"><span style="display:flex;"><span><span style="color:#bb60d5">x</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">y</span> <span style="color:#666">=</span> <span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">z</span> <span style="color:#666">=</span> <span style="color:#bb60d5">x</span> <span style="color:#666">+</span> <span style="color:#bb60d5">y</span>  <span style="color:#60a0b0;font-style:italic">NB. z will now contain 30</span>
+</span></span></code></pre></div><p>Variable names in J can be any valid J name, and there is no need to declare a variable&rsquo;s type.  J infers the type from the assigned value.</p>
+<h2 class="heading" id="working-with-arrays">
+  Working with Arrays
+  <a class="anchor" href="#working-with-arrays">#</a>
+</h2>
+<h3 class="heading" id="creating-arrays">
+  Creating arrays
+  <a class="anchor" href="#creating-arrays">#</a>
+</h3>
+<p>J offers several ways to create arrays:</p>
+<ul>
+<li>
+<p><strong>Explicitly listing elements:</strong>  For small arrays, you can list the elements directly, separating elements within a rank-1 array (vector) by spaces and separating rows in higher-rank arrays by semicolons. For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-j" data-lang="j"><span style="display:flex;"><span><span style="color:#bb60d5">a</span> <span style="color:#666">=:</span> <span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span>   <span style="color:#60a0b0;font-style:italic">NB. A rank 1 array (vector)</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">b</span> <span style="color:#666">=:</span> <span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span><span style="color:#666">;</span> <span style="color:#40a070">4</span> <span style="color:#40a070">5</span> <span style="color:#40a070">6</span>  <span style="color:#60a0b0;font-style:italic">NB. A rank 2 array (matrix)</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">c</span> <span style="color:#666">=:</span> <span style="color:#bb60d5">i</span><span style="color:#666">.</span><span style="color:#40a070">5</span>       <span style="color:#60a0b0;font-style:italic">NB. Creates a vector [0 1 2 3 4] using the i. verb</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Using the <code>i.</code> verb:</strong> The <code>i.n</code> verb generates a vector of integers from 0 to n-1.  <code>i.5</code> creates <code>0 1 2 3 4</code>.</p>
+</li>
+<li>
+<p><strong>Using the <code>$</code> verb (shape):</strong> The <code>$</code> verb reshapes an array. For example, <code>3 2 $ i.6</code> reshapes the vector <code>0 1 2 3 4 5</code> into a 3x2 matrix:  <code>0 1;2 3;4 5</code>.</p>
+</li>
+<li>
+<p><strong>From other arrays using concatenation or other array operations:</strong> New arrays can be created by combining existing arrays through various operations like concatenation (discussed below).</p>
+</li>
+</ul>
+<h3 class="heading" id="indexing-and-slicing-arrays">
+  Indexing and slicing arrays
+  <a class="anchor" href="#indexing-and-slicing-arrays">#</a>
+</h3>
+<p>Accessing elements within an array uses indexing.  Indexing starts at 0.</p>
+<ul>
+<li>
+<p><strong>Rank 1 arrays (vectors):</strong>  <code>a =: 10 20 30 40</code>; <code>a{1</code> (or <code>a[1]</code>) accesses the second element (20).</p>
+</li>
+<li>
+<p><strong>Rank 2 arrays (matrices):</strong> <code>b =: 1 2;3 4</code>; <code>b{1}{0}</code> accesses the element in the second row and first column (3). You can also use the more concise <code>b{1;0}</code> notation.</p>
+</li>
+</ul>
+<p>Slicing allows extracting portions of arrays. For example, <code>a{1+i.3</code> extracts elements 1, 2, and 3 from array <code>a</code>.  More complex slicing using ranges and strides is also possible.</p>
+<h3 class="heading" id="array-manipulation-reshaping-and-concatenation">
+  Array manipulation: reshaping and concatenation
+  <a class="anchor" href="#array-manipulation-reshaping-and-concatenation">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>Reshaping:</strong> The <code>$</code> verb changes the shape of an array without altering its data. As shown before, <code>3 2 $ i.6</code> reshapes a 6-element vector into a 3x2 matrix.</p>
+</li>
+<li>
+<p><strong>Concatenation:</strong> The <code>,</code> verb concatenates arrays.  <code>,/</code> concatenates along the first dimension.  For example: <code>1 2 , 3 4</code> creates <code>1 2 3 4</code> and <code>1 2; 3 4</code> , <code>5 6;7 8</code> creates <code>1 2; 3 4; 5 6; 7 8</code>.</p>
+</li>
+<li>
+<p><strong>Append:</strong>  <code>a , 5</code> appends the number 5 to the end of the vector <code>a</code>.</p>
+</li>
+</ul>
+<h3 class="heading" id="understanding-ranks-and-shapes">
+  Understanding ranks and shapes
+  <a class="anchor" href="#understanding-ranks-and-shapes">#</a>
+</h3>
+<p>The rank of an array is its number of dimensions (0 for a scalar, 1 for a vector, 2 for a matrix, etc.).  The shape of an array is a vector specifying the size of each dimension.  For example, a 3x2 matrix has a rank of 2 and a shape of <code>3 2</code>.  Understanding rank and shape is crucial for performing array operations correctly.  Many J verbs have their behavior depend implicitly or explicitly on the ranks and shapes of the arrays to which they are applied.</p>
+<h3 class="heading" id="common-array-operations">
+  Common array operations
+  <a class="anchor" href="#common-array-operations">#</a>
+</h3>
+<p>J provides a vast collection of built-in verbs for array operations, including:</p>
+<ul>
+<li>
+<p><strong>Element-wise operations:</strong>  Most arithmetic and logical operators work element-wise on arrays of compatible shapes.</p>
+</li>
+<li>
+<p><strong>Reduction:</strong>  Verbs like <code>+/</code> (sum), <code>*/</code> (product), <code>&lt;/</code> (minimum), and <code>&gt;</code> (maximum) reduce an array to a single scalar by applying the operation cumulatively across a specific dimension.</p>
+</li>
+<li>
+<p><strong>Inner Product:</strong> The generalized inner product (<code>+.</code>) is a powerful tool for performing matrix multiplication and other related operations.</p>
+</li>
+<li>
+<p><strong>Outer Product:</strong> <code>*/</code> calculates the outer product.</p>
+</li>
+<li>
+<p><strong>Sorting:</strong>  J has built-in functions for sorting arrays.</p>
+</li>
+<li>
+<p><strong>Boolean Indexing:</strong> You can select elements based on boolean conditions.  For example, selecting all elements of <code>a</code> greater than 10 would look like <code>a #~ 10 &lt; a</code>.</p>
+</li>
+</ul>
+<p>These are just a few of the many powerful array operations available in J.  The brevity and elegance of J&rsquo;s array processing capabilities are a significant advantage of the language.</p>
+<h2 class="heading" id="essential-verbs-and-adverbs">
+  Essential Verbs and Adverbs
+  <a class="anchor" href="#essential-verbs-and-adverbs">#</a>
+</h2>
+<h3 class="heading" id="key-verbs-for-data-manipulation">
+  Key verbs for data manipulation
+  <a class="anchor" href="#key-verbs-for-data-manipulation">#</a>
+</h3>
+<p>J&rsquo;s power lies in its concise verbs. Here are some crucial ones for data manipulation:</p>
+<ul>
+<li>
+<p><strong>Arithmetic Verbs:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>%</code> (addition, subtraction, multiplication, division), <code>^</code> (exponentiation). These operate element-wise on arrays.</p>
+</li>
+<li>
+<p><strong>Comparison Verbs:</strong> <code>=</code>, <code>~</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> (equals, matches, less than, greater than, less than or equals, greater than or equals).  These produce boolean arrays.</p>
+</li>
+<li>
+<p><strong>Logical Verbs:</strong> <code>&amp;</code> (and), <code>|</code> (or), <code>~:</code> (not).  These operate element-wise on boolean arrays.</p>
+</li>
+<li>
+<p><strong>Selection Verbs:</strong> <code>i.</code>, <code>#</code>, <code>#~</code> (generate integers, take, select).  <code>i.n</code> creates a sequence from 0 to n-1.  <code>x # y</code> takes the first y elements from x. <code>x #~ y</code> selects elements from x where the corresponding element in y is true.</p>
+</li>
+<li>
+<p><strong>Array Reshaping Verb:</strong> <code>$</code> (shape).  This is crucial for changing the shape of an array.  For example <code>2 3 $ i. 6</code> reshapes the vector <code>0 1 2 3 4 5</code> into a 2x3 matrix.</p>
+</li>
+<li>
+<p><strong>Concatenation Verb:</strong> <code>,</code> (append or concatenate).  <code>,/</code> concatenates along the first dimension (ravel).</p>
+</li>
+<li>
+<p><strong>Transpose Verb:</strong> <code>|:</code>, transposes a matrix (swaps rows and columns).</p>
+</li>
+</ul>
+<h3 class="heading" id="adverbs-for-modifying-verb-behavior">
+  Adverbs for modifying verb behavior
+  <a class="anchor" href="#adverbs-for-modifying-verb-behavior">#</a>
+</h3>
+<p>Adverbs modify the behavior of verbs, providing powerful control over operations.  Key adverbs include:</p>
+<ul>
+<li>
+<p><strong><code>/</code> (Insert):</strong> Applies a verb between elements of an array.  For example, <code>+/ 1 2 3</code> (insert addition) calculates <code>1 + 2 + 3</code>.</p>
+</li>
+<li>
+<p><strong>` (Over):</strong> Applies a verb to each pair of adjacent elements in an array.</p>
+</li>
+<li>
+<p><strong><code>\ </code> (Under):</strong> Similar to Over, but operates on successive pairs from the other end of the array.</p>
+</li>
+<li>
+<p><strong><code>/:</code> (Rank 1 Insert):</strong>  Applies a verb cumulatively across all the items of a vector.</p>
+</li>
+<li>
+<p><strong><code>\.</code> (Rank 0 Insert):</strong> Applies a verb to all items of an array, producing a single result.</p>
+</li>
+<li>
+<p><strong><code>@:</code> (Composition):</strong>  Chains two verbs together.</p>
+</li>
+</ul>
+<h3 class="heading" id="combining-verbs-and-adverbs-for-complex-operations">
+  Combining verbs and adverbs for complex operations
+  <a class="anchor" href="#combining-verbs-and-adverbs-for-complex-operations">#</a>
+</h3>
+<p>The true power of J is unlocked by combining verbs and adverbs.  For example:</p>
+<ul>
+<li>
+<p><code>+/</code> (sum reduction): Adds up all the elements of an array.</p>
+</li>
+<li>
+<p><code>+/\</code> (cumulative sum):  Calculates the cumulative sum of an array.</p>
+</li>
+<li>
+<p><code>+/@:</code> (sum of squares):  First squares each element, then sums the results.</p>
+</li>
+</ul>
+<p>These combinations allow complex operations to be expressed with remarkable brevity.  The order of operations is critical and understanding the flow of data through these combined operations is key to mastering J.</p>
+<h3 class="heading" id="understanding-js-rich-verb-library">
+  Understanding J&rsquo;s rich verb library
+  <a class="anchor" href="#understanding-js-rich-verb-library">#</a>
+</h3>
+<p>J boasts a vast library of built-in verbs that go far beyond the basic examples above.  Exploring this library is crucial for writing efficient and expressive J code.  These include verbs for:</p>
+<ul>
+<li>
+<p><strong>Array manipulation:</strong>  Sorting, reversing, rotating, etc.</p>
+</li>
+<li>
+<p><strong>Mathematical functions:</strong>  Trigonometric functions, logarithmic functions, etc.</p>
+</li>
+<li>
+<p><strong>Character and string manipulation:</strong>  Working with text data.</p>
+</li>
+<li>
+<p><strong>I/O operations:</strong>  Reading and writing data to files.</p>
+</li>
+</ul>
+<p>The official J documentation and numerous online resources provide comprehensive details on the vast capabilities within the J verb library.  Mastering a good subset of these will greatly enhance your ability to use J for a wide range of tasks.</p>
+<h2 class="heading" id="control-flow">
+  Control Flow
+  <a class="anchor" href="#control-flow">#</a>
+</h2>
+<h3 class="heading" id="conditional-statements-if-then-else">
+  Conditional statements: if-then-else
+  <a class="anchor" href="#conditional-statements-if-then-else">#</a>
+</h3>
+<p>J doesn&rsquo;t have explicit <code>if-then-else</code> statements in the same way as many other languages. Instead, it uses the power of array operations and boolean indexing to achieve conditional logic.  The core mechanism relies on the ability to select elements from arrays based on boolean conditions.</p>
+<p>A common approach is using the <code>#~</code> (select) verb along with a boolean array generated by comparison verbs. For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-j" data-lang="j"><span style="display:flex;"><span><span style="color:#bb60d5">x</span> <span style="color:#666">=:</span> <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">y</span> <span style="color:#666">=:</span> <span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">result</span> <span style="color:#666">=:</span> (<span style="color:#555;font-weight:bold">x</span> <span style="color:#666">&gt;</span> <span style="color:#555;font-weight:bold">y</span>) <span style="color:#666">#~</span> <span style="color:#4070a0">&#39;x is greater&#39;</span> <span style="color:#4070a0">&#39;y is greater&#39;</span>
+</span></span></code></pre></div><p>If <code>x &gt; y</code> is true, <code>result</code> will be &lsquo;x is greater&rsquo;; otherwise, it will be &lsquo;y is greater&rsquo;.  More complex conditional logic can be built using this principle, often in a functional style by composing functions and using boolean masks to select appropriate results.</p>
+<h3 class="heading" id="loops-while-and-for-loops-or-alternatives-in-j">
+  Loops: while and for loops (or alternatives in J)
+  <a class="anchor" href="#loops-while-and-for-loops-or-alternatives-in-j">#</a>
+</h3>
+<p>J prioritizes array operations over explicit loops.  Many tasks that would require loops in other languages can be elegantly handled in J using array-based operations.  Explicit looping constructs are less common.  However,  J does provide mechanisms to achieve looping behavior using recursive functions or by employing the <code>while.</code> conjunction.</p>
+<ul>
+<li>
+<p><strong>Recursive functions:</strong>  Recursive functions can be used to implement iterative processes, though a functional style utilizing array operations is often preferred for efficiency.</p>
+</li>
+<li>
+<p><strong><code>while.</code> conjunction:</strong> The <code>while.</code> conjunction can create a loop that continues as long as a condition is true.  However, this is less frequently used than other techniques.</p>
+</li>
+</ul>
+<p>Example of a <code>while.</code> loop:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-j" data-lang="j"><span style="display:flex;"><span><span style="color:#bb60d5">i</span> <span style="color:#666">=:</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#002070;font-weight:bold">while.</span> <span style="color:#bb60d5">i</span> <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span> <span style="color:#002070;font-weight:bold">do.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">i</span> <span style="color:#666">=:</span> <span style="color:#bb60d5">i</span> <span style="color:#666">+</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#002070;font-weight:bold">end.</span>
+</span></span></code></pre></div><p>This shows a basic <code>while</code> loop. However, J&rsquo;s strengths lie in its array-based approach;  iterating over arrays element by element is less common than using verbs that operate on the entire array at once.</p>
+<h3 class="heading" id="handling-errors-and-exceptions">
+  Handling errors and exceptions
+  <a class="anchor" href="#handling-errors-and-exceptions">#</a>
+</h3>
+<p>J&rsquo;s error handling is largely implicit.  Instead of explicit exception handling mechanisms like <code>try-catch</code> blocks, J typically signals errors by generating error messages.  Proper error handling often involves anticipating potential problems and designing your code to avoid situations that lead to errors.  Defensive programming techniques, such as checking for valid input before performing operations, are highly valuable in J.  J&rsquo;s capabilities for conditional logic, as described above, are employed extensively to implement such checks.</p>
+<p>For example, division by zero will produce an error message rather than throwing an exception.  The best practice is to verify your input or intermediate results before operations that might trigger errors.  In effect, error handling often becomes integrated into the core logic of your J code.</p>
+<h2 class="heading" id="inputoutput-and-file-handling">
+  Input/Output and File Handling
+  <a class="anchor" href="#inputoutput-and-file-handling">#</a>
+</h2>
+<h3 class="heading" id="reading-data-from-files">
+  Reading data from files
+  <a class="anchor" href="#reading-data-from-files">#</a>
+</h3>
+<p>J provides several ways to read data from files, depending on the file format:</p>
+<ul>
+<li>
+<p><strong>Reading text files:</strong>  The <code>fread</code> verb reads data from a text file.  You specify the file path and it returns the contents as a character array.  You will likely need to further process the character array to convert it into numerical or other data types as needed for your program&rsquo;s logic.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-j" data-lang="j"><span style="display:flex;"><span><span style="color:#bb60d5">data</span> <span style="color:#666">=:</span> <span style="color:#bb60d5">fread</span> <span style="color:#4070a0">&#39;myfile.txt&#39;</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Reading CSV files:</strong>  While there isn&rsquo;t a built-in CSV reader, you can use <code>fread</code> to read the entire file and then use string manipulation verbs (like <code>find</code>, <code>split</code>, etc.) to parse the data into a suitable array structure.  Alternatively, you might consider using external tools or libraries to handle CSV files before importing the data into your J program.</p>
+</li>
+<li>
+<p><strong>Reading binary files:</strong> For binary files, you&rsquo;d use the <code>freads</code> verb, specifying the number of bytes to read.  This is generally more complex and requires understanding the binary file format.</p>
+</li>
+</ul>
+<h3 class="heading" id="writing-data-to-files">
+  Writing data to files
+  <a class="anchor" href="#writing-data-to-files">#</a>
+</h3>
+<p>J provides <code>fwrites</code> to write data to files.  This typically involves converting your internal J data structures into a suitable format (like text or binary) for storage.</p>
+<ul>
+<li>
+<p><strong>Writing text files:</strong>  <code>fwrites</code> can write character arrays directly to files.  Often you will need to convert numeric data to character strings before writing them to a text file.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-j" data-lang="j"><span style="display:flex;"><span><span style="color:#bb60d5">data</span><span style="color:#666">=:</span> <span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">fwrites</span> <span style="color:#4070a0">&#39;output.txt&#39;</span> <span style="color:#666">;</span> (<span style="color:#666">&#34;:@$</span>)<span style="color:#bb60d5">data</span>
+</span></span></code></pre></div><p>This example converts the numeric data to strings using <code>&quot;:@</code>$ and then writes it to the file.</p>
+</li>
+<li>
+<p><strong>Writing CSV files:</strong> Similar to reading CSV, writing requires converting your data to a string representation appropriate for CSV format, typically using string concatenation verbs and adding delimiters and newline characters. External libraries might make this more efficient.</p>
+</li>
+<li>
+<p><strong>Writing binary files:</strong>  <code>fwrites</code> can write binary data directly, but careful handling is needed to ensure correct data representation and byte ordering.</p>
+</li>
+</ul>
+<h3 class="heading" id="working-with-different-file-formats">
+  Working with different file formats
+  <a class="anchor" href="#working-with-different-file-formats">#</a>
+</h3>
+<p>J&rsquo;s built-in file I/O capabilities are primarily designed for simple text and binary files. For more complex file formats (like JSON, XML, or specialized scientific data formats), you typically need to use external tools or libraries to process the data before loading it into your J program or after generating it to be written to the specified file.  This often involves using system commands or interfacing with other programming languages to handle these formats.  The choice of approach depends on your specific needs and the complexity of the file format you are working with.  If you are handling very large or highly structured files, consider pre-processing files externally for optimal efficiency.</p>
+<h2 class="heading" id="advanced-topics-optional">
+  Advanced Topics (Optional)
+  <a class="anchor" href="#advanced-topics-optional">#</a>
+</h2>
+<h3 class="heading" id="user-defined-functions">
+  User-defined functions
+  <a class="anchor" href="#user-defined-functions">#</a>
+</h3>
+<p>J allows you to define your own functions, enhancing code reusability and modularity.  These are often referred to as verbs in J&rsquo;s terminology, consistent with its tacit programming style.</p>
+<p>Functions are defined using the <code>=:</code> assignment operator, but with a different structure than simple variable assignments. The function definition often uses the monadic or dyadic form, depending on how many arguments the function expects.</p>
+<ul>
+<li><strong>Monadic (one-argument) function:</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-j" data-lang="j"><span style="display:flex;"><span><span style="color:#bb60d5">myFunc</span><span style="color:#666">=:</span> <span style="color:#40a070">3</span> <span style="color:#666">*</span> <span style="color:#666">+/</span>
+</span></span></code></pre></div><p>This defines <code>myFunc</code> as a function that takes one argument and triples the sum of its elements (it sums the elements using <code>/</code>, then multiplies the result by 3).</p>
+<ul>
+<li><strong>Dyadic (two-argument) function:</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-j" data-lang="j"><span style="display:flex;"><span><span style="color:#bb60d5">myOtherFunc</span><span style="color:#666">=:</span> <span style="color:#666">+/</span> <span style="color:#666">@:</span> (<span style="color:#666">*/</span>)
+</span></span></code></pre></div><p>This defines <code>myOtherFunc</code> which takes two arguments and calculates the sum of the element-wise product of the arguments.</p>
+<p>Function definitions can become much more complex, incorporating advanced array techniques, and verb compositions.</p>
+<h3 class="heading" id="namespaces-and-modularity">
+  Namespaces and modularity
+  <a class="anchor" href="#namespaces-and-modularity">#</a>
+</h3>
+<p>J&rsquo;s approach to namespaces and modularity differs from languages with explicit namespace declarations.  Organization is often achieved through careful naming conventions and the use of local variables within functions.</p>
+<p>You can create separate files for different sets of functions, keeping related functions together.  While not a strict namespace system, this approach provides a degree of modularity and allows for better code organization across larger projects.</p>
+<h3 class="heading" id="performance-optimization">
+  Performance optimization
+  <a class="anchor" href="#performance-optimization">#</a>
+</h3>
+<p>J&rsquo;s array-oriented nature inherently lends itself to efficient computation, especially for array-based operations.  However, certain coding practices can significantly impact performance:</p>
+<ul>
+<li>
+<p><strong>Avoid unnecessary copying:</strong>  J&rsquo;s array operations often create copies.  Efficient algorithms and understanding how J handles array assignments help minimize unnecessary copying.</p>
+</li>
+<li>
+<p><strong>Utilize built-in verbs:</strong> J&rsquo;s built-in verbs are highly optimized. Favor them over custom functions whenever possible.</p>
+</li>
+<li>
+<p><strong>Profile your code:</strong>  Use J&rsquo;s profiling tools to identify performance bottlenecks and optimize accordingly.</p>
+</li>
+<li>
+<p><strong>Algorithmic choices:</strong> Selecting algorithms suitable for J&rsquo;s array-oriented nature can greatly impact performance.  Consider whether a particular approach aligns with J&rsquo;s strengths in array processing.</p>
+</li>
+</ul>
+<h3 class="heading" id="debugging-j-code">
+  Debugging J code
+  <a class="anchor" href="#debugging-j-code">#</a>
+</h3>
+<p>Debugging J code might initially seem challenging due to its concise syntax. However, several techniques are helpful:</p>
+<ul>
+<li>
+<p><strong>Interactive mode:</strong> J&rsquo;s interactive interpreter allows you to step through your code, inspecting variables at various stages.</p>
+</li>
+<li>
+<p><strong>Printing intermediate results:</strong>  Strategic insertion of <code>echo</code> statements to print intermediate values greatly aids in identifying where issues arise.</p>
+</li>
+<li>
+<p><strong>Using the trace facility:</strong> J offers advanced debugging tools; consult the official documentation for details on the tracer.</p>
+</li>
+<li>
+<p><strong>Simplify your code:</strong> Breaking down complex functions into smaller, more manageable parts makes debugging easier.</p>
+</li>
+<li>
+<p><strong>Test-driven development:</strong> A test-driven approach to development can catch issues early in the process.</p>
+</li>
+</ul>
+<p>Debugging in J often relies on a combination of these approaches, leveraging the interactive environment and J&rsquo;s array-oriented nature to pinpoint the source of errors.</p>
+<h2 class="heading" id="resources-and-further-learning">
+  Resources and Further Learning
+  <a class="anchor" href="#resources-and-further-learning">#</a>
+</h2>
+<h3 class="heading" id="recommended-books-and-tutorials">
+  Recommended books and tutorials
+  <a class="anchor" href="#recommended-books-and-tutorials">#</a>
+</h3>
+<p>Finding comprehensive learning materials specifically for J can be slightly more challenging than for some more mainstream languages.  However, several valuable resources exist:</p>
+<ul>
+<li>
+<p><strong>&ldquo;J Introduction and Dictionary&rdquo; by Kenneth E. Iverson, et al.:</strong> While potentially dense for absolute beginners, this is a highly authoritative source directly from the creator of J, offering a deep dive into the language&rsquo;s concepts and functionality.</p>
+</li>
+<li>
+<p><strong>The J Software website:</strong> The official J Software website (jsoftware.com) provides excellent documentation, including tutorials and examples.  Beginners should start with the introductory materials available there.</p>
+</li>
+<li>
+<p><strong>Online tutorials:</strong>  Searching for &ldquo;J programming tutorial&rdquo; on platforms like YouTube and various coding tutorial websites will reveal various videos and written tutorials.  The quality can vary; look for those with positive reviews and active communities.</p>
+</li>
+<li>
+<p><strong>&ldquo;Arrays, Functions, and Programming&rdquo; by Kenneth E. Iverson:</strong> This book, while not directly focusing on J, provides a strong foundation in the array-oriented programming paradigm that underpins J.</p>
+</li>
+</ul>
+<h3 class="heading" id="online-j-communities-and-forums">
+  Online J communities and forums
+  <a class="anchor" href="#online-j-communities-and-forums">#</a>
+</h3>
+<p>Engaging with the J community is invaluable for learning and problem-solving.</p>
+<ul>
+<li>
+<p><strong>The J Software forum:</strong> The official J Software forum is a place to ask questions, share your work, and interact with experienced J programmers.</p>
+</li>
+<li>
+<p><strong>Stack Overflow:</strong>  While not exclusively dedicated to J, Stack Overflow contains a number of J-related questions and answers.  When asking questions, use appropriate J-related tags to ensure visibility to the relevant community.</p>
+</li>
+<li>
+<p><strong>Other online forums:</strong> Search for J-specific forums or groups on platforms like Reddit or other coding communities.  You might find smaller, more specialized communities focused on particular applications of J.</p>
+</li>
+</ul>
+<h3 class="heading" id="contributing-to-j-projects">
+  Contributing to J projects
+  <a class="anchor" href="#contributing-to-j-projects">#</a>
+</h3>
+<p>Contributing to open-source J projects provides an excellent way to learn from experienced developers and to improve your J skills:</p>
+<ul>
+<li>
+<p><strong>Identify projects:</strong>  Explore repositories on platforms like GitHub to find J-related projects that interest you.</p>
+</li>
+<li>
+<p><strong>Start small:</strong>  Begin with smaller contributions, such as bug fixes or improvements to documentation.  This is a good way to familiarize yourself with the project&rsquo;s coding style and processes.</p>
+</li>
+<li>
+<p><strong>Engage with the community:</strong>  Communicate with the project maintainers and other contributors to understand their needs and to get feedback on your contributions.  Respect their guidelines and coding conventions.</p>
+</li>
+<li>
+<p><strong>Follow best practices:</strong>  Adhere to best practices for open-source contributions, including proper code style, documentation, and testing.  A clear understanding of J&rsquo;s coding conventions is crucial for making your contributions as effective and easy to integrate as possible.</p>
+</li>
+</ul>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-xslt/">
+                        Beginner&#39;s Guide to XSLT
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-eiffel/">
+                        Beginner&#39;s Guide to Eiffel
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

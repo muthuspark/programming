@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Standard ML | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-standard-ml/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-standard-ml/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Standard ML">
+  <meta property="og:description" content="Introduction to Standard ML # What is Standard ML? # Standard ML (SML) is a general-purpose, statically-typed programming language with a strong emphasis on functional programming. It’s known for its rigorous type system, which helps catch errors early in the development process, and its powerful module system, which promotes code reusability and organization. SML’s design prioritizes expressiveness and mathematical precision, making it suitable for tasks requiring correctness and clarity, such as compiler construction, formal verification, and program analysis. Unlike many modern languages, SML features an interactive top-level environment, allowing for immediate experimentation and testing of code. This interactive nature makes it an excellent choice for learning functional programming concepts.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-18T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-standard-ml/">Beginner&#39;s Guide to Standard ML</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Standard ML</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-12-18T00:00:00&#43;00:00">December 18, 2024</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      17 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-standard-ml">Introduction to Standard ML</a>
+      <ul>
+        <li><a href="#what-is-standard-ml">What is Standard ML?</a></li>
+        <li><a href="#why-learn-standard-ml">Why Learn Standard ML?</a></li>
+        <li><a href="#setting-up-your-environment">Setting up your environment</a></li>
+        <li><a href="#first-sml-program-hello-world">First SML program: Hello World!</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#values-and-types">Values and Types</a></li>
+        <li><a href="#integers-reals-booleans-strings">Integers, Reals, Booleans, Strings</a></li>
+        <li><a href="#type-inference">Type inference</a></li>
+        <li><a href="#variables-and-constants">Variables and Constants</a></li>
+        <li><a href="#operators-and-expressions">Operators and Expressions</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions-and-control-structures">Functions and Control Structures</a>
+      <ul>
+        <li><a href="#defining-functions">Defining functions</a></li>
+        <li><a href="#function-application">Function application</a></li>
+        <li><a href="#conditional-statements-if-then-else">Conditional statements (if-then-else)</a></li>
+        <li><a href="#pattern-matching">Pattern matching</a></li>
+        <li><a href="#loops-and-recursion">Loops and Recursion</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-structures">Data Structures</a>
+      <ul>
+        <li><a href="#tuples">Tuples</a></li>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#records">Records</a></li>
+      </ul>
+    </li>
+    <li><a href="#modules-and-structures">Modules and Structures</a>
+      <ul>
+        <li><a href="#creating-modules">Creating modules</a></li>
+        <li><a href="#signatures">Signatures</a></li>
+        <li><a href="#functors">Functors</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics-optional">Advanced Topics (Optional)</a>
+      <ul>
+        <li><a href="#exception-handling">Exception Handling</a></li>
+        <li><a href="#references">References</a></li>
+        <li><a href="#higher-order-functions">Higher-order functions</a></li>
+        <li><a href="#abstract-data-types">Abstract data types</a></li>
+      </ul>
+    </li>
+    <li><a href="#example-projects">Example Projects</a>
+      <ul>
+        <li><a href="#simple-calculator">Simple calculator</a></li>
+        <li><a href="#text-processing">Text processing</a></li>
+        <li><a href="#basic-game">Basic game</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-standard-ml">
+  Introduction to Standard ML
+  <a class="anchor" href="#introduction-to-standard-ml">#</a>
+</h2>
+<h3 class="heading" id="what-is-standard-ml">
+  What is Standard ML?
+  <a class="anchor" href="#what-is-standard-ml">#</a>
+</h3>
+<p>Standard ML (SML) is a general-purpose, statically-typed programming language with a strong emphasis on functional programming.  It&rsquo;s known for its rigorous type system, which helps catch errors early in the development process, and its powerful module system, which promotes code reusability and organization.  SML&rsquo;s design prioritizes expressiveness and mathematical precision, making it suitable for tasks requiring correctness and clarity, such as compiler construction, formal verification, and program analysis. Unlike many modern languages, SML features an interactive top-level environment, allowing for immediate experimentation and testing of code. This interactive nature makes it an excellent choice for learning functional programming concepts.</p>
+<h3 class="heading" id="why-learn-standard-ml">
+  Why Learn Standard ML?
+  <a class="anchor" href="#why-learn-standard-ml">#</a>
+</h3>
+<p>Learning Standard ML offers several benefits:</p>
+<ul>
+<li>
+<p><strong>Strong foundation in functional programming:</strong> SML provides a solid grounding in functional programming paradigms, which are increasingly relevant in modern software development. Understanding functional concepts improves your ability to write cleaner, more maintainable, and often more efficient code in other languages.</p>
+</li>
+<li>
+<p><strong>Improved programming skills:</strong> SML&rsquo;s type system forces you to think carefully about data structures and their relationships, leading to improved coding practices in general. The focus on immutability reduces the likelihood of common programming errors stemming from mutable state.</p>
+</li>
+<li>
+<p><strong>Enhanced understanding of compiler design:</strong> SML&rsquo;s design and features are closely tied to compiler design principles. Learning SML can provide valuable insights into how compilers work.</p>
+</li>
+<li>
+<p><strong>Development of formal reasoning skills:</strong> SML&rsquo;s mathematical rigor encourages a more formal approach to problem-solving, improving your ability to reason about and verify the correctness of your programs.</p>
+</li>
+</ul>
+<h3 class="heading" id="setting-up-your-environment">
+  Setting up your environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h3>
+<p>To begin programming in Standard ML, you&rsquo;ll need an SML implementation.  Several are available, including:</p>
+<ul>
+<li><strong>MLton:</strong> A highly optimizing compiler known for its speed and efficiency.</li>
+<li><strong>Poly/ML:</strong>  A mature and widely used implementation with a rich set of libraries.</li>
+<li><strong>SML/NJ:</strong> Another popular implementation with good support and documentation.</li>
+</ul>
+<p>The specific installation process varies depending on your operating system and chosen implementation.  Consult the documentation for your selected implementation for detailed instructions. Generally, this involves downloading a suitable package for your system and following the installation wizard or instructions provided.  After installation, you should be able to start the SML interpreter by typing the appropriate command in your terminal (e.g., <code>mlton</code> or <code>poly</code>).</p>
+<h3 class="heading" id="first-sml-program-hello-world">
+  First SML program: Hello World!
+  <a class="anchor" href="#first-sml-program-hello-world">#</a>
+</h3>
+<p>The classic &ldquo;Hello, World!&rdquo; program in SML is straightforward:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span> () = print (<span style="color:#4070a0">&#34;Hello, World!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span></code></pre></div><p>This code defines a function <code>main</code> that takes no arguments and prints the string &ldquo;Hello, World!&rdquo; to the console, followed by a newline character (<code>\n</code>). To run this program:</p>
+<ol>
+<li><strong>Save the code:</strong> Save the code in a file named (for example) <code>hello.sml</code>.</li>
+<li><strong>Compile (if necessary):</strong>  Some implementations (like MLton) require compilation.  The specific command depends on your chosen implementation;  refer to the implementation&rsquo;s documentation.  For example, with MLton it might look like:  <code>mlton hello.sml</code>.</li>
+<li><strong>Run:</strong>  If compilation is necessary the compiled file can then be executed.  Alternatively, if using an interpreter such as Poly/ML, simply load the file into the REPL:  <code>use &quot;hello.sml&quot;;</code> followed by <code>main();</code>.  This will execute the <code>main</code> function and print the output.</li>
+</ol>
+<p>This simple example demonstrates the basic structure of an SML program and provides a starting point for your exploration of the language. Remember to consult the documentation for your chosen SML implementation for more details and advanced features.</p>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="values-and-types">
+  Values and Types
+  <a class="anchor" href="#values-and-types">#</a>
+</h3>
+<p>Standard ML is a statically-typed language, meaning that every value has an associated type, and the type checker ensures that operations are performed on compatible types. This prevents many common programming errors at compile time.  Types are inferred automatically in most cases, relieving the programmer from explicitly annotating every expression with its type.  Values are the fundamental building blocks of SML programs.  They can be literals (like numbers or strings), variables referencing values, or results of expressions.  The type of a value determines the operations that can be performed on it.</p>
+<h3 class="heading" id="integers-reals-booleans-strings">
+  Integers, Reals, Booleans, Strings
+  <a class="anchor" href="#integers-reals-booleans-strings">#</a>
+</h3>
+<p>SML provides several built-in data types:</p>
+<ul>
+<li>
+<p><strong>Integers (<code>int</code>):</strong> Represent whole numbers (e.g., <code>1</code>, <code>-10</code>, <code>0</code>, <code>42</code>).  Standard arithmetic operations (+, -, *, /, div, mod) are available.  <code>div</code> performs integer division, and <code>mod</code> gives the remainder.</p>
+</li>
+<li>
+<p><strong>Reals (<code>real</code>):</strong> Represent floating-point numbers (e.g., <code>3.14</code>, <code>-2.5</code>, <code>0.0</code>).  Standard arithmetic operations (+, -, *, /) are supported.</p>
+</li>
+<li>
+<p><strong>Booleans (<code>bool</code>):</strong> Represent truth values (<code>true</code> and <code>false</code>).  Boolean operations include <code>andalso</code> (logical AND), <code>orelse</code> (logical OR), and <code>not</code> (logical NOT). Note that <code>andalso</code> and <code>orelse</code> are short-circuiting operators.</p>
+</li>
+<li>
+<p><strong>Strings (<code>string</code>):</strong> Represent sequences of characters (e.g., <code>&quot;Hello&quot;</code>, <code>&quot;World!&quot;</code>).  String concatenation is done using the <code>^</code> operator (e.g., <code>&quot;Hello&quot; ^ &quot; World!&quot;</code>).</p>
+</li>
+</ul>
+<h3 class="heading" id="type-inference">
+  Type inference
+  <a class="anchor" href="#type-inference">#</a>
+</h3>
+<p>SML&rsquo;s type inference system automatically determines the type of expressions. This avoids the need for explicit type declarations in many cases, making the code cleaner and more concise. The compiler infers the types based on how values are used in expressions. For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">x</span> = <span style="color:#40a070">10</span>; <span style="color:#60a0b0;font-style:italic">(* x is inferred to be of type int *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">y</span> = <span style="color:#40a070">3.14</span>; <span style="color:#60a0b0;font-style:italic">(* y is inferred to be of type real *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">z</span> = x + <span style="color:#40a070">5</span>; <span style="color:#60a0b0;font-style:italic">(* z is inferred to be of type int *)</span>
+</span></span></code></pre></div><p>The compiler will report a type error if an operation is performed on incompatible types (e.g., adding an integer and a string).</p>
+<h3 class="heading" id="variables-and-constants">
+  Variables and Constants
+  <a class="anchor" href="#variables-and-constants">#</a>
+</h3>
+<p>Variables are used to store values. In SML, variables are immutable; once a value is assigned to a variable, it cannot be changed.  This promotes functional programming style and helps avoid many side-effect related bugs.  Variables are declared using the <code>val</code> keyword:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">x</span> = <span style="color:#40a070">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">name</span> = <span style="color:#4070a0">&#34;Alice&#34;</span>;
+</span></span></code></pre></div><p>Constants are similar to variables but often used to represent values that should not be changed during the program&rsquo;s execution.  There&rsquo;s no specific keyword for constants in SML; the immutability of variables effectively serves as a form of constant declaration if the intent is to not change the value after it&rsquo;s bound to a variable.</p>
+<h3 class="heading" id="operators-and-expressions">
+  Operators and Expressions
+  <a class="anchor" href="#operators-and-expressions">#</a>
+</h3>
+<p>Operators perform operations on values.  SML supports a variety of operators, including arithmetic operators (+, -, *, /, div, mod), relational operators (=, &lt;&gt;, &lt;, &gt;, &lt;=, &gt;=), logical operators (andalso, orelse, not), and string concatenation (^).</p>
+<p>Expressions are combinations of values, variables, operators, and function calls.  They evaluate to a value. Examples include:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#40a070">1</span> + <span style="color:#40a070">2</span> <span style="color:#60a0b0;font-style:italic">(* arithmetic expression *)</span>
+</span></span><span style="display:flex;"><span>x &gt; <span style="color:#40a070">5</span> <span style="color:#60a0b0;font-style:italic">(* relational expression *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#4070a0">&#34;Hello&#34;</span> ^ <span style="color:#4070a0">&#34; &#34;</span> ^ <span style="color:#4070a0">&#34;World!&#34;</span> <span style="color:#60a0b0;font-style:italic">(* string concatenation *)</span>
+</span></span></code></pre></div><p>The order of operations follows standard mathematical precedence rules. Parentheses can be used to override precedence.  Function application is done by simply writing the function name followed by the arguments in parentheses.</p>
+<h2 class="heading" id="functions-and-control-structures">
+  Functions and Control Structures
+  <a class="anchor" href="#functions-and-control-structures">#</a>
+</h2>
+<h3 class="heading" id="defining-functions">
+  Defining functions
+  <a class="anchor" href="#defining-functions">#</a>
+</h3>
+<p>Functions in SML are first-class citizens; they can be passed as arguments to other functions, returned as results, and stored in data structures. Functions are defined using the <code>fun</code> keyword, followed by the function name, parameter list, and function body.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">add</span> (x: int, y: int): int = x + y;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">square</span> (x: real): real = x * x;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">greet</span> (name: string): string = <span style="color:#4070a0">&#34;Hello, &#34;</span> ^ name ^ <span style="color:#4070a0">&#34;!&#34;</span>;
+</span></span></code></pre></div><p>These examples show functions with type annotations.  While type annotations are optional in many cases (due to type inference), they are highly recommended for clarity and to help catch errors early.</p>
+<h3 class="heading" id="function-application">
+  Function application
+  <a class="anchor" href="#function-application">#</a>
+</h3>
+<p>Function application is straightforward: simply write the function name followed by its arguments enclosed in parentheses.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">sum</span> = add(<span style="color:#40a070">5</span>, <span style="color:#40a070">3</span>); <span style="color:#60a0b0;font-style:italic">(* sum will be 8 *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">area</span> = square(<span style="color:#40a070">5.0</span>); <span style="color:#60a0b0;font-style:italic">(* area will be 25.0 *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">message</span> = greet(<span style="color:#4070a0">&#34;Alice&#34;</span>); <span style="color:#60a0b0;font-style:italic">(* message will be &#34;Hello, Alice!&#34; *)</span>
+</span></span></code></pre></div><h3 class="heading" id="conditional-statements-if-then-else">
+  Conditional statements (if-then-else)
+  <a class="anchor" href="#conditional-statements-if-then-else">#</a>
+</h3>
+<p>Conditional statements use the <code>if-then-else</code> construct.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">abs</span> (x: int): int =
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> x &gt;= <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">then</span> x <span style="color:#007020;font-weight:bold">else</span> ~x; <span style="color:#60a0b0;font-style:italic">(* ~x is the negation of x *)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">max</span> (x: int, y: int): int =
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> x &gt; y <span style="color:#007020;font-weight:bold">then</span> x <span style="color:#007020;font-weight:bold">else</span> y;
+</span></span></code></pre></div><p>The <code>if</code> expression evaluates a boolean condition. If the condition is <code>true</code>, the <code>then</code> branch is executed; otherwise, the <code>else</code> branch is executed.</p>
+<h3 class="heading" id="pattern-matching">
+  Pattern matching
+  <a class="anchor" href="#pattern-matching">#</a>
+</h3>
+<p>Pattern matching is a powerful feature of SML that allows you to select different code branches based on the structure of data. It provides a concise and elegant way to handle different cases within a function.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">factorial</span> <span style="color:#40a070">0</span> = <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>  | <span style="color:#06287e">factorial</span> n = n * factorial(n - <span style="color:#40a070">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">isEven</span> n =
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> n mod <span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">of</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#40a070">0</span> =&gt; true
+</span></span><span style="display:flex;"><span>      | <span style="color:#40a070">1</span> =&gt; false
+</span></span><span style="display:flex;"><span>      | _ =&gt; false; <span style="color:#60a0b0;font-style:italic">(* handles any other case, though it should never be reached here *)</span>
+</span></span></code></pre></div><p>The <code>factorial</code> function uses pattern matching on the input <code>n</code>. If <code>n</code> is 0, it returns 1; otherwise, it recursively computes <code>n * factorial(n-1)</code>. The <code>isEven</code> function showcases pattern matching within a <code>case</code> expression.</p>
+<h3 class="heading" id="loops-and-recursion">
+  Loops and Recursion
+  <a class="anchor" href="#loops-and-recursion">#</a>
+</h3>
+<p>SML doesn&rsquo;t have explicit loop constructs like <code>for</code> or <code>while</code> loops found in imperative languages. Iteration is typically achieved through recursion.  Recursion is a powerful technique where a function calls itself.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">sumList</span> [] = <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>  | <span style="color:#06287e">sumList</span> (head::tail) = head + sumList tail;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">power</span> (x: real, n: int): real =
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> n = <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">then</span> <span style="color:#40a070">1.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> n &gt; <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">then</span> x * power(x, n - <span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">else</span> <span style="color:#40a070">1.0</span> / power(x, ~n);  <span style="color:#60a0b0;font-style:italic">(* handles negative exponents *)</span>
+</span></span></code></pre></div><p>The <code>sumList</code> function recursively sums the elements of a list.  The <code>power</code> function calculates x raised to the power of n using recursion, handling both positive and negative exponents. Recursion is a fundamental concept in functional programming and provides an elegant way to express iterative processes.  However, it&rsquo;s crucial to ensure that recursive functions have a well-defined base case to avoid infinite recursion.</p>
+<h2 class="heading" id="data-structures">
+  Data Structures
+  <a class="anchor" href="#data-structures">#</a>
+</h2>
+<h3 class="heading" id="tuples">
+  Tuples
+  <a class="anchor" href="#tuples">#</a>
+</h3>
+<p>Tuples are finite ordered sequences of values, where each value can have a different type.  They are created by enclosing the values within parentheses, separated by commas.  Tuples are immutable; once created, their elements cannot be changed.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">point</span> = (<span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>); <span style="color:#60a0b0;font-style:italic">(* A tuple of two integers *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">person</span> = (<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#40a070">30</span>, true); <span style="color:#60a0b0;font-style:italic">(* A tuple of a string, integer, and boolean *)</span>
+</span></span></code></pre></div><p>To access the elements of a tuple, you can use pattern matching:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">distance</span> ((x1: int, y1: int), (x2: int, y2: int)): real =
+</span></span><span style="display:flex;"><span>  <span style="color:#0e84b5;font-weight:bold">Math.</span>sqrt(<span style="color:#0e84b5;font-weight:bold">Real.</span>fromInt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1)));
+</span></span></code></pre></div><p>Here, the <code>distance</code> function uses pattern matching to directly access the x and y coordinates of two points.</p>
+<h3 class="heading" id="lists">
+  Lists
+  <a class="anchor" href="#lists">#</a>
+</h3>
+<p>Lists are ordered sequences of values of the <em>same</em> type.  Unlike tuples, lists are mutable, meaning that you can add or remove elements. Lists are constructed using the <code>::</code> (cons) operator which adds an element to the front of the list or using list notation <code>[e1, e2, e3, ...]</code>. The empty list is denoted by <code>[]</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">numbers</span> = <span style="color:#40a070">1</span> :: <span style="color:#40a070">2</span> :: <span style="color:#40a070">3</span> :: []; <span style="color:#60a0b0;font-style:italic">(* List with elements 1, 2, 3 *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">numbers2</span> = [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>]; <span style="color:#60a0b0;font-style:italic">(* equivalent list notation *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">strings</span> = [<span style="color:#4070a0">&#34;hello&#34;</span>, <span style="color:#4070a0">&#34;world&#34;</span>];
+</span></span></code></pre></div><p>List processing is often done recursively:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">sumList</span> [] = <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>  | <span style="color:#06287e">sumList</span> (head::tail) = head + sumList tail;
+</span></span></code></pre></div><p>This <code>sumList</code> function recursively sums the elements of a list.  Other common list functions include <code>List.map</code>, <code>List.filter</code>, and <code>List.foldl</code>.  Refer to the SML Basis Library documentation for details on these functions.</p>
+<h3 class="heading" id="records">
+  Records
+  <a class="anchor" href="#records">#</a>
+</h3>
+<p>Records are collections of labeled values, where each value has an associated name (label).  They are useful for representing structured data where the elements have meaningful names.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">person</span> = {name = <span style="color:#4070a0">&#34;Bob&#34;</span>, age = <span style="color:#40a070">25</span>, city = <span style="color:#4070a0">&#34;New York&#34;</span>};
+</span></span></code></pre></div><p>Record fields are accessed using the <code>.</code> operator:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">name</span> = <span style="color:#0e84b5;font-weight:bold">person.</span>name; <span style="color:#60a0b0;font-style:italic">(* name will be &#34;Bob&#34; *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">age</span> = <span style="color:#0e84b5;font-weight:bold">person.</span>age;  <span style="color:#60a0b0;font-style:italic">(* age will be 25 *)</span>
+</span></span></code></pre></div><p>Records can also be pattern-matched:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">greet</span> ({name, age}: {name: string, age: int}) =
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Hello, &#34;</span> ^ name ^ <span style="color:#4070a0">&#34;! You are &#34;</span> ^ <span style="color:#0e84b5;font-weight:bold">Int.</span>toString age ^ <span style="color:#4070a0">&#34; years old.&#34;</span>;
+</span></span></code></pre></div><p>This <code>greet</code> function uses pattern matching to extract the <code>name</code> and <code>age</code> fields from the <code>person</code> record.  Records provide a structured way to organize data with named fields, enhancing code readability and maintainability.</p>
+<h2 class="heading" id="modules-and-structures">
+  Modules and Structures
+  <a class="anchor" href="#modules-and-structures">#</a>
+</h2>
+<p>SML&rsquo;s module system promotes code organization, reusability, and abstraction.  Modules encapsulate related data types, functions, and other declarations, providing a way to structure larger programs.  The core components of SML&rsquo;s module system are structures and signatures.</p>
+<h3 class="heading" id="creating-modules">
+  Creating modules
+  <a class="anchor" href="#creating-modules">#</a>
+</h3>
+<p>A structure groups together related declarations, similar to a namespace or class in other languages.  Structures are created using the <code>struct...end</code> construct.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">structure</span> <span style="color:#0e84b5;font-weight:bold">MyMath</span> = <span style="color:#007020;font-weight:bold">struct</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">square</span> (x: real) = x * x;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">cube</span> (x: real) = x * x * x;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>;
+</span></span></code></pre></div><p>This creates a structure named <code>MyMath</code> containing functions <code>square</code> and <code>cube</code>.  To access these functions, you use the <code>.</code> operator:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">x</span> = <span style="color:#0e84b5;font-weight:bold">MyMath.</span>square(<span style="color:#40a070">5.0</span>);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">y</span> = <span style="color:#0e84b5;font-weight:bold">MyMath.</span>cube(<span style="color:#40a070">2.0</span>);
+</span></span></code></pre></div><h3 class="heading" id="signatures">
+  Signatures
+  <a class="anchor" href="#signatures">#</a>
+</h3>
+<p>A signature specifies the interface of a structure. It declares the types and values that are accessible from the outside.  Signatures are defined using the <code>sig...end</code> construct.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">signature</span> <span style="color:#0e84b5;font-weight:bold">MATH_SIG</span> = <span style="color:#007020;font-weight:bold">sig</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">square</span> : real -&gt; real;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">cube</span> : real -&gt; real;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>;
+</span></span></code></pre></div><p>This signature <code>MATH_SIG</code> specifies that any structure implementing it must provide functions <code>square</code> and <code>cube</code> with the given types.  You can then check whether a structure matches a signature:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">structure</span> <span style="color:#0e84b5;font-weight:bold">MyMath</span> : MATH_SIG = <span style="color:#007020;font-weight:bold">struct</span> <span style="color:#60a0b0;font-style:italic">(* ... (implementation as before) ... *)</span> <span style="color:#007020;font-weight:bold">end</span>;
+</span></span></code></pre></div><p>This declares <code>MyMath</code> to adhere to the <code>MATH_SIG</code> signature. The compiler will verify that the structure&rsquo;s interface matches the signature. Signatures enforce modularity and help prevent accidental changes to the interface.</p>
+<h3 class="heading" id="functors">
+  Functors
+  <a class="anchor" href="#functors">#</a>
+</h3>
+<p>Functors are functions that take structures as input and return structures as output. They are a powerful mechanism for code reuse and generating customized modules.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">functor</span> <span style="color:#0e84b5;font-weight:bold">MakeStack</span> (<span style="color:#007020;font-weight:bold">structure</span> <span style="color:#0e84b5;font-weight:bold">Elem</span>: <span style="color:#007020;font-weight:bold">sig</span> <span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">t</span> <span style="color:#007020;font-weight:bold">end</span>) : <span style="color:#007020;font-weight:bold">sig</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">t</span><span style="">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">empty</span> : t;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">push</span> : <span style="color:#0e84b5;font-weight:bold">Elem.</span>t * t -&gt; t;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">pop</span> : t -&gt; <span style="color:#0e84b5;font-weight:bold">Elem.</span>t * t;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">isEmpty</span> : t -&gt; bool;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span> =
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">t</span> = <span style="color:#0e84b5;font-weight:bold">Elem.</span>t list;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">empty</span> = [];
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">push</span> (x, s) = x :: s;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">pop</span> [] = <span style="color:#007020;font-weight:bold">raise</span> Empty
+</span></span><span style="display:flex;"><span>    | <span style="color:#06287e">pop</span> (x::xs) = (x, xs);
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">isEmpty</span> s = s = [];
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">exception</span> <span style="color:#0e84b5;font-weight:bold">Empty</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">structure</span> <span style="color:#0e84b5;font-weight:bold">IntStack</span> = MakeStack(<span style="color:#007020;font-weight:bold">struct</span> <span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">t</span> = int <span style="color:#007020;font-weight:bold">end</span>);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">structure</span> <span style="color:#0e84b5;font-weight:bold">StringStack</span> = MakeStack(<span style="color:#007020;font-weight:bold">struct</span> <span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">t</span> = string <span style="color:#007020;font-weight:bold">end</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">intStack</span> = <span style="color:#0e84b5;font-weight:bold">IntStack.</span>push(<span style="color:#40a070">1</span>, <span style="color:#0e84b5;font-weight:bold">IntStack.</span>empty);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">stringStack</span> = <span style="color:#0e84b5;font-weight:bold">StringStack.</span>push(<span style="color:#4070a0">&#34;hello&#34;</span>, <span style="color:#0e84b5;font-weight:bold">StringStack.</span>empty);
+</span></span></code></pre></div><p>This <code>MakeStack</code> functor creates a generic stack module. The type of element in the stack is determined by the input structure <code>Elem</code>.  <code>MakeStack</code> is then used to create specialized stack modules for integers (<code>IntStack</code>) and strings (<code>StringStack</code>).  Functors allow you to write generic code that can be adapted to different data types, improving code reusability and reducing redundancy.</p>
+<h2 class="heading" id="advanced-topics-optional">
+  Advanced Topics (Optional)
+  <a class="anchor" href="#advanced-topics-optional">#</a>
+</h2>
+<h3 class="heading" id="exception-handling">
+  Exception Handling
+  <a class="anchor" href="#exception-handling">#</a>
+</h3>
+<p>Exceptions allow you to handle runtime errors gracefully.  In SML, exceptions are raised using the <code>raise</code> keyword and caught using the <code>handle</code> clause.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">exception</span> <span style="color:#0e84b5;font-weight:bold">MyError</span> <span style="color:#007020;font-weight:bold">of</span> string;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">safeDiv</span> (x: int, y: int): int =
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> y = <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">then</span> <span style="color:#007020;font-weight:bold">raise</span> MyError <span style="color:#4070a0">&#34;Division by zero&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">else</span> x div y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">result</span> =
+</span></span><span style="display:flex;"><span>  (safeDiv (<span style="color:#40a070">10</span>, <span style="color:#40a070">2</span>)) <span style="color:#007020;font-weight:bold">handle</span> MyError msg =&gt; (print (<span style="color:#4070a0">&#34;Error: &#34;</span> ^ msg ^ <span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>); <span style="color:#40a070">0</span>);
+</span></span></code></pre></div><p>The <code>safeDiv</code> function raises a <code>MyError</code> exception if the divisor is zero. The <code>handle</code> clause catches this exception, prints an error message, and returns 0.  Custom exceptions can be defined using the <code>exception</code> keyword, providing specific error types for better error handling.</p>
+<h3 class="heading" id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h3>
+<p>While SML emphasizes immutability, it does provide references for situations where mutable state is necessary. References are created using the <code>ref</code> keyword.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">x</span> = ref <span style="color:#40a070">10</span>; <span style="color:#60a0b0;font-style:italic">(* x is a reference holding the value 10 *)</span>
+</span></span><span style="display:flex;"><span>!x; <span style="color:#60a0b0;font-style:italic">(* Access the value of x (dereferencing) - returns 10 *)</span>
+</span></span><span style="display:flex;"><span>x := <span style="color:#40a070">20</span>; <span style="color:#60a0b0;font-style:italic">(* Update the value of x (assignment) *)</span>
+</span></span><span style="display:flex;"><span>!x; <span style="color:#60a0b0;font-style:italic">(* Access the updated value of x (dereferencing) - returns 20 *)</span>
+</span></span></code></pre></div><p>The <code>!</code> operator dereferences a reference to obtain its value, and the <code>:=</code> operator assigns a new value to a reference.  While references offer mutability, their use should be carefully considered to avoid side effects and maintain the benefits of a functional programming style.</p>
+<h3 class="heading" id="higher-order-functions">
+  Higher-order functions
+  <a class="anchor" href="#higher-order-functions">#</a>
+</h3>
+<p>Higher-order functions are functions that take other functions as arguments or return functions as results. This is a key feature of functional programming, enabling powerful abstractions and code reuse.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">apply</span> (f, x) = f x; <span style="color:#60a0b0;font-style:italic">(* A higher-order function *)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">square</span> (x: real) = x * x;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">cube</span> (x: real) = x * x * x;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">result1</span> = apply(square, <span style="color:#40a070">5.0</span>); <span style="color:#60a0b0;font-style:italic">(* result1 = 25.0 *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">result2</span> = apply(cube, <span style="color:#40a070">2.0</span>);  <span style="color:#60a0b0;font-style:italic">(* result2 = 8.0 *)</span>
+</span></span></code></pre></div><p><code>apply</code> is a higher-order function; it takes a function <code>f</code> and a value <code>x</code> as arguments and applies <code>f</code> to <code>x</code>.  This allows you to treat functions as data, enabling more flexible and expressive code.  <code>List.map</code>, <code>List.filter</code>, and <code>List.foldl</code> are examples of built-in higher-order functions.</p>
+<h3 class="heading" id="abstract-data-types">
+  Abstract data types
+  <a class="anchor" href="#abstract-data-types">#</a>
+</h3>
+<p>Abstract data types (ADTs) provide a way to define data types along with the operations that can be performed on them, hiding the internal representation.  This promotes data abstraction and information hiding.  ADTs are usually implemented using structures and signatures.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">signature</span> <span style="color:#0e84b5;font-weight:bold">STACK</span> = <span style="color:#007020;font-weight:bold">sig</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">type</span> <span style="color:#555;font-weight:bold">&#39;a</span> <span style="color:#902000">stack</span><span style="">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">empty</span> : <span style="color:#555;font-weight:bold">&#39;a</span> stack;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">push</span> : <span style="color:#555;font-weight:bold">&#39;a</span> * <span style="color:#555;font-weight:bold">&#39;a</span> stack -&gt; <span style="color:#555;font-weight:bold">&#39;a</span> stack;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">pop</span> : <span style="color:#555;font-weight:bold">&#39;a</span> stack -&gt; <span style="color:#555;font-weight:bold">&#39;a</span> * <span style="color:#555;font-weight:bold">&#39;a</span> stack;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">isEmpty</span> : <span style="color:#555;font-weight:bold">&#39;a</span> stack -&gt; bool;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">structure</span> <span style="color:#0e84b5;font-weight:bold">StackImpl</span> : STACK = <span style="color:#007020;font-weight:bold">struct</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">type</span> <span style="color:#555;font-weight:bold">&#39;a</span> <span style="color:#902000">stack</span> = <span style="color:#555;font-weight:bold">&#39;a</span> list;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">empty</span> = [];
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">push</span> (x, s) = x :: s;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">pop</span> [] = <span style="color:#007020;font-weight:bold">raise</span> Empty
+</span></span><span style="display:flex;"><span>    | <span style="color:#06287e">pop</span> (x :: xs) = (x, xs);
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">isEmpty</span> s = s = [];
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">exception</span> <span style="color:#0e84b5;font-weight:bold">Empty</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>;
+</span></span></code></pre></div><p>This code defines a <code>STACK</code> signature specifying the interface for a stack and a <code>StackImpl</code> structure implementing that interface using a list. The internal representation (<code>'a list</code>) is hidden from the users of the <code>StackImpl</code> structure. This abstraction helps maintain the integrity and consistency of the data.  The user only interacts with the functions defined in the signature, preventing direct manipulation of the underlying list representation.</p>
+<h2 class="heading" id="example-projects">
+  Example Projects
+  <a class="anchor" href="#example-projects">#</a>
+</h2>
+<p>This section outlines example projects to solidify your understanding of Standard ML and demonstrate its application in different domains.  These are simplified examples, and you can expand upon them to create more complex and feature-rich applications.</p>
+<h3 class="heading" id="simple-calculator">
+  Simple calculator
+  <a class="anchor" href="#simple-calculator">#</a>
+</h3>
+<p>A simple calculator can perform basic arithmetic operations (+, -, *, /).  This project will involve creating functions for each operation and a main function to handle user input and output.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">add</span> (x: real, y: real) = x + y;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">subtract</span> (x: real, y: real) = x - y;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">multiply</span> (x: real, y: real) = x * y;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">divide</span> (x: real, y: real) = <span style="color:#007020;font-weight:bold">if</span> y = <span style="color:#40a070">0.0</span> <span style="color:#007020;font-weight:bold">then</span> <span style="color:#007020;font-weight:bold">raise</span> DivByZero <span style="color:#007020;font-weight:bold">else</span> x / y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">exception</span> <span style="color:#0e84b5;font-weight:bold">DivByZero</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">calculate</span> (<span style="color:#007020;font-weight:bold">op</span>: string, x: real, y: real) =
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> <span style="color:#007020;font-weight:bold">op</span> <span style="color:#007020;font-weight:bold">of</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4070a0">&#34;+&#34;</span> =&gt; add(x, y)
+</span></span><span style="display:flex;"><span>  | <span style="color:#4070a0">&#34;-&#34;</span> =&gt; subtract(x, y)
+</span></span><span style="display:flex;"><span>  | <span style="color:#4070a0">&#34;*&#34;</span> =&gt; multiply(x, y)
+</span></span><span style="display:flex;"><span>  | <span style="color:#4070a0">&#34;/&#34;</span> =&gt; divide(x, y)
+</span></span><span style="display:flex;"><span>  | _ =&gt; <span style="color:#007020;font-weight:bold">raise</span> UnknownOp;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">exception</span> <span style="color:#0e84b5;font-weight:bold">UnknownOp</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">(* Simple interaction loop (can be improved with more robust input handling) *)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>() =
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">input</span> = <span style="color:#0e84b5;font-weight:bold">TextIO.</span>inputLine <span style="color:#0e84b5;font-weight:bold">TextIO.</span>stdIn;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> [<span style="color:#007020;font-weight:bold">op</span>, xStr, yStr] = <span style="color:#0e84b5;font-weight:bold">String.</span>tokens (<span style="color:#007020;font-weight:bold">fn</span> c =&gt; c = <span style="color:#555;font-weight:bold">&#39;</span> <span style="color:#555;font-weight:bold">&#39;</span>) input;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">x</span> = <span style="color:#0e84b5;font-weight:bold">Real.</span>fromString xStr;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">y</span> = <span style="color:#0e84b5;font-weight:bold">Real.</span>fromString yStr;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">in</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#007020;font-weight:bold">case</span> calculate(<span style="color:#007020;font-weight:bold">op</span>, x, y) <span style="color:#007020;font-weight:bold">of</span>
+</span></span><span style="display:flex;"><span>      SOME result =&gt; print (<span style="color:#4070a0">&#34;Result: &#34;</span> ^ <span style="color:#0e84b5;font-weight:bold">Real.</span>toString result ^ <span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>    | NONE =&gt; print (<span style="color:#4070a0">&#34;Invalid operation</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>));
+</span></span><span style="display:flex;"><span>    main()
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">handle</span> DivByZero =&gt; print (<span style="color:#4070a0">&#34;Division by zero error!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>       | UnknownOp =&gt; print (<span style="color:#4070a0">&#34;Unknown operation!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>main();
+</span></span></code></pre></div><p>This example uses exception handling for division by zero and unknown operations.  Error handling and input validation should be made more robust in a production-ready calculator.</p>
+<h3 class="heading" id="text-processing">
+  Text processing
+  <a class="anchor" href="#text-processing">#</a>
+</h3>
+<p>A text processing program might involve tasks like counting word occurrences, finding specific words, or performing text transformations (e.g., converting to uppercase).  This would involve using string manipulation functions and potentially list processing for handling words.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">countWord</span> (word: string, text: string): int =
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">words</span> = <span style="color:#0e84b5;font-weight:bold">String.</span>tokens (<span style="color:#007020;font-weight:bold">fn</span> c =&gt; c = <span style="color:#555;font-weight:bold">&#39;</span> <span style="color:#555;font-weight:bold">&#39;</span>) text;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">count</span> [] = <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>      | <span style="color:#06287e">count</span> (h :: t) = <span style="color:#007020;font-weight:bold">if</span> h = word <span style="color:#007020;font-weight:bold">then</span> <span style="color:#40a070">1</span> + count t <span style="color:#007020;font-weight:bold">else</span> count t;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">in</span>
+</span></span><span style="display:flex;"><span>    count words
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">text</span> = <span style="color:#4070a0">&#34;This is a test. This is a sample text.&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">count</span> = countWord(<span style="color:#4070a0">&#34;is&#34;</span>, text); <span style="color:#60a0b0;font-style:italic">(* count will be 2 *)</span>
+</span></span><span style="display:flex;"><span>print (<span style="color:#4070a0">&#34;The word &#39;is&#39; appears &#34;</span> ^ <span style="color:#0e84b5;font-weight:bold">Int.</span>toString count ^ <span style="color:#4070a0">&#34; times.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span></code></pre></div><p>This example demonstrates counting word occurrences. You could extend this to incorporate more advanced text processing tasks.</p>
+<h3 class="heading" id="basic-game">
+  Basic game
+  <a class="anchor" href="#basic-game">#</a>
+</h3>
+<p>A simple game like &ldquo;Guess the Number&rdquo; can be implemented to illustrate control flow and user interaction.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sml" data-lang="sml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">guessTheNumber</span> () =
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">secretNumber</span> = <span style="color:#0e84b5;font-weight:bold">Random.</span>randInt (<span style="color:#40a070">1</span>, <span style="color:#40a070">100</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">play</span> (guessesLeft: int) =
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">if</span> guessesLeft = <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>        print (<span style="color:#4070a0">&#34;You ran out of guesses! The number was &#34;</span> ^ <span style="color:#0e84b5;font-weight:bold">Int.</span>toString secretNumber ^ <span style="color:#4070a0">&#34;.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">let</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">guessStr</span> = <span style="color:#0e84b5;font-weight:bold">TextIO.</span>inputLine <span style="color:#0e84b5;font-weight:bold">TextIO.</span>stdIn;
+</span></span><span style="display:flex;"><span>          <span style="color:#007020;font-weight:bold">val</span> <span style="color:#bb60d5">guess</span> = (<span style="color:#007020;font-weight:bold">case</span> <span style="color:#0e84b5;font-weight:bold">Int.</span>fromString guessStr <span style="color:#007020;font-weight:bold">of</span>
+</span></span><span style="display:flex;"><span>                        SOME i =&gt; i
+</span></span><span style="display:flex;"><span>                      | NONE =&gt; (print <span style="color:#4070a0">&#34;Invalid input. Please enter a number.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>; play guessesLeft));
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">in</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#007020;font-weight:bold">if</span> guess = secretNumber <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>            print (<span style="color:#4070a0">&#34;Congratulations! You guessed the number in &#34;</span> ^ <span style="color:#0e84b5;font-weight:bold">Int.</span>toString (<span style="color:#40a070">100</span> - guessesLeft) ^ <span style="color:#4070a0">&#34; tries.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> guess &lt; secretNumber <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>            print (<span style="color:#4070a0">&#34;Too low! Try again.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>; play (guessesLeft - <span style="color:#40a070">1</span>))
+</span></span><span style="display:flex;"><span>          <span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>            print (<span style="color:#4070a0">&#34;Too high! Try again.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>; play (guessesLeft - <span style="color:#40a070">1</span>))
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">in</span>
+</span></span><span style="display:flex;"><span>    print (<span style="color:#4070a0">&#34;Welcome to Guess the Number!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>    print (<span style="color:#4070a0">&#34;I&#39;ve chosen a number between 1 and 100.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>    play <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>guessTheNumber();
+</span></span></code></pre></div><p>This “Guess the Number” game provides a basic example of implementing game logic using functions and recursion for game loop.  You could enhance this with features such as difficulty levels or score tracking.  Remember to include <code>use &quot;Random&quot;;</code> at the beginning for random number generation.  These examples provide a starting point. You can expand upon them to create more sophisticated and engaging projects.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-io/">
+                        Beginner&#39;s Guide to Io
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-agda/">
+                        Beginner&#39;s Guide to Agda
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

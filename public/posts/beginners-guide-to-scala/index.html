@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Scala | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-scala/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-scala/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Scala">
+  <meta property="og:description" content="Setting up your environment # This section guides you through setting up your development environment for Scala programming. We’ll cover installing Java (a prerequisite for Scala), installing Scala itself, choosing a suitable IDE, and creating your first project.
+Installing Java # Scala runs on the Java Virtual Machine (JVM), so you need a Java Development Kit (JDK) installed before you can install Scala. Here’s how:
+Download: Go to the official Oracle website (https://www.oracle.com/java/technologies/javase-downloads.html) or a reputable alternative like AdoptOpenJDK (https://adoptopenjdk.net/) and download a JDK version appropriate for your operating system (Windows, macOS, Linux). Choose a long-term support (LTS) release for stability.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-04T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-scala/">Beginner&#39;s Guide to Scala</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Scala</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-03-04T00:00:00&#43;00:00">March 4, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      23 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#setting-up-your-environment">Setting up your environment</a>
+      <ul>
+        <li><a href="#installing-java">Installing Java</a></li>
+        <li><a href="#installing-scala">Installing Scala</a></li>
+        <li><a href="#choosing-an-ide-intellij-vs-code">Choosing an IDE (IntelliJ, VS Code)</a></li>
+        <li><a href="#setting-up-your-first-project">Setting up your first project</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#values-and-variables">Values and Variables</a></li>
+        <li><a href="#data-types-int-double-boolean-string">Data Types (Int, Double, Boolean, String)</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#type-inference">Type Inference</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-structures">Control Structures</a>
+      <ul>
+        <li><a href="#if-else-statements">if-else statements</a></li>
+        <li><a href="#for-loops">for loops</a></li>
+        <li><a href="#while-loops">while loops</a></li>
+        <li><a href="#match-expressions">match expressions</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions">Functions</a>
+      <ul>
+        <li><a href="#defining-functions">Defining Functions</a></li>
+        <li><a href="#function-parameters">Function Parameters</a></li>
+        <li><a href="#return-types">Return Types</a></li>
+        <li><a href="#higher-order-functions">Higher-Order Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#object-oriented-programming-oop-in-scala">Object-Oriented Programming (OOP) in Scala</a>
+      <ul>
+        <li><a href="#classes-and-objects">Classes and Objects</a></li>
+        <li><a href="#constructors">Constructors</a></li>
+        <li><a href="#inheritance">Inheritance</a></li>
+        <li><a href="#polymorphism">Polymorphism</a></li>
+      </ul>
+    </li>
+    <li><a href="#immutability-and-case-classes">Immutability and Case Classes</a>
+      <ul>
+        <li><a href="#understanding-immutability">Understanding Immutability</a></li>
+        <li><a href="#creating-case-classes">Creating Case Classes</a></li>
+        <li><a href="#pattern-matching-with-case-classes">Pattern Matching with Case Classes</a></li>
+      </ul>
+    </li>
+    <li><a href="#collections">Collections</a>
+      <ul>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#sets">Sets</a></li>
+        <li><a href="#maps">Maps</a></li>
+        <li><a href="#tuples">Tuples</a></li>
+      </ul>
+    </li>
+    <li><a href="#functional-programming-concepts">Functional Programming Concepts</a>
+      <ul>
+        <li><a href="#pure-functions">Pure Functions</a></li>
+        <li><a href="#higher-order-functions-1">Higher-Order Functions</a></li>
+        <li><a href="#map-filter-reduce">Map, Filter, Reduce</a></li>
+        <li><a href="#function-composition">Function Composition</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-strings">Working with Strings</a>
+      <ul>
+        <li><a href="#string-interpolation">String Interpolation</a></li>
+        <li><a href="#string-manipulation-methods">String Manipulation Methods</a></li>
+      </ul>
+    </li>
+    <li><a href="#error-handling">Error Handling</a>
+      <ul>
+        <li><a href="#try-catch-blocks">Try-Catch Blocks</a></li>
+        <li><a href="#exceptions">Exceptions</a></li>
+      </ul>
+    </li>
+    <li><a href="#next-steps">Next Steps</a>
+      <ul>
+        <li><a href="#exploring-advanced-scala-features">Exploring Advanced Scala Features</a></li>
+        <li><a href="#building-a-simple-project">Building a Simple Project</a></li>
+        <li><a href="#community-resources-and-learning">Community Resources and Learning</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="setting-up-your-environment">
+  Setting up your environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h2>
+<p>This section guides you through setting up your development environment for Scala programming.  We&rsquo;ll cover installing Java (a prerequisite for Scala), installing Scala itself, choosing a suitable IDE, and creating your first project.</p>
+<h3 class="heading" id="installing-java">
+  Installing Java
+  <a class="anchor" href="#installing-java">#</a>
+</h3>
+<p>Scala runs on the Java Virtual Machine (JVM), so you need a Java Development Kit (JDK) installed before you can install Scala.  Here&rsquo;s how:</p>
+<ol>
+<li>
+<p><strong>Download:</strong> Go to the official Oracle website (<a href="https://www.oracle.com/java/technologies/javase-downloads.html">https://www.oracle.com/java/technologies/javase-downloads.html</a>) or a reputable alternative like AdoptOpenJDK (<a href="https://adoptopenjdk.net/">https://adoptopenjdk.net/</a>) and download a JDK version appropriate for your operating system (Windows, macOS, Linux).  Choose a long-term support (LTS) release for stability.</p>
+</li>
+<li>
+<p><strong>Installation:</strong> Run the downloaded installer and follow the on-screen instructions.  Make sure to note the installation directory, as you might need it later.</p>
+</li>
+<li>
+<p><strong>Verification:</strong> Open your terminal or command prompt and type <code>java -version</code>.  You should see information about your installed Java version.  If you get an error, check your PATH environment variable to ensure Java is accessible.  (Consult your operating system&rsquo;s documentation if you need help with PATH variables).</p>
+</li>
+</ol>
+<h3 class="heading" id="installing-scala">
+  Installing Scala
+  <a class="anchor" href="#installing-scala">#</a>
+</h3>
+<p>With Java installed, you can now install Scala:</p>
+<ol>
+<li>
+<p><strong>Download:</strong> Go to the official Scala website (<a href="https://www.scala-lang.org/download/">https://www.scala-lang.org/download/</a>) and download the appropriate installer or binary distribution for your operating system.</p>
+</li>
+<li>
+<p><strong>Installation:</strong> Follow the instructions provided with the downloaded file.  This typically involves extracting the downloaded archive to a directory of your choice.</p>
+</li>
+<li>
+<p><strong>Verification:</strong> Open your terminal or command prompt and type <code>scala -version</code>.  This should display your installed Scala version. If you encounter issues, ensure the Scala installation directory is added to your PATH environment variable.</p>
+</li>
+</ol>
+<h3 class="heading" id="choosing-an-ide-intellij-vs-code">
+  Choosing an IDE (IntelliJ, VS Code)
+  <a class="anchor" href="#choosing-an-ide-intellij-vs-code">#</a>
+</h3>
+<p>While you can write Scala code using a simple text editor, an Integrated Development Environment (IDE) significantly enhances your productivity.  Here are two popular choices:</p>
+<ul>
+<li>
+<p><strong>IntelliJ IDEA:</strong> IntelliJ IDEA offers excellent Scala support through its Scala plugin. It&rsquo;s a powerful IDE with advanced features like code completion, refactoring, and debugging.  The community edition is free and sufficient for most beginners. Download it from <a href="https://www.jetbrains.com/idea/">https://www.jetbrains.com/idea/</a>.  After installation, install the Scala plugin via the plugin settings.</p>
+</li>
+<li>
+<p><strong>VS Code:</strong> VS Code is a lightweight and versatile code editor that, with the right extensions, provides a good Scala development experience. Install the &ldquo;Scala (Metals)&rdquo; extension from the VS Code marketplace.  This extension provides features similar to IntelliJ IDEA&rsquo;s Scala support.</p>
+</li>
+</ul>
+<p>Both IDEs offer good tutorials and documentation to help you get started.</p>
+<h3 class="heading" id="setting-up-your-first-project">
+  Setting up your first project
+  <a class="anchor" href="#setting-up-your-first-project">#</a>
+</h3>
+<p>Let&rsquo;s create a simple &ldquo;Hello, world!&rdquo; project:</p>
+<ol>
+<li>
+<p><strong>Using IntelliJ IDEA:</strong> Create a new project. Select &ldquo;Scala&rdquo; as the project type.  IntelliJ will guide you through the project setup.  You&rsquo;ll typically create a new Scala object file and write your code within it (e.g., <code>object HelloWorld { def main(args: Array[String]): Unit = println(&quot;Hello, world!&quot;) }</code>).</p>
+</li>
+<li>
+<p><strong>Using VS Code:</strong> Create a new file (e.g., <code>HelloWorld.scala</code>).  Write your &ldquo;Hello, world!&rdquo; code as above.  VS Code&rsquo;s Scala (Metals) extension will provide code completion and other helpful features.</p>
+</li>
+<li>
+<p><strong>Running your code:</strong> In both IDEs, you can run your code by right-clicking within the code editor and selecting the &ldquo;Run&rdquo; option (the exact menu item might vary slightly depending on the IDE version).  Your &ldquo;Hello, world!&rdquo; message should appear in the console.</p>
+</li>
+</ol>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<p>This section covers the fundamental syntax and data types in Scala. Understanding these building blocks is crucial for writing any Scala program.</p>
+<h3 class="heading" id="values-and-variables">
+  Values and Variables
+  <a class="anchor" href="#values-and-variables">#</a>
+</h3>
+<p>Scala distinguishes between values and variables.  Values are immutable; once assigned, their value cannot be changed. Variables, on the other hand, are mutable and can be reassigned.</p>
+<ul>
+<li><strong>Values:</strong> Defined using the <code>val</code> keyword.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> message<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span> <span style="color:#60a0b0;font-style:italic">//Explicit type declaration
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> number <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">42</span> <span style="color:#60a0b0;font-style:italic">//Type inference
+</span></span></span></code></pre></div><ul>
+<li><strong>Variables:</strong> Defined using the <code>var</code> keyword.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> count<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>count <span style="color:#007020;font-weight:bold">=</span> count <span style="color:#666">+</span> <span style="color:#40a070">1</span>
+</span></span></code></pre></div><p>It&rsquo;s generally recommended to favor <code>val</code> over <code>var</code> to promote immutability and improve code readability and maintainability.</p>
+<h3 class="heading" id="data-types-int-double-boolean-string">
+  Data Types (Int, Double, Boolean, String)
+  <a class="anchor" href="#data-types-int-double-boolean-string">#</a>
+</h3>
+<p>Scala has built-in support for various data types:</p>
+<ul>
+<li>
+<p><strong><code>Int</code>:</strong> Represents 32-bit integers (whole numbers).  Example: <code>val age: Int = 30</code></p>
+</li>
+<li>
+<p><strong><code>Double</code>:</strong> Represents 64-bit double-precision floating-point numbers. Example: <code>val price: Double = 99.99</code></p>
+</li>
+<li>
+<p><strong><code>Boolean</code>:</strong> Represents boolean values (<code>true</code> or <code>false</code>). Example: <code>val isAdult: Boolean = true</code></p>
+</li>
+<li>
+<p><strong><code>String</code>:</strong> Represents sequences of characters. Example: <code>val name: String = &quot;Alice&quot;</code></p>
+</li>
+</ul>
+<p>You can explicitly specify the type of a variable or value (as shown above), but Scala&rsquo;s type inference often allows you to omit the type annotation, as Scala can usually deduce the type from the context.</p>
+<h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>Scala supports standard arithmetic operators (+, -, *, /, %), comparison operators (==, !=, &lt;, &gt;, &lt;=, &gt;=), logical operators (&amp;&amp;, ||, !), and assignment operators (=).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> sum <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">10</span> <span style="color:#666">+</span> <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> isEqual <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">10</span> <span style="color:#666">==</span> <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> isGreater <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">10</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> result <span style="color:#007020;font-weight:bold">=</span> <span style="color:#666">(</span><span style="color:#40a070">10</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#666">&amp;&amp;</span> <span style="color:#666">(</span><span style="color:#40a070">5</span> <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Logical AND
+</span></span></span></code></pre></div><p>Operator precedence follows standard mathematical rules.  Parentheses can be used to control the order of operations.</p>
+<h3 class="heading" id="type-inference">
+  Type Inference
+  <a class="anchor" href="#type-inference">#</a>
+</h3>
+<p>Scala&rsquo;s type inference system automatically deduces the type of a variable or value based on its initialization. This eliminates the need to explicitly specify the type in many cases, making the code more concise.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> name <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">&#34;Bob&#34;</span>  <span style="color:#60a0b0;font-style:italic">// Scala infers the type as String
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> age <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">25</span>      <span style="color:#60a0b0;font-style:italic">// Scala infers the type as Int
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> isHappy <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">true</span> <span style="color:#60a0b0;font-style:italic">// Scala infers the type as Boolean
+</span></span></span></code></pre></div><p>Type inference improves code readability and reduces boilerplate, but it&rsquo;s essential to understand that the compiler still performs type checking.  If the compiler cannot infer the type or encounters a type mismatch, a compilation error will occur.</p>
+<h2 class="heading" id="control-structures">
+  Control Structures
+  <a class="anchor" href="#control-structures">#</a>
+</h2>
+<p>This section details Scala&rsquo;s control structures for controlling the flow of execution in your programs.</p>
+<h3 class="heading" id="if-else-statements">
+  if-else statements
+  <a class="anchor" href="#if-else-statements">#</a>
+</h3>
+<p><code>if-else</code> statements allow you to execute different blocks of code based on a condition.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> age <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>age <span style="color:#666">&gt;=</span> <span style="color:#40a070">18</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  println<span style="color:#666">(</span><span style="color:#4070a0">&#34;You are an adult.&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  println<span style="color:#666">(</span><span style="color:#4070a0">&#34;You are a minor.&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Simplified if-else (if the else block is a simple expression):
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> message <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>age <span style="color:#666">&gt;=</span> <span style="color:#40a070">18</span><span style="color:#666">)</span> <span style="color:#4070a0">&#34;Adult&#34;</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#4070a0">&#34;Minor&#34;</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>message<span style="color:#666">)</span>
+</span></span></code></pre></div><p>Note that the condition in an <code>if</code> statement must evaluate to a Boolean value.  Curly braces <code>{}</code> are required for multi-line blocks within the <code>if</code> and <code>else</code> branches.</p>
+<h3 class="heading" id="for-loops">
+  for loops
+  <a class="anchor" href="#for-loops">#</a>
+</h3>
+<p>Scala offers several ways to implement loops, but <code>for</code> loops are commonly used for iterating over collections.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Iterating over a range of numbers:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span>i <span style="color:#007020;font-weight:bold">&lt;-</span> <span style="color:#40a070">1</span> to <span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  println<span style="color:#666">(</span>i<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Iterating over a sequence:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> names <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">Seq</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;Bob&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;Charlie&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span>name <span style="color:#007020;font-weight:bold">&lt;-</span> names<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  println<span style="color:#666">(</span>name<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Using `yield` to create a new collection:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> squares <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span>i <span style="color:#007020;font-weight:bold">&lt;-</span> <span style="color:#40a070">1</span> to <span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">yield</span> i <span style="color:#666">*</span> i
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>squares<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: Vector(1, 4, 9, 16, 25)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//For loop with guards (filters):
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span>i <span style="color:#007020;font-weight:bold">&lt;-</span> <span style="color:#40a070">1</span> to <span style="color:#40a070">10</span> <span style="color:#007020;font-weight:bold">if</span> i <span style="color:#666">%</span> <span style="color:#40a070">2</span> <span style="color:#666">==</span> <span style="color:#40a070">0</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  println<span style="color:#666">(</span>i<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Prints even numbers
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>The <code>&lt;-</code> operator assigns each element of the collection to the loop variable.  <code>yield</code> transforms the loop into a collection-generating expression.  Guards (conditions following <code>if</code>) allow you to filter elements during iteration.</p>
+<h3 class="heading" id="while-loops">
+  while loops
+  <a class="anchor" href="#while-loops">#</a>
+</h3>
+<p><code>while</code> loops execute a block of code repeatedly as long as a condition is true.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> i <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#666">(</span>i <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  println<span style="color:#666">(</span>i<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>  i <span style="color:#666">+=</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>Be cautious when using <code>while</code> loops, as an infinite loop can occur if the condition never becomes false.</p>
+<h3 class="heading" id="match-expressions">
+  match expressions
+  <a class="anchor" href="#match-expressions">#</a>
+</h3>
+<p>Match expressions provide a powerful way to perform pattern matching.  They allow you to check a value against multiple patterns and execute different code blocks based on which pattern matches.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> x <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x <span style="color:#007020;font-weight:bold">match</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">1</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">&#34;One&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Two&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">3</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Three&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> <span style="color:#007020;font-weight:bold">_</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Other&#34;</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Default case (matches anything)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Matching on different data types
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> something <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">&#34;hello&#34;</span>
+</span></span><span style="display:flex;"><span>something <span style="color:#007020;font-weight:bold">match</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> i<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Integer&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> s<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span> <span style="color:#666">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">&#34;String&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> <span style="color:#007020;font-weight:bold">_</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Other type&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Matching on tuples and case classes (more advanced usage):
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> tuple <span style="color:#007020;font-weight:bold">=</span> <span style="color:#666">(</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;apple&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>tuple <span style="color:#007020;font-weight:bold">match</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> <span style="color:#666">(</span><span style="color:#40a070">1</span><span style="color:#666">,</span> fruit<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;The fruit is </span><span style="color:#70a0d0">$fruit</span><span style="color:#4070a0">&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> <span style="color:#007020;font-weight:bold">_</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Other tuple&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>The <code>case</code> statements check the value of <code>x</code> against various patterns.  The underscore <code>_</code> acts as a wildcard, matching any value not covered by other cases. Match expressions are particularly useful for handling different data types or complex data structures.  They offer a more expressive and often more efficient alternative to long chains of <code>if-else</code> statements, particularly when dealing with multiple possible scenarios.</p>
+<h2 class="heading" id="functions">
+  Functions
+  <a class="anchor" href="#functions">#</a>
+</h2>
+<p>Functions are fundamental building blocks in Scala, enabling code reusability and modularity.</p>
+<h3 class="heading" id="defining-functions">
+  Defining Functions
+  <a class="anchor" href="#defining-functions">#</a>
+</h3>
+<p>Functions in Scala are defined using the <code>def</code> keyword, followed by the function name, parameter list (in parentheses), a colon, the return type, and an equals sign followed by the function body.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">def</span> greet<span style="color:#666">(</span>name<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span><span style="color:#666">)</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span> <span style="color:#666">=</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Hello, &#34;</span> <span style="color:#666">+</span> name <span style="color:#666">+</span> <span style="color:#4070a0">&#34;!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>greet<span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">// Output: Hello, Alice!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//A function with no parameters and a Unit return type:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">def</span> sayHello<span style="color:#666">()</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Unit</span> <span style="color:#666">=</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Hello!&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sayHello<span style="color:#666">()</span> <span style="color:#60a0b0;font-style:italic">// Output: Hello!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Simplified syntax for single expression functions
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">def</span> add<span style="color:#666">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">,</span> y<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">)</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=</span> x <span style="color:#666">+</span> y
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>add<span style="color:#666">(</span><span style="color:#40a070">5</span><span style="color:#666">,</span><span style="color:#40a070">3</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">//Output: 8
+</span></span></span></code></pre></div><p>If the function body consists of a single expression, you can omit the curly braces <code>{}</code> and the explicit <code>return</code> keyword; the expression&rsquo;s result is implicitly returned.  Functions that don&rsquo;t return a specific value use <code>Unit</code> as the return type (similar to <code>void</code> in other languages).</p>
+<h3 class="heading" id="function-parameters">
+  Function Parameters
+  <a class="anchor" href="#function-parameters">#</a>
+</h3>
+<p>Function parameters are defined within parentheses, specifying their names and types.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">def</span> calculateArea<span style="color:#666">(</span>length<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Double</span><span style="color:#666">,</span> width<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Double</span><span style="color:#666">)</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Double</span> <span style="color:#666">=</span> length <span style="color:#666">*</span> width
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>calculateArea<span style="color:#666">(</span><span style="color:#40a070">5.0</span><span style="color:#666">,</span> <span style="color:#40a070">3.0</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">// Output: 15.0
+</span></span></span></code></pre></div><p>Multiple parameters are separated by commas.  Parameter types are explicitly stated (though, Scala&rsquo;s type inference can sometimes infer them).</p>
+<h3 class="heading" id="return-types">
+  Return Types
+  <a class="anchor" href="#return-types">#</a>
+</h3>
+<p>The return type of a function is specified after the parameter list using a colon (<code>:</code>).  If the function does not explicitly return a value, the return type is <code>Unit</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">def</span> printMessage<span style="color:#666">(</span>message<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span><span style="color:#666">)</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Unit</span> <span style="color:#666">=</span> println<span style="color:#666">(</span>message<span style="color:#666">)</span>
+</span></span></code></pre></div><p>Scala&rsquo;s type inference can often deduce the return type, but explicitly specifying it improves code readability and maintainability.</p>
+<h3 class="heading" id="higher-order-functions">
+  Higher-Order Functions
+  <a class="anchor" href="#higher-order-functions">#</a>
+</h3>
+<p>Higher-order functions are functions that take other functions as parameters or return functions as their results.  This is a powerful feature that enables functional programming paradigms.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Function that takes another function as a parameter:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">def</span> applyFunction<span style="color:#666">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">,</span> f<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Int</span><span style="color:#666">)</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=</span> f<span style="color:#666">(</span>x<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Example usage:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> square<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Int</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#666">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#666">*</span> x
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> cube<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Int</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#666">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#666">*</span> x <span style="color:#666">*</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>applyFunction<span style="color:#666">(</span><span style="color:#40a070">5</span><span style="color:#666">,</span> square<span style="color:#666">))</span>  <span style="color:#60a0b0;font-style:italic">// Output: 25
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>applyFunction<span style="color:#666">(</span><span style="color:#40a070">5</span><span style="color:#666">,</span> cube<span style="color:#666">))</span>   <span style="color:#60a0b0;font-style:italic">// Output: 125
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Function that returns another function:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">def</span> createMultiplier<span style="color:#666">(</span>factor<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">)</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Int</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#666">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#666">*</span> factor
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> double <span style="color:#007020;font-weight:bold">=</span> createMultiplier<span style="color:#666">(</span><span style="color:#40a070">2</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> triple <span style="color:#007020;font-weight:bold">=</span> createMultiplier<span style="color:#666">(</span><span style="color:#40a070">3</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>double<span style="color:#666">(</span><span style="color:#40a070">5</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">// Output: 10
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>triple<span style="color:#666">(</span><span style="color:#40a070">5</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">// Output: 15
+</span></span></span></code></pre></div><p>Higher-order functions allow for flexible and reusable code by abstracting operations and enabling code to be treated as data.  They are a cornerstone of functional programming in Scala.</p>
+<h2 class="heading" id="object-oriented-programming-oop-in-scala">
+  Object-Oriented Programming (OOP) in Scala
+  <a class="anchor" href="#object-oriented-programming-oop-in-scala">#</a>
+</h2>
+<p>Scala supports object-oriented programming (OOP) principles, allowing you to create classes, objects, and leverage inheritance and polymorphism.  However, Scala also embraces functional programming concepts, leading to a hybrid approach where both paradigms can be effectively combined.</p>
+<h3 class="heading" id="classes-and-objects">
+  Classes and Objects
+  <a class="anchor" href="#classes-and-objects">#</a>
+</h3>
+<p>Classes serve as blueprints for creating objects. Objects are instances of classes.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span><span style="color:#666">(</span><span style="color:#007020;font-weight:bold">val</span> name<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span><span style="color:#666">,</span> <span style="color:#007020;font-weight:bold">var</span> age<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">def</span> bark<span style="color:#666">()</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Unit</span> <span style="color:#666">=</span> println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Woof!&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> myDog <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#0e84b5;font-weight:bold">Dog</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Buddy&#34;</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>myDog<span style="color:#666">.</span>name<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: Buddy
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>myDog<span style="color:#666">.</span>bark<span style="color:#666">()</span>       <span style="color:#60a0b0;font-style:italic">// Output: Woof!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>myDog<span style="color:#666">.</span>age <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">4</span>      <span style="color:#60a0b0;font-style:italic">// Modifying a variable
+</span></span></span></code></pre></div><p>The <code>class</code> keyword defines a class.  The constructor parameters (<code>name</code> and <code>age</code> in this example) are defined within parentheses.  <code>val</code> creates immutable fields, while <code>var</code> creates mutable fields.  Methods (functions within a class) are defined using the <code>def</code> keyword.  <code>new Dog(...)</code> creates a new object (instance) of the <code>Dog</code> class.</p>
+<h3 class="heading" id="constructors">
+  Constructors
+  <a class="anchor" href="#constructors">#</a>
+</h3>
+<p>Constructors initialize objects when they are created.  Scala&rsquo;s primary constructor is defined by parameters in the class definition (as shown in the <code>Dog</code> class example above).  Auxiliary constructors can be defined using the <code>this</code> keyword.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span><span style="color:#666">(</span><span style="color:#007020;font-weight:bold">val</span> name<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">val</span> color<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;grey&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">def</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">(</span>name<span style="color:#007020;font-weight:bold">:</span><span style="color:#902000">String</span><span style="color:#666">,</span> color<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">(</span>name<span style="color:#666">)</span>  <span style="color:#60a0b0;font-style:italic">//Call primary constructor
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span>color <span style="color:#007020;font-weight:bold">=</span> color
+</span></span><span style="display:flex;"><span>  <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> cat1 <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#0e84b5;font-weight:bold">Cat</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Whiskers&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>cat1<span style="color:#666">.</span>color<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: grey
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> cat2 <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#0e84b5;font-weight:bold">Cat</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Tom&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;white&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>cat2<span style="color:#666">.</span>color<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: white
+</span></span></span></code></pre></div><p>The primary constructor initializes <code>name</code>.  The auxiliary constructor takes an additional <code>color</code> parameter and then calls the primary constructor using <code>this(name)</code>, before setting the <code>color</code>.</p>
+<h3 class="heading" id="inheritance">
+  Inheritance
+  <a class="anchor" href="#inheritance">#</a>
+</h3>
+<p>Inheritance allows a class (subclass or child class) to inherit properties and methods from another class (superclass or parent class).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span><span style="color:#666">(</span><span style="color:#007020;font-weight:bold">val</span> name<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">def</span> makeSound<span style="color:#666">()</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Unit</span> <span style="color:#666">=</span> println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Generic animal sound&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span><span style="color:#666">(</span>name<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span><span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">extends</span> <span style="color:#0e84b5;font-weight:bold">Animal</span><span style="color:#666">(</span>name<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">def</span> makeSound<span style="color:#666">()</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Unit</span> <span style="color:#666">=</span> println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Woof!&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> myDog <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#0e84b5;font-weight:bold">Dog</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Max&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>myDog<span style="color:#666">.</span>makeSound<span style="color:#666">()</span> <span style="color:#60a0b0;font-style:italic">// Output: Woof!
+</span></span></span></code></pre></div><p>The <code>extends</code> keyword indicates that the <code>Dog</code> class inherits from the <code>Animal</code> class.  The <code>override</code> keyword is used to redefine a method from the superclass.</p>
+<h3 class="heading" id="polymorphism">
+  Polymorphism
+  <a class="anchor" href="#polymorphism">#</a>
+</h3>
+<p>Polymorphism allows objects of different classes to be treated as objects of a common type.  This is often achieved through method overriding (as shown in the inheritance example) or through traits (interfaces).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">trait</span> <span style="color:#0e84b5;font-weight:bold">Flyable</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">def</span> fly<span style="color:#666">()</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Unit</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Bird</span><span style="color:#666">(</span><span style="color:#007020;font-weight:bold">val</span> name<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span><span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">extends</span> <span style="color:#0e84b5;font-weight:bold">Flyable</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">def</span> fly<span style="color:#666">()</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Unit</span> <span style="color:#666">=</span> println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;</span><span style="color:#70a0d0">$name</span><span style="color:#4070a0"> is flying!&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Plane</span><span style="color:#666">(</span><span style="color:#007020;font-weight:bold">val</span> model<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span><span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">extends</span> <span style="color:#0e84b5;font-weight:bold">Flyable</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">def</span> fly<span style="color:#666">()</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Unit</span> <span style="color:#666">=</span> println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;</span><span style="color:#70a0d0">$model</span><span style="color:#4070a0"> is taking off!&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> bird <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#0e84b5;font-weight:bold">Bird</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Sparrow&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> plane <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#0e84b5;font-weight:bold">Plane</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Boeing 747&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>bird<span style="color:#666">.</span>fly<span style="color:#666">()</span>   <span style="color:#60a0b0;font-style:italic">// Output: Sparrow is flying!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>plane<span style="color:#666">.</span>fly<span style="color:#666">()</span>  <span style="color:#60a0b0;font-style:italic">// Output: Boeing 747 is taking off!
+</span></span></span></code></pre></div><p>Both <code>Bird</code> and <code>Plane</code> implement the <code>Flyable</code> trait, and their <code>fly()</code> methods are invoked based on the actual object type.  This demonstrates polymorphism – the ability of the <code>fly()</code> method to behave differently depending on the object&rsquo;s type.  Traits provide a flexible mechanism for implementing interfaces, multiple inheritance (unlike classes which support only single inheritance).</p>
+<h2 class="heading" id="immutability-and-case-classes">
+  Immutability and Case Classes
+  <a class="anchor" href="#immutability-and-case-classes">#</a>
+</h2>
+<p>Immutability and case classes are important concepts in Scala that promote cleaner, more predictable, and often more efficient code.</p>
+<h3 class="heading" id="understanding-immutability">
+  Understanding Immutability
+  <a class="anchor" href="#understanding-immutability">#</a>
+</h3>
+<p>Immutability means that once an object is created, its state cannot be changed.  In Scala, immutable objects are created using the <code>val</code> keyword.  This contrasts with mutable objects, created using <code>var</code>, which can have their state modified after creation.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> immutableValue <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">10</span> <span style="color:#60a0b0;font-style:italic">// immutableValue cannot be reassigned.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> mutableValue <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">10</span>   <span style="color:#60a0b0;font-style:italic">// mutableValue can be changed (e.g., mutableValue = 20).
+</span></span></span></code></pre></div><p>Immutability brings several advantages:</p>
+<ul>
+<li><strong>Simplified reasoning:</strong>  The state of an immutable object remains constant, making it easier to reason about its behavior and avoid unexpected side effects.</li>
+<li><strong>Thread safety:</strong> Immutable objects are inherently thread-safe; multiple threads can access them concurrently without synchronization issues.</li>
+<li><strong>Easier debugging:</strong>  Immutability reduces the complexity of debugging, as the object&rsquo;s state doesn&rsquo;t change unexpectedly.</li>
+</ul>
+<h3 class="heading" id="creating-case-classes">
+  Creating Case Classes
+  <a class="anchor" href="#creating-case-classes">#</a>
+</h3>
+<p>Case classes are a special kind of class in Scala designed to be immutable and concise. They are frequently used to represent data structures.  Scala automatically generates several useful methods (e.g., <code>equals</code>, <code>hashCode</code>, <code>toString</code>, <code>copy</code>) for case classes.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Person</span><span style="color:#666">(</span>name<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span><span style="color:#666">,</span> age<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> person1 <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">Person</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">,</span> <span style="color:#40a070">30</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>person1<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: Person(Alice,30)  (automatically generated toString)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> person2 <span style="color:#007020;font-weight:bold">=</span> person1<span style="color:#666">.</span>copy<span style="color:#666">(</span>age <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">31</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Creates a new Person object with updated age
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>person2<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: Person(Alice,31)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>person1 <span style="color:#666">==</span> person2<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Output: false (because they are different objects)
+</span></span></span></code></pre></div><p>Notice the absence of <code>new</code> when creating <code>person1</code>.  Scala automatically handles object creation for case classes.  The <code>copy</code> method conveniently creates a new object with modified values, preserving immutability.</p>
+<h3 class="heading" id="pattern-matching-with-case-classes">
+  Pattern Matching with Case Classes
+  <a class="anchor" href="#pattern-matching-with-case-classes">#</a>
+</h3>
+<p>Case classes work exceptionally well with Scala&rsquo;s pattern matching.  Pattern matching allows you to elegantly deconstruct case classes and check their values.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> person <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">Person</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Bob&#34;</span><span style="color:#666">,</span> <span style="color:#40a070">25</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>person <span style="color:#007020;font-weight:bold">match</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> <span style="color:#0e84b5;font-weight:bold">Person</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">,</span> age<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;Found Alice, age: </span><span style="color:#70a0d0">$age</span><span style="color:#4070a0">&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> <span style="color:#0e84b5;font-weight:bold">Person</span><span style="color:#666">(</span>name<span style="color:#666">,</span> <span style="color:#40a070">25</span><span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;Found someone named </span><span style="color:#70a0d0">$name</span><span style="color:#4070a0">, age 25&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> <span style="color:#0e84b5;font-weight:bold">Person</span><span style="color:#666">(</span><span style="color:#007020;font-weight:bold">_</span><span style="color:#666">,</span> age<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;Found someone, age: </span><span style="color:#70a0d0">$age</span><span style="color:#4070a0">&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> <span style="color:#007020;font-weight:bold">_</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Didn&#39;t find anyone matching the pattern.&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span> <span style="color:#60a0b0;font-style:italic">// Output: Found someone named Bob, age 25
+</span></span></span></code></pre></div><p>In this example, the <code>match</code> expression checks the <code>person</code> object against several patterns.  The underscore <code>_</code> is a wildcard, matching any value. This elegant syntax makes handling complex data structures and different cases much more concise and readable than using nested <code>if-else</code> statements.  Pattern matching with case classes is a powerful and idiomatic way to work with data in Scala.</p>
+<h2 class="heading" id="collections">
+  Collections
+  <a class="anchor" href="#collections">#</a>
+</h2>
+<p>Scala provides a rich set of immutable and mutable collections.  This section focuses on some of the most commonly used ones.  Remember that Scala&rsquo;s collections are generally immutable by default, unless explicitly specified as mutable (e.g., using <code>mutable.List</code> from the <code>scala.collection.mutable</code> package).  We will primarily focus on the immutable versions here for simplicity and best practices.</p>
+<h3 class="heading" id="lists">
+  Lists
+  <a class="anchor" href="#lists">#</a>
+</h3>
+<p>Lists are ordered sequences of elements.  They are immutable by default.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> numbers<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">List</span><span style="color:#666">[</span><span style="color:#902000">Int</span><span style="color:#666">]</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">List</span><span style="color:#666">(</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">4</span><span style="color:#666">,</span> <span style="color:#40a070">5</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>numbers<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: List(1, 2, 3, 4, 5)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> mixedList<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">List</span><span style="color:#666">[</span><span style="color:#902000">Any</span><span style="color:#666">]</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">List</span><span style="color:#666">(</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;hello&#34;</span><span style="color:#666">,</span> <span style="color:#40a070">3.14</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>mixedList<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: List(1, hello, 3.14)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> emptyList<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">List</span><span style="color:#666">[</span><span style="color:#902000">Int</span><span style="color:#666">]</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">List</span><span style="color:#666">()</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>emptyList<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Output: List()
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>numbers<span style="color:#666">.</span>head<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Output: 1 (first element)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>numbers<span style="color:#666">.</span>tail<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Output: List(2, 3, 4, 5) (rest of the list)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>numbers <span style="color:#007020;font-weight:bold">:</span><span style="color:#902000">+</span> <span style="">6</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Output: List(1, 2, 3, 4, 5, 6) (adds an element to the end, creates a new list)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span><span style="color:#40a070">1</span> <span style="color:#007020;font-weight:bold">:</span><span style="color:#902000">:</span> <span style="color:#902000">numbers</span><span style="color:#666">)</span>  <span style="color:#60a0b0;font-style:italic">//Output: List(1, 1, 2, 3, 4, 5) (adds 1 to the beginning, creates a new list using cons operator)
+</span></span></span></code></pre></div><p>Lists are efficient for accessing elements by their index (though, remember that operations generally create new lists).  The <code>::</code> operator (&ldquo;cons&rdquo;) adds an element to the beginning of the list efficiently.</p>
+<h3 class="heading" id="sets">
+  Sets
+  <a class="anchor" href="#sets">#</a>
+</h3>
+<p>Sets are unordered collections of unique elements.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> numbers<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Set</span><span style="color:#666">[</span><span style="color:#902000">Int</span><span style="color:#666">]</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">Set</span><span style="color:#666">(</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">4</span><span style="color:#666">,</span> <span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Duplicates are automatically removed.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>numbers<span style="color:#666">)</span>  <span style="color:#60a0b0;font-style:italic">// Output: Set(1, 2, 3, 4, 5) (order might vary)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>numbers <span style="color:#666">+</span> <span style="color:#40a070">6</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Output: Set(1, 2, 3, 4, 5, 6) (adds an element, creating a new Set)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>numbers <span style="color:#666">-</span> <span style="color:#40a070">3</span><span style="color:#666">)</span>  <span style="color:#60a0b0;font-style:italic">//Output: Set(1, 2, 4, 5) (removes an element, creating a new Set)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>numbers contains <span style="color:#40a070">3</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Output: true (checks if an element is present)
+</span></span></span></code></pre></div><p>Sets provide efficient membership testing (checking if an element exists) because of their underlying hash-based implementation.</p>
+<h3 class="heading" id="maps">
+  Maps
+  <a class="anchor" href="#maps">#</a>
+</h3>
+<p>Maps are collections of key-value pairs.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> ages<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Map</span><span style="color:#666">[</span><span style="color:#902000">String</span>, <span style="color:#902000">Int</span><span style="color:#666">]</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">Map</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span> <span style="color:#666">-&gt;</span> <span style="color:#40a070">30</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;Bob&#34;</span> <span style="color:#666">-&gt;</span> <span style="color:#40a070">25</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;Charlie&#34;</span> <span style="color:#666">-&gt;</span> <span style="color:#40a070">35</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>ages<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: Map(Alice -&gt; 30, Bob -&gt; 25, Charlie -&gt; 35) (order might vary)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>ages<span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">))</span>  <span style="color:#60a0b0;font-style:italic">// Output: 30 (access value by key)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>ages<span style="color:#666">.</span>get<span style="color:#666">(</span><span style="color:#4070a0">&#34;David&#34;</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">// Output: None (returns None if key doesn&#39;t exist)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>ages <span style="color:#666">+</span> <span style="color:#666">(</span><span style="color:#4070a0">&#34;David&#34;</span> <span style="color:#666">-&gt;</span> <span style="color:#40a070">40</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">//Output: Map(Alice -&gt; 30, Bob -&gt; 25, Charlie -&gt; 35, David -&gt; 40) (adds a key-value pair)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>ages <span style="color:#666">-</span> <span style="color:#4070a0">&#34;Bob&#34;</span><span style="color:#666">)</span>   <span style="color:#60a0b0;font-style:italic">//Output: Map(Alice -&gt; 30, Charlie -&gt; 35) (removes a key-value pair)
+</span></span></span></code></pre></div><p>Maps provide efficient lookup of values using keys.</p>
+<h3 class="heading" id="tuples">
+  Tuples
+  <a class="anchor" href="#tuples">#</a>
+</h3>
+<p>Tuples are finite ordered sequences of elements of potentially different types.  Unlike lists, they have a fixed size and are immutable.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> tuple<span style="color:#007020;font-weight:bold">:</span> <span style="color:#666">(</span><span style="color:#902000">String</span><span style="color:#666">,</span> <span style="color:#902000">Int</span><span style="color:#666">,</span> <span style="color:#0e84b5;font-weight:bold">Double</span><span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#666">(</span><span style="color:#4070a0">&#34;Scala&#34;</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">2.71</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>tuple<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: (Scala,3,2.71)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>tuple<span style="color:#666">.</span>_1<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Output: Scala (access element by index, starts at 1)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>tuple<span style="color:#666">.</span>_2<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Output: 3
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>tuple<span style="color:#666">.</span>_3<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">//Output: 2.71
+</span></span></span></code></pre></div><p>Tuples are useful for representing simple, heterogeneous data structures.  The underscore notation (<code>._1</code>, <code>._2</code>, etc.) is used to access elements by their index.  Note that <code>tuple</code> is a single object, not a collection like a list, so some collection methods won&rsquo;t directly apply.</p>
+<h2 class="heading" id="functional-programming-concepts">
+  Functional Programming Concepts
+  <a class="anchor" href="#functional-programming-concepts">#</a>
+</h2>
+<p>Scala seamlessly blends object-oriented and functional programming paradigms. This section highlights core functional programming concepts crucial for writing effective Scala code.</p>
+<h3 class="heading" id="pure-functions">
+  Pure Functions
+  <a class="anchor" href="#pure-functions">#</a>
+</h3>
+<p>A pure function always produces the same output for the same input and has no side effects.  Side effects include modifying external state (e.g., modifying a variable outside the function&rsquo;s scope), performing I/O operations (e.g., printing to the console, reading from a file), or making network calls.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">def</span> add<span style="color:#666">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">,</span> y<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">)</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=</span> x <span style="color:#666">+</span> y <span style="color:#60a0b0;font-style:italic">// Pure function
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">def</span> printAndAdd<span style="color:#666">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">,</span> y<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">)</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;Adding </span><span style="color:#70a0d0">$x</span><span style="color:#4070a0"> and </span><span style="color:#70a0d0">$y</span><span style="color:#4070a0">&#34;</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Side effect (printing)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  x <span style="color:#666">+</span> y
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span> <span style="color:#60a0b0;font-style:italic">// Not a pure function because of the println statement.
+</span></span></span></code></pre></div><p>Pure functions are easier to test, reason about, and parallelize because their output depends solely on their input.</p>
+<h3 class="heading" id="higher-order-functions-1">
+  Higher-Order Functions
+  <a class="anchor" href="#higher-order-functions-1">#</a>
+</h3>
+<p>Higher-order functions (HOFs) are functions that take other functions as arguments or return functions as results. They are fundamental to functional programming and enable powerful abstractions.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">def</span> applyFunction<span style="color:#666">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">,</span> f<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Int</span><span style="color:#666">)</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=</span> f<span style="color:#666">(</span>x<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> square<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Int</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#666">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#666">*</span> x
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> cube<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Int</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#666">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#666">*</span> x <span style="color:#666">*</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>applyFunction<span style="color:#666">(</span><span style="color:#40a070">5</span><span style="color:#666">,</span> square<span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">// Output: 25
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>applyFunction<span style="color:#666">(</span><span style="color:#40a070">5</span><span style="color:#666">,</span> cube<span style="color:#666">))</span>  <span style="color:#60a0b0;font-style:italic">// Output: 125
+</span></span></span></code></pre></div><p><code>applyFunction</code> is a HOF because it takes a function (<code>f</code>) as an argument. This allows you to apply different functions (like <code>square</code> and <code>cube</code>) to the same input without modifying the <code>applyFunction</code> itself.</p>
+<h3 class="heading" id="map-filter-reduce">
+  Map, Filter, Reduce
+  <a class="anchor" href="#map-filter-reduce">#</a>
+</h3>
+<p><code>map</code>, <code>filter</code>, and <code>reduce</code> are common HOFs used extensively in functional programming for transforming and aggregating collections.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> numbers <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">List</span><span style="color:#666">(</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">4</span><span style="color:#666">,</span> <span style="color:#40a070">5</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Map: Applies a function to each element of a collection.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> squaredNumbers <span style="color:#007020;font-weight:bold">=</span> numbers<span style="color:#666">.</span>map<span style="color:#666">(</span>x <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#666">*</span> x<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>squaredNumbers<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: List(1, 4, 9, 16, 25)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Filter: Selects elements from a collection based on a predicate (a function returning a boolean).
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> evenNumbers <span style="color:#007020;font-weight:bold">=</span> numbers<span style="color:#666">.</span>filter<span style="color:#666">(</span>x <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#666">%</span> <span style="color:#40a070">2</span> <span style="color:#666">==</span> <span style="color:#40a070">0</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>evenNumbers<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: List(2, 4)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Reduce: Combines elements of a collection using a binary operation (a function taking two arguments and returning one).
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> sum <span style="color:#007020;font-weight:bold">=</span> numbers<span style="color:#666">.</span>reduce<span style="color:#666">((</span>x<span style="color:#666">,</span> y<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#666">+</span> y<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>sum<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: 15
+</span></span></span></code></pre></div><p>These functions promote concise and readable code by expressing transformations and aggregations declaratively.</p>
+<h3 class="heading" id="function-composition">
+  Function Composition
+  <a class="anchor" href="#function-composition">#</a>
+</h3>
+<p>Function composition combines multiple functions into a single function. This improves code readability and reusability.  Scala&rsquo;s <code>andThen</code> and <code>compose</code> methods facilitate this.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> add1<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Int</span> <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#666">+</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> multiplyBy2<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#666">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Int</span> <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#007020;font-weight:bold">=&gt;</span> x <span style="color:#666">*</span> <span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// andThen: Applies the first function, then applies the second function to the result.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> add1ThenMultiplyBy2 <span style="color:#007020;font-weight:bold">=</span> add1 andThen multiplyBy2
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>add1ThenMultiplyBy2<span style="color:#666">(</span><span style="color:#40a070">3</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">// Output: 8 ( (3+1) * 2 )
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// compose: Applies the second function, then applies the first function to the result.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">val</span> multiplyBy2ThenAdd1 <span style="color:#007020;font-weight:bold">=</span> add1 compose multiplyBy2
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>multiplyBy2ThenAdd1<span style="color:#666">(</span><span style="color:#40a070">3</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">// Output: 7 ( (3*2) + 1 )
+</span></span></span></code></pre></div><p>Function composition enhances code modularity and enables creating complex operations from simpler ones in a clear and organized manner.  Note the order of execution difference between <code>andThen</code> and <code>compose</code>.</p>
+<h2 class="heading" id="working-with-strings">
+  Working with Strings
+  <a class="anchor" href="#working-with-strings">#</a>
+</h2>
+<p>Strings are fundamental data types in any programming language, and Scala provides robust features for working with them efficiently.</p>
+<h3 class="heading" id="string-interpolation">
+  String Interpolation
+  <a class="anchor" href="#string-interpolation">#</a>
+</h3>
+<p>String interpolation offers a concise way to embed expressions within strings.  In Scala, this is achieved using an <code>s</code> before the opening double quote.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> name <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> age <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> message <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">s&#34;My name is </span><span style="color:#70a0d0">$name</span><span style="color:#4070a0"> and I am </span><span style="color:#70a0d0">$age</span><span style="color:#4070a0"> years old.&#34;</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>message<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: My name is Alice and I am 30 years old.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> complexMessage <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">s&#34;The result of 2 + 2 is </span><span style="color:#70a0d0">${</span><span style="color:#40a070">2</span> <span style="color:#666">+</span> <span style="color:#40a070">2</span><span style="color:#70a0d0">}</span><span style="color:#4070a0">.&#34;</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>complexMessage<span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: The result of 2 + 2 is 4.
+</span></span></span></code></pre></div><p>The <code>${}</code> syntax allows embedding complex expressions; otherwise, simple variable names are directly interpolated.</p>
+<h3 class="heading" id="string-manipulation-methods">
+  String Manipulation Methods
+  <a class="anchor" href="#string-manipulation-methods">#</a>
+</h3>
+<p>Scala&rsquo;s <code>String</code> class provides a rich set of methods for manipulating strings:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> str <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">&#34;  Hello, World!  &#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>str<span style="color:#666">.</span>length<span style="color:#666">)</span>       <span style="color:#60a0b0;font-style:italic">// Output: 16 (including spaces)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>str<span style="color:#666">.</span>trim<span style="color:#666">)</span>         <span style="color:#60a0b0;font-style:italic">// Output: Hello, World! (removes leading/trailing whitespace)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>str<span style="color:#666">.</span>toUpperCase<span style="color:#666">)</span>   <span style="color:#60a0b0;font-style:italic">// Output:   HELLO, WORLD!   (converts to uppercase)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>str<span style="color:#666">.</span>toLowerCase<span style="color:#666">)</span>   <span style="color:#60a0b0;font-style:italic">// Output:   hello, world!   (converts to lowercase)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>str<span style="color:#666">.</span>substring<span style="color:#666">(</span><span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">8</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">// Output: lo, W (substring from index 3 to 7)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>str<span style="color:#666">.</span>startsWith<span style="color:#666">(</span><span style="color:#4070a0">&#34;Hello&#34;</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">// Output: false (because of leading whitespace)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>str<span style="color:#666">.</span>endsWith<span style="color:#666">(</span><span style="color:#4070a0">&#34;!&#34;</span><span style="color:#666">))</span>    <span style="color:#60a0b0;font-style:italic">// Output: true
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>str<span style="color:#666">.</span>contains<span style="color:#666">(</span><span style="color:#4070a0">&#34;World&#34;</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">// Output: true
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>str<span style="color:#666">.</span>replace<span style="color:#666">(</span><span style="color:#4070a0">&#34;World&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;Scala&#34;</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">// Output:   Hello, Scala!   (replaces occurrences of &#34;World&#34; with &#34;Scala&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println<span style="color:#666">(</span>str<span style="color:#666">.</span>split<span style="color:#666">(</span><span style="color:#4070a0">&#34; &#34;</span><span style="color:#666">))</span>     <span style="color:#60a0b0;font-style:italic">// Output: Array(,,Hello,,World!,,) (splits string into an array of substrings using space as a delimiter)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> words <span style="color:#007020;font-weight:bold">=</span> str<span style="color:#666">.</span>trim<span style="color:#666">.</span>split<span style="color:#666">(</span><span style="color:#4070a0">&#34; &#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>println<span style="color:#666">(</span>words<span style="color:#666">.</span>mkString<span style="color:#666">(</span><span style="color:#4070a0">&#34;, &#34;</span><span style="color:#666">))</span> <span style="color:#60a0b0;font-style:italic">//Output: Hello,,World!, (joins elements of an array using &#34;, &#34; as a separator)
+</span></span></span></code></pre></div><p>These methods provide versatile tools for common string operations like trimming whitespace, converting case, extracting substrings, searching, replacing, and splitting.  Many of these operations create <em>new</em> strings, leaving the original string unchanged (in keeping with Scala&rsquo;s emphasis on immutability). Remember to consult the Scala documentation for a comprehensive list of available string methods.</p>
+<h2 class="heading" id="error-handling">
+  Error Handling
+  <a class="anchor" href="#error-handling">#</a>
+</h2>
+<p>Effective error handling is crucial for robust applications. Scala provides mechanisms to gracefully handle exceptions and prevent unexpected program termination.</p>
+<h3 class="heading" id="try-catch-blocks">
+  Try-Catch Blocks
+  <a class="anchor" href="#try-catch-blocks">#</a>
+</h3>
+<p>The <code>try-catch</code> block is the primary construct for handling exceptions.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">scala.util.</span><span style="color:#666">{</span><span style="color:#0e84b5;font-weight:bold">Try</span><span style="color:#666">,</span> <span style="color:#0e84b5;font-weight:bold">Success</span><span style="color:#666">,</span> <span style="color:#0e84b5;font-weight:bold">Failure</span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">def</span> divide<span style="color:#666">(</span>x<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">,</span> y<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span><span style="color:#666">)</span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Try</span><span style="color:#666">[</span><span style="color:#902000">Double</span><span style="color:#666">]</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#0e84b5;font-weight:bold">Try</span> <span style="color:#666">{</span> x<span style="color:#666">.</span>toDouble <span style="color:#666">/</span> y <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> result <span style="color:#007020;font-weight:bold">=</span> divide<span style="color:#666">(</span><span style="color:#40a070">10</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">val</span> result2 <span style="color:#007020;font-weight:bold">=</span> divide<span style="color:#666">(</span><span style="color:#40a070">10</span><span style="color:#666">,</span><span style="color:#40a070">0</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>result <span style="color:#007020;font-weight:bold">match</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> <span style="color:#0e84b5;font-weight:bold">Success</span><span style="color:#666">(</span>value<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;Result: </span><span style="color:#70a0d0">$value</span><span style="color:#4070a0">&#34;</span><span style="color:#666">)</span>  <span style="color:#60a0b0;font-style:italic">//Output: Result: 5.0
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">case</span> <span style="color:#0e84b5;font-weight:bold">Failure</span><span style="color:#666">(</span>exception<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;Error: </span><span style="color:#70a0d0">${</span>exception<span style="color:#666">.</span>getMessage<span style="color:#70a0d0">}</span><span style="color:#4070a0">&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>result2 <span style="color:#007020;font-weight:bold">match</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> <span style="color:#0e84b5;font-weight:bold">Success</span><span style="color:#666">(</span>value<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;Result: </span><span style="color:#70a0d0">$value</span><span style="color:#4070a0">&#34;</span><span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> <span style="color:#0e84b5;font-weight:bold">Failure</span><span style="color:#666">(</span>exception<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;Error: </span><span style="color:#70a0d0">${</span>exception<span style="color:#666">.</span>getMessage<span style="color:#70a0d0">}</span><span style="color:#4070a0">&#34;</span><span style="color:#666">)</span>  <span style="color:#60a0b0;font-style:italic">//Output: Error: / by zero
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Using traditional try-catch
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">val</span> result <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">10</span> <span style="color:#666">/</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>  println<span style="color:#666">(</span>result<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> e<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">ArithmeticException</span> <span style="color:#666">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;Error: </span><span style="color:#70a0d0">${</span>e<span style="color:#666">.</span>getMessage<span style="color:#70a0d0">}</span><span style="color:#4070a0">&#34;</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Catches ArithmeticException
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">case</span> e<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Exception</span> <span style="color:#666">=&gt;</span> println<span style="color:#666">(</span><span style="color:#4070a0">s&#34;An error occurred: </span><span style="color:#70a0d0">${</span>e<span style="color:#666">.</span>getMessage<span style="color:#70a0d0">}</span><span style="color:#4070a0">&#34;</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Catches any other Exception
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#666">}</span> <span style="color:#60a0b0;font-style:italic">// Output: Error: / by zero
+</span></span></span></code></pre></div><p>The <code>try</code> block encloses the code that might throw an exception.  The <code>catch</code> block specifies the types of exceptions to handle and the actions to take. Multiple <code>case</code> statements can handle different exception types.  It&rsquo;s good practice to catch specific exceptions first before a more general <code>Exception</code> case. Using <code>Try</code> is generally preferred for better functional style, because it returns a <code>Try</code> object which can be more easily composed or used in functional pipelines.</p>
+<h3 class="heading" id="exceptions">
+  Exceptions
+  <a class="anchor" href="#exceptions">#</a>
+</h3>
+<p>Exceptions are objects representing runtime errors or exceptional situations.  When an exception occurs, the normal program flow is interrupted, and control is transferred to an appropriate <code>catch</code> block if one exists.</p>
+<p>Some common exceptions in Scala include:</p>
+<ul>
+<li><code>ArithmeticException</code>:  Thrown when an arithmetic operation fails (e.g., division by zero).</li>
+<li><code>NullPointerException</code>:  Thrown when trying to access a member of a <code>null</code> object.</li>
+<li><code>IllegalArgumentException</code>: Thrown when a method receives an invalid argument.</li>
+<li><code>IndexOutOfBoundsException</code>: Thrown when trying to access an index outside the bounds of an array or collection.</li>
+</ul>
+<p>When designing your code, consider which exceptions might reasonably occur and implement appropriate error handling using <code>try-catch</code> blocks to prevent unexpected crashes.  The use of <code>Try</code> helps integrate exception handling cleanly into the functional style of Scala by making exception handling part of the value being processed, rather than a control flow mechanism.</p>
+<h2 class="heading" id="next-steps">
+  Next Steps
+  <a class="anchor" href="#next-steps">#</a>
+</h2>
+<p>This section points you towards resources and projects to further your Scala journey.</p>
+<h3 class="heading" id="exploring-advanced-scala-features">
+  Exploring Advanced Scala Features
+  <a class="anchor" href="#exploring-advanced-scala-features">#</a>
+</h3>
+<p>Having grasped the fundamentals, you can delve into more advanced Scala features to enhance your programming skills.  These include:</p>
+<ul>
+<li><strong>Advanced Collections:</strong> Explore the extensive Scala collections library, including mutable collections, parallel collections, and specialized collection types.</li>
+<li><strong>Traits and Mixins:</strong>  Master the use of traits for implementing interfaces and achieving multiple inheritance. Understand the power of mixins for code reuse.</li>
+<li><strong>Type Classes and Implicit Conversions:</strong> Learn how type classes enable generic programming and how implicit conversions enhance code flexibility.</li>
+<li><strong>Actors and Concurrency:</strong> Explore Scala&rsquo;s actor model for building concurrent and parallel applications.</li>
+<li><strong>Functional Programming Patterns:</strong> Deepen your understanding of functional programming principles such as monads, functors, and applicatives to write more elegant and maintainable code.</li>
+<li><strong>Testing:</strong>  Familiarize yourself with ScalaTest or other testing frameworks to build robust and reliable applications.</li>
+<li><strong>Dependency Injection:</strong>  Learn how to use dependency injection frameworks to improve code modularity and testability.</li>
+</ul>
+<h3 class="heading" id="building-a-simple-project">
+  Building a Simple Project
+  <a class="anchor" href="#building-a-simple-project">#</a>
+</h3>
+<p>To solidify your understanding, consider building a small project.  This hands-on experience will reinforce concepts and highlight areas needing further study.  Here are some project ideas:</p>
+<ul>
+<li><strong>Simple calculator:</strong> A command-line or GUI-based calculator implementing basic arithmetic operations.</li>
+<li><strong>Text-based game:</strong> Create a simple text adventure game, involving user input and game logic.</li>
+<li><strong>Data processing script:</strong> Write a script to process a data file (CSV, JSON), perform calculations or transformations, and output the results.</li>
+<li><strong>Web scraper:</strong> Build a simple web scraper to extract information from websites (remember to respect robots.txt and website terms of service).</li>
+</ul>
+<p>Start with something manageable; you can always expand the project&rsquo;s scope later.</p>
+<h3 class="heading" id="community-resources-and-learning">
+  Community Resources and Learning
+  <a class="anchor" href="#community-resources-and-learning">#</a>
+</h3>
+<p>The Scala community is vibrant and supportive. Several resources are available for continued learning:</p>
+<ul>
+<li><strong>Official Scala Documentation:</strong> The official documentation is a valuable resource for comprehensive information.</li>
+<li><strong>Scala Exercises:</strong> Websites like exercism.io offer coding exercises to practice your Scala skills.</li>
+<li><strong>Online Courses:</strong> Platforms such as Coursera, edX, and Udemy provide various Scala courses for different skill levels.</li>
+<li><strong>Scala Blogs and Articles:</strong> Numerous blogs and articles offer insightful information and tutorials on various Scala topics.</li>
+<li><strong>Scala Forums and Communities:</strong> Engage with other Scala developers on forums like Stack Overflow and dedicated Scala communities to seek assistance and share knowledge.</li>
+</ul>
+<p>Regularly exploring these resources will keep you up-to-date with the latest advancements and best practices in Scala programming.  Don&rsquo;t hesitate to ask for help; the community is generally quite welcoming to newcomers.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-perl/">
+                        Beginner&#39;s Guide to Perl
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-shell/">
+                        Beginner&#39;s Guide to Shell
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

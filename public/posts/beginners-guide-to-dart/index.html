@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Dart | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-dart/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-dart/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Dart">
+  <meta property="og:description" content="Introduction to Dart # What is Dart? # Dart is a client-optimized programming language developed by Google. It’s used to build fast apps for any platform, from mobile and web to desktop and server. Dart is known for its ease of learning, its strong typing system that helps prevent errors, and its excellent performance. It compiles to native code (for faster execution on devices) or to JavaScript (for running in web browsers). Dart’s features include:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-07T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-dart/">Beginner&#39;s Guide to Dart</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Dart</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-03-07T00:00:00&#43;00:00">March 7, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      15 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-dart">Introduction to Dart</a>
+      <ul>
+        <li><a href="#what-is-dart">What is Dart?</a></li>
+        <li><a href="#why-use-dart">Why use Dart?</a></li>
+        <li><a href="#setting-up-your-dart-environment">Setting up your Dart environment</a></li>
+        <li><a href="#hello-world-your-first-dart-program">Hello, world! Your first Dart program.</a></li>
+      </ul>
+    </li>
+    <li><a href="#dart-fundamentals">Dart Fundamentals</a>
+      <ul>
+        <li><a href="#variables-and-data-types">Variables and Data Types</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#control-flow-if-else-for-while">Control Flow (if-else, for, while)</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#classes-and-objects">Classes and Objects</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-data">Working with Data</a>
+      <ul>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#maps">Maps</a></li>
+        <li><a href="#sets">Sets</a></li>
+        <li><a href="#null-safety">Null Safety</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-dart-concepts">Advanced Dart Concepts</a>
+      <ul>
+        <li><a href="#generics">Generics</a></li>
+        <li><a href="#asynchronous-programming-asyncawait">Asynchronous Programming (async/await)</a></li>
+        <li><a href="#exception-handling">Exception Handling</a></li>
+        <li><a href="#working-with-json">Working with JSON</a></li>
+      </ul>
+    </li>
+    <li><a href="#building-a-simple-app">Building a Simple App</a>
+      <ul>
+        <li><a href="#project-structure">Project Structure</a></li>
+        <li><a href="#user-input-and-output">User Input and Output</a></li>
+        <li><a href="#creating-interactive-elements">Creating Interactive Elements</a></li>
+      </ul>
+    </li>
+    <li><a href="#next-steps">Next Steps</a>
+      <ul>
+        <li><a href="#learning-resources">Learning Resources</a></li>
+        <li><a href="#community-and-support">Community and Support</a></li>
+        <li><a href="#exploring-dart-packages">Exploring Dart Packages</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-dart">
+  Introduction to Dart
+  <a class="anchor" href="#introduction-to-dart">#</a>
+</h2>
+<h3 class="heading" id="what-is-dart">
+  What is Dart?
+  <a class="anchor" href="#what-is-dart">#</a>
+</h3>
+<p>Dart is a client-optimized programming language developed by Google.  It&rsquo;s used to build fast apps for any platform, from mobile and web to desktop and server. Dart is known for its ease of learning,  its strong typing system that helps prevent errors, and its excellent performance.  It compiles to native code (for faster execution on devices) or to JavaScript (for running in web browsers).  Dart&rsquo;s features include:</p>
+<ul>
+<li><strong>Object-Oriented:</strong> Dart is object-oriented, meaning it uses classes and objects to structure code, promoting reusability and maintainability.</li>
+<li><strong>Garbage Collected:</strong>  Memory management is handled automatically, freeing developers from manual memory allocation and deallocation.</li>
+<li><strong>Ahead-of-Time (AOT) and Just-in-Time (JIT) Compilation:</strong> Dart supports both AOT and JIT compilation, allowing for fast development cycles during debugging and optimized performance in production.</li>
+<li><strong>Rich Standard Library:</strong>  A comprehensive standard library provides ready-to-use functionalities for various tasks.</li>
+<li><strong>Asynchronous Programming Support:</strong> Dart features excellent support for asynchronous programming with features like <code>async</code> and <code>await</code>, making it easy to handle long-running operations without blocking the UI.</li>
+</ul>
+<h3 class="heading" id="why-use-dart">
+  Why use Dart?
+  <a class="anchor" href="#why-use-dart">#</a>
+</h3>
+<p>Dart offers several advantages for developers:</p>
+<ul>
+<li><strong>Fast Development:</strong> The combination of JIT compilation for rapid iteration during development and AOT compilation for optimized performance in release makes the development cycle efficient.</li>
+<li><strong>Easy to Learn:</strong> Dart&rsquo;s syntax is clean and relatively easy to understand, making it accessible to beginners while still being powerful enough for complex applications.</li>
+<li><strong>Cross-Platform Development:</strong>  Dart allows you to build applications for multiple platforms (web, mobile, desktop) using a single codebase.  Frameworks like Flutter leverage this capability.</li>
+<li><strong>Strong Performance:</strong>  Dart compiles to native machine code, resulting in applications with high performance and responsiveness.</li>
+<li><strong>Large and Growing Community:</strong>  A vibrant and supportive community provides ample resources, tutorials, and assistance.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-dart-environment">
+  Setting up your Dart environment
+  <a class="anchor" href="#setting-up-your-dart-environment">#</a>
+</h3>
+<p>Setting up your Dart environment is straightforward.  The primary method is to download the Dart SDK from the official website (<a href="https://dart.dev/get-dart">https://dart.dev/get-dart</a>).  The SDK includes the Dart compiler (<code>dartc</code>), the Dart virtual machine (<code>dart</code>), and various other tools.</p>
+<p>After downloading and installing the SDK, you need to add the Dart SDK&rsquo;s <code>bin</code> directory to your system&rsquo;s PATH environment variable. This allows you to run Dart commands from your terminal or command prompt.  The exact steps for adding to your PATH depend on your operating system (Windows, macOS, Linux), but generally involve adding a new entry to your system&rsquo;s environment variables configuration.</p>
+<p>Once the PATH is set, you can verify the installation by opening a new terminal and typing <code>dart --version</code>.  This should display the installed Dart version.  For IDE support, popular choices include VS Code, Android Studio, and IntelliJ IDEA, with plugins readily available to enhance Dart development.</p>
+<h3 class="heading" id="hello-world-your-first-dart-program">
+  Hello, world! Your first Dart program.
+  <a class="anchor" href="#hello-world-your-first-dart-program">#</a>
+</h3>
+<p>The simplest Dart program is the classic &ldquo;Hello, world!&rdquo; program. Create a file named <code>main.dart</code> (or any name with a <code>.dart</code> extension) and add the following code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#902000">void</span> main() {
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#39;Hello, world!&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To run this program, open your terminal, navigate to the directory containing <code>main.dart</code>, and type <code>dart main.dart</code>.  The output will be:</p>
+<pre tabindex="0"><code>Hello, world!
+</code></pre><p>This program defines a <code>main</code> function, which is the entry point of every Dart program. The <code>print()</code> function displays the text &ldquo;Hello, world!&rdquo; to the console. This simple example demonstrates the basic structure of a Dart program and provides a starting point for more complex applications.</p>
+<h2 class="heading" id="dart-fundamentals">
+  Dart Fundamentals
+  <a class="anchor" href="#dart-fundamentals">#</a>
+</h2>
+<h3 class="heading" id="variables-and-data-types">
+  Variables and Data Types
+  <a class="anchor" href="#variables-and-data-types">#</a>
+</h3>
+<p>Dart is a statically-typed language, meaning the type of a variable is known at compile time. However, Dart also offers type inference, so you often don&rsquo;t need to explicitly specify the type.  Dart&rsquo;s core data types include:</p>
+<ul>
+<li><strong><code>int</code>:</strong> Represents integers (whole numbers).  Example: <code>int age = 30;</code></li>
+<li><strong><code>double</code>:</strong> Represents floating-point numbers (numbers with decimal points). Example: <code>double price = 99.99;</code></li>
+<li><strong><code>String</code>:</strong> Represents text. Example: <code>String name = &quot;Alice&quot;;</code>  String literals can be enclosed in single or double quotes.</li>
+<li><strong><code>bool</code>:</strong> Represents boolean values (<code>true</code> or <code>false</code>). Example: <code>bool isAdult = true;</code></li>
+<li><strong><code>dynamic</code>:</strong>  A variable of type <code>dynamic</code> can hold values of any type.  Use with caution, as type safety is lost.  Example: <code>dynamic value = 10; value = &quot;hello&quot;;</code></li>
+<li><strong><code>List</code>:</strong> Represents an ordered collection of objects. Example: <code>List&lt;int&gt; numbers = [1, 2, 3];</code>  Note the use of generics (<code>&lt;int&gt;</code>) to specify the type of elements in the list.</li>
+<li><strong><code>Map</code>:</strong> Represents a collection of key-value pairs. Example: <code>Map&lt;String, int&gt; ages = {&quot;Alice&quot;: 30, &quot;Bob&quot;: 25};</code>  Again, generics are used to specify the types of keys and values.</li>
+</ul>
+<h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>Dart supports a wide range of operators, including:</p>
+<ul>
+<li><strong>Arithmetic Operators:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo), <code>~/</code> (integer division).</li>
+<li><strong>Assignment Operators:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>~/=</code>.</li>
+<li><strong>Comparison Operators:</strong> <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.</li>
+<li><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT).</li>
+<li><strong>Bitwise Operators:</strong> <code>&amp;</code>, <code>|</code>, <code>^</code>, <code>~</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;</code>, <code>&gt;&gt;&gt;</code>.</li>
+<li><strong>Conditional Operator (Ternary Operator):</strong> <code>condition ? valueIfTrue : valueIfFalse</code>.  Example: <code>int age = 18; String status = (age &gt;= 18) ? &quot;Adult&quot; : &quot;Minor&quot;;</code></li>
+<li><strong>Null-Aware Operators:</strong> <code>??</code> (null-aware operator), <code>??=</code> (null-aware assignment operator).  These handle null values gracefully.  Example: <code>String name = user?.name ?? &quot;Guest&quot;;</code></li>
+</ul>
+<h3 class="heading" id="control-flow-if-else-for-while">
+  Control Flow (if-else, for, while)
+  <a class="anchor" href="#control-flow-if-else-for-while">#</a>
+</h3>
+<p>Dart provides standard control flow statements:</p>
+<ul>
+<li><strong><code>if-else</code>:</strong>  Used for conditional execution.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (age <span style="color:#666">&gt;=</span> <span style="color:#40a070">18</span>) {
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Adult&#34;</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Minor&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong><code>for</code> loop:</strong> Used for iterating over a collection or a range of values.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>; i<span style="color:#666">++</span>) {
+</span></span><span style="display:flex;"><span>  print(i);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>List<span style="color:#666">&lt;</span><span style="color:#902000">String</span><span style="color:#666">&gt;</span> names <span style="color:#666">=</span> [<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;Charlie&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">String</span> name <span style="color:#007020;font-weight:bold">in</span> names) {
+</span></span><span style="display:flex;"><span>  print(name);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong><code>while</code> loop:</strong> Used for repeating a block of code as long as a condition is true.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#902000">int</span> count <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (count <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span>) {
+</span></span><span style="display:flex;"><span>  print(count);
+</span></span><span style="display:flex;"><span>  count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong><code>do-while</code> loop:</strong> Similar to <code>while</code>, but the condition is checked at the end of the loop, guaranteeing at least one execution.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#902000">int</span> count <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span> {
+</span></span><span style="display:flex;"><span>  print(count);
+</span></span><span style="display:flex;"><span>  count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">while</span> (count <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span>);
+</span></span></code></pre></div><h3 class="heading" id="functions">
+  Functions
+  <a class="anchor" href="#functions">#</a>
+</h3>
+<p>Functions are blocks of reusable code.  Dart supports named and anonymous functions.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Named function
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">int</span> add(<span style="color:#902000">int</span> a, <span style="color:#902000">int</span> b) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">+</span> b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Anonymous function (lambda expression)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">int</span> subtract(<span style="color:#902000">int</span> a, <span style="color:#902000">int</span> b) <span style="color:#666">=&gt;</span> a <span style="color:#666">-</span> b; <span style="color:#60a0b0;font-style:italic">// concise syntax for a single-expression function
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> main() {
+</span></span><span style="display:flex;"><span>  print(add(<span style="color:#40a070">5</span>, <span style="color:#40a070">3</span>)); <span style="color:#60a0b0;font-style:italic">// Output: 8
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  print(subtract(<span style="color:#40a070">5</span>, <span style="color:#40a070">3</span>)); <span style="color:#60a0b0;font-style:italic">// Output: 2
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p>Functions can have optional parameters using curly braces <code>{}</code> and default values:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#902000">String</span> greet({<span style="color:#902000">String</span> name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Guest&#34;</span>, <span style="color:#902000">String</span> greeting <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello&#34;</span>}) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">$</span>greeting<span style="color:#4070a0">, </span><span style="color:#70a0d0">$</span>name<span style="color:#4070a0">!&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="classes-and-objects">
+  Classes and Objects
+  <a class="anchor" href="#classes-and-objects">#</a>
+</h3>
+<p>Dart is an object-oriented language, so classes are fundamental.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">String</span> name;
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">String</span> breed;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Dog(<span style="color:#007020;font-weight:bold">this</span>.name, <span style="color:#007020;font-weight:bold">this</span>.breed); <span style="color:#60a0b0;font-style:italic">// Constructor
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">void</span> bark() {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Woof!&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> main() {
+</span></span><span style="display:flex;"><span>  Dog myDog <span style="color:#666">=</span> Dog(<span style="color:#4070a0">&#34;Buddy&#34;</span>, <span style="color:#4070a0">&#34;Golden Retriever&#34;</span>);
+</span></span><span style="display:flex;"><span>  print(myDog.name); <span style="color:#60a0b0;font-style:italic">// Output: Buddy
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  myDog.bark(); <span style="color:#60a0b0;font-style:italic">// Output: Woof!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p>This defines a <code>Dog</code> class with properties (<code>name</code>, <code>breed</code>) and a method (<code>bark</code>).  The constructor initializes the object&rsquo;s properties.  Objects are created using the <code>new</code> keyword (although <code>new</code> is optional in most cases).  Classes can also have getters and setters for managing access to properties.</p>
+<h2 class="heading" id="working-with-data">
+  Working with Data
+  <a class="anchor" href="#working-with-data">#</a>
+</h2>
+<h3 class="heading" id="lists">
+  Lists
+  <a class="anchor" href="#lists">#</a>
+</h3>
+<p>Lists in Dart are ordered collections of objects.  They can contain elements of different types (though it&rsquo;s generally best practice to use a typed list for better code clarity and error prevention).  Lists are dynamically sized; you can add or remove elements as needed.</p>
+<p><strong>Creating Lists:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// List with type inference
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> numbers <span style="color:#666">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Typed list
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>List<span style="color:#666">&lt;</span><span style="color:#902000">String</span><span style="color:#666">&gt;</span> names <span style="color:#666">=</span> [<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;Charlie&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Empty list
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>List<span style="color:#666">&lt;</span><span style="color:#902000">int</span><span style="color:#666">&gt;</span> emptyList <span style="color:#666">=</span> [];
+</span></span></code></pre></div><p><strong>Accessing Elements:</strong></p>
+<p>Elements are accessed using their index (starting from 0).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>print(numbers[<span style="color:#40a070">0</span>]); <span style="color:#60a0b0;font-style:italic">// Output: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>print(names[<span style="color:#40a070">1</span>]); <span style="color:#60a0b0;font-style:italic">// Output: Bob
+</span></span></span></code></pre></div><p><strong>Adding Elements:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>names.add(<span style="color:#4070a0">&#34;David&#34;</span>);
+</span></span><span style="display:flex;"><span>names.addAll([<span style="color:#4070a0">&#34;Eve&#34;</span>, <span style="color:#4070a0">&#34;Frank&#34;</span>]);
+</span></span></code></pre></div><p><strong>Removing Elements:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>names.remove(<span style="color:#4070a0">&#34;Bob&#34;</span>);
+</span></span><span style="display:flex;"><span>names.removeAt(<span style="color:#40a070">0</span>); <span style="color:#60a0b0;font-style:italic">//Removes element at index 0
+</span></span></span></code></pre></div><p><strong>Other List Methods:</strong></p>
+<p>Lists have many useful methods like <code>length</code>, <code>contains</code>, <code>indexOf</code>, <code>sort</code>, <code>reversed</code>, etc.  Refer to the Dart documentation for a complete list.</p>
+<h3 class="heading" id="maps">
+  Maps
+  <a class="anchor" href="#maps">#</a>
+</h3>
+<p>Maps in Dart are collections of key-value pairs.  Each key is unique, and maps are unordered.  Maps can also be typed, specifying the types of both keys and values.</p>
+<p><strong>Creating Maps:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Map with type inference
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> ages <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">:</span> <span style="color:#40a070">30</span>, <span style="color:#4070a0">&#34;Bob&#34;</span><span style="color:#666">:</span> <span style="color:#40a070">25</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Typed map
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>Map<span style="color:#666">&lt;</span><span style="color:#902000">String</span>, <span style="color:#902000">int</span><span style="color:#666">&gt;</span> agesTyped <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">:</span> <span style="color:#40a070">30</span>, <span style="color:#4070a0">&#34;Bob&#34;</span><span style="color:#666">:</span> <span style="color:#40a070">25</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Empty map
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>Map<span style="color:#666">&lt;</span><span style="color:#902000">String</span>, <span style="color:#902000">String</span><span style="color:#666">&gt;</span> emptyMap <span style="color:#666">=</span> {};
+</span></span></code></pre></div><p><strong>Accessing Values:</strong></p>
+<p>Values are accessed using their keys.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>print(ages[<span style="color:#4070a0">&#34;Alice&#34;</span>]); <span style="color:#60a0b0;font-style:italic">// Output: 30
+</span></span></span></code></pre></div><p><strong>Adding and Updating Entries:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>ages[<span style="color:#4070a0">&#34;Charlie&#34;</span>] <span style="color:#666">=</span> <span style="color:#40a070">35</span>; <span style="color:#60a0b0;font-style:italic">// Adds a new entry
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>ages[<span style="color:#4070a0">&#34;Alice&#34;</span>] <span style="color:#666">=</span> <span style="color:#40a070">31</span>; <span style="color:#60a0b0;font-style:italic">// Updates an existing entry
+</span></span></span></code></pre></div><p><strong>Removing Entries:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>ages.remove(<span style="color:#4070a0">&#34;Bob&#34;</span>);
+</span></span></code></pre></div><p><strong>Other Map Methods:</strong></p>
+<p>Maps also offer many useful methods like <code>length</code>, <code>containsKey</code>, <code>containsValue</code>, <code>keys</code>, <code>values</code>, <code>entries</code>, etc.</p>
+<h3 class="heading" id="sets">
+  Sets
+  <a class="anchor" href="#sets">#</a>
+</h3>
+<p>Sets in Dart are unordered collections of unique objects.  They&rsquo;re useful when you need to ensure that there are no duplicate elements.</p>
+<p><strong>Creating Sets:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Set with type inference
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> uniqueNumbers <span style="color:#666">=</span> {<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>}; <span style="color:#60a0b0;font-style:italic">// Duplicates are automatically removed.  Output: {1, 2, 3, 4, 5}
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Typed set
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>Set<span style="color:#666">&lt;</span><span style="color:#902000">String</span><span style="color:#666">&gt;</span> uniqueNames <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;Charlie&#34;</span>}; <span style="color:#60a0b0;font-style:italic">// Output: {&#34;Alice&#34;, &#34;Bob&#34;, &#34;Charlie&#34;}
+</span></span></span></code></pre></div><p><strong>Adding Elements:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>uniqueNumbers.add(<span style="color:#40a070">6</span>);
+</span></span></code></pre></div><p><strong>Removing Elements:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>uniqueNumbers.remove(<span style="color:#40a070">2</span>);
+</span></span></code></pre></div><p><strong>Checking for Existence:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>print(uniqueNumbers.contains(<span style="color:#40a070">3</span>)); <span style="color:#60a0b0;font-style:italic">// Output: true
+</span></span></span></code></pre></div><p><strong>Other Set Methods:</strong></p>
+<p>Sets provide methods like <code>length</code>, <code>union</code>, <code>intersection</code>, <code>difference</code>, etc., for common set operations.</p>
+<h3 class="heading" id="null-safety">
+  Null Safety
+  <a class="anchor" href="#null-safety">#</a>
+</h3>
+<p>Null safety is a major feature in Dart that helps prevent null pointer exceptions.  It ensures that variables cannot hold null values unless explicitly allowed.</p>
+<p><strong>Non-nullable Types:</strong></p>
+<p>By default, variables are non-nullable.  This means that they must be assigned a value before they can be used.  Attempting to access a non-nullable variable that hasn&rsquo;t been initialized will result in a compile-time error.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#902000">String</span> name; <span style="color:#60a0b0;font-style:italic">// This will cause a compile-time error if not initialized before use.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>; <span style="color:#60a0b0;font-style:italic">//This is correct.
+</span></span></span></code></pre></div><p><strong>Nullable Types:</strong></p>
+<p>To allow a variable to hold a null value, add a question mark (<code>?</code>) after the type.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#902000">String</span><span style="color:#666">?</span> optionalName; <span style="color:#60a0b0;font-style:italic">// optionalName can be null
+</span></span></span></code></pre></div><p><strong>Null-aware Operators:</strong></p>
+<p>Null-aware operators help you safely handle potentially null values:</p>
+<ul>
+<li><code>?.</code> (null-aware access operator):  Safely accesses a property of an object that might be null.  Example: <code>print(optionalName?.length);</code> (This won&rsquo;t throw an error if <code>optionalName</code> is null).</li>
+<li><code>??</code> (null-aware operator): Provides a default value if an expression is null.  Example: <code>String displayName = optionalName ?? &quot;Guest&quot;;</code></li>
+<li><code>??=</code> (null-aware assignment operator): Assigns a value only if the variable is currently null. Example: <code>optionalName ??= &quot;Default Name&quot;;</code></li>
+</ul>
+<p>Null safety significantly improves code robustness by helping developers avoid common runtime errors related to null values.  Understanding non-nullable and nullable types and utilizing null-aware operators are crucial for writing reliable Dart code.</p>
+<h2 class="heading" id="advanced-dart-concepts">
+  Advanced Dart Concepts
+  <a class="anchor" href="#advanced-dart-concepts">#</a>
+</h2>
+<h3 class="heading" id="generics">
+  Generics
+  <a class="anchor" href="#generics">#</a>
+</h3>
+<p>Generics allow you to write reusable code that can work with different types without losing type safety.  They&rsquo;re especially useful when working with collections (like lists and maps) where you want to ensure that all elements are of a specific type.</p>
+<p><strong>Example:</strong></p>
+<p>Let&rsquo;s create a generic function that finds the maximum value in a list:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>T findMax<span style="color:#666">&lt;</span>T <span style="color:#007020;font-weight:bold">extends</span> Comparable<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&gt;</span>(List<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;</span> list) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (list.isEmpty) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">throw</span> ArgumentError(<span style="color:#4070a0">&#34;List cannot be empty&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  T max <span style="color:#666">=</span> list[<span style="color:#40a070">0</span>];
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">for</span> (T item <span style="color:#007020;font-weight:bold">in</span> list) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (item.compareTo(max) <span style="color:#666">&gt;</span> <span style="color:#40a070">0</span>) {
+</span></span><span style="display:flex;"><span>      max <span style="color:#666">=</span> item;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> max;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> main() {
+</span></span><span style="display:flex;"><span>  List<span style="color:#666">&lt;</span><span style="color:#902000">int</span><span style="color:#666">&gt;</span> numbers <span style="color:#666">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">5</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">8</span>, <span style="color:#40a070">3</span>];
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">int</span> maxNumber <span style="color:#666">=</span> findMax(numbers);
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Max number: </span><span style="color:#70a0d0">$</span>maxNumber<span style="color:#4070a0">&#34;</span>); <span style="color:#60a0b0;font-style:italic">// Output: Max number: 8
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>  List<span style="color:#666">&lt;</span><span style="color:#902000">String</span><span style="color:#666">&gt;</span> strings <span style="color:#666">=</span> [<span style="color:#4070a0">&#34;apple&#34;</span>, <span style="color:#4070a0">&#34;banana&#34;</span>, <span style="color:#4070a0">&#34;cherry&#34;</span>];
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">String</span> maxString <span style="color:#666">=</span> findMax(strings);
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Max string: </span><span style="color:#70a0d0">$</span>maxString<span style="color:#4070a0">&#34;</span>); <span style="color:#60a0b0;font-style:italic">// Output: Max string: cherry
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p>In this example, <code>findMax</code> is a generic function that works with any type <code>T</code> that implements the <code>Comparable</code> interface.  The <code>extends Comparable&lt;T&gt;</code> clause ensures type safety – only comparable types can be used with this function.</p>
+<h3 class="heading" id="asynchronous-programming-asyncawait">
+  Asynchronous Programming (async/await)
+  <a class="anchor" href="#asynchronous-programming-asyncawait">#</a>
+</h3>
+<p>Asynchronous programming is essential for handling operations that might take some time to complete (e.g., network requests, file I/O).  Dart&rsquo;s <code>async</code> and <code>await</code> keywords make asynchronous code easier to read and write.</p>
+<p><strong>Example:</strong></p>
+<p>Let&rsquo;s simulate a time-consuming operation:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#39;dart:async&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Future<span style="color:#666">&lt;</span><span style="color:#902000">String</span><span style="color:#666">&gt;</span> fetchData() <span style="color:#007020;font-weight:bold">async</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">await</span> Future.delayed(Duration(<span style="color:#002070;font-weight:bold">seconds:</span> <span style="color:#40a070">2</span>)); <span style="color:#60a0b0;font-style:italic">// Simulate a 2-second delay
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Data from the server&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> main() <span style="color:#007020;font-weight:bold">async</span> {
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Starting...&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">String</span> data <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">await</span> fetchData(); <span style="color:#60a0b0;font-style:italic">// await pauses execution until fetchData completes
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  print(<span style="color:#4070a0">&#34;Data received: </span><span style="color:#70a0d0">$</span>data<span style="color:#4070a0">&#34;</span>); <span style="color:#60a0b0;font-style:italic">// Output after 2 seconds: Data received: Data from the server
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  print(<span style="color:#4070a0">&#34;Finished.&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>fetchData</code> is an <code>async</code> function that returns a <code>Future&lt;String&gt;</code>.  The <code>await</code> keyword in <code>main</code> pauses execution until the <code>Future</code> returned by <code>fetchData</code> completes and returns its value.  Without <code>async</code> and <code>await</code>, handling asynchronous operations would require more complex callbacks or listeners.</p>
+<h3 class="heading" id="exception-handling">
+  Exception Handling
+  <a class="anchor" href="#exception-handling">#</a>
+</h3>
+<p>Exception handling allows you to gracefully handle errors that might occur during program execution.  Dart uses <code>try</code>, <code>catch</code>, and <code>finally</code> blocks for this purpose.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#902000">void</span> main() {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> result <span style="color:#666">=</span> <span style="color:#40a070">10</span> <span style="color:#666">~/</span> <span style="color:#40a070">0</span>; <span style="color:#60a0b0;font-style:italic">// Integer division by zero
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  } on IntegerDivisionByZeroException {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Error: Cannot divide by zero.&#34;</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#007020;font-weight:bold">catch</span> (e) {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;An unexpected error occurred: </span><span style="color:#70a0d0">$</span>e<span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#007020;font-weight:bold">finally</span> {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;This block always executes.&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>try</code> block contains code that might throw an exception.  The <code>catch</code> block handles specific exceptions (in this case, <code>IntegerDivisionByZeroException</code>).  A more general <code>catch</code> block can catch any exception.  The <code>finally</code> block executes regardless of whether an exception was thrown or caught.</p>
+<h3 class="heading" id="working-with-json">
+  Working with JSON
+  <a class="anchor" href="#working-with-json">#</a>
+</h3>
+<p>JSON (JavaScript Object Notation) is a common format for data exchange.  Dart&rsquo;s <code>dart:convert</code> library provides tools for working with JSON.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#39;dart:convert&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> main() {
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">String</span> jsonString <span style="color:#666">=</span> <span style="color:#4070a0">&#39;{&#34;name&#34;: &#34;Alice&#34;, &#34;age&#34;: 30}&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// Decode JSON string to a Map
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  Map<span style="color:#666">&lt;</span><span style="color:#902000">String</span>, <span style="color:#902000">dynamic</span><span style="color:#666">&gt;</span> jsonData <span style="color:#666">=</span> jsonDecode(jsonString);
+</span></span><span style="display:flex;"><span>  print(jsonData[<span style="color:#4070a0">&#34;name&#34;</span>]); <span style="color:#60a0b0;font-style:italic">// Output: Alice
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  print(jsonData[<span style="color:#4070a0">&#34;age&#34;</span>]);  <span style="color:#60a0b0;font-style:italic">// Output: 30
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// Encode a Map to a JSON string
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  Map<span style="color:#666">&lt;</span><span style="color:#902000">String</span>, <span style="color:#902000">dynamic</span><span style="color:#666">&gt;</span> dataToEncode <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;name&#34;</span><span style="color:#666">:</span> <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;city&#34;</span><span style="color:#666">:</span> <span style="color:#4070a0">&#34;New York&#34;</span>};
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">String</span> encodedJson <span style="color:#666">=</span> jsonEncode(dataToEncode);
+</span></span><span style="display:flex;"><span>  print(encodedJson); <span style="color:#60a0b0;font-style:italic">// Output: {&#34;name&#34;:&#34;Bob&#34;,&#34;city&#34;:&#34;New York&#34;}
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p><code>jsonDecode</code> converts a JSON string into a Dart object (usually a <code>Map</code> or <code>List</code>).  <code>jsonEncode</code> converts a Dart object into a JSON string.  This allows easy interaction with APIs and other systems that use JSON for data transfer.</p>
+<h2 class="heading" id="building-a-simple-app">
+  Building a Simple App
+  <a class="anchor" href="#building-a-simple-app">#</a>
+</h2>
+<p>This section guides you through building a basic command-line application in Dart to illustrate fundamental concepts like project structure, user input/output, and interactive elements.  While not a full-fledged GUI application, this example demonstrates core principles applicable to more complex projects.</p>
+<h3 class="heading" id="project-structure">
+  Project Structure
+  <a class="anchor" href="#project-structure">#</a>
+</h3>
+<p>For a simple Dart command-line application, the project structure is straightforward. You typically have a single main Dart file (often named <code>main.dart</code>).  For larger projects, you might organize code into packages and multiple files, but for this beginner&rsquo;s example, a single file suffices.</p>
+<p>Create a file named <code>main.dart</code>.  All your application code will reside within this file.</p>
+<h3 class="heading" id="user-input-and-output">
+  User Input and Output
+  <a class="anchor" href="#user-input-and-output">#</a>
+</h3>
+<p>Dart provides simple ways to interact with the user via the console.</p>
+<ul>
+<li>
+<p><strong>Output:</strong> The <code>print()</code> function sends text to the console.</p>
+</li>
+<li>
+<p><strong>Input:</strong> The <code>stdin.readLineSync()</code> function reads a line of text from the console.  This function blocks until the user presses Enter.</p>
+</li>
+</ul>
+<p>Example combining input and output:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#39;dart:io&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> main() {
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Enter your name:&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">String</span><span style="color:#666">?</span> name <span style="color:#666">=</span> stdin.readLineSync(); <span style="color:#60a0b0;font-style:italic">// readLineSync() returns a String? (nullable String)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  print(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">$</span>name<span style="color:#4070a0">!&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This program prompts the user to enter their name, reads the input, and then greets the user using the entered name.  Note the use of <code>String?</code> to indicate that <code>name</code> might be null (if the user doesn&rsquo;t enter anything before pressing Enter).  Always consider null safety when handling user input.</p>
+<h3 class="heading" id="creating-interactive-elements">
+  Creating Interactive Elements
+  <a class="anchor" href="#creating-interactive-elements">#</a>
+</h3>
+<p>For a command-line application, interactivity is primarily achieved through loops and conditional statements that respond to user input.  Let&rsquo;s build a simple number guessing game:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#39;dart:io&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#39;dart:math&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> main() {
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">int</span> secretNumber <span style="color:#666">=</span> Random().nextInt(<span style="color:#40a070">100</span>) <span style="color:#666">+</span> <span style="color:#40a070">1</span>; <span style="color:#60a0b0;font-style:italic">// Generates a random number between 1 and 100
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#902000">int</span> guess;
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">int</span> attempts <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Welcome to the Number Guessing Game!&#34;</span>);
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;I&#39;m thinking of a number between 1 and 100.&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">do</span> {
+</span></span><span style="display:flex;"><span>    attempts<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">Enter your guess:&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">String</span><span style="color:#666">?</span> input <span style="color:#666">=</span> stdin.readLineSync();
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">try</span> {
+</span></span><span style="display:flex;"><span>      guess <span style="color:#666">=</span> <span style="color:#902000">int</span>.parse(input<span style="color:#666">!</span>); <span style="color:#60a0b0;font-style:italic">// Parse input as integer; throws error if not a number
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    } <span style="color:#007020;font-weight:bold">catch</span> (e) {
+</span></span><span style="display:flex;"><span>      print(<span style="color:#4070a0">&#34;Invalid input. Please enter a number.&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">continue</span>; <span style="color:#60a0b0;font-style:italic">// Skip to next iteration of the loop
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (guess <span style="color:#666">&lt;</span> secretNumber) {
+</span></span><span style="display:flex;"><span>      print(<span style="color:#4070a0">&#34;Too low!&#34;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> (guess <span style="color:#666">&gt;</span> secretNumber) {
+</span></span><span style="display:flex;"><span>      print(<span style="color:#4070a0">&#34;Too high!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  } <span style="color:#007020;font-weight:bold">while</span> (guess <span style="color:#666">!=</span> secretNumber);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">Congratulations! You guessed the number in </span><span style="color:#70a0d0">$</span>attempts<span style="color:#4070a0"> attempts.&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This game generates a random number and repeatedly prompts the user for guesses until the correct number is entered. It provides feedback (too high or too low) and counts the number of attempts.  Error handling is included to manage non-numeric input.  This example showcases how simple loops, conditionals, and input/output create a basic interactive experience in a command-line Dart application.  More complex interactions in command-line apps might involve menus, or parsing command line arguments.  For richer user interfaces, consider frameworks like Flutter.</p>
+<h2 class="heading" id="next-steps">
+  Next Steps
+  <a class="anchor" href="#next-steps">#</a>
+</h2>
+<p>This section points you towards resources and communities to help you continue your Dart journey.</p>
+<h3 class="heading" id="learning-resources">
+  Learning Resources
+  <a class="anchor" href="#learning-resources">#</a>
+</h3>
+<p>The official Dart website (<a href="https://dart.dev/">https://dart.dev/</a>) is an excellent starting point.  It offers comprehensive documentation, tutorials, and guides covering various aspects of Dart programming, from the fundamentals to advanced topics.</p>
+<p>Other valuable resources include:</p>
+<ul>
+<li>
+<p><strong>DartPad:</strong> An online Dart editor (<a href="https://dartpad.dev/">https://dartpad.dev/</a>) allows you to experiment with Dart code directly in your browser without setting up a local environment.  It&rsquo;s perfect for quick tests and learning new concepts.</p>
+</li>
+<li>
+<p><strong>Online Courses:</strong> Platforms like Udemy, Coursera, and others offer Dart and Flutter courses suitable for various skill levels.  Look for courses that align with your learning style and goals.</p>
+</li>
+<li>
+<p><strong>Books:</strong> Several books are available on Dart and Flutter, providing a more in-depth and structured learning experience.</p>
+</li>
+</ul>
+<h3 class="heading" id="community-and-support">
+  Community and Support
+  <a class="anchor" href="#community-and-support">#</a>
+</h3>
+<p>The Dart community is active and supportive.  Here are some ways to connect with other Dart developers:</p>
+<ul>
+<li>
+<p><strong>Stack Overflow:</strong> Search for Dart-related questions or ask your own.  The Stack Overflow community is a valuable resource for finding solutions to common problems.</p>
+</li>
+<li>
+<p><strong>GitHub:</strong> Explore open-source Dart projects on GitHub.  Contributing to open source is a great way to learn from others and improve your skills.</p>
+</li>
+<li>
+<p><strong>Dart&rsquo;s Official Forums/Discussions:</strong>  Check the Dart website for links to official discussion forums where you can engage with the Dart team and other developers.  This is a good place for asking questions and sharing your knowledge.</p>
+</li>
+<li>
+<p><strong>Flutter Community (if using Flutter):</strong>  Since Dart is often used with Flutter, the Flutter community offers many resources and support channels.</p>
+</li>
+</ul>
+<h3 class="heading" id="exploring-dart-packages">
+  Exploring Dart Packages
+  <a class="anchor" href="#exploring-dart-packages">#</a>
+</h3>
+<p>Dart&rsquo;s package ecosystem (hosted on pub.dev, <a href="https://pub.dev/">https://pub.dev/</a>) provides access to a vast library of pre-built packages that extend Dart&rsquo;s functionality.  These packages offer solutions for various tasks, including:</p>
+<ul>
+<li><strong>HTTP requests:</strong> Packages like <code>http</code> simplify making HTTP requests to web servers.</li>
+<li><strong>Database interactions:</strong>  Packages help interact with databases like SQLite, PostgreSQL, and others.</li>
+<li><strong>UI components (if using Flutter):</strong> If you&rsquo;re building Flutter apps, many UI packages provide ready-made widgets and components to speed up development.</li>
+<li><strong>Testing:</strong>  Packages provide testing frameworks to write unit tests and integration tests for your code.</li>
+<li><strong>Data serialization:</strong> Packages handle JSON, XML, and other data formats.</li>
+</ul>
+<p>Using packages can significantly accelerate your development process, allowing you to focus on the unique aspects of your application rather than reinventing the wheel.  Familiarize yourself with the pub.dev website and learn how to add and manage packages in your Dart projects.  This will be a significant step in building more complex and robust applications.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-objective-c/">
+                        Beginner&#39;s Guide to Objective-C
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-matlab/">
+                        Beginner&#39;s Guide to MATLAB
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

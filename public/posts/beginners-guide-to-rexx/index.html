@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Rexx | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-rexx/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-rexx/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Rexx">
+  <meta property="og:description" content="Introduction to Rexx # What is Rexx? # REXX (REstructured eXtended eXecutor) is a powerful, interpreted, general-purpose programming language known for its readability, ease of use, and portability. Unlike compiled languages like C or C&#43;&#43;, Rexx code is not translated into machine code before execution. Instead, a Rexx interpreter reads and executes the code directly. This makes it ideal for rapid prototyping and scripting tasks. Rexx is particularly well-suited for string manipulation, text processing, and system administration tasks. Its syntax is designed to be easily understood, even by those with limited programming experience, making it a great choice for beginners. Many operating systems, including IBM z/OS, OS/2, and various Unix-like systems, have native Rexx interpreters.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-30T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-rexx/">Beginner&#39;s Guide to Rexx</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Rexx</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-12-30T00:00:00&#43;00:00">December 30, 2024</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      22 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-rexx">Introduction to Rexx</a>
+      <ul>
+        <li><a href="#what-is-rexx">What is Rexx?</a></li>
+        <li><a href="#why-learn-rexx">Why learn Rexx?</a></li>
+        <li><a href="#rexxs-strengths-and-weaknesses">Rexx&rsquo;s strengths and weaknesses</a></li>
+        <li><a href="#setting-up-your-rexx-environment">Setting up your Rexx environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-rexx-syntax">Basic Rexx Syntax</a>
+      <ul>
+        <li><a href="#comments-and-whitespace">Comments and whitespace</a></li>
+        <li><a href="#variables-and-data-types">Variables and data types</a></li>
+        <li><a href="#assignment-statements">Assignment statements</a></li>
+        <li><a href="#operators-arithmetic-logical-comparison">Operators (Arithmetic, logical, comparison)</a></li>
+        <li><a href="#basic-inputoutput-say-pull">Basic Input/Output (say, pull)</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-structures">Control Structures</a>
+      <ul>
+        <li><a href="#conditional-statements-if-then-else">Conditional statements (if-then-else)</a></li>
+        <li><a href="#looping-structures-do-while-do-until-do-forever">Looping structures (do-while, do-until, do-forever)</a></li>
+        <li><a href="#nested-loops-and-conditionals">Nested loops and conditionals</a></li>
+        <li><a href="#exiting-loops-prematurely">Exiting loops prematurely</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-strings">Working with Strings</a>
+      <ul>
+        <li><a href="#string-concatenation">String concatenation</a></li>
+        <li><a href="#string-manipulation-functions-substr-left-right-etc">String manipulation functions (substr, left, right, etc.)</a></li>
+        <li><a href="#searching-and-replacing-within-strings">Searching and replacing within strings</a></li>
+        <li><a href="#string-comparisons">String comparisons</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-numbers">Working with Numbers</a>
+      <ul>
+        <li><a href="#arithmetic-operations">Arithmetic operations</a></li>
+        <li><a href="#number-formatting">Number formatting</a></li>
+        <li><a href="#mathematical-functions">Mathematical functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#arrays-and-lists">Arrays and Lists</a>
+      <ul>
+        <li><a href="#declaring-and-initializing-arrays">Declaring and initializing arrays</a></li>
+        <li><a href="#accessing-array-elements">Accessing array elements</a></li>
+        <li><a href="#iterating-through-arrays">Iterating through arrays</a></li>
+        <li><a href="#using-arrays-effectively">Using arrays effectively</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions-and-subroutines">Functions and Subroutines</a>
+      <ul>
+        <li><a href="#defining-and-calling-functions">Defining and calling functions</a></li>
+        <li><a href="#passing-parameters-to-functions">Passing parameters to functions</a></li>
+        <li><a href="#returning-values-from-functions">Returning values from functions</a></li>
+        <li><a href="#benefits-of-modular-programming">Benefits of modular programming</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-rexx-techniques">Advanced Rexx Techniques</a>
+      <ul>
+        <li><a href="#working-with-external-files">Working with external files</a></li>
+        <li><a href="#exception-handling">Exception handling</a></li>
+        <li><a href="#debugging-rexx-programs">Debugging Rexx programs</a></li>
+        <li><a href="#interfacing-with-other-systems">Interfacing with other systems</a></li>
+      </ul>
+    </li>
+    <li><a href="#example-programs">Example Programs</a>
+      <ul>
+        <li><a href="#simple-calculator">Simple calculator</a></li>
+        <li><a href="#string-manipulation-program">String manipulation program</a></li>
+        <li><a href="#file-processing-program">File processing program</a></li>
+      </ul>
+    </li>
+    <li><a href="#resources-and-further-learning">Resources and Further Learning</a>
+      <ul>
+        <li><a href="#online-rexx-documentation">Online Rexx documentation</a></li>
+        <li><a href="#rexx-communities-and-forums">Rexx communities and forums</a></li>
+        <li><a href="#books-and-tutorials-on-rexx">Books and tutorials on Rexx</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-rexx">
+  Introduction to Rexx
+  <a class="anchor" href="#introduction-to-rexx">#</a>
+</h2>
+<h3 class="heading" id="what-is-rexx">
+  What is Rexx?
+  <a class="anchor" href="#what-is-rexx">#</a>
+</h3>
+<p>REXX (REstructured eXtended eXecutor) is a powerful, interpreted, general-purpose programming language known for its readability, ease of use, and portability.  Unlike compiled languages like C or C++, Rexx code is not translated into machine code before execution. Instead, a Rexx interpreter reads and executes the code directly.  This makes it ideal for rapid prototyping and scripting tasks. Rexx is particularly well-suited for string manipulation, text processing, and system administration tasks.  Its syntax is designed to be easily understood, even by those with limited programming experience, making it a great choice for beginners.  Many operating systems, including IBM z/OS, OS/2, and various Unix-like systems, have native Rexx interpreters.</p>
+<h3 class="heading" id="why-learn-rexx">
+  Why learn Rexx?
+  <a class="anchor" href="#why-learn-rexx">#</a>
+</h3>
+<p>Learning Rexx offers several advantages:</p>
+<ul>
+<li><strong>Easy to learn:</strong>  Rexx&rsquo;s clear syntax and straightforward commands make it relatively easy to pick up, even for novice programmers.  The learning curve is significantly gentler than many other programming languages.</li>
+<li><strong>Highly portable:</strong>  Rexx interpreters are available on a wide range of operating systems, meaning your code can often be run without modification across different platforms.</li>
+<li><strong>Excellent for scripting:</strong>  Its ability to easily interact with the operating system makes it a perfect choice for automating repetitive tasks, managing files, and performing system administration duties.</li>
+<li><strong>Powerful string manipulation:</strong> Rexx provides a rich set of built-in functions specifically designed for manipulating strings, making it exceptionally effective for text processing and data transformation.</li>
+<li><strong>Good for rapid prototyping:</strong> The interpreted nature of Rexx allows for quick development and testing cycles, facilitating rapid prototyping and iterative development.</li>
+</ul>
+<h3 class="heading" id="rexxs-strengths-and-weaknesses">
+  Rexx&rsquo;s strengths and weaknesses
+  <a class="anchor" href="#rexxs-strengths-and-weaknesses">#</a>
+</h3>
+<p><strong>Strengths:</strong></p>
+<ul>
+<li><strong>Readability and ease of use:</strong>  The syntax is clean and intuitive.</li>
+<li><strong>Portability:</strong>  Runs on many different operating systems.</li>
+<li><strong>Excellent string handling:</strong>  Powerful built-in functions for string manipulation.</li>
+<li><strong>Good for scripting and automation:</strong>  Easy interaction with the operating system.</li>
+<li><strong>Interactive interpreter:</strong> Allows for immediate feedback and experimentation.</li>
+</ul>
+<p><strong>Weaknesses:</strong></p>
+<ul>
+<li><strong>Performance:</strong> Being an interpreted language, Rexx can be slower than compiled languages for computationally intensive tasks.</li>
+<li><strong>Limited libraries:</strong> Compared to languages like Python or Java, Rexx has a smaller standard library.  However, many extensions and custom libraries exist depending on the specific Rexx implementation.</li>
+<li><strong>Smaller community:</strong>  The community surrounding Rexx is smaller than those of other popular programming languages, meaning that finding support and resources might sometimes be more challenging.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-rexx-environment">
+  Setting up your Rexx environment
+  <a class="anchor" href="#setting-up-your-rexx-environment">#</a>
+</h3>
+<p>The steps for setting up your Rexx environment depend on your operating system.  However, the general process usually involves these steps:</p>
+<ol>
+<li>
+<p><strong>Download a Rexx interpreter:</strong>  Find a Rexx interpreter appropriate for your operating system.  Many implementations are available online, both free and commercial. Popular choices include Regina Rexx (a free, open-source interpreter available for multiple platforms), and the native Rexx interpreters provided with some IBM operating systems.</p>
+</li>
+<li>
+<p><strong>Install the interpreter:</strong> Follow the installation instructions provided with the downloaded interpreter. This usually involves unpacking the archive and possibly adding the interpreter&rsquo;s directory to your system&rsquo;s PATH environment variable.  This ensures that you can run Rexx programs from any directory.</p>
+</li>
+<li>
+<p><strong>Verify the installation:</strong> Open a command prompt or terminal and type <code>rexx</code> or the appropriate command to run your Rexx interpreter.  If the installation was successful, you should see the Rexx prompt (often <code>&gt;</code> or <code>&gt;&gt;</code>).</p>
+</li>
+<li>
+<p><strong>Create a simple Rexx program:</strong> Create a text file (e.g., <code>hello.rex</code>) with a simple Rexx program (such as <code>say 'Hello, world!'</code>).</p>
+</li>
+<li>
+<p><strong>Run your program:</strong> Execute your program from the command line using the command  <code>rexx hello.rex</code> (or the appropriate command for your Rexx interpreter).  If everything is working correctly, you should see &ldquo;Hello, world!&rdquo; printed on the console.</p>
+</li>
+</ol>
+<p>Remember to consult the documentation for your specific Rexx interpreter for detailed installation instructions and any platform-specific considerations.</p>
+<h2 class="heading" id="basic-rexx-syntax">
+  Basic Rexx Syntax
+  <a class="anchor" href="#basic-rexx-syntax">#</a>
+</h2>
+<h3 class="heading" id="comments-and-whitespace">
+  Comments and whitespace
+  <a class="anchor" href="#comments-and-whitespace">#</a>
+</h3>
+<p>Rexx uses the <code>/*</code> and <code>*/</code> characters to denote block comments.  Anything between these characters will be ignored by the interpreter.  Single-line comments are also possible using the <code>/*</code> at the beginning of the line, or a <code>/* ... */</code>  on a single line.   Whitespace (spaces, tabs, newlines) is generally ignored by Rexx, except within string literals. This allows for well-formatted, readable code.  Indentation is not required by the interpreter but is strongly recommended to improve code readability, especially for complex programs.</p>
+<h3 class="heading" id="variables-and-data-types">
+  Variables and data types
+  <a class="anchor" href="#variables-and-data-types">#</a>
+</h3>
+<p>Rexx variables are implicitly declared; you don&rsquo;t need to specify a type.  A variable is created the first time it is used.  Rexx is dynamically typed; the type of a variable can change during program execution.  Rexx primarily works with strings.  Numbers are treated as strings unless explicitly used in arithmetic operations.</p>
+<h3 class="heading" id="assignment-statements">
+  Assignment statements
+  <a class="anchor" href="#assignment-statements">#</a>
+</h3>
+<p>The assignment operator is <code>=</code>.  To assign a value to a variable, use the following syntax:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>variable_name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>value<span style="color:#bbb">
+</span></span></span></code></pre></div><p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>age<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">30</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>Note that even the numerical value 30 is stored as a string.</p>
+<h3 class="heading" id="operators-arithmetic-logical-comparison">
+  Operators (Arithmetic, logical, comparison)
+  <a class="anchor" href="#operators-arithmetic-logical-comparison">#</a>
+</h3>
+<p>Rexx supports a variety of operators:</p>
+<p><strong>Arithmetic Operators:</strong></p>
+<ul>
+<li><code>+</code> (addition)</li>
+<li><code>-</code> (subtraction)</li>
+<li><code>*</code> (multiplication)</li>
+<li><code>/</code> (division)</li>
+<li><code>%</code> (modulo)</li>
+<li><code>**</code> (exponentiation)</li>
+</ul>
+<p><strong>Logical Operators:</strong></p>
+<ul>
+<li><code>&amp;</code> (AND)</li>
+<li><code>|</code> (OR)</li>
+<li><code>¬</code> (NOT)</li>
+</ul>
+<p><strong>Comparison Operators:</strong></p>
+<ul>
+<li><code>=</code> (equals)</li>
+<li><code>\=</code> (not equals)</li>
+<li><code>&lt;</code> (less than)</li>
+<li><code>&gt;</code> (greater than)</li>
+<li><code>&lt;=</code> (less than or equals)</li>
+<li><code>&gt;=</code> (greater than or equals)</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>x<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>y<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sum<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>y<span style="color:#bbb">           </span><span style="color:#60a0b0;font-style:italic">/* sum will be 15 (as a string) */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>difference<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">-</span><span style="color:#bbb"> </span>y<span style="color:#bbb">     </span><span style="color:#60a0b0;font-style:italic">/* difference will be 5 (as a string) */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>is_equal<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">(</span>x<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>y<span style="color:#666">)</span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">/* is_equal will be 0 (false) */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>is_greater<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">(</span>x<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span>y<span style="color:#666">)</span><span style="color:#bbb">   </span><span style="color:#60a0b0;font-style:italic">/* is_greater will be 1 (true) */</span><span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="basic-inputoutput-say-pull">
+  Basic Input/Output (say, pull)
+  <a class="anchor" href="#basic-inputoutput-say-pull">#</a>
+</h3>
+<ul>
+<li><strong><code>say</code>:</strong> The <code>say</code> instruction sends output to the console.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello, world!&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span>name<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* Outputs the value of the name variable */</span><span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>pull</code>:</strong> The <code>pull</code> instruction reads a line of input from the console.  It stores the input as a string in the variable specified after <code>pull</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pull</span><span style="color:#bbb"> </span>username<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Welcome, &#34;</span><span style="color:#bbb"> </span>username<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;!&#34;</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>In this example, the program will prompt the user to enter a username and then greet the user using the entered username.  Multiple values can be read into multiple variables in a single <code>pull</code> statement, separated by spaces.  For example <code>pull var1 var2 var3</code> will read three values into <code>var1</code>, <code>var2</code>, and <code>var3</code> separated by spaces.  If fewer values than variables are entered, the remaining variables will be assigned empty strings.</p>
+<h2 class="heading" id="control-structures">
+  Control Structures
+  <a class="anchor" href="#control-structures">#</a>
+</h2>
+<h3 class="heading" id="conditional-statements-if-then-else">
+  Conditional statements (if-then-else)
+  <a class="anchor" href="#conditional-statements-if-then-else">#</a>
+</h3>
+<p>Rexx uses <code>if-then-else</code> statements to control the flow of execution based on conditions.  The syntax is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>condition<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* statements to execute if the condition is true */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">else</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* statements to execute if the condition is false */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>endif<span style="color:#bbb">
+</span></span></span></code></pre></div><p>You can omit the <code>else</code> block if you only need to execute statements when the condition is true.  Multiple conditions can be chained using <code>elseif</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>x<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">20</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;x is greater than 20&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>elseif<span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;x is greater than 10&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">else</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;x is 10 or less&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>endif<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Conditions are evaluated as being true if they result in a non-zero value, and false if they result in a zero value.</p>
+<h3 class="heading" id="looping-structures-do-while-do-until-do-forever">
+  Looping structures (do-while, do-until, do-forever)
+  <a class="anchor" href="#looping-structures-do-while-do-until-do-forever">#</a>
+</h3>
+<p>Rexx provides several ways to create loops:</p>
+<ul>
+<li><strong><code>do while</code>:</strong> This loop continues as long as the specified condition is true.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">do</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">&lt;=</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span>i<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>enddo<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>do until</code>:</strong> This loop continues until the specified condition becomes true.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">do</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">until</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span>i<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>enddo<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>do forever</code>:</strong> This loop runs indefinitely until explicitly terminated using a <code>leave</code> statement (see below).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">do</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">forever</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span>i<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">leave</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>enddo<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="nested-loops-and-conditionals">
+  Nested loops and conditionals
+  <a class="anchor" href="#nested-loops-and-conditionals">#</a>
+</h3>
+<p>Loops and conditional statements can be nested within each other to create more complex control structures.  The following example shows a nested loop:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">to</span><span style="color:#bbb"> </span><span style="color:#40a070">3</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">do</span><span style="color:#bbb"> </span>j<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">to</span><span style="color:#bbb"> </span><span style="color:#40a070">2</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;i = &#34;</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;, j = &#34;</span><span style="color:#bbb"> </span>j<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>enddo<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>enddo<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Similarly, you can nest conditional statements within loops or other conditionals.</p>
+<h3 class="heading" id="exiting-loops-prematurely">
+  Exiting loops prematurely
+  <a class="anchor" href="#exiting-loops-prematurely">#</a>
+</h3>
+<p>The <code>leave</code> statement can be used to exit a loop prematurely.  This is particularly useful in <code>do forever</code> loops or when a certain condition is met within a loop that requires immediate termination.  The <code>leave</code> statement only exits the innermost loop it&rsquo;s contained in.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">do</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">forever</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span>i<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">leave</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>enddo<span style="color:#bbb">
+</span></span></span></code></pre></div><p>In this example, the loop will terminate when <code>i</code> becomes greater than 5.  You can also use <code>iterative</code> and <code>conditional</code> statements within a loop to control the iteration process.  <code>iterative</code> allows skipping an iteration and proceeding to the next one and <code>conditional</code> checks for a condition and will leave the loop if true.  Check your specific Rexx implementation documentation to see if it supports these features.</p>
+<h2 class="heading" id="working-with-strings">
+  Working with Strings
+  <a class="anchor" href="#working-with-strings">#</a>
+</h2>
+<p>Rexx excels at string manipulation.  Its built-in functions make it easy to work with text data.</p>
+<h3 class="heading" id="string-concatenation">
+  String concatenation
+  <a class="anchor" href="#string-concatenation">#</a>
+</h3>
+<p>Strings in Rexx are concatenated simply by placing them next to each other.  The <code>||</code> operator can also be explicitly used for concatenation.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>first_name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;John&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>last_name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Doe&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>full_name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>first_name<span style="color:#bbb"> </span>last_name<span style="color:#bbb">   </span><span style="color:#60a0b0;font-style:italic">/* full_name will be &#34;JohnDoe&#34; */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>full_name2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>first_name<span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34; &#34;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>last_name<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* full_name2 will be &#34;John Doe&#34; */</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>Note that no explicit operator is needed; juxtaposition automatically concatenates.</p>
+<h3 class="heading" id="string-manipulation-functions-substr-left-right-etc">
+  String manipulation functions (substr, left, right, etc.)
+  <a class="anchor" href="#string-manipulation-functions-substr-left-right-etc">#</a>
+</h3>
+<p>Rexx offers numerous built-in functions for manipulating strings.  Here are some commonly used ones:</p>
+<ul>
+<li><strong><code>substr(string, start, length)</code>:</strong> Extracts a substring of a specified length from a string, starting at a given position.  <code>start</code> is 1-based (the first character is at position 1).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>my_string<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello, world!&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>substring<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">substr</span><span style="color:#666">(</span>my_string<span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#40a070">7</span><span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#666">)</span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* substring will be &#34;world&#34; */</span><span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>left(string, length)</code>:</strong> Extracts the leftmost <code>length</code> characters from a string.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>my_string<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello, world!&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>left_part<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">left</span><span style="color:#666">(</span>my_string<span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#666">)</span><span style="color:#bbb">     </span><span style="color:#60a0b0;font-style:italic">/* left_part will be &#34;Hello&#34; */</span><span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>right(string, length)</code>:</strong> Extracts the rightmost <code>length</code> characters from a string.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>my_string<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello, world!&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>right_part<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">right</span><span style="color:#666">(</span>my_string<span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#666">)</span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">/* right_part will be &#34;world!&#34; */</span><span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>length(string)</code>:</strong> Returns the length of a string.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>my_string<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello, world!&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>string_length<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">length</span><span style="color:#666">(</span>my_string<span style="color:#666">)</span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* string_length will be 13 */</span><span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li>
+<p><strong><code>strip(string)</code>:</strong> Removes leading and trailing blanks from a string.   Check your implementation for variations (e.g., <code>leading()</code>, <code>trailing()</code> for removing only leading or trailing spaces).</p>
+</li>
+<li>
+<p><strong><code>translate(string, to_string, from_string)</code>:</strong> Replaces characters in a string.</p>
+</li>
+<li>
+<p><strong><code>upper(string)</code>:</strong> Converts a string to uppercase.</p>
+</li>
+<li>
+<p><strong><code>lower(string)</code>:</strong> Converts a string to lowercase.</p>
+</li>
+</ul>
+<p>Many other string functions are available; consult your Rexx interpreter&rsquo;s documentation for a complete list.</p>
+<h3 class="heading" id="searching-and-replacing-within-strings">
+  Searching and replacing within strings
+  <a class="anchor" href="#searching-and-replacing-within-strings">#</a>
+</h3>
+<p>Rexx doesn&rsquo;t have a single built-in function to directly search and replace, but it can be accomplished using a combination of functions like <code>pos</code> (finds the position of a substring) and <code>substr</code> (extracts a substring), combined with concatenation.  Alternatively, regular expressions (if supported by your Rexx implementation) provide more powerful search and replace capabilities.</p>
+<h3 class="heading" id="string-comparisons">
+  String comparisons
+  <a class="anchor" href="#string-comparisons">#</a>
+</h3>
+<p>String comparisons in Rexx are case-sensitive by default.  The comparison operators (<code>=</code>, <code>\=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>) can be used to compare strings.  The comparison is based on the lexicographical order of characters.  For case-insensitive comparisons, you might need to convert strings to uppercase or lowercase using <code>upper()</code> and <code>lower()</code> functions before comparison.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>string1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;apple&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>string2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Apple&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>string1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>string2<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Strings are equal (case-sensitive)&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">else</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Strings are not equal (case-sensitive)&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>endif<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>upper<span style="color:#666">(</span>string1<span style="color:#666">)</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>upper<span style="color:#666">(</span>string2<span style="color:#666">)</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Strings are equal (case-insensitive)&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>endif<span style="color:#bbb">
+</span></span></span></code></pre></div><h2 class="heading" id="working-with-numbers">
+  Working with Numbers
+  <a class="anchor" href="#working-with-numbers">#</a>
+</h2>
+<p>While Rexx primarily treats data as strings, it provides robust support for numerical operations.</p>
+<h3 class="heading" id="arithmetic-operations">
+  Arithmetic operations
+  <a class="anchor" href="#arithmetic-operations">#</a>
+</h3>
+<p>Rexx supports standard arithmetic operations:</p>
+<ul>
+<li><strong>Addition:</strong> <code>+</code></li>
+<li><strong>Subtraction:</strong> <code>-</code></li>
+<li><strong>Multiplication:</strong> <code>*</code></li>
+<li><strong>Division:</strong> <code>/</code></li>
+<li><strong>Modulo (remainder):</strong> <code>%</code></li>
+<li><strong>Exponentiation:</strong> <code>**</code></li>
+</ul>
+<p>These operators work as expected, but it&rsquo;s crucial to remember that the <em>results</em> of arithmetic operations are still strings.  If you need to perform further arithmetic operations, ensure that the results are treated numerically (e.g., using functions that expect numeric input).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>x<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>y<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sum<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>y<span style="color:#bbb">       </span><span style="color:#60a0b0;font-style:italic">/* sum is &#34;15&#34; (a string) */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>product<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span>y<span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">/* product is &#34;50&#34; (a string) */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>division<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">/</span><span style="color:#bbb"> </span>y<span style="color:#bbb">   </span><span style="color:#60a0b0;font-style:italic">/* division is &#34;2&#34; (a string) */</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>To perform further calculations, you might need explicit type conversion to numeric.  The specific method depends on the Rexx implementation; some might automatically convert strings to numbers within arithmetic expressions; others might require an explicit function (refer to your specific Rexx documentation).</p>
+<h3 class="heading" id="number-formatting">
+  Number formatting
+  <a class="anchor" href="#number-formatting">#</a>
+</h3>
+<p>Rexx offers functions for formatting numbers as strings.  The specific functions available vary depending on the Rexx implementation.  Common formatting options include specifying the number of decimal places, adding commas as thousands separators, and controlling the overall appearance.  Check the documentation for your particular Rexx interpreter to see what formatting functions are available.  For example, some implementations might offer a <code>format()</code> function with various options.  This ensures numerical outputs are presented in a user-friendly and consistent manner.  Consider exploring any available libraries that offer enhanced formatting capabilities.</p>
+<h3 class="heading" id="mathematical-functions">
+  Mathematical functions
+  <a class="anchor" href="#mathematical-functions">#</a>
+</h3>
+<p>Rexx provides a set of built-in mathematical functions.  The availability and names of these functions might vary slightly across Rexx implementations. Common functions often include:</p>
+<ul>
+<li><strong><code>abs(number)</code>:</strong> Returns the absolute value of a number.</li>
+<li><strong><code>sin(number)</code>:</strong> Returns the sine of a number (in radians).</li>
+<li><strong><code>cos(number)</code>:</strong> Returns the cosine of a number (in radians).</li>
+<li><strong><code>tan(number)</code>:</strong> Returns the tangent of a number (in radians).</li>
+<li><strong><code>atan(number)</code>:</strong> Returns the arctangent of a number (in radians).</li>
+<li><strong><code>sqrt(number)</code>:</strong> Returns the square root of a number.</li>
+<li><strong><code>log(number)</code>:</strong> Returns the natural logarithm of a number.</li>
+<li><strong><code>log10(number)</code>:</strong> Returns the base-10 logarithm of a number.</li>
+<li><strong><code>exp(number)</code>:</strong> Returns the exponential of a number (e raised to the power of the number).</li>
+<li><strong><code>max(number1, number2, ...)</code>:</strong> Returns the maximum of a set of numbers.</li>
+<li><strong><code>min(number1, number2, ...)</code>:</strong> Returns the minimum of a set of numbers.</li>
+<li><strong><code>round(number)</code>:</strong> Rounds a number to the nearest integer.</li>
+<li><strong><code>trunc(number)</code>:</strong> Truncates a number to an integer (removes the fractional part).</li>
+</ul>
+<p>Remember that these functions typically expect numeric input and return numeric values (although the returned value will ultimately be represented as a string).  Ensure proper handling for cases with non-numeric input to avoid unexpected errors.</p>
+<h2 class="heading" id="arrays-and-lists">
+  Arrays and Lists
+  <a class="anchor" href="#arrays-and-lists">#</a>
+</h2>
+<p>Rexx doesn&rsquo;t have built-in array structures in the same way as some other languages (like Python or Java). However, you can effectively simulate arrays and lists using a technique involving string manipulation and indexing.  Rexx&rsquo;s strength in string manipulation makes this approach quite efficient.</p>
+<h3 class="heading" id="declaring-and-initializing-arrays">
+  Declaring and initializing arrays
+  <a class="anchor" href="#declaring-and-initializing-arrays">#</a>
+</h3>
+<p>Rexx &ldquo;arrays&rdquo; are typically implemented using a single string variable where elements are separated by a delimiter (often a space or comma).  There&rsquo;s no explicit declaration; the array is created when you first assign values to it.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>my_array<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;10 20 30 40 50&#34;</span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* Array of numbers, space-delimited */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>my_list<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;apple,banana,orange&#34;</span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* List of strings, comma-delimited */</span><span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="accessing-array-elements">
+  Accessing array elements
+  <a class="anchor" href="#accessing-array-elements">#</a>
+</h3>
+<p>Individual elements are accessed using <code>substr</code> along with the knowledge of the delimiter and element positions.  You&rsquo;ll need to carefully track the lengths of each element to compute the correct starting positions.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/* Accessing elements from my_array */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>element1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">substr</span><span style="color:#666">(</span>my_array<span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#40a070">2</span><span style="color:#666">)</span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">/* element1 will be &#34;10&#34; */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>element2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">substr</span><span style="color:#666">(</span>my_array<span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#40a070">4</span><span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#40a070">2</span><span style="color:#666">)</span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">/* element2 will be &#34;20&#34; */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">/* ...and so on...  Requires careful calculation of starting positions based on the delimiter and element lengths */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">/* Example using word() to simplify access (space-delimited array) */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>element3<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">word</span><span style="color:#666">(</span>my_array<span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#40a070">3</span><span style="color:#666">)</span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* element3 will be &#34;30&#34; */</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>The <code>word()</code> function (illustrated above), which extracts the nth word from a string (where words are separated by spaces), is a frequently used utility when working with arrays or lists represented as strings. The <code>words()</code> function returns the number of words in a string.</p>
+<h3 class="heading" id="iterating-through-arrays">
+  Iterating through arrays
+  <a class="anchor" href="#iterating-through-arrays">#</a>
+</h3>
+<p>Looping through a Rexx &ldquo;array&rdquo; involves iterating through the string and extracting each element.  You&rsquo;ll often need functions like <code>word()</code> (for space-delimited arrays) and a loop to handle the array elements sequentially.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>num_words<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">words</span><span style="color:#666">(</span>my_array<span style="color:#666">)</span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* Get the number of words (elements) */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">do</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">to</span><span style="color:#bbb"> </span>num_words<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>element<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">word</span><span style="color:#666">(</span>my_array<span style="color:#666">,</span><span style="color:#bbb"> </span>i<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Element &#34;</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;: &#34;</span><span style="color:#bbb"> </span>element<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>enddo<span style="color:#bbb">
+</span></span></span></code></pre></div><p>For comma-delimited lists, you&rsquo;d need to use <code>pos</code> to find the comma positions and <code>substr</code> to extract each element. This is slightly more complex than using space delimiters.</p>
+<h3 class="heading" id="using-arrays-effectively">
+  Using arrays effectively
+  <a class="anchor" href="#using-arrays-effectively">#</a>
+</h3>
+<p>While not true arrays, the string-based approach offers simplicity for smaller datasets.  For large or complex data structures, consider alternative methods:</p>
+<ul>
+<li><strong>External files:</strong> Store the data in a text file and process it line by line.</li>
+<li><strong>Custom data structures:</strong> Implement more sophisticated data structures if needed, but this typically involves writing more complex code.</li>
+</ul>
+<p>Remember that error handling (e.g., checks for valid array indices) is essential to prevent unexpected behavior or crashes.  The string-based implementation of arrays in Rexx is effective for small-scale tasks, but it’s important to choose a more efficient approach for larger data sets or if the array manipulation becomes overly complex.</p>
+<h2 class="heading" id="functions-and-subroutines">
+  Functions and Subroutines
+  <a class="anchor" href="#functions-and-subroutines">#</a>
+</h2>
+<p>Rexx supports functions and subroutines, promoting modularity and code reusability.  While Rexx doesn&rsquo;t have a strict distinction between functions and subroutines in the same way as some other languages (e.g., a function <em>must</em> return a value, a subroutine doesn&rsquo;t), the terms are used here to describe procedures that either return a value or don&rsquo;t.</p>
+<h3 class="heading" id="defining-and-calling-functions">
+  Defining and calling functions
+  <a class="anchor" href="#defining-and-calling-functions">#</a>
+</h3>
+<p>Functions are defined using the <code>function</code> keyword, followed by the function name and a block of code enclosed within <code>do</code> and <code>end</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/* Function to add two numbers */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#06287e">add_numbers</span><span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">procedure</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">arg</span><span style="color:#bbb"> </span>num1<span style="color:#666">,</span><span style="color:#bbb"> </span>num2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>num1<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>num2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">end</span><span style="color:#bbb"> </span>add_numbers<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">/* Calling the function */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>add_numbers<span style="color:#666">(</span><span style="color:#40a070">5</span><span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#40a070">3</span><span style="color:#666">)</span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* result will be &#34;8&#34; */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span>result<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Subroutines (procedures that don&rsquo;t explicitly return a value) follow a similar structure but omit the <code>return</code> statement.</p>
+<h3 class="heading" id="passing-parameters-to-functions">
+  Passing parameters to functions
+  <a class="anchor" href="#passing-parameters-to-functions">#</a>
+</h3>
+<p>Parameters are passed to functions by specifying them within parentheses after the function name during the call.  Inside the function, parameters are accessed using the <code>arg</code> keyword.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span><span style="color:#06287e">greet</span><span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">procedure</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">arg</span><span style="color:#bbb"> </span>name<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello, &#34;</span><span style="color:#bbb"> </span>name<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;!&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">end</span><span style="color:#bbb"> </span>greet<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>greet<span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">)</span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* Calls the greet subroutine with the parameter &#34;Alice&#34; */</span><span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="returning-values-from-functions">
+  Returning values from functions
+  <a class="anchor" href="#returning-values-from-functions">#</a>
+</h3>
+<p>Functions return values using the <code>return</code> statement. The returned value can then be assigned to a variable or used in other expressions.  If a function doesn&rsquo;t have a <code>return</code> statement, or the return value is omitted, the function effectively acts like a subroutine; the returned value will be an empty string in that case (check your specific Rexx implementation for exact behavior).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span><span style="color:#06287e">square</span><span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">procedure</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">arg</span><span style="color:#bbb"> </span>num<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>num<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span>num<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">end</span><span style="color:#bbb"> </span>square<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>square<span style="color:#666">(</span><span style="color:#40a070">4</span><span style="color:#666">)</span><span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">/* result will be &#34;16&#34; */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span>result<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="benefits-of-modular-programming">
+  Benefits of modular programming
+  <a class="anchor" href="#benefits-of-modular-programming">#</a>
+</h3>
+<p>Using functions and subroutines provides several advantages:</p>
+<ul>
+<li><strong>Code Reusability:</strong> Functions can be called from multiple parts of the program, avoiding redundant code.</li>
+<li><strong>Improved Readability:</strong> Breaking down complex tasks into smaller, more manageable functions makes the code easier to understand and maintain.</li>
+<li><strong>Easier Debugging:</strong> Isolating code into functions simplifies the debugging process, as you can test individual functions independently.</li>
+<li><strong>Better Organization:</strong>  Modular code is better organized, promoting clearer structure and improved maintainability.  This is especially important for larger and more complex Rexx programs.</li>
+<li><strong>Enhanced Collaboration:</strong> Modular design facilitates teamwork as different developers can work on separate functions or modules concurrently.</li>
+</ul>
+<p>Remember that good naming conventions for functions and subroutines are essential for readability and maintainability.  Choose descriptive names that clearly indicate the purpose of the function or subroutine.  Using comments to explain the function&rsquo;s purpose and parameters is also a good practice.</p>
+<h2 class="heading" id="advanced-rexx-techniques">
+  Advanced Rexx Techniques
+  <a class="anchor" href="#advanced-rexx-techniques">#</a>
+</h2>
+<p>This section explores more advanced Rexx capabilities, enhancing your ability to create robust and powerful programs.</p>
+<h3 class="heading" id="working-with-external-files">
+  Working with external files
+  <a class="anchor" href="#working-with-external-files">#</a>
+</h3>
+<p>Rexx provides several ways to interact with external files:</p>
+<ul>
+<li>
+<p><strong>Opening and closing files:</strong>  Functions like <code>open</code> and <code>close</code> are used to handle file I/O.  The specific functions and their parameters might vary slightly between different Rexx implementations, so consult your interpreter&rsquo;s documentation.  Typically, you&rsquo;ll specify the filename and access mode (e.g., read, write, append).</p>
+</li>
+<li>
+<p><strong>Reading from files:</strong> The <code>linein</code> function reads a line from a file. You&rsquo;ll generally use it within a loop to read the entire file content line by line.</p>
+</li>
+<li>
+<p><strong>Writing to files:</strong> The <code>lineout</code> function writes a line to a file.  You&rsquo;ll typically use it within a loop to write data to the file.</p>
+</li>
+<li>
+<p><strong>Error handling:</strong>  Always check for file opening errors (e.g., file not found) and handle them gracefully to prevent program crashes.</p>
+</li>
+</ul>
+<p>Example (Illustrative - specific functions may differ slightly):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>filename<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;mydata.txt&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>file_handle<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>open<span style="color:#666">(</span>filename<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>file_handle<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Error opening file!&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">exit</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>endif<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">do</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span><span style="color:#007020">lines</span><span style="color:#666">(</span>file_handle<span style="color:#666">)</span><span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>line<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">linein</span><span style="color:#666">(</span>file_handle<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span>line<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>enddo<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>close<span style="color:#666">(</span>file_handle<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="exception-handling">
+  Exception handling
+  <a class="anchor" href="#exception-handling">#</a>
+</h3>
+<p>While Rexx doesn&rsquo;t have a structured exception handling mechanism like <code>try-catch</code> blocks in some languages, you can implement error handling using conditional statements and checks for error codes returned by functions.  For instance, check the return values of file I/O operations or other potentially error-prone functions and handle errors appropriately (e.g., display error messages, log errors, or take corrective actions).</p>
+<h3 class="heading" id="debugging-rexx-programs">
+  Debugging Rexx programs
+  <a class="anchor" href="#debugging-rexx-programs">#</a>
+</h3>
+<p>Debugging Rexx programs typically involves:</p>
+<ul>
+<li>
+<p><strong>Print statements:</strong> Insert <code>say</code> statements strategically in your code to display the values of variables or monitor the flow of execution.</p>
+</li>
+<li>
+<p><strong>Interactive debugging:</strong> Some Rexx interpreters provide interactive debuggers allowing you to step through the code line by line, examine variables, and set breakpoints.  Check your interpreter&rsquo;s documentation to see if a debugger is included.</p>
+</li>
+<li>
+<p><strong>Error messages:</strong>  Carefully examine any error messages generated by the interpreter. They often provide valuable clues about the source of the problem.</p>
+</li>
+<li>
+<p><strong>Code review:</strong> Have another developer review your code for potential errors or areas for improvement.</p>
+</li>
+</ul>
+<h3 class="heading" id="interfacing-with-other-systems">
+  Interfacing with other systems
+  <a class="anchor" href="#interfacing-with-other-systems">#</a>
+</h3>
+<p>Rexx can interact with other systems through various methods:</p>
+<ul>
+<li>
+<p><strong>Command execution:</strong> The <code>address</code> instruction can execute operating system commands and retrieve their output.  This is particularly useful for automating tasks that involve interacting with the operating system (e.g., running other programs, executing shell commands).</p>
+</li>
+<li>
+<p><strong>External programs:</strong>  Rexx programs can call external programs or functions (DLLs, shared libraries, etc.).  The specific mechanisms vary depending on the operating system and the Rexx interpreter.</p>
+</li>
+<li>
+<p><strong>APIs and libraries:</strong>  Depending on the Rexx implementation and available libraries, you might be able to interface with system APIs or specific libraries to extend the functionalities of your Rexx programs.  Consult your Rexx implementation&rsquo;s documentation for specific details.</p>
+</li>
+</ul>
+<p>Remember that security considerations are crucial when interfacing with external systems.  Always validate user inputs to prevent security vulnerabilities and follow secure coding practices to avoid any security risks when interacting with other programs or systems.</p>
+<h2 class="heading" id="example-programs">
+  Example Programs
+  <a class="anchor" href="#example-programs">#</a>
+</h2>
+<p>This section provides example programs demonstrating various Rexx features.  Remember that the specific functions and their behavior might have minor variations depending on your Rexx interpreter.</p>
+<h3 class="heading" id="simple-calculator">
+  Simple calculator
+  <a class="anchor" href="#simple-calculator">#</a>
+</h3>
+<p>This program performs basic arithmetic operations:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Enter the first number:&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pull</span><span style="color:#bbb"> </span>num1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Enter the second number:&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pull</span><span style="color:#bbb"> </span>num2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Enter the operation (+, -, *, /):&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pull</span><span style="color:#bbb"> </span>op<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>op<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;+&#34;</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>num1<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>num2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>elseif<span style="color:#bbb"> </span>op<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;-&#34;</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>num1<span style="color:#bbb"> </span><span style="color:#666">-</span><span style="color:#bbb"> </span>num2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>elseif<span style="color:#bbb"> </span>op<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;*&#34;</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>num1<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span>num2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>elseif<span style="color:#bbb"> </span>op<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;/&#34;</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>num2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Error: Cannot divide by zero!&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">else</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>num1<span style="color:#bbb"> </span><span style="color:#666">/</span><span style="color:#bbb"> </span>num2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>endif<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">else</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Error: Invalid operator!&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>endif<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>result<span style="color:#bbb"> </span><span style="color:#666">&lt;&gt;</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;&#34;</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">/* Check if there was a valid result */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Result: &#34;</span><span style="color:#bbb"> </span>result<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>endif<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="string-manipulation-program">
+  String manipulation program
+  <a class="anchor" href="#string-manipulation-program">#</a>
+</h3>
+<p>This program demonstrates several string manipulation functions:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Enter a string:&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pull</span><span style="color:#bbb"> </span>str<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>len<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">length</span><span style="color:#666">(</span>str<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Length of the string: &#34;</span><span style="color:#bbb"> </span>len<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>upper_str<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>upper<span style="color:#666">(</span>str<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Uppercase string: &#34;</span><span style="color:#bbb"> </span>upper_str<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>lower_str<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>lower<span style="color:#666">(</span>str<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Lowercase string: &#34;</span><span style="color:#bbb"> </span>lower_str<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>substr1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">substr</span><span style="color:#666">(</span>str<span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#666">)</span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* Extract first 5 characters */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Substring (first 5 characters): &#34;</span><span style="color:#bbb"> </span>substr1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>pos_a<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">pos</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;a&#34;</span><span style="color:#666">,</span><span style="color:#bbb"> </span>str<span style="color:#666">)</span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* Find the position of &#34;a&#34; */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>pos_a<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Position of &#39;a&#39;: &#34;</span><span style="color:#bbb"> </span>pos_a<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">else</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;&#39;a&#39; not found in the string.&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>endif<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="file-processing-program">
+  File processing program
+  <a class="anchor" href="#file-processing-program">#</a>
+</h3>
+<p>This program reads data from a file, processes it, and writes the results to another file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rexx" data-lang="rexx"><span style="display:flex;"><span>input_file<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;input.txt&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>output_file<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;output.txt&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>infile<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>open<span style="color:#666">(</span>input_file<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>infile<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Error opening input file!&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">exit</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>endif<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>outfile<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>open<span style="color:#666">(</span>output_file<span style="color:#666">,</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;w&#34;</span><span style="color:#666">)</span><span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">/* Open for writing */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>outfile<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">then</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Error opening output file!&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>close<span style="color:#666">(</span>infile<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">exit</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>endif<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">do</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span><span style="color:#007020">lines</span><span style="color:#666">(</span>infile<span style="color:#666">)</span><span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>line<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">linein</span><span style="color:#666">(</span>infile<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">/* Process the line (e.g., convert to uppercase) */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>processed_line<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>upper<span style="color:#666">(</span>line<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>lineout<span style="color:#bbb"> </span>outfile<span style="color:#666">,</span><span style="color:#bbb"> </span>processed_line<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>enddo<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>close<span style="color:#666">(</span>infile<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>close<span style="color:#666">(</span>outfile<span style="color:#666">)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">say</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;File processing complete. Results written to &#34;</span><span style="color:#bbb"> </span>output_file<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Remember to create an <code>input.txt</code> file in the same directory before running this program.  The program will create an <code>output.txt</code> file with the uppercase version of the input.  Error handling is included; always consider robust error handling in your own programs.</p>
+<p>These examples provide a starting point. You can modify and expand upon them to explore more advanced concepts and build more complex Rexx applications. Remember to consult the documentation for your specific Rexx interpreter for details on functions and syntax.</p>
+<h2 class="heading" id="resources-and-further-learning">
+  Resources and Further Learning
+  <a class="anchor" href="#resources-and-further-learning">#</a>
+</h2>
+<p>This section provides links and suggestions for continued learning and exploration of the Rexx programming language.  Note that the availability and specific URLs of online resources can change over time.</p>
+<h3 class="heading" id="online-rexx-documentation">
+  Online Rexx documentation
+  <a class="anchor" href="#online-rexx-documentation">#</a>
+</h3>
+<p>Finding comprehensive, up-to-date online documentation for Rexx can be challenging due to the language&rsquo;s history and the existence of various implementations.  However, several resources often prove useful:</p>
+<ul>
+<li>
+<p><strong>Regina Rexx:</strong> If you&rsquo;re using the Regina Rexx interpreter, their website usually contains documentation and tutorials. Search online for &ldquo;Regina Rexx documentation&rdquo; to find the most current link.</p>
+</li>
+<li>
+<p><strong>IBM documentation (for z/OS and other IBM systems):</strong> If you&rsquo;re working with Rexx on IBM platforms (like z/OS),  search the IBM Knowledge Center or their official documentation websites for Rexx documentation specific to your operating system and Rexx version.</p>
+</li>
+<li>
+<p><strong>Open-source implementations:</strong> Some open-source Rexx projects might have their own documentation pages on platforms like GitHub.</p>
+</li>
+</ul>
+<p>It&rsquo;s often helpful to search online for specific Rexx functions or features you need help with, as many tutorials and example code snippets are available on various websites and programming forums.</p>
+<h3 class="heading" id="rexx-communities-and-forums">
+  Rexx communities and forums
+  <a class="anchor" href="#rexx-communities-and-forums">#</a>
+</h3>
+<p>While not as large as communities for some more modern languages, there are still online communities where you can find assistance and connect with other Rexx programmers:</p>
+<ul>
+<li>
+<p><strong>Stack Overflow:</strong>  Search for Rexx-related questions on Stack Overflow; you&rsquo;ll find a number of helpful answers and discussions.</p>
+</li>
+<li>
+<p><strong>Rexx mailing lists or forums:</strong> Search online for &ldquo;Rexx mailing list&rdquo; or &ldquo;Rexx forum&rdquo; to find older forums or mailing lists that might still be active.  These older forums might contain valuable archived information and discussions on Rexx programming.</p>
+</li>
+</ul>
+<p>Engaging with these communities can provide valuable support, allow you to ask questions, and share your knowledge with other Rexx developers.</p>
+<h3 class="heading" id="books-and-tutorials-on-rexx">
+  Books and tutorials on Rexx
+  <a class="anchor" href="#books-and-tutorials-on-rexx">#</a>
+</h3>
+<p>Finding dedicated books solely on Rexx might be more challenging than for other programming languages.  However, you can often find relevant information in books covering broader topics like scripting or system administration that include Rexx as one of the scripting languages discussed.  Search on Amazon or other online book retailers using keywords like &ldquo;Rexx programming,&rdquo; &ldquo;Rexx tutorial,&rdquo; or &ldquo;Rexx scripting&rdquo; to see what&rsquo;s available.</p>
+<p>Additionally, searching online for &ldquo;Rexx tutorial PDF&rdquo; or &ldquo;Rexx tutorial beginners&rdquo; can yield various free tutorials and learning materials.  Remember to check the publication date or last update of any tutorial you find to ensure it&rsquo;s up-to-date and relevant.  Many older tutorials might still be useful, but they might not cover the newest features or best practices.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-coldfusion/">
+                        Beginner&#39;s Guide to ColdFusion
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-logo/">
+                        Beginner&#39;s Guide to Logo
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

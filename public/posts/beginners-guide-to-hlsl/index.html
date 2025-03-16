@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to HLSL | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-hlsl/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-hlsl/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to HLSL">
+  <meta property="og:description" content="Introduction to HLSL # What is HLSL? # High-Level Shading Language (HLSL) is a programming language developed by Microsoft for writing shaders. Shaders are small programs that run on a graphics processing unit (GPU) to determine how objects are rendered on the screen. They control various aspects of rendering, including lighting, texturing, and effects. HLSL is specifically designed to be used with DirectX, Microsoft’s graphics API, making it a crucial tool for game developers and other graphics programmers working within the DirectX ecosystem. HLSL provides a relatively high-level interface, abstracting away many low-level GPU details, while still offering fine-grained control over the rendering process.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-20T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-hlsl/">Beginner&#39;s Guide to HLSL</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to HLSL</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-01-20T00:00:00&#43;00:00">January 20, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      24 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-hlsl">Introduction to HLSL</a>
+      <ul>
+        <li><a href="#what-is-hlsl">What is HLSL?</a></li>
+        <li><a href="#why-use-hlsl">Why use HLSL?</a></li>
+        <li><a href="#hlsl-vs-other-shading-languages">HLSL vs other Shading Languages</a></li>
+        <li><a href="#setting-up-your-development-environment">Setting up your development environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-hlsl-syntax-and-structure">Basic HLSL Syntax and Structure</a>
+      <ul>
+        <li><a href="#variables-and-data-types">Variables and Data Types</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#control-flow-if-else-for-while">Control Flow (if, else, for, while)</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#comments">Comments</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-vectors-and-matrices">Working with Vectors and Matrices</a>
+      <ul>
+        <li><a href="#vectors-in-hlsl">Vectors in HLSL</a></li>
+        <li><a href="#matrices-in-hlsl">Matrices in HLSL</a></li>
+        <li><a href="#vector-and-matrix-operations">Vector and Matrix Operations</a></li>
+        <li><a href="#transformations">Transformations</a></li>
+      </ul>
+    </li>
+    <li><a href="#vertex-shaders">Vertex Shaders</a>
+      <ul>
+        <li><a href="#understanding-vertex-shaders">Understanding Vertex Shaders</a></li>
+        <li><a href="#input-and-output-structures">Input and Output Structures</a></li>
+        <li><a href="#transforming-vertices">Transforming Vertices</a></li>
+        <li><a href="#example-simple-vertex-shader">Example: Simple Vertex Shader</a></li>
+      </ul>
+    </li>
+    <li><a href="#pixel-shaders">Pixel Shaders</a>
+      <ul>
+        <li><a href="#understanding-pixel-shaders">Understanding Pixel Shaders</a></li>
+        <li><a href="#input-and-output-structures-1">Input and Output Structures</a></li>
+        <li><a href="#coloring-pixels">Coloring Pixels</a></li>
+        <li><a href="#texture-sampling">Texture Sampling</a></li>
+        <li><a href="#example-simple-pixel-shader">Example: Simple Pixel Shader</a></li>
+      </ul>
+    </li>
+    <li><a href="#textures-and-samplers">Textures and Samplers</a>
+      <ul>
+        <li><a href="#working-with-textures">Working with Textures</a></li>
+        <li><a href="#sampler-states">Sampler States</a></li>
+        <li><a href="#texture-filtering">Texture Filtering</a></li>
+        <li><a href="#texture-addressing-modes">Texture Addressing Modes</a></li>
+      </ul>
+    </li>
+    <li><a href="#lighting-and-shading">Lighting and Shading</a>
+      <ul>
+        <li><a href="#basic-lighting-models">Basic Lighting Models</a></li>
+        <li><a href="#diffuse-lighting">Diffuse Lighting</a></li>
+        <li><a href="#specular-lighting">Specular Lighting</a></li>
+        <li><a href="#ambient-lighting">Ambient Lighting</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-techniques">Advanced Techniques</a>
+      <ul>
+        <li><a href="#normal-mapping">Normal Mapping</a></li>
+        <li><a href="#shadow-mapping">Shadow Mapping</a></li>
+        <li><a href="#using-hlsl-with-different-apis-directx-vulkan-etc">Using HLSL with different APIs (DirectX, Vulkan, etc.)</a></li>
+      </ul>
+    </li>
+    <li><a href="#debugging-and-optimization">Debugging and Optimization</a>
+      <ul>
+        <li><a href="#common-errors-and-how-to-debug">Common Errors and How to Debug</a></li>
+        <li><a href="#optimizing-hlsl-code-for-performance">Optimizing HLSL Code for Performance</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-hlsl">
+  Introduction to HLSL
+  <a class="anchor" href="#introduction-to-hlsl">#</a>
+</h2>
+<h3 class="heading" id="what-is-hlsl">
+  What is HLSL?
+  <a class="anchor" href="#what-is-hlsl">#</a>
+</h3>
+<p>High-Level Shading Language (HLSL) is a programming language developed by Microsoft for writing shaders. Shaders are small programs that run on a graphics processing unit (GPU) to determine how objects are rendered on the screen.  They control various aspects of rendering, including lighting, texturing, and effects.  HLSL is specifically designed to be used with DirectX, Microsoft&rsquo;s graphics API, making it a crucial tool for game developers and other graphics programmers working within the DirectX ecosystem. HLSL provides a relatively high-level interface, abstracting away many low-level GPU details, while still offering fine-grained control over the rendering process.</p>
+<h3 class="heading" id="why-use-hlsl">
+  Why use HLSL?
+  <a class="anchor" href="#why-use-hlsl">#</a>
+</h3>
+<p>HLSL offers several compelling reasons for its use in graphics programming:</p>
+<ul>
+<li><strong>DirectX Integration:</strong>  HLSL is tightly integrated with DirectX, providing a seamless workflow for developers working within the DirectX environment.  This integration simplifies shader development and deployment.</li>
+<li><strong>Performance:</strong>  HLSL is designed for performance.  The language allows developers to write highly optimized code that leverages the parallel processing capabilities of the GPU, leading to efficient rendering.</li>
+<li><strong>High-Level Abstraction:</strong> While offering control over low-level details when needed, HLSL provides a higher-level of abstraction compared to directly programming the GPU hardware, simplifying shader development.</li>
+<li><strong>Extensive Functionality:</strong> HLSL provides a rich set of built-in functions and data types specifically tailored for graphics programming tasks, including vector and matrix operations, texture sampling, and mathematical functions.</li>
+<li><strong>Cross-Platform Potential (with limitations):</strong> While primarily associated with DirectX and Windows, HLSL shaders can sometimes be adapted for use on other platforms through translation layers or by using compatible APIs (though this is not always straightforward).</li>
+</ul>
+<h3 class="heading" id="hlsl-vs-other-shading-languages">
+  HLSL vs other Shading Languages
+  <a class="anchor" href="#hlsl-vs-other-shading-languages">#</a>
+</h3>
+<p>HLSL shares similarities with other shading languages like GLSL (OpenGL Shading Language) and Metal (used with Apple&rsquo;s Metal API).  While all aim to control GPU rendering, there are key differences:</p>
+<ul>
+<li><strong>API Coupling:</strong> HLSL is tightly coupled with DirectX, whereas GLSL is coupled with OpenGL, and Metal is with Apple&rsquo;s Metal.  This means code portability between these languages is often limited.</li>
+<li><strong>Syntax and Features:</strong>  While the core concepts are similar (e.g., using shaders to manipulate vertices and pixels), the syntax and specific features offered by each language can differ. This necessitates learning the specific nuances of each language.</li>
+<li><strong>Platform Support:</strong> HLSL primarily targets Windows and DirectX-compatible platforms, while GLSL is more cross-platform (supporting Windows, Linux, macOS, etc. through OpenGL). Metal is specific to Apple platforms.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-development-environment">
+  Setting up your development environment
+  <a class="anchor" href="#setting-up-your-development-environment">#</a>
+</h3>
+<p>Setting up your development environment for HLSL involves several steps:</p>
+<ol>
+<li><strong>Install DirectX SDK (or equivalent):</strong>  The DirectX SDK provides the necessary tools and libraries for compiling and running HLSL shaders.  Note that newer versions of Windows and Visual Studio may handle DirectX inclusion differently. Check the current Microsoft documentation.</li>
+<li><strong>Choose an IDE:</strong>  A suitable Integrated Development Environment (IDE) is essential. Visual Studio is the most common choice for HLSL development due to its excellent DirectX support and debugging capabilities.</li>
+<li><strong>Create a DirectX Project:</strong> Within your chosen IDE (Visual Studio is recommended), create a new DirectX project. This project will include the necessary templates and configurations for integrating HLSL shaders. The exact steps vary depending on the Visual Studio version and project type.</li>
+<li><strong>Write and Compile Shaders:</strong>  Write your HLSL code in <code>.hlsl</code> files. Your IDE or build system will then compile these files into shader bytecode that the GPU can understand during the project&rsquo;s build process.</li>
+<li><strong>Integrate with Your Application:</strong> The compiled shaders need to be loaded and utilized within your DirectX application using appropriate DirectX API calls.  The specifics depend on the type of shader (vertex, pixel, compute, etc.) and its application within your rendering pipeline. Consult DirectX documentation for integration details.</li>
+<li><strong>Debugging:</strong>  Use your IDE&rsquo;s debugging features to troubleshoot issues with your HLSL code. DirectX&rsquo;s debugging tools can help identify rendering problems related to your shaders.</li>
+</ol>
+<p>Remember to refer to the latest Microsoft documentation on DirectX and HLSL for the most up-to-date information and best practices.</p>
+<h2 class="heading" id="basic-hlsl-syntax-and-structure">
+  Basic HLSL Syntax and Structure
+  <a class="anchor" href="#basic-hlsl-syntax-and-structure">#</a>
+</h2>
+<h3 class="heading" id="variables-and-data-types">
+  Variables and Data Types
+  <a class="anchor" href="#variables-and-data-types">#</a>
+</h3>
+<p>HLSL uses a variety of data types to represent different kinds of information.  Variables must be declared with a type before they can be used.  Here are some common data types:</p>
+<ul>
+<li><strong><code>float</code>:</strong>  Represents a single-precision floating-point number (32 bits).  This is the most commonly used type for representing coordinates, colors, and other numerical values.</li>
+<li><strong><code>float2</code>, <code>float3</code>, <code>float4</code>:</strong> Represent vectors of 2, 3, and 4 floating-point numbers, respectively.  These are crucial for representing positions, normals, colors, and other multi-component data.</li>
+<li><strong><code>int</code>:</strong> Represents a 32-bit integer.</li>
+<li><strong><code>uint</code>:</strong> Represents a 32-bit unsigned integer.</li>
+<li><strong><code>bool</code>:</strong> Represents a Boolean value (true or false).</li>
+<li><strong><code>sampler2D</code>:</strong>  Represents a 2D texture sampler.  This is used to access and sample data from textures.</li>
+<li><strong><code>matrix</code>:</strong> Represents matrices (e.g., <code>matrix 4x4</code> for a 4x4 matrix).  Commonly used for transformations.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float4</span> color <span style="color:#666">=</span> <span style="color:#902000">float4</span>(<span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">1.0f</span>); <span style="color:#60a0b0;font-style:italic">// Red color (RGBA)</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">float3</span> position <span style="color:#666">=</span> <span style="color:#902000">float3</span>(<span style="color:#40a070">10.0f</span>, <span style="color:#40a070">5.0f</span>, <span style="color:#40a070">0.0f</span>);
+</span></span><span style="display:flex;"><span><span style="color:#902000">int</span> count <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#902000">bool</span> isVisible <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span>;
+</span></span><span style="display:flex;"><span>sampler2D myTexture;
+</span></span></code></pre></div><h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>HLSL supports a standard set of operators, including:</p>
+<ul>
+<li><strong>Arithmetic Operators:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo)</li>
+<li><strong>Relational Operators:</strong> <code>==</code> (equal to), <code>!=</code> (not equal to), <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+<li><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT)</li>
+<li><strong>Assignment Operators:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, etc.</li>
+<li><strong>Bitwise Operators:</strong> <code>&amp;</code>, <code>|</code>, <code>^</code>, <code>~</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;</code> (These are less frequently used in typical shaders.)</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float</span> a <span style="color:#666">=</span> <span style="color:#40a070">10.0f</span>;
+</span></span><span style="display:flex;"><span><span style="color:#902000">float</span> b <span style="color:#666">=</span> <span style="color:#40a070">5.0f</span>;
+</span></span><span style="display:flex;"><span><span style="color:#902000">float</span> sum <span style="color:#666">=</span> a <span style="color:#666">+</span> b;
+</span></span><span style="display:flex;"><span><span style="color:#902000">bool</span> isEqual <span style="color:#666">=</span> (a <span style="color:#666">==</span> b);
+</span></span></code></pre></div><h3 class="heading" id="control-flow-if-else-for-while">
+  Control Flow (if, else, for, while)
+  <a class="anchor" href="#control-flow-if-else-for-while">#</a>
+</h3>
+<p>HLSL provides standard control flow statements:</p>
+<ul>
+<li><strong><code>if</code>-<code>else</code>:</strong> Conditional execution of code blocks.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020">distance</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">10.0f</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">discard</span>; <span style="color:#60a0b0;font-style:italic">// Discard the current pixel</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Process the pixel</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong><code>for</code> loop:</strong> Iterative execution of a code block.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>; i<span style="color:#666">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Do something 10 times</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong><code>while</code> loop:</strong>  Repeated execution of a code block as long as a condition is true.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Do something until i reaches 10</span>
+</span></span><span style="display:flex;"><span>    i<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="functions">
+  Functions
+  <a class="anchor" href="#functions">#</a>
+</h3>
+<p>Functions allow you to encapsulate reusable blocks of code.  HLSL provides many built-in functions (for example, mathematical functions, texture sampling functions), and you can also define your own custom functions.</p>
+<p><strong>Example (Custom Function):</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float</span> calculateDistance(<span style="color:#902000">float3</span> a, <span style="color:#902000">float3</span> b) {
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">float3</span> diff <span style="color:#666">=</span> a <span style="color:#666">-</span> b;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020">length</span>(diff); <span style="color:#60a0b0;font-style:italic">// length() is a built-in function</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Example (Calling a function):</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float</span> <span style="color:#007020">distance</span> <span style="color:#666">=</span> calculateDistance(<span style="color:#902000">float3</span>(<span style="color:#40a070">1</span>,<span style="color:#40a070">2</span>,<span style="color:#40a070">3</span>), <span style="color:#902000">float3</span>(<span style="color:#40a070">4</span>,<span style="color:#40a070">5</span>,<span style="color:#40a070">6</span>));
+</span></span></code></pre></div><h3 class="heading" id="comments">
+  Comments
+  <a class="anchor" href="#comments">#</a>
+</h3>
+<p>Comments are used to explain your code.  HLSL supports two types of comments:</p>
+<ul>
+<li><strong>Single-line comments:</strong>  Start with <code>//</code> and extend to the end of the line.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment</span>
+</span></span></code></pre></div><ul>
+<li><strong>Multi-line comments:</strong>  Enclosed within <code>/*</code> and <code>*/</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">This is a
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">multi-line comment
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">*/</span>
+</span></span></code></pre></div><p>Using comments effectively is crucial for making your code more readable and understandable, especially as the complexity of your shaders grows.</p>
+<h2 class="heading" id="working-with-vectors-and-matrices">
+  Working with Vectors and Matrices
+  <a class="anchor" href="#working-with-vectors-and-matrices">#</a>
+</h2>
+<h3 class="heading" id="vectors-in-hlsl">
+  Vectors in HLSL
+  <a class="anchor" href="#vectors-in-hlsl">#</a>
+</h3>
+<p>Vectors in HLSL are fundamental data structures representing collections of numbers.  They are extensively used to represent positions, directions, colors, and other multi-component data. HLSL provides built-in vector types: <code>float2</code>, <code>float3</code>, and <code>float4</code>, representing 2D, 3D, and 4D vectors, respectively.  Each component within a vector is a floating-point number.</p>
+<p><strong>Declaration and Initialization:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float2</span> uv <span style="color:#666">=</span> <span style="color:#902000">float2</span>(<span style="color:#40a070">0.5f</span>, <span style="color:#40a070">0.5f</span>); <span style="color:#60a0b0;font-style:italic">// Texture coordinates</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">float3</span> position <span style="color:#666">=</span> <span style="color:#902000">float3</span>(<span style="color:#40a070">1.0f</span>, <span style="color:#40a070">2.0f</span>, <span style="color:#40a070">3.0f</span>); <span style="color:#60a0b0;font-style:italic">// 3D position</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">float4</span> color <span style="color:#666">=</span> <span style="color:#902000">float4</span>(<span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">1.0f</span>); <span style="color:#60a0b0;font-style:italic">// Red color (RGBA)</span>
+</span></span></code></pre></div><p><strong>Accessing Vector Components:</strong></p>
+<p>Individual components of a vector can be accessed using their index (starting from 0):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float</span> x <span style="color:#666">=</span> position.x; <span style="color:#60a0b0;font-style:italic">// Access the x-component of &#39;position&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">float</span> r <span style="color:#666">=</span> color.r;     <span style="color:#60a0b0;font-style:italic">// Access the red component of &#39;color&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">float</span> y <span style="color:#666">=</span> uv[<span style="color:#40a070">1</span>];       <span style="color:#60a0b0;font-style:italic">// Another way to access the y-component of &#39;uv&#39;</span>
+</span></span></code></pre></div><p><strong>Built-in Vector Functions:</strong></p>
+<p>HLSL provides many built-in functions for vector manipulation, including:</p>
+<ul>
+<li><code>length(v)</code>: Returns the magnitude (length) of a vector.</li>
+<li><code>normalize(v)</code>: Normalizes a vector to unit length (magnitude 1).</li>
+<li><code>dot(a, b)</code>: Computes the dot product of two vectors.</li>
+<li><code>cross(a, b)</code>: Computes the cross product of two vectors (only for <code>float3</code>).</li>
+</ul>
+<h3 class="heading" id="matrices-in-hlsl">
+  Matrices in HLSL
+  <a class="anchor" href="#matrices-in-hlsl">#</a>
+</h3>
+<p>Matrices in HLSL are two-dimensional arrays of numbers. They are essential for representing transformations like rotations, translations, and scaling in 3D graphics.  HLSL supports various matrix types, notably <code>matrix</code>, which is typically a 4x4 matrix used for transformations in 3D space.</p>
+<p><strong>Declaration and Initialization:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">matrix</span> worldMatrix; <span style="color:#60a0b0;font-style:italic">// Declare a 4x4 matrix</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">matrix</span> viewMatrix <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.0f</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">1.0f</span>
+</span></span><span style="display:flex;"><span>}; <span style="color:#60a0b0;font-style:italic">// Identity matrix</span>
+</span></span></code></pre></div><p><strong>Matrix Operations:</strong></p>
+<p>Matrices can be multiplied with other matrices and vectors. Matrix multiplication is not commutative (A * B != B * A).</p>
+<h3 class="heading" id="vector-and-matrix-operations">
+  Vector and Matrix Operations
+  <a class="anchor" href="#vector-and-matrix-operations">#</a>
+</h3>
+<p>HLSL supports various operations between vectors and matrices:</p>
+<ul>
+<li><strong>Vector Addition/Subtraction:</strong>  Component-wise addition or subtraction.</li>
+<li><strong>Vector Scalar Multiplication:</strong> Multiplying each component of a vector by a scalar value.</li>
+<li><strong>Vector Dot Product:</strong>  The dot product of two vectors is a scalar value (sum of the products of corresponding components).  Useful for calculating angles and projections.</li>
+<li><strong>Vector Cross Product:</strong> The cross product of two 3D vectors is another 3D vector that is orthogonal to both input vectors. Used for calculating normals.</li>
+<li><strong>Matrix Multiplication:</strong> Multiplying a matrix by another matrix or a vector. This is crucial for applying transformations.</li>
+</ul>
+<h3 class="heading" id="transformations">
+  Transformations
+  <a class="anchor" href="#transformations">#</a>
+</h3>
+<p>Transformations in 3D graphics use matrices to manipulate the position and orientation of objects.  Common transformations include:</p>
+<ul>
+<li><strong>Translation:</strong> Moving an object along a specific direction. Represented by a translation matrix.</li>
+<li><strong>Rotation:</strong> Rotating an object around an axis.  Represented by rotation matrices (often using quaternions for efficiency).</li>
+<li><strong>Scaling:</strong> Changing the size of an object. Represented by a scaling matrix.</li>
+</ul>
+<p>Applying transformations usually involves multiplying the object&rsquo;s position vector by the transformation matrix (or a combination of transformation matrices).  For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float4</span> transformedPosition <span style="color:#666">=</span> <span style="color:#007020">mul</span>(worldMatrix, <span style="color:#902000">float4</span>(position, <span style="color:#40a070">1.0f</span>));
+</span></span></code></pre></div><p>This code snippet multiplies the <code>position</code> vector (converted to a <code>float4</code> by adding a <code>1.0f</code> w-component, typical for homogenous coordinates) by the <code>worldMatrix</code>, resulting in <code>transformedPosition</code> representing the object&rsquo;s position after applying the world transformation.  Multiple transformations (e.g., world, view, projection) are commonly combined by multiplying their corresponding matrices.</p>
+<h2 class="heading" id="vertex-shaders">
+  Vertex Shaders
+  <a class="anchor" href="#vertex-shaders">#</a>
+</h2>
+<h3 class="heading" id="understanding-vertex-shaders">
+  Understanding Vertex Shaders
+  <a class="anchor" href="#understanding-vertex-shaders">#</a>
+</h3>
+<p>A vertex shader is a program that runs once for each vertex in a 3D model. Its primary role is to transform the position of each vertex from its local space (model space) into screen space, ready for rasterization (the process of converting the vertices into pixels).  Vertex shaders also have the ability to manipulate other vertex attributes, such as normals, texture coordinates, and colors, passing them along to the pixel shader.  This transformation involves applying various matrices (world, view, projection) to the vertex positions.  The output of the vertex shader directly influences how the geometry is rendered.</p>
+<h3 class="heading" id="input-and-output-structures">
+  Input and Output Structures
+  <a class="anchor" href="#input-and-output-structures">#</a>
+</h3>
+<p>Vertex shaders receive input data through an input structure and produce output data via an output structure.  These structures define the attributes that the shader processes and passes along.</p>
+<p><strong>Input Structure:</strong>  This structure typically includes at least the vertex position (<code>float3 Position</code>), but can also contain other attributes, such as:</p>
+<ul>
+<li><code>float3 Normal</code>: Vertex normal (direction perpendicular to the surface).</li>
+<li><code>float2 TexCoord</code>: Texture coordinates.</li>
+<li><code>float4 Color</code>: Vertex color.</li>
+</ul>
+<p><strong>Output Structure:</strong>  This structure usually includes the transformed vertex position (<code>float4 Position</code>), but may also pass on other attributes modified by the vertex shader.  The position is typically a <code>float4</code> using homogenous coordinates (w-component).</p>
+<p><strong>Example Structures:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Input structure</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> VS_INPUT
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float3</span> Position <span style="color:#666">:</span> POSITION;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float3</span> Normal <span style="color:#666">:</span> NORMAL;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float2</span> TexCoord <span style="color:#666">:</span> TEXCOORD;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Output structure</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> VS_OUTPUT
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float4</span> Position <span style="color:#666">:</span> SV_POSITION;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float3</span> Normal <span style="color:#666">:</span> NORMAL;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float2</span> TexCoord <span style="color:#666">:</span> TEXCOORD;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>The <code>: POSITION</code>, <code>: NORMAL</code>, <code>: TEXCOORD</code>, and <code>: SV_POSITION</code> parts are semantic names.  These semantics tell DirectX how to map the data in the structures to the input and output data streams. <code>SV_POSITION</code> is a special semantic indicating the final position in homogenous clip space.</p>
+<h3 class="heading" id="transforming-vertices">
+  Transforming Vertices
+  <a class="anchor" href="#transforming-vertices">#</a>
+</h3>
+<p>The core task of a vertex shader is to transform vertices from model space to screen space. This is achieved by multiplying the vertex position by a series of matrices:</p>
+<ol>
+<li><strong>World Matrix:</strong> Transforms the vertex from model space to world space (global coordinates).</li>
+<li><strong>View Matrix:</strong> Transforms the vertex from world space to view space (camera coordinates).</li>
+<li><strong>Projection Matrix:</strong> Transforms the vertex from view space to clip space (a normalized coordinate system).  This matrix also performs perspective projection.</li>
+</ol>
+<p>The final transformed position is then passed to the rasterizer.</p>
+<p><strong>Example Transformation Code:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>VS_OUTPUT main(VS_INPUT input)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    VS_OUTPUT output;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float4</span> worldPosition <span style="color:#666">=</span> <span style="color:#007020">mul</span>(<span style="color:#902000">float4</span>(input.Position, <span style="color:#40a070">1.0f</span>), worldMatrix); <span style="color:#60a0b0;font-style:italic">//Apply world matrix</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float4</span> viewPosition <span style="color:#666">=</span> <span style="color:#007020">mul</span>(worldPosition, viewMatrix); <span style="color:#60a0b0;font-style:italic">//Apply view matrix</span>
+</span></span><span style="display:flex;"><span>    output.Position <span style="color:#666">=</span> <span style="color:#007020">mul</span>(viewPosition, projectionMatrix); <span style="color:#60a0b0;font-style:italic">//Apply projection matrix</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Pass other attributes (normals, texcoords, etc.) to the pixel shader</span>
+</span></span><span style="display:flex;"><span>    output.Normal <span style="color:#666">=</span> input.Normal;
+</span></span><span style="display:flex;"><span>    output.TexCoord <span style="color:#666">=</span> input.TexCoord;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> output;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Note: <code>worldMatrix</code>, <code>viewMatrix</code>, and <code>projectionMatrix</code> are typically provided as constant buffers from your application.</p>
+<h3 class="heading" id="example-simple-vertex-shader">
+  Example: Simple Vertex Shader
+  <a class="anchor" href="#example-simple-vertex-shader">#</a>
+</h3>
+<p>This example shows a basic vertex shader that transforms vertices and passes texture coordinates:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Input structure</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> VS_INPUT
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float3</span> Position <span style="color:#666">:</span> POSITION;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float2</span> TexCoord <span style="color:#666">:</span> TEXCOORD;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Output structure</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> VS_OUTPUT
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float4</span> Position <span style="color:#666">:</span> SV_POSITION;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float2</span> TexCoord <span style="color:#666">:</span> TEXCOORD;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">cbuffer</span> ConstantBuffer <span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">register</span>(b0)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">matrix</span> worldViewProj; <span style="color:#60a0b0;font-style:italic">//Combined world, view, and projection matrix</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>VS_OUTPUT main(VS_INPUT input)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    VS_OUTPUT output;
+</span></span><span style="display:flex;"><span>    output.Position <span style="color:#666">=</span> <span style="color:#007020">mul</span>(<span style="color:#902000">float4</span>(input.Position, <span style="color:#40a070">1.0f</span>), worldViewProj);
+</span></span><span style="display:flex;"><span>    output.TexCoord <span style="color:#666">=</span> input.TexCoord;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> output;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This shader takes a vertex position and texture coordinate as input, transforms the position using a combined world-view-projection matrix, and passes the transformed position and texture coordinate to the pixel shader.  The <code>cbuffer</code> declares a constant buffer to receive the transformation matrix from your application.  Remember that you need to provide the <code>worldViewProj</code> matrix from your DirectX application code.</p>
+<h2 class="heading" id="pixel-shaders">
+  Pixel Shaders
+  <a class="anchor" href="#pixel-shaders">#</a>
+</h2>
+<h3 class="heading" id="understanding-pixel-shaders">
+  Understanding Pixel Shaders
+  <a class="anchor" href="#understanding-pixel-shaders">#</a>
+</h3>
+<p>A pixel shader (also known as a fragment shader) is a program that runs once for each pixel that&rsquo;s being rendered.  It determines the final color of each pixel on the screen.  While vertex shaders handle the geometry, pixel shaders handle the appearance – adding lighting, textures, and other effects to create the visual representation. The pixel shader receives input data, such as the interpolated vertex attributes (position, normal, texture coordinates, etc.) from the vertex shader, performs calculations, and outputs the final color for each pixel.</p>
+<h3 class="heading" id="input-and-output-structures-1">
+  Input and Output Structures
+  <a class="anchor" href="#input-and-output-structures-1">#</a>
+</h3>
+<p>Pixel shaders receive data from the vertex shader through an input structure and output the final pixel color through an output structure.</p>
+<p><strong>Input Structure:</strong>  This structure contains the interpolated values of the attributes passed from the vertex shader for the current pixel.  The interpolation is done by the rasterizer between the vertex attributes.</p>
+<p><strong>Output Structure:</strong> This structure typically contains a single <code>float4</code> representing the final color of the pixel (RGBA).</p>
+<p><strong>Example Structures:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Input structure</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> PS_INPUT
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float4</span> Position <span style="color:#666">:</span> SV_POSITION; <span style="color:#60a0b0;font-style:italic">//Interpolated position (from VS)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float3</span> Normal <span style="color:#666">:</span> NORMAL;       <span style="color:#60a0b0;font-style:italic">//Interpolated normal (from VS)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float2</span> TexCoord <span style="color:#666">:</span> TEXCOORD;    <span style="color:#60a0b0;font-style:italic">//Interpolated texture coordinates (from VS)</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Output structure</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> PS_OUTPUT
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float4</span> Color <span style="color:#666">:</span> SV_TARGET; <span style="color:#60a0b0;font-style:italic">//Final pixel color</span>
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><code>: SV_POSITION</code> and <code>: SV_TARGET</code> are system-value semantics.  <code>SV_POSITION</code>  is the interpolated position, and <code>SV_TARGET</code> specifies the output color to be written to the render target.</p>
+<h3 class="heading" id="coloring-pixels">
+  Coloring Pixels
+  <a class="anchor" href="#coloring-pixels">#</a>
+</h3>
+<p>The simplest pixel shader assigns a solid color to each pixel:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>PS_OUTPUT main(PS_INPUT input)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    PS_OUTPUT output;
+</span></span><span style="display:flex;"><span>    output.Color <span style="color:#666">=</span> <span style="color:#902000">float4</span>(<span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">1.0f</span>); <span style="color:#60a0b0;font-style:italic">// Red color</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> output;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>More complex pixel shaders perform calculations based on lighting, textures, and other factors to produce more realistic and visually interesting results.</p>
+<h3 class="heading" id="texture-sampling">
+  Texture Sampling
+  <a class="anchor" href="#texture-sampling">#</a>
+</h3>
+<p>Texture sampling is a crucial aspect of pixel shaders. It involves retrieving color data from a texture based on texture coordinates.  HLSL provides the <code>sampler2D</code> type and functions like <code>texture2D</code> to access textures:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>sampler2D myTexture <span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">register</span>(s0); <span style="color:#60a0b0;font-style:italic">//Declare a texture sampler</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>PS_OUTPUT main(PS_INPUT input)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    PS_OUTPUT output;
+</span></span><span style="display:flex;"><span>    output.Color <span style="color:#666">=</span> texture2D(myTexture, input.TexCoord); <span style="color:#60a0b0;font-style:italic">//Sample the texture</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> output;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this example, <code>myTexture</code> is a sampler that references a 2D texture loaded by your application code.  <code>texture2D</code> samples the texture at the coordinates specified by <code>input.TexCoord</code>.  The result is a <code>float4</code> containing the color from the texture.  Note:  <code>register(s0)</code> assigns the sampler to texture unit 0; this needs to correspond to how the texture is bound in your application.</p>
+<h3 class="heading" id="example-simple-pixel-shader">
+  Example: Simple Pixel Shader
+  <a class="anchor" href="#example-simple-pixel-shader">#</a>
+</h3>
+<p>This example shows a pixel shader that samples a texture and applies a simple color multiplication:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Input structure</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> PS_INPUT
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float4</span> Position <span style="color:#666">:</span> SV_POSITION;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float2</span> TexCoord <span style="color:#666">:</span> TEXCOORD;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Output structure</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> PS_OUTPUT
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float4</span> Color <span style="color:#666">:</span> SV_TARGET;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sampler2D myTexture <span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">register</span>(s0);
+</span></span><span style="display:flex;"><span><span style="color:#902000">float4</span> colorMultiplier <span style="color:#666">=</span> <span style="color:#902000">float4</span>(<span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.5f</span>, <span style="color:#40a070">0.5f</span>, <span style="color:#40a070">1.0f</span>); <span style="color:#60a0b0;font-style:italic">//Pink Multiplier</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>PS_OUTPUT main(PS_INPUT input)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    PS_OUTPUT output;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">float4</span> texColor <span style="color:#666">=</span> texture2D(myTexture, input.TexCoord);
+</span></span><span style="display:flex;"><span>    output.Color <span style="color:#666">=</span> texColor <span style="color:#666">*</span> colorMultiplier;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> output;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This shader samples a texture at the given texture coordinates and multiplies the resulting color by a pink <code>colorMultiplier</code>, giving a tinted effect. Remember that you need to properly bind the texture <code>myTexture</code> in your application code.</p>
+<h2 class="heading" id="textures-and-samplers">
+  Textures and Samplers
+  <a class="anchor" href="#textures-and-samplers">#</a>
+</h2>
+<h3 class="heading" id="working-with-textures">
+  Working with Textures
+  <a class="anchor" href="#working-with-textures">#</a>
+</h3>
+<p>Textures are crucial for adding visual detail and realism to 3D graphics.  In HLSL, textures are accessed through samplers.  A texture represents an image (or other data) stored in GPU memory.  They can be 1D, 2D, 3D, or even cube maps.  The most common type is the 2D texture, representing a standard image.</p>
+<p><strong>Texture Types:</strong> HLSL doesn&rsquo;t directly define texture data; instead, it uses <code>Texture2D</code>, <code>Texture3D</code>, <code>TextureCube</code> etc. as resource types which represent the texture data loaded by your application.  You don&rsquo;t directly manipulate the texture data within the shader; you sample it using samplers.</p>
+<p><strong>Loading and Binding Textures:</strong>  The process of loading a texture into GPU memory and making it available to your shaders happens in your application code (using DirectX APIs). You specify the texture to be used in your shader via a sampler.</p>
+<h3 class="heading" id="sampler-states">
+  Sampler States
+  <a class="anchor" href="#sampler-states">#</a>
+</h3>
+<p>A sampler object defines how a texture is sampled.  It specifies settings that control how the texture is accessed and filtered:</p>
+<ul>
+<li><strong>Filter Type:</strong> Determines how the texture is sampled when the texture coordinates are not exactly aligned with texture pixels (e.g., point sampling, linear filtering, anisotropic filtering).</li>
+<li><strong>Address Mode:</strong> Specifies how texture coordinates outside the range [0,1] are handled (e.g., wrap, clamp, mirror).</li>
+<li><strong>Mipmap Levels:</strong>  Samplers can access mipmap levels (pre-generated lower-resolution versions of the texture) to optimize rendering at different distances.</li>
+</ul>
+<p><strong>Sampler Declaration:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">SamplerState</span> mySampler <span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">register</span>(s0);
+</span></span></code></pre></div><p>This declares a sampler state named <code>mySampler</code> and assigns it to register <code>s0</code>. The sampler state&rsquo;s properties (filter type, address mode, etc.) are set in your application code.</p>
+<h3 class="heading" id="texture-filtering">
+  Texture Filtering
+  <a class="anchor" href="#texture-filtering">#</a>
+</h3>
+<p>Texture filtering addresses the issue of sampling textures at non-integer coordinates.  Several filtering methods exist:</p>
+<ul>
+<li><strong>Point Sampling:</strong>  Selects the color of the nearest pixel.  Simple but can result in aliasing artifacts (jagged edges).</li>
+<li><strong>Linear Filtering:</strong>  Averages the colors of the nearest neighboring pixels.  Produces smoother results than point sampling.</li>
+<li><strong>Anisotropic Filtering:</strong>  A more advanced technique that provides higher-quality filtering for textures viewed at oblique angles.  It reduces blurring and artifacts along elongated surfaces.</li>
+</ul>
+<p>These filtering methods are configured through the sampler state.  For example,  using point sampling might look like this in your application code (DirectX specific):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// DirectX code (Illustrative)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>D3D11_SAMPLER_DESC sampDesc;
+</span></span><span style="display:flex;"><span>ZeroMemory(<span style="color:#666">&amp;</span>sampDesc, <span style="color:#007020;font-weight:bold">sizeof</span>(sampDesc));
+</span></span><span style="display:flex;"><span>sampDesc.Filter <span style="color:#666">=</span> D3D11_FILTER_MIN_MAG_MIP_POINT; <span style="color:#60a0b0;font-style:italic">//Point sampling
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// ... other sampler state settings ...
+</span></span></span></code></pre></div><h3 class="heading" id="texture-addressing-modes">
+  Texture Addressing Modes
+  <a class="anchor" href="#texture-addressing-modes">#</a>
+</h3>
+<p>Texture addressing modes determine how the texture is sampled when the texture coordinates fall outside the range [0, 1]:</p>
+<ul>
+<li><strong>Wrap:</strong>  The texture coordinates wrap around.  For example, a coordinate of 1.2 would be equivalent to 0.2.</li>
+<li><strong>Clamp:</strong> The texture coordinates are clamped to the range [0, 1].  Coordinates outside this range are treated as either 0 or 1.</li>
+<li><strong>Mirror:</strong> The texture coordinates are mirrored.</li>
+</ul>
+<p>These modes also influence how the texture behaves at the edges, affecting the visual appearance.  These are set within the sampler state description in your application&rsquo;s DirectX code, similar to how filtering is set. For example, setting a clamp address mode might look similar to this (DirectX specific):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// DirectX code (Illustrative)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>sampDesc.AddressU <span style="color:#666">=</span> D3D11_TEXTURE_ADDRESS_CLAMP;
+</span></span><span style="display:flex;"><span>sampDesc.AddressV <span style="color:#666">=</span> D3D11_TEXTURE_ADDRESS_CLAMP;
+</span></span><span style="display:flex;"><span>sampDesc.AddressW <span style="color:#666">=</span> D3D11_TEXTURE_ADDRESS_CLAMP; <span style="color:#60a0b0;font-style:italic">//For 3D textures
+</span></span></span></code></pre></div><p>Properly selecting texture filtering and addressing modes is crucial for achieving high-quality visuals in your application and minimizing artifacts.  The choice depends on the specific visual style and performance requirements.</p>
+<h2 class="heading" id="lighting-and-shading">
+  Lighting and Shading
+  <a class="anchor" href="#lighting-and-shading">#</a>
+</h2>
+<h3 class="heading" id="basic-lighting-models">
+  Basic Lighting Models
+  <a class="anchor" href="#basic-lighting-models">#</a>
+</h3>
+<p>Lighting models in HLSL simulate how light interacts with surfaces, determining their appearance.  These models combine different components of light to create realistic shading. The most common components are diffuse, specular, and ambient lighting.  More advanced models (e.g., physically based rendering (PBR)) build upon these basic components. The basic lighting equation often takes this form:</p>
+<p><code>finalColor = ambientLight + diffuseLight + specularLight</code></p>
+<h3 class="heading" id="diffuse-lighting">
+  Diffuse Lighting
+  <a class="anchor" href="#diffuse-lighting">#</a>
+</h3>
+<p>Diffuse lighting simulates the scattering of light from a surface.  It represents the light that is reflected equally in all directions. The intensity of diffuse lighting depends on the angle between the surface normal and the light direction.  A commonly used formula is Lambert&rsquo;s cosine law:</p>
+<p><code>diffuseLight = lightColor * surfaceColor * max(0, dot(normal, lightDir))</code></p>
+<p>Where:</p>
+<ul>
+<li><code>lightColor</code>: The color of the light source.</li>
+<li><code>surfaceColor</code>: The color of the surface.</li>
+<li><code>normal</code>: The normalized surface normal vector.</li>
+<li><code>lightDir</code>: The normalized vector pointing from the surface to the light source.</li>
+<li><code>dot(normal, lightDir)</code>: The dot product, representing the cosine of the angle between the normal and light direction.  <code>max(0, ...)</code> ensures that the intensity is never negative.</li>
+</ul>
+<h3 class="heading" id="specular-lighting">
+  Specular Lighting
+  <a class="anchor" href="#specular-lighting">#</a>
+</h3>
+<p>Specular lighting simulates the shiny reflection of light from a surface.  It creates highlights that depend on the viewer&rsquo;s position, the light source&rsquo;s position, and the surface&rsquo;s material properties.  A common model is the Phong reflection model:</p>
+<p><code>specularLight = lightColor * specularColor * pow(max(0, dot(reflectDir, viewDir)), shininess)</code></p>
+<p>Where:</p>
+<ul>
+<li><code>lightColor</code>: The color of the light source.</li>
+<li><code>specularColor</code>: The specular color of the surface (often white or a similar bright color).</li>
+<li><code>reflectDir</code>: The normalized reflection vector (obtained by reflecting the light direction around the normal).</li>
+<li><code>viewDir</code>: The normalized vector pointing from the surface to the viewer.</li>
+<li><code>shininess</code>:  A value that controls the size and intensity of the specular highlight (higher values result in smaller, brighter highlights).</li>
+<li><code>pow(..., shininess)</code>: The power function raises the dot product to the power of <code>shininess</code>, creating the characteristic highlight shape.</li>
+</ul>
+<h3 class="heading" id="ambient-lighting">
+  Ambient Lighting
+  <a class="anchor" href="#ambient-lighting">#</a>
+</h3>
+<p>Ambient lighting represents a uniform, background level of illumination. It simulates indirect light that bounces around the scene, illuminating all surfaces equally.  It&rsquo;s a simple way to avoid completely dark areas in a scene.  It&rsquo;s often a constant color:</p>
+<p><code>ambientLight = ambientColor * surfaceColor</code></p>
+<p>Where:</p>
+<ul>
+<li><code>ambientColor</code>: A constant color representing the ambient light level.</li>
+<li><code>surfaceColor</code>: The color of the surface.</li>
+</ul>
+<p>Combining diffuse, specular, and ambient lighting provides a more realistic rendering of surfaces.  More sophisticated lighting models, such as those based on physically accurate properties of materials, build upon these fundamental principles, often incorporating factors like surface roughness and subsurface scattering.  These more advanced techniques require more complex calculations but yield significantly more photorealistic results.</p>
+<h2 class="heading" id="advanced-techniques">
+  Advanced Techniques
+  <a class="anchor" href="#advanced-techniques">#</a>
+</h2>
+<h3 class="heading" id="normal-mapping">
+  Normal Mapping
+  <a class="anchor" href="#normal-mapping">#</a>
+</h3>
+<p>Normal mapping is a technique used to add surface detail without increasing the polygon count of a 3D model. It works by storing a normal map, a texture containing normal vectors for each pixel, alongside the model&rsquo;s geometry.  The normal map provides information about the surface orientation at a much finer level than the underlying polygon mesh.  In the pixel shader, the normal vector from the normal map is used instead of the interpolated normal from the vertex shader.  This allows for the simulation of bumps, dents, and other fine surface details.  The normal from the normal map is then used in lighting calculations.</p>
+<p><strong>Implementation:</strong></p>
+<ol>
+<li>
+<p><strong>Load Normal Map:</strong>  A normal map texture is loaded and sampled in the pixel shader using a sampler.  Normal maps typically store normals in a range of [-1,1] for each component (x, y, z).</p>
+</li>
+<li>
+<p><strong>Transform Normal:</strong> The sampled normal needs to be transformed from tangent space (the space of the normal map) to world space.  This requires a tangent-to-world matrix, which is usually calculated in the vertex shader and passed to the pixel shader.</p>
+</li>
+<li>
+<p><strong>Lighting Calculations:</strong> The transformed normal from the normal map is then used in the lighting calculations (diffuse, specular) instead of the interpolated vertex normal.</p>
+</li>
+<li>
+<p><strong>Pixel Shader Modification:</strong> The pixel shader needs to include the normal map sampling, the transformation to world space, and the modified lighting calculation.</p>
+</li>
+</ol>
+<h3 class="heading" id="shadow-mapping">
+  Shadow Mapping
+  <a class="anchor" href="#shadow-mapping">#</a>
+</h3>
+<p>Shadow mapping is a technique for rendering shadows in a scene.  It works by rendering the scene from the light source&rsquo;s perspective, storing the depth values into a depth texture (the shadow map).  Then, during the main rendering pass, for each pixel, the shader checks the depth in the shadow map at the corresponding pixel coordinates in light space. If the pixel&rsquo;s depth is greater than the depth stored in the shadow map, it&rsquo;s considered to be in shadow.</p>
+<p><strong>Implementation:</strong></p>
+<ol>
+<li>
+<p><strong>Shadow Map Generation:</strong> A separate rendering pass is used to generate the shadow map.  This pass renders the scene from the light source&rsquo;s viewpoint, storing the depth information in a depth texture.</p>
+</li>
+<li>
+<p><strong>Transform to Light Space:</strong>  In the main rendering pass, the vertex shader transforms the vertices to light space using a light view-projection matrix.  This matrix transforms the vertex positions to the coordinate system of the shadow map.</p>
+</li>
+<li>
+<p><strong>Shadow Map Lookup:</strong>  In the pixel shader, the transformed position (in light space) is used to sample the shadow map.  The depth value is compared to the pixel&rsquo;s depth in light space.</p>
+</li>
+<li>
+<p><strong>Shadow Calculation:</strong> Based on the comparison result, a shadow factor (0 for fully shadowed, 1 for not shadowed) is determined and used to modulate the pixel&rsquo;s color.</p>
+</li>
+</ol>
+<h3 class="heading" id="using-hlsl-with-different-apis-directx-vulkan-etc">
+  Using HLSL with different APIs (DirectX, Vulkan, etc.)
+  <a class="anchor" href="#using-hlsl-with-different-apis-directx-vulkan-etc">#</a>
+</h3>
+<p>While HLSL is primarily associated with DirectX, shader code written in a similar style can be adapted to other graphics APIs.  The core shader code (written in HLSL-like syntax) often has similarities between APIs but the methods for loading, compiling, and applying these shaders are API-specific.</p>
+<ul>
+<li>
+<p><strong>DirectX:</strong>  HLSL is directly compiled into shader bytecode using the DirectX Shader Compiler (fxc.exe or integrated into Visual Studio).  DirectX APIs are used to manage shaders, textures, and other resources.</p>
+</li>
+<li>
+<p><strong>Vulkan:</strong>  SPIR-V (Standard Portable Intermediate Representation) is the intermediate representation used for shaders in Vulkan.  HLSL shaders need to be translated to SPIR-V using tools like glslangValidator.  The Vulkan API is used to interact with these shaders.</p>
+</li>
+<li>
+<p><strong>OpenGL:</strong> GLSL (OpenGL Shading Language) is OpenGL&rsquo;s native shader language. While not directly compatible with HLSL, the concepts and techniques often transfer; you&rsquo;ll need to rewrite the shader in GLSL syntax.</p>
+</li>
+</ul>
+<p>The core shader algorithms (lighting, texturing) can often be ported, but the API-specific code (for resource management, shader compilation, and pipeline setup) needs to be adjusted according to the target API.  This usually requires using different APIs and tools for each graphics API.  The overall structure of the shader might remain consistent but the specifics of shader compilation, binding resources, and using built-in functions will change.</p>
+<h2 class="heading" id="debugging-and-optimization">
+  Debugging and Optimization
+  <a class="anchor" href="#debugging-and-optimization">#</a>
+</h2>
+<h3 class="heading" id="common-errors-and-how-to-debug">
+  Common Errors and How to Debug
+  <a class="anchor" href="#common-errors-and-how-to-debug">#</a>
+</h3>
+<p>Debugging HLSL code can be challenging due to the nature of GPU processing and the limited debugging tools compared to CPU programming. Here are some common errors and debugging strategies:</p>
+<ul>
+<li>
+<p><strong>Compilation Errors:</strong> Syntax errors, incorrect data types, or semantic errors will prevent the shader from compiling.  The compiler will provide error messages that pinpoint the issues. Carefully examine these messages and correct the code accordingly.</p>
+</li>
+<li>
+<p><strong>Runtime Errors:</strong>  These errors occur during shader execution.  They might manifest as incorrect rendering (e.g., unexpected colors, missing geometry, visual artifacts), crashes, or undefined behavior.  Debugging runtime errors is harder.</p>
+<ul>
+<li>
+<p><strong>DirectX Debug Layer:</strong> The DirectX debug layer is an invaluable tool.  It can help catch many runtime errors, providing detailed information about shader errors and warnings.  Enable this layer during development to help identify shader-related problems.</p>
+</li>
+<li>
+<p><strong>Visual Studio Debugger (with DirectX):</strong> If you are using Visual Studio, you can set breakpoints within your shader code (with necessary configurations) to step through the execution and inspect variables. This is usually not possible for all aspects of shader code but can be very helpful in specific scenarios.</p>
+</li>
+<li>
+<p><strong>Outputting Debug Information:</strong> Add debugging statements within the shader that output information to the console or a render target (though this may not be efficient). This can help track variable values and the flow of execution. Be cautious as this can greatly reduce performance.  Use conditional compilation (<code>#ifdef DEBUG</code>) to include debugging code only during development.</p>
+</li>
+<li>
+<p><strong>Visual Inspection:</strong> Sometimes, careful visual inspection of the rendered output provides clues to the nature of the problem.  Look for patterns, inconsistencies, or artifacts to localize the error.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Flow Issues:</strong>  Incorrectly passing data between the vertex and pixel shaders or incorrect calculations within the shaders.  Use the debugging tools or debug outputs to track the data flowing through the shader pipeline to identify incorrect values or unexpected behavior.</p>
+</li>
+<li>
+<p><strong>Resource Binding:</strong> Incorrectly binding textures or other resources to samplers or constant buffers can lead to unexpected results. Double-check that the resources are correctly bound and that the indices match your shader code.</p>
+</li>
+</ul>
+<h3 class="heading" id="optimizing-hlsl-code-for-performance">
+  Optimizing HLSL Code for Performance
+  <a class="anchor" href="#optimizing-hlsl-code-for-performance">#</a>
+</h3>
+<p>Optimizing HLSL code is crucial for achieving high frame rates and good performance, especially in demanding applications. Here are some key optimization strategies:</p>
+<ul>
+<li>
+<p><strong>Minimize Instructions:</strong>  Reduce the number of instructions executed per pixel or vertex. Avoid unnecessary calculations, branches (if-else statements), and function calls.</p>
+</li>
+<li>
+<p><strong>Use Built-in Functions:</strong>  Built-in functions are highly optimized and often perform better than equivalent custom functions. Use them whenever possible for vector and matrix operations, texture sampling, and other common tasks.</p>
+</li>
+<li>
+<p><strong>Data Locality:</strong>  Access data in a sequential manner to improve memory access efficiency. Organize your data structures to minimize memory jumps.</p>
+</li>
+<li>
+<p><strong>Loop Unrolling:</strong>  Unrolling loops (replicating the loop body) can sometimes improve performance by reducing loop overhead.  However, excessive unrolling can increase code size and lead to register pressure issues, so use it judiciously.</p>
+</li>
+<li>
+<p><strong>Conditional Compilation:</strong> Use preprocessor directives like <code>#ifdef</code> and <code>#endif</code> to include or exclude code sections based on build configurations (e.g., debugging vs. release). This allows removing debugging statements or adding optimization specific code for release builds.</p>
+</li>
+<li>
+<p><strong>Register Usage:</strong> Be mindful of register usage.  HLSL shaders have a limited number of registers available on the GPU.  Excessive use of registers can lead to performance degradation due to spill to memory.  Analyze your shader code to identify areas where register pressure might be a problem.</p>
+</li>
+<li>
+<p><strong>Texture Optimization:</strong> Use appropriate mipmaps to reduce aliasing and improve performance.  Choose efficient texture filtering methods based on the level of detail required.  Avoid unnecessary texture lookups.</p>
+</li>
+<li>
+<p><strong>Profiling Tools:</strong> Utilize shader profiling tools (often integrated into graphics APIs or available as standalone tools) to identify performance bottlenecks. These tools pinpoint the most expensive parts of your shaders, guiding optimization efforts.</p>
+</li>
+</ul>
+<p>Efficient HLSL code requires a balance between readability and performance.  Write clear, well-structured code first; then, profile and optimize only the critical sections that significantly impact performance, guided by profiling data.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-glsl/">
+                        Beginner&#39;s Guide to GLSL
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-common-lisp/">
+                        Beginner&#39;s Guide to Common Lisp
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Ballerina | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-ballerina/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-ballerina/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Ballerina">
+  <meta property="og:description" content="Introduction to Ballerina # What is Ballerina? # Ballerina is a modern, open-source programming language specifically designed for integration and microservices. It offers a unique approach to building connected systems, focusing on ease of use, high performance, and built-in support for concurrency, error handling, and network communication. Unlike general-purpose languages, Ballerina provides language-level constructs that simplify common integration tasks such as handling different data formats (JSON, XML, Avro), making network calls (HTTP, gRPC, WebSockets), and managing transactions. It aims to increase developer productivity by reducing boilerplate code and providing a declarative style for expressing complex integrations.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-14T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-ballerina/">Beginner&#39;s Guide to Ballerina</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Ballerina</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-01-14T00:00:00&#43;00:00">January 14, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      14 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-ballerina">Introduction to Ballerina</a>
+      <ul>
+        <li><a href="#what-is-ballerina">What is Ballerina?</a></li>
+        <li><a href="#why-use-ballerina">Why use Ballerina?</a></li>
+        <li><a href="#setting-up-your-environment">Setting up your environment</a></li>
+        <li><a href="#hello-world-in-ballerina">Hello World in Ballerina</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#variables-and-constants">Variables and Constants</a></li>
+        <li><a href="#data-types-int-float-string-boolean">Data Types (<code>int</code>, <code>float</code>, <code>string</code>, <code>boolean</code>)</a></li>
+        <li><a href="#arrays-and-maps">Arrays and Maps</a></li>
+        <li><a href="#operators">Operators</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions-and-control-flow">Functions and Control Flow</a>
+      <ul>
+        <li><a href="#defining-functions">Defining Functions</a></li>
+        <li><a href="#function-parameters-and-return-types">Function Parameters and Return Types</a></li>
+        <li><a href="#conditional-statements-if-else">Conditional Statements (<code>if-else</code>)</a></li>
+        <li><a href="#loops-for-while">Loops (<code>for</code>, <code>while</code>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-data">Working with Data</a>
+      <ul>
+        <li><a href="#json-handling">JSON Handling</a></li>
+        <li><a href="#xml-handling">XML Handling</a></li>
+        <li><a href="#input-and-output">Input and Output</a></li>
+        <li><a href="#working-with-files">Working with Files</a></li>
+      </ul>
+    </li>
+    <li><a href="#networking-and-concurrency">Networking and Concurrency</a>
+      <ul>
+        <li><a href="#making-http-requests">Making HTTP Requests</a></li>
+        <li><a href="#creating-http-services">Creating HTTP Services</a></li>
+        <li><a href="#concurrency-features">Concurrency Features</a></li>
+        <li><a href="#working-with-streams">Working with Streams</a></li>
+      </ul>
+    </li>
+    <li><a href="#error-handling">Error Handling</a>
+      <ul>
+        <li><a href="#understanding-errors">Understanding Errors</a></li>
+        <li><a href="#error-handling-mechanisms">Error Handling Mechanisms</a></li>
+        <li><a href="#custom-error-handling">Custom Error Handling</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics">Advanced Topics</a>
+      <ul>
+        <li><a href="#object-oriented-programming-in-ballerina">Object-Oriented Programming in Ballerina</a></li>
+        <li><a href="#modules-and-packages">Modules and Packages</a></li>
+        <li><a href="#testing-your-ballerina-code">Testing Your Ballerina Code</a></li>
+        <li><a href="#deployment-and-execution">Deployment and Execution</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-ballerina">
+  Introduction to Ballerina
+  <a class="anchor" href="#introduction-to-ballerina">#</a>
+</h2>
+<h3 class="heading" id="what-is-ballerina">
+  What is Ballerina?
+  <a class="anchor" href="#what-is-ballerina">#</a>
+</h3>
+<p>Ballerina is a modern, open-source programming language specifically designed for integration and microservices.  It offers a unique approach to building connected systems, focusing on ease of use, high performance, and built-in support for concurrency, error handling, and network communication. Unlike general-purpose languages, Ballerina provides language-level constructs that simplify common integration tasks such as handling different data formats (JSON, XML, Avro), making network calls (HTTP, gRPC, WebSockets), and managing transactions.  It aims to increase developer productivity by reducing boilerplate code and providing a declarative style for expressing complex integrations.</p>
+<h3 class="heading" id="why-use-ballerina">
+  Why use Ballerina?
+  <a class="anchor" href="#why-use-ballerina">#</a>
+</h3>
+<p>Ballerina offers several advantages for developers working on integration and microservices projects:</p>
+<ul>
+<li><strong>Simplified Integration:</strong> Ballerina&rsquo;s built-in features abstract away the complexities of network communication and data transformation, making integration tasks significantly easier and faster.</li>
+<li><strong>Increased Productivity:</strong> The declarative style and concise syntax reduce boilerplate code, leading to higher developer productivity.</li>
+<li><strong>Improved Readability and Maintainability:</strong>  Ballerina&rsquo;s structured approach and emphasis on clarity make code easier to read, understand, and maintain.</li>
+<li><strong>Enhanced Concurrency and Error Handling:</strong> Ballerina natively supports concurrency and provides robust error handling mechanisms, resulting in more reliable and scalable applications.</li>
+<li><strong>Strong Type System:</strong> Ballerina&rsquo;s strong type system helps to prevent runtime errors and improves code quality.</li>
+<li><strong>Open Source and Growing Community:</strong>  Ballerina benefits from an active open-source community, providing support, resources, and continuous development.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-environment">
+  Setting up your environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h3>
+<p>To start developing Ballerina applications, follow these steps:</p>
+<ol>
+<li>
+<p><strong>Download:</strong> Go to the official Ballerina website (<a href="https://ballerina.io/">https://ballerina.io/</a>) and download the Ballerina distribution for your operating system.</p>
+</li>
+<li>
+<p><strong>Installation:</strong> Follow the installation instructions provided on the Ballerina website.  This typically involves extracting the downloaded archive and adding the Ballerina installation directory to your system&rsquo;s PATH environment variable.</p>
+</li>
+<li>
+<p><strong>Verification:</strong> Open a new terminal or command prompt and type <code>ballerina --version</code>.  If the Ballerina version is displayed, the installation was successful.</p>
+</li>
+<li>
+<p><strong>(Optional) IDE:</strong> While you can develop Ballerina using a simple text editor, using an IDE with Ballerina support will significantly enhance your development experience. Popular choices include IntelliJ IDEA with the Ballerina plugin.</p>
+</li>
+</ol>
+<h3 class="heading" id="hello-world-in-ballerina">
+  Hello World in Ballerina
+  <a class="anchor" href="#hello-world-in-ballerina">#</a>
+</h3>
+<p>The simplest Ballerina program, the &ldquo;Hello World&rdquo; example, demonstrates the language&rsquo;s concise syntax:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Hello, World!&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>To run this program:</p>
+<ol>
+<li>Save the code in a file named <code>hello.bal</code>.</li>
+<li>Open a terminal or command prompt and navigate to the directory where you saved the file.</li>
+<li>Execute the program using the command <code>ballerina run hello.bal</code>.</li>
+</ol>
+<p>You should see &ldquo;Hello, World!&rdquo; printed on the console.  This simple example showcases the basic structure of a Ballerina program: a <code>public function main()</code> which is the entry point, and the use of <code>io:println()</code> for console output.</p>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="variables-and-constants">
+  Variables and Constants
+  <a class="anchor" href="#variables-and-constants">#</a>
+</h3>
+<p>Ballerina uses the <code>var</code> keyword to declare variables.  Variable types are inferred by the compiler, but you can explicitly specify the type if needed.  Constants are declared using the <code>const</code> keyword and must be initialized at the time of declaration.  Their values cannot be changed after initialization.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;John Doe&#34;</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Type is inferred as string
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> age <span style="color:#666">:</span> <span style="color:#902000">int</span> <span style="color:#666">=</span> 30<span style="color:#666">;</span>     <span style="color:#60a0b0;font-style:italic">// Explicitly specifying type as int
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>const PI <span style="color:#666">=</span> 3<span style="color:#666">.</span><span style="color:#4070a0">14159</span><span style="color:#666">;</span>    <span style="color:#60a0b0;font-style:italic">// Constant declaration
+</span></span></span></code></pre></div><p>Note that variable names are case-sensitive.</p>
+<h3 class="heading" id="data-types-int-float-string-boolean">
+  Data Types (<code>int</code>, <code>float</code>, <code>string</code>, <code>boolean</code>)
+  <a class="anchor" href="#data-types-int-float-string-boolean">#</a>
+</h3>
+<p>Ballerina supports several built-in data types:</p>
+<ul>
+<li><strong><code>int</code>:</strong> Represents integer values (e.g., <code>10</code>, <code>-5</code>, <code>0</code>).</li>
+<li><strong><code>float</code>:</strong> Represents floating-point numbers (e.g., <code>3.14</code>, <code>-2.5</code>, <code>0.0</code>).</li>
+<li><strong><code>string</code>:</strong> Represents textual data enclosed in double quotes (e.g., <code>&quot;Hello&quot;</code>, <code>&quot;Ballerina&quot;</code>).  String interpolation is supported using backticks (<code>) and </code>${variable}<code>.  For example: </code>`Hello, my name is ${name}``</li>
+<li><strong><code>boolean</code>:</strong> Represents truth values, either <code>true</code> or <code>false</code>.</li>
+</ul>
+<h3 class="heading" id="arrays-and-maps">
+  Arrays and Maps
+  <a class="anchor" href="#arrays-and-maps">#</a>
+</h3>
+<p>Arrays are ordered collections of elements of the same type. Maps are unordered collections of key-value pairs, where keys are unique and values can be of any type.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Array declaration and initialization
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> numbers <span style="color:#666">=</span> <span style="color:#666">[</span>1<span style="color:#666">,</span> 2<span style="color:#666">,</span> 3<span style="color:#666">,</span> 4<span style="color:#666">,</span> 5<span style="color:#666">];</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Accessing array elements
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> firstNumber <span style="color:#666">=</span> numbers<span style="color:#666">[</span>0<span style="color:#666">];</span> <span style="color:#60a0b0;font-style:italic">// Accessing the first element
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Map declaration and initialization
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> person <span style="color:#666">=</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    name<span style="color:#666">:</span> <span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">,</span>
+</span></span><span style="display:flex;"><span>    age<span style="color:#666">:</span> 25<span style="color:#666">,</span>
+</span></span><span style="display:flex;"><span>    city<span style="color:#666">:</span> <span style="color:#4070a0">&#34;New York&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Accessing map values
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> personName <span style="color:#666">=</span> person<span style="color:#666">.</span><span style="color:#4070a0">name</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Accessing the value associated with the key &#34;name&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Adding elements to arrays (using the `push` function)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>numbers<span style="color:#666">.</span><span style="color:#4070a0">push</span><span style="color:#666">(</span>6<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Adding elements to Maps
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>person<span style="color:#666">.</span><span style="color:#4070a0">country</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;USA&#34;</span><span style="color:#666">;</span>
+</span></span></code></pre></div><p>Arrays are zero-indexed.  Maps use dot notation to access values.</p>
+<h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>Ballerina supports a variety of operators, including:</p>
+<ul>
+<li><strong>Arithmetic Operators:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo)</li>
+<li><strong>Relational Operators:</strong> <code>==</code> (equals), <code>!=</code> (not equals), <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+<li><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT)</li>
+<li><strong>Assignment Operators:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%= </code></li>
+<li><strong>Other Operators:</strong>  <code>..</code> (range operator used for creating sequences), <code>is</code> (type checking operator).</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> x <span style="color:#666">=</span> 10<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> y <span style="color:#666">=</span> 5<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> sum <span style="color:#666">=</span> x <span style="color:#666">+</span> y<span style="color:#666">;</span>       <span style="color:#60a0b0;font-style:italic">// Addition
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> difference <span style="color:#666">=</span> x <span style="color:#666">-</span> y<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Subtraction
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> isGreater <span style="color:#666">=</span> x <span style="color:#666">&gt;</span> y<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Relational comparison
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> result <span style="color:#666">=</span> <span style="color:#666">(</span>x <span style="color:#666">&gt;</span> 5<span style="color:#666">)</span> <span style="color:#666">&amp;&amp;</span> <span style="color:#666">(</span>y <span style="color:#666">&lt;</span> 10<span style="color:#666">);</span> <span style="color:#60a0b0;font-style:italic">// Logical AND
+</span></span></span></code></pre></div><h2 class="heading" id="functions-and-control-flow">
+  Functions and Control Flow
+  <a class="anchor" href="#functions-and-control-flow">#</a>
+</h2>
+<h3 class="heading" id="defining-functions">
+  Defining Functions
+  <a class="anchor" href="#defining-functions">#</a>
+</h3>
+<p>Functions in Ballerina are defined using the <code>function</code> keyword.  They can be declared as <code>public</code> (accessible from outside the current module) or <code>private</code> (only accessible within the current module).  The function body is enclosed in curly braces <code>{}</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Public function that adds two integers
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">add</span><span style="color:#666">(</span><span style="color:#902000">int</span> a<span style="color:#666">,</span> <span style="color:#902000">int</span> b<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">returns</span> <span style="color:#902000">int</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">+</span> b<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Private function that prints a message
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">private</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">printMessage</span><span style="color:#666">(</span><span style="color:#902000">string</span> message<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span>message<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><h3 class="heading" id="function-parameters-and-return-types">
+  Function Parameters and Return Types
+  <a class="anchor" href="#function-parameters-and-return-types">#</a>
+</h3>
+<p>Function parameters are specified within parentheses after the function name.  Each parameter has a name and a type.  The <code>returns</code> keyword is used to specify the return type of a function.  If a function does not return a value, the <code>returns</code> keyword can be omitted or <code>returns ()</code> can be used to explicitly indicate no return.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Function with two integer parameters and an integer return type
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">multiply</span><span style="color:#666">(</span><span style="color:#902000">int</span> x<span style="color:#666">,</span> <span style="color:#902000">int</span> y<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">returns</span> <span style="color:#902000">int</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> x <span style="color:#666">*</span> y<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Function with no parameters and a string return type
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">greet</span><span style="color:#666">()</span> <span style="color:#007020;font-weight:bold">returns</span> <span style="color:#902000">string</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Hello!&#34;</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Function with no return type
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">display</span><span style="color:#666">(</span><span style="color:#902000">string</span> message<span style="color:#666">){</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span>message<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><h3 class="heading" id="conditional-statements-if-else">
+  Conditional Statements (<code>if-else</code>)
+  <a class="anchor" href="#conditional-statements-if-else">#</a>
+</h3>
+<p>Conditional statements control the flow of execution based on certain conditions. Ballerina uses the <code>if</code>, <code>else if</code>, and <code>else</code> keywords for conditional branching.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">checkNumber</span><span style="color:#666">(</span><span style="color:#902000">int</span> num<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> num <span style="color:#666">&gt;</span> 0 <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Number is positive&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> num <span style="color:#666">&lt;</span> 0 <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Number is negative&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Number is zero&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><h3 class="heading" id="loops-for-while">
+  Loops (<code>for</code>, <code>while</code>)
+  <a class="anchor" href="#loops-for-while">#</a>
+</h3>
+<p>Ballerina provides <code>for</code> and <code>while</code> loops for iterative execution.</p>
+<ul>
+<li><strong><code>for</code> loop:</strong> The <code>for</code> loop is used for iterating a specific number of times or over a range or collection.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Iterating over a range of numbers
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">iterateNumbers</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    for i in 1 <span style="color:#666">...</span> 5 <span style="color:#666">{</span> <span style="color:#60a0b0;font-style:italic">// Iterates from 1 to 5 (inclusive)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span>i<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Iterating over an array
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">iterateArray</span><span style="color:#666">(</span><span style="color:#902000">int</span><span style="color:#666">[]</span> arr<span style="color:#666">){</span>
+</span></span><span style="display:flex;"><span>    for num in arr <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span>num<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><ul>
+<li><strong><code>while</code> loop:</strong> The <code>while</code> loop continues to execute as long as a given condition is true.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">whileLoopExample</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> i <span style="color:#666">=</span> 0<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">while</span> i <span style="color:#666">&lt;</span> 5 <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span>i<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>        i<span style="color:#666">++;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><h2 class="heading" id="working-with-data">
+  Working with Data
+  <a class="anchor" href="#working-with-data">#</a>
+</h2>
+<h3 class="heading" id="json-handling">
+  JSON Handling
+  <a class="anchor" href="#json-handling">#</a>
+</h3>
+<p>Ballerina provides built-in support for handling JSON data.  You can easily parse JSON strings into Ballerina records and convert Ballerina records into JSON strings.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>io<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// JSON string
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#902000">string</span> jsonString <span style="color:#666">=</span> <span style="">`</span><span style="color:#666">{</span><span style="color:#4070a0">&#34;name&#34;</span><span style="color:#666">:</span> <span style="color:#4070a0">&#34;John Doe&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;age&#34;</span><span style="color:#666">:</span> 30<span style="color:#666">,</span> <span style="color:#4070a0">&#34;city&#34;</span><span style="color:#666">:</span> <span style="color:#4070a0">&#34;New York&#34;</span><span style="color:#666">}</span><span style="">`</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Parse JSON string into a record
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#902000">json</span><span style="color:#666">|</span><span style="color:#007020;font-weight:bold">error</span> personJson <span style="color:#666">=</span> check <span style="color:#902000">json</span><span style="color:#666">:</span>parse<span style="color:#666">(</span>jsonString<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> personJson is <span style="color:#902000">record</span> <span style="color:#666">{|</span> <span style="color:#902000">string</span> name<span style="color:#666">,</span> <span style="color:#902000">int</span> age<span style="color:#666">,</span> <span style="color:#902000">string</span> city <span style="color:#666">|}</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Name: &#34;</span><span style="color:#666">,</span> personJson<span style="color:#666">.</span><span style="color:#4070a0">name</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Age: &#34;</span><span style="color:#666">,</span> personJson<span style="color:#666">.</span><span style="color:#4070a0">age</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;City: &#34;</span><span style="color:#666">,</span> personJson<span style="color:#666">.</span><span style="color:#4070a0">city</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Create a record
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#902000">record</span> <span style="color:#666">{|</span> <span style="color:#902000">string</span> name<span style="color:#666">,</span> <span style="color:#902000">int</span> age<span style="color:#666">,</span> <span style="color:#902000">string</span> city <span style="color:#666">|}</span> person <span style="color:#666">=</span> <span style="color:#666">{</span>name<span style="color:#666">:</span> <span style="color:#4070a0">&#34;Jane Doe&#34;</span><span style="color:#666">,</span> age<span style="color:#666">:</span> 25<span style="color:#666">,</span> city<span style="color:#666">:</span> <span style="color:#4070a0">&#34;London&#34;</span><span style="color:#666">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Convert record to JSON string
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#902000">string</span> jsonOutput <span style="color:#666">=</span> check <span style="color:#902000">json</span><span style="color:#666">:</span>stringify<span style="color:#666">(</span>person<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;JSON Output: &#34;</span><span style="color:#666">,</span> jsonOutput<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>Remember to handle potential errors during JSON parsing using the <code>check</code> keyword and error handling constructs.</p>
+<h3 class="heading" id="xml-handling">
+  XML Handling
+  <a class="anchor" href="#xml-handling">#</a>
+</h3>
+<p>Ballerina provides the <code>xml</code> module for working with XML data. You can parse XML strings into Ballerina structures and generate XML strings from Ballerina structures.  This often involves defining custom record types to match the XML structure.  The <code>xml:fromString()</code> function parses XML from a string, while <code>xml:toString()</code> converts a Ballerina structure to XML.  More complex XML manipulations might require using XPath or other XML processing libraries.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>io<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span><span style="color:#902000">xml</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">string</span> xmlString <span style="color:#666">=</span> <span style="">`</span><span style="color:#666">&lt;</span>person<span style="color:#666">&gt;&lt;</span>name<span style="color:#666">&gt;</span>Alice<span style="color:#666">&lt;/</span>name<span style="color:#666">&gt;&lt;</span>age<span style="color:#666">&gt;</span>30<span style="color:#666">&lt;/</span>age<span style="color:#666">&gt;&lt;/</span>person<span style="color:#666">&gt;</span><span style="">`</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">xml</span><span style="color:#666">:</span>XMLElement xmlElement <span style="color:#666">=</span> check <span style="color:#902000">xml</span><span style="color:#666">:</span>fromString<span style="color:#666">(</span>xmlString<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#902000">xml</span><span style="color:#666">:</span>toString<span style="color:#666">(</span>xmlElement<span style="color:#666">));</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>Note that error handling is crucial when working with XML; <code>check</code> ensures proper error propagation.</p>
+<h3 class="heading" id="input-and-output">
+  Input and Output
+  <a class="anchor" href="#input-and-output">#</a>
+</h3>
+<p>Ballerina provides the <code>io</code> module for basic input and output operations.  <code>io:println()</code> is used to print output to the console.  For more complex input, you might use other modules depending on the source (e.g., reading from network streams or files).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>io<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Hello from Ballerina!&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">string</span> name <span style="color:#666">=</span> io<span style="color:#666">:</span>readln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Enter your name: &#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Hello, &#34;</span> <span style="color:#666">+</span> name <span style="color:#666">+</span> <span style="color:#4070a0">&#34;!&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p><code>io:readln()</code> reads a line of input from the console.  Other functions in the <code>io</code> module provide functionalities for various I/O operations.</p>
+<h3 class="heading" id="working-with-files">
+  Working with Files
+  <a class="anchor" href="#working-with-files">#</a>
+</h3>
+<p>Ballerina offers functionalities to read from and write to files.  The <code>file</code> module provides necessary functions.  Remember to handle potential errors (like file not found) using error handling mechanisms.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>io<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>file<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Write to a file
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    file<span style="color:#666">:</span>File f <span style="color:#666">=</span> check file<span style="color:#666">:</span>open<span style="color:#666">(</span><span style="color:#4070a0">&#34;output.txt&#34;</span><span style="color:#666">,</span> file<span style="color:#666">:</span>OPEN_CREATE <span style="color:#666">|</span> file<span style="color:#666">:</span>OPEN_WRITE<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    check file<span style="color:#666">:</span>write<span style="color:#666">(</span>f<span style="color:#666">,</span> <span style="color:#4070a0">&#34;This is some text to write to the file.\n&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    check file<span style="color:#666">:</span>close<span style="color:#666">(</span>f<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Read from a file
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    file<span style="color:#666">:</span>File f2 <span style="color:#666">=</span> check file<span style="color:#666">:</span>open<span style="color:#666">(</span><span style="color:#4070a0">&#34;output.txt&#34;</span><span style="color:#666">,</span> file<span style="color:#666">:</span>OPEN_READ<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">string</span> content <span style="color:#666">=</span> check file<span style="color:#666">:</span>readAll<span style="color:#666">(</span>f2<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span>content<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    check file<span style="color:#666">:</span>close<span style="color:#666">(</span>f2<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>Always close files after use to release resources.  Error handling (<code>check</code>) is essential to manage potential file operation failures.</p>
+<h2 class="heading" id="networking-and-concurrency">
+  Networking and Concurrency
+  <a class="anchor" href="#networking-and-concurrency">#</a>
+</h2>
+<h3 class="heading" id="making-http-requests">
+  Making HTTP Requests
+  <a class="anchor" href="#making-http-requests">#</a>
+</h3>
+<p>Ballerina simplifies making HTTP requests using the <code>http</code> client.  You can easily send GET, POST, and other types of requests and handle responses.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>http<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>io<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Make an HTTP GET request
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    http<span style="color:#666">:</span>Client client <span style="color:#666">=</span> new <span style="color:#666">(</span>url<span style="color:#666">:</span> <span style="color:#4070a0">&#34;https://httpbin.org/get&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    http<span style="color:#666">:</span>Response response <span style="color:#666">=</span> check client<span style="color:#666">-&gt;</span>get<span style="color:#666">();</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Status Code: &#34;</span><span style="color:#666">,</span> response<span style="color:#666">.</span><span style="color:#4070a0">statusCode</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Response Body: &#34;</span><span style="color:#666">,</span> response<span style="color:#666">.</span><span style="color:#4070a0">text</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>Error handling (<code>check</code>) is crucial to manage potential network issues.  The <code>http</code> module provides various functions for customizing requests (headers, timeouts, etc.) and handling responses effectively.</p>
+<h3 class="heading" id="creating-http-services">
+  Creating HTTP Services
+  <a class="anchor" href="#creating-http-services">#</a>
+</h3>
+<p>Ballerina makes creating HTTP services straightforward.  You define functions annotated with <code>@http:ResourceConfig</code> to handle incoming requests.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>http<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">service</span> <span style="color:#666">/</span> on new HttpListener <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#555;font-weight:bold">@http</span><span style="color:#666">:</span>ResourceConfig <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        path<span style="color:#666">:</span> <span style="color:#4070a0">&#34;/hello&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    resource <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">get</span><span style="color:#666">()</span> <span style="color:#007020;font-weight:bold">returns</span> <span style="color:#902000">string</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Hello, World!&#34;</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>This creates a service that responds with &ldquo;Hello, World!&rdquo; when a GET request is made to the <code>/hello</code> path.  The <code>http</code> module provides extensive features for routing, handling different HTTP methods (GET, POST, PUT, DELETE), and managing request parameters and headers. You&rsquo;ll need to run this service using <code>ballerina run &lt;filename&gt;.bal</code>.</p>
+<h3 class="heading" id="concurrency-features">
+  Concurrency Features
+  <a class="anchor" href="#concurrency-features">#</a>
+</h3>
+<p>Ballerina inherently supports concurrency through its language constructs.  This allows for efficient handling of multiple tasks simultaneously without complex threading management.  Features like worker threads, channels, and the <code>concurrent</code> module enable building highly concurrent and responsive applications.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>io<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>concurrent<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Create a worker
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">worker</span> w1 <span style="color:#666">=</span> start <span style="color:#06287e">worker</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">function</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Worker 1 started&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic">// Perform some task
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        sleep<span style="color:#666">(</span>1000<span style="color:#666">);</span> <span style="color:#60a0b0;font-style:italic">// Simulate work
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Worker 1 finished&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">});</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Main thread continues execution
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Main thread continues&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">//Wait for Worker
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    wait w1<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Main Thread finished&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>This example demonstrates starting a worker using the <code>start worker</code> statement. Ballerina manages the underlying thread and synchronization.  Channels facilitate communication and synchronization between concurrent tasks.</p>
+<h3 class="heading" id="working-with-streams">
+  Working with Streams
+  <a class="anchor" href="#working-with-streams">#</a>
+</h3>
+<p>Ballerina provides excellent support for working with streams, allowing efficient processing of large amounts of data. Streams can represent various data sources like files, network connections, or sensor data.  They provide methods for reading data in a non-blocking manner, enhancing concurrency and performance. The <code>io</code> and other specialized modules often include stream-based functions for reading and writing data.</p>
+<p>For example, reading a file in stream based manner is possible with <code>file:readStream()</code>. Processing large datasets without loading the entirety into memory is a common use case for streams, improving the application&rsquo;s scalability and resource efficiency.  This requires leveraging stream operations that read data chunk by chunk rather than all at once.  Specific stream handling will depend on the data source (file, network, etc.).</p>
+<h2 class="heading" id="error-handling">
+  Error Handling
+  <a class="anchor" href="#error-handling">#</a>
+</h2>
+<h3 class="heading" id="understanding-errors">
+  Understanding Errors
+  <a class="anchor" href="#understanding-errors">#</a>
+</h3>
+<p>In Ballerina, errors are first-class citizens.  They are not exceptions that disrupt the program flow but rather values that are handled explicitly. This approach makes error handling more predictable and manageable.  Errors are represented by the <code>error</code> type, and functions can return both a successful result and an error.  The <code>check</code> keyword is used to propagate errors, ensuring they are not silently ignored.</p>
+<h3 class="heading" id="error-handling-mechanisms">
+  Error Handling Mechanisms
+  <a class="anchor" href="#error-handling-mechanisms">#</a>
+</h3>
+<p>The primary mechanism for handling errors is the <code>check</code> keyword. When a function might return an error, you use <code>check</code> to propagate that error. If the function call is successful, execution continues normally. However, if an error occurs, the error is passed up the call stack until a suitable handler is found.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>io<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> result <span style="color:#666">=</span> check <span style="color:#06287e">add</span><span style="color:#666">(</span>5<span style="color:#666">,</span> 0<span style="color:#666">);</span> <span style="color:#60a0b0;font-style:italic">// Check for errors in add function.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Result: &#34;</span><span style="color:#666">,</span> result<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Error Handling
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#902000">int</span><span style="color:#666">?</span> resultWithCheck <span style="color:#666">=</span> checkAndHandleError<span style="color:#666">(</span>10<span style="color:#666">,</span>0<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> resultWithCheck is <span style="color:#902000">int</span><span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Result is : &#34;</span><span style="color:#666">,</span> resultWithCheck<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Error occurred: &#34;</span><span style="color:#666">,</span> resultWithCheck<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">add</span><span style="color:#666">(</span><span style="color:#902000">int</span> a<span style="color:#666">,</span> <span style="color:#902000">int</span> b<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">returns</span> <span style="color:#902000">int</span><span style="color:#666">|</span><span style="color:#007020;font-weight:bold">error</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> b <span style="color:#666">==</span> 0 <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">error</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Cannot divide by zero&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">/</span> b<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">checkAndHandleError</span><span style="color:#666">(</span><span style="color:#902000">int</span> a<span style="color:#666">,</span> <span style="color:#902000">int</span> b<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">returns</span> <span style="color:#902000">int</span><span style="color:#666">?|</span><span style="color:#007020;font-weight:bold">error</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span><span style="color:#666">?</span> result <span style="color:#666">=</span> check <span style="color:#06287e">add</span><span style="color:#666">(</span>a<span style="color:#666">,</span>b<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> result<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>The <code>try-catch</code> block handles errors gracefully. If an error occurs within the <code>try</code> block, the <code>catch</code> block is executed.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>io<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#902000">int</span> result <span style="color:#666">=</span> check <span style="color:#06287e">add</span><span style="color:#666">(</span>10<span style="color:#666">,</span>0<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>       io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Result : &#34;</span><span style="color:#666">,</span> result<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">error</span> e<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;An error occurred: &#34;</span><span style="color:#666">,</span> e<span style="color:#666">.</span><span style="color:#4070a0">message</span><span style="color:#666">());</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">add</span><span style="color:#666">(</span><span style="color:#902000">int</span> a<span style="color:#666">,</span> <span style="color:#902000">int</span> b<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">returns</span> <span style="color:#902000">int</span><span style="color:#666">|</span><span style="color:#007020;font-weight:bold">error</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> b <span style="color:#666">==</span> 0 <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">error</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Cannot divide by zero&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">/</span> b<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>Using the <code>?</code> operator  indicates the function could return an error or <code>nil</code>.</p>
+<h3 class="heading" id="custom-error-handling">
+  Custom Error Handling
+  <a class="anchor" href="#custom-error-handling">#</a>
+</h3>
+<p>You can define your custom error types to represent specific error conditions within your application.  This allows for more informative error messages and better error handling.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>io<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> MyErrorType <span style="color:#902000">record</span> <span style="color:#666">{|</span> <span style="color:#902000">string</span> message <span style="color:#666">|};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#902000">int</span> result <span style="color:#666">=</span> check <span style="color:#06287e">myFunction</span><span style="color:#666">(</span>0<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>       io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;Result: &#34;</span><span style="color:#666">,</span>result<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>MyErrorType e<span style="color:#666">){</span>
+</span></span><span style="display:flex;"><span>        io<span style="color:#666">:</span>println<span style="color:#666">(</span><span style="color:#4070a0">&#34;My custom error occurred: &#34;</span><span style="color:#666">,</span> e<span style="color:#666">.</span><span style="color:#4070a0">message</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">myFunction</span><span style="color:#666">(</span><span style="color:#902000">int</span> x<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">returns</span> <span style="color:#902000">int</span><span style="color:#666">|</span>MyErrorType <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> x <span style="color:#666">==</span> 0 <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">error</span> MyErrorType <span style="color:#666">{</span>message<span style="color:#666">:</span> <span style="color:#4070a0">&#34;Input cannot be zero&#34;</span><span style="color:#666">};</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> x <span style="color:#666">*</span> 2<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>Defining custom error types enhances error reporting and makes your code more maintainable.  Clear error messages improve debugging.  Handling errors effectively is critical to building robust applications.</p>
+<h2 class="heading" id="advanced-topics">
+  Advanced Topics
+  <a class="anchor" href="#advanced-topics">#</a>
+</h2>
+<h3 class="heading" id="object-oriented-programming-in-ballerina">
+  Object-Oriented Programming in Ballerina
+  <a class="anchor" href="#object-oriented-programming-in-ballerina">#</a>
+</h3>
+<p>While Ballerina isn&rsquo;t strictly object-oriented in the same way as languages like Java or C++, it supports many object-oriented concepts.  Records, which are similar to structs or classes in other languages, can contain fields (data) and functions (methods).  Inheritance is not directly supported, but similar functionality can be achieved through composition and interfaces.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Defining a record (similar to a class)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">record</span> Customer <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">string</span> name<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">string</span> address<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">getName</span><span style="color:#666">()</span> <span style="color:#007020;font-weight:bold">returns</span> <span style="color:#902000">string</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> self<span style="color:#666">.</span><span style="color:#4070a0">name</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Creating an instance of the Customer record
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    Customer customer <span style="color:#666">=</span> <span style="color:#666">{</span>name<span style="color:#666">:</span> <span style="color:#4070a0">&#34;John Doe&#34;</span><span style="color:#666">,</span> address<span style="color:#666">:</span> <span style="color:#4070a0">&#34;123 Main St&#34;</span><span style="color:#666">};</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span>customer<span style="color:#666">.</span><span style="color:#4070a0">getName</span><span style="color:#666">());</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><h3 class="heading" id="modules-and-packages">
+  Modules and Packages
+  <a class="anchor" href="#modules-and-packages">#</a>
+</h3>
+<p>Ballerina uses modules to organize code into reusable units. A module is a collection of related functions, types, and constants.  Packages are collections of related modules, enabling code reuse and modular design.  Modules are typically defined in separate <code>.bal</code> files, while packages represent a structured collection of modules.  The <code>import</code> statement allows you to access elements from other modules and packages within your code.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// mymodule.bal (contains functions and types)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">greet</span><span style="color:#666">(</span><span style="color:#902000">string</span> name<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">returns</span> <span style="color:#902000">string</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Hello, &#34;</span> <span style="color:#666">+</span> name <span style="color:#666">+</span> <span style="color:#4070a0">&#34;!&#34;</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// main.bal (imports and uses mymodule)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">mymodule</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">string</span> message <span style="color:#666">=</span> mymodule<span style="color:#666">:</span>greet<span style="color:#666">(</span><span style="color:#4070a0">&#34;World&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    io<span style="color:#666">:</span>println<span style="color:#666">(</span>message<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>This demonstrates a simple module <code>mymodule</code> with a <code>greet</code> function.  The <code>main</code> module uses the <code>import</code> statement to call the <code>greet</code> function.</p>
+<h3 class="heading" id="testing-your-ballerina-code">
+  Testing Your Ballerina Code
+  <a class="anchor" href="#testing-your-ballerina-code">#</a>
+</h3>
+<p>Ballerina provides a built-in testing framework.  You can write unit tests to verify the correctness of individual functions and components.  Test functions are defined using the <code>test:beforeAll</code>, <code>test:beforeEach</code>, <code>test:afterAll</code>, and <code>test:afterEach</code> annotations for setup and teardown tasks. The <code>test:assert</code> function helps make assertions within tests.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ballerina" data-lang="ballerina"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ballerina</span><span style="color:#666">/</span>test<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#002070;font-weight:bold">
+</span></span></span><span style="display:flex;"><span><span style="color:#002070;font-weight:bold">test:</span>assert<span style="color:#666">(</span>add<span style="color:#666">(</span>2<span style="color:#666">,</span> 3<span style="color:#666">)</span> <span style="color:#666">==</span> 5<span style="color:#666">,</span> <span style="color:#4070a0">&#34;2 + 3 should equal 5&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">add</span><span style="color:#666">(</span><span style="color:#902000">int</span> a<span style="color:#666">,</span> <span style="color:#902000">int</span> b<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">returns</span> <span style="color:#902000">int</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">+</span> b<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>Run tests using the <code>ballerina test</code> command.</p>
+<h3 class="heading" id="deployment-and-execution">
+  Deployment and Execution
+  <a class="anchor" href="#deployment-and-execution">#</a>
+</h3>
+<p>Ballerina programs can be deployed in various environments:</p>
+<ul>
+<li>
+<p><strong>Standalone Execution:</strong>  You can run Ballerina programs directly using the Ballerina command-line tool (<code>ballerina run</code>).</p>
+</li>
+<li>
+<p><strong>Deployment to Servers:</strong>  Ballerina services can be deployed to servers like Tomcat, JBoss, or other platforms supporting Ballerina.  Deployment specifics vary depending on the chosen platform.</p>
+</li>
+<li>
+<p><strong>Cloud Deployments:</strong>  Ballerina can integrate with cloud platforms such as Kubernetes for containerized deployments.  The integration might use tooling like Helm charts or other cloud deployment mechanisms.</p>
+</li>
+</ul>
+<p>The specifics of deployment depend on the application&rsquo;s architecture and target environment (e.g., cloud, on-premises server).  Ballerina provides tools and support for integration with various deployment platforms.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-postscript/">
+                        Beginner&#39;s Guide to PostScript
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-pascal/">
+                        Beginner&#39;s Guide to Pascal
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

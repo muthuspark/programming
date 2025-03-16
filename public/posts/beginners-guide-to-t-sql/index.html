@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to T-SQL | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-t-sql/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-t-sql/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to T-SQL">
+  <meta property="og:description" content="Introduction to T-SQL # What is T-SQL? # T-SQL (Transact-SQL) is a proprietary extension of SQL (Structured Query Language) developed by Microsoft. It’s the primary language used to interact with Microsoft SQL Server databases. T-SQL allows developers to perform various database operations, including creating, modifying, and querying databases; managing database security; and automating database tasks. While based on standard SQL, T-SQL includes many unique features and functions specific to the SQL Server environment, such as stored procedures, triggers, and user-defined functions. Understanding T-SQL is crucial for anyone working with SQL Server databases, whether for simple data retrieval or complex database administration.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-07T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-t-sql/">Beginner&#39;s Guide to T-SQL</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to T-SQL</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-01-07T00:00:00&#43;00:00">January 7, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      18 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-t-sql">Introduction to T-SQL</a>
+      <ul>
+        <li><a href="#what-is-t-sql">What is T-SQL?</a></li>
+        <li><a href="#why-learn-t-sql">Why Learn T-SQL?</a></li>
+        <li><a href="#setting-up-your-environment">Setting up your environment</a></li>
+        <li><a href="#connecting-to-sql-server">Connecting to SQL Server</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#writing-your-first-t-sql-query">Writing your first T-SQL query</a></li>
+        <li><a href="#understanding-data-types-int-varchar-date-etc">Understanding Data Types (INT, VARCHAR, DATE, etc.)</a></li>
+        <li><a href="#working-with-variables">Working with variables</a></li>
+        <li><a href="#comments-and-formatting">Comments and Formatting</a></li>
+      </ul>
+    </li>
+    <li><a href="#select-statements">SELECT Statements</a>
+      <ul>
+        <li><a href="#selecting-all-columns--wildcard">Selecting all columns (* wildcard)</a></li>
+        <li><a href="#selecting-specific-columns">Selecting specific columns</a></li>
+        <li><a href="#using-where-clause-for-filtering">Using WHERE clause for filtering</a></li>
+        <li><a href="#order-by-clause-for-sorting">ORDER BY clause for sorting</a></li>
+        <li><a href="#using-top-clause-to-limit-results">Using TOP clause to limit results</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-tables">Working with Tables</a>
+      <ul>
+        <li><a href="#creating-tables">Creating tables</a></li>
+        <li><a href="#inserting-data-into-tables">Inserting data into tables</a></li>
+        <li><a href="#updating-data-in-tables">Updating data in tables</a></li>
+        <li><a href="#deleting-data-from-tables">Deleting data from tables</a></li>
+        <li><a href="#altering-tables">Altering tables</a></li>
+      </ul>
+    </li>
+    <li><a href="#aggregate-functions-and-grouping">Aggregate Functions and Grouping</a>
+      <ul>
+        <li><a href="#count-sum-avg-min-max-functions">COUNT, SUM, AVG, MIN, MAX functions</a></li>
+        <li><a href="#group-by-clause-for-grouping-results">GROUP BY clause for grouping results</a></li>
+        <li><a href="#having-clause-for-filtering-grouped-results">HAVING clause for filtering grouped results</a></li>
+      </ul>
+    </li>
+    <li><a href="#joins-and-subqueries">Joins and Subqueries</a>
+      <ul>
+        <li><a href="#understanding-different-types-of-joins-inner-left-right-full">Understanding different types of joins (INNER, LEFT, RIGHT, FULL)</a></li>
+        <li><a href="#writing-join-queries">Writing JOIN queries</a></li>
+        <li><a href="#using-subqueries-in-select-and-where-clauses">Using subqueries in SELECT and WHERE clauses</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics-optional">Advanced Topics (Optional)</a>
+      <ul>
+        <li><a href="#transactions">Transactions</a></li>
+        <li><a href="#stored-procedures">Stored Procedures</a></li>
+        <li><a href="#indexes">Indexes</a></li>
+        <li><a href="#views">Views</a></li>
+      </ul>
+    </li>
+    <li><a href="#practice-and-resources">Practice and Resources</a>
+      <ul>
+        <li><a href="#practice-exercises">Practice exercises</a></li>
+        <li><a href="#useful-online-resources">Useful online resources</a></li>
+        <li><a href="#sql-server-documentation">SQL Server documentation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-t-sql">
+  Introduction to T-SQL
+  <a class="anchor" href="#introduction-to-t-sql">#</a>
+</h2>
+<h3 class="heading" id="what-is-t-sql">
+  What is T-SQL?
+  <a class="anchor" href="#what-is-t-sql">#</a>
+</h3>
+<p>T-SQL (Transact-SQL) is a proprietary extension of SQL (Structured Query Language) developed by Microsoft.  It&rsquo;s the primary language used to interact with Microsoft SQL Server databases.  T-SQL allows developers to perform various database operations, including creating, modifying, and querying databases; managing database security; and automating database tasks.  While based on standard SQL, T-SQL includes many unique features and functions specific to the SQL Server environment, such as stored procedures, triggers, and user-defined functions.  Understanding T-SQL is crucial for anyone working with SQL Server databases, whether for simple data retrieval or complex database administration.</p>
+<h3 class="heading" id="why-learn-t-sql">
+  Why Learn T-SQL?
+  <a class="anchor" href="#why-learn-t-sql">#</a>
+</h3>
+<p>Learning T-SQL opens up a world of possibilities for working with data.  The reasons to learn it are numerous:</p>
+<ul>
+<li><strong>Database Management:</strong> T-SQL provides the tools to create, manage, and maintain entire databases, including tables, indexes, and relationships.</li>
+<li><strong>Data Retrieval and Manipulation:</strong>  It&rsquo;s the language you use to query, insert, update, and delete data within your SQL Server databases. This is fundamental for any data-driven application.</li>
+<li><strong>Data Analysis and Reporting:</strong>  T-SQL allows you to extract meaningful insights from data using powerful analytical functions and aggregate operations, forming the basis for reports and dashboards.</li>
+<li><strong>Automation:</strong>  You can automate database tasks using T-SQL scripts, saving time and reducing errors. Stored procedures and jobs are key tools for automation.</li>
+<li><strong>Career Opportunities:</strong>  Proficiency in T-SQL is a highly sought-after skill in the IT industry, opening doors to various database-related roles.</li>
+<li><strong>Integration with .NET and other technologies:</strong>  T-SQL integrates seamlessly with other Microsoft technologies, such as .NET, making it a powerful tool for building robust and scalable applications.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-environment">
+  Setting up your environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h3>
+<p>To begin learning T-SQL, you&rsquo;ll need to set up your development environment. This primarily involves installing SQL Server.  The specific steps depend on your operating system and the edition of SQL Server you choose (Express, Standard, Enterprise, etc.).  Microsoft provides detailed instructions on their website for downloading and installing SQL Server.  Consider these steps:</p>
+<ol>
+<li><strong>Download SQL Server:</strong> Download the appropriate version of SQL Server from the official Microsoft website.  The Express edition is a free and excellent option for learning and small-scale projects.</li>
+<li><strong>Installation:</strong> Follow the installer&rsquo;s instructions carefully. You&rsquo;ll need to choose installation options, such as the instance name and features to install.  Note the instance name; you&rsquo;ll need it for connecting to the server.</li>
+<li><strong>SQL Server Management Studio (SSMS):</strong> While not strictly required for running T-SQL (you can use command-line tools), SSMS is a powerful and user-friendly Integrated Development Environment (IDE) for writing, executing, and debugging T-SQL code. Download and install SSMS separately from the official Microsoft website.</li>
+</ol>
+<h3 class="heading" id="connecting-to-sql-server">
+  Connecting to SQL Server
+  <a class="anchor" href="#connecting-to-sql-server">#</a>
+</h3>
+<p>After installing SQL Server and SSMS, you need to connect to your SQL Server instance.  In SSMS:</p>
+<ol>
+<li><strong>Open SSMS:</strong> Launch SQL Server Management Studio.</li>
+<li><strong>Connect to Server:</strong>  In the &ldquo;Connect to Server&rdquo; dialog box:
+<ul>
+<li><strong>Server name:</strong> Enter the name of your SQL Server instance (e.g., <code>.\SQLEXPRESS</code> for a default local instance, or the server name if it&rsquo;s a remote instance).</li>
+<li><strong>Authentication:</strong> Choose either Windows Authentication (uses your Windows credentials) or SQL Server Authentication (requires a specific username and password you create during SQL Server setup).</li>
+</ul>
+</li>
+<li><strong>Click Connect:</strong> Once you have entered the correct credentials, click &ldquo;Connect.&rdquo;  You should now be connected to your SQL Server instance and ready to start writing and executing T-SQL code.  If the connection fails, double-check your server name, authentication type, and credentials.</li>
+</ol>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="writing-your-first-t-sql-query">
+  Writing your first T-SQL query
+  <a class="anchor" href="#writing-your-first-t-sql-query">#</a>
+</h3>
+<p>The most fundamental T-SQL operation is querying data. Let&rsquo;s start with a simple query to select all columns from a table named <code>Products</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This query uses the <code>SELECT</code> statement to specify the columns to retrieve (<code>*</code> indicates all columns) and the <code>FROM</code> statement to specify the table.  To execute this query in SSMS, type it into a new query window and click the &ldquo;Execute&rdquo; button (or press F5).</p>
+<p>Now, let&rsquo;s select specific columns:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This query retrieves only the <code>ProductName</code> and <code>Price</code> columns.  Remember to replace <code>Products</code> with the actual name of your table.  If you don&rsquo;t have a <code>Products</code> table, you&rsquo;ll need to create one (covered in later sections).</p>
+<h3 class="heading" id="understanding-data-types-int-varchar-date-etc">
+  Understanding Data Types (INT, VARCHAR, DATE, etc.)
+  <a class="anchor" href="#understanding-data-types-int-varchar-date-etc">#</a>
+</h3>
+<p>Data types define the kind of values a column can hold.  Choosing the correct data type is crucial for data integrity and efficiency.  Here are some common T-SQL data types:</p>
+<ul>
+<li><strong>INT:</strong>  Stores whole numbers (integers).  Example: <code>10</code>, <code>-5</code>, <code>0</code>.</li>
+<li><strong>VARCHAR(n):</strong> Stores variable-length strings of up to <em>n</em> characters. Example: <code>VARCHAR(50)</code> for a string up to 50 characters.  Use <code>VARCHAR</code> for text that varies in length.</li>
+<li><strong>CHAR(n):</strong> Stores fixed-length strings of <em>n</em> characters.  If the string is shorter than <em>n</em>, it&rsquo;s padded with spaces.</li>
+<li><strong>DATE:</strong> Stores dates (year, month, day). Example: <code>'2024-10-27'</code>.</li>
+<li><strong>DATETIME:</strong> Stores dates and times. Example: <code>'2024-10-27 10:30:00'</code>.</li>
+<li><strong>BIT:</strong> Stores boolean values (0 or 1, representing false or true).</li>
+<li><strong>FLOAT:</strong> Stores floating-point numbers (numbers with decimal places).</li>
+<li><strong>DECIMAL(p,s):</strong> Stores fixed-point numbers with precision <em>p</em> (total number of digits) and scale <em>s</em> (number of digits to the right of the decimal point).</li>
+</ul>
+<p>When creating tables, you specify the data type for each column. For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>Products<span style="color:#bbb"> </span>(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>ProductID<span style="color:#bbb"> </span><span style="color:#007020">INT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">PRIMARY</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">KEY</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>ProductName<span style="color:#bbb"> </span><span style="color:#007020">VARCHAR</span>(<span style="color:#40a070">255</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>Price<span style="color:#bbb"> </span><span style="color:#007020">DECIMAL</span>(<span style="color:#40a070">10</span>,<span style="color:#bbb"> </span><span style="color:#40a070">2</span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="working-with-variables">
+  Working with variables
+  <a class="anchor" href="#working-with-variables">#</a>
+</h3>
+<p>Variables are used to store temporary values within a T-SQL script.  They are declared using the <code>DECLARE</code> statement and assigned values using the <code>SET</code> or <code>SELECT</code> statement.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb"> </span><span style="color:#666">@</span>ProductName<span style="color:#bbb"> </span><span style="color:#007020">VARCHAR</span>(<span style="color:#40a070">255</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span><span style="color:#666">@</span>ProductName<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Example Product&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#666">@</span>ProductName;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">-- Output: Example Product
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb"> </span><span style="color:#666">@</span>Price<span style="color:#bbb"> </span><span style="color:#007020">DECIMAL</span>(<span style="color:#40a070">10</span>,<span style="color:#40a070">2</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#666">@</span>Price<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">19</span>.<span style="color:#40a070">99</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#666">@</span>Price;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">-- Output: 19.99
+</span></span></span></code></pre></div><p>Variable names are preceded by an <code>@</code> symbol.  The data type must be specified when declaring a variable.</p>
+<h3 class="heading" id="comments-and-formatting">
+  Comments and Formatting
+  <a class="anchor" href="#comments-and-formatting">#</a>
+</h3>
+<p>Good coding practices include using comments to explain your code and formatting it consistently for readability.</p>
+<p><strong>Comments:</strong></p>
+<ul>
+<li>Single-line comments start with <code>--</code>.</li>
+<li>Multi-line comments are enclosed within <code>/*</code> and <code>*/</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- This is a single-line comment
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">This is a
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">multi-line comment
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">*/</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p><strong>Formatting:</strong></p>
+<p>Use consistent indentation and spacing to make your code easier to read.  For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>ProductName,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>Price<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>Price<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This formatted code is much clearer than a single, unbroken line of text.  Use the formatting tools in SSMS to help maintain consistent formatting.</p>
+<h2 class="heading" id="select-statements">
+  SELECT Statements
+  <a class="anchor" href="#select-statements">#</a>
+</h2>
+<p>The <code>SELECT</code> statement is fundamental to retrieving data from a SQL Server database.  It allows you to choose which columns to retrieve and apply various filters and sorting criteria.</p>
+<h3 class="heading" id="selecting-all-columns--wildcard">
+  Selecting all columns (* wildcard)
+  <a class="anchor" href="#selecting-all-columns--wildcard">#</a>
+</h3>
+<p>The simplest <code>SELECT</code> statement retrieves all columns from a table using the wildcard character <code>*</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This will return all rows and all columns from the <code>Products</code> table.  While convenient for quick checks, it&rsquo;s generally better to specify the columns you need for efficiency and clarity, especially with large tables.</p>
+<h3 class="heading" id="selecting-specific-columns">
+  Selecting specific columns
+  <a class="anchor" href="#selecting-specific-columns">#</a>
+</h3>
+<p>To retrieve only certain columns, list them explicitly in the <code>SELECT</code> clause:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price,<span style="color:#bbb"> </span>ProductCategory<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This query retrieves only the <code>ProductName</code>, <code>Price</code>, and <code>ProductCategory</code> columns from the <code>Products</code> table.  The order in which you list the columns in the <code>SELECT</code> clause determines the order of columns in the result set.</p>
+<h3 class="heading" id="using-where-clause-for-filtering">
+  Using WHERE clause for filtering
+  <a class="anchor" href="#using-where-clause-for-filtering">#</a>
+</h3>
+<p>The <code>WHERE</code> clause filters the results based on specified conditions.  This allows you to retrieve only the rows that meet certain criteria.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>Price<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This query retrieves the <code>ProductName</code> and <code>Price</code> only for products where the price is greater than 10.  You can use various comparison operators in the <code>WHERE</code> clause:</p>
+<ul>
+<li><code>=</code> (equals)</li>
+<li><code>!=</code> or <code>&lt;&gt;</code> (not equals)</li>
+<li><code>&gt;</code> (greater than)</li>
+<li><code>&lt;</code> (less than)</li>
+<li><code>&gt;=</code> (greater than or equals)</li>
+<li><code>&lt;=</code> (less than or equals)</li>
+</ul>
+<p>You can combine multiple conditions using <code>AND</code> and <code>OR</code> operators:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>Price<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AND</span><span style="color:#bbb"> </span>ProductCategory<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Electronics&#39;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This retrieves products with a price greater than 10 <em>and</em> belonging to the &lsquo;Electronics&rsquo; category.</p>
+<h3 class="heading" id="order-by-clause-for-sorting">
+  ORDER BY clause for sorting
+  <a class="anchor" href="#order-by-clause-for-sorting">#</a>
+</h3>
+<p>The <code>ORDER BY</code> clause sorts the results based on one or more columns.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">ORDER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>Price;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This sorts the results in ascending order of price. To sort in descending order, use the <code>DESC</code> keyword:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">ORDER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>Price<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">DESC</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>You can sort by multiple columns:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price,<span style="color:#bbb"> </span>ProductCategory<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">ORDER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>ProductCategory,<span style="color:#bbb"> </span>Price;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This first sorts by <code>ProductCategory</code> (ascending by default) and then, within each category, sorts by <code>Price</code> (also ascending).</p>
+<h3 class="heading" id="using-top-clause-to-limit-results">
+  Using TOP clause to limit results
+  <a class="anchor" href="#using-top-clause-to-limit-results">#</a>
+</h3>
+<p>The <code>TOP</code> clause limits the number of rows returned by the query.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>TOP<span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">ORDER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>Price<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">DESC</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This retrieves the top 5 most expensive products.  If you omit the <code>ORDER BY</code> clause, <code>TOP</code> will return an arbitrary set of 5 rows.  Using <code>TOP</code> with <code>ORDER BY</code> is generally more useful.  You can also use <code>TOP</code> with a percentage:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>TOP<span style="color:#bbb"> </span><span style="color:#40a070">10</span><span style="color:#bbb"> </span>PERCENT<span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">ORDER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>Price<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">DESC</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This will return the top 10% of the rows ordered by price descending.</p>
+<h2 class="heading" id="working-with-tables">
+  Working with Tables
+  <a class="anchor" href="#working-with-tables">#</a>
+</h2>
+<p>This section covers the essential Data Definition Language (DDL) commands for managing tables in SQL Server.</p>
+<h3 class="heading" id="creating-tables">
+  Creating tables
+  <a class="anchor" href="#creating-tables">#</a>
+</h3>
+<p>Tables are created using the <code>CREATE TABLE</code> statement.  You specify the table name and define each column, including its name and data type.  Constraints, such as primary keys and foreign keys, ensure data integrity.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>Products<span style="color:#bbb"> </span>(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>ProductID<span style="color:#bbb"> </span><span style="color:#007020">INT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">PRIMARY</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">KEY</span>,<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Primary key constraint
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>ProductName<span style="color:#bbb"> </span><span style="color:#007020">VARCHAR</span>(<span style="color:#40a070">255</span>)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">NOT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">NULL</span>,<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Not Null constraint
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>Price<span style="color:#bbb"> </span><span style="color:#007020">DECIMAL</span>(<span style="color:#40a070">10</span>,<span style="color:#bbb"> </span><span style="color:#40a070">2</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>ProductCategory<span style="color:#bbb"> </span><span style="color:#007020">VARCHAR</span>(<span style="color:#40a070">50</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>DateAdded<span style="color:#bbb"> </span><span style="color:#007020">DATE</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This creates a <code>Products</code> table with the specified columns.  <code>INT PRIMARY KEY</code> defines <code>ProductID</code> as the primary key, ensuring uniqueness and acting as the unique identifier for each product. <code>NOT NULL</code> ensures that <code>ProductName</code> cannot be left empty.  Other constraints (like <code>UNIQUE</code>, <code>FOREIGN KEY</code>, <code>CHECK</code>) can be added as needed for more complex data validation.</p>
+<h3 class="heading" id="inserting-data-into-tables">
+  Inserting data into tables
+  <a class="anchor" href="#inserting-data-into-tables">#</a>
+</h3>
+<p>Data is inserted into tables using the <code>INSERT INTO</code> statement.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>Products<span style="color:#bbb"> </span>(ProductID,<span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price,<span style="color:#bbb"> </span>ProductCategory,<span style="color:#bbb"> </span>DateAdded)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">VALUES</span><span style="color:#bbb"> </span>(<span style="color:#40a070">1</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Laptop&#39;</span>,<span style="color:#bbb"> </span><span style="color:#40a070">1200</span>.<span style="color:#40a070">00</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Electronics&#39;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;2024-10-27&#39;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>Products<span style="color:#bbb"> </span>(ProductID,<span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price,<span style="color:#bbb"> </span>ProductCategory,<span style="color:#bbb"> </span>DateAdded)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">VALUES</span><span style="color:#bbb"> </span>(<span style="color:#40a070">2</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Keyboard&#39;</span>,<span style="color:#bbb"> </span><span style="color:#40a070">75</span>.<span style="color:#40a070">00</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Electronics&#39;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;2024-10-27&#39;</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">       </span>(<span style="color:#40a070">3</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Mouse&#39;</span>,<span style="color:#bbb"> </span><span style="color:#40a070">25</span>.<span style="color:#40a070">00</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Electronics&#39;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;2024-10-27&#39;</span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The first example inserts a single row. The second demonstrates inserting multiple rows at once.  Make sure the order and data types of values match the columns in the table definition.  If you omit the column list, you must provide a value for every column in the table, in the order they are defined.</p>
+<h3 class="heading" id="updating-data-in-tables">
+  Updating data in tables
+  <a class="anchor" href="#updating-data-in-tables">#</a>
+</h3>
+<p>The <code>UPDATE</code> statement modifies existing data in a table.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span>Price<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1100</span>.<span style="color:#40a070">00</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>ProductID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This updates the price of the product with <code>ProductID = 1</code> to 1100.00.  The <code>WHERE</code> clause is crucial; without it, all rows in the table would be updated.  Always use a <code>WHERE</code> clause to target specific rows for updates to prevent unintended data modifications.</p>
+<h3 class="heading" id="deleting-data-from-tables">
+  Deleting data from tables
+  <a class="anchor" href="#deleting-data-from-tables">#</a>
+</h3>
+<p>The <code>DELETE</code> statement removes rows from a table.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>ProductID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">3</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This deletes the row with <code>ProductID = 3</code>.  Again, a <code>WHERE</code> clause is vital to avoid accidental deletion of all data.</p>
+<h3 class="heading" id="altering-tables">
+  Altering tables
+  <a class="anchor" href="#altering-tables">#</a>
+</h3>
+<p>The <code>ALTER TABLE</code> statement modifies the structure of an existing table.  You can add, modify, or delete columns.</p>
+<p><strong>Adding a column:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ALTER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">ADD</span><span style="color:#bbb"> </span>Description<span style="color:#bbb"> </span><span style="color:#007020">VARCHAR</span>(<span style="color:#40a070">500</span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This adds a <code>Description</code> column of type <code>VARCHAR(500)</code> to the <code>Products</code> table.</p>
+<p><strong>Modifying a column&rsquo;s data type:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ALTER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">ALTER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">COLUMN</span><span style="color:#bbb"> </span>Price<span style="color:#bbb"> </span><span style="color:#007020">DECIMAL</span>(<span style="color:#40a070">12</span>,<span style="color:#bbb"> </span><span style="color:#40a070">2</span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This changes the data type of the <code>Price</code> column to <code>DECIMAL(12, 2)</code>.</p>
+<p><strong>Deleting a column:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ALTER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">DROP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">COLUMN</span><span style="color:#bbb"> </span>DateAdded;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This removes the <code>DateAdded</code> column from the <code>Products</code> table.  Use caution when deleting columns, as this operation is irreversible without restoring from a backup.  Always back up your data before making significant schema changes.</p>
+<h2 class="heading" id="aggregate-functions-and-grouping">
+  Aggregate Functions and Grouping
+  <a class="anchor" href="#aggregate-functions-and-grouping">#</a>
+</h2>
+<p>Aggregate functions perform calculations on sets of values and return a single value.  Grouping allows you to perform aggregate calculations on subsets of your data.</p>
+<h3 class="heading" id="count-sum-avg-min-max-functions">
+  COUNT, SUM, AVG, MIN, MAX functions
+  <a class="anchor" href="#count-sum-avg-min-max-functions">#</a>
+</h3>
+<p>These are the most commonly used aggregate functions:</p>
+<ul>
+<li>
+<p><strong>COUNT():</strong> Counts the number of rows or non-NULL values.  <code>COUNT(*)</code> counts all rows, while <code>COUNT(column_name)</code> counts only non-NULL values in a specific column.</p>
+</li>
+<li>
+<p><strong>SUM():</strong> Calculates the sum of numeric values.</p>
+</li>
+<li>
+<p><strong>AVG():</strong> Calculates the average of numeric values.</p>
+</li>
+<li>
+<p><strong>MIN():</strong> Finds the minimum value.</p>
+</li>
+<li>
+<p><strong>MAX():</strong> Finds the maximum value.</p>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">COUNT</span>(<span style="color:#666">*</span>)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>TotalProducts,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">SUM</span>(Price)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>TotalRevenue,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">AVG</span>(Price)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>AveragePrice,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">MIN</span>(Price)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>LowestPrice,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">MAX</span>(Price)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>HighestPrice<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This query calculates the total number of products, total revenue, average price, lowest price, and highest price from the <code>Products</code> table.  <code>AS</code> is used to give more descriptive names to the resulting columns.</p>
+<h3 class="heading" id="group-by-clause-for-grouping-results">
+  GROUP BY clause for grouping results
+  <a class="anchor" href="#group-by-clause-for-grouping-results">#</a>
+</h3>
+<p>The <code>GROUP BY</code> clause groups rows with the same values in one or more columns into summary rows.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>ProductCategory,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">COUNT</span>(<span style="color:#666">*</span>)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>ProductCount,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">SUM</span>(Price)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>CategoryRevenue<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">GROUP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>ProductCategory;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This groups the products by <code>ProductCategory</code> and then calculates the number of products and total revenue for each category.  Any column listed in the <code>SELECT</code> clause that is <em>not</em> an aggregate function must be included in the <code>GROUP BY</code> clause.</p>
+<h3 class="heading" id="having-clause-for-filtering-grouped-results">
+  HAVING clause for filtering grouped results
+  <a class="anchor" href="#having-clause-for-filtering-grouped-results">#</a>
+</h3>
+<p>The <code>HAVING</code> clause filters grouped results based on conditions applied to aggregate values.  It&rsquo;s similar to <code>WHERE</code>, but it operates on grouped data <em>after</em> the <code>GROUP BY</code> operation.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>ProductCategory,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">COUNT</span>(<span style="color:#666">*</span>)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>ProductCount,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">SUM</span>(Price)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>CategoryRevenue<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">GROUP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>ProductCategory<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">HAVING</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">COUNT</span>(<span style="color:#666">*</span>)<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">2</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This query groups products by category, but only includes categories with more than 2 products.  The <code>HAVING</code> clause filters the grouped results based on the <code>COUNT(*)</code> aggregate.  You cannot use <code>WHERE</code> to filter based on aggregate values; you must use <code>HAVING</code>.  <code>WHERE</code> filters <em>before</em> grouping, while <code>HAVING</code> filters <em>after</em> grouping.</p>
+<h2 class="heading" id="joins-and-subqueries">
+  Joins and Subqueries
+  <a class="anchor" href="#joins-and-subqueries">#</a>
+</h2>
+<p>These techniques are crucial for combining data from multiple tables and performing complex queries.</p>
+<h3 class="heading" id="understanding-different-types-of-joins-inner-left-right-full">
+  Understanding different types of joins (INNER, LEFT, RIGHT, FULL)
+  <a class="anchor" href="#understanding-different-types-of-joins-inner-left-right-full">#</a>
+</h3>
+<p>Joins combine rows from two or more tables based on a related column between them.  Different join types return different subsets of data:</p>
+<ul>
+<li>
+<p><strong>INNER JOIN:</strong> Returns rows only when there is a match in both tables based on the join condition.  Rows without a match in either table are excluded.</p>
+</li>
+<li>
+<p><strong>LEFT (OUTER) JOIN:</strong> Returns all rows from the left table (the one specified before <code>LEFT JOIN</code>), even if there is no match in the right table.  For rows in the left table without a match in the right table, the columns from the right table will have <code>NULL</code> values.</p>
+</li>
+<li>
+<p><strong>RIGHT (OUTER) JOIN:</strong>  Similar to <code>LEFT JOIN</code>, but returns all rows from the right table, even if there is no match in the left table.  For rows in the right table without a match in the left table, the columns from the left table will have <code>NULL</code> values.</p>
+</li>
+<li>
+<p><strong>FULL (OUTER) JOIN:</strong> Returns all rows from both tables.  If there is a match, the corresponding columns from both tables are included.  If there is no match in one table, the columns from the other table will have <code>NULL</code> values.  Note that <code>FULL OUTER JOIN</code> is not supported in all versions of SQL.</p>
+</li>
+</ul>
+<h3 class="heading" id="writing-join-queries">
+  Writing JOIN queries
+  <a class="anchor" href="#writing-join-queries">#</a>
+</h3>
+<p>Let&rsquo;s assume we have two tables: <code>Products</code> and <code>Categories</code>.  <code>Products</code> has <code>ProductID</code> and <code>CategoryID</code>, while <code>Categories</code> has <code>CategoryID</code> and <code>CategoryName</code>.</p>
+<p><strong>INNER JOIN:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>p.ProductName,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">c</span>.CategoryName<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb"> </span>p<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">INNER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>Categories<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span>p.CategoryID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.CategoryID;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This retrieves the <code>ProductName</code> from <code>Products</code> and <code>CategoryName</code> from <code>Categories</code> only for products that have a matching <code>CategoryID</code> in both tables.  <code>p</code> and <code>c</code> are aliases for <code>Products</code> and <code>Categories</code>, making the query more readable.</p>
+<p><strong>LEFT JOIN:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>p.ProductName,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">c</span>.CategoryName<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb"> </span>p<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">LEFT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>Categories<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span>p.CategoryID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.CategoryID;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This retrieves all products. If a product doesn&rsquo;t have a matching category in the <code>Categories</code> table, <code>CategoryName</code> will be <code>NULL</code>.</p>
+<p><strong>RIGHT JOIN:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>p.ProductName,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">c</span>.CategoryName<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb"> </span>p<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">RIGHT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>Categories<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span>p.CategoryID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">c</span>.CategoryID;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This retrieves all categories. If a category doesn&rsquo;t have any matching products in the <code>Products</code> table, <code>ProductName</code> will be <code>NULL</code>.</p>
+<h3 class="heading" id="using-subqueries-in-select-and-where-clauses">
+  Using subqueries in SELECT and WHERE clauses
+  <a class="anchor" href="#using-subqueries-in-select-and-where-clauses">#</a>
+</h3>
+<p>Subqueries are queries nested inside another query. They can be used in the <code>SELECT</code> clause to retrieve values calculated from another query or in the <code>WHERE</code> clause to filter based on the results of another query.</p>
+<p><strong>Subquery in SELECT:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>ProductName,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>Price,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>(<span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AVG</span>(Price)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb"> </span>AveragePrice<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This retrieves <code>ProductName</code>, <code>Price</code>, and the average price (calculated by the subquery) for each product.</p>
+<p><strong>Subquery in WHERE:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>Price<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span>(<span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AVG</span>(Price)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This retrieves products with a price greater than the average price. The subquery calculates the average price, and the outer query filters products based on this calculated value.  Subqueries in the <code>WHERE</code> clause are particularly useful for more complex filtering conditions.  It is important to ensure that your subquery returns only one value if you&rsquo;re using it in a comparison like this (unless using operators designed for multiple values, like <code>IN</code>).</p>
+<h2 class="heading" id="advanced-topics-optional">
+  Advanced Topics (Optional)
+  <a class="anchor" href="#advanced-topics-optional">#</a>
+</h2>
+<p>This section covers more advanced T-SQL concepts that are beneficial for building robust and efficient database applications.</p>
+<h3 class="heading" id="transactions">
+  Transactions
+  <a class="anchor" href="#transactions">#</a>
+</h3>
+<p>Transactions are a crucial aspect of database management, ensuring data integrity and consistency, especially in multi-user environments. A transaction is a logical unit of work that must be entirely completed or entirely rolled back if any part fails.  This prevents inconsistencies in the database state.</p>
+<p>Transactions are controlled using the following commands:</p>
+<ul>
+<li><strong>BEGIN TRANSACTION:</strong> Starts a new transaction.</li>
+<li><strong>COMMIT TRANSACTION:</strong>  Saves all changes made within the transaction.</li>
+<li><strong>ROLLBACK TRANSACTION:</strong> Undoes all changes made within the transaction.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TRANSACTION</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>Products<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span>Price<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">150</span>.<span style="color:#40a070">00</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>ProductID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>Products<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span>Price<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">200</span>.<span style="color:#40a070">00</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>ProductID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">2</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">COMMIT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TRANSACTION</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">-- All updates are saved
+</span></span></span></code></pre></div><p>If any <code>UPDATE</code> statement in this example failed (e.g., due to a constraint violation), you could use <code>ROLLBACK TRANSACTION</code> to undo the changes, leaving the database in a consistent state.  Error handling within transactions is essential to ensure data integrity.</p>
+<h3 class="heading" id="stored-procedures">
+  Stored Procedures
+  <a class="anchor" href="#stored-procedures">#</a>
+</h3>
+<p>Stored procedures are pre-compiled SQL code blocks stored on the database server. They encapsulate database logic, enhancing code reusability, security, and performance.  They are defined using <code>CREATE PROCEDURE</code> and executed by calling their name.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">PROCEDURE</span><span style="color:#bbb"> </span>UpdateProductPrice<span style="color:#bbb"> </span>(<span style="color:#666">@</span>ProductID<span style="color:#bbb"> </span><span style="color:#007020">INT</span>,<span style="color:#bbb"> </span><span style="color:#666">@</span>NewPrice<span style="color:#bbb"> </span><span style="color:#007020">DECIMAL</span>(<span style="color:#40a070">10</span>,<span style="color:#bbb"> </span><span style="color:#40a070">2</span>))<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>Products<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span>Price<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">@</span>NewPrice<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>ProductID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">@</span>ProductID;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">EXEC</span><span style="color:#bbb"> </span>UpdateProductPrice<span style="color:#bbb"> </span><span style="color:#666">@</span>ProductID<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>,<span style="color:#bbb"> </span><span style="color:#666">@</span>NewPrice<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">175</span>.<span style="color:#40a070">00</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This stored procedure updates the price of a specific product. Parameters (<code>@ProductID</code>, <code>@NewPrice</code>) make it reusable for different products and prices.  Stored procedures offer better security as they don&rsquo;t expose the underlying SQL code directly to the client.</p>
+<h3 class="heading" id="indexes">
+  Indexes
+  <a class="anchor" href="#indexes">#</a>
+</h3>
+<p>Indexes are special lookup tables that the database search engine can use to speed up data retrieval. Simply put, an index in SQL Server is a pointer to data in a table.  They significantly improve query performance, especially on large tables, by allowing the database to quickly locate specific rows without scanning the entire table.</p>
+<p>Indexes are created using the <code>CREATE INDEX</code> statement:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INDEX</span><span style="color:#bbb"> </span>IX_ProductName<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span>Products<span style="color:#bbb"> </span>(ProductName);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This creates an index named <code>IX_ProductName</code> on the <code>ProductName</code> column of the <code>Products</code> table.  Choosing appropriate columns for indexing is crucial for performance optimization.  Over-indexing can negatively impact performance, so careful consideration is needed.</p>
+<h3 class="heading" id="views">
+  Views
+  <a class="anchor" href="#views">#</a>
+</h3>
+<p>Views are virtual tables based on the result-set of an SQL statement.  They provide a customized view of the data without actually storing the data separately.  Views are useful for:</p>
+<ul>
+<li><strong>Simplifying complex queries:</strong> A view can encapsulate a complex query, making it easier to use.</li>
+<li><strong>Data security:</strong> Views can restrict access to sensitive data by only exposing specific columns or rows.</li>
+<li><strong>Data consistency:</strong>  They provide a consistent view of data across applications.</li>
+</ul>
+<p>Views are created using <code>CREATE VIEW</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">VIEW</span><span style="color:#bbb"> </span>ExpensiveProducts<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>ProductName,<span style="color:#bbb"> </span>Price<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>Products<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>Price<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">100</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This view shows only products with a price greater than 100.  You can then query the <code>ExpensiveProducts</code> view just like a regular table, without needing to repeat the complex <code>WHERE</code> clause.</p>
+<h2 class="heading" id="practice-and-resources">
+  Practice and Resources
+  <a class="anchor" href="#practice-and-resources">#</a>
+</h2>
+<p>Consistent practice and access to reliable resources are key to mastering T-SQL.</p>
+<h3 class="heading" id="practice-exercises">
+  Practice exercises
+  <a class="anchor" href="#practice-exercises">#</a>
+</h3>
+<p>The best way to learn T-SQL is by practicing. Here are some suggested exercises:</p>
+<ol>
+<li>
+<p><strong>Create a database:</strong> Design and create a database schema for a simple application (e.g., a library database with books, authors, and members).  Include appropriate data types and constraints.</p>
+</li>
+<li>
+<p><strong>Populate the database:</strong> Insert sample data into your newly created database tables.</p>
+</li>
+<li>
+<p><strong>Retrieve data:</strong> Write <code>SELECT</code> statements to retrieve data from your tables, using various clauses like <code>WHERE</code>, <code>ORDER BY</code>, <code>TOP</code>. Experiment with different joins to combine data from multiple tables.</p>
+</li>
+<li>
+<p><strong>Update and delete data:</strong> Practice updating and deleting data using <code>UPDATE</code> and <code>DELETE</code> statements.  Remember to always use <code>WHERE</code> clauses to target specific rows.</p>
+</li>
+<li>
+<p><strong>Aggregate functions:</strong> Use aggregate functions like <code>COUNT</code>, <code>SUM</code>, <code>AVG</code>, <code>MIN</code>, <code>MAX</code> to calculate summary statistics from your data.  Experiment with <code>GROUP BY</code> and <code>HAVING</code> clauses.</p>
+</li>
+<li>
+<p><strong>Stored procedures:</strong> Create a few stored procedures to encapsulate common database operations.  This will help you understand how to parameterize queries and improve code reusability.</p>
+</li>
+<li>
+<p><strong>Transactions:</strong>  Design and implement a simple transaction to ensure data integrity.  Practice handling potential errors within the transaction using <code>TRY...CATCH</code> blocks.</p>
+</li>
+</ol>
+<p>These exercises progressively build your T-SQL skills, moving from basic queries to more complex operations.  Try to think of real-world scenarios you might encounter and apply your T-SQL knowledge to solve those problems.  You can find datasets online to practice with if you prefer not to build your own from scratch.</p>
+<h3 class="heading" id="useful-online-resources">
+  Useful online resources
+  <a class="anchor" href="#useful-online-resources">#</a>
+</h3>
+<p>Many excellent online resources can help you learn and improve your T-SQL skills:</p>
+<ul>
+<li><strong>Microsoft Learn:</strong>  Microsoft&rsquo;s official learning platform offers comprehensive T-SQL tutorials and documentation.</li>
+<li><strong>Stack Overflow:</strong>  A great site for finding solutions to common T-SQL problems and asking questions from the community.</li>
+<li><strong>SQLShack:</strong> Provides numerous articles, tutorials, and tips related to SQL Server and T-SQL.</li>
+<li><strong>YouTube:</strong>  Many channels offer T-SQL tutorials, often covering specific aspects or advanced techniques.  Search for &ldquo;T-SQL tutorial for beginners&rdquo; to find a suitable resource.</li>
+<li><strong>Online SQL editors/platforms:</strong> Several free online platforms allow you to write and execute T-SQL code without installing SQL Server locally. These are great for quick testing and experimentation.</li>
+</ul>
+<h3 class="heading" id="sql-server-documentation">
+  SQL Server documentation
+  <a class="anchor" href="#sql-server-documentation">#</a>
+</h3>
+<p>Microsoft&rsquo;s official SQL Server documentation is an invaluable resource. It contains detailed information on all aspects of SQL Server, including T-SQL syntax, functions, and features.  You can access it directly through the Microsoft website or use the help features within SQL Server Management Studio (SSMS).  The documentation is comprehensive and covers a wide range of topics, from basic concepts to advanced features.  Make sure you are accessing the documentation relevant to your specific SQL Server version.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-forth/">
+                        Beginner&#39;s Guide to Forth
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-puppet/">
+                        Beginner&#39;s Guide to Puppet
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

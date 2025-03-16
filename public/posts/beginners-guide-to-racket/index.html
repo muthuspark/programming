@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Racket | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-racket/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-racket/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Racket">
+  <meta property="og:description" content="Introduction to Racket # What is Racket? # Racket is a programming language in the Lisp family, known for its powerful macro system, emphasis on language-oriented programming, and extensive library support. It’s designed to be both a practical language for building real-world applications and a powerful platform for experimenting with and extending programming language concepts. Racket’s design promotes creating and using domain-specific languages (DSLs) tailored to particular tasks, making it a flexible choice for various programming paradigms. Unlike many other Lisps, Racket emphasizes practicality and ease of use, especially for beginners.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-25T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-racket/">Beginner&#39;s Guide to Racket</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Racket</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-01-25T00:00:00&#43;00:00">January 25, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      14 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-racket">Introduction to Racket</a>
+      <ul>
+        <li><a href="#what-is-racket">What is Racket?</a></li>
+        <li><a href="#why-learn-racket">Why learn Racket?</a></li>
+        <li><a href="#setting-up-your-environment">Setting up your environment</a></li>
+        <li><a href="#your-first-racket-program">Your first Racket program</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#numbers-and-arithmetic">Numbers and Arithmetic</a></li>
+        <li><a href="#booleans-and-comparisons">Booleans and Comparisons</a></li>
+        <li><a href="#strings-and-text-manipulation">Strings and Text Manipulation</a></li>
+        <li><a href="#lists-and-data-structures">Lists and Data Structures</a></li>
+        <li><a href="#variables-and-assignments">Variables and Assignments</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-structures">Control Structures</a>
+      <ul>
+        <li><a href="#conditional-statements-if-cond">Conditional Statements (<code>if</code>, <code>cond</code>)</a></li>
+        <li><a href="#loops-for-while">Loops (<code>for</code>, <code>while</code>)</a></li>
+        <li><a href="#defining-functions">Defining Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-functions">Working with Functions</a>
+      <ul>
+        <li><a href="#function-definition-and-application">Function Definition and Application</a></li>
+        <li><a href="#higher-order-functions">Higher-Order Functions</a></li>
+        <li><a href="#lambda-expressions">Lambda Expressions</a></li>
+        <li><a href="#recursion">Recursion</a></li>
+      </ul>
+    </li>
+    <li><a href="#modules-and-programs">Modules and Programs</a>
+      <ul>
+        <li><a href="#creating-and-using-modules">Creating and Using Modules</a></li>
+        <li><a href="#namespaces-and-imports">Namespaces and Imports</a></li>
+        <li><a href="#writing-larger-programs">Writing Larger Programs</a></li>
+      </ul>
+    </li>
+    <li><a href="#input-and-output">Input and Output</a>
+      <ul>
+        <li><a href="#reading-from-the-console">Reading from the Console</a></li>
+        <li><a href="#writing-to-the-console">Writing to the Console</a></li>
+        <li><a href="#file-input-and-output">File Input and Output</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-concepts-optional">Advanced Concepts (Optional)</a>
+      <ul>
+        <li><a href="#macros">Macros</a></li>
+        <li><a href="#data-structures-more-in-depth">Data Structures (More In Depth)</a></li>
+        <li><a href="#exception-handling">Exception Handling</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-racket">
+  Introduction to Racket
+  <a class="anchor" href="#introduction-to-racket">#</a>
+</h2>
+<h3 class="heading" id="what-is-racket">
+  What is Racket?
+  <a class="anchor" href="#what-is-racket">#</a>
+</h3>
+<p>Racket is a programming language in the Lisp family, known for its powerful macro system, emphasis on language-oriented programming, and extensive library support.  It&rsquo;s designed to be both a practical language for building real-world applications and a powerful platform for experimenting with and extending programming language concepts.  Racket&rsquo;s design promotes creating and using domain-specific languages (DSLs) tailored to particular tasks, making it a flexible choice for various programming paradigms.  Unlike many other Lisps, Racket emphasizes practicality and ease of use, especially for beginners.</p>
+<h3 class="heading" id="why-learn-racket">
+  Why learn Racket?
+  <a class="anchor" href="#why-learn-racket">#</a>
+</h3>
+<p>Learning Racket offers several advantages:</p>
+<ul>
+<li><strong>Gentle Learning Curve:</strong>  Racket&rsquo;s syntax is relatively straightforward, and its interactive interpreter makes experimentation easy.  The language&rsquo;s design prioritizes clarity and readability.</li>
+<li><strong>Powerful Macro System:</strong> Racket&rsquo;s macro system lets you extend the language itself, creating new syntax and control structures tailored to your specific needs. This allows for creating highly expressive and efficient code.</li>
+<li><strong>Excellent for Language Design:</strong> Racket provides a robust platform for exploring and implementing different programming language concepts, from simple interpreters to sophisticated compilers.</li>
+<li><strong>Large and Active Community:</strong> Racket benefits from a supportive and active community, providing ample resources and assistance for learners.</li>
+<li><strong>Extensive Libraries:</strong>  Racket boasts a comprehensive collection of libraries covering various domains, including web development, GUI programming, and more.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-environment">
+  Setting up your environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h3>
+<p>To start programming in Racket, you need to download and install the Racket distribution from the official website (<a href="https://racket-lang.org/">https://racket-lang.org/</a>).  The installation process is straightforward and involves downloading the appropriate installer for your operating system and following the on-screen instructions.</p>
+<p>Once installed, you&rsquo;ll have access to several tools, including:</p>
+<ul>
+<li><strong>DrRacket:</strong>  An interactive development environment (IDE) that provides features like syntax highlighting, code completion, and debugging tools.  This is the recommended environment for beginners.</li>
+<li><strong>The Racket command-line interpreter:</strong> A command-line interface for executing Racket code.  Useful for quick experimentation and scripting.</li>
+</ul>
+<h3 class="heading" id="your-first-racket-program">
+  Your first Racket program
+  <a class="anchor" href="#your-first-racket-program">#</a>
+</h3>
+<p>The simplest Racket program prints &ldquo;Hello, world!&rdquo; to the console.  Open DrRacket and type the following code into the editor:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span>)<span style="">
+</span></span></span></code></pre></div><p>Click the &ldquo;Run&rdquo; button (or use the keyboard shortcut).  The output window will display:</p>
+<pre tabindex="0"><code>Hello, world!
+</code></pre><p>This short program uses the <code>displayln</code> function, which displays a string and adds a newline character at the end.  The parentheses denote function calls in Racket; <code>displayln</code> is the function, and <code>&quot;Hello, world!&quot;</code> is its argument (the string to be displayed).  This demonstrates the fundamental syntax of Racket:  expressions are enclosed in parentheses, with the first element being the function or operator and the remaining elements being its arguments.</p>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="numbers-and-arithmetic">
+  Numbers and Arithmetic
+  <a class="anchor" href="#numbers-and-arithmetic">#</a>
+</h3>
+<p>Racket supports various number types, including integers, floating-point numbers, and complex numbers.  Arithmetic operations are straightforward:</p>
+<ul>
+<li><strong>Addition:</strong> <code>(+ 2 3)</code>  ; evaluates to 5</li>
+<li><strong>Subtraction:</strong> <code>(- 5 2)</code> ; evaluates to 3</li>
+<li><strong>Multiplication:</strong> <code>(* 4 6)</code> ; evaluates to 24</li>
+<li><strong>Division:</strong> <code>(/ 10 2)</code> ; evaluates to 5.0 (floating-point result)</li>
+<li><strong>Exponentiation:</strong> <code>(expt 2 3)</code> ; evaluates to 8 (2 raised to the power of 3)</li>
+<li><strong>Modulo:</strong> <code>(modulo 10 3)</code> ; evaluates to 1 (remainder after division)</li>
+</ul>
+<p>Racket uses prefix notation for arithmetic operations (and most other operations).  This means the operator comes before the operands.</p>
+<h3 class="heading" id="booleans-and-comparisons">
+  Booleans and Comparisons
+  <a class="anchor" href="#booleans-and-comparisons">#</a>
+</h3>
+<p>Racket&rsquo;s boolean values are <code>#t</code> (true) and <code>#f</code> (false).  Comparison operators return boolean values:</p>
+<ul>
+<li><strong>Equals:</strong> <code>(= 5 5)</code> ; evaluates to <code>#t</code></li>
+<li><strong>Not equals:</strong> <code>(/= 5 3)</code> ; evaluates to <code>#t</code></li>
+<li><strong>Greater than:</strong> <code>(&gt; 10 5)</code> ; evaluates to <code>#t</code></li>
+<li><strong>Less than:</strong> <code>(&lt; 2 7)</code> ; evaluates to <code>#t</code></li>
+<li><strong>Greater than or equal to:</strong> <code>(&gt;= 5 5)</code> ; evaluates to <code>#t</code></li>
+<li><strong>Less than or equal to:</strong> <code>(&lt;= 3 8)</code> ; evaluates to <code>#t</code></li>
+</ul>
+<p>Boolean operations include:</p>
+<ul>
+<li><strong>And:</strong> <code>(and #t #f)</code> ; evaluates to <code>#f</code></li>
+<li><strong>Or:</strong> <code>(or #t #f)</code> ; evaluates to <code>#t</code></li>
+<li><strong>Not:</strong> <code>(not #t)</code> ; evaluates to <code>#f</code></li>
+</ul>
+<h3 class="heading" id="strings-and-text-manipulation">
+  Strings and Text Manipulation
+  <a class="anchor" href="#strings-and-text-manipulation">#</a>
+</h3>
+<p>Strings in Racket are enclosed in double quotes: <code>&quot;This is a string&quot;</code>.  Several functions are available for string manipulation:</p>
+<ul>
+<li><strong>String concatenation:</strong> <code>(string-append &quot;Hello&quot; &quot; &quot; &quot;world!&quot;)</code> ; evaluates to <code>&quot;Hello world!&quot;</code></li>
+<li><strong>String length:</strong> <code>(string-length &quot;Racket&quot;)</code> ; evaluates to 6</li>
+<li><strong>Substring:</strong> <code>(substring &quot;Racket&quot; 0 4)</code> ; evaluates to <code>&quot;Rack&quot;</code> (extracts characters from index 0 up to, but not including, index 4)</li>
+</ul>
+<p>Many other string manipulation functions are available in the <code>racket/string</code> module.</p>
+<h3 class="heading" id="lists-and-data-structures">
+  Lists and Data Structures
+  <a class="anchor" href="#lists-and-data-structures">#</a>
+</h3>
+<p>Lists are fundamental data structures in Racket. They are created using the <code>list</code> function or by directly writing elements within parentheses:</p>
+<ul>
+<li><code>(list 1 2 3)</code> ; creates a list <code>'(1 2 3)</code></li>
+<li><code>'(1 2 3)</code> ; creates the same list using the quote notation (&rsquo;) which prevents evaluation</li>
+</ul>
+<p>List operations include:</p>
+<ul>
+<li><strong><code>first</code>:</strong> Returns the first element of a list. <code>(first '(1 2 3))</code> returns <code>1</code>.</li>
+<li><strong><code>rest</code>:</strong> Returns the list without the first element. <code>(rest '(1 2 3))</code> returns <code>'(2 3)</code>.</li>
+<li><strong><code>cons</code>:</strong> Adds an element to the beginning of a list. <code>(cons 0 '(1 2 3))</code> returns <code>'(0 1 2 3)</code>.</li>
+<li><strong><code>append</code>:</strong> Concatenates two lists. <code>(append '(1 2) '(3 4))</code> returns <code>'(1 2 3 4)</code>.</li>
+</ul>
+<p>Racket also offers other data structures like vectors, hash tables, and more, which provide different ways to organize and access data efficiently.</p>
+<h3 class="heading" id="variables-and-assignments">
+  Variables and Assignments
+  <a class="anchor" href="#variables-and-assignments">#</a>
+</h3>
+<p>Variables in Racket are assigned values using <code>define</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> x <span style="color:#40a070">10</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> y <span style="color:#40a070">5</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> sum (<span style="color:#007020">+</span> x y))  <span style="color:#60a0b0;font-style:italic">; sum will be 15</span>
+</span></span></code></pre></div><p><code>define</code> creates a variable binding.  The variable&rsquo;s name is <code>x</code>, <code>y</code> or <code>sum</code> and their values are assigned on the right side of the <code>define</code> expression.  Note that <code>define</code> is not an assignment statement in the traditional sense; it creates a new binding.  Racket also supports more advanced binding mechanisms like <code>let</code> and <code>let*</code> which are useful for creating local variable scopes.</p>
+<h2 class="heading" id="control-structures">
+  Control Structures
+  <a class="anchor" href="#control-structures">#</a>
+</h2>
+<h3 class="heading" id="conditional-statements-if-cond">
+  Conditional Statements (<code>if</code>, <code>cond</code>)
+  <a class="anchor" href="#conditional-statements-if-cond">#</a>
+</h3>
+<p>Racket provides <code>if</code> and <code>cond</code> for controlling program flow based on conditions.</p>
+<ul>
+<li><strong><code>if</code>:</strong>  The simplest conditional statement. It evaluates a condition and executes one of two branches depending on whether the condition is true or false.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020">&gt;</span> x <span style="color:#40a070">5</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;x is greater than 5&#34;</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;x is not greater than 5&#34;</span>))<span style="">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>cond</code>:</strong> A more general conditional that allows for multiple conditions and branches.  It&rsquo;s especially useful when dealing with multiple possibilities.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">cond</span>
+</span></span><span style="display:flex;"><span>  [(<span style="color:#007020">&gt;</span> x <span style="color:#40a070">10</span>) (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;x is greater than 10&#34;</span>)]
+</span></span><span style="display:flex;"><span>  [(<span style="color:#007020">&gt;</span> x <span style="color:#40a070">5</span>) (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;x is greater than 5&#34;</span>)]
+</span></span><span style="display:flex;"><span>  [<span style="color:#007020;font-weight:bold">else</span> (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;x is 5 or less&#34;</span>)])<span style="">
+</span></span></span></code></pre></div><p><code>cond</code> evaluates each condition in turn.  If a condition is true, the corresponding expression is evaluated, and the <code>cond</code> expression completes.  The <code>else</code> clause acts as a default case if none of the preceding conditions are true.</p>
+<h3 class="heading" id="loops-for-while">
+  Loops (<code>for</code>, <code>while</code>)
+  <a class="anchor" href="#loops-for-while">#</a>
+</h3>
+<p>Racket offers various looping constructs.  <code>for</code> and <code>while</code> are commonly used.</p>
+<ul>
+<li><strong><code>for</code>:</strong>  Provides a concise way to iterate over a sequence of values or a range.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">for</span> ([i (<span style="color:#007020">in-range</span> <span style="color:#40a070">1</span> <span style="color:#40a070">11</span>)])  <span style="color:#60a0b0;font-style:italic">; Iterate from 1 to 10 (inclusive)</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020">displayln</span> i))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">for</span> ([i (<span style="color:#007020">in-list</span> <span style="color:#666">&#39;</span>(<span style="color:#517918">a</span> <span style="color:#517918">b</span> <span style="color:#517918">c</span>))]) <span style="color:#60a0b0;font-style:italic">; Iterate through a list</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020">displayln</span> i))<span style="">
+</span></span></span></code></pre></div><p><code>in-range</code> creates a sequence of numbers, and <code>in-list</code> iterates through the elements of a list.</p>
+<ul>
+<li><strong><code>while</code>:</strong> Executes a block of code repeatedly as long as a condition is true.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">let</span> ([i <span style="color:#40a070">0</span>])
+</span></span><span style="display:flex;"><span>  (while (<span style="color:#007020">&lt;</span> i <span style="color:#40a070">10</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#007020">displayln</span> i)
+</span></span><span style="display:flex;"><span>    (<span style="color:#007020;font-weight:bold">set!</span> i (<span style="color:#007020">+</span> i <span style="color:#40a070">1</span>))))<span style="">
+</span></span></span></code></pre></div><p><code>let</code> creates a local variable <code>i</code>, and <code>set!</code> modifies its value within the loop.  Note the imperative style used with <code>set!</code> which modifies the existing variable binding.</p>
+<h3 class="heading" id="defining-functions">
+  Defining Functions
+  <a class="anchor" href="#defining-functions">#</a>
+</h3>
+<p>Functions in Racket are defined using <code>define</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> (add-numbers x y)
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020">+</span> x y))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> (greet name)
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020">displayln</span> (<span style="color:#007020">string-append</span> <span style="color:#4070a0">&#34;Hello, &#34;</span> name <span style="color:#4070a0">&#34;!)))
+</span></span></span></code></pre></div><p>The syntax is <code>(define (function-name parameter1 parameter2 ...) body)</code>.  The function name is followed by the parameters in parentheses, and the function body is the expression(s) that will be evaluated when the function is called.  The result of the last expression in the body is the return value of the function.</p>
+<h2 class="heading" id="working-with-functions">
+  Working with Functions
+  <a class="anchor" href="#working-with-functions">#</a>
+</h2>
+<h3 class="heading" id="function-definition-and-application">
+  Function Definition and Application
+  <a class="anchor" href="#function-definition-and-application">#</a>
+</h3>
+<p>Functions in Racket are first-class citizens, meaning they can be passed as arguments to other functions, returned as values from functions, and stored in data structures.  We&rsquo;ve already seen how to define functions using <code>define</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> (square x)
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020">*</span> x x))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(square <span style="color:#40a070">5</span>)  <span style="color:#60a0b0;font-style:italic">; Returns 25</span>
+</span></span></code></pre></div><p>Function application is straightforward: the function name is followed by its arguments in parentheses.  Racket uses prefix notation, meaning the function comes before its arguments.</p>
+<h3 class="heading" id="higher-order-functions">
+  Higher-Order Functions
+  <a class="anchor" href="#higher-order-functions">#</a>
+</h3>
+<p>Higher-order functions are functions that take other functions as arguments or return functions as results. Racket provides many built-in higher-order functions, making functional programming very convenient.  Here are a few examples:</p>
+<ul>
+<li><strong><code>map</code>:</strong> Applies a function to each element of a list and returns a new list containing the results.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">map</span> square <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span>)) <span style="color:#60a0b0;font-style:italic">; Returns &#39;(1 4 9 16)</span>
+</span></span></code></pre></div><ul>
+<li><strong><code>filter</code>:</strong> Selects elements from a list that satisfy a given predicate (a function that returns a boolean).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">filter</span> <span style="color:#007020">even?</span> <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span> <span style="color:#40a070">5</span> <span style="color:#40a070">6</span>)) <span style="color:#60a0b0;font-style:italic">; Returns &#39;(2 4 6)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">```</span>  (<span style="color:#666">`</span><span style="color:#517918">even?</span><span style="color:#666">`</span> <span style="color:#517918">is</span> <span style="color:#517918">a</span> <span style="color:#517918">built-in</span> <span style="color:#517918">function</span> <span style="color:#517918">that</span> <span style="color:#517918">checks</span> <span style="color:#517918">if</span> <span style="color:#517918">a</span> <span style="color:#517918">number</span> <span style="color:#517918">is</span> <span style="color:#517918">even.</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">*</span> **<span style="color:#666">`</span><span style="color:#517918">foldl</span><span style="color:#666">`</span> (<span style="color:#517918">or</span> <span style="color:#666">`</span><span style="color:#517918">foldr</span><span style="color:#666">`</span>):**  Accumulates a result by applying a function cumulatively to the elements of a list.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#666">```</span><span style="color:#517918">racket</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#007020">foldl</span> <span style="color:#007020">+</span> <span style="color:#40a070">0</span> <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span>)) <span style="color:#60a0b0;font-style:italic">; Returns 10 (1 + 2 + 3 + 4 + 0)</span>
+</span></span></code></pre></div><h3 class="heading" id="lambda-expressions">
+  Lambda Expressions
+  <a class="anchor" href="#lambda-expressions">#</a>
+</h3>
+<p>Lambda expressions (anonymous functions) allow you to create functions without giving them a name. They are particularly useful when you need a function for a short-lived task and don&rsquo;t want to clutter your code with named function definitions.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">map</span> (<span style="color:#007020;font-weight:bold">lambda</span> (x) (<span style="color:#007020">*</span> x <span style="color:#40a070">2</span>)) <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>)) <span style="color:#60a0b0;font-style:italic">; Returns &#39;(2 4 6)</span>
+</span></span></code></pre></div><p>The syntax is <code>(lambda (parameters) body)</code>.  This creates a function that takes the specified parameters and executes the provided body.</p>
+<h3 class="heading" id="recursion">
+  Recursion
+  <a class="anchor" href="#recursion">#</a>
+</h3>
+<p>Recursion is a powerful technique where a function calls itself to solve a problem.  Racket supports recursion effectively. Here&rsquo;s an example of a recursive function to calculate the factorial of a number:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> (factorial n)
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020">=</span> n <span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#007020">*</span> n (factorial (<span style="color:#007020">-</span> n <span style="color:#40a070">1</span>)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(factorial <span style="color:#40a070">5</span>) <span style="color:#60a0b0;font-style:italic">; Returns 120</span>
+</span></span></code></pre></div><p>The <code>factorial</code> function calls itself with a smaller input (<code>n-1</code>) until it reaches the base case (<code>n = 0</code>), at which point it returns 1.  This recursive approach elegantly solves the problem of calculating factorials.  It is crucial to ensure that recursive functions have a well-defined base case to prevent infinite recursion.</p>
+<h2 class="heading" id="modules-and-programs">
+  Modules and Programs
+  <a class="anchor" href="#modules-and-programs">#</a>
+</h2>
+<h3 class="heading" id="creating-and-using-modules">
+  Creating and Using Modules
+  <a class="anchor" href="#creating-and-using-modules">#</a>
+</h3>
+<p>Modules in Racket provide a way to organize code into reusable units, promoting modularity and code reusability. A module is a self-contained unit that defines functions, variables, and other entities.  They help to manage namespaces and prevent naming conflicts.</p>
+<p>To create a module, you save your Racket code in a file with the <code>.rkt</code> extension.  The first line of the file typically specifies the module&rsquo;s name and imports any necessary libraries.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">#lang </span><span style="color:#0e84b5;font-weight:bold">racket</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">provide</span> my-function)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> (my-function x)
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020">+</span> x <span style="color:#40a070">10</span>))<span style="">
+</span></span></span></code></pre></div><p>This creates a module named <code>my-module.rkt</code> (assuming you save it with this name). <code>#lang racket</code> specifies the language, <code>provide</code> declares what&rsquo;s exported (made available to other modules), and the rest is the module&rsquo;s content.</p>
+<p>To use this module in another file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">#lang </span><span style="color:#0e84b5;font-weight:bold">racket</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">require</span> <span style="color:#4070a0">&#34;my-module.rkt&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(my-function <span style="color:#40a070">5</span>) <span style="color:#60a0b0;font-style:italic">; This will call the function from the my-module.rkt file.</span>
+</span></span></code></pre></div><p>The <code>require</code> form loads the <code>my-module.rkt</code> module, making its exported functions available.</p>
+<h3 class="heading" id="namespaces-and-imports">
+  Namespaces and Imports
+  <a class="anchor" href="#namespaces-and-imports">#</a>
+</h3>
+<p>Namespaces in Racket prevent naming conflicts between modules.  Each module has its own namespace, so you can use the same name for different entities in different modules without causing errors.  The <code>provide</code> and <code>require</code> forms manage what&rsquo;s exported from and imported into a module.</p>
+<p>For example, if two modules both define a function named <code>add</code>, the import mechanism ensures that each <code>add</code> function is accessible through its module&rsquo;s namespace. This avoids ambiguity and confusion.</p>
+<p>You can also use <code>require</code> to import specific elements from a module:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">require</span> racket/string [<span style="color:#007020">string-append</span> :string-append])<span style="">
+</span></span></span></code></pre></div><p>This only imports the <code>string-append</code> function, renaming it to simply <code>string-append</code>.</p>
+<h3 class="heading" id="writing-larger-programs">
+  Writing Larger Programs
+  <a class="anchor" href="#writing-larger-programs">#</a>
+</h3>
+<p>For larger programs, it&rsquo;s crucial to leverage Racket&rsquo;s modularity features.  Break down your code into smaller, manageable modules, each with a specific responsibility.  This makes your code easier to understand, maintain, and test.  Use well-defined interfaces (through <code>provide</code>) to specify what each module offers to other parts of the program.</p>
+<p>Consider using a project structure to organize your modules and other resources.  For example, you could group related modules into subdirectories.</p>
+<p>Effective use of modules, along with version control (e.g., Git), helps manage the complexity of larger Racket projects.  The <code>raco</code> command-line tool is useful for managing Racket projects.</p>
+<h2 class="heading" id="input-and-output">
+  Input and Output
+  <a class="anchor" href="#input-and-output">#</a>
+</h2>
+<h3 class="heading" id="reading-from-the-console">
+  Reading from the Console
+  <a class="anchor" href="#reading-from-the-console">#</a>
+</h3>
+<p>Racket provides several ways to read input from the console.  The simplest is using <code>read</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">display</span> <span style="color:#4070a0">&#34;Enter a number: &#34;</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> num (<span style="color:#007020">read</span>))
+</span></span><span style="display:flex;"><span>(<span style="color:#007020">displayln</span> (<span style="color:#007020">+</span> num <span style="color:#40a070">10</span>))<span style="">
+</span></span></span></code></pre></div><p>This code prompts the user to enter a number, reads the input using <code>read</code> (which reads a single S-expression), and then prints the number plus 10.  <code>read</code> is powerful but expects correctly formatted Racket input; it&rsquo;s not ideal for handling arbitrary user input which might contain errors.</p>
+<p>For more robust console input handling, especially for strings that might contain spaces, consider using <code>read-line</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">display</span> <span style="color:#4070a0">&#34;Enter your name: &#34;</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> name (<span style="color:#007020">read-line</span>))
+</span></span><span style="display:flex;"><span>(<span style="color:#007020">displayln</span> (<span style="color:#007020">string-append</span> <span style="color:#4070a0">&#34;Hello, &#34;</span> name <span style="color:#4070a0">&#34;!&#34;</span>))<span style="">
+</span></span></span></code></pre></div><p><code>read-line</code> reads an entire line of text from the console, including spaces.</p>
+<h3 class="heading" id="writing-to-the-console">
+  Writing to the Console
+  <a class="anchor" href="#writing-to-the-console">#</a>
+</h3>
+<p>The primary function for writing to the console is <code>display</code> or <code>displayln</code>.  <code>display</code> outputs text; <code>displayln</code> outputs text followed by a newline character.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">display</span> <span style="color:#4070a0">&#34;Hello, &#34;</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#007020">display</span> <span style="color:#4070a0">&#34;world!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>) <span style="color:#60a0b0;font-style:italic">; \n adds a newline</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;This is on a new line.&#34;</span>)<span style="">
+</span></span></span></code></pre></div><p>You can also use <code>printf</code> for formatted output, similar to C&rsquo;s <code>printf</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">printf</span> <span style="color:#4070a0">&#34;The value of x is: ~a</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span> <span style="color:#40a070">10</span>) <span style="color:#60a0b0;font-style:italic">; ~a is a placeholder for arbitrary values.</span>
+</span></span></code></pre></div><h3 class="heading" id="file-input-and-output">
+  File Input and Output
+  <a class="anchor" href="#file-input-and-output">#</a>
+</h3>
+<p>Racket provides functions for reading from and writing to files.  Here&rsquo;s how to write data to a file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> output-port (<span style="color:#007020">open-output-file</span> <span style="color:#4070a0">&#34;my-file.txt&#34;</span>))
+</span></span><span style="display:flex;"><span>(<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;This text will be written to the file.&#34;</span> output-port)
+</span></span><span style="display:flex;"><span>(<span style="color:#007020">close-output-port</span> output-port)<span style="">
+</span></span></span></code></pre></div><p>This code opens a file named &ldquo;my-file.txt&rdquo; for writing, writes a line of text to it, and then closes the file.  It&rsquo;s crucial to close the output port to ensure data is written correctly to disk.</p>
+<p>Reading from a file is done similarly:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> input-port (<span style="color:#007020">open-input-file</span> <span style="color:#4070a0">&#34;my-file.txt&#34;</span>))
+</span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">let</span> loop ([line (<span style="color:#007020">read-line</span> input-port)])
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">when</span> (<span style="color:#007020">not</span> (<span style="color:#007020">eof-object?</span> line))
+</span></span><span style="display:flex;"><span>    (<span style="color:#007020">displayln</span> line)
+</span></span><span style="display:flex;"><span>    (loop (<span style="color:#007020">read-line</span> input-port))))
+</span></span><span style="display:flex;"><span>(<span style="color:#007020">close-input-port</span> input-port)<span style="">
+</span></span></span></code></pre></div><p>This code opens the file, reads each line using <code>read-line</code>, prints it, and continues until the end-of-file (<code>eof-object?</code>) is reached.  Again, closing the input port is essential.  Error handling (e.g., checking if the file exists before opening it) is recommended for production-level code.</p>
+<h2 class="heading" id="advanced-concepts-optional">
+  Advanced Concepts (Optional)
+  <a class="anchor" href="#advanced-concepts-optional">#</a>
+</h2>
+<h3 class="heading" id="macros">
+  Macros
+  <a class="anchor" href="#macros">#</a>
+</h3>
+<p>Racket&rsquo;s macro system is a powerful feature allowing you to extend the language itself.  Macros operate on the code&rsquo;s <em>syntax</em> before it&rsquo;s evaluated, enabling you to create new language constructs and abstractions.  A macro transforms one piece of code into another before the transformed code is evaluated.</p>
+<p>A simple example demonstrates creating a macro that defines a function with a default argument:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">#lang </span><span style="color:#0e84b5;font-weight:bold">racket</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define-syntax-rule</span> (define-with-default name params default-value body <span style="color:#007020;font-weight:bold">...</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#007020;font-weight:bold">define</span> (name <span style="color:#666">.</span> args)
+</span></span><span style="display:flex;"><span>      (<span style="color:#007020;font-weight:bold">let</span> ([params (<span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020">null?</span> args) default-value args)])
+</span></span><span style="display:flex;"><span>        body <span style="color:#007020;font-weight:bold">...</span>))
+</span></span><span style="display:flex;"><span>    name))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(define-with-default my-func (x) <span style="color:#40a070">0</span> (<span style="color:#007020">+</span> x <span style="color:#40a070">10</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(my-func <span style="color:#40a070">5</span>)   <span style="color:#60a0b0;font-style:italic">; Returns 15</span>
+</span></span><span style="display:flex;"><span>(my-func)    <span style="color:#60a0b0;font-style:italic">; Returns 10 (default value used)</span>
+</span></span></code></pre></div><p><code>define-syntax-rule</code> defines a macro that transforms the <code>define-with-default</code> form into a function definition with appropriate logic for handling the default argument.  Macros are powerful but require a deep understanding of Racket&rsquo;s syntax and its evaluation process.  Incorrectly written macros can lead to subtle and hard-to-debug errors.</p>
+<h3 class="heading" id="data-structures-more-in-depth">
+  Data Structures (More In Depth)
+  <a class="anchor" href="#data-structures-more-in-depth">#</a>
+</h3>
+<p>Racket offers a rich set of data structures beyond lists.  Here&rsquo;s a brief overview:</p>
+<ul>
+<li>
+<p><strong>Vectors:</strong>  Vectors provide efficient access to elements by index, similar to arrays in other languages. They are created using <code>vector</code>.</p>
+</li>
+<li>
+<p><strong>Hash Tables:</strong>  Hash tables store key-value pairs, enabling fast lookups by key.  They are created using <code>make-hash</code>.</p>
+</li>
+<li>
+<p><strong>Structures:</strong>  Structures allow you to create custom data types with named fields. They are defined using <code>struct</code>.</p>
+</li>
+<li>
+<p><strong>Sequences:</strong> A generalized abstraction encompassing lists, vectors, strings, and other ordered collections.  Functions like <code>map</code>, <code>filter</code>, and <code>foldl</code> often work with sequences, offering a consistent interface across different data types.</p>
+</li>
+</ul>
+<p>Understanding these data structures is crucial for writing efficient and well-structured Racket programs.  Choosing the appropriate data structure depends on the specific needs of your application—considering factors like access patterns and memory usage.</p>
+<h3 class="heading" id="exception-handling">
+  Exception Handling
+  <a class="anchor" href="#exception-handling">#</a>
+</h3>
+<p>Racket uses a sophisticated exception handling mechanism.  Exceptions are raised using <code>raise</code> and caught using <code>with-handlers</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">with-handlers</span> ([<span style="color:#007020">exn:fail?</span> (<span style="color:#007020;font-weight:bold">lambda</span> (<span style="color:#007020">exn</span>)
+</span></span><span style="display:flex;"><span>                            (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;An error occurred!&#34;</span>))])
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#007020">raise</span> (<span style="color:#007020">exn:fail</span> <span style="color:#4070a0">&#34;Something went wrong&#34;</span>))
+</span></span><span style="display:flex;"><span>    (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;This line won&#39;t be reached&#34;</span>)))<span style="">
+</span></span></span></code></pre></div><p>This code uses <code>with-handlers</code> to catch <code>exn:fail?</code> exceptions (a specific type of exception). If a <code>exn:fail</code> exception is raised, the error message is printed; otherwise, the code proceeds normally.  Racket&rsquo;s exception handling system allows for more fine-grained control over error handling, including custom exception types and handlers.  Using structured exception handling helps create more robust and reliable programs.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-smalltalk/">
+                        Beginner&#39;s Guide to Smalltalk
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-zig/">
+                        Beginner&#39;s Guide to Zig
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

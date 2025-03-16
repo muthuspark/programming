@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Zig | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-zig/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-zig/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Zig">
+  <meta property="og:description" content="Introduction to Zig # What is Zig? # Zig is a general-purpose programming language designed for robustness, optimality, and maintainability. It aims to be a powerful tool for building everything from low-level systems code to high-level applications. Unlike many languages that prioritize ease of use above all else, Zig prioritizes giving the developer fine-grained control over memory management and system interactions, while still providing a relatively straightforward and expressive syntax. It compiles to native code, offering excellent performance and predictability. A key aspect of Zig is its focus on compile-time safety and preventing runtime errors through features like compile-time error checking and a powerful type system.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-26T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-zig/">Beginner&#39;s Guide to Zig</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Zig</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-01-26T00:00:00&#43;00:00">January 26, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      21 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-zig">Introduction to Zig</a>
+      <ul>
+        <li><a href="#what-is-zig">What is Zig?</a></li>
+        <li><a href="#why-use-zig">Why use Zig?</a></li>
+        <li><a href="#setting-up-your-environment">Setting up your environment</a></li>
+        <li><a href="#hello-world-in-zig">Hello, world! in Zig.</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#variables-and-constants">Variables and Constants</a></li>
+        <li><a href="#basic-data-types-integers-floats-booleans">Basic Data Types (Integers, Floats, Booleans)</a></li>
+        <li><a href="#arrays-and-slices">Arrays and Slices</a></li>
+        <li><a href="#strings">Strings</a></li>
+        <li><a href="#structs">Structs</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-flow">Control Flow</a>
+      <ul>
+        <li><a href="#if-statements">if statements</a></li>
+        <li><a href="#else-if-and-else-statements">else if and else statements</a></li>
+        <li><a href="#for-loops">for loops</a></li>
+        <li><a href="#while-loops">while loops</a></li>
+        <li><a href="#break-and-continue-statements">break and continue statements</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions">Functions</a>
+      <ul>
+        <li><a href="#defining-functions">Defining Functions</a></li>
+        <li><a href="#function-parameters-and-return-values">Function Parameters and Return Values</a></li>
+        <li><a href="#function-overloading">Function Overloading</a></li>
+        <li><a href="#variadic-functions">Variadic Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#memory-management">Memory Management</a>
+      <ul>
+        <li><a href="#allocating-memory">Allocating Memory</a></li>
+        <li><a href="#deallocating-memory">Deallocating Memory</a></li>
+        <li><a href="#understanding-ownership-and-borrowing">Understanding Ownership and Borrowing</a></li>
+        <li><a href="#working-with-pointers">Working with Pointers</a></li>
+      </ul>
+    </li>
+    <li><a href="#error-handling">Error Handling</a>
+      <ul>
+        <li><a href="#using-try-and-catch">Using <code>try</code> and <code>catch</code></a></li>
+        <li><a href="#working-with-error-values">Working with Error Values</a></li>
+        <li><a href="#implementing-custom-error-types">Implementing Custom Error Types</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-concepts">Advanced Concepts</a>
+      <ul>
+        <li><a href="#comptime-features">Comptime Features</a></li>
+        <li><a href="#generics">Generics</a></li>
+        <li><a href="#enums">Enums</a></li>
+        <li><a href="#interfaces">Interfaces</a></li>
+        <li><a href="#concurrency">Concurrency</a></li>
+      </ul>
+    </li>
+    <li><a href="#building-and-running-your-zig-programs">Building and Running Your Zig Programs</a>
+      <ul>
+        <li><a href="#using-the-zig-build-system">Using the Zig Build System</a></li>
+        <li><a href="#creating-executables">Creating Executables</a></li>
+        <li><a href="#creating-libraries">Creating Libraries</a></li>
+        <li><a href="#debugging-your-code">Debugging Your Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#next-steps-and-resources">Next Steps and Resources</a>
+      <ul>
+        <li><a href="#where-to-learn-more-about-zig">Where to Learn More About Zig</a></li>
+        <li><a href="#community-resources">Community Resources</a></li>
+        <li><a href="#contributing-to-zig">Contributing to Zig</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-zig">
+  Introduction to Zig
+  <a class="anchor" href="#introduction-to-zig">#</a>
+</h2>
+<h3 class="heading" id="what-is-zig">
+  What is Zig?
+  <a class="anchor" href="#what-is-zig">#</a>
+</h3>
+<p>Zig is a general-purpose programming language designed for robustness, optimality, and maintainability.  It aims to be a powerful tool for building everything from low-level systems code to high-level applications.  Unlike many languages that prioritize ease of use above all else, Zig prioritizes giving the developer fine-grained control over memory management and system interactions, while still providing a relatively straightforward and expressive syntax.  It compiles to native code, offering excellent performance and predictability.  A key aspect of Zig is its focus on compile-time safety and preventing runtime errors through features like compile-time error checking and a powerful type system.</p>
+<h3 class="heading" id="why-use-zig">
+  Why use Zig?
+  <a class="anchor" href="#why-use-zig">#</a>
+</h3>
+<p>Zig offers several compelling advantages over other languages, making it a strong choice for various projects:</p>
+<ul>
+<li><strong>Performance:</strong> Zig compiles directly to native code, resulting in highly optimized executables without the overhead of a virtual machine or runtime interpreter.</li>
+<li><strong>Memory Safety:</strong>  While allowing low-level memory manipulation when needed, Zig provides features to prevent common memory-related bugs like dangling pointers and buffer overflows.</li>
+<li><strong>Control:</strong> Zig gives developers fine-grained control over memory allocation, resource management, and system interactions. This is particularly valuable for building operating systems, embedded systems, and other performance-critical applications.</li>
+<li><strong>Compile-Time Functionality:</strong> Zig&rsquo;s powerful compile-time capabilities allow for extensive code generation and optimization, leading to smaller and faster binaries.</li>
+<li><strong>Modern Syntax:</strong> Zig features a clean and modern syntax that is easy to learn and read, yet powerful enough to express complex algorithms and data structures.</li>
+<li><strong>Strong Standard Library:</strong> Zig provides a robust standard library that offers essential functionalities without external dependencies, promoting simplicity and reliability.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-environment">
+  Setting up your environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h3>
+<p>To start programming in Zig, you&rsquo;ll first need to install the Zig compiler.  Download the appropriate binary for your operating system from the official Zig website (<a href="https://ziglang.org/">https://ziglang.org/</a>).  Follow the installation instructions provided on the website.  These instructions typically involve unpacking the downloaded archive and adding the <code>zig</code> binary to your system&rsquo;s PATH environment variable.  Once installed, verify your installation by opening a terminal or command prompt and typing <code>zig version</code>. You should see the Zig version number printed to the console.  For IDE support, various text editors and IDEs offer Zig plugins or extensions; consult the documentation for your preferred editor to learn how to integrate Zig support.</p>
+<h3 class="heading" id="hello-world-in-zig">
+  Hello, world! in Zig.
+  <a class="anchor" href="#hello-world-in-zig">#</a>
+</h3>
+<p>The classic &ldquo;Hello, world!&rdquo; program in Zig is remarkably simple:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>std<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">@import</span>(<span style="color:#4070a0">&#34;std&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>main()<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>stdout<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>std.io.getStdOut().writer();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>stdout.print(<span style="color:#4070a0">&#34;Hello, world!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This code imports the standard library (<code>std</code>), obtains a writer for standard output (<code>stdout</code>), and then prints the message &ldquo;Hello, world!&rdquo; to the console.  The <code>!</code> indicates that the <code>main</code> function can potentially fail (though this example is unlikely to).  <code>try</code> handles potential errors.  To compile and run this code, save it to a file (e.g., <code>hello.zig</code>) and then execute <code>zig build-exe hello.zig</code> in your terminal.  This will produce an executable that, when run, will print &ldquo;Hello, world!&rdquo; to the console.</p>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="variables-and-constants">
+  Variables and Constants
+  <a class="anchor" href="#variables-and-constants">#</a>
+</h3>
+<p>Zig uses <code>var</code> to declare mutable variables and <code>const</code> to declare immutable constants.  The type of a variable or constant can be explicitly specified or implicitly inferred by the compiler.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>x<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">i32</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Explicitly typed mutable integer variable
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>y<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">20</span>;<span style="color:#bbb">     </span><span style="color:#60a0b0;font-style:italic">// Implicitly typed immutable integer constant
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>x<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">15</span>;<span style="color:#bbb">           </span><span style="color:#60a0b0;font-style:italic">// Modifying a mutable variable
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// y = 25;       // This would result in a compiler error (cannot modify a constant)
+</span></span></span></code></pre></div><p>Note the use of the <code>=</code> operator for assignment.  Type inference is powerful but be mindful that  incorrectly inferred types can lead to subtle bugs.  Explicit typing often improves code readability and maintainability, especially in larger projects.</p>
+<h3 class="heading" id="basic-data-types-integers-floats-booleans">
+  Basic Data Types (Integers, Floats, Booleans)
+  <a class="anchor" href="#basic-data-types-integers-floats-booleans">#</a>
+</h3>
+<p>Zig offers a variety of integer, floating-point, and boolean data types with varying sizes and signedness.</p>
+<ul>
+<li>
+<p><strong>Integers:</strong>  <code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code>, <code>i128</code>, <code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code>, <code>u128</code>, <code>usize</code> (size of a pointer).  <code>i</code> denotes signed integers, <code>u</code> denotes unsigned integers. <code>usize</code> is particularly important for indexing arrays and other memory-related operations.</p>
+</li>
+<li>
+<p><strong>Floats:</strong> <code>f16</code>, <code>f32</code>, <code>f64</code>.  These represent single-precision and double-precision floating-point numbers.</p>
+</li>
+<li>
+<p><strong>Booleans:</strong> <code>bool</code>.  This type can only hold <code>true</code> or <code>false</code> values.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>age<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">u8</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">30</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>price<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">f64</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">99.99</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>isAdult<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">bool</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">true</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 class="heading" id="arrays-and-slices">
+  Arrays and Slices
+  <a class="anchor" href="#arrays-and-slices">#</a>
+</h3>
+<p>Arrays in Zig are fixed-size collections of elements of the same type. Slices provide a dynamic view into an array.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>numbers<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>[<span style="color:#40a070">5</span>]<span style="color:#902000">u32</span>{<span style="color:#bbb"> </span><span style="color:#40a070">1</span>,<span style="color:#bbb"> </span><span style="color:#40a070">2</span>,<span style="color:#bbb"> </span><span style="color:#40a070">3</span>,<span style="color:#bbb"> </span><span style="color:#40a070">4</span>,<span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#bbb"> </span>};<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Array of 5 unsigned 32-bit integers
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>slice<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>numbers[<span style="color:#40a070">0</span>..<span style="color:#40a070">3</span>];<span style="color:#bbb">           </span><span style="color:#60a0b0;font-style:italic">// Slice containing the first 3 elements of &#39;numbers&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(slice)<span style="color:#bbb"> </span><span style="color:#666">|</span>num<span style="color:#666">|</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;{d} &#34;</span>,<span style="color:#bbb"> </span>.{num});<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">//Prints 1 2 3
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>std.debug.print(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{});<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Note that arrays have a fixed size known at compile time.  Slices, on the other hand, offer flexibility by referencing a portion of an array without copying the data.  The <code>[0..3]</code> notation creates a slice from index 0 (inclusive) up to index 3 (exclusive).</p>
+<h3 class="heading" id="strings">
+  Strings
+  <a class="anchor" href="#strings">#</a>
+</h3>
+<p>Zig uses UTF-8 encoded strings.  The <code>std.mem.Allocator</code> is commonly used for string manipulation.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>allocator<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>std.heap.page_allocator;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Get memory allocator
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>str<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>allocator.alloc(<span style="color:#902000">u8</span>,<span style="color:#bbb"> </span><span style="color:#40a070">14</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Allocate memory for the string
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>str.<span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello, Zig World!&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>allocator.free(str);<span style="color:#bbb">             </span><span style="color:#60a0b0;font-style:italic">// Deallocate the string when finished
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>std.debug.print(<span style="color:#4070a0">&#34;{s}</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{str});<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Strings in Zig are represented as arrays of bytes (<code>u8</code>).  The example above shows how to allocate memory dynamically (using <code>allocator.alloc</code>) and then free it when finished (<code>allocator.free</code>). The <code>defer</code> keyword ensures the memory is freed even if errors occur.</p>
+<h3 class="heading" id="structs">
+  Structs
+  <a class="anchor" href="#structs">#</a>
+</h3>
+<p>Structs are used to group related data together.  They can contain fields of different data types.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>Person<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">struct</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>name<span style="color:#666">:</span><span style="color:#bbb"> </span>[]<span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span><span style="color:#902000">u8</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>age<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">u8</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>person<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Person{<span style="color:#bbb"> </span>.name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Alice&#34;</span>,<span style="color:#bbb"> </span>.age<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">30</span><span style="color:#bbb"> </span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>std.debug.print(<span style="color:#4070a0">&#34;Name: {s}, Age: {d}</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{<span style="color:#bbb"> </span>person.name,<span style="color:#bbb"> </span>person.age<span style="color:#bbb"> </span>});<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This defines a <code>Person</code> struct with a name (a slice of bytes) and age.  The <code>.</code> notation is used to access individual fields within a struct.  Struct definitions provide a way to create custom data types which enhances code organization and readability.</p>
+<h2 class="heading" id="control-flow">
+  Control Flow
+  <a class="anchor" href="#control-flow">#</a>
+</h2>
+<h3 class="heading" id="if-statements">
+  if statements
+  <a class="anchor" href="#if-statements">#</a>
+</h3>
+<p>Zig&rsquo;s <code>if</code> statements work similarly to those in other languages.  The condition is evaluated, and if it&rsquo;s true, the code block within the <code>if</code> statement is executed.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(x<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;x is greater than 5</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The condition must be a boolean expression.  If the condition evaluates to <code>false</code>, the code block is skipped.</p>
+<h3 class="heading" id="else-if-and-else-statements">
+  else if and else statements
+  <a class="anchor" href="#else-if-and-else-statements">#</a>
+</h3>
+<p><code>else if</code> and <code>else</code> clauses can be added to provide alternative execution paths.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(x<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">15</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;x is greater than 15</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">else</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(x<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;x is greater than 5</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">else</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;x is less than or equal to 5</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The <code>else if</code> condition is checked only if the preceding <code>if</code> condition is false.  The <code>else</code> clause is executed only if none of the preceding <code>if</code> or <code>else if</code> conditions are true.</p>
+<h3 class="heading" id="for-loops">
+  for loops
+  <a class="anchor" href="#for-loops">#</a>
+</h3>
+<p>Zig provides several ways to use <code>for</code> loops:</p>
+<ul>
+<li><strong><code>for</code> with an iterator:</strong> This is suitable for iterating over ranges or collections.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(<span style="color:#40a070">0</span>..<span style="color:#40a070">10</span>)<span style="color:#bbb"> </span><span style="color:#666">|</span>i<span style="color:#666">|</span><span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Iterates from 0 up to (but not including) 10
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;{d} &#34;</span>,<span style="color:#bbb"> </span>.{i});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>std.debug.print(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{});<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>for</code> with a variable and an expression:</strong>  This allows for more complex iteration logic.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>i<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">u32</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span>(i<span style="color:#bbb"> </span><span style="color:#666">&lt;</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span>)<span style="color:#bbb"> </span><span style="color:#666">:</span><span style="color:#bbb"> </span>(i<span style="color:#bbb"> </span><span style="color:#666">+=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;{d} &#34;</span>,<span style="color:#bbb"> </span>.{i});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>std.debug.print(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{});<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The <code>while (i &lt; 10) : (i += 1)</code> syntax combines the condition (<code>i &lt; 10</code>) and the increment (<code>i += 1</code>) in a concise manner.  This is functionally equivalent to a C-style <code>for</code> loop.</p>
+<h3 class="heading" id="while-loops">
+  while loops
+  <a class="anchor" href="#while-loops">#</a>
+</h3>
+<p><code>while</code> loops repeat a block of code as long as a condition is true.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>i<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">u32</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span>(i<span style="color:#bbb"> </span><span style="color:#666">&lt;</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;{d} &#34;</span>,<span style="color:#bbb"> </span>.{i});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>i<span style="color:#bbb"> </span><span style="color:#666">+=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>std.debug.print(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{});<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The condition is checked at the beginning of each iteration.  If it&rsquo;s false, the loop terminates.</p>
+<h3 class="heading" id="break-and-continue-statements">
+  break and continue statements
+  <a class="anchor" href="#break-and-continue-statements">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>break</code>:</strong>  Immediately exits the innermost loop (e.g., <code>for</code>, <code>while</code>).</p>
+</li>
+<li>
+<p><strong><code>continue</code>:</strong> Skips the rest of the current iteration and proceeds to the next iteration.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>i<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">u32</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span>(i<span style="color:#bbb"> </span><span style="color:#666">&lt;</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span>)<span style="color:#bbb"> </span><span style="color:#666">:</span><span style="color:#bbb"> </span>(i<span style="color:#bbb"> </span><span style="color:#666">+=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(i<span style="color:#bbb"> </span><span style="color:#666">==</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span>)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">continue</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Skip iteration when i is 5
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(i<span style="color:#bbb"> </span><span style="color:#666">==</span><span style="color:#bbb"> </span><span style="color:#40a070">8</span>)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">break</span>;<span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// Exit loop when i is 8
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;{d} &#34;</span>,<span style="color:#bbb"> </span>.{i});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>std.debug.print(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{});<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Output: 0 1 2 3 4 6 7
+</span></span></span></code></pre></div><p><code>break</code> and <code>continue</code> statements provide fine-grained control over the flow of loops, allowing for efficient handling of specific conditions within iterations.</p>
+<h2 class="heading" id="functions">
+  Functions
+  <a class="anchor" href="#functions">#</a>
+</h2>
+<h3 class="heading" id="defining-functions">
+  Defining Functions
+  <a class="anchor" href="#defining-functions">#</a>
+</h3>
+<p>Functions in Zig are defined using the <code>fn</code> keyword followed by the function name, parameters (if any), return type (if any), and the function body enclosed in curly braces <code>{}</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>add(x<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">i32</span>,<span style="color:#bbb"> </span>y<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">i32</span>)<span style="color:#bbb"> </span><span style="color:#902000">i32</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>y;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>main()<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>sum<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>add(<span style="color:#40a070">5</span>,<span style="color:#bbb"> </span><span style="color:#40a070">3</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;Sum: {d}</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{sum});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This example shows a simple function <code>add</code> that takes two <code>i32</code> parameters and returns their sum as an <code>i32</code>.  The <code>pub fn main() !void</code> is the entry point for the program. The <code>!</code> indicates the function might return an error.  Note the use of <code>const</code> to declare a constant variable <code>sum</code>.</p>
+<h3 class="heading" id="function-parameters-and-return-values">
+  Function Parameters and Return Values
+  <a class="anchor" href="#function-parameters-and-return-values">#</a>
+</h3>
+<p>Function parameters are specified within parentheses <code>()</code>, separated by commas. Each parameter has a name and a type.  The return type is specified after the closing parenthesis.  If a function doesn&rsquo;t return a value, its return type is <code>void</code>.  Functions can return multiple values by using tuples.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>divide(x<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">i32</span>,<span style="color:#bbb"> </span>y<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">i32</span>)<span style="color:#bbb"> </span><span style="color:#666">!</span>[<span style="color:#40a070">2</span>]<span style="color:#902000">i32</span><span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">//Return type is a tuple
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(y<span style="color:#bbb"> </span><span style="color:#666">==</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span>)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">error</span>.DivideByZero;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>[<span style="color:#40a070">2</span>]<span style="color:#902000">i32</span>{<span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">/</span><span style="color:#bbb"> </span>y,<span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">%</span><span style="color:#bbb"> </span>y<span style="color:#bbb"> </span>};<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">//Quotient and remainder
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>main()<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>divide(<span style="color:#40a070">10</span>,<span style="color:#bbb"> </span><span style="color:#40a070">3</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;Quotient: {d}, Remainder: {d}</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{result[<span style="color:#40a070">0</span>],<span style="color:#bbb"> </span>result[<span style="color:#40a070">1</span>]});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This <code>divide</code> function returns a tuple containing the quotient and remainder.  Error handling is shown using <code>!</code> and <code>try</code>.</p>
+<h3 class="heading" id="function-overloading">
+  Function Overloading
+  <a class="anchor" href="#function-overloading">#</a>
+</h3>
+<p>Zig does not support function overloading in the same way as some other languages (e.g., C++).  You cannot have multiple functions with the same name but different parameter types.  However, you can achieve similar functionality using different function names or generics.</p>
+<h3 class="heading" id="variadic-functions">
+  Variadic Functions
+  <a class="anchor" href="#variadic-functions">#</a>
+</h3>
+<p>Variadic functions can accept a variable number of arguments.  This is achieved using the <code>...</code> syntax.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>sum(nums<span style="color:#666">:</span><span style="color:#bbb"> </span>[]<span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span><span style="color:#902000">i32</span>)<span style="color:#bbb"> </span><span style="color:#902000">i32</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>total<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">i32</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(nums)<span style="color:#bbb"> </span><span style="color:#666">|</span>num<span style="color:#666">|</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>total<span style="color:#bbb"> </span><span style="color:#666">+=</span><span style="color:#bbb"> </span>num;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>total;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>main()<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>s1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>sum([_]<span style="color:#902000">i32</span>{<span style="color:#40a070">1</span>,<span style="color:#bbb"> </span><span style="color:#40a070">2</span>,<span style="color:#bbb"> </span><span style="color:#40a070">3</span>});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>s2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>sum([_]<span style="color:#902000">i32</span>{<span style="color:#40a070">10</span>,<span style="color:#bbb"> </span><span style="color:#40a070">20</span>,<span style="color:#bbb"> </span><span style="color:#40a070">30</span>,<span style="color:#bbb"> </span><span style="color:#40a070">40</span>});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;Sum 1: {d}, Sum 2: {d}</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{s1,<span style="color:#bbb"> </span>s2});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The <code>sum</code> function accepts a slice (<code>[]const i32</code>) of integers as input and calculates their sum.  This effectively allows you to pass a variable number of arguments.  The use of <code>[]const i32</code> is crucial here to handle variable-length input.  Note that  <code>[_]i32{1, 2, 3}</code> creates a compile-time array literal; its size is known at compile time.  However, using <code>[]const i32</code>  in the function signature accepts any slice of <code>i32</code> regardless of its size.</p>
+<h2 class="heading" id="memory-management">
+  Memory Management
+  <a class="anchor" href="#memory-management">#</a>
+</h2>
+<h3 class="heading" id="allocating-memory">
+  Allocating Memory
+  <a class="anchor" href="#allocating-memory">#</a>
+</h3>
+<p>Zig provides explicit control over memory allocation.  The most common way to allocate memory is using an allocator.  Allocators manage memory pools and provide functions for allocating and deallocating memory blocks.  The standard library offers several allocators, including <code>std.heap.GeneralPurposeAllocator</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>allocator<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>std.heap.GeneralPurposeAllocator(.{}){};<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Create an allocator
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>allocator.deinit();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Ensure the allocator is deinitialized (cleaned up)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>buffer<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>allocator.alloc(<span style="color:#902000">u8</span>,<span style="color:#bbb"> </span><span style="color:#40a070">1024</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Allocate 1024 bytes
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>allocator.free(buffer);<span style="color:#bbb">             </span><span style="color:#60a0b0;font-style:italic">// Deallocate the buffer when finished
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// Use the buffer...
+</span></span></span></code></pre></div><p>The <code>try</code> keyword handles potential allocation errors.  The <code>defer</code> statement ensures that <code>allocator.free(buffer)</code> is called even if errors occur within the code block.  Always remember to deallocate memory when you&rsquo;re finished with it to prevent memory leaks.</p>
+<h3 class="heading" id="deallocating-memory">
+  Deallocating Memory
+  <a class="anchor" href="#deallocating-memory">#</a>
+</h3>
+<p>Memory allocated using an allocator must be explicitly deallocated using the allocator&rsquo;s <code>free</code> method. Failing to do so results in memory leaks.  Zig&rsquo;s <code>defer</code> statement is a crucial tool to ensure memory is freed, even in the event of errors.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>allocator<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>std.heap.GeneralPurposeAllocator(.{}){};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>allocator.deinit();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>ptr<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>allocator.alloc(<span style="color:#902000">u8</span>,<span style="color:#bbb"> </span><span style="color:#40a070">100</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>allocator.free(ptr);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// ... use ptr ...
+</span></span></span></code></pre></div><p>The <code>defer allocator.free(ptr)</code> statement ensures that the memory pointed to by <code>ptr</code> is freed when the scope containing it ends, regardless of how that scope ends (normal completion or error).</p>
+<h3 class="heading" id="understanding-ownership-and-borrowing">
+  Understanding Ownership and Borrowing
+  <a class="anchor" href="#understanding-ownership-and-borrowing">#</a>
+</h3>
+<p>Zig employs a system similar to Rust&rsquo;s ownership and borrowing, albeit with a different approach.  There&rsquo;s no automatic garbage collection; you explicitly manage memory.  The <code>@ptrCast</code> function can be used to manually cast between pointer types.  Understanding the lifespan of allocated memory is crucial to prevent memory-related errors such as dangling pointers (pointers that reference deallocated memory).</p>
+<h3 class="heading" id="working-with-pointers">
+  Working with Pointers
+  <a class="anchor" href="#working-with-pointers">#</a>
+</h3>
+<p>Pointers are used to store memory addresses.  Zig uses the <code>*</code> operator to declare pointers and dereference them.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>allocator<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>std.heap.GeneralPurposeAllocator(.{}){};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>allocator.deinit();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>x<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">i32</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>ptr<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">&amp;</span>x;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// ptr is a pointer to x
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>std.debug.print(<span style="color:#4070a0">&#34;Value of x: {d}</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{x});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>std.debug.print(<span style="color:#4070a0">&#34;Value pointed to by ptr: {d}</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{<span style="color:#666">*</span>ptr});<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Dereferencing the pointer
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>y<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>allocator.alloc(<span style="color:#902000">i32</span>,<span style="color:#bbb"> </span><span style="color:#40a070">1</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Allocate space for an i32
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>y.<span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">20</span>;<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">// Assign 20 to the memory location pointed to by y
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>allocator.free(y);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>std.debug.print(<span style="color:#4070a0">&#34;Value pointed to by y: {d}</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{y.<span style="color:#666">*</span>});<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Dereferencing the pointer
+</span></span></span></code></pre></div><p>Pointers must be carefully managed to avoid issues.  Always ensure that the memory pointed to is valid and has not been deallocated.  Be cautious when dealing with raw pointers as they can lead to unsafe memory accesses if not handled correctly.  Zig’s error handling mechanism (<code>!</code> and <code>try</code>) helps mitigate potential problems but does not eliminate them entirely.  Robust error handling and careful memory management are key to writing safe and reliable Zig code.</p>
+<h2 class="heading" id="error-handling">
+  Error Handling
+  <a class="anchor" href="#error-handling">#</a>
+</h2>
+<p>Zig&rsquo;s error handling system is designed to make it easy to write robust and safe code. It leverages a combination of the <code>!</code> error return type, the <code>try</code> keyword, and error sets.</p>
+<h3 class="heading" id="using-try-and-catch">
+  Using <code>try</code> and <code>catch</code>
+  <a class="anchor" href="#using-try-and-catch">#</a>
+</h3>
+<p>Functions that might fail return a value of type <code>!T</code>, where <code>T</code> is the successful return type.  The <code>!</code> indicates the possibility of an error. The <code>try</code> keyword is used to handle potential errors. If a <code>try</code> expression encounters an error, execution jumps to the nearest <code>catch</code> block (if one exists).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>std<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">@import</span>(<span style="color:#4070a0">&#34;std&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>main()<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>allocator<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>std.heap.GeneralPurposeAllocator(.{}){};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>allocator.deinit();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>buffer<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>allocator.alloc(<span style="color:#902000">u8</span>,<span style="color:#bbb"> </span><span style="color:#40a070">1024</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>allocator.free(buffer);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>doTheThing(buffer);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">//Calls a function that may return an error.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>doTheThing(buffer<span style="color:#666">:</span><span style="color:#bbb"> </span>[]<span style="color:#902000">u8</span>)<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">//Simulate a failure condition. In real code this might be a file read or network call.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">if</span>(buffer.len<span style="color:#bbb"> </span><span style="color:#666">&lt;</span><span style="color:#bbb"> </span><span style="color:#40a070">100</span>){<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">error</span>.OutOfMemory;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">//Return a specific error
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;DoTheThing Success</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,.{});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>In this example, <code>allocator.alloc</code> and <code>doTheThing</code> can fail.  If <code>allocator.alloc</code> fails, the program will terminate (unless a <code>catch</code> block is added). If <code>doTheThing</code> fails, the program terminates. Note the use of <code>defer</code> to ensure the <code>buffer</code> is freed.</p>
+<h3 class="heading" id="working-with-error-values">
+  Working with Error Values
+  <a class="anchor" href="#working-with-error-values">#</a>
+</h3>
+<p>Error values are usually represented as enums.  The <code>std.builtin</code> module provides some useful error values (<code>std.builtin.Error</code>, etc.) that might be useful in functions.  Custom error sets allow you to define your own error types, giving more context for why a function failed.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>std<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">@import</span>(<span style="color:#4070a0">&#34;std&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>MyError<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">error</span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>OutOfMemory,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>FileIOError,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>NetworkError,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>myFunction()<span style="color:#bbb"> </span><span style="color:#666">!</span>MyError<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">//Simulate various failure conditions.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">if</span>(std.os.getEnv(<span style="color:#4070a0">&#34;MY_ENV_VAR&#34;</span>)<span style="color:#bbb"> </span><span style="color:#666">==</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">null</span>){<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>MyError.OutOfMemory;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">//Simulate a file error
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>MyError.FileIOError;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>main()<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>err<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>myFunction();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">switch</span><span style="color:#bbb"> </span>(err)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>.OutOfMemory<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span>std.debug.print(<span style="color:#4070a0">&#34;Out of memory error!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{}),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>.FileIOError<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span>std.debug.print(<span style="color:#4070a0">&#34;File IO error!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{}),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>.NetworkError<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span>std.debug.print(<span style="color:#4070a0">&#34;Network error!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{}),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">else</span><span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">unreachable</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This example shows how to catch and respond to specific error conditions.  The <code>switch</code> statement enables detailed error handling based on custom error types. The <code>unreachable</code> statement asserts that no other error types are expected.</p>
+<h3 class="heading" id="implementing-custom-error-types">
+  Implementing Custom Error Types
+  <a class="anchor" href="#implementing-custom-error-types">#</a>
+</h3>
+<p>Custom error types enhance error reporting, enabling a more granular approach to error handling.  They provide context for errors beyond simple return codes.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>MyError<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">error</span>{FileReadError,<span style="color:#bbb"> </span>NetworkError};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>readFile(filename<span style="color:#666">:</span><span style="color:#bbb"> </span>[]<span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span><span style="color:#902000">u8</span>,<span style="color:#bbb"> </span>allocator<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#666">*</span>std.mem.Allocator)<span style="color:#bbb"> </span><span style="color:#666">!</span>MyError<span style="color:#666">!</span>[]<span style="color:#902000">u8</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">//Simulate file reading logic.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">if</span>(<span style="color:#007020;font-weight:bold">false</span>){<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">//Simulate error condition
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>MyError.FileReadError;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>buf<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>allocator.alloc(<span style="color:#902000">u8</span>,<span style="color:#bbb"> </span><span style="color:#40a070">1024</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">//Put file contents into buf.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>buf;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>main()<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>gpa<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>std.heap.GeneralPurposeAllocator(.{}){};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>_<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>gpa.deinit();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>allocator<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">&amp;</span>gpa;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>readFile(<span style="color:#4070a0">&#34;my_file.txt&#34;</span>,<span style="color:#bbb"> </span>allocator);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>allocator.free(result);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;File contents: {s}</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,.{result});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>By creating a custom error set <code>MyError</code>, the code provides a more descriptive indication of errors during file reading.  This example demonstrates error handling, including proper resource cleanup with <code>defer</code>, and the use of an allocator for dynamic memory management. Remember that handling errors effectively is essential for building reliable and robust Zig applications.  Zig’s error handling system empowers developers to write clean, safe, and understandable code that gracefully handles failure conditions.</p>
+<h2 class="heading" id="advanced-concepts">
+  Advanced Concepts
+  <a class="anchor" href="#advanced-concepts">#</a>
+</h2>
+<h3 class="heading" id="comptime-features">
+  Comptime Features
+  <a class="anchor" href="#comptime-features">#</a>
+</h3>
+<p>Zig&rsquo;s powerful <code>comptime</code> features allow computations and code generation to occur during compilation.  This results in highly optimized and efficient code.  Comptime operations are marked with the <code>comptime</code> keyword.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>std<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">@import</span>(<span style="color:#4070a0">&#34;std&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>main()<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>arr_size<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">comptime</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Size of the array is determined at compile time
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>arr<span style="color:#666">:</span><span style="color:#bbb"> </span>[arr_size]<span style="color:#902000">i32</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">undefined</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(<span style="color:#40a070">0</span>..arr_size)<span style="color:#bbb"> </span><span style="color:#666">|</span>i<span style="color:#666">|</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>arr[i]<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">@intCast</span>(<span style="color:#902000">i32</span>,<span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#40a070">2</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">//Compile time calculation of the array values
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(arr)<span style="color:#bbb"> </span><span style="color:#666">|</span>val<span style="color:#666">|</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>std.debug.print(<span style="color:#4070a0">&#34;{d} &#34;</span>,<span style="color:#bbb"> </span>.{val});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This example shows how <code>comptime</code> is used to determine the size of an array and initialize its elements during compilation. The values of the array are also calculated during compile time.  This avoids runtime overhead and allows for optimization at the compiler level.  Comptime is very important for metaprogramming, code generation, and improving performance.</p>
+<h3 class="heading" id="generics">
+  Generics
+  <a class="anchor" href="#generics">#</a>
+</h3>
+<p>Generics allow you to write functions and data structures that can work with various data types without needing to write separate versions for each type.  Generics are declared using square brackets <code>[]</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>printArray[T](arr<span style="color:#666">:</span><span style="color:#bbb"> </span>[]<span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>T)<span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(arr)<span style="color:#bbb"> </span><span style="color:#666">|</span>item<span style="color:#666">|</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>std.debug.print(<span style="color:#4070a0">&#34;{any}&#34;</span>,<span style="color:#bbb"> </span>.{item});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>main()<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>int_arr<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>[_]<span style="color:#902000">i32</span>{<span style="color:#40a070">1</span>,<span style="color:#bbb"> </span><span style="color:#40a070">2</span>,<span style="color:#bbb"> </span><span style="color:#40a070">3</span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>str_arr<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>[_][]<span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span><span style="color:#902000">u8</span>{<span style="color:#4070a0">&#34;hello&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;world&#34;</span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>printArray(int_arr[<span style="color:#40a070">0</span>..]);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>printArray(str_arr[<span style="color:#40a070">0</span>..]);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The <code>printArray</code> function is generic; it can handle arrays of any type <code>T</code>.  The compiler generates separate code for each type used with the generic function.</p>
+<h3 class="heading" id="enums">
+  Enums
+  <a class="anchor" href="#enums">#</a>
+</h3>
+<p>Enums in Zig provide a way to define a type that can have a specific set of named values.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>Color<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">enum</span><span style="color:#bbb"> </span>{<span style="color:#bbb"> </span>red,<span style="color:#bbb"> </span>green,<span style="color:#bbb"> </span>blue<span style="color:#bbb"> </span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>printColor(color<span style="color:#666">:</span><span style="color:#bbb"> </span>Color)<span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">switch</span><span style="color:#bbb"> </span>(color)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>.red<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span>std.debug.print(<span style="color:#4070a0">&#34;Red</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{}),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>.green<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span>std.debug.print(<span style="color:#4070a0">&#34;Green</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{}),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>.blue<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span>std.debug.print(<span style="color:#4070a0">&#34;Blue</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{}),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>main()<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>printColor(.red);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>printColor(.green);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The <code>Color</code> enum defines three possible values: <code>red</code>, <code>green</code>, and <code>blue</code>.  The <code>switch</code> statement is used to handle each enum value separately.  Enums enhance readability and maintainability by providing named constants.</p>
+<h3 class="heading" id="interfaces">
+  Interfaces
+  <a class="anchor" href="#interfaces">#</a>
+</h3>
+<p>Interfaces define a set of functions that a type must implement. They enable polymorphism.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>std<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">@import</span>(<span style="color:#4070a0">&#34;std&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span>interface<span style="color:#bbb"> </span>Shape<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>area(self<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#007020">@This</span>())<span style="color:#bbb"> </span><span style="color:#902000">f64</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>main()<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>circle<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Circle{<span style="color:#bbb"> </span>.radius<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">5.0</span><span style="color:#bbb"> </span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>square<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Square{<span style="color:#bbb"> </span>.side<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">4.0</span><span style="color:#bbb"> </span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;Circle area: {d}</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{circle.area()});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>std.debug.print(<span style="color:#4070a0">&#34;Square area: {d}</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{square.area()});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>Circle<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">struct</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>radius<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">f64</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>Self<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">@This</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>area(self<span style="color:#666">:</span><span style="color:#bbb"> </span>Self)<span style="color:#bbb"> </span><span style="color:#902000">f64</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#40a070">3.14159</span><span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span>self.radius<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span>self.radius;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>Square<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">struct</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>side<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">f64</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>Self<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">@This</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>area(self<span style="color:#666">:</span><span style="color:#bbb"> </span>Self)<span style="color:#bbb"> </span><span style="color:#902000">f64</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>self.side<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span>self.side;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>};<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Both <code>Circle</code> and <code>Square</code> implement the <code>Shape</code> interface by providing an <code>area</code> function.  This allows them to be used interchangeably where a <code>Shape</code> is expected.</p>
+<h3 class="heading" id="concurrency">
+  Concurrency
+  <a class="anchor" href="#concurrency">#</a>
+</h3>
+<p>Zig provides built-in support for concurrency using channels and other synchronization primitives. This example shows a simple producer-consumer pattern. For more advanced examples, consult the official Zig documentation.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>std<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">@import</span>(<span style="color:#4070a0">&#34;std&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>main()<span style="color:#bbb"> </span><span style="color:#666">!</span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>arena<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>std.heap.ArenaAllocator.init(std.heap.page_allocator);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>arena.deinit();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>allocator<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>arena.allocator();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>channel<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>std.Channel(<span style="color:#902000">i32</span>).init(allocator,<span style="color:#bbb"> </span><span style="color:#40a070">10</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">defer</span><span style="color:#bbb"> </span>channel.deinit();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>producer<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>std.Thread.spawn(.{},<span style="color:#bbb"> </span>producer_fn,<span style="color:#bbb"> </span>.{channel});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>consumer<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>std.Thread.spawn(.{},<span style="color:#bbb"> </span>consumer_fn,<span style="color:#bbb"> </span>.{channel});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>producer.join();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>consumer.join();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>producer_fn(channel<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#666">*</span>std.Channel(<span style="color:#902000">i32</span>))<span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">var</span><span style="color:#bbb"> </span>i<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#902000">i32</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span>(i<span style="color:#bbb"> </span><span style="color:#666">&lt;</span><span style="color:#bbb"> </span><span style="color:#40a070">100</span>)<span style="color:#bbb"> </span><span style="color:#666">:</span><span style="color:#bbb"> </span>(i<span style="color:#bbb"> </span><span style="color:#666">+=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>_<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>channel.trySend(i);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>consumer_fn(channel<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#666">*</span>std.Channel(<span style="color:#902000">i32</span>))<span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span>(<span style="color:#007020;font-weight:bold">true</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>value<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>channel.receive();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(value<span style="color:#bbb"> </span><span style="color:#666">==</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">null</span>)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">break</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">//Channel is closed
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">        </span>std.debug.print(<span style="color:#4070a0">&#34;Received: {d}</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>.{value.<span style="color:#666">?</span>});<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This showcases basic thread creation and synchronization with channels.  Zig&rsquo;s concurrency features enable efficient handling of parallel tasks.  Remember that concurrency requires careful consideration of thread safety and synchronization to avoid data races and other issues.  More sophisticated concurrency patterns are beyond the scope of this beginner&rsquo;s guide but are well-documented in the Zig language documentation.</p>
+<h2 class="heading" id="building-and-running-your-zig-programs">
+  Building and Running Your Zig Programs
+  <a class="anchor" href="#building-and-running-your-zig-programs">#</a>
+</h2>
+<h3 class="heading" id="using-the-zig-build-system">
+  Using the Zig Build System
+  <a class="anchor" href="#using-the-zig-build-system">#</a>
+</h3>
+<p>Zig&rsquo;s build system is integrated into the compiler itself.  It uses a declarative approach, specifying build targets and dependencies in a <code>build.zig</code> file.  The build system is powerful and handles various tasks, such as compiling code, linking libraries, and running tests.</p>
+<p>A simple <code>build.zig</code> file might look like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>std<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">@import</span>(<span style="color:#4070a0">&#34;std&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>build(b<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#666">*</span>std.Build)<span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>exe<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>b.addExecutable(<span style="color:#4070a0">&#34;myprogram&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;main.zig&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>exe.addIncludePath(<span style="color:#4070a0">&#34;.&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">//Add current directory to include paths.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This <code>build.zig</code> file defines an executable named <code>myprogram</code>, linking the code in <code>main.zig</code>. The <code>addIncludePath</code> function adds the current directory to the compiler&rsquo;s include path, making it easier to find header files if you have them.  More complex build configurations are possible, including managing dependencies, defining build options, and specifying target architectures.</p>
+<h3 class="heading" id="creating-executables">
+  Creating Executables
+  <a class="anchor" href="#creating-executables">#</a>
+</h3>
+<p>To create an executable, use the <code>zig build-exe</code> command, followed by the name of your main source file (usually <code>main.zig</code>). For example: <code>zig build-exe main.zig</code>. This compiles the code and produces an executable.</p>
+<p>If you have a <code>build.zig</code> file, the command <code>zig build</code> will build the project according to the instructions in <code>build.zig</code>.  Then, the executable will be found in the <code>zig-cache</code> directory (the exact location depends on your operating system).</p>
+<h3 class="heading" id="creating-libraries">
+  Creating Libraries
+  <a class="anchor" href="#creating-libraries">#</a>
+</h3>
+<p>Zig can also build libraries (both static and shared/dynamic).  This is commonly done using a <code>build.zig</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zig" data-lang="zig"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>std<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">@import</span>(<span style="color:#4070a0">&#34;std&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span><span style="color:#bbb"> </span>build(b<span style="color:#666">:</span><span style="color:#bbb"> </span><span style="color:#666">*</span>std.Build)<span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">const</span><span style="color:#bbb"> </span>lib<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>b.addStaticLibrary(<span style="color:#4070a0">&#34;mylib&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;lib.zig&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>lib.addIncludePath(<span style="color:#4070a0">&#34;.&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This creates a static library named <code>mylib</code> from the code in <code>lib.zig</code>.  To create a shared library, change <code>addStaticLibrary</code> to <code>addSharedLibrary</code>.  Other options allow fine-grained control over the linking process and library output. The created library will be found in the <code>zig-cache</code> directory.</p>
+<h3 class="heading" id="debugging-your-code">
+  Debugging Your Code
+  <a class="anchor" href="#debugging-your-code">#</a>
+</h3>
+<p>Zig offers several ways to debug your code:</p>
+<ul>
+<li>
+<p><strong>Using a debugger:</strong> Most IDEs support attaching a debugger to Zig processes.  This allows you to set breakpoints, step through code, inspect variables, and analyze program execution.</p>
+</li>
+<li>
+<p><strong>Print statements:</strong>  The simplest debugging approach involves inserting <code>std.debug.print</code> statements to output values of variables at various points in the code.  This approach is effective for quick checks, especially when combined with conditional statements to isolate particular parts of the code.</p>
+</li>
+<li>
+<p><strong>Zig&rsquo;s error handling:</strong> Effective error handling (using <code>try</code>, <code>catch</code>, and custom error types) helps to identify and isolate issues during runtime.  The clear and informative error messages produced by Zig&rsquo;s build system and runtime error handling make debugging more efficient.</p>
+</li>
+<li>
+<p><strong>Analyzing compiler errors and warnings:</strong>  Zig&rsquo;s compiler produces detailed and informative error messages and warnings that can help pinpoint issues in the code before runtime.  Thorough review of compiler output is a critical step in the debugging process.</p>
+</li>
+</ul>
+<p>By combining these debugging techniques, you can effectively identify, isolate, and fix bugs in your Zig programs, enabling more robust and reliable software development.  The combination of Zig’s powerful compiler, its detailed error reporting, and its support for common debugging tools, results in improved productivity and code quality.</p>
+<h2 class="heading" id="next-steps-and-resources">
+  Next Steps and Resources
+  <a class="anchor" href="#next-steps-and-resources">#</a>
+</h2>
+<h3 class="heading" id="where-to-learn-more-about-zig">
+  Where to Learn More About Zig
+  <a class="anchor" href="#where-to-learn-more-about-zig">#</a>
+</h3>
+<p>The official Zig website (<a href="https://ziglang.org/">https://ziglang.org/</a>) is the best starting point for comprehensive information.  It contains the language specification, documentation of the standard library, and tutorials.  The official documentation is quite extensive and well-organized.  It covers all aspects of the language in detail.</p>
+<p>Beyond the official website, several other excellent resources can help you deepen your Zig knowledge:</p>
+<ul>
+<li>
+<p><strong>Zig&rsquo;s GitHub repository:</strong>  (<a href="https://github.com/ziglang/zig">https://github.com/ziglang/zig</a>)  This is where the Zig compiler&rsquo;s source code resides.  You can find issues, pull requests, and discussions about the language&rsquo;s development.  It&rsquo;s an invaluable resource for understanding the inner workings of Zig.</p>
+</li>
+<li>
+<p><strong>Online tutorials and blog posts:</strong>  Numerous tutorials and blog posts are available online.  Searching for &ldquo;Zig tutorial&rdquo; or &ldquo;Zig programming&rdquo; will yield many results, providing different perspectives and teaching styles.  Be sure to check the date to ensure the information is up-to-date with the latest Zig releases.</p>
+</li>
+<li>
+<p><strong>Books:</strong>  As Zig gains popularity, more books dedicated to Zig programming are being published.  Check online bookstores for the latest releases.  Books provide a structured approach to learning the language in more depth.</p>
+</li>
+</ul>
+<h3 class="heading" id="community-resources">
+  Community Resources
+  <a class="anchor" href="#community-resources">#</a>
+</h3>
+<p>The Zig community is active and welcoming.  Engaging with the community is a valuable way to learn, share your knowledge, and get help when needed.  Key community resources include:</p>
+<ul>
+<li>
+<p><strong>Zig&rsquo;s official Discord server:</strong> The Discord server provides a platform for real-time communication with other Zig developers.  You can ask questions, share code, and participate in discussions.  The community is generally responsive and helpful.</p>
+</li>
+<li>
+<p><strong>Zig&rsquo;s forum:</strong> A dedicated forum provides a structured space for asking questions and discussing Zig-related topics.  The forum is searchable, which makes it easy to find solutions to common problems.</p>
+</li>
+<li>
+<p><strong>Social media:</strong>  Search for Zig on platforms like Twitter or Reddit to find discussions and updates from Zig developers.  Many active developers engage with the community via social media.</p>
+</li>
+</ul>
+<h3 class="heading" id="contributing-to-zig">
+  Contributing to Zig
+  <a class="anchor" href="#contributing-to-zig">#</a>
+</h3>
+<p>The Zig project welcomes contributions from the community.  Contributing can involve various activities, such as:</p>
+<ul>
+<li>
+<p><strong>Reporting bugs:</strong>  If you encounter bugs in the Zig compiler or standard library, report them on the Zig GitHub issue tracker.  Detailed reports with clear steps to reproduce the issue are invaluable to the developers.</p>
+</li>
+<li>
+<p><strong>Submitting pull requests:</strong> If you have improvements or bug fixes for the Zig compiler or standard library, you can submit pull requests on GitHub.  The project has clear contribution guidelines to help you through the process.</p>
+</li>
+<li>
+<p><strong>Writing documentation:</strong>  The Zig project always needs more and better documentation.  If you are a good writer and have a deep understanding of Zig, you can contribute to the official documentation.</p>
+</li>
+<li>
+<p><strong>Developing tools and libraries:</strong>  Creating and sharing tools and libraries is also a valuable way to contribute to the Zig ecosystem.  Well-written, reusable libraries can significantly benefit the wider Zig community.</p>
+</li>
+</ul>
+<p>Contributing to Zig is a great way to give back to the community and help shape the language&rsquo;s future.  The project maintains detailed guidelines for contributors. Remember to always check for existing issues and pull requests before starting to work on a particular problem to avoid duplication of effort.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-racket/">
+                        Beginner&#39;s Guide to Racket
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-verilog/">
+                        Beginner&#39;s Guide to Verilog
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

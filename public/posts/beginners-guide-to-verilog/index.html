@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Verilog | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-verilog/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-verilog/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Verilog">
+  <meta property="og:description" content="Introduction to Verilog # What is Verilog? # Verilog is a Hardware Description Language (HDL). HDLs are used to describe the functionality and structure of digital electronic circuits and systems. Instead of using schematic diagrams, you write code that defines how your circuit behaves at a register-transfer level (RTL) or a lower level of abstraction, allowing for more complex designs and easier simulation and verification. Verilog allows you to model everything from simple gates to complex microprocessors, facilitating design, simulation, synthesis, and verification throughout the design process. It’s a crucial tool for modern digital circuit design.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-28T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-verilog/">Beginner&#39;s Guide to Verilog</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Verilog</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-01-28T00:00:00&#43;00:00">January 28, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      16 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-verilog">Introduction to Verilog</a>
+      <ul>
+        <li><a href="#what-is-verilog">What is Verilog?</a></li>
+        <li><a href="#why-use-verilog">Why use Verilog?</a></li>
+        <li><a href="#verilog-vs-vhdl">Verilog vs. VHDL</a></li>
+        <li><a href="#setting-up-your-environment">Setting up your environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#verilog-basics">Verilog Basics</a>
+      <ul>
+        <li><a href="#modules-and-ports">Modules and Ports</a></li>
+        <li><a href="#data-types-reg-wire-integer">Data Types (<code>reg</code>, <code>wire</code>, <code>integer</code>)</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#basic-gates-and-or-not-xor">Basic Gates (AND, OR, NOT, XOR)</a></li>
+        <li><a href="#combinational-logic">Combinational Logic</a></li>
+        <li><a href="#simple-examples-inverters-and-gates">Simple Examples (Inverters, AND gates)</a></li>
+      </ul>
+    </li>
+    <li><a href="#sequential-logic">Sequential Logic</a>
+      <ul>
+        <li><a href="#flip-flops-d-t-jk">Flip-Flops (D, T, JK)</a></li>
+        <li><a href="#latches">Latches</a></li>
+        <li><a href="#sequential-logic-examples-counters-shift-registers">Sequential Logic Examples (Counters, Shift Registers)</a></li>
+        <li><a href="#clocks-and-timing">Clocks and Timing</a></li>
+      </ul>
+    </li>
+    <li><a href="#intermediate-verilog">Intermediate Verilog</a>
+      <ul>
+        <li><a href="#always-blocks">Always Blocks</a></li>
+        <li><a href="#case-statements">Case Statements</a></li>
+        <li><a href="#for-loops">For Loops</a></li>
+        <li><a href="#functions-and-tasks">Functions and Tasks</a></li>
+        <li><a href="#parameters-and-define-directives">Parameters and <code>define</code> Directives</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-verilog-concepts">Advanced Verilog Concepts</a>
+      <ul>
+        <li><a href="#arrays-and-vectors">Arrays and Vectors</a></li>
+        <li><a href="#memories">Memories</a></li>
+        <li><a href="#signed-and-unsigned-numbers">Signed and Unsigned Numbers</a></li>
+        <li><a href="#system-tasks-and-functions">System Tasks and Functions</a></li>
+        <li><a href="#testbenches">Testbenches</a></li>
+      </ul>
+    </li>
+    <li><a href="#simulation-and-synthesis">Simulation and Synthesis</a>
+      <ul>
+        <li><a href="#introduction-to-simulation">Introduction to Simulation</a></li>
+        <li><a href="#running-simulations-using-modelsim-or-other-simulators">Running Simulations using ModelSim or Other Simulators</a></li>
+        <li><a href="#synthesis-process">Synthesis Process</a></li>
+        <li><a href="#synthesis-tools">Synthesis Tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#example-projects">Example Projects</a>
+      <ul>
+        <li><a href="#simple-adder">Simple Adder</a></li>
+        <li><a href="#4-bit-counter">4-bit Counter</a></li>
+        <li><a href="#finite-state-machine-fsm">Finite State Machine (FSM)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-verilog">
+  Introduction to Verilog
+  <a class="anchor" href="#introduction-to-verilog">#</a>
+</h2>
+<h3 class="heading" id="what-is-verilog">
+  What is Verilog?
+  <a class="anchor" href="#what-is-verilog">#</a>
+</h3>
+<p>Verilog is a Hardware Description Language (HDL).  HDLs are used to describe the functionality and structure of digital electronic circuits and systems.  Instead of using schematic diagrams, you write code that defines how your circuit behaves at a register-transfer level (RTL) or a lower level of abstraction, allowing for more complex designs and easier simulation and verification.  Verilog allows you to model everything from simple gates to complex microprocessors, facilitating design, simulation, synthesis, and verification throughout the design process.  It&rsquo;s a crucial tool for modern digital circuit design.</p>
+<h3 class="heading" id="why-use-verilog">
+  Why use Verilog?
+  <a class="anchor" href="#why-use-verilog">#</a>
+</h3>
+<p>Verilog offers several compelling reasons for its widespread adoption in digital design:</p>
+<ul>
+<li>
+<p><strong>Abstraction:</strong> Verilog allows you to work at a higher level of abstraction than schematic entry, significantly reducing design time and complexity, especially for large projects.  You can focus on the behavior of the circuit rather than its low-level implementation details.</p>
+</li>
+<li>
+<p><strong>Simulation and Verification:</strong> Before physically creating a circuit, you can simulate its behavior using Verilog simulators.  This helps identify and fix design errors early in the process, saving time and cost.</p>
+</li>
+<li>
+<p><strong>Synthesis:</strong>  Verilog code can be synthesized, meaning it can be automatically translated into a netlist—a description of the physical circuit—that can be used to fabricate an integrated circuit (IC).</p>
+</li>
+<li>
+<p><strong>Design Reusability:</strong>  Verilog modules can be easily reused in different projects, promoting modularity and efficient design practices.</p>
+</li>
+<li>
+<p><strong>Large Community and Support:</strong>  Verilog has a large and active community, meaning plenty of resources, tutorials, and support are available online.</p>
+</li>
+</ul>
+<h3 class="heading" id="verilog-vs-vhdl">
+  Verilog vs. VHDL
+  <a class="anchor" href="#verilog-vs-vhdl">#</a>
+</h3>
+<p>Both Verilog and VHDL are popular HDLs, but they have some key differences:</p>
+<ul>
+<li>
+<p><strong>Syntax:</strong> Verilog uses a C-like syntax, making it more familiar to software developers. VHDL uses a more Pascal-like syntax.</p>
+</li>
+<li>
+<p><strong>Modeling Styles:</strong> While both support various modeling styles, Verilog is often considered better suited for behavioral modeling, while VHDL might be preferred for structural modeling in some cases.</p>
+</li>
+<li>
+<p><strong>Concurrency:</strong> Both languages handle concurrency well, but they approach it with slightly different mechanisms.</p>
+</li>
+<li>
+<p><strong>Debugging:</strong> Some developers find Verilog&rsquo;s debugging tools and features more user-friendly, while others prefer VHDL&rsquo;s approach.</p>
+</li>
+</ul>
+<p>Ultimately, the choice between Verilog and VHDL often comes down to personal preference, project requirements, and team familiarity.</p>
+<h3 class="heading" id="setting-up-your-environment">
+  Setting up your environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h3>
+<p>To begin using Verilog, you&rsquo;ll need a suitable development environment. This typically involves:</p>
+<ol>
+<li>
+<p><strong>A Verilog Simulator:</strong>  This is crucial for simulating your Verilog code and verifying its functionality. Popular choices include ModelSim, Icarus Verilog (open-source), and Vivado Simulator (part of the Xilinx Vivado Design Suite). Download and install a simulator that suits your needs and budget.</p>
+</li>
+<li>
+<p><strong>A Text Editor or IDE:</strong> You&rsquo;ll need a text editor (Notepad++, Sublime Text, VS Code) or an Integrated Development Environment (IDE) to write your Verilog code.  Some IDEs offer features specifically designed for Verilog development, including syntax highlighting, code completion, and debugging tools.</p>
+</li>
+<li>
+<p><strong>(Optional) Synthesis Tool:</strong> If you plan to synthesize your designs and create physical circuits, you will also need a synthesis tool. These tools are typically part of larger FPGA or ASIC design suites from vendors like Xilinx, Intel (Altera), and Cadence.</p>
+</li>
+</ol>
+<p>The specific steps for installation will vary depending on your chosen simulator and other tools. Consult the documentation for your chosen software for detailed installation instructions.  Remember to set up your environment variables correctly to ensure your simulator and other tools can be found by your system.</p>
+<h2 class="heading" id="verilog-basics">
+  Verilog Basics
+  <a class="anchor" href="#verilog-basics">#</a>
+</h2>
+<h3 class="heading" id="modules-and-ports">
+  Modules and Ports
+  <a class="anchor" href="#modules-and-ports">#</a>
+</h3>
+<p>Verilog code is organized into modules. A module is a fundamental building block that encapsulates a specific piece of hardware functionality.  It&rsquo;s analogous to a class in object-oriented programming. Modules have ports, which are the interface to the outside world.  Ports allow signals to enter and exit the module.  Ports are declared using the <code>input</code>, <code>output</code>, and <code>inout</code> keywords.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> my_module (<span style="color:#007020;font-weight:bold">input</span> a, <span style="color:#007020;font-weight:bold">input</span> b, <span style="color:#007020;font-weight:bold">output</span> c);
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// Code to define the functionality of the module goes here.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></div><p>In this example, <code>a</code> and <code>b</code> are input ports, and <code>c</code> is an output port.</p>
+<h3 class="heading" id="data-types-reg-wire-integer">
+  Data Types (<code>reg</code>, <code>wire</code>, <code>integer</code>)
+  <a class="anchor" href="#data-types-reg-wire-integer">#</a>
+</h3>
+<p>Verilog has several data types.  The most common are:</p>
+<ul>
+<li>
+<p><strong><code>reg</code>:</strong> This type represents a data storage element.  It can hold a value and retain it until it&rsquo;s updated.  While often associated with registers in hardware, <code>reg</code> can also represent signals that are assigned a value within a procedural block (always block or initial block).</p>
+</li>
+<li>
+<p><strong><code>wire</code>:</strong> This type represents a physical connection between modules or gates.  A <code>wire</code> does not store a value; its value is continuously driven by the elements connected to it.</p>
+</li>
+<li>
+<p><strong><code>integer</code>:</strong> This type represents a signed integer variable, typically used for internal calculations within a module.</p>
+</li>
+</ul>
+<h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>Verilog supports various operators, including:</p>
+<ul>
+<li><strong>Arithmetic Operators:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo)</li>
+<li><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (logical AND), <code>||</code> (logical OR), <code>!</code> (logical NOT)</li>
+<li><strong>Bitwise Operators:</strong> <code>&amp;</code> (bitwise AND), <code>|</code> (bitwise OR), <code>~</code> (bitwise NOT), <code>^</code> (bitwise XOR), <code>^~</code> or <code>~^</code> (bitwise XNOR)</li>
+<li><strong>Relational Operators:</strong> <code>==</code> (equal to), <code>!=</code> (not equal to), <code>&gt;</code> (greater than), <code>&lt;</code> (less than), <code>&gt;=</code> (greater than or equal to), <code>&lt;=</code> (less than or equal to)</li>
+<li><strong>Conditional Operator:</strong> <code>? :</code> (ternary operator)</li>
+<li><strong>Concatenation Operator:</strong> <code>{}</code> (joins bits or vectors)</li>
+</ul>
+<h3 class="heading" id="basic-gates-and-or-not-xor">
+  Basic Gates (AND, OR, NOT, XOR)
+  <a class="anchor" href="#basic-gates-and-or-not-xor">#</a>
+</h3>
+<p>Verilog provides built-in support for basic logic gates:</p>
+<ul>
+<li><strong><code>NOT</code> gate:</strong> Inverts the input signal.</li>
+<li><strong><code>AND</code> gate:</strong> Outputs 1 if all inputs are 1, otherwise outputs 0.</li>
+<li><strong><code>OR</code> gate:</strong> Outputs 1 if at least one input is 1, otherwise outputs 0.</li>
+<li><strong><code>XOR</code> gate:</strong> Outputs 1 if an odd number of inputs are 1, otherwise outputs 0.  (Exclusive OR)</li>
+</ul>
+<h3 class="heading" id="combinational-logic">
+  Combinational Logic
+  <a class="anchor" href="#combinational-logic">#</a>
+</h3>
+<p>Combinational logic circuits produce outputs that depend only on the current inputs.  There is no memory or feedback.  In Verilog, combinational logic is typically described using continuous assignments (<code>assign</code>) or within <code>always</code> blocks that are sensitive to changes in input signals (using a sensitivity list).</p>
+<h3 class="heading" id="simple-examples-inverters-and-gates">
+  Simple Examples (Inverters, AND gates)
+  <a class="anchor" href="#simple-examples-inverters-and-gates">#</a>
+</h3>
+<p><strong>Inverter:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> inverter (<span style="color:#007020;font-weight:bold">input</span> a, <span style="color:#007020;font-weight:bold">output</span> y);
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">assign</span> y <span style="color:#666">=</span> <span style="color:#666">~</span>a;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></div><p><strong>AND gate:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> and_gate (<span style="color:#007020;font-weight:bold">input</span> a, <span style="color:#007020;font-weight:bold">input</span> b, <span style="color:#007020;font-weight:bold">output</span> y);
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">assign</span> y <span style="color:#666">=</span> a <span style="color:#666">&amp;</span> b;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></div><p>These examples show how to create simple modules for an inverter and an AND gate using continuous assignments.  More complex combinational logic can be implemented using similar techniques.</p>
+<h2 class="heading" id="sequential-logic">
+  Sequential Logic
+  <a class="anchor" href="#sequential-logic">#</a>
+</h2>
+<h3 class="heading" id="flip-flops-d-t-jk">
+  Flip-Flops (D, T, JK)
+  <a class="anchor" href="#flip-flops-d-t-jk">#</a>
+</h3>
+<p>Sequential logic circuits have memory; their outputs depend not only on the current inputs but also on the past history of inputs. Flip-flops are fundamental building blocks of sequential logic.  They are bistable circuits, meaning they can store one bit of information.  Common types include:</p>
+<ul>
+<li>
+<p><strong>D Flip-Flop:</strong> The output (Q) follows the input (D) on the rising (or falling) edge of a clock signal. This is the most common type of flip-flop.</p>
+</li>
+<li>
+<p><strong>T Flip-Flop:</strong> Toggles the output (Q) on each rising (or falling) edge of the clock signal.  If T is 1, the output changes; if T is 0, the output remains unchanged.</p>
+</li>
+<li>
+<p><strong>JK Flip-Flop:</strong> Offers more flexibility.  It has two inputs, J and K.  If J=1 and K=0, the output sets to 1.  If J=0 and K=1, the output resets to 0.  If J=1 and K=1, the output toggles.  If J=0 and K=0, the output remains unchanged.</p>
+</li>
+</ul>
+<h3 class="heading" id="latches">
+  Latches
+  <a class="anchor" href="#latches">#</a>
+</h3>
+<p>A latch is another type of sequential circuit, but unlike a flip-flop, its output changes as long as the enable signal is high (or low, depending on the latch type).  Latches are sensitive to input changes while the enable signal is active. Flip-flops are edge-triggered, meaning they change state only on a specific clock edge.  Latches are level-sensitive. Because of their potential for metastability issues, latches are generally less preferred than flip-flops in synchronous designs.</p>
+<h3 class="heading" id="sequential-logic-examples-counters-shift-registers">
+  Sequential Logic Examples (Counters, Shift Registers)
+  <a class="anchor" href="#sequential-logic-examples-counters-shift-registers">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>Counters:</strong> Counters increment or decrement a value on each clock edge.  They can be implemented using flip-flops and combinational logic.  For example, a ripple counter uses a chain of flip-flops, where the output of one flip-flop drives the clock input of the next.</p>
+</li>
+<li>
+<p><strong>Shift Registers:</strong> Shift registers move data bits from one position to another on each clock edge. They can shift left or right.  They can be used to store and manipulate data sequentially.</p>
+</li>
+</ul>
+<h3 class="heading" id="clocks-and-timing">
+  Clocks and Timing
+  <a class="anchor" href="#clocks-and-timing">#</a>
+</h3>
+<p>Clock signals are essential for sequential circuits.  They provide the timing reference for when state changes occur.  Important timing considerations include:</p>
+<ul>
+<li><strong>Clock Period:</strong> The time between consecutive clock edges.</li>
+<li><strong>Setup Time:</strong> The minimum time before the clock edge that the data inputs must be stable.</li>
+<li><strong>Hold Time:</strong> The minimum time after the clock edge that the data inputs must remain stable.</li>
+<li><strong>Clock-to-Output Delay:</strong> The time it takes for the output of a flip-flop to change after the clock edge.</li>
+</ul>
+<p>These timing parameters are critical for ensuring the correct operation of sequential circuits.  Violating setup or hold time constraints can lead to unpredictable behavior or metastability.  Understanding these timing aspects is vital for designing reliable and high-performance digital systems.  Synthesis tools will typically check for timing violations during the implementation process.</p>
+<h2 class="heading" id="intermediate-verilog">
+  Intermediate Verilog
+  <a class="anchor" href="#intermediate-verilog">#</a>
+</h2>
+<h3 class="heading" id="always-blocks">
+  Always Blocks
+  <a class="anchor" href="#always-blocks">#</a>
+</h3>
+<p><code>always</code> blocks are used to describe sequential logic and combinational logic.  There are two main types:</p>
+<ul>
+<li>
+<p><strong><code>always @(sensitive_list)</code> (Combinational):</strong> This form is used for combinational logic.  The <code>sensitive_list</code> specifies the signals that the <code>always</code> block is sensitive to.  Whenever a signal in the <code>sensitive_list</code> changes, the code within the <code>always</code> block is executed.  It&rsquo;s crucial to ensure that the sensitivity list includes <em>all</em> signals that affect the output of the block; otherwise, it may not behave as intended. Using <code>@*</code> as a sensitivity list is a convenient shorthand that makes the <code>always</code> block sensitive to all signals read inside the block.  However, it&rsquo;s important to understand the implications and potential for unintended behavior in more complex scenarios.</p>
+</li>
+<li>
+<p><strong><code>always @(posedge clk or negedge clk)</code> (Sequential):</strong> This form is used for sequential logic. It&rsquo;s triggered by either the rising edge (<code>posedge</code>) or falling edge (<code>negedge</code>) of a clock signal (<code>clk</code>).  The code inside executes only at these clock edges. This is the preferred method for creating synchronous sequential circuits.</p>
+</li>
+</ul>
+<h3 class="heading" id="case-statements">
+  Case Statements
+  <a class="anchor" href="#case-statements">#</a>
+</h3>
+<p><code>case</code> statements provide a structured way to handle multiple conditions based on the value of an expression.  They&rsquo;re particularly useful when dealing with multiple states or different input combinations.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">always</span> @(<span style="color:#007020;font-weight:bold">posedge</span> clk) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">case</span> (state)
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b00</span><span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#60a0b0;font-style:italic">// Actions for state 00
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b01</span><span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#60a0b0;font-style:italic">// Actions for state 01
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b10</span><span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#60a0b0;font-style:italic">// Actions for state 10
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b11</span><span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#60a0b0;font-style:italic">// Actions for state 11
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">default</span><span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#60a0b0;font-style:italic">// Default actions if none of the above cases match
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">endcase</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><p>The <code>case</code> statement compares the expression (<code>state</code> in this example) to the values listed in each <code>case</code> item.  The corresponding actions are executed if a match is found.  A <code>default</code> case is optional but highly recommended for handling unexpected values.</p>
+<h3 class="heading" id="for-loops">
+  For Loops
+  <a class="anchor" href="#for-loops">#</a>
+</h3>
+<p><code>for</code> loops provide a way to execute a block of code repeatedly.  They are useful for iterating over arrays or performing repetitive operations.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#902000">reg</span> [<span style="color:#40a070">7</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] data [<span style="color:#40a070">0</span><span style="color:#666">:</span><span style="color:#40a070">15</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">always</span> @(<span style="color:#666">*</span>) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">for</span> (i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">16</span>; i <span style="color:#666">=</span> i <span style="color:#666">+</span> <span style="color:#40a070">1</span>) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Process each element of the array
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></div><p>The <code>for</code> loop initializes a counter (<code>i</code>), specifies a condition for termination, and defines an increment step. The code within the loop is executed for each iteration until the condition is no longer true.</p>
+<h3 class="heading" id="functions-and-tasks">
+  Functions and Tasks
+  <a class="anchor" href="#functions-and-tasks">#</a>
+</h3>
+<p>Functions and tasks are reusable blocks of code that can be called from different parts of a design.</p>
+<ul>
+<li>
+<p><strong>Functions:</strong>  Return a value.  They are typically used for performing calculations or data manipulation.</p>
+</li>
+<li>
+<p><strong>Tasks:</strong> Do not return a value. They are typically used for performing actions or procedures.</p>
+</li>
+</ul>
+<p>Both functions and tasks improve code modularity and readability.</p>
+<h3 class="heading" id="parameters-and-define-directives">
+  Parameters and <code>define</code> Directives
+  <a class="anchor" href="#parameters-and-define-directives">#</a>
+</h3>
+<ul>
+<li><strong><code>parameter</code>:</strong> Allows you to define constants within a module.  This enhances readability and makes it easier to modify values later.  Parameters are typically used for things like bus widths or timing parameters.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> my_module #(<span style="color:#007020;font-weight:bold">parameter</span> WIDTH <span style="color:#666">=</span> <span style="color:#40a070">8</span>)(<span style="color:#007020;font-weight:bold">input</span> [WIDTH<span style="color:#666">-</span><span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] data);
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></div><ul>
+<li><strong><code>define</code>:</strong> A preprocessor directive used to define textual macros.  These macros are replaced with their defined text during compilation.  They are mainly for simple textual substitutions, making the code easier to read and maintain.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020">`define CLOCK_PERIOD 10
+</span></span></span></code></pre></div><h2 class="heading" id="advanced-verilog-concepts">
+  Advanced Verilog Concepts
+  <a class="anchor" href="#advanced-verilog-concepts">#</a>
+</h2>
+<h3 class="heading" id="arrays-and-vectors">
+  Arrays and Vectors
+  <a class="anchor" href="#arrays-and-vectors">#</a>
+</h3>
+<p>Verilog supports both arrays and vectors.</p>
+<ul>
+<li>
+<p><strong>Vectors:</strong>  Represent a contiguous range of bits. They are declared using the <code>[msb:lsb]</code> notation, where <code>msb</code> is the most significant bit and <code>lsb</code> is the least significant bit.  For example, <code>reg [7:0] data;</code> declares an 8-bit vector named <code>data</code>.</p>
+</li>
+<li>
+<p><strong>Arrays:</strong>  Represent a collection of elements of the same data type.  They are declared using the <code>[index_range]</code> notation. For example, <code>reg [7:0] data [0:15];</code> declares an array of 16 elements, each being an 8-bit vector.  Multi-dimensional arrays are also supported.</p>
+</li>
+</ul>
+<p>Understanding the difference between vectors and arrays is crucial for efficient data representation and manipulation in Verilog.</p>
+<h3 class="heading" id="memories">
+  Memories
+  <a class="anchor" href="#memories">#</a>
+</h3>
+<p>Memories are implemented using arrays of registers.  They can be used to store and retrieve data.  The declaration syntax is similar to arrays, but the context implies a memory structure.  For example,  <code>reg [7:0] memory [0:1023];</code> declares a memory with 1024 locations, each storing 8 bits of data.  Accessing individual memory locations is done using array indexing.</p>
+<p>Different memory types may be synthesized differently, depending on the target hardware, so it&rsquo;s helpful to understand these implementation differences.</p>
+<h3 class="heading" id="signed-and-unsigned-numbers">
+  Signed and Unsigned Numbers
+  <a class="anchor" href="#signed-and-unsigned-numbers">#</a>
+</h3>
+<p>Verilog supports both signed and unsigned numbers.  The <code>signed</code> keyword indicates a signed number, which can represent both positive and negative values using two&rsquo;s complement representation.  Unsigned numbers only represent non-negative values.  Incorrect handling of signed and unsigned numbers can lead to errors, particularly in arithmetic operations. Pay close attention to the data types of your signals when performing arithmetic to avoid unexpected results.</p>
+<h3 class="heading" id="system-tasks-and-functions">
+  System Tasks and Functions
+  <a class="anchor" href="#system-tasks-and-functions">#</a>
+</h3>
+<p>System tasks and functions are predefined Verilog constructs that provide access to simulation environment features. They are not synthesizable; they only function during simulation.  Examples include:</p>
+<ul>
+<li><strong><code>$display</code>:</strong> Displays text to the console.</li>
+<li><strong><code>$monitor</code>:</strong> Continuously displays the values of specified signals.</li>
+<li><strong><code>$finish</code>:</strong> Terminates the simulation.</li>
+<li><strong><code>$random</code>:</strong> Generates a pseudo-random number.</li>
+<li><strong><code>$readmemb</code>:</strong> Reads data from a file into a memory array.</li>
+<li><strong><code>$readmemh</code>:</strong> Reads hexadecimal data from a file into a memory array.</li>
+</ul>
+<p>These system tasks and functions are invaluable for debugging, monitoring, and controlling the simulation process.</p>
+<h3 class="heading" id="testbenches">
+  Testbenches
+  <a class="anchor" href="#testbenches">#</a>
+</h3>
+<p>Testbenches are essential for verifying the functionality of your Verilog designs. They are separate modules that stimulate the design under test (DUT) with various inputs and check the outputs to ensure they match the expected behavior.  Testbenches typically use system tasks and functions for stimulus generation, output checking, and simulation control.  Well-written testbenches are crucial for ensuring the correctness and reliability of your designs before synthesis and implementation.  Consider using constrained-random verification techniques for more thorough testing, especially with larger designs.  The use of assertions (<code>assert</code>) within the testbench can also greatly enhance verification efficiency by catching failures early in the simulation process.</p>
+<h2 class="heading" id="simulation-and-synthesis">
+  Simulation and Synthesis
+  <a class="anchor" href="#simulation-and-synthesis">#</a>
+</h2>
+<h3 class="heading" id="introduction-to-simulation">
+  Introduction to Simulation
+  <a class="anchor" href="#introduction-to-simulation">#</a>
+</h3>
+<p>Simulation is a crucial step in the Verilog design flow. It allows you to verify the functionality of your design before physically implementing it.  A Verilog simulator executes your code, modeling the behavior of your digital circuit. You provide inputs to your design (through a testbench), and the simulator computes the resulting outputs. You can then compare the simulated outputs to the expected behavior to identify any design flaws.  Simulation is typically performed at multiple levels of abstraction, ranging from behavioral to gate-level.  Early detection of errors through simulation saves significant time and cost compared to discovering problems after physical implementation.</p>
+<h3 class="heading" id="running-simulations-using-modelsim-or-other-simulators">
+  Running Simulations using ModelSim or Other Simulators
+  <a class="anchor" href="#running-simulations-using-modelsim-or-other-simulators">#</a>
+</h3>
+<p>The process of running a Verilog simulation generally involves these steps:</p>
+<ol>
+<li><strong>Design Creation:</strong> Write your Verilog code (design and testbench).</li>
+<li><strong>Compilation:</strong> Compile your Verilog code using the simulator&rsquo;s compiler. This translates the code into an internal representation suitable for simulation.</li>
+<li><strong>Elaboration:</strong> The simulator links together the various modules in your design and testbench.</li>
+<li><strong>Simulation:</strong> The simulator executes the code, simulating the behavior of the design. You can monitor signals, examine waveforms, and compare results against expected behavior.</li>
+<li><strong>Result Analysis:</strong> Examine the simulation results to determine if the design functions correctly.  Tools like ModelSim provide graphical waveform viewers and debugging capabilities.</li>
+</ol>
+<p>Specific commands and procedures vary depending on the simulator (ModelSim, Icarus Verilog, Vivado Simulator, etc.).  Consult your simulator&rsquo;s documentation for detailed instructions.  The general workflow includes compiling your Verilog files, elaborating the design, and then running the simulation using commands provided by the simulator.</p>
+<h3 class="heading" id="synthesis-process">
+  Synthesis Process
+  <a class="anchor" href="#synthesis-process">#</a>
+</h3>
+<p>Synthesis is the process of translating your Verilog code into a netlist, a description of the physical circuit.  A synthesis tool analyzes your code, optimizing it based on constraints like timing and area, and then generates a netlist that can be used for implementation on an FPGA or ASIC.  The synthesis process includes several steps:</p>
+<ol>
+<li><strong>Code Analysis:</strong> The synthesis tool analyzes your Verilog code to determine the functionality.</li>
+<li><strong>Optimization:</strong> The tool optimizes the code to meet timing and area requirements while maintaining functionality. This can involve various techniques such as logic optimization, gate sizing, and pipelining.</li>
+<li><strong>Netlist Generation:</strong> A netlist is generated, representing the connections between logic elements.  This netlist is often in a standard format such as EDIF or Verilog netlist.</li>
+<li><strong>Reporting:</strong> The synthesis tool provides reports showing timing analysis, resource usage, and other relevant information.</li>
+</ol>
+<h3 class="heading" id="synthesis-tools">
+  Synthesis Tools
+  <a class="anchor" href="#synthesis-tools">#</a>
+</h3>
+<p>Several synthesis tools are available, each with its own features and capabilities.  Popular options include:</p>
+<ul>
+<li><strong>Synopsys Design Compiler:</strong> A widely used synthesis tool for ASIC designs.</li>
+<li><strong>Xilinx Vivado Synthesis:</strong>  A synthesis tool integrated into the Xilinx Vivado design suite for FPGA designs.</li>
+<li><strong>Intel Quartus Prime Synthesis:</strong> A synthesis tool integrated into the Intel Quartus Prime design suite for Altera FPGAs.</li>
+</ul>
+<p>The choice of synthesis tool often depends on the target technology (FPGA or ASIC) and specific project requirements.  Each tool has its own set of commands, options, and constraints that need to be configured appropriately.  Properly constraining the synthesis process is crucial for achieving optimal results regarding timing, area, and power consumption.</p>
+<h2 class="heading" id="example-projects">
+  Example Projects
+  <a class="anchor" href="#example-projects">#</a>
+</h2>
+<p>These examples demonstrate the application of Verilog concepts to create functional digital circuits.  Remember to write appropriate testbenches to verify the correct operation of each design.</p>
+<h3 class="heading" id="simple-adder">
+  Simple Adder
+  <a class="anchor" href="#simple-adder">#</a>
+</h3>
+<p>This example shows a simple 8-bit adder:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> adder_8bit (<span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">7</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] a, <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">7</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] b, <span style="color:#007020;font-weight:bold">output</span> [<span style="color:#40a070">7</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] sum, <span style="color:#007020;font-weight:bold">output</span> carry);
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">assign</span> {carry, sum} <span style="color:#666">=</span> a <span style="color:#666">+</span> b;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></div><p>This module takes two 8-bit inputs (<code>a</code> and <code>b</code>), calculates their sum, and outputs the 8-bit sum and a carry bit.  The <code>assign</code> statement uses concatenation (<code>{}</code>) to assign both the sum and carry simultaneously.  A testbench would provide various input values for <code>a</code> and <code>b</code> and check if the <code>sum</code> and <code>carry</code> outputs are correct.</p>
+<h3 class="heading" id="4-bit-counter">
+  4-bit Counter
+  <a class="anchor" href="#4-bit-counter">#</a>
+</h3>
+<p>This example shows a simple 4-bit synchronous counter using D flip-flops:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> counter_4bit (<span style="color:#007020;font-weight:bold">input</span> clk, <span style="color:#007020;font-weight:bold">input</span> rst, <span style="color:#007020;font-weight:bold">output</span> <span style="color:#902000">reg</span> [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] count);
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">always</span> @(<span style="color:#007020;font-weight:bold">posedge</span> clk) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (rst) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      count <span style="color:#666">&lt;=</span> <span style="color:#40a070">4</span><span style="color:#40a070">&#39;b0000</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      count <span style="color:#666">&lt;=</span> count <span style="color:#666">+</span> <span style="color:#40a070">1</span><span style="color:#40a070">&#39;b1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></div><p>This module uses a single <code>always</code> block for sequential logic triggered by the positive edge of the <code>clk</code> signal.  The <code>rst</code> input resets the counter to 0.  The <code>count</code> output is a 4-bit register that increments on each clock cycle.  A testbench would apply clock pulses and reset signals, checking that <code>count</code> increments correctly and resets when <code>rst</code> is asserted.</p>
+<h3 class="heading" id="finite-state-machine-fsm">
+  Finite State Machine (FSM)
+  <a class="anchor" href="#finite-state-machine-fsm">#</a>
+</h3>
+<p>This example shows a simple FSM that controls a traffic light:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> traffic_light (<span style="color:#007020;font-weight:bold">input</span> clk, <span style="color:#007020;font-weight:bold">input</span> rst, <span style="color:#007020;font-weight:bold">output</span> <span style="color:#902000">reg</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] red, <span style="color:#007020;font-weight:bold">output</span> <span style="color:#902000">reg</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] yellow, <span style="color:#007020;font-weight:bold">output</span> <span style="color:#902000">reg</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] green);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">localparam</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] STATE_RED <span style="color:#666">=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b00</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">localparam</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] STATE_YELLOW <span style="color:#666">=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b01</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">localparam</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] STATE_GREEN <span style="color:#666">=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">reg</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] current_state;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">always</span> @(<span style="color:#007020;font-weight:bold">posedge</span> clk) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (rst) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      current_state <span style="color:#666">&lt;=</span> STATE_RED;
+</span></span><span style="display:flex;"><span>      red <span style="color:#666">&lt;=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b11</span>; yellow <span style="color:#666">&lt;=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b00</span>; green <span style="color:#666">&lt;=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b00</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">case</span> (current_state)
+</span></span><span style="display:flex;"><span>        <span style="color:#002070;font-weight:bold">STATE_RED:</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>          red <span style="color:#666">&lt;=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b11</span>; yellow <span style="color:#666">&lt;=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b00</span>; green <span style="color:#666">&lt;=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b00</span>;
+</span></span><span style="display:flex;"><span>          current_state <span style="color:#666">&lt;=</span> STATE_GREEN;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#002070;font-weight:bold">STATE_YELLOW:</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>          red <span style="color:#666">&lt;=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b00</span>; yellow <span style="color:#666">&lt;=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b11</span>; green <span style="color:#666">&lt;=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b00</span>;
+</span></span><span style="display:flex;"><span>          current_state <span style="color:#666">&lt;=</span> STATE_RED;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#002070;font-weight:bold">STATE_GREEN:</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>          red <span style="color:#666">&lt;=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b00</span>; yellow <span style="color:#666">&lt;=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b00</span>; green <span style="color:#666">&lt;=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b11</span>;
+</span></span><span style="display:flex;"><span>          current_state <span style="color:#666">&lt;=</span> STATE_YELLOW;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">endcase</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></div><p>This FSM uses a <code>case</code> statement to define the behavior in each state.  Local parameters define the states (<code>STATE_RED</code>, <code>STATE_YELLOW</code>, <code>STATE_GREEN</code>). The <code>always</code> block updates the state and the traffic light outputs based on the current state.  A testbench would simulate the clock and reset signals, verifying the correct sequence of traffic light operation.  More sophisticated FSMs could include additional states and more complex transitions. Remember to add delays to simulate realistic timing behavior for a traffic light.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-zig/">
+                        Beginner&#39;s Guide to Zig
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-elm/">
+                        Beginner&#39;s Guide to Elm
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

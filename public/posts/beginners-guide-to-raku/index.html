@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Raku | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-raku/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-raku/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Raku">
+  <meta property="og:description" content="Introduction to Raku # What is Raku? # Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive programming language designed for both beginners and experienced programmers. It’s built on the principles of elegance, readability, and concurrency, offering a modern approach to software development. Raku incorporates many features found in other modern languages while maintaining a unique and powerful paradigm of its own. It prioritizes developer happiness and productivity through features like sophisticated metaprogramming capabilities, built-in concurrency support, and a rich standard library. The language is designed to be easy to learn, yet capable of handling complex tasks with grace.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-16T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-raku/">Beginner&#39;s Guide to Raku</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Raku</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-01-16T00:00:00&#43;00:00">January 16, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      15 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-raku">Introduction to Raku</a>
+      <ul>
+        <li><a href="#what-is-raku">What is Raku?</a></li>
+        <li><a href="#why-learn-raku">Why learn Raku?</a></li>
+        <li><a href="#setting-up-your-raku-environment">Setting up your Raku environment</a></li>
+        <li><a href="#running-your-first-raku-program">Running your first Raku program</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#variables-and-constants">Variables and Constants</a></li>
+        <li><a href="#data-types-scalars-lists-hashes">Data Types (Scalars, Lists, Hashes)</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#control-flow-ifelse-loops">Control Flow (if/else, loops)</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-data">Working with Data</a>
+      <ul>
+        <li><a href="#input-and-output">Input and Output</a></li>
+        <li><a href="#working-with-strings">Working with Strings</a></li>
+        <li><a href="#working-with-numbers">Working with Numbers</a></li>
+        <li><a href="#data-structures-arrays-hashes">Data Structures (Arrays, Hashes)</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions-and-subroutines">Functions and Subroutines</a>
+      <ul>
+        <li><a href="#defining-functions">Defining Functions</a></li>
+        <li><a href="#function-parameters">Function Parameters</a></li>
+        <li><a href="#return-values">Return Values</a></li>
+        <li><a href="#anonymous-functions">Anonymous Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#object-oriented-programming-in-raku">Object-Oriented Programming in Raku</a>
+      <ul>
+        <li><a href="#classes-and-objects">Classes and Objects</a></li>
+        <li><a href="#methods">Methods</a></li>
+        <li><a href="#inheritance">Inheritance</a></li>
+        <li><a href="#polymorphism">Polymorphism</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics">Advanced Topics</a>
+      <ul>
+        <li><a href="#exception-handling">Exception Handling</a></li>
+        <li><a href="#modules-and-packages">Modules and Packages</a></li>
+        <li><a href="#concurrency-and-parallelism">Concurrency and Parallelism</a></li>
+        <li><a href="#metaprogramming">Metaprogramming</a></li>
+      </ul>
+    </li>
+    <li><a href="#next-steps">Next Steps</a>
+      <ul>
+        <li><a href="#where-to-learn-more">Where to learn more</a></li>
+        <li><a href="#community-resources">Community Resources</a></li>
+        <li><a href="#contributing-to-raku">Contributing to Raku</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-raku">
+  Introduction to Raku
+  <a class="anchor" href="#introduction-to-raku">#</a>
+</h2>
+<h3 class="heading" id="what-is-raku">
+  What is Raku?
+  <a class="anchor" href="#what-is-raku">#</a>
+</h3>
+<p>Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive programming language designed for both beginners and experienced programmers. It&rsquo;s built on the principles of elegance, readability, and concurrency, offering a modern approach to software development.  Raku incorporates many features found in other modern languages while maintaining a unique and powerful paradigm of its own.  It prioritizes developer happiness and productivity through features like sophisticated metaprogramming capabilities, built-in concurrency support, and a rich standard library.  The language is designed to be easy to learn, yet capable of handling complex tasks with grace.</p>
+<h3 class="heading" id="why-learn-raku">
+  Why learn Raku?
+  <a class="anchor" href="#why-learn-raku">#</a>
+</h3>
+<p>Learning Raku offers several compelling advantages:</p>
+<ul>
+<li>
+<p><strong>Readability and Maintainability:</strong> Raku&rsquo;s syntax is designed for clarity and ease of understanding. This reduces development time and makes it easier to maintain and collaborate on projects.</p>
+</li>
+<li>
+<p><strong>Modern Features:</strong> Raku boasts modern features such as built-in concurrency, powerful regular expressions, advanced type systems (for increased safety and code clarity), and a rich standard library that simplifies many common tasks.</p>
+</li>
+<li>
+<p><strong>Expressiveness and Conciseness:</strong>  You can often accomplish complex tasks with less code in Raku compared to other languages. This leads to increased productivity and reduced development time.</p>
+</li>
+<li>
+<p><strong>Strong Community:</strong>  While smaller than some other languages, the Raku community is known for being welcoming and helpful, offering support and resources to learners.</p>
+</li>
+<li>
+<p><strong>Growing Ecosystem:</strong>  The Raku ecosystem is continuously growing, with new modules and libraries constantly being developed.</p>
+</li>
+</ul>
+<h3 class="heading" id="setting-up-your-raku-environment">
+  Setting up your Raku environment
+  <a class="anchor" href="#setting-up-your-raku-environment">#</a>
+</h3>
+<p>The easiest way to get started with Raku is using the official installer for your operating system.  You can find the latest installers and instructions at the official Raku website (<a href="https://raku.org/">https://raku.org/</a>).  The installation process usually involves downloading an installer and following the on-screen instructions.  This will typically add Raku to your system&rsquo;s PATH, allowing you to run Raku commands from your terminal or command prompt.</p>
+<p>Alternatively, some package managers (like <code>apt</code> on Debian/Ubuntu, <code>brew</code> on macOS, or <code>choco</code> on Windows) may offer Raku packages.  Consult your package manager&rsquo;s documentation for specific instructions.</p>
+<h3 class="heading" id="running-your-first-raku-program">
+  Running your first Raku program
+  <a class="anchor" href="#running-your-first-raku-program">#</a>
+</h3>
+<p>The simplest Raku program is a &ldquo;Hello, world!&rdquo; program.  Create a file named <code>hello.raku</code> (or any name ending in <code>.raku</code>) containing the following line:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello, world!</span>&#34;;
+</span></span></code></pre></div><p>To run this program, open your terminal or command prompt, navigate to the directory where you saved the file, and type:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>raku hello.raku
+</span></span></code></pre></div><p>Press Enter.  You should see &ldquo;Hello, world!&rdquo; printed on the console.  This simple example demonstrates the basic syntax of Raku—using the <code>say</code> function to output text to the console.  Congratulations, you&rsquo;ve run your first Raku program!</p>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="variables-and-constants">
+  Variables and Constants
+  <a class="anchor" href="#variables-and-constants">#</a>
+</h3>
+<p>Raku uses a sigil system to distinguish variable types.  Variables are declared implicitly by assigning a value to them.  The sigil indicates the variable&rsquo;s type and scope.</p>
+<ul>
+<li><code>$</code> (dollar sign):  Scalar variable.  Holds a single value (e.g., number, string).</li>
+<li><code>@</code> (at sign): Array variable. Holds an ordered list of values.</li>
+<li><code>%</code> (percent sign): Hash variable. Holds a collection of key-value pairs.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> &#34;<span style="color:#4070a0">Alice</span>&#34;;  <span style="color:#60a0b0;font-style:italic"># Scalar variable</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@numbers</span> <span style="color:#666">=</span> <span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span>; <span style="color:#60a0b0;font-style:italic"># Array variable</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">%details</span> <span style="color:#666">=</span> <span style="color:#4070a0">name</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">Bob</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">age</span> <span style="color:#666">=&gt;</span> <span style="color:#40a070">30</span>; <span style="color:#60a0b0;font-style:italic"># Hash variable</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$name</span>;  <span style="color:#60a0b0;font-style:italic"># Outputs: Alice</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">@numbers</span>; <span style="color:#60a0b0;font-style:italic"># Outputs: (1 2 3)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">%details</span>; <span style="color:#60a0b0;font-style:italic"># Outputs: name =&gt; &#34;Bob&#34;, age =&gt; 30</span>
+</span></span></code></pre></div><p>Constants are declared using the <code>constant</code> keyword.  Their values cannot be changed after declaration.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">constant</span> <span style="color:#bb60d5">$PI</span> <span style="color:#666">=</span> <span style="color:#40a070">3.14159</span>;
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># $PI = 3.14;  # This would result in a compile-time error</span>
+</span></span></code></pre></div><p>The <code>my</code> keyword declares lexical variables, which are scoped to the block of code in which they are defined.  Variables declared without <code>my</code> (though generally discouraged) are package variables, having broader scope.</p>
+<h3 class="heading" id="data-types-scalars-lists-hashes">
+  Data Types (Scalars, Lists, Hashes)
+  <a class="anchor" href="#data-types-scalars-lists-hashes">#</a>
+</h3>
+<p>Raku&rsquo;s fundamental data types include:</p>
+<ul>
+<li>
+<p><strong>Scalars:</strong>  Represent single values.  They can be of various types, including:</p>
+<ul>
+<li><strong>Integers:</strong> Whole numbers (e.g., 10, -5, 0).</li>
+<li><strong>Numbers:</strong> Floating-point numbers (e.g., 3.14, -2.5).</li>
+<li><strong>Strings:</strong> Sequences of characters (e.g., &ldquo;Hello&rdquo;, &lsquo;Raku&rsquo;).</li>
+<li><strong>Booleans:</strong> <code>True</code> or <code>False</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Lists:</strong> Ordered collections of values.  They are created using commas <code>,</code> or the <code>[...]</code> syntax.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@list</span> <span style="color:#666">=</span> <span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> &#34;<span style="color:#4070a0">four</span>&#34;; <span style="color:#60a0b0;font-style:italic"># List of mixed types</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@anotherList</span> <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#40a070">5</span><span style="color:#666">,</span> <span style="color:#40a070">6</span><span style="color:#666">,</span> <span style="color:#40a070">7</span><span style="color:#666">]</span>; <span style="color:#60a0b0;font-style:italic"># Another way to define a list</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Hashes:</strong> Unordered collections of key-value pairs. Keys are typically strings, but can be other data types as well.  They are created using <code>=&gt;</code> or the <code>{ }</code> syntax.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">%hash</span> <span style="color:#666">=</span> <span style="color:#4070a0">name</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">Charlie</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">age</span> <span style="color:#666">=&gt;</span> <span style="color:#40a070">25</span>; <span style="color:#60a0b0;font-style:italic"># Using =&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">%anotherHash</span> <span style="color:#666">=</span> { <span style="color:#4070a0">city</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">New York</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">country</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">USA</span>&#34; }; <span style="color:#60a0b0;font-style:italic"># Using curly braces</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>Raku supports a wide range of operators, including:</p>
+<ul>
+<li><strong>Arithmetic Operators:</strong>  <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo), <code>**</code> (exponentiation).</li>
+<li><strong>Comparison Operators:</strong> <code>==</code> (equal to), <code>!=</code> (not equal to), <code>&gt;</code> (greater than), <code>&lt;</code> (less than), <code>&gt;=</code> (greater than or equal to), <code>&lt;=</code> (less than or equal to).</li>
+<li><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (and), <code>||</code> (or), <code>!</code> (not).</li>
+<li><strong>String Operators:</strong> <code>.join</code> (concatenates strings), <code>~~</code> (smartmatch operator).</li>
+<li><strong>Assignment Operators:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, etc.</li>
+</ul>
+<h3 class="heading" id="control-flow-ifelse-loops">
+  Control Flow (if/else, loops)
+  <a class="anchor" href="#control-flow-ifelse-loops">#</a>
+</h3>
+<ul>
+<li><strong><code>if</code>/<code>elsif</code>/<code>else</code> statements:</strong>  Used for conditional execution.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">5</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">x is greater than 5</span>&#34;;
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">elsif</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">==</span> <span style="color:#40a070">5</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">x is equal to 5</span>&#34;;
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">x is less than 5</span>&#34;;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong><code>for</code> loop:</strong> Iterates over a list or range.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#40a070">1</span><span style="color:#666">..</span><span style="color:#40a070">5</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#bb60d5">$i</span> { <span style="color:#60a0b0;font-style:italic"># Iterates from 1 to 5</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> <span style="color:#bb60d5">$i</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#bb60d5">@numbers</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#bb60d5">$num</span> { <span style="color:#60a0b0;font-style:italic"># Iterates over the array @numbers</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> <span style="color:#bb60d5">$num</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong><code>while</code> loop:</strong> Repeats a block of code as long as a condition is true.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$count</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#bb60d5">$count</span> <span style="color:#666">&lt;</span> <span style="color:#40a070">3</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> <span style="color:#bb60d5">$count</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">$count</span><span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><strong><code>loop</code> loop:</strong>  A general-purpose loop that continues indefinitely until explicitly stopped using <code>last</code>, <code>break</code>, or a condition within.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">loop</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Looping...</span>&#34;;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">last</span> <span style="color:#007020;font-weight:bold">if</span> <span style="color:#bb60d5">$count</span> <span style="color:#666">&gt;=</span> <span style="color:#40a070">5</span>; <span style="color:#60a0b0;font-style:italic"># Exit the loop if count is 5 or more.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">$count</span><span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>These are the fundamental building blocks for creating more complex Raku programs.  Remember to consult the official Raku documentation for more in-depth explanations and advanced features.</p>
+<h2 class="heading" id="working-with-data">
+  Working with Data
+  <a class="anchor" href="#working-with-data">#</a>
+</h2>
+<h3 class="heading" id="input-and-output">
+  Input and Output
+  <a class="anchor" href="#input-and-output">#</a>
+</h3>
+<p>Raku provides several ways to handle input and output:</p>
+<p><strong>Output:</strong> The simplest way to output data is using the <code>say</code> function, which automatically adds a newline character at the end:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello, world!</span>&#34;;
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#40a070">1</span> <span style="color:#666">+</span> <span style="color:#40a070">2</span>;  <span style="color:#60a0b0;font-style:italic"># Outputs 3</span>
+</span></span></code></pre></div><p>For more fine-grained control, use <code>print</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020">print</span> &#34;<span style="color:#4070a0">This is a line. </span>&#34;;
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span> &#34;<span style="color:#4070a0">This is on the same line.</span><span style="color:#4070a0;font-weight:bold">\n</span>&#34;; <span style="color:#60a0b0;font-style:italic"># \n adds a newline explicitly.</span>
+</span></span></code></pre></div><p><strong>Input:</strong>  The <code>prompt</code> function is used to get input from the user:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> <span style="color:#007020">prompt</span> &#34;<span style="color:#4070a0">What is your name? </span>&#34;;
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello, </span><span style="color:#bb60d5">$name</span><span style="color:#4070a0">!</span>&#34;;
+</span></span></code></pre></div><p>For reading from a file, use the <code>slurp</code> function (for reading entire file content into a string) or the <code>IO::Handle</code> class for more complex file operations:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$file-content</span> <span style="color:#666">=</span> <span style="color:#007020">slurp</span>(&#34;<span style="color:#4070a0">my-file.txt</span>&#34;);
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$file-content</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$fh</span> <span style="color:#666">=</span> <span style="color:#007020">open</span>(&#34;<span style="color:#4070a0">my-file.txt</span>&#34;<span style="color:#666">,</span> :<span style="color:#4070a0">r</span>); <span style="color:#60a0b0;font-style:italic">#open file for reading</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#bb60d5">$fh</span><span style="color:#666">.</span><span style="color:#06287e">more</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$line</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$fh</span><span style="color:#666">.</span><span style="color:#007020">get</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> <span style="color:#bb60d5">$line</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$fh</span><span style="color:#666">.</span><span style="color:#007020">close</span>;
+</span></span></code></pre></div><p>Remember to handle potential errors when working with files (e.g., file not found).</p>
+<h3 class="heading" id="working-with-strings">
+  Working with Strings
+  <a class="anchor" href="#working-with-strings">#</a>
+</h3>
+<p>Raku provides extensive support for string manipulation.  Strings are enclosed in double quotes (<code>&quot;</code>) or single quotes (<code>'</code>).  Double-quoted strings allow for interpolation (embedding variables within the string):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> &#34;<span style="color:#4070a0">Alice</span>&#34;;
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello, </span><span style="color:#bb60d5">$name</span><span style="color:#4070a0">!</span>&#34;;  <span style="color:#60a0b0;font-style:italic"># Interpolation; outputs &#34;Hello, Alice!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> &#39;<span style="color:#4070a0">Hello, $name!</span>&#39;;  <span style="color:#60a0b0;font-style:italic"># No interpolation; outputs &#34;Hello, $name!&#34;</span>
+</span></span></code></pre></div><p>String methods include:</p>
+<ul>
+<li><code>.uc</code> (uppercase), <code>.lc</code> (lowercase), <code>.title</code> (title case)</li>
+<li><code>.contains</code> (checks if a substring exists)</li>
+<li><code>.substr</code> (extracts a substring)</li>
+<li><code>.index</code> (finds the index of a substring)</li>
+<li><code>.chop</code> (removes the last character)</li>
+</ul>
+<h3 class="heading" id="working-with-numbers">
+  Working with Numbers
+  <a class="anchor" href="#working-with-numbers">#</a>
+</h3>
+<p>Raku handles integers and floating-point numbers seamlessly.  Basic arithmetic operations are straightforward:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$a</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$b</span> <span style="color:#666">=</span> <span style="color:#40a070">3</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$a</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$b</span>;  <span style="color:#60a0b0;font-style:italic"># Addition</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$a</span> <span style="color:#666">-</span> <span style="color:#bb60d5">$b</span>;  <span style="color:#60a0b0;font-style:italic"># Subtraction</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$a</span> <span style="color:#666">*</span> <span style="color:#bb60d5">$b</span>;  <span style="color:#60a0b0;font-style:italic"># Multiplication</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$a</span> <span style="color:#666">/</span> <span style="color:#bb60d5">$b</span>;  <span style="color:#60a0b0;font-style:italic"># Division (floating-point result)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$a</span> <span style="color:#bb60d5">%</span> <span style="color:#bb60d5">$b</span>;  <span style="color:#60a0b0;font-style:italic"># Modulo (remainder)</span>
+</span></span></code></pre></div><p>Raku also provides numerous math functions via the <code>Math</code> module:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Math</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#007020">sqrt</span>(<span style="color:#40a070">25</span>); <span style="color:#60a0b0;font-style:italic"># Square root</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#007020">sin</span>(<span style="color:#60add5">π</span><span style="color:#666">/</span><span style="color:#40a070">2</span>); <span style="color:#60a0b0;font-style:italic"># Sine function (requires importing π)</span>
+</span></span></code></pre></div><h3 class="heading" id="data-structures-arrays-hashes">
+  Data Structures (Arrays, Hashes)
+  <a class="anchor" href="#data-structures-arrays-hashes">#</a>
+</h3>
+<p><strong>Arrays:</strong>  Ordered collections of elements.  Access elements using their index (starting from 0):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@array</span> <span style="color:#666">=</span> &lt;<span style="color:#4070a0">apple banana cherry</span>&gt;;
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">@array</span><span style="color:#666">[</span><span style="color:#40a070">0</span><span style="color:#666">]</span>; <span style="color:#60a0b0;font-style:italic"># Outputs: apple</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">@array</span><span style="color:#666">.</span><span style="color:#007020">elems</span>; <span style="color:#60a0b0;font-style:italic">#Number of elements in the array</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">@array</span><span style="color:#666">.</span><span style="color:#007020">push</span>(&#34;<span style="color:#4070a0">date</span>&#34;); <span style="color:#60a0b0;font-style:italic"># Add an element to the end</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">@array</span>;
+</span></span></code></pre></div><p><strong>Hashes:</strong> Collections of key-value pairs. Access values using their keys:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">%hash</span> <span style="color:#666">=</span> <span style="color:#4070a0">fruit</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">apple</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">color</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">red</span>&#34;;
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">%hash</span>&lt;<span style="color:#4070a0">fruit</span>&gt;;  <span style="color:#60a0b0;font-style:italic"># Outputs: apple</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">%hash</span><span style="color:#666">.</span><span style="color:#007020">keys</span>; <span style="color:#60a0b0;font-style:italic">#Outputs keys as a list</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">%hash</span><span style="color:#666">.</span><span style="color:#007020">values</span>; <span style="color:#60a0b0;font-style:italic">#Outputs values as a list</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">%hash</span>&lt;<span style="color:#4070a0">size</span>&gt; <span style="color:#666">=</span> &#34;<span style="color:#4070a0">medium</span>&#34;; <span style="color:#60a0b0;font-style:italic"># Add a new key-value pair</span>
+</span></span></code></pre></div><p>Arrays and hashes can contain elements of different data types.  Raku provides many built-in methods for manipulating arrays and hashes (e.g., sorting, searching, filtering).  Refer to the Raku documentation for a complete list.</p>
+<h2 class="heading" id="functions-and-subroutines">
+  Functions and Subroutines
+  <a class="anchor" href="#functions-and-subroutines">#</a>
+</h2>
+<h3 class="heading" id="defining-functions">
+  Defining Functions
+  <a class="anchor" href="#defining-functions">#</a>
+</h3>
+<p>In Raku, functions (and subroutines; the terms are often used interchangeably) are defined using the <code>sub</code> keyword followed by the function name, parameters in parentheses, and the code block enclosed in curly braces <code>{}</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#06287e">greet</span>(<span style="color:#902000">Str</span> <span style="color:#bb60d5">$name</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello, </span><span style="color:#bb60d5">$name</span><span style="color:#4070a0">!</span>&#34;;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">greet</span>(&#34;<span style="color:#4070a0">Alice</span>&#34;);  <span style="color:#60a0b0;font-style:italic"># Calls the greet function</span>
+</span></span></code></pre></div><p>This defines a function named <code>greet</code> that takes a single string parameter <code>$name</code> and prints a greeting.  The <code>Str</code> indicates that the parameter <code>$name</code> should be a string.</p>
+<h3 class="heading" id="function-parameters">
+  Function Parameters
+  <a class="anchor" href="#function-parameters">#</a>
+</h3>
+<p>Functions can accept multiple parameters, and you can specify parameter types for better type safety and code clarity.  Parameters can have default values:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#007020">add</span>(<span style="color:#902000">Int</span> <span style="color:#bb60d5">$a</span><span style="color:#666">,</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$b</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span>) { <span style="color:#60a0b0;font-style:italic"># $b has a default value of 0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#bb60d5">$a</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$b</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#007020">add</span>(<span style="color:#40a070">5</span><span style="color:#666">,</span> <span style="color:#40a070">3</span>);   <span style="color:#60a0b0;font-style:italic"># Outputs 8</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#007020">add</span>(<span style="color:#40a070">10</span>);    <span style="color:#60a0b0;font-style:italic"># Outputs 10 (uses default value for $b)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#06287e">describe</span>(<span style="color:#902000">Str</span> <span style="color:#bb60d5">$name</span><span style="color:#666">,</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$age</span><span style="color:#666">,</span> <span style="color:#902000">Str</span> <span style="color:#bb60d5">$city</span> <span style="color:#007020;font-weight:bold">is</span> <span style="color:#007020">optional</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> &#34;<span style="color:#bb60d5">$name</span><span style="color:#4070a0"> is </span><span style="color:#bb60d5">$age</span><span style="color:#4070a0"> years old</span>&#34;;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#bb60d5">$city</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">and lives in </span><span style="color:#bb60d5">$city</span>&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">describe</span>(&#34;<span style="color:#4070a0">Bob</span>&#34;<span style="color:#666">,</span> <span style="color:#40a070">30</span><span style="color:#666">,</span> &#34;<span style="color:#4070a0">New York</span>&#34;);
+</span></span><span style="display:flex;"><span><span style="color:#06287e">describe</span>(&#34;<span style="color:#4070a0">Alice</span>&#34;<span style="color:#666">,</span> <span style="color:#40a070">25</span>); <span style="color:#60a0b0;font-style:italic"># city is optional.</span>
+</span></span></code></pre></div><p>The <code>is optional</code> trait makes the <code>$city</code> parameter optional.  If not provided, it is treated as <code>Nil</code>.</p>
+<h3 class="heading" id="return-values">
+  Return Values
+  <a class="anchor" href="#return-values">#</a>
+</h3>
+<p>Functions return values using the <code>return</code> keyword or implicitly by the last statement evaluated.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#06287e">square</span>(<span style="color:#902000">Numeric</span> <span style="color:#bb60d5">$x</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">*</span> <span style="color:#bb60d5">$x</span>; <span style="color:#60a0b0;font-style:italic"># Explicit return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#06287e">cube</span>(<span style="color:#902000">Numeric</span> <span style="color:#bb60d5">$x</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">$x</span> <span style="color:#666">*</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">*</span> <span style="color:#bb60d5">$x</span> <span style="color:#60a0b0;font-style:italic"># Implicit return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#06287e">square</span>(<span style="color:#40a070">5</span>);   <span style="color:#60a0b0;font-style:italic"># Outputs 25</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#06287e">cube</span>(<span style="color:#40a070">2</span>);    <span style="color:#60a0b0;font-style:italic">#Outputs 8</span>
+</span></span></code></pre></div><h3 class="heading" id="anonymous-functions">
+  Anonymous Functions
+  <a class="anchor" href="#anonymous-functions">#</a>
+</h3>
+<p>Anonymous functions (also called closures or lambdas) are functions without a name. They are defined using the <code>-&gt;</code> operator:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$add</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$a</span><span style="color:#666">,</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$b</span> { <span style="color:#bb60d5">$a</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$b</span> };  <span style="color:#60a0b0;font-style:italic"># Anonymous function assigned to $add</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$add</span>(<span style="color:#40a070">7</span><span style="color:#666">,</span> <span style="color:#40a070">2</span>);  <span style="color:#60a0b0;font-style:italic"># Outputs 9</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@numbers</span> <span style="color:#666">=</span> <span style="color:#40a070">1</span><span style="color:#666">..</span><span style="color:#40a070">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@squares</span> <span style="color:#666">=</span> <span style="color:#bb60d5">@numbers</span><span style="color:#666">.</span><span style="color:#007020">map</span>( <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$n</span> { <span style="color:#bb60d5">$n</span> <span style="color:#666">*</span> <span style="color:#bb60d5">$n</span> }); <span style="color:#60a0b0;font-style:italic"># Using an anonymous function with map</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">@squares</span>; <span style="color:#60a0b0;font-style:italic"># Outputs (1 4 9 16 25)</span>
+</span></span></code></pre></div><p>Anonymous functions are particularly useful when you need a short, simple function that is only used once, like within the <code>map</code> method above.  They improve code readability and reduce the need for defining many small named functions.</p>
+<h2 class="heading" id="object-oriented-programming-in-raku">
+  Object-Oriented Programming in Raku
+  <a class="anchor" href="#object-oriented-programming-in-raku">#</a>
+</h2>
+<h3 class="heading" id="classes-and-objects">
+  Classes and Objects
+  <a class="anchor" href="#classes-and-objects">#</a>
+</h3>
+<p>Raku supports object-oriented programming (OOP) through classes and objects.  A class is a blueprint for creating objects.  Objects are instances of a class.  Classes are defined using the <code>class</code> keyword:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">has</span> <span style="color:#902000">Str</span> <span style="color:#bb60d5">$.name</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">has</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$.age</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">method</span> <span style="color:#06287e">greet</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Woof! My name is </span>{<span style="color:#bb60d5">$.name</span>}<span style="color:#4070a0">.</span>&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$dog1</span> <span style="color:#666">=</span> Dog<span style="color:#666">.</span><span style="color:#007020">new</span>(<span style="color:#4070a0">name</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">Buddy</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">age</span> <span style="color:#666">=&gt;</span> <span style="color:#40a070">3</span>);
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$dog1</span><span style="color:#666">.</span><span style="color:#06287e">greet</span>();  <span style="color:#60a0b0;font-style:italic"># Outputs: Woof! My name is Buddy.</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$dog1</span><span style="color:#666">.</span><span style="color:#007020">name</span>; <span style="color:#60a0b0;font-style:italic">#Outputs: Buddy</span>
+</span></span></code></pre></div><p>This defines a <code>Dog</code> class with attributes (instance variables) <code>name</code> and <code>age</code>.  The <code>.new</code> method is used to create new objects (instances) of the class, and it initializes the object&rsquo;s attributes using named parameters.  The <code>has</code> keyword declares instance variables, automatically creating accessors (getters and setters).</p>
+<h3 class="heading" id="methods">
+  Methods
+  <a class="anchor" href="#methods">#</a>
+</h3>
+<p>Methods are functions defined within a class. They operate on the object&rsquo;s data:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">has</span> <span style="color:#902000">Str</span> <span style="color:#bb60d5">$.name</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">has</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$.age</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">method</span> <span style="color:#06287e">meow</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Meow!</span>&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">method</span> <span style="color:#06287e">describe</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">My name is </span>{<span style="color:#bb60d5">$.name</span>}<span style="color:#4070a0">, and I am </span>{<span style="color:#bb60d5">$.age</span>}<span style="color:#4070a0"> years old.</span>&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$cat1</span> <span style="color:#666">=</span> Cat<span style="color:#666">.</span><span style="color:#007020">new</span>(<span style="color:#4070a0">name</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">Whiskers</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">age</span> <span style="color:#666">=&gt;</span> <span style="color:#40a070">5</span>);
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$cat1</span><span style="color:#666">.</span><span style="color:#06287e">meow</span>();       <span style="color:#60a0b0;font-style:italic"># Outputs: Meow!</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$cat1</span><span style="color:#666">.</span><span style="color:#06287e">describe</span>();   <span style="color:#60a0b0;font-style:italic"># Outputs: My name is Whiskers, and I am 5 years old.</span>
+</span></span></code></pre></div><p>Methods access the object&rsquo;s attributes using the <code>$</code> sigil followed by the attribute name.</p>
+<h3 class="heading" id="inheritance">
+  Inheritance
+  <a class="anchor" href="#inheritance">#</a>
+</h3>
+<p>Inheritance allows you to create new classes based on existing classes.  The new class inherits the attributes and methods of the parent class:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">has</span> <span style="color:#902000">Str</span> <span style="color:#bb60d5">$.name</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">has</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$.age</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">method</span> <span style="color:#06287e">speak</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Generic animal sound</span>&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> <span style="color:#007020;font-weight:bold">is</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> {  <span style="color:#60a0b0;font-style:italic"># Dog inherits from Animal</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">method</span> <span style="color:#06287e">speak</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Woof!</span>&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$animal</span> <span style="color:#666">=</span> Animal<span style="color:#666">.</span><span style="color:#007020">new</span>(<span style="color:#4070a0">name</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">Generic</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">age</span> <span style="color:#666">=&gt;</span> <span style="color:#40a070">1</span>);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$dog</span> <span style="color:#666">=</span> Dog<span style="color:#666">.</span><span style="color:#007020">new</span>(<span style="color:#4070a0">name</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">Fido</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">age</span> <span style="color:#666">=&gt;</span> <span style="color:#40a070">2</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$animal</span><span style="color:#666">.</span><span style="color:#06287e">speak</span>(); <span style="color:#60a0b0;font-style:italic"># Outputs: Generic animal sound</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$dog</span><span style="color:#666">.</span><span style="color:#06287e">speak</span>();    <span style="color:#60a0b0;font-style:italic"># Outputs: Woof!</span>
+</span></span></code></pre></div><p>The <code>is</code> keyword indicates inheritance.  The <code>Dog</code> class inherits <code>name</code> and <code>age</code> and overrides the <code>speak</code> method.</p>
+<h3 class="heading" id="polymorphism">
+  Polymorphism
+  <a class="anchor" href="#polymorphism">#</a>
+</h3>
+<p>Polymorphism allows objects of different classes to respond to the same method call in their own specific way.  This is demonstrated in the inheritance example above: both <code>Animal</code> and <code>Dog</code> have a <code>speak</code> method, but they produce different outputs.  This is a key benefit of OOP in Raku, enabling flexibility and code reusability.  Another example could be using a common interface:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">role</span> <span style="color:#0e84b5;font-weight:bold">SoundMaker</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">method</span> <span style="color:#06287e">make-sound</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">A generic sound</span>&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> <span style="color:#007020;font-weight:bold">does</span> <span style="color:#0e84b5;font-weight:bold">SoundMaker</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">method</span> <span style="color:#06287e">make-sound</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Woof!</span>&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span> <span style="color:#007020;font-weight:bold">does</span> <span style="color:#0e84b5;font-weight:bold">SoundMaker</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">method</span> <span style="color:#06287e">make-sound</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Meow!</span>&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$dog</span> <span style="color:#666">=</span> Dog<span style="color:#666">.</span><span style="color:#007020">new</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$cat</span> <span style="color:#666">=</span> Cat<span style="color:#666">.</span><span style="color:#007020">new</span>;
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$dog</span><span style="color:#666">.</span><span style="color:#06287e">make-sound</span>(); <span style="color:#60a0b0;font-style:italic">#Woof!</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$cat</span><span style="color:#666">.</span><span style="color:#06287e">make-sound</span>(); <span style="color:#60a0b0;font-style:italic">#Meow!</span>
+</span></span></code></pre></div><p>Here, <code>Dog</code> and <code>Cat</code> both implement the <code>make-sound</code> method from the <code>SoundMaker</code> role, resulting in polymorphic behaviour.  Roles provide a way to add behaviour to classes without using inheritance directly, improving code flexibility and maintainability.</p>
+<h2 class="heading" id="advanced-topics">
+  Advanced Topics
+  <a class="anchor" href="#advanced-topics">#</a>
+</h2>
+<h3 class="heading" id="exception-handling">
+  Exception Handling
+  <a class="anchor" href="#exception-handling">#</a>
+</h3>
+<p>Raku uses <code>try</code>, <code>catch</code>, and <code>finally</code> blocks for exception handling.  Exceptions are objects that represent errors or exceptional situations during program execution.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$result</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span> <span style="color:#666">/</span> <span style="color:#40a070">0</span>; <span style="color:#60a0b0;font-style:italic"># This will cause a division by zero error</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> <span style="color:#bb60d5">$result</span>;
+</span></span><span style="display:flex;"><span>} catch {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">when</span> <span style="color:#007020">X::DivisionByZero</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Division by zero error!</span>&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">when</span> <span style="color:#902000">Exception</span> {  <span style="color:#60a0b0;font-style:italic"># Catch any other exception</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">An error occurred: </span>{<span style="color:#bb60d5">$_</span><span style="color:#666">.</span><span style="color:#007020">message</span>}&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>} finally {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">This always executes.</span>&#34;;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>try</code> block contains the code that might throw an exception.  The <code>catch</code> block handles specific exceptions using <code>when</code>.  The <code>finally</code> block executes regardless of whether an exception occurred.</p>
+<h3 class="heading" id="modules-and-packages">
+  Modules and Packages
+  <a class="anchor" href="#modules-and-packages">#</a>
+</h3>
+<p>Modules and packages organize Raku code into reusable units. Modules contain code, while packages group related modules.  Modules are imported using the <code>use</code> keyword:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Math</span>; <span style="color:#60a0b0;font-style:italic">#Import the Math module</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#007020">sqrt</span>(<span style="color:#40a070">25</span>); <span style="color:#60a0b0;font-style:italic"># Use a function from the Math module</span>
+</span></span></code></pre></div><p>Creating your own module involves placing code in a file named <code>&lt;modulename&gt;.raku</code> (e.g., <code>MyModule.raku</code>) and using the <code>module</code> keyword:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># MyModule.raku</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#06287e">greet</span>(<span style="color:#902000">Str</span> <span style="color:#bb60d5">$name</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello from MyModule, </span><span style="color:#bb60d5">$name</span><span style="color:#4070a0">!</span>&#34;;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then, you would import it into another file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">greet</span>(&#34;<span style="color:#4070a0">World</span>&#34;); <span style="color:#60a0b0;font-style:italic">#Calls the greet subroutine from MyModule</span>
+</span></span></code></pre></div><p>Packages provide a way to group related modules to avoid naming conflicts.</p>
+<h3 class="heading" id="concurrency-and-parallelism">
+  Concurrency and Parallelism
+  <a class="anchor" href="#concurrency-and-parallelism">#</a>
+</h3>
+<p>Raku offers built-in support for concurrency and parallelism. Concurrency involves managing multiple tasks seemingly at the same time, while parallelism involves running multiple tasks truly simultaneously on multiple cores.</p>
+<p><strong>Concurrency:</strong>  Raku&rsquo;s <code>start</code> keyword allows you to create and manage asynchronous tasks:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$promise</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">start</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">sleep</span> <span style="color:#40a070">2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> &#34;<span style="color:#4070a0">Task completed!</span>&#34;;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Doing other things...</span>&#34;;
+</span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$promise</span><span style="color:#666">.</span><span style="color:#007020">await</span>;  <span style="color:#60a0b0;font-style:italic"># Wait for the task to finish and get its result</span>
+</span></span></code></pre></div><p><strong>Parallelism:</strong> Raku&rsquo;s <code>react</code> construct enables running multiple tasks in parallel:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">react</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">whenever</span> <span style="color:#007020;font-weight:bold">supply</span> <span style="color:#40a070">1</span><span style="color:#666">..</span><span style="color:#40a070">5</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#bb60d5">$i</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Processing number: </span><span style="color:#bb60d5">$i</span>&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Note that  <code>react</code> is a more advanced feature and will require understanding of asynchronous programming concepts.</p>
+<h3 class="heading" id="metaprogramming">
+  Metaprogramming
+  <a class="anchor" href="#metaprogramming">#</a>
+</h3>
+<p>Metaprogramming involves writing code that manipulates or generates other code at compile time or runtime.  Raku&rsquo;s powerful metaprogramming capabilities allow you to create DSLs (domain-specific languages), code generation tools, and other advanced features:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MyClass</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">method</span> <span style="color:#06287e">foo</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello from foo</span>&#34;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Generate a method dynamically</span>
+</span></span><span style="display:flex;"><span>MyClass<span style="color:#666">.</span><span style="color:#007020">add_method</span>(&#34;<span style="color:#4070a0">bar</span>&#34;<span style="color:#666">,</span> <span style="color:#007020;font-weight:bold">-&gt;</span> { <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello from bar</span>&#34;; });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$obj</span> <span style="color:#666">=</span> MyClass<span style="color:#666">.</span><span style="color:#007020">new</span>;
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$obj</span><span style="color:#666">.</span><span style="color:#06287e">foo</span>();   <span style="color:#60a0b0;font-style:italic"># Outputs: Hello from foo</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$obj</span><span style="color:#666">.</span><span style="color:#06287e">bar</span>();   <span style="color:#60a0b0;font-style:italic"># Outputs: Hello from bar</span>
+</span></span></code></pre></div><p>Here, <code>add_method</code> dynamically adds a new method to the class at runtime. Raku provides many advanced features for metaprogramming,  but this requires a deeper understanding of the language&rsquo;s internals.</p>
+<h2 class="heading" id="next-steps">
+  Next Steps
+  <a class="anchor" href="#next-steps">#</a>
+</h2>
+<h3 class="heading" id="where-to-learn-more">
+  Where to learn more
+  <a class="anchor" href="#where-to-learn-more">#</a>
+</h3>
+<p>This beginner&rsquo;s guide provides a foundational understanding of Raku. To deepen your knowledge and explore advanced topics, consider these resources:</p>
+<ul>
+<li>
+<p><strong>The official Raku website:</strong> <a href="https://raku.org/">https://raku.org/</a>  This is the central hub for all things Raku, including documentation, tutorials, and community links.  The documentation is comprehensive, though it can be challenging for absolute beginners.</p>
+</li>
+<li>
+<p><strong>Raku documentation:</strong> The official documentation is extensive and covers all aspects of the language.  Start with the &ldquo;Beginner&rsquo;s Guide&rdquo; section if you&rsquo;re new to Raku.</p>
+</li>
+<li>
+<p><strong>Online tutorials and courses:</strong> Numerous online tutorials and courses are available for learning Raku. Search for &ldquo;Raku tutorial&rdquo; or &ldquo;Raku course&rdquo; on platforms like YouTube, Udemy, and Coursera.</p>
+</li>
+<li>
+<p><strong>Books:</strong> Several books on Raku programming have been published, offering a structured learning approach.  Check online bookstores for available titles.</p>
+</li>
+</ul>
+<h3 class="heading" id="community-resources">
+  Community Resources
+  <a class="anchor" href="#community-resources">#</a>
+</h3>
+<p>The Raku community is welcoming and supportive. Engage with the community to learn from experienced programmers, ask questions, and share your knowledge:</p>
+<ul>
+<li>
+<p><strong>Raku Conference:</strong> The annual Raku conference is a great opportunity to meet other Raku users and learn about the latest developments.</p>
+</li>
+<li>
+<p><strong>Raku mailing lists:</strong>  The Raku community has active mailing lists where you can ask questions, discuss topics, and receive help from experienced developers.</p>
+</li>
+<li>
+<p><strong>Raku forums and discussion groups:</strong> Several online forums and discussion groups dedicated to Raku provide a platform for interacting with the community.</p>
+</li>
+<li>
+<p><strong>IRC channels:</strong>  Many Raku users participate in IRC channels dedicated to Raku programming, which are good places for immediate help.</p>
+</li>
+</ul>
+<h3 class="heading" id="contributing-to-raku">
+  Contributing to Raku
+  <a class="anchor" href="#contributing-to-raku">#</a>
+</h3>
+<p>If you&rsquo;re interested in contributing to the Raku project, there are many ways to get involved:</p>
+<ul>
+<li>
+<p><strong>Reporting bugs:</strong> Find and report bugs you encounter while using Raku.  The developers value bug reports to help improve the language.</p>
+</li>
+<li>
+<p><strong>Submitting patches:</strong> If you have programming skills, you can contribute by fixing bugs, implementing new features, or improving the existing codebase.</p>
+</li>
+<li>
+<p><strong>Improving documentation:</strong> Help enhance the Raku documentation by writing tutorials, improving existing documentation, or translating it into different languages.</p>
+</li>
+<li>
+<p><strong>Creating modules and libraries:</strong> Develop and release new modules and libraries that extend the functionality of Raku.</p>
+</li>
+<li>
+<p><strong>Mentoring beginners:</strong> Help new Raku programmers by answering their questions, providing guidance, and contributing to the community&rsquo;s learning resources.</p>
+</li>
+</ul>
+<p>Contributing to an open-source project like Raku is a rewarding experience that enables you to hone your skills, collaborate with others, and make a tangible impact on the development of the language.  Check the Raku project&rsquo;s website for guidelines on contributing.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-pascal/">
+                        Beginner&#39;s Guide to Pascal
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-haxe/">
+                        Beginner&#39;s Guide to Haxe
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

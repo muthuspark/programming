@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Rust | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-rust/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-rust/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Rust">
+  <meta property="og:description" content="Setting up your Environment # This section guides you through setting up your development environment for Rust. We’ll cover installing the Rust compiler and build tools, managing different toolchain versions, and selecting a suitable code editor or IDE.
+Installing Rust # The easiest way to install Rust is using rustup, the official Rust installer. Visit the official website https://www.rust-lang.org/tools/install and select your operating system. You’ll find clear instructions and download links for your system. Follow the instructions provided on the website; they typically involve downloading an installer and running it. The installer handles all dependencies and configurations automatically for you.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-13T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-rust/">Beginner&#39;s Guide to Rust</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Rust</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-03-13T00:00:00&#43;00:00">March 13, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      19 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#setting-up-your-environment">Setting up your Environment</a>
+      <ul>
+        <li><a href="#installing-rust">Installing Rust</a></li>
+        <li><a href="#using-rustup">Using rustup</a></li>
+        <li><a href="#verifying-the-installation">Verifying the Installation</a></li>
+        <li><a href="#choosing-an-editor-or-ide">Choosing an Editor or IDE</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-concepts">Basic Syntax and Concepts</a>
+      <ul>
+        <li><a href="#hello-world">Hello, world!</a></li>
+        <li><a href="#variables-and-data-types">Variables and Data Types</a></li>
+        <li><a href="#control-flow-ifelse-loops">Control Flow (if/else, loops)</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#comments">Comments</a></li>
+      </ul>
+    </li>
+    <li><a href="#ownership-and-borrowing">Ownership and Borrowing</a>
+      <ul>
+        <li><a href="#understanding-ownership">Understanding Ownership</a></li>
+        <li><a href="#borrowing">Borrowing</a></li>
+        <li><a href="#lifetimes">Lifetimes</a></li>
+        <li><a href="#common-ownership-patterns">Common Ownership Patterns</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-structures">Data Structures</a>
+      <ul>
+        <li><a href="#arrays-and-vectors">Arrays and Vectors</a></li>
+        <li><a href="#tuples">Tuples</a></li>
+        <li><a href="#structs">Structs</a></li>
+        <li><a href="#enums">Enums</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-modules-and-crates">Working with Modules and Crates</a>
+      <ul>
+        <li><a href="#creating-modules">Creating Modules</a></li>
+        <li><a href="#using-external-crates">Using External Crates</a></li>
+        <li><a href="#cargotoml-and-dependencies">Cargo.toml and Dependencies</a></li>
+        <li><a href="#managing-dependencies">Managing Dependencies</a></li>
+      </ul>
+    </li>
+    <li><a href="#error-handling">Error Handling</a>
+      <ul>
+        <li><a href="#the-result-type">The <code>Result</code> Type</a></li>
+        <li><a href="#panic-and-recover"><code>panic!</code> and <code>recover</code></a></li>
+        <li><a href="#custom-error-types">Custom Error Types</a></li>
+        <li><a href="#propagation">Propagation</a></li>
+      </ul>
+    </li>
+    <li><a href="#common-rust-patterns">Common Rust Patterns</a>
+      <ul>
+        <li><a href="#iterators">Iterators</a></li>
+        <li><a href="#traits">Traits</a></li>
+        <li><a href="#generics">Generics</a></li>
+        <li><a href="#closures">Closures</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics-brief-overview">Advanced Topics (Brief Overview)</a>
+      <ul>
+        <li><a href="#concurrency">Concurrency</a></li>
+        <li><a href="#smart-pointers">Smart Pointers</a></li>
+        <li><a href="#unsafe-rust">Unsafe Rust</a></li>
+        <li><a href="#testing">Testing</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="setting-up-your-environment">
+  Setting up your Environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h2>
+<p>This section guides you through setting up your development environment for Rust.  We&rsquo;ll cover installing the Rust compiler and build tools, managing different toolchain versions, and selecting a suitable code editor or IDE.</p>
+<h3 class="heading" id="installing-rust">
+  Installing Rust
+  <a class="anchor" href="#installing-rust">#</a>
+</h3>
+<p>The easiest way to install Rust is using <code>rustup</code>, the official Rust installer.  Visit the official website <a href="https://www.rust-lang.org/tools/install">https://www.rust-lang.org/tools/install</a> and select your operating system. You&rsquo;ll find clear instructions and download links for your system. Follow the instructions provided on the website; they typically involve downloading an installer and running it.  The installer handles all dependencies and configurations automatically for you.</p>
+<h3 class="heading" id="using-rustup">
+  Using rustup
+  <a class="anchor" href="#using-rustup">#</a>
+</h3>
+<p><code>rustup</code> is the command-line tool that manages Rust installations. After installing, you can use it to:</p>
+<ul>
+<li><strong>Install toolchains:</strong>  <code>rustup install stable</code> installs the latest stable release. You can also install beta (<code>rustup install beta</code>) or nightly (<code>rustup install nightly</code>) versions.</li>
+<li><strong>Switch toolchains:</strong> <code>rustup toolchain install stable</code> and <code>rustup default stable</code> sets the stable version as default. You can switch between different toolchains using <code>rustup default &lt;toolchain&gt;</code>.</li>
+<li><strong>Manage components:</strong> Rust provides many optional components, such as documentation generators or specific libraries. Use <code>rustup component add &lt;component&gt;</code> to add them.  To see available components use <code>rustup component list</code>.</li>
+<li><strong>Uninstall toolchains:</strong> Use <code>rustup uninstall &lt;toolchain&gt;</code> to remove a specific toolchain.</li>
+<li><strong>Update rustup:</strong> Regularly update <code>rustup</code> itself with <code>rustup update</code>.</li>
+</ul>
+<p>It is recommended to use the stable toolchain unless you have a specific need for beta or nightly features.</p>
+<h3 class="heading" id="verifying-the-installation">
+  Verifying the Installation
+  <a class="anchor" href="#verifying-the-installation">#</a>
+</h3>
+<p>After installation, open your terminal or command prompt and type <code>rustc --version</code>.  This command should print the version of the Rust compiler. If you see a version number, the installation was successful.  If you get an error, double-check the installation process. You can also try <code>rustup --version</code> to verify that <code>rustup</code> is correctly installed.</p>
+<h3 class="heading" id="choosing-an-editor-or-ide">
+  Choosing an Editor or IDE
+  <a class="anchor" href="#choosing-an-editor-or-ide">#</a>
+</h3>
+<p>Many editors and IDEs support Rust development, offering features like syntax highlighting, autocompletion, and debugging.  Here are a few popular choices:</p>
+<ul>
+<li><strong>VS Code:</strong> A lightweight, versatile code editor with excellent Rust support via the &ldquo;rust-analyzer&rdquo; extension.  This is a great option for beginners.</li>
+<li><strong>IntelliJ IDEA with the Rust plugin:</strong> A powerful IDE with robust features but can be resource-intensive.</li>
+<li><strong>CLion:</strong> Another powerful IDE with built-in Rust support.</li>
+<li><strong>Vim/Neovim:</strong> Highly configurable text editors with community-supported plugins for Rust development.</li>
+<li><strong>Emacs:</strong>  A highly customizable text editor with available plugins for Rust development.</li>
+</ul>
+<p>The best choice depends on your preferences and experience.  For beginners, VS Code with the <code>rust-analyzer</code> extension is often recommended due to its ease of use and extensive features.  Experiment to find what suits you best.</p>
+<h2 class="heading" id="basic-syntax-and-concepts">
+  Basic Syntax and Concepts
+  <a class="anchor" href="#basic-syntax-and-concepts">#</a>
+</h2>
+<p>This section introduces fundamental Rust syntax and concepts essential for writing your first programs.</p>
+<h3 class="heading" id="hello-world">
+  Hello, world!
+  <a class="anchor" href="#hello-world">#</a>
+</h3>
+<p>The quintessential first program in any language is &ldquo;Hello, world!&rdquo;:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;Hello, world!&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This code defines a <code>main</code> function, the entry point of every Rust program.  <code>println!</code> is a macro that prints text to the console.  The <code>!</code> indicates it&rsquo;s a macro, not a regular function.  Save this code as <code>main.rs</code> and compile and run it using <code>rustc main.rs</code> followed by <code>./main</code>.</p>
+<h3 class="heading" id="variables-and-data-types">
+  Variables and Data Types
+  <a class="anchor" href="#variables-and-data-types">#</a>
+</h3>
+<p>Rust is a statically-typed language, meaning you must specify the type of a variable.  However, type inference often eliminates the need to explicitly state them.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>x: <span style="color:#902000">i32</span> <span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Explicitly typed integer
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>y<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">20</span>;<span style="color:#bbb">      </span><span style="color:#60a0b0;font-style:italic">// Type inferred as i32
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>z: <span style="color:#902000">f64</span> <span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">3.14</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Double-precision floating-point number
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Rust&#34;</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// String slice
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>is_active<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">true</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Boolean
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;x = </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">, y = </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">, z = </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">, name = </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">, is_active = </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>x,<span style="color:#bbb"> </span>y,<span style="color:#bbb"> </span>z,<span style="color:#bbb"> </span>name,<span style="color:#bbb"> </span>is_active);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Common data types include:</p>
+<ul>
+<li><code>i32</code>, <code>i64</code>, <code>u32</code>, <code>u64</code>: Signed and unsigned integers of different sizes.</li>
+<li><code>f32</code>, <code>f64</code>: Single-precision and double-precision floating-point numbers.</li>
+<li><code>bool</code>: Boolean values (<code>true</code> or <code>false</code>).</li>
+<li><code>char</code>: Single Unicode character.</li>
+<li><code>&amp;str</code>: String slice (an immutable reference to a string).</li>
+<li><code>String</code>:  A growable, mutable string.</li>
+</ul>
+<h3 class="heading" id="control-flow-ifelse-loops">
+  Control Flow (if/else, loops)
+  <a class="anchor" href="#control-flow-ifelse-loops">#</a>
+</h3>
+<p>Rust provides standard control flow structures:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>number<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>number<span style="color:#bbb"> </span><span style="color:#666">&lt;</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>println!(<span style="color:#4070a0">&#34;Condition was true&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">else</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>println!(<span style="color:#4070a0">&#34;Condition was false&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">mut</span><span style="color:#bbb"> </span>count<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span>count<span style="color:#bbb"> </span><span style="color:#666">&lt;</span><span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>println!(<span style="color:#4070a0">&#34;count = </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>count);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>count<span style="color:#bbb"> </span><span style="color:#666">+=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">in</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#666">..</span><span style="color:#40a070">5</span><span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Range from 1 (inclusive) to 5 (exclusive)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">        </span>println!(<span style="color:#4070a0">&#34;i = </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>i);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p><code>if/else</code> statements conditionally execute code blocks.  <code>while</code> loops execute as long as a condition is true.  <code>for</code> loops iterate over ranges or other iterables.</p>
+<h3 class="heading" id="functions">
+  Functions
+  <a class="anchor" href="#functions">#</a>
+</h3>
+<p>Functions are reusable blocks of code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">add</span>(x: <span style="color:#902000">i32</span>,<span style="color:#bbb"> </span>y: <span style="color:#902000">i32</span>)<span style="color:#bbb"> </span>-&gt; <span style="color:#902000">i32</span> {<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>x<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>y<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>sum<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>add(<span style="color:#40a070">5</span>,<span style="color:#bbb"> </span><span style="color:#40a070">3</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;Sum: </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>sum);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This defines a function <code>add</code> that takes two <code>i32</code> arguments and returns their sum as an <code>i32</code>.  The <code>-&gt; i32</code> specifies the return type.  The <code>main</code> function calls <code>add</code>. Note that the <code>return</code> keyword is implicit in this case as the last expression in the function is returned.</p>
+<h3 class="heading" id="comments">
+  Comments
+  <a class="anchor" href="#comments">#</a>
+</h3>
+<p>Comments are used to explain code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">     This is a
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">     multi-line comment
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">     */</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;This code has comments!&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Single-line comments start with <code>//</code>. Multi-line comments are enclosed within <code>/* */</code>.  Use comments to make your code easier to understand.</p>
+<h2 class="heading" id="ownership-and-borrowing">
+  Ownership and Borrowing
+  <a class="anchor" href="#ownership-and-borrowing">#</a>
+</h2>
+<p>Rust&rsquo;s ownership system is a core feature that manages memory automatically, preventing memory leaks and dangling pointers.  Understanding ownership and borrowing is crucial for writing safe and efficient Rust code.</p>
+<h3 class="heading" id="understanding-ownership">
+  Understanding Ownership
+  <a class="anchor" href="#understanding-ownership">#</a>
+</h3>
+<p>Every value in Rust has a single owner at any given time.  When the owner goes out of scope, the value is dropped and its memory is freed. This happens automatically without manual memory management.</p>
+<p>Key rules of ownership:</p>
+<ul>
+<li><strong>Each value has one owner:</strong>  Only one variable can own a particular piece of data at a time.</li>
+<li><strong>When the owner goes out of scope, the value is dropped:</strong>  The memory occupied by the value is automatically freed.</li>
+<li><strong>Ownership is transferred:</strong>  When you assign a value to another variable, ownership is transferred.  The original variable no longer owns the data.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>s1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">String</span>::from(<span style="color:#4070a0">&#34;hello&#34;</span>);<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">// s1 owns the String data
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>s2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>s1;<span style="color:#bbb">                     </span><span style="color:#60a0b0;font-style:italic">// Ownership is moved to s2; s1 is no longer valid
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// println!(&#34;{}&#34;, s1); // This line would cause a compile-time error because s1 no longer owns the data
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>s2);<span style="color:#bbb">               </span><span style="color:#60a0b0;font-style:italic">// s2 owns the data and can be used
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>In this example, when <code>s1</code> is assigned to <code>s2</code>, ownership is transferred.  Attempting to use <code>s1</code> after the assignment results in a compile-time error.</p>
+<h3 class="heading" id="borrowing">
+  Borrowing
+  <a class="anchor" href="#borrowing">#</a>
+</h3>
+<p>Borrowing allows you to temporarily access a value without transferring ownership.  Borrows are immutable by default unless explicitly declared as mutable.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>s<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">String</span>::from(<span style="color:#4070a0">&#34;hello&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>r1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">&amp;</span>s;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Immutable borrow
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>r2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">&amp;</span>s;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Another immutable borrow – this is allowed
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">{}</span><span style="color:#4070a0"> and </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>r1,<span style="color:#bbb"> </span>r2);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// let r3 = &amp;mut s; // This would cause a compile-time error because &#39;s&#39; is already borrowed immutably
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>r3<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">&amp;</span><span style="color:#007020;font-weight:bold">mut</span><span style="color:#bbb"> </span>s;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Mutable borrow (only one mutable borrow allowed at a time)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#666">*</span>r3<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">String</span>::from(<span style="color:#4070a0">&#34;world&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Dereference to modify the value
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>s);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>There are important rules for borrowing:</p>
+<ul>
+<li>You can have many immutable borrows (<code>&amp;</code>) or one mutable borrow (<code>&amp;mut</code>).</li>
+<li>You cannot have both immutable and mutable borrows simultaneously.</li>
+</ul>
+<h3 class="heading" id="lifetimes">
+  Lifetimes
+  <a class="anchor" href="#lifetimes">#</a>
+</h3>
+<p>Lifetimes ensure that references do not outlive the data they point to.  They are used to prevent dangling pointers – references to memory that has been freed.  The compiler uses lifetimes to check at compile time that references are always valid.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">longest</span><span style="color:#666">&lt;</span><span style="color:#4070a0">&#39;a</span><span style="color:#666">&gt;</span>(x: <span style="color:#007020">&amp;</span><span style="color:#4070a0">&#39;a</span> <span style="color:#902000">str</span>,<span style="color:#bbb"> </span>y: <span style="color:#007020">&amp;</span><span style="color:#4070a0">&#39;a</span> <span style="color:#902000">str</span>)<span style="color:#bbb"> </span>-&gt; <span style="color:#007020">&amp;</span><span style="color:#4070a0">&#39;a</span> <span style="color:#902000">str</span> {<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>x.len()<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span>y.len()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>x<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">else</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>y<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>string1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">String</span>::from(<span style="color:#4070a0">&#34;abcd&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>string2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;xyz&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>longest(string1.as_str(),<span style="color:#bbb"> </span>string2);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;The longest string is </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>result);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>In this example, <code>'a</code> is a lifetime annotation.  It ensures that the reference returned by <code>longest</code> does not outlive the input strings.</p>
+<h3 class="heading" id="common-ownership-patterns">
+  Common Ownership Patterns
+  <a class="anchor" href="#common-ownership-patterns">#</a>
+</h3>
+<p>Several patterns simplify ownership management in more complex scenarios:</p>
+<ul>
+<li><strong>Cloning:</strong> Create a copy of a value to avoid ownership transfer.  This uses extra memory.</li>
+<li><strong>Passing by value:</strong> Passing a value to a function transfers ownership.  The function then owns the data.</li>
+<li><strong>Passing by reference:</strong> Passing a reference to a function allows access without ownership transfer.</li>
+<li><strong>Using smart pointers:</strong> Smart pointers like <code>Rc</code> (reference counting) and <code>Arc</code> (atomic reference counting) enable multiple owners of a single value.</li>
+</ul>
+<p>Understanding these concepts is key to writing safe and correct Rust code.  The compiler will help enforce these rules, preventing many common memory-related errors at compile time.</p>
+<h2 class="heading" id="data-structures">
+  Data Structures
+  <a class="anchor" href="#data-structures">#</a>
+</h2>
+<p>Rust offers various ways to organize and store data. This section covers some fundamental data structures.</p>
+<h3 class="heading" id="arrays-and-vectors">
+  Arrays and Vectors
+  <a class="anchor" href="#arrays-and-vectors">#</a>
+</h3>
+<p>Arrays and vectors are used to store sequences of elements.  Arrays have a fixed size known at compile time, while vectors are dynamically sized.</p>
+<p><strong>Arrays:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>arr: [<span style="color:#902000">i32</span>;<span style="color:#bbb"> </span><span style="color:#40a070">5</span>]<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>[<span style="color:#40a070">1</span>,<span style="color:#bbb"> </span><span style="color:#40a070">2</span>,<span style="color:#bbb"> </span><span style="color:#40a070">3</span>,<span style="color:#bbb"> </span><span style="color:#40a070">4</span>,<span style="color:#bbb"> </span><span style="color:#40a070">5</span>];<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Array of 5 i32 elements
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;Array: </span><span style="color:#70a0d0">{:?}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>arr);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;First element: </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>arr[<span style="color:#40a070">0</span>]);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Arrays are declared with the size specified within square brackets. Accessing elements is done using indexing.</p>
+<p><strong>Vectors:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span><span style="color:#bbb"> </span>std::vec::<span style="color:#007020">Vec</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">mut</span><span style="color:#bbb"> </span>vec: <span style="color:#007020">Vec</span><span style="color:#666">&lt;</span><span style="color:#902000">i32</span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">Vec</span>::new();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Create an empty vector
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>vec.push(<span style="color:#40a070">1</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>vec.push(<span style="color:#40a070">2</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>vec.push(<span style="color:#40a070">3</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;Vector: </span><span style="color:#70a0d0">{:?}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>vec);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;First element: </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>vec[<span style="color:#40a070">0</span>]);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;Vector length: </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>vec.len());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Vectors are created using <code>Vec::new()</code> and elements are added using <code>push()</code>.  They can grow dynamically.</p>
+<h3 class="heading" id="tuples">
+  Tuples
+  <a class="anchor" href="#tuples">#</a>
+</h3>
+<p>Tuples are collections of values of different types.  Their size is fixed at compile time.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>tup<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>(<span style="color:#40a070">500</span>,<span style="color:#bbb"> </span><span style="color:#40a070">6.4</span>,<span style="color:#bbb"> </span><span style="color:#40a070">1</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Tuple with an integer, a float, and an integer
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>(x,<span style="color:#bbb"> </span>y,<span style="color:#bbb"> </span>z)<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>tup;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Destructuring the tuple
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;The values are: </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">, </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">, </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>x,<span style="color:#bbb"> </span>y,<span style="color:#bbb"> </span>z);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;The first element is: </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>tup.<span style="color:#40a070">0</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Accessing elements by index
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Tuples are declared using parentheses <code>()</code>. Elements can be accessed using their index (starting from 0) or by destructuring the tuple into individual variables.</p>
+<h3 class="heading" id="structs">
+  Structs
+  <a class="anchor" href="#structs">#</a>
+</h3>
+<p>Structs are used to group related data together. They can be composed of different data types.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020">#[derive(Debug)]</span><span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Enables the use of {:?} for printing
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">struct</span> <span style="color:#0e84b5;font-weight:bold">User</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>username: <span style="color:#007020">String</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>email: <span style="color:#007020">String</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>active: <span style="color:#902000">bool</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>sign_in_count: <span style="color:#902000">u64</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">mut</span><span style="color:#bbb"> </span>user1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>User<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>email: <span style="color:#007020">String</span>::from(<span style="color:#4070a0">&#34;someone@example.com&#34;</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>username: <span style="color:#007020">String</span>::from(<span style="color:#4070a0">&#34;someusername123&#34;</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>active: <span style="color:#0e84b5;font-weight:bold">true</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>sign_in_count: <span style="color:#40a070">1</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>user1.email<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020">String</span>::from(<span style="color:#4070a0">&#34;anotheremail@example.com&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Modifying a field
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">{:?}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>user1);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Structs are declared using the <code>struct</code> keyword.  Fields are defined with their data type.  Fields can be accessed using the dot operator (<code>.</code>).</p>
+<h3 class="heading" id="enums">
+  Enums
+  <a class="anchor" href="#enums">#</a>
+</h3>
+<p>Enums allow defining a type that can have one of several possible variants.  Each variant can have data associated with it.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020">#[derive(Debug)]</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">enum</span> <span style="color:#0e84b5;font-weight:bold">IpAddrKind</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>V4(<span style="color:#007020">String</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>V6(<span style="color:#007020">String</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020">#[derive(Debug)]</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">enum</span> <span style="color:#0e84b5;font-weight:bold">Message</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>Quit,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>Move<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span>x: <span style="color:#902000">i32</span>,<span style="color:#bbb"> </span>y: <span style="color:#902000">i32</span> },<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>Write(<span style="color:#007020">String</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>ChangeColor(<span style="color:#902000">i32</span>,<span style="color:#bbb"> </span><span style="color:#902000">i32</span>,<span style="color:#bbb"> </span><span style="color:#902000">i32</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>four<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>IpAddrKind::V4(<span style="color:#007020">String</span>::from(<span style="color:#4070a0">&#34;127.0.0.1&#34;</span>));<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>six<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>IpAddrKind::V6(<span style="color:#007020">String</span>::from(<span style="color:#4070a0">&#34;::1&#34;</span>));<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">{:?}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>four);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">{:?}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>six);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>m<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Message::Write(<span style="color:#007020">String</span>::from(<span style="color:#4070a0">&#34;hello&#34;</span>));<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">{:?}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>m);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Enums are declared using the <code>enum</code> keyword.  Each variant is a possible value of the enum.  Variants can hold associated data of different types.  This example demonstrates different data types associated with the enum variants.</p>
+<h2 class="heading" id="working-with-modules-and-crates">
+  Working with Modules and Crates
+  <a class="anchor" href="#working-with-modules-and-crates">#</a>
+</h2>
+<p>Rust uses a modular system to organize code into reusable units.  This section explains how to create and use modules and external crates (libraries).</p>
+<h3 class="heading" id="creating-modules">
+  Creating Modules
+  <a class="anchor" href="#creating-modules">#</a>
+</h3>
+<p>Modules group related code together, improving organization and code reusability.  Modules are declared using the <code>mod</code> keyword.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// src/main.rs
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">mod</span> <span style="color:#0e84b5;font-weight:bold">front_of_house</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">mod</span> <span style="color:#0e84b5;font-weight:bold">hosting</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">pub</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">add_to_waitlist</span>()<span style="color:#bbb"> </span>{}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>front_of_house::hosting::add_to_waitlist();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This creates a module <code>front_of_house</code> containing a submodule <code>hosting</code>.  The <code>pub</code> keyword makes items (functions, structs, etc.) accessible from outside the module.  Note that the <code>mod front_of_house;</code> declaration in <code>main.rs</code> requires a corresponding file named <code>front_of_house.rs</code> (or a directory <code>front_of_house</code> containing a file <code>mod.rs</code>) in the <code>src</code> directory.</p>
+<h3 class="heading" id="using-external-crates">
+  Using External Crates
+  <a class="anchor" href="#using-external-crates">#</a>
+</h3>
+<p>External crates (libraries) extend your project&rsquo;s functionality.  You manage external crate dependencies using <code>Cargo</code>, Rust&rsquo;s build system.</p>
+<p>For example, to use the <code>rand</code> crate for random number generation:</p>
+<ol>
+<li>Add it to your <code>Cargo.toml</code> file (explained in the next section).</li>
+<li>Add <code>use rand::Rng;</code> to your source code.</li>
+<li>Use functions from the <code>rand</code> crate.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span><span style="color:#bbb"> </span>rand::Rng;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">mut</span><span style="color:#bbb"> </span>rng<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>rand::thread_rng();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>num: <span style="color:#902000">u32</span> <span style="color:#666">=</span><span style="color:#bbb"> </span>rng.gen_range(<span style="color:#40a070">1</span><span style="color:#666">..</span><span style="color:#40a070">101</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Generates a random number between 1 and 100
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;Random number: </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>num);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This code uses <code>rand::thread_rng()</code> to get a random number generator and <code>gen_range()</code> to generate a random number within a specified range.</p>
+<h3 class="heading" id="cargotoml-and-dependencies">
+  Cargo.toml and Dependencies
+  <a class="anchor" href="#cargotoml-and-dependencies">#</a>
+</h3>
+<p><code>Cargo.toml</code> is a manifest file that describes your project to Cargo. It specifies dependencies, metadata, and other project details.  Dependencies are added to the <code>[dependencies]</code> section:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[package]
+</span></span><span style="display:flex;"><span>name = <span style="color:#4070a0">&#34;my-project&#34;</span>
+</span></span><span style="display:flex;"><span>version = <span style="color:#4070a0">&#34;0.1.0&#34;</span>
+</span></span><span style="display:flex;"><span>edition = <span style="color:#4070a0">&#34;2021&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[dependencies]
+</span></span><span style="display:flex;"><span>rand = <span style="color:#4070a0">&#34;0.8&#34;</span> <span style="">//</span> Specifies the rand crate, version <span style="color:#40a070">0.8</span> or later
+</span></span></code></pre></div><p>This <code>Cargo.toml</code> file specifies that the project depends on the <code>rand</code> crate, version 0.8 or later.  Cargo handles downloading and linking the crate during the build process.</p>
+<h3 class="heading" id="managing-dependencies">
+  Managing Dependencies
+  <a class="anchor" href="#managing-dependencies">#</a>
+</h3>
+<p>Cargo simplifies dependency management. Key features include:</p>
+<ul>
+<li><strong>Automatic downloading:</strong>  Cargo downloads and manages dependencies automatically.</li>
+<li><strong>Version specification:</strong> You specify version requirements (e.g., <code>rand = &quot;0.8&quot;</code>), ensuring compatibility.</li>
+<li><strong>Dependency resolution:</strong> Cargo resolves dependencies, handling conflicts and transitive dependencies.</li>
+<li><strong>Build process integration:</strong> Cargo integrates dependency management into the build process.</li>
+</ul>
+<p>To update dependencies, run <code>cargo update</code>.  To see your project&rsquo;s dependency tree, use <code>cargo tree</code>.  Cargo ensures a smooth and reliable experience when working with external libraries in your Rust projects.</p>
+<h2 class="heading" id="error-handling">
+  Error Handling
+  <a class="anchor" href="#error-handling">#</a>
+</h2>
+<p>Rust&rsquo;s error handling mechanism emphasizes compile-time safety and clear error reporting. This section covers the core concepts of error handling in Rust.</p>
+<h3 class="heading" id="the-result-type">
+  The <code>Result</code> Type
+  <a class="anchor" href="#the-result-type">#</a>
+</h3>
+<p>The <code>Result</code> type is Rust&rsquo;s primary way to represent operations that might fail. It&rsquo;s an enum with two variants: <code>Ok(T)</code> representing success and <code>Err(E)</code> representing an error.  <code>T</code> is the type of the successful result, and <code>E</code> is the type of the error.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span><span style="color:#bbb"> </span>std::fs::File;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">use</span><span style="color:#bbb"> </span>std::io::ErrorKind;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>-&gt; <span style="color:#007020">Result</span><span style="color:#666">&lt;</span>(),<span style="color:#bbb"> </span>std::io::Error<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>f<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>File::open(<span style="color:#4070a0">&#34;hello.txt&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>f<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">match</span><span style="color:#bbb"> </span>f<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020">Ok</span>(file)<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span>file,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020">Err</span>(error)<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">match</span><span style="color:#bbb"> </span>error.kind()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>ErrorKind::NotFound<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">match</span><span style="color:#bbb"> </span>File::create(<span style="color:#4070a0">&#34;hello.txt&#34;</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#007020">Ok</span>(fc)<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span>fc,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span><span style="color:#007020">Err</span>(e)<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#007020">Err</span>(e),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>},<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>other_error<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#007020">Err</span>(other_error),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>},<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020">Ok</span>(())<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This example uses <code>match</code> to handle the <code>Result</code> returned by <code>File::open()</code>. If the file opens successfully (<code>Ok</code>), it proceeds. If it fails, it attempts to create the file; if that fails, it returns the error.</p>
+<p>The <code>?</code> operator provides a more concise way to handle errors.  If the <code>Result</code> is <code>Ok</code>, its value is returned; if it&rsquo;s <code>Err</code>, the error is propagated upwards.  The <code>?</code> operator can only be used in functions that return a <code>Result</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span><span style="color:#bbb"> </span>std::fs::File;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">use</span><span style="color:#bbb"> </span>std::io::ErrorKind;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>-&gt; <span style="color:#007020">Result</span><span style="color:#666">&lt;</span>(),<span style="color:#bbb"> </span>std::io::Error<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>f<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>File::open(<span style="color:#4070a0">&#34;hello.txt&#34;</span>)<span style="color:#666">?</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Using the ? operator
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020">Ok</span>(())<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This is equivalent to the previous example but is significantly more compact.  Note that the <code>main()</code> function now uses <code>-&gt; Result&lt;(), std::io::Error&gt;</code> to indicate that it might return an error.</p>
+<h3 class="heading" id="panic-and-recover">
+  <code>panic!</code> and <code>recover</code>
+  <a class="anchor" href="#panic-and-recover">#</a>
+</h3>
+<p><code>panic!</code> is a macro that immediately aborts the program&rsquo;s execution.  It&rsquo;s used for unrecoverable errors.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>panic!(<span style="color:#4070a0">&#34;Something went wrong!&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p><code>panic!</code> unwinds the stack, calling the <code>Drop</code> trait on values that are going out of scope. This ensures resources are released, even in the event of a failure.  Note that <code>panic!</code> usually results in the program exiting.</p>
+<p>The <code>recover</code> feature from the <code>panic_hook</code> crate allows you to handle panics gracefully.  However, this is usually not necessary.  Generally, design your code to handle errors using the <code>Result</code> type instead of relying on <code>recover</code>.</p>
+<h3 class="heading" id="custom-error-types">
+  Custom Error Types
+  <a class="anchor" href="#custom-error-types">#</a>
+</h3>
+<p>For more sophisticated error handling, create custom error types using enums.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020">#[derive(Debug)]</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">enum</span> <span style="color:#0e84b5;font-weight:bold">MyError</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>IoError(std::io::Error),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>OtherError(<span style="color:#007020">String</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">my_function</span>()<span style="color:#bbb"> </span>-&gt; <span style="color:#007020">Result</span><span style="color:#666">&lt;</span>(),<span style="color:#bbb"> </span>MyError<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// ... some code that might produce an error ...
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020">Ok</span>(())<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This defines an enum <code>MyError</code> that can represent different types of errors.  This gives you finer-grained control over error reporting.</p>
+<h3 class="heading" id="propagation">
+  Propagation
+  <a class="anchor" href="#propagation">#</a>
+</h3>
+<p>Error propagation involves passing errors upwards through the call stack.  The <code>?</code> operator is a convenient way to propagate errors.  If a function returns a <code>Result</code>, the <code>?</code> operator will return the error if it occurs.  If multiple functions in a chain might fail, you can propagate errors throughout your code.  This avoids nested <code>match</code> statements or long <code>if/else</code> chains.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span><span style="color:#bbb"> </span>std::fs::File;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">read_username_from_file</span>()<span style="color:#bbb"> </span>-&gt; <span style="color:#007020">Result</span><span style="color:#666">&lt;</span><span style="color:#007020">String</span>,<span style="color:#bbb"> </span>std::io::Error<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>f<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>File::open(<span style="color:#4070a0">&#34;hello.txt&#34;</span>)<span style="color:#666">?</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// ... process file ...
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020">Ok</span>(<span style="color:#4070a0">&#34;username&#34;</span>.to_string())<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">match</span><span style="color:#bbb"> </span>read_username_from_file()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#007020">Ok</span>(username)<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span>println!(<span style="color:#4070a0">&#34;Username is </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>username),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#007020">Err</span>(e)<span style="color:#bbb"> </span><span style="color:#666">=&gt;</span><span style="color:#bbb"> </span>println!(<span style="color:#4070a0">&#34;Error reading file: </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>e),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This example shows how the error from <code>File::open</code> is propagated to <code>main</code> through <code>read_username_from_file</code>.  The <code>main</code> function is responsible for handling the possible error.  Proper error propagation is essential for robust error handling in more complex Rust programs.</p>
+<h2 class="heading" id="common-rust-patterns">
+  Common Rust Patterns
+  <a class="anchor" href="#common-rust-patterns">#</a>
+</h2>
+<p>This section explores several common and powerful patterns used extensively in Rust programming.</p>
+<h3 class="heading" id="iterators">
+  Iterators
+  <a class="anchor" href="#iterators">#</a>
+</h3>
+<p>Iterators provide a clean and efficient way to process collections of data.  They allow you to traverse a sequence of items without explicitly managing indices.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>v<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>vec![<span style="color:#40a070">1</span>,<span style="color:#bbb"> </span><span style="color:#40a070">2</span>,<span style="color:#bbb"> </span><span style="color:#40a070">3</span>,<span style="color:#bbb"> </span><span style="color:#40a070">4</span>,<span style="color:#bbb"> </span><span style="color:#40a070">5</span>];<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// Using a for loop with iter()
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">in</span><span style="color:#bbb"> </span>v.iter()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>println!(<span style="color:#4070a0">&#34;Value: </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>i);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// Using iter().map() to transform elements
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>doubled_numbers: <span style="color:#007020">Vec</span><span style="color:#666">&lt;</span><span style="color:#902000">i32</span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>v.iter().map(<span style="color:#666">|&amp;</span>x<span style="color:#666">|</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#40a070">2</span>).collect();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;Doubled numbers: </span><span style="color:#70a0d0">{:?}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>doubled_numbers);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// Using iter().filter() to select elements
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>even_numbers: <span style="color:#007020">Vec</span><span style="color:#666">&lt;</span><span style="color:#902000">i32</span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>v.iter().filter(<span style="color:#666">|&amp;</span>x<span style="color:#666">|</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">%</span><span style="color:#bbb"> </span><span style="color:#40a070">2</span><span style="color:#bbb"> </span><span style="color:#666">==</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span>).map(<span style="color:#666">|&amp;</span>x<span style="color:#666">|</span><span style="color:#bbb"> </span><span style="color:#666">*</span>x).collect();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;Even numbers: </span><span style="color:#70a0d0">{:?}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>even_numbers);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The <code>iter()</code> method returns an iterator over the elements of a vector.  The <code>for</code> loop implicitly consumes the iterator.  Methods like <code>map()</code> and <code>filter()</code> allow transforming and filtering elements, respectively.  <code>collect()</code> gathers the results into a new collection.</p>
+<h3 class="heading" id="traits">
+  Traits
+  <a class="anchor" href="#traits">#</a>
+</h3>
+<p>Traits define shared behavior across different types.  They are similar to interfaces in other languages.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">trait</span><span style="color:#bbb"> </span>Summary<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">summarize</span>(<span style="color:#666">&amp;</span>self)<span style="color:#bbb"> </span>-&gt; <span style="color:#007020">String</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">struct</span> <span style="color:#0e84b5;font-weight:bold">NewsArticle</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>headline: <span style="color:#007020">String</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>location: <span style="color:#007020">String</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>author: <span style="color:#007020">String</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>content: <span style="color:#007020">String</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">struct</span> <span style="color:#0e84b5;font-weight:bold">Tweet</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>username: <span style="color:#007020">String</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>content: <span style="color:#007020">String</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>reply: <span style="color:#902000">bool</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>retweet: <span style="color:#902000">bool</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">impl</span><span style="color:#bbb"> </span>Summary<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>NewsArticle<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">summarize</span>(<span style="color:#666">&amp;</span>self)<span style="color:#bbb"> </span>-&gt; <span style="color:#007020">String</span> {<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>format!(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">, by </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0"> (</span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">)&#34;</span>,<span style="color:#bbb"> </span>self.headline,<span style="color:#bbb"> </span>self.author,<span style="color:#bbb"> </span>self.location)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">impl</span><span style="color:#bbb"> </span>Summary<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>Tweet<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">summarize</span>(<span style="color:#666">&amp;</span>self)<span style="color:#bbb"> </span>-&gt; <span style="color:#007020">String</span> {<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>format!(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">: </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>self.username,<span style="color:#bbb"> </span>self.content)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>tweet<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Tweet<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>username: <span style="color:#007020">String</span>::from(<span style="color:#4070a0">&#34;horse_ebooks&#34;</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>content: <span style="color:#007020">String</span>::from(<span style="color:#4070a0">&#34;of course, as you probably already know, people&#34;</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>reply: <span style="color:#0e84b5;font-weight:bold">false</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>retweet: <span style="color:#0e84b5;font-weight:bold">false</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;1 new tweet: </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>tweet.summarize());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The <code>Summary</code> trait defines a <code>summarize()</code> method.  The <code>impl Summary for NewsArticle</code> and <code>impl Summary for Tweet</code> blocks implement the trait for those structs.  This allows using <code>summarize()</code> on any type that implements the <code>Summary</code> trait.</p>
+<h3 class="heading" id="generics">
+  Generics
+  <a class="anchor" href="#generics">#</a>
+</h3>
+<p>Generics allow writing code that works with multiple types without specifying them explicitly.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">largest</span><span style="color:#666">&lt;</span>T: <span style="color:#007020">PartialOrd</span> <span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#007020">Copy</span><span style="color:#666">&gt;</span>(list: <span style="color:#007020">&amp;</span>[T])<span style="color:#bbb"> </span>-&gt; <span style="color:#007020">&amp;</span><span style="color:#0e84b5;font-weight:bold">T</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">mut</span><span style="color:#bbb"> </span>largest<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">&amp;</span>list[<span style="color:#40a070">0</span>];<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>item<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">in</span><span style="color:#bbb"> </span>list<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>item<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span>largest<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>largest<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>item;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>largest<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>number_list<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>vec![<span style="color:#40a070">34</span>,<span style="color:#bbb"> </span><span style="color:#40a070">50</span>,<span style="color:#bbb"> </span><span style="color:#40a070">25</span>,<span style="color:#bbb"> </span><span style="color:#40a070">100</span>,<span style="color:#bbb"> </span><span style="color:#40a070">65</span>];<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>largest(<span style="color:#666">&amp;</span>number_list);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;The largest number is </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>result);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>char_list<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>vec![<span style="color:#4070a0">&#39;y&#39;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;m&#39;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;a&#39;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;q&#39;</span>];<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>largest(<span style="color:#666">&amp;</span>char_list);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;The largest char is </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>result);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The <code>largest</code> function uses generics (<code>&lt;T: PartialOrd + Copy&gt;</code>) to work with any type <code>T</code> that implements <code>PartialOrd</code> (for comparison) and <code>Copy</code> (for efficient copying).  This makes the function reusable for different types.</p>
+<h3 class="heading" id="closures">
+  Closures
+  <a class="anchor" href="#closures">#</a>
+</h3>
+<p>Closures are anonymous functions that can capture values from their surrounding scope.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fn</span> <span style="color:#06287e">main</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">mut</span><span style="color:#bbb"> </span>numbers<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>vec![<span style="color:#40a070">1</span>,<span style="color:#bbb"> </span><span style="color:#40a070">2</span>,<span style="color:#bbb"> </span><span style="color:#40a070">3</span>,<span style="color:#bbb"> </span><span style="color:#40a070">4</span>,<span style="color:#bbb"> </span><span style="color:#40a070">5</span>];<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>numbers.iter_mut().for_each(<span style="color:#666">|</span>x<span style="color:#666">|</span><span style="color:#bbb"> </span><span style="color:#666">*</span>x<span style="color:#bbb"> </span><span style="color:#666">*=</span><span style="color:#bbb"> </span><span style="color:#40a070">2</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;Numbers doubled: </span><span style="color:#70a0d0">{:?}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>numbers);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>plus_one<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">|</span>x: <span style="color:#902000">i32</span><span style="color:#666">|</span><span style="color:#bbb"> </span>-&gt; <span style="color:#902000">i32</span> {<span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span><span style="color:#bbb"> </span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">let</span><span style="color:#bbb"> </span>a<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>plus_one(<span style="color:#40a070">5</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>println!(<span style="color:#4070a0">&#34;Six: </span><span style="color:#70a0d0">{}</span><span style="color:#4070a0">&#34;</span>,<span style="color:#bbb"> </span>a);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>The <code>|x| *x *= 2</code> is a closure that modifies each element of the vector.  The <code>|x: i32| -&gt; i32 { x + 1 }</code> is a closure that takes an <code>i32</code> and returns an <code>i32</code>. Closures are versatile and are often used with iterators and other functional programming patterns.</p>
+<h2 class="heading" id="advanced-topics-brief-overview">
+  Advanced Topics (Brief Overview)
+  <a class="anchor" href="#advanced-topics-brief-overview">#</a>
+</h2>
+<p>This section provides a concise overview of more advanced Rust concepts.  These topics require a deeper understanding of the fundamentals covered in previous sections.</p>
+<h3 class="heading" id="concurrency">
+  Concurrency
+  <a class="anchor" href="#concurrency">#</a>
+</h3>
+<p>Rust&rsquo;s ownership system and borrow checker make it possible to write safe and efficient concurrent code without the risk of data races.  Rust offers several ways to achieve concurrency:</p>
+<ul>
+<li><strong>Threads:</strong>  The standard library provides tools for creating and managing threads.  Using channels or mutexes for communication and synchronization is crucial to avoid data races.</li>
+<li><strong>Channels:</strong> Channels enable safe communication between threads, avoiding shared mutable state.  Senders and receivers interact asynchronously.</li>
+<li><strong>Mutex (Mutual Exclusion):</strong> Mutexes provide exclusive access to shared data, preventing concurrent modification.  Using mutexes requires careful consideration to prevent deadlocks.</li>
+<li><strong>Async/Await:</strong> Rust&rsquo;s async/await functionality allows writing asynchronous code in a more readable and structured manner, improving concurrency performance without complicating the code significantly.</li>
+</ul>
+<h3 class="heading" id="smart-pointers">
+  Smart Pointers
+  <a class="anchor" href="#smart-pointers">#</a>
+</h3>
+<p>Smart pointers are data structures that act like pointers but also implement additional behavior, such as reference counting or memory management.  This addresses the challenges associated with manual memory management. Some commonly used smart pointers include:</p>
+<ul>
+<li><strong><code>Box&lt;T&gt;</code>:</strong>  Allocates values on the heap.  This is useful for managing values that might be large or whose size isn&rsquo;t known at compile time.</li>
+<li><strong><code>Rc&lt;T&gt;</code> (Reference Counted):</strong> Allows multiple owners of a value, tracked by a reference count.  This is suitable for situations where shared ownership is needed.  <code>Rc</code> is only for single-threaded use.</li>
+<li><strong><code>Arc&lt;T&gt;</code> (Atomically Reference Counted):</strong> Similar to <code>Rc</code>, but is thread-safe, enabling shared ownership in concurrent programs.</li>
+<li><strong><code>Mutex&lt;T&gt;</code>:</strong> Provides mutual exclusion, allowing only one thread to access the value at a time.  This prevents data races in concurrent code.</li>
+</ul>
+<h3 class="heading" id="unsafe-rust">
+  Unsafe Rust
+  <a class="anchor" href="#unsafe-rust">#</a>
+</h3>
+<p>Rust&rsquo;s safety features are normally enforced by the compiler, preventing memory leaks and dangling pointers.  However, sometimes it&rsquo;s necessary to bypass these safety guarantees.  This is achieved by using <code>unsafe</code> blocks.  Use <code>unsafe</code> code with extreme caution; it&rsquo;s essential to thoroughly understand the implications and potential risks before using it.  Incorrect use can lead to crashes, undefined behavior, and security vulnerabilities.  <code>unsafe</code> code is typically needed for:</p>
+<ul>
+<li><strong>Interacting with C code:</strong>  When integrating with external libraries written in C, you might need <code>unsafe</code> to manage memory correctly.</li>
+<li><strong>Low-level programming:</strong>  In situations where fine-grained control over memory or hardware is needed (rare in most applications).</li>
+<li><strong>Implementing complex data structures:</strong> In some cases, implementing highly optimized data structures might require circumventing certain safety checks.</li>
+</ul>
+<h3 class="heading" id="testing">
+  Testing
+  <a class="anchor" href="#testing">#</a>
+</h3>
+<p>Rust provides excellent tools for writing tests and verifying the correctness of your code.  The testing framework is integrated with Cargo.</p>
+<ul>
+<li><strong>Unit tests:</strong> These test individual functions or modules in isolation.  Use the <code>#[test]</code> attribute to mark functions as test functions.</li>
+<li><strong>Integration tests:</strong> These test the interaction between different parts of the system.  Integration tests typically reside in a separate directory (<code>tests</code> directory).</li>
+<li><strong>Test frameworks:</strong> Several testing frameworks provide additional functionality beyond Rust&rsquo;s built-in capabilities.</li>
+<li><strong>Cargo test:</strong> Cargo provides commands (<code>cargo test</code>) to run tests efficiently.</li>
+</ul>
+<p>These advanced topics are important for building more complex and robust applications. However, a solid understanding of fundamental Rust concepts is crucial before delving into these advanced areas.  Refer to the official Rust documentation for detailed explanations and examples.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-swift/">
+                        Beginner&#39;s Guide to Swift
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-go/">
+                        Beginner&#39;s Guide to Go
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

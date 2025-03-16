@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38527&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="http://localhost:38527/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:38527/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:38527/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:38527/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:38527/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Lisp | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="http://localhost:38527/posts/beginners-guide-to-lisp/"/>
+
+<meta property="og:url" content="http://localhost:38527/posts/beginners-guide-to-lisp/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Lisp">
+  <meta property="og:description" content="Introduction to Lisp # What is Lisp? # Lisp, short for “LISt Processor,” is a family of programming languages with a long and rich history. Unlike many modern languages, Lisp’s core syntax is based on s-expressions – parenthesized lists. These lists represent both code and data, leading to a powerful metaprogramming capability. This means Lisp programs can manipulate and generate other Lisp programs, enabling highly flexible and expressive code. Lisp’s homoiconicity (code as data) is a key distinguishing feature, offering unparalleled power for creating domain-specific languages (DSLs) and manipulating program structure at runtime. Furthermore, Lisp traditionally emphasizes functional programming paradigms, although many dialects also support imperative styles.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-18T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-lisp/">Beginner&#39;s Guide to Lisp</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Lisp</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-02-18T00:00:00&#43;00:00">February 18, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      17 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-lisp">Introduction to Lisp</a>
+      <ul>
+        <li><a href="#what-is-lisp">What is Lisp?</a></li>
+        <li><a href="#why-learn-lisp">Why Learn Lisp?</a></li>
+        <li><a href="#a-brief-history-of-lisp">A Brief History of Lisp</a></li>
+        <li><a href="#choosing-a-lisp-dialect-common-lisp-scheme-clojure">Choosing a Lisp Dialect (Common Lisp, Scheme, Clojure)</a></li>
+      </ul>
+    </li>
+    <li><a href="#setting-up-your-lisp-environment">Setting up your Lisp Environment</a>
+      <ul>
+        <li><a href="#installing-a-lisp-implementation">Installing a Lisp Implementation</a></li>
+        <li><a href="#using-a-repl-read-eval-print-loop">Using a REPL (Read-Eval-Print Loop)</a></li>
+        <li><a href="#choosing-a-code-editor-or-ide">Choosing a Code Editor or IDE</a></li>
+        <li><a href="#setting-up-your-project">Setting up your Project</a></li>
+      </ul>
+    </li>
+    <li><a href="#fundamental-concepts">Fundamental Concepts</a>
+      <ul>
+        <li><a href="#s-expressions-symbolic-expressions">S-expressions (Symbolic Expressions)</a></li>
+        <li><a href="#lists-and-data-structures">Lists and Data Structures</a></li>
+        <li><a href="#variables-and-assignment">Variables and Assignment</a></li>
+        <li><a href="#basic-arithmetic-operations">Basic Arithmetic Operations</a></li>
+        <li><a href="#functions-and-procedures">Functions and Procedures</a></li>
+        <li><a href="#conditional-statements-if-cond">Conditional Statements (if, cond)</a></li>
+        <li><a href="#defining-functions">Defining Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-data">Working with Data</a>
+      <ul>
+        <li><a href="#numbers">Numbers</a></li>
+        <li><a href="#strings">Strings</a></li>
+        <li><a href="#symbols">Symbols</a></li>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#vectors">Vectors</a></li>
+        <li><a href="#data-structures-cons-cells-trees">Data Structures: Cons Cells, Trees</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-structures">Control Structures</a>
+      <ul>
+        <li><a href="#loops-do-dotimes-loop">Loops (do, dotimes, loop)</a></li>
+        <li><a href="#iteration-and-recursion">Iteration and Recursion</a></li>
+        <li><a href="#macros">Macros</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-concepts-optional">Advanced Concepts (Optional)</a>
+      <ul>
+        <li><a href="#higher-order-functions">Higher-Order Functions</a></li>
+        <li><a href="#closures">Closures</a></li>
+        <li><a href="#object-oriented-programming-in-lisp">Object-Oriented Programming in Lisp</a></li>
+        <li><a href="#metaprogramming">Metaprogramming</a></li>
+      </ul>
+    </li>
+    <li><a href="#example-programs">Example Programs</a>
+      <ul>
+        <li><a href="#simple-calculator">Simple Calculator</a></li>
+        <li><a href="#working-with-lists">Working with Lists</a></li>
+        <li><a href="#a-simple-game">A Simple Game</a></li>
+      </ul>
+    </li>
+    <li><a href="#resources-and-further-learning">Resources and Further Learning</a>
+      <ul>
+        <li><a href="#recommended-books-and-tutorials">Recommended Books and Tutorials</a></li>
+        <li><a href="#online-communities-and-forums">Online Communities and Forums</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-lisp">
+  Introduction to Lisp
+  <a class="anchor" href="#introduction-to-lisp">#</a>
+</h2>
+<h3 class="heading" id="what-is-lisp">
+  What is Lisp?
+  <a class="anchor" href="#what-is-lisp">#</a>
+</h3>
+<p>Lisp, short for &ldquo;LISt Processor,&rdquo; is a family of programming languages with a long and rich history.  Unlike many modern languages, Lisp&rsquo;s core syntax is based on <em>s-expressions</em> –  parenthesized lists.  These lists represent both code and data, leading to a powerful metaprogramming capability. This means Lisp programs can manipulate and generate other Lisp programs, enabling highly flexible and expressive code.  Lisp&rsquo;s homoiconicity (code as data) is a key distinguishing feature, offering unparalleled power for creating domain-specific languages (DSLs) and manipulating program structure at runtime.  Furthermore, Lisp traditionally emphasizes functional programming paradigms, although many dialects also support imperative styles.</p>
+<h3 class="heading" id="why-learn-lisp">
+  Why Learn Lisp?
+  <a class="anchor" href="#why-learn-lisp">#</a>
+</h3>
+<p>Learning Lisp offers several significant benefits:</p>
+<ul>
+<li>
+<p><strong>Deep Understanding of Programming Concepts:</strong> Lisp&rsquo;s unique structure forces you to grapple with fundamental concepts like recursion, data structures, and program representation in a way that many other languages don&rsquo;t.  This leads to a deeper and more nuanced understanding of computer science principles.</p>
+</li>
+<li>
+<p><strong>Powerful Metaprogramming:</strong> The ability to treat code as data allows for incredibly flexible and dynamic program generation. You can create macros that extend the language itself, adapting it to specific problem domains.</p>
+</li>
+<li>
+<p><strong>Elegant and Concise Code:</strong> While Lisp code can appear unusual at first, it often achieves high levels of conciseness and readability once you grasp its syntax.  Complex operations can be expressed elegantly with minimal boilerplate.</p>
+</li>
+<li>
+<p><strong>Rich Ecosystem (depending on dialect):</strong>  Common Lisp, in particular, boasts a mature ecosystem with libraries and tools for various tasks.  Other dialects like Scheme and Clojure also have active communities and robust support.</p>
+</li>
+<li>
+<p><strong>Career Opportunities:</strong>  While not as ubiquitous as some other languages, Lisp skills are valuable in specific niches, including artificial intelligence, symbolic computation, and advanced software engineering roles.</p>
+</li>
+</ul>
+<h3 class="heading" id="a-brief-history-of-lisp">
+  A Brief History of Lisp
+  <a class="anchor" href="#a-brief-history-of-lisp">#</a>
+</h3>
+<p>Lisp&rsquo;s origins trace back to the late 1950s at MIT, where John McCarthy developed it as a language for artificial intelligence research.  Its early iterations laid the groundwork for many concepts still relevant today.  Over the decades, numerous dialects emerged, each with its own strengths and emphases.  This evolution reflects Lisp&rsquo;s adaptability and enduring influence on programming language design.</p>
+<h3 class="heading" id="choosing-a-lisp-dialect-common-lisp-scheme-clojure">
+  Choosing a Lisp Dialect (Common Lisp, Scheme, Clojure)
+  <a class="anchor" href="#choosing-a-lisp-dialect-common-lisp-scheme-clojure">#</a>
+</h3>
+<p>The Lisp family encompasses several popular dialects, each catering to different needs and programming styles:</p>
+<ul>
+<li>
+<p><strong>Common Lisp:</strong>  A large and powerful dialect with a standardized specification.  It offers extensive libraries, excellent tooling, and a mature ecosystem.  It&rsquo;s a good choice for large-scale projects and applications requiring robust infrastructure.</p>
+</li>
+<li>
+<p><strong>Scheme:</strong> A minimalist dialect known for its elegance and simplicity.  It emphasizes functional programming and has a strong emphasis on language purity.  Its smaller footprint makes it suitable for embedded systems and educational purposes.</p>
+</li>
+<li>
+<p><strong>Clojure:</strong> A modern Lisp dialect that runs on the Java Virtual Machine (JVM). It leverages the JVM&rsquo;s ecosystem while retaining Lisp&rsquo;s powerful features.  It’s particularly popular for concurrent and parallel programming.  Its focus on immutability makes it well-suited for building robust and scalable applications.</p>
+</li>
+</ul>
+<p>The best dialect for you depends on your goals.  For beginners, Scheme&rsquo;s simplicity might be a good starting point, while Common Lisp offers a more comprehensive environment for longer-term exploration. Clojure&rsquo;s modern features and JVM integration make it attractive for building production-ready software.</p>
+<h2 class="heading" id="setting-up-your-lisp-environment">
+  Setting up your Lisp Environment
+  <a class="anchor" href="#setting-up-your-lisp-environment">#</a>
+</h2>
+<h3 class="heading" id="installing-a-lisp-implementation">
+  Installing a Lisp Implementation
+  <a class="anchor" href="#installing-a-lisp-implementation">#</a>
+</h3>
+<p>The first step is to install a Lisp implementation, also known as a Lisp interpreter or compiler.  The specific steps vary depending on your operating system and chosen Lisp dialect.  Here&rsquo;s a general overview:</p>
+<ul>
+<li>
+<p><strong>Common Lisp:</strong> Popular implementations include SBCL (Steel Bank Common Lisp), CCL (Clozure Common Lisp), and ECL (Embeddable Common Lisp).  These are typically available via package managers (like Homebrew on macOS or apt/yum on Linux) or as direct downloads from the project websites.  Follow the installation instructions provided by the chosen implementation.</p>
+</li>
+<li>
+<p><strong>Scheme:</strong>  Popular Scheme implementations include Guile, MIT-Scheme, and Racket.  Similar to Common Lisp, installation usually involves downloading a binary distribution or using a system package manager.  Racket, in particular, offers a user-friendly package manager for installing additional libraries.</p>
+</li>
+<li>
+<p><strong>Clojure:</strong> Clojure runs on the JVM, so you&rsquo;ll need to have Java installed first. Then, download the Clojure command-line tools, which often involve adding Clojure to your system&rsquo;s PATH environment variable.  Leiningen or deps.edn are commonly used for project management and dependency handling.</p>
+</li>
+</ul>
+<p>After installation, verify the installation by running the Lisp implementation from your terminal. You should see a prompt indicating that the interpreter is ready.</p>
+<h3 class="heading" id="using-a-repl-read-eval-print-loop">
+  Using a REPL (Read-Eval-Print Loop)
+  <a class="anchor" href="#using-a-repl-read-eval-print-loop">#</a>
+</h3>
+<p>The REPL is an interactive environment crucial for learning and experimenting with Lisp.  Once you&rsquo;ve installed your Lisp implementation, you&rsquo;ll typically launch the REPL by simply typing the name of the implementation in your terminal (e.g., <code>sbcl</code>, <code>guile</code>, <code>clj</code>).</p>
+<p>The REPL works like this:</p>
+<ol>
+<li><strong>Read:</strong> You type a Lisp expression.</li>
+<li><strong>Eval:</strong> The Lisp interpreter evaluates the expression.</li>
+<li><strong>Print:</strong> The result of the evaluation is printed to the console.</li>
+<li><strong>Loop:</strong> The process repeats, allowing you to interactively explore the language.</li>
+</ol>
+<p>The REPL is invaluable for testing code snippets, experimenting with functions, and quickly getting feedback on your work.</p>
+<h3 class="heading" id="choosing-a-code-editor-or-ide">
+  Choosing a Code Editor or IDE
+  <a class="anchor" href="#choosing-a-code-editor-or-ide">#</a>
+</h3>
+<p>While you can technically use any text editor to write Lisp code, a dedicated code editor or IDE significantly enhances the development experience.  Many editors offer syntax highlighting, code completion, and debugging tools for Lisp:</p>
+<ul>
+<li>
+<p><strong>Emacs:</strong>  A powerful and highly customizable text editor with excellent Lisp support.  It&rsquo;s a favorite among many Lisp programmers but has a steeper learning curve.</p>
+</li>
+<li>
+<p><strong>Vim:</strong> Another highly customizable editor with plugins available for Lisp support.</p>
+</li>
+<li>
+<p><strong>IntelliJ IDEA (with Cursive plugin):</strong>  A robust IDE with a dedicated plugin (Cursive) providing excellent Clojure support.</p>
+</li>
+<li>
+<p><strong>VS Code (with various Lisp extensions):</strong> A popular versatile code editor with extensions that provide syntax highlighting, debugging, and other helpful features for several Lisp dialects.</p>
+</li>
+</ul>
+<p>Choose an editor or IDE based on your familiarity and preferences. Consider features like syntax highlighting, parenthesis matching (crucial for Lisp!), code completion, and debugging capabilities.</p>
+<h3 class="heading" id="setting-up-your-project">
+  Setting up your Project
+  <a class="anchor" href="#setting-up-your-project">#</a>
+</h3>
+<p>The way you structure your project depends on the Lisp dialect and your chosen build tools.  Here’s a general approach:</p>
+<ul>
+<li>
+<p><strong>Create a project directory:</strong>  Start by creating a new directory for your project.</p>
+</li>
+<li>
+<p><strong>Create source files:</strong>  Create files with the <code>.lisp</code> extension (or <code>.scm</code> for Scheme, <code>.clj</code> for Clojure) to contain your Lisp code.  Organize your code into logical files and modules.</p>
+</li>
+<li>
+<p><strong>(For Common Lisp) Use a build system (optional but recommended):</strong> Common Lisp often benefits from using build systems like Roswell or ASDF (Another System Definition Facility) to manage dependencies and build processes.  These tools help automate the compilation and loading of your code.</p>
+</li>
+<li>
+<p><strong>(For Clojure) Use Leiningen or deps.edn:</strong> Clojure projects typically rely on Leiningen (older projects) or deps.edn (more modern approach) for managing dependencies and building the project.  These tools handle the complexities of the JVM ecosystem.</p>
+</li>
+<li>
+<p><strong>(For Scheme) Use a build system (depending on the implementation):</strong>  Some Scheme implementations have built-in or readily available build systems; others might require more manual steps.  Check the documentation of your chosen Scheme implementation.</p>
+</li>
+</ul>
+<p>Remember to consult the documentation for your chosen Lisp implementation and any build tools you use for specific instructions and best practices.</p>
+<h2 class="heading" id="fundamental-concepts">
+  Fundamental Concepts
+  <a class="anchor" href="#fundamental-concepts">#</a>
+</h2>
+<h3 class="heading" id="s-expressions-symbolic-expressions">
+  S-expressions (Symbolic Expressions)
+  <a class="anchor" href="#s-expressions-symbolic-expressions">#</a>
+</h3>
+<p>S-expressions (symbolic expressions) are the fundamental building blocks of Lisp code.  They are lists enclosed in parentheses, where each element in the list can be either an atom (a symbol or a number) or another s-expression.  This uniform representation of code and data is a cornerstone of Lisp&rsquo;s power.  For example:</p>
+<ul>
+<li><code>(+ 1 2)</code> is an s-expression representing the addition of 1 and 2.  <code>+</code> is the function name (atom), and <code>1</code> and <code>2</code> are arguments (atoms).</li>
+<li><code>(cons 1 (list 2 3))</code> is an s-expression that uses functions (<code>cons</code>, <code>list</code>) to build a list.</li>
+</ul>
+<p>The nesting of s-expressions allows for complex structures to be built in a straightforward manner, reflecting Lisp&rsquo;s elegant and recursive nature.</p>
+<h3 class="heading" id="lists-and-data-structures">
+  Lists and Data Structures
+  <a class="anchor" href="#lists-and-data-structures">#</a>
+</h3>
+<p>Lists are the primary data structure in Lisp.  They are inherently linked lists, where each element points to the next.  Lisp provides functions for creating, manipulating, and accessing lists.  Common list operations include:</p>
+<ul>
+<li><code>cons</code>: Adds an element to the beginning of a list.</li>
+<li><code>car</code>: Returns the first element of a list.</li>
+<li><code>cdr</code>: Returns the rest of the list (excluding the first element).</li>
+<li><code>list</code>: Creates a new list from its arguments.</li>
+<li><code>append</code>: Concatenates multiple lists.</li>
+</ul>
+<p>More complex data structures, such as trees and graphs, can be built using nested lists.</p>
+<h3 class="heading" id="variables-and-assignment">
+  Variables and Assignment
+  <a class="anchor" href="#variables-and-assignment">#</a>
+</h3>
+<p>Variables in Lisp hold values.  The method of assignment varies slightly among dialects.  In Common Lisp, <code>setf</code> is commonly used for assignment:</p>
+<p><code>(setf x 10)</code> ; Assigns the value 10 to the variable x</p>
+<p>In Scheme, <code>set!</code> serves a similar purpose:</p>
+<p><code>(set! x 10)</code> ; Assigns the value 10 to the variable x</p>
+<p>Variables are dynamically scoped in some Lisp dialects (like Common Lisp) and lexically scoped in others (like Scheme).  Understanding scoping is critical for avoiding unexpected behavior.</p>
+<h3 class="heading" id="basic-arithmetic-operations">
+  Basic Arithmetic Operations
+  <a class="anchor" href="#basic-arithmetic-operations">#</a>
+</h3>
+<p>Lisp provides standard arithmetic operations using prefix notation within s-expressions:</p>
+<ul>
+<li><code>+</code>: Addition</li>
+<li><code>-</code>: Subtraction</li>
+<li><code>*</code>: Multiplication</li>
+<li><code>/</code>: Division</li>
+</ul>
+<p>Example: <code>(+ 10 (* 2 5))</code> evaluates to 20.</p>
+<h3 class="heading" id="functions-and-procedures">
+  Functions and Procedures
+  <a class="anchor" href="#functions-and-procedures">#</a>
+</h3>
+<p>Functions (or procedures) are blocks of reusable code.  They take arguments, perform operations, and return a value.  The syntax for defining functions varies between dialects, but the basic structure remains similar.  Functions promote code reusability and modularity.</p>
+<h3 class="heading" id="conditional-statements-if-cond">
+  Conditional Statements (if, cond)
+  <a class="anchor" href="#conditional-statements-if-cond">#</a>
+</h3>
+<p>Conditional statements control the flow of execution.  Lisp offers <code>if</code> and <code>cond</code> for conditional logic:</p>
+<ul>
+<li>
+<p><code>if</code>:  A simple conditional with a test, a consequent (executed if the test is true), and an alternative (executed if the test is false).</p>
+<p><code>(if (&gt; x 5) (+ x 1) (- x 1))</code></p>
+</li>
+<li>
+<p><code>cond</code>: A more general conditional that allows for multiple conditions and actions.</p>
+<p><code>(cond ((&gt; x 10) (+ x 10)) ((&gt; x 5) (+ x 5)) (t 0))</code></p>
+</li>
+</ul>
+<h3 class="heading" id="defining-functions">
+  Defining Functions
+  <a class="anchor" href="#defining-functions">#</a>
+</h3>
+<p>Function definitions create reusable blocks of code.  The syntax again varies across dialects:</p>
+<p><strong>Common Lisp:</strong></p>
+<p><code>(defun my-function (arg1 arg2) (+ arg1 arg2))</code></p>
+<p><strong>Scheme:</strong></p>
+<p><code>(define (my-function arg1 arg2) (+ arg1 arg2))</code></p>
+<p>These examples define a function named <code>my-function</code> that takes two arguments and returns their sum.  Note the use of parentheses to denote function calls and the prefix notation for operators.  The specific syntax for function definitions and the use of keywords like <code>defun</code> or <code>define</code> will differ slightly depending on which Lisp dialect you are using.</p>
+<h2 class="heading" id="working-with-data">
+  Working with Data
+  <a class="anchor" href="#working-with-data">#</a>
+</h2>
+<h3 class="heading" id="numbers">
+  Numbers
+  <a class="anchor" href="#numbers">#</a>
+</h3>
+<p>Lisp supports various numeric types, including integers, floating-point numbers, and potentially others depending on the specific implementation.  Basic arithmetic operations (+, -, *, /) work as expected.  Many Lisp dialects also offer specialized functions for handling numbers (e.g., functions for complex numbers, arbitrary-precision arithmetic, etc.).</p>
+<h3 class="heading" id="strings">
+  Strings
+  <a class="anchor" href="#strings">#</a>
+</h3>
+<p>Strings are sequences of characters.  The exact representation and functions for manipulating strings may differ slightly between Lisp dialects.  Common operations include:</p>
+<ul>
+<li>String concatenation</li>
+<li>Substring extraction</li>
+<li>String comparison</li>
+<li>Conversion between strings and numbers</li>
+</ul>
+<h3 class="heading" id="symbols">
+  Symbols
+  <a class="anchor" href="#symbols">#</a>
+</h3>
+<p>Symbols are Lisp&rsquo;s way of representing identifiers—names for variables, functions, and other entities.  They are essentially atoms that the Lisp interpreter recognizes as distinct entities.  Symbols are case-insensitive in many Lisp dialects (though some offer case-sensitive variants).</p>
+<h3 class="heading" id="lists">
+  Lists
+  <a class="anchor" href="#lists">#</a>
+</h3>
+<p>Lists, as previously discussed, are fundamental data structures in Lisp.  They&rsquo;re constructed using nested parentheses and are inherently linked lists.  Lisp provides a rich set of functions for manipulating lists (e.g., <code>car</code>, <code>cdr</code>, <code>cons</code>, <code>append</code>, <code>reverse</code>, <code>mapcar</code>, etc.).</p>
+<h3 class="heading" id="vectors">
+  Vectors
+  <a class="anchor" href="#vectors">#</a>
+</h3>
+<p>Vectors are another important data structure, offering efficient random access to elements.  Unlike lists, vectors typically store elements contiguously in memory.  Lisp provides functions for creating, accessing, and modifying vectors, similar to arrays in other programming languages.  The exact syntax and functions for vectors might vary among different Lisp implementations.</p>
+<h3 class="heading" id="data-structures-cons-cells-trees">
+  Data Structures: Cons Cells, Trees
+  <a class="anchor" href="#data-structures-cons-cells-trees">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>Cons Cells:</strong> At the lowest level, many Lisp lists are implemented using cons cells. A cons cell is a pair containing two pointers: one to the <em>car</em> (contents of the address register) and another to the <em>cdr</em> (contents of the decrement register).  The <code>car</code> holds the first element of a list, and the <code>cdr</code> points to the rest of the list (which can be another cons cell or the empty list, <code>nil</code>). This structure forms the basis for linked lists and other complex data structures.</p>
+</li>
+<li>
+<p><strong>Trees:</strong>  Trees are hierarchical data structures built by recursively using cons cells.  Each node in the tree is a cons cell, where the <code>car</code> represents the data at that node and the <code>cdr</code> points to a list of its children (which are themselves trees or <code>nil</code>).  Various tree structures (e.g., binary trees, n-ary trees) can be readily implemented using cons cells.  Functions for tree traversal (e.g., inorder, preorder, postorder) are typically available in Lisp libraries or can be easily implemented using recursion.</p>
+</li>
+</ul>
+<h2 class="heading" id="control-structures">
+  Control Structures
+  <a class="anchor" href="#control-structures">#</a>
+</h2>
+<h3 class="heading" id="loops-do-dotimes-loop">
+  Loops (do, dotimes, loop)
+  <a class="anchor" href="#loops-do-dotimes-loop">#</a>
+</h3>
+<p>Lisp provides several ways to implement loops. The specific constructs and their syntax might vary slightly across dialects. Here are some common approaches:</p>
+<ul>
+<li>
+<p><strong><code>do</code> loop (Common Lisp):</strong>  A general-purpose loop that allows for intricate control flow. It involves specifying variables, their initial values, termination conditions, and iterative steps.</p>
+</li>
+<li>
+<p><strong><code>dotimes</code> loop (Common Lisp):</strong> A loop designed for iterating a specific number of times. It simplifies loop construction when you know the number of iterations beforehand.</p>
+</li>
+<li>
+<p><strong><code>loop</code> macro (Common Lisp):</strong> A powerful macro providing a highly expressive and flexible way to create loops.  It&rsquo;s suitable for complex iterations and can handle various loop structures with concise syntax.</p>
+</li>
+<li>
+<p><strong>Scheme&rsquo;s iterative constructs:</strong> Scheme often employs named <code>let</code> constructs or tail-recursive functions to manage iterative processes instead of explicit loop keywords like <code>do</code> or <code>dotimes</code>.</p>
+</li>
+</ul>
+<h3 class="heading" id="iteration-and-recursion">
+  Iteration and Recursion
+  <a class="anchor" href="#iteration-and-recursion">#</a>
+</h3>
+<p>Lisp excels at both iteration and recursion.  Recursion is a natural fit for Lisp&rsquo;s functional style and its homoiconicity, as functions can easily operate on data structures.</p>
+<ul>
+<li>
+<p><strong>Iteration:</strong>  Achieved using the looping constructs mentioned above.  Iteration is often preferable when performance is critical or when dealing with side effects.</p>
+</li>
+<li>
+<p><strong>Recursion:</strong>  Involves functions calling themselves to solve smaller subproblems. Recursion can lead to elegant and concise solutions for problems that can be naturally broken down into smaller, self-similar parts. However, excessive recursion can sometimes lead to stack overflow issues, so tail-call optimization is often important (though support varies among dialects).  In Lisp, many list operations are naturally implemented recursively, showcasing the language&rsquo;s elegance in handling recursive data structures.</p>
+</li>
+</ul>
+<h3 class="heading" id="macros">
+  Macros
+  <a class="anchor" href="#macros">#</a>
+</h3>
+<p>Macros are a powerful metaprogramming feature in Lisp.  They allow you to extend the language by defining new syntactic constructs.  A macro takes code as input, transforms it, and produces new code as output.  This allows for significant customization and the creation of DSLs (Domain-Specific Languages) within Lisp.  For example, you could write a macro to simplify the creation of common looping constructs or to define new control flow mechanisms tailored to a specific task.  Macros are a more advanced topic, but they are essential for mastering Lisp&rsquo;s metaprogramming capabilities.  Common Lisp&rsquo;s <code>defmacro</code> and Scheme&rsquo;s <code>define-macro</code> (or similar constructs) are commonly used to create macros.  Understanding hygiene in macros is crucial to avoid unintended variable name collisions.</p>
+<h2 class="heading" id="advanced-concepts-optional">
+  Advanced Concepts (Optional)
+  <a class="anchor" href="#advanced-concepts-optional">#</a>
+</h2>
+<h3 class="heading" id="higher-order-functions">
+  Higher-Order Functions
+  <a class="anchor" href="#higher-order-functions">#</a>
+</h3>
+<p>Higher-order functions are functions that take other functions as arguments or return functions as results.  This is a powerful aspect of functional programming, enabling code reusability and abstraction.  Lisp&rsquo;s functional nature makes it well-suited for working with higher-order functions.  Common examples include <code>mapcar</code> (applies a function to each element of a list), <code>filter</code> (selects elements from a list based on a predicate function), and <code>reduce</code> (accumulates a result by applying a function cumulatively to the elements of a list).  These functions enable concise and expressive ways to manipulate data.</p>
+<h3 class="heading" id="closures">
+  Closures
+  <a class="anchor" href="#closures">#</a>
+</h3>
+<p>A closure is a function that &ldquo;remembers&rdquo; its surrounding lexical environment, even after the function that created it has finished executing.  This means a closure can access and modify variables from its enclosing scope, even if those variables are no longer directly accessible.  Closures are used to create stateful functions or to implement techniques like currying (creating specialized functions from more general ones by partially applying arguments).  Lisp&rsquo;s lexical scoping facilitates the creation and use of closures.</p>
+<h3 class="heading" id="object-oriented-programming-in-lisp">
+  Object-Oriented Programming in Lisp
+  <a class="anchor" href="#object-oriented-programming-in-lisp">#</a>
+</h3>
+<p>While Lisp is not inherently object-oriented like Java or C++, several approaches to object-oriented programming (OOP) exist within Lisp.  These methods often leverage Lisp&rsquo;s metaprogramming capabilities to create systems that mimic OOP features:</p>
+<ul>
+<li>
+<p><strong>CLOS (Common Lisp Object System):</strong>  A powerful and flexible OOP system built into Common Lisp.  It supports features like classes, inheritance, and polymorphism.</p>
+</li>
+<li>
+<p><strong>Other Approaches:</strong>  Other Lisp dialects might use different techniques or libraries to provide OOP functionality.  This often involves using macros or other metaprogramming tools to define classes and methods.</p>
+</li>
+</ul>
+<p>Object-oriented features can be built on top of Lisp&rsquo;s underlying functional foundation, but it’s important to understand that Lisp’s core strengths are not necessarily tied to an OOP paradigm.</p>
+<h3 class="heading" id="metaprogramming">
+  Metaprogramming
+  <a class="anchor" href="#metaprogramming">#</a>
+</h3>
+<p>Metaprogramming is the ability of a program to treat code as data.  Lisp excels in this area because of its homoiconicity (code and data are represented using the same structure, s-expressions).  Macros are a prime example of metaprogramming, allowing you to modify code before it&rsquo;s executed.  Other metaprogramming techniques in Lisp include code generation, program transformation, and the creation of DSLs (Domain-Specific Languages) embedded within Lisp.  Metaprogramming allows for powerful extensions of the language, creating highly customized tools and solutions.  It enables developers to create abstractions and solve problems in novel and elegant ways, adapting the language to specific problem domains.  However, it&rsquo;s also a more advanced topic that requires a strong understanding of Lisp&rsquo;s underlying mechanisms.</p>
+<h2 class="heading" id="example-programs">
+  Example Programs
+  <a class="anchor" href="#example-programs">#</a>
+</h2>
+<p>These examples are illustrative and may require minor adjustments depending on your chosen Lisp dialect.  Consult your dialect&rsquo;s documentation for specific function names and syntax variations.</p>
+<h3 class="heading" id="simple-calculator">
+  Simple Calculator
+  <a class="anchor" href="#simple-calculator">#</a>
+</h3>
+<p>This example demonstrates a basic calculator that performs addition, subtraction, multiplication, and division:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">simple-calculator</span> (<span style="color:#bb60d5">op</span> <span style="color:#bb60d5">num1</span> <span style="color:#bb60d5">num2</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020">cond</span> ((<span style="color:#06287e">=</span> <span style="color:#bb60d5">op</span> <span style="color:#517918">&#39;+</span>) (<span style="color:#06287e">+</span> <span style="color:#bb60d5">num1</span> <span style="color:#bb60d5">num2</span>))
+</span></span><span style="display:flex;"><span>        ((<span style="color:#06287e">=</span> <span style="color:#bb60d5">op</span> <span style="color:#517918">&#39;-</span>) (<span style="color:#06287e">-</span> <span style="color:#bb60d5">num1</span> <span style="color:#bb60d5">num2</span>))
+</span></span><span style="display:flex;"><span>        ((<span style="color:#06287e">=</span> <span style="color:#bb60d5">op</span> <span style="color:#517918">&#39;*</span>) (<span style="color:#06287e">*</span> <span style="color:#bb60d5">num1</span> <span style="color:#bb60d5">num2</span>))
+</span></span><span style="display:flex;"><span>        ((<span style="color:#06287e">=</span> <span style="color:#bb60d5">op</span> <span style="color:#517918">&#39;/</span>) (<span style="color:#06287e">/</span> <span style="color:#bb60d5">num1</span> <span style="color:#bb60d5">num2</span>))
+</span></span><span style="display:flex;"><span>        (<span style="color:#60add5">t</span> (<span style="color:#06287e">print</span> <span style="color:#4070a0">&#34;Invalid operator&#34;</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">;;Example usage</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#06287e">print</span> (<span style="color:#bb60d5">simple-calculator</span> <span style="color:#517918">&#39;+</span> <span style="color:#40a070">10</span> <span style="color:#40a070">5</span>))  <span style="color:#60a0b0;font-style:italic">; Output: 15</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#06287e">print</span> (<span style="color:#bb60d5">simple-calculator</span> <span style="color:#517918">&#39;*</span> <span style="color:#40a070">3</span> <span style="color:#40a070">7</span>))  <span style="color:#60a0b0;font-style:italic">; Output: 21</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#06287e">print</span> (<span style="color:#bb60d5">simple-calculator</span> <span style="color:#517918">&#39;-</span> <span style="color:#40a070">20</span> <span style="color:#40a070">8</span>))  <span style="color:#60a0b0;font-style:italic">; Output: 12</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#06287e">print</span> (<span style="color:#bb60d5">simple-calculator</span> <span style="color:#517918">&#39;/</span> <span style="color:#40a070">100</span> <span style="color:#40a070">4</span>)) <span style="color:#60a0b0;font-style:italic">; Output: 25</span>
+</span></span></code></pre></div><h3 class="heading" id="working-with-lists">
+  Working with Lists
+  <a class="anchor" href="#working-with-lists">#</a>
+</h3>
+<p>This example demonstrates several list manipulation functions:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">;;Creating a list</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#007020">defparameter</span> *my-list* <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span> <span style="color:#40a070">5</span> <span style="color:#40a070">6</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">;;Getting the first element</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#06287e">print</span> (<span style="color:#06287e">car</span> *my-list*)) <span style="color:#60a0b0;font-style:italic">; Output: 1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">;;Getting the rest of the list</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#06287e">print</span> (<span style="color:#06287e">cdr</span> *my-list*)) <span style="color:#60a0b0;font-style:italic">; Output: (2 3 4 5 6)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">;;Adding an element to the beginning</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#06287e">print</span> (<span style="color:#0e84b5;font-weight:bold">cons</span> <span style="color:#40a070">0</span> *my-list*)) <span style="color:#60a0b0;font-style:italic">; Output: (0 1 2 3 4 5 6)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">;;Adding elements to the end (using append)</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#06287e">print</span> (<span style="color:#06287e">append</span> *my-list* <span style="color:#666">&#39;</span>(<span style="color:#40a070">7</span> <span style="color:#40a070">8</span>))) <span style="color:#60a0b0;font-style:italic">; Output: (1 2 3 4 5 6 7 8)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">;;Summing the list elements (using reduce)</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#06287e">print</span> (<span style="color:#06287e">reduce</span> <span style="color:#06287e">#&#39;+</span> *my-list* <span style="color:#517918">:initial-value</span> <span style="color:#40a070">0</span>)) <span style="color:#60a0b0;font-style:italic">;Output: 21</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">;;Filtering the list (keeping only even numbers)</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#06287e">print</span> (<span style="color:#06287e">remove-if-not</span> <span style="color:#06287e">#&#39;evenp</span> *my-list*)) <span style="color:#60a0b0;font-style:italic">; Output: (2 4 6)</span>
+</span></span></code></pre></div><h3 class="heading" id="a-simple-game">
+  A Simple Game
+  <a class="anchor" href="#a-simple-game">#</a>
+</h3>
+<p>This example outlines a simple number guessing game:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">guess-the-number</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">let</span> ((<span style="color:#bb60d5">secret-number</span> (<span style="color:#06287e">random</span> <span style="color:#40a070">100</span>))) <span style="color:#60a0b0;font-style:italic">;Generates a random number between 0 and 99</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#007020">loop</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#06287e">format</span> <span style="color:#60add5">t</span> <span style="color:#4070a0">&#34;Guess a number between 0 and 99: &#34;</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#007020;font-weight:bold">let</span> ((<span style="color:#bb60d5">guess</span> (<span style="color:#06287e">read</span>)))
+</span></span><span style="display:flex;"><span>        (<span style="color:#007020">cond</span> ((<span style="color:#06287e">=</span> <span style="color:#bb60d5">guess</span> <span style="color:#bb60d5">secret-number</span>)
+</span></span><span style="display:flex;"><span>               (<span style="color:#06287e">format</span> <span style="color:#60add5">t</span> <span style="color:#4070a0">&#34;Congratulations! You guessed it.~%&#34;</span>))
+</span></span><span style="display:flex;"><span>              ((<span style="color:#06287e">&lt;</span> <span style="color:#bb60d5">guess</span> <span style="color:#bb60d5">secret-number</span>)
+</span></span><span style="display:flex;"><span>               (<span style="color:#06287e">format</span> <span style="color:#60add5">t</span> <span style="color:#4070a0">&#34;Too low! Try again.~%&#34;</span>))
+</span></span><span style="display:flex;"><span>              ((<span style="color:#06287e">&gt;</span> <span style="color:#bb60d5">guess</span> <span style="color:#bb60d5">secret-number</span>)
+</span></span><span style="display:flex;"><span>               (<span style="color:#06287e">format</span> <span style="color:#60add5">t</span> <span style="color:#4070a0">&#34;Too high! Try again.~%&#34;</span>)))))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">;;Start the game</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#bb60d5">guess-the-number</span>)
+</span></span></code></pre></div><p>Remember to load these code snippets into your Lisp REPL to run them.  Adapt the code as necessary for your specific Lisp implementation.  These are very basic examples; you can expand on them to create more complex and interesting programs.</p>
+<h2 class="heading" id="resources-and-further-learning">
+  Resources and Further Learning
+  <a class="anchor" href="#resources-and-further-learning">#</a>
+</h2>
+<h3 class="heading" id="recommended-books-and-tutorials">
+  Recommended Books and Tutorials
+  <a class="anchor" href="#recommended-books-and-tutorials">#</a>
+</h3>
+<p>The best resources for learning Lisp will depend on your chosen dialect and learning style. However, here are some generally recommended books and online tutorials to get you started:</p>
+<ul>
+<li>
+<p><strong>Practical Common Lisp:</strong> A comprehensive and well-regarded book for learning Common Lisp. It covers a wide range of topics and is suitable for both beginners and experienced programmers.</p>
+</li>
+<li>
+<p><strong>Land of Lisp:</strong> A more playful and less formal introduction to Lisp, using game development as a motivating example.  It&rsquo;s a good choice for those who prefer a less academic approach.</p>
+</li>
+<li>
+<p><strong>Structure and Interpretation of Computer Programs (SICP):</strong> While not exclusively about Lisp, this classic textbook uses Scheme to teach fundamental computer science concepts.  It’s considered a challenging but rewarding read for those seeking a deep understanding of programming.</p>
+</li>
+<li>
+<p><strong>Online Tutorials:</strong> Many free online tutorials and courses are available, covering various Lisp dialects.  Search for &ldquo;Common Lisp tutorial,&rdquo; &ldquo;Scheme tutorial,&rdquo; or &ldquo;Clojure tutorial&rdquo; on platforms like YouTube, Coursera, edX, and others.  Look for tutorials that align with your preferred learning style and the Lisp dialect you&rsquo;ve chosen.</p>
+</li>
+</ul>
+<h3 class="heading" id="online-communities-and-forums">
+  Online Communities and Forums
+  <a class="anchor" href="#online-communities-and-forums">#</a>
+</h3>
+<p>Engaging with the Lisp community is valuable for getting help, sharing knowledge, and staying up-to-date with the latest developments.  Here are some places to connect:</p>
+<ul>
+<li>
+<p><strong>Reddit:</strong>  Subreddits such as r/lisp, r/commonlisp, r/scheme, and r/clojure are active communities dedicated to different Lisp dialects.  You can ask questions, share your work, and participate in discussions.</p>
+</li>
+<li>
+<p><strong>Stack Overflow:</strong> This popular Q&amp;A site has a wealth of information on Lisp.  Search for your specific questions or problems; you&rsquo;ll likely find helpful answers and discussions.</p>
+</li>
+<li>
+<p><strong>Forums:</strong>  Some Lisp implementations or projects have dedicated forums or mailing lists. Check the official websites of your chosen Lisp implementation for links to these communities.</p>
+</li>
+<li>
+<p><strong>Planet Lisp:</strong> An aggregator of blogs and news related to Lisp.  It&rsquo;s a great way to stay updated on developments and find insightful articles.</p>
+</li>
+</ul>
+<p>Remember to be respectful and follow the community guidelines of any online forum or community you participate in.  Clearly state your Lisp dialect when asking questions, as practices and available libraries vary across dialects.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-erlang/">
+                        Beginner&#39;s Guide to Erlang
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-f/">
+                        Beginner&#39;s Guide to F#
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

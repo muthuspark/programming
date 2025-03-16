@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Tcl | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-tcl/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-tcl/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Tcl">
+  <meta property="og:description" content="Introduction to Tcl # What is Tcl? # Tcl (Tool Command Language) is a scripting language known for its simplicity, efficiency, and embeddability. It’s a high-level, interpreted language, meaning your code is executed line by line without needing a separate compilation step. Tcl’s core strength lies in its ability to easily interact with other applications and systems. It excels at automating tasks, creating small utilities, and extending the capabilities of existing applications. The language is characterized by a straightforward syntax, making it relatively easy to learn, even for beginners. Tcl often works in conjunction with Tk (Toolkit), a GUI library that allows for the creation of graphical user interfaces.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-31T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-31T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-tcl/">Beginner&#39;s Guide to Tcl</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Tcl</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-01-31T00:00:00&#43;00:00">January 31, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      13 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-tcl">Introduction to Tcl</a>
+      <ul>
+        <li><a href="#what-is-tcl">What is Tcl?</a></li>
+        <li><a href="#why-learn-tcl">Why learn Tcl?</a></li>
+        <li><a href="#setting-up-your-tcl-environment">Setting up your Tcl environment</a></li>
+        <li><a href="#running-your-first-tcl-script">Running your first Tcl script</a></li>
+      </ul>
+    </li>
+    <li><a href="#tcl-basics">Tcl Basics</a>
+      <ul>
+        <li><a href="#basic-syntax">Basic Syntax</a></li>
+        <li><a href="#variables-and-data-types">Variables and Data Types</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#simple-commands">Simple commands</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-structures">Control Structures</a>
+      <ul>
+        <li><a href="#if-then-else-statements">if-then-else statements</a></li>
+        <li><a href="#for-loops">for loops</a></li>
+        <li><a href="#while-loops">while loops</a></li>
+        <li><a href="#break-and-continue-statements">break and continue statements</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-data">Working with Data</a>
+      <ul>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#arrays">Arrays</a></li>
+        <li><a href="#strings">Strings</a></li>
+        <li><a href="#string-manipulation">String manipulation</a></li>
+      </ul>
+    </li>
+    <li><a href="#procedures-and-functions">Procedures and Functions</a>
+      <ul>
+        <li><a href="#defining-procedures">Defining procedures</a></li>
+        <li><a href="#passing-arguments">Passing arguments</a></li>
+        <li><a href="#returning-values">Returning values</a></li>
+        <li><a href="#recursive-procedures">Recursive procedures</a></li>
+      </ul>
+    </li>
+    <li><a href="#input-and-output">Input and Output</a>
+      <ul>
+        <li><a href="#reading-from-the-console">Reading from the console</a></li>
+        <li><a href="#writing-to-the-console">Writing to the console</a></li>
+        <li><a href="#file-io">File I/O</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics-brief-overview">Advanced Topics (Brief Overview)</a>
+      <ul>
+        <li><a href="#regular-expressions">Regular Expressions</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#object-oriented-programming-in-tcl">Object-Oriented Programming in Tcl</a></li>
+        <li><a href="#extending-tcl-with-cc">Extending Tcl with C/C++</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-tcl">
+  Introduction to Tcl
+  <a class="anchor" href="#introduction-to-tcl">#</a>
+</h2>
+<h3 class="heading" id="what-is-tcl">
+  What is Tcl?
+  <a class="anchor" href="#what-is-tcl">#</a>
+</h3>
+<p>Tcl (Tool Command Language) is a scripting language known for its simplicity, efficiency, and embeddability.  It&rsquo;s a high-level, interpreted language, meaning your code is executed line by line without needing a separate compilation step.  Tcl&rsquo;s core strength lies in its ability to easily interact with other applications and systems. It excels at automating tasks, creating small utilities, and extending the capabilities of existing applications.  The language is characterized by a straightforward syntax, making it relatively easy to learn, even for beginners.  Tcl often works in conjunction with Tk (Toolkit), a GUI library that allows for the creation of graphical user interfaces.</p>
+<h3 class="heading" id="why-learn-tcl">
+  Why learn Tcl?
+  <a class="anchor" href="#why-learn-tcl">#</a>
+</h3>
+<p>There are several compelling reasons to learn Tcl:</p>
+<ul>
+<li>
+<p><strong>Ease of Learning:</strong> Tcl&rsquo;s syntax is remarkably clean and consistent, making it quicker to grasp than many other scripting languages.  Its straightforward structure reduces the learning curve significantly.</p>
+</li>
+<li>
+<p><strong>Extensibility and Embeddability:</strong> Tcl can be easily integrated into other applications, acting as an extension language.  This makes it ideal for customizing and automating the behavior of existing software.</p>
+</li>
+<li>
+<p><strong>Cross-Platform Compatibility:</strong> Tcl is highly portable and runs on a wide variety of operating systems, including Windows, macOS, and Linux.</p>
+</li>
+<li>
+<p><strong>Powerful Libraries:</strong> Beyond its core functionality, Tcl boasts a rich collection of extensions and packages that expand its capabilities for various tasks like networking, database interaction, and more.  The Tk library, in particular, provides a robust way to create GUIs.</p>
+</li>
+<li>
+<p><strong>Active Community:</strong> Though not as large as some other languages, Tcl still has a dedicated and helpful community providing support and resources.</p>
+</li>
+</ul>
+<h3 class="heading" id="setting-up-your-tcl-environment">
+  Setting up your Tcl environment
+  <a class="anchor" href="#setting-up-your-tcl-environment">#</a>
+</h3>
+<p>Setting up your Tcl environment is generally straightforward.  Most operating systems offer Tcl packages through their package managers.  Here&rsquo;s a brief overview:</p>
+<ul>
+<li>
+<p><strong>Linux (using apt):</strong> Open a terminal and execute <code>sudo apt update</code> followed by <code>sudo apt install tcl-dev tcl8.6</code>.  The specific package name might vary depending on your distribution.</p>
+</li>
+<li>
+<p><strong>macOS (using Homebrew):</strong>  Install Homebrew if you haven&rsquo;t already. Then, open a terminal and run <code>brew install tcl</code>.</p>
+</li>
+<li>
+<p><strong>Windows:</strong> You can download a pre-compiled Tcl installer from the official Tcl website.  This will typically include the <code>tclsh</code> interpreter, which you can run from your command prompt.</p>
+</li>
+</ul>
+<p>Once installed, you should be able to access the Tcl interpreter from your command line by typing <code>tclsh</code> (or <code>wish</code> for the Tk-enabled interpreter) and pressing Enter.</p>
+<h3 class="heading" id="running-your-first-tcl-script">
+  Running your first Tcl script
+  <a class="anchor" href="#running-your-first-tcl-script">#</a>
+</h3>
+<p>Create a simple text file (e.g., <code>hello.tcl</code>) with the following code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
+</span></span></code></pre></div><p>To run this script, open your terminal or command prompt, navigate to the directory containing the file, and execute the following command:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tclsh hello.tcl
+</span></span></code></pre></div><p>This will print &ldquo;Hello, world!&rdquo; to your console.  This demonstrates the basic structure of a Tcl script:  a single command (<code>puts</code>) that sends output to the console.  You can create more complex scripts by adding more commands and using Tcl&rsquo;s control structures.</p>
+<h2 class="heading" id="tcl-basics">
+  Tcl Basics
+  <a class="anchor" href="#tcl-basics">#</a>
+</h2>
+<h3 class="heading" id="basic-syntax">
+  Basic Syntax
+  <a class="anchor" href="#basic-syntax">#</a>
+</h3>
+<p>Tcl&rsquo;s syntax is remarkably straightforward.  Commands are written as words followed by arguments, all separated by spaces.  Each command occupies a single line (though you can use line continuation with backslashes <code>\</code>).  Arguments can be simple values (numbers, strings) or more complex expressions.  Here&rsquo;s a basic example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;This is a Tcl command&#34;</span>  <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># puts is the command, &#34;This is a Tcl command&#34; is the argument.
+</span></span></span></code></pre></div><p>The semicolon (<code>;</code>) marks the beginning of a comment (explained below).  Note the use of double quotes for strings.</p>
+<p>Curly braces <code>{}</code> are used to group commands or arguments, preventing word splitting and command substitution.</p>
+<p>Square brackets <code>[]</code> are used for array indexing and for list manipulation.</p>
+<h3 class="heading" id="variables-and-data-types">
+  Variables and Data Types
+  <a class="anchor" href="#variables-and-data-types">#</a>
+</h3>
+<p>Tcl is dynamically typed, meaning you don&rsquo;t need to explicitly declare variable types. Variables are created when you first assign a value to them. The <code>set</code> command is used to assign values to variables:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> myVariable <span style="color:#4070a0">&#34;Hello&#34;</span>  <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Assigns the string &#34;Hello&#34; to the variable myVariable
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">set</span> myNumber <span style="color:#40a070">10</span>         <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Assigns the integer 10 to myNumber
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">set</span> myFloat <span style="color:#40a070">3.14159</span>    <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Assigns the floating-point number 3.14159 to myFloat
+</span></span></span></code></pre></div><p>Variable names are case-sensitive.  To access a variable&rsquo;s value, use the variable name preceded by a dollar sign (<code>$</code>).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#bb60d5">$myVariable</span>  <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Prints &#34;Hello&#34;
+</span></span></span></code></pre></div><p>Tcl primarily uses strings internally, but it handles numbers appropriately when used in numerical operations.  There isn&rsquo;t a strict separation between different data types like integers, floats, etc., as in statically-typed languages.</p>
+<h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>Tcl supports a variety of operators including:</p>
+<ul>
+<li>
+<p><strong>Arithmetic Operators:</strong>  <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo), <code>**</code> (exponentiation)</p>
+</li>
+<li>
+<p><strong>Comparison Operators:</strong> <code>==</code> (equal), <code>!=</code> (not equal), <code>&gt;</code> (greater than), <code>&lt;</code> (less than), <code>&gt;=</code> (greater than or equal to), <code>&lt;=</code> (less than or equal to)</p>
+</li>
+<li>
+<p><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (and), <code>||</code> (or), <code>!</code> (not)</p>
+</li>
+<li>
+<p><strong>String Operators:</strong>  Tcl provides powerful string manipulation functions rather than dedicated string operators.</p>
+</li>
+</ul>
+<h3 class="heading" id="comments">
+  Comments
+  <a class="anchor" href="#comments">#</a>
+</h3>
+<p>Comments in Tcl start with a semicolon (<code>;</code>) and extend to the end of the line.  They are ignored by the interpreter.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;This line is executed&#34;</span> <span style="color:#007020;font-weight:bold">;</span> <span style="color:#bb60d5">This</span> is a comment
+</span></span></code></pre></div><h3 class="heading" id="simple-commands">
+  Simple commands
+  <a class="anchor" href="#simple-commands">#</a>
+</h3>
+<p>Some fundamental Tcl commands include:</p>
+<ul>
+<li>
+<p><strong><code>puts</code>:</strong> Sends output to the console (standard output).  Example: <code>puts &quot;Hello, world!&quot;</code></p>
+</li>
+<li>
+<p><strong><code>set</code>:</strong> Assigns a value to a variable. Example: <code>set x 10</code></p>
+</li>
+<li>
+<p><strong><code>expr</code>:</strong> Evaluates an arithmetic or logical expression. Example: <code>set y [expr {$x + 5}]</code></p>
+</li>
+<li>
+<p><strong><code>if</code>:</strong> Conditional execution.  Example:  <code>if {$x &gt; 5} {puts &quot;x is greater than 5&quot;}</code></p>
+</li>
+<li>
+<p><strong><code>while</code>:</strong> Looping construct. Example: <code>while {$x &gt; 0} {puts $x; incr x -1}</code></p>
+</li>
+<li>
+<p><strong><code>incr</code>:</strong> Increments or decrements a variable. Example: <code>incr x</code> (increments x by 1), <code>incr x -2</code> (decrements x by 2)</p>
+</li>
+</ul>
+<p>These basic commands provide the foundation for building more complex Tcl scripts.  More advanced commands will be explored in subsequent sections.</p>
+<h2 class="heading" id="control-structures">
+  Control Structures
+  <a class="anchor" href="#control-structures">#</a>
+</h2>
+<h3 class="heading" id="if-then-else-statements">
+  if-then-else statements
+  <a class="anchor" href="#if-then-else-statements">#</a>
+</h3>
+<p>Tcl&rsquo;s <code>if</code> statement allows conditional execution of code blocks. The basic syntax is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">condition</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># Code to execute if the condition is true
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">}</span>
+</span></span></code></pre></div><p>For more complex scenarios, you can use <code>else</code> and <code>elseif</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">condition1</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># Code to execute if condition1 is true
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">elseif</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">condition2</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># Code to execute if condition2 is true
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># Code to execute if none of the above conditions are true
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">}</span>
+</span></span></code></pre></div><p>The conditions are evaluated using the <code>expr</code> command, which allows for arithmetic and logical comparisons.  Note the use of curly braces <code>{}</code> to enclose the code blocks.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> x <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">$x</span> <span style="color:#666">&gt;</span> <span style="color:#bb60d5">5</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;x is greater than 5&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;x is not greater than 5&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 class="heading" id="for-loops">
+  for loops
+  <a class="anchor" href="#for-loops">#</a>
+</h3>
+<p>Tcl&rsquo;s <code>for</code> loop iterates a specified number of times or over a list of values.  The syntax for iterating a specific number of times is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#007020;font-weight:bold">{set</span> i <span style="color:#40a070">0</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">$i</span> <span style="color:#666">&lt;</span> <span style="color:#bb60d5">10</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#007020">incr</span> i<span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># Code to execute in each iteration
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;Iteration: $i&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span>
+</span></span></code></pre></div><p>This loop initializes <code>i</code> to 0, continues as long as <code>i</code> is less than 10, and increments <code>i</code> by 1 in each iteration.</p>
+<p>For iterating over a list:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> myList <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">apple</span> banana cherry<span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">foreach</span> item <span style="color:#bb60d5">$myList</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;Fruit: $item&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span>
+</span></span></code></pre></div><p>This loop iterates through each element in <code>myList</code>, assigning it to the variable <code>item</code> in each iteration.</p>
+<h3 class="heading" id="while-loops">
+  while loops
+  <a class="anchor" href="#while-loops">#</a>
+</h3>
+<p>The <code>while</code> loop repeatedly executes a block of code as long as a condition remains true:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> i <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">$i</span> <span style="color:#666">&lt;</span> <span style="color:#bb60d5">5</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;Iteration: $i&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">incr</span> i
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span>
+</span></span></code></pre></div><p>This loop continues until the value of <code>i</code> becomes 5.</p>
+<h3 class="heading" id="break-and-continue-statements">
+  break and continue statements
+  <a class="anchor" href="#break-and-continue-statements">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>break</code>:</strong>  Immediately terminates the loop it&rsquo;s inside, transferring control to the statement following the loop.</p>
+</li>
+<li>
+<p><strong><code>continue</code>:</strong> Skips the rest of the current iteration of the loop and proceeds to the next iteration.</p>
+</li>
+</ul>
+<p>Example demonstrating <code>break</code> and <code>continue</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#007020;font-weight:bold">{set</span> i <span style="color:#40a070">0</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">$i</span> <span style="color:#666">&lt;</span> <span style="color:#bb60d5">10</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#007020">incr</span> i<span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">$i</span> <span style="color:#666">==</span> <span style="color:#bb60d5">5</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">break</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Exit the loop when i is 5
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">$i</span> <span style="color:#666">==</span> <span style="color:#bb60d5">3</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">continue</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Skip the rest of this iteration when i is 3
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;Iteration: $i&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span>
+</span></span></code></pre></div><p>This loop will print &ldquo;Iteration: 0&rdquo;, &ldquo;Iteration: 1&rdquo;, &ldquo;Iteration: 2&rdquo;, &ldquo;Iteration: 4&rdquo;, and then exit.  Iteration 3 is skipped due to <code>continue</code>, and the loop terminates at iteration 5 due to <code>break</code>.</p>
+<h2 class="heading" id="working-with-data">
+  Working with Data
+  <a class="anchor" href="#working-with-data">#</a>
+</h2>
+<h3 class="heading" id="lists">
+  Lists
+  <a class="anchor" href="#lists">#</a>
+</h3>
+<p>Lists in Tcl are ordered sequences of elements enclosed in curly braces <code>{}</code>. Elements are separated by spaces.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> myList <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">apple</span> banana cherry<span style="color:#007020;font-weight:bold">}</span>
+</span></span></code></pre></div><p>You can access individual elements using <code>lindex</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#007020;font-weight:bold">[</span><span style="color:#007020">lindex</span> <span style="color:#bb60d5">$myList</span> <span style="color:#40a070">0</span><span style="color:#007020;font-weight:bold">]</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Output: apple (0-based indexing)
+</span></span></span></code></pre></div><p>To get the length of a list, use <code>llength</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#007020;font-weight:bold">[</span><span style="color:#007020">llength</span> <span style="color:#bb60d5">$myList</span><span style="color:#007020;font-weight:bold">]</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Output: 3
+</span></span></span></code></pre></div><p>Tcl provides many commands for manipulating lists, including <code>lappend</code> (append elements), <code>lset</code> (modify elements), <code>lrange</code> (extract a sublist), and more.</p>
+<h3 class="heading" id="arrays">
+  Arrays
+  <a class="anchor" href="#arrays">#</a>
+</h3>
+<p>Arrays in Tcl are collections of key-value pairs.  They are accessed using square brackets <code>[]</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> myArray<span style="color:#007020;font-weight:bold">(</span><span style="color:#bb60d5">name</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#4070a0">&#34;John Doe&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> myArray<span style="color:#007020;font-weight:bold">(</span><span style="color:#bb60d5">age</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#40a070">30</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> myArray<span style="color:#007020;font-weight:bold">(</span><span style="color:#bb60d5">city</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#4070a0">&#34;New York&#34;</span>
+</span></span></code></pre></div><p>To access an element, use:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#bb60d5">$myArray</span><span style="color:#007020;font-weight:bold">(</span><span style="color:#bb60d5">name</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Output: John Doe
+</span></span></span></code></pre></div><p>You can also use <code>array set</code> to create arrays from lists:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">array</span> set myArray <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">name</span> <span style="color:#4070a0">&#34;Jane Doe&#34;</span> age <span style="color:#40a070">25</span> city <span style="color:#4070a0">&#34;London&#34;</span><span style="color:#007020;font-weight:bold">}</span>
+</span></span></code></pre></div><p>And <code>array names</code> to get a list of array keys:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#007020;font-weight:bold">[</span><span style="color:#007020">join</span> <span style="color:#007020;font-weight:bold">[array</span> names myArray<span style="color:#007020;font-weight:bold">]</span> <span style="color:#4070a0">&#34;, &#34;</span><span style="color:#007020;font-weight:bold">]</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Output: name, age, city
+</span></span></span></code></pre></div><h3 class="heading" id="strings">
+  Strings
+  <a class="anchor" href="#strings">#</a>
+</h3>
+<p>Strings are fundamental data types in Tcl. They are typically enclosed in double quotes <code>&quot; &quot;</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> myString <span style="color:#4070a0">&#34;This is a string&#34;</span>
+</span></span></code></pre></div><h3 class="heading" id="string-manipulation">
+  String manipulation
+  <a class="anchor" href="#string-manipulation">#</a>
+</h3>
+<p>Tcl offers a rich set of commands for string manipulation:</p>
+<ul>
+<li>
+<p><strong><code>string length</code>:</strong> Returns the length of a string.  <code>puts [string length $myString]</code></p>
+</li>
+<li>
+<p><strong><code>string index</code>:</strong> Extracts a single character from a string. <code>puts [string index $myString 0]</code> (returns &ldquo;T&rdquo;)</p>
+</li>
+<li>
+<p><strong><code>string range</code>:</strong> Extracts a substring. <code>puts [string range $myString 0 4]</code> (returns &ldquo;This&rdquo;)</p>
+</li>
+<li>
+<p><strong><code>string tolower</code>/<code>string toupper</code>:</strong> Converts a string to lowercase or uppercase.</p>
+</li>
+<li>
+<p><strong><code>string match</code>:</strong> Checks if a string matches a pattern (using glob-style matching).</p>
+</li>
+<li>
+<p><strong><code>string replace</code>:</strong> Replaces part of a string with another string.</p>
+</li>
+<li>
+<p><strong><code>string trim</code>:</strong> Removes leading and trailing whitespace from a string.</p>
+</li>
+<li>
+<p><strong><code>string map</code>:</strong> Performs character substitution according to a mapping.</p>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> myString <span style="color:#4070a0">&#34;  Hello, World!  &#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> trimmedString <span style="color:#007020;font-weight:bold">[</span><span style="color:#007020">string</span> trim <span style="color:#bb60d5">$myString</span><span style="color:#007020;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#bb60d5">$trimmedString</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Output: Hello, World!
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">set</span> upperString <span style="color:#007020;font-weight:bold">[</span><span style="color:#007020">string</span> toupper <span style="color:#bb60d5">$trimmedString</span><span style="color:#007020;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#bb60d5">$upperString</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Output: HELLO, WORLD!
+</span></span></span></code></pre></div><p>These functions provide powerful tools for modifying and analyzing strings, which are critical for many text processing and data manipulation tasks in Tcl.</p>
+<h2 class="heading" id="procedures-and-functions">
+  Procedures and Functions
+  <a class="anchor" href="#procedures-and-functions">#</a>
+</h2>
+<h3 class="heading" id="defining-procedures">
+  Defining procedures
+  <a class="anchor" href="#defining-procedures">#</a>
+</h3>
+<p>Procedures in Tcl are defined using the <code>proc</code> command.  They are reusable blocks of code that can be called multiple times.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc</span> greet <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">name</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;Hello, $name!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span>
+</span></span></code></pre></div><p>This defines a procedure named <code>greet</code> that takes one argument, <code>name</code>, and prints a greeting.  The code within the <code>proc</code> command is the procedure&rsquo;s body.</p>
+<h3 class="heading" id="passing-arguments">
+  Passing arguments
+  <a class="anchor" href="#passing-arguments">#</a>
+</h3>
+<p>Arguments are passed to procedures by position. The procedure definition specifies the names of the arguments, which are then accessed within the procedure&rsquo;s body using their names (preceded by <code>$</code>).  You can also use <code>args</code> to access all arguments as a list:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc</span> add <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">a</span> b<span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">[expr</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">$a</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$b</span><span style="color:#007020;font-weight:bold">}]</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc</span> printArgs <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">args</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;Arguments received: $args&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#007020;font-weight:bold">[</span><span style="color:#bb60d5">add</span> <span style="color:#40a070">5</span> <span style="color:#40a070">10</span><span style="color:#007020;font-weight:bold">]</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Output: 15
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bb60d5">printArgs</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">arg1</span> arg2 arg3<span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic">#Output: Arguments received: arg1 arg2 arg3
+</span></span></span></code></pre></div><p><code>add</code> takes two arguments and returns their sum.  <code>printArgs</code> takes a variable number of arguments and prints them.</p>
+<h3 class="heading" id="returning-values">
+  Returning values
+  <a class="anchor" href="#returning-values">#</a>
+</h3>
+<p>Procedures return values using the <code>return</code> command.  If no <code>return</code> command is specified, the procedure implicitly returns an empty string.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc</span> square <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">x</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">[expr</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">$x</span> <span style="color:#666">*</span> <span style="color:#bb60d5">$x</span><span style="color:#007020;font-weight:bold">}]</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#007020;font-weight:bold">[</span><span style="color:#bb60d5">square</span> <span style="color:#40a070">7</span><span style="color:#007020;font-weight:bold">]</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Output: 49
+</span></span></span></code></pre></div><h3 class="heading" id="recursive-procedures">
+  Recursive procedures
+  <a class="anchor" href="#recursive-procedures">#</a>
+</h3>
+<p>Procedures can call themselves, creating recursion.  This is useful for solving problems that can be broken down into smaller, self-similar subproblems.  A recursive procedure must have a base case to prevent infinite recursion.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc</span> factorial <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">n</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">$n</span> <span style="color:#666">==</span> <span style="color:#bb60d5">0</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">[expr</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">$n</span> <span style="color:#666">*</span> <span style="color:#007020;font-weight:bold">[</span><span style="color:#bb60d5">factorial</span> <span style="color:#007020;font-weight:bold">[expr</span> <span style="color:#007020;font-weight:bold">{</span><span style="color:#bb60d5">$n</span> <span style="color:#bb60d5">-</span> <span style="color:#40a070">1</span><span style="color:#007020;font-weight:bold">}]]}]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#007020;font-weight:bold">[</span><span style="color:#bb60d5">factorial</span> <span style="color:#40a070">5</span><span style="color:#007020;font-weight:bold">]</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Output: 120
+</span></span></span></code></pre></div><p>This procedure calculates the factorial of a number. The base case is when <code>n</code> is 0, returning 1. Otherwise, it recursively calls itself with <code>n-1</code> until it reaches the base case.  Note the careful use of <code>expr</code> to ensure correct evaluation of the recursive call.  Without <code>expr</code>, Tcl would attempt to interpret <code>$n * [factorial $n -1]</code> as an arithmetic operation on the strings, leading to an error.</p>
+<h2 class="heading" id="input-and-output">
+  Input and Output
+  <a class="anchor" href="#input-and-output">#</a>
+</h2>
+<h3 class="heading" id="reading-from-the-console">
+  Reading from the console
+  <a class="anchor" href="#reading-from-the-console">#</a>
+</h3>
+<p>Tcl provides the <code>gets</code> command to read a line of text from the standard input (typically the console).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;Enter your name: &#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">gets</span> stdin name  <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Reads a line from stdin and stores it in the variable &#39;name&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;Hello, $name!&#34;</span>
+</span></span></code></pre></div><p><code>stdin</code> represents the standard input stream.  The <code>gets</code> command reads a single line, removing the trailing newline character.  If you need to read multiple lines interactively, you will need to loop until an appropriate end condition is met (like reading an empty line).</p>
+<h3 class="heading" id="writing-to-the-console">
+  Writing to the console
+  <a class="anchor" href="#writing-to-the-console">#</a>
+</h3>
+<p>The <code>puts</code> command is used to write text to the standard output (console).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;This text is printed to the console&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;Another line of text&#34;</span>
+</span></span></code></pre></div><p>The <code>puts</code> command automatically adds a newline character at the end of each line.  If you want to prevent this, use <code>puts -nonewline</code></p>
+<h3 class="heading" id="file-io">
+  File I/O
+  <a class="anchor" href="#file-io">#</a>
+</h3>
+<p>Tcl provides commands for working with files:</p>
+<ul>
+<li><strong>Opening a file:</strong> The <code>open</code> command opens a file and returns a channel identifier.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> fileId <span style="color:#007020;font-weight:bold">[</span><span style="color:#007020">open</span> <span style="color:#4070a0">&#34;myFile.txt&#34;</span> r<span style="color:#007020;font-weight:bold">]</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Opens &#34;myFile.txt&#34; for reading (&#34;r&#34;)
+</span></span></span></code></pre></div><p>Other modes include &ldquo;w&rdquo; (writing, overwriting existing file), &ldquo;a&rdquo; (appending), and &ldquo;r+&rdquo; (reading and writing).</p>
+<ul>
+<li><strong>Reading from a file:</strong> The <code>gets</code> command can also read from a file channel.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">{[</span><span style="color:#007020">gets</span> <span style="color:#bb60d5">$fileId</span> line<span style="color:#007020;font-weight:bold">]</span> <span style="color:#666">!=</span> <span style="color:#bb60d5">-1</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;Line: $line&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">close</span> <span style="color:#bb60d5">$fileId</span> <span style="color:#007020;font-weight:bold">;</span><span style="color:#60a0b0;font-style:italic"># Always close the file when finished
+</span></span></span></code></pre></div><p>This reads each line from <code>myFile.txt</code> until the end of the file (-1).</p>
+<ul>
+<li><strong>Writing to a file:</strong> Use <code>puts</code> with a channel identifier.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> fileId <span style="color:#007020;font-weight:bold">[</span><span style="color:#007020">open</span> <span style="color:#4070a0">&#34;outputFile.txt&#34;</span> w<span style="color:#007020;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">puts</span> <span style="color:#bb60d5">$fileId</span> <span style="color:#4070a0">&#34;This is written to the file.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">close</span> <span style="color:#bb60d5">$fileId</span>
+</span></span></code></pre></div><ul>
+<li><strong>Closing a file:</strong>  It&rsquo;s crucial to close files using the <code>close</code> command after you&rsquo;re finished with them to release system resources and ensure data is properly written to disk.</li>
+</ul>
+<p>Example combining reading and writing:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> fileIdIn <span style="color:#007020;font-weight:bold">[</span><span style="color:#007020">open</span> <span style="color:#4070a0">&#34;input.txt&#34;</span> r<span style="color:#007020;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">set</span> fileIdOut <span style="color:#007020;font-weight:bold">[</span><span style="color:#007020">open</span> <span style="color:#4070a0">&#34;output.txt&#34;</span> w<span style="color:#007020;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">{[</span><span style="color:#007020">gets</span> <span style="color:#bb60d5">$fileIdIn</span> line<span style="color:#007020;font-weight:bold">]</span> <span style="color:#666">!=</span> <span style="color:#bb60d5">-1</span><span style="color:#007020;font-weight:bold">}</span> <span style="color:#007020;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">puts</span> <span style="color:#bb60d5">$fileIdOut</span> <span style="color:#4070a0">&#34;Processed: $line&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">close</span> <span style="color:#bb60d5">$fileIdIn</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">close</span> <span style="color:#bb60d5">$fileIdOut</span>
+</span></span></code></pre></div><p>This script reads lines from <code>input.txt</code>, adds &ldquo;Processed: &quot; to the beginning of each line, and writes the modified lines to <code>output.txt</code>.  Remember to handle potential errors (e.g., file not found) using <code>catch</code> for robust code.</p>
+<h2 class="heading" id="advanced-topics-brief-overview">
+  Advanced Topics (Brief Overview)
+  <a class="anchor" href="#advanced-topics-brief-overview">#</a>
+</h2>
+<h3 class="heading" id="regular-expressions">
+  Regular Expressions
+  <a class="anchor" href="#regular-expressions">#</a>
+</h3>
+<p>Tcl supports regular expressions for powerful pattern matching and string manipulation. The <code>regexp</code> command is central to this functionality.  It allows you to search for patterns within strings, extract substrings that match specific patterns, and perform substitutions based on regular expressions.  Tcl uses a flavor of regular expressions similar to those found in other languages like Perl and Python, supporting various metacharacters, quantifiers, and character classes.</p>
+<h3 class="heading" id="namespaces">
+  Namespaces
+  <a class="anchor" href="#namespaces">#</a>
+</h3>
+<p>Namespaces help organize code, especially in larger projects, by providing a way to group commands and variables under distinct names.  This prevents naming conflicts and enhances code readability.  The <code>namespace</code> command provides functionality to create, access, and manage namespaces in Tcl.  Using namespaces, you can create modules and packages, making your code more modular and reusable.</p>
+<h3 class="heading" id="object-oriented-programming-in-tcl">
+  Object-Oriented Programming in Tcl
+  <a class="anchor" href="#object-oriented-programming-in-tcl">#</a>
+</h3>
+<p>While not inherently object-oriented, Tcl provides mechanisms to support object-oriented programming (OOP) paradigms.  This is typically achieved through the use of procedures, namespaces, and careful organization of code.  Tcl&rsquo;s flexibility makes it possible to implement class structures, inheritance, and other OOP concepts using techniques like creating procedure-based classes that encapsulate data and methods.  While not as direct as languages with built-in OOP features, the approach is effective for structuring larger, more complex Tcl applications.</p>
+<h3 class="heading" id="extending-tcl-with-cc">
+  Extending Tcl with C/C++
+  <a class="anchor" href="#extending-tcl-with-cc">#</a>
+</h3>
+<p>Tcl&rsquo;s embeddability is a key strength. You can seamlessly integrate C/C++ code to extend Tcl&rsquo;s capabilities.  This allows you to create custom commands and functions written in C/C++ that can be called directly from within your Tcl scripts.  The Tcl C API provides the necessary interfaces for creating these extensions, providing powerful control and access to system-level functionality that may not be readily available within the Tcl scripting language itself. This is particularly valuable for performance-critical operations or accessing hardware-specific features.  This extension mechanism is how many of Tcl&rsquo;s standard extensions (like Tk) are implemented.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-vhdl/">
+                        Beginner&#39;s Guide to VHDL
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-bash/">
+                        Beginner&#39;s Guide to Bash
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

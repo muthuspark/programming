@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Swift | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-swift/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-swift/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Swift">
+  <meta property="og:description" content="Setting Up Your Environment # This section guides you through setting up your development environment to begin coding in Swift. The primary tool you’ll need is Xcode, Apple’s integrated development environment (IDE).
+Installing Xcode # Xcode is a free download from the Mac App Store. To install it:
+Open the Mac App Store: Locate the App Store icon on your Dock or in your Applications folder. Search for Xcode: Use the search bar within the App Store to find “Xcode”. Download and Install: Click the “Get” button and authenticate with your Apple ID. The download size is substantial (several gigabytes), so ensure you have a stable internet connection and sufficient free disk space. The installation process may take some time. Agree to the License Agreement: Once the download completes, launch the Xcode installer and accept the license agreement. Optional Components: Xcode may prompt you to install additional components, such as command-line tools. It’s recommended to install these as they provide extra functionality. After installation, Xcode should be accessible from your Applications folder or via Spotlight search.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-12T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-swift/">Beginner&#39;s Guide to Swift</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Swift</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-03-12T00:00:00&#43;00:00">March 12, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      22 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#setting-up-your-environment">Setting Up Your Environment</a>
+      <ul>
+        <li><a href="#installing-xcode">Installing Xcode</a></li>
+        <li><a href="#creating-your-first-swift-project">Creating Your First Swift Project</a></li>
+        <li><a href="#navigating-the-xcode-interface">Navigating the Xcode Interface</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#variables-and-constants">Variables and Constants</a></li>
+        <li><a href="#data-types-int-string-bool-etc">Data Types (Int, String, Bool, etc.)</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#type-inference">Type Inference</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-flow">Control Flow</a>
+      <ul>
+        <li><a href="#if-else-statements">if-else Statements</a></li>
+        <li><a href="#for-loops">for Loops</a></li>
+        <li><a href="#while-loops">while Loops</a></li>
+        <li><a href="#switch-statements">switch Statements</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions">Functions</a>
+      <ul>
+        <li><a href="#defining-functions">Defining Functions</a></li>
+        <li><a href="#function-parameters-and-return-values">Function Parameters and Return Values</a></li>
+        <li><a href="#function-overloading">Function Overloading</a></li>
+      </ul>
+    </li>
+    <li><a href="#working-with-collections">Working with Collections</a>
+      <ul>
+        <li><a href="#arrays">Arrays</a></li>
+        <li><a href="#dictionaries">Dictionaries</a></li>
+        <li><a href="#sets">Sets</a></li>
+      </ul>
+    </li>
+    <li><a href="#object-oriented-programming-oop-basics">Object-Oriented Programming (OOP) Basics</a>
+      <ul>
+        <li><a href="#classes-and-structures">Classes and Structures</a></li>
+        <li><a href="#properties-and-methods">Properties and Methods</a></li>
+        <li><a href="#inheritance">Inheritance</a></li>
+        <li><a href="#polymorphism">Polymorphism</a></li>
+      </ul>
+    </li>
+    <li><a href="#optionals-and-error-handling">Optionals and Error Handling</a>
+      <ul>
+        <li><a href="#understanding-optionals">Understanding Optionals</a></li>
+        <li><a href="#optional-binding">Optional Binding</a></li>
+        <li><a href="#optional-chaining">Optional Chaining</a></li>
+        <li><a href="#error-handling-with-do-catch">Error Handling with <code>do-catch</code></a></li>
+        <li><a href="#guard-statements">Guard Statements</a></li>
+      </ul>
+    </li>
+    <li><a href="#closures">Closures</a>
+      <ul>
+        <li><a href="#introduction-to-closures">Introduction to Closures</a></li>
+        <li><a href="#trailing-closures">Trailing Closures</a></li>
+        <li><a href="#capturing-values">Capturing Values</a></li>
+      </ul>
+    </li>
+    <li><a href="#building-a-simple-app">Building a Simple App</a>
+      <ul>
+        <li><a href="#designing-the-user-interface">Designing the User Interface</a></li>
+        <li><a href="#connecting-ui-elements-to-code">Connecting UI Elements to Code</a></li>
+        <li><a href="#implementing-app-logic">Implementing App Logic</a></li>
+      </ul>
+    </li>
+    <li><a href="#next-steps-and-resources">Next Steps and Resources</a>
+      <ul>
+        <li><a href="#further-learning">Further Learning</a></li>
+        <li><a href="#useful-websites-and-documentation">Useful Websites and Documentation</a></li>
+        <li><a href="#swift-community">Swift Community</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="setting-up-your-environment">
+  Setting Up Your Environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h2>
+<p>This section guides you through setting up your development environment to begin coding in Swift.  The primary tool you&rsquo;ll need is Xcode, Apple&rsquo;s integrated development environment (IDE).</p>
+<h3 class="heading" id="installing-xcode">
+  Installing Xcode
+  <a class="anchor" href="#installing-xcode">#</a>
+</h3>
+<p>Xcode is a free download from the Mac App Store.  To install it:</p>
+<ol>
+<li><strong>Open the Mac App Store:</strong> Locate the App Store icon on your Dock or in your Applications folder.</li>
+<li><strong>Search for Xcode:</strong> Use the search bar within the App Store to find &ldquo;Xcode&rdquo;.</li>
+<li><strong>Download and Install:</strong> Click the &ldquo;Get&rdquo; button and authenticate with your Apple ID. The download size is substantial (several gigabytes), so ensure you have a stable internet connection and sufficient free disk space.  The installation process may take some time.</li>
+<li><strong>Agree to the License Agreement:</strong> Once the download completes, launch the Xcode installer and accept the license agreement.</li>
+<li><strong>Optional Components:</strong> Xcode may prompt you to install additional components, such as command-line tools.  It&rsquo;s recommended to install these as they provide extra functionality.</li>
+</ol>
+<p>After installation, Xcode should be accessible from your Applications folder or via Spotlight search.</p>
+<h3 class="heading" id="creating-your-first-swift-project">
+  Creating Your First Swift Project
+  <a class="anchor" href="#creating-your-first-swift-project">#</a>
+</h3>
+<ol>
+<li><strong>Launch Xcode:</strong> Open Xcode from your Applications folder.</li>
+<li><strong>Choose a Template:</strong>  On the welcome screen, select &ldquo;Create a new Xcode project&rdquo;.</li>
+<li><strong>Select a Project Type:</strong> Choose &ldquo;App&rdquo; under the iOS tab (or macOS, watchOS, tvOS, etc., depending on your target platform). Click &ldquo;Next&rdquo;.</li>
+<li><strong>Configure Your Project:</strong> Provide a name for your project (e.g., &ldquo;MyFirstSwiftApp&rdquo;), select Swift as the language, and choose a suitable location to save your project.  Ensure &ldquo;Use Core Data&rdquo; is unchecked for this beginner project. Click &ldquo;Next&rdquo;.</li>
+<li><strong>Select a Location:</strong> Choose a directory to store your project files. Click &ldquo;Create&rdquo;.</li>
+<li><strong>Explore the Project:</strong> Xcode will generate a basic project structure. Familiarize yourself with the files and folders;  <code>main.swift</code> (or <code>AppDelegate.swift</code> in newer Xcode versions) is where you&rsquo;ll begin writing your Swift code.</li>
+</ol>
+<h3 class="heading" id="navigating-the-xcode-interface">
+  Navigating the Xcode Interface
+  <a class="anchor" href="#navigating-the-xcode-interface">#</a>
+</h3>
+<p>Xcode&rsquo;s interface can seem daunting at first, but understanding its key components is crucial for efficient development.</p>
+<ul>
+<li>
+<p><strong>Navigation Area (left):</strong> This area displays the Project Navigator (showing your project files), the Symbol Navigator (showing code symbols), the Debug Navigator (showing debugging information), and the Issue Navigator (showing compiler errors and warnings).</p>
+</li>
+<li>
+<p><strong>Editor Area (center):</strong> This is where you&rsquo;ll write and edit your code.</p>
+</li>
+<li>
+<p><strong>Utility Area (right):</strong>  This area provides various contextual tools depending on what you&rsquo;re working on. You might see the Inspector (for viewing and modifying object properties), the Library (for adding UI elements), and the Debugger (for stepping through your code during debugging).</p>
+</li>
+<li>
+<p><strong>Toolbar (top):</strong> The toolbar provides quick access to common actions such as building, running, and debugging your project.</p>
+</li>
+<li>
+<p><strong>Bottom Panel:</strong> This area contains the console (for displaying build logs and debugging output) and other information as needed.</p>
+</li>
+</ul>
+<p>Take some time to explore each area of the Xcode interface.  Experiment with opening and closing different panels to become comfortable with their functionality.  The best way to learn is by using Xcode to create and build projects.</p>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<p>This section covers the fundamental building blocks of the Swift language: syntax and data types.  Understanding these concepts is essential for writing any Swift program.</p>
+<h3 class="heading" id="variables-and-constants">
+  Variables and Constants
+  <a class="anchor" href="#variables-and-constants">#</a>
+</h3>
+<p>Swift uses <code>var</code> to declare variables and <code>let</code> to declare constants.  Variables can be modified after their initial declaration, while constants cannot.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">myVariable</span> = <span style="color:#40a070">10</span>  <span style="color:#60a0b0;font-style:italic">// Declares a variable named myVariable and assigns it the value 10</span>
+</span></span><span style="display:flex;"><span>myVariable = <span style="color:#40a070">20</span>      <span style="color:#60a0b0;font-style:italic">// Modifying the variable</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">myConstant</span> = <span style="color:#40a070">30</span> <span style="color:#60a0b0;font-style:italic">// Declares a constant named myConstant and assigns it the value 30</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// myConstant = 40  // This would result in a compiler error because constants cannot be changed</span>
+</span></span></code></pre></div><p>It&rsquo;s good practice to use constants (<code>let</code>) whenever possible, as this improves code readability and helps prevent accidental modifications.</p>
+<h3 class="heading" id="data-types-int-string-bool-etc">
+  Data Types (Int, String, Bool, etc.)
+  <a class="anchor" href="#data-types-int-string-bool-etc">#</a>
+</h3>
+<p>Swift is a type-safe language, meaning that the compiler checks the type of data you&rsquo;re working with.  Some common data types include:</p>
+<ul>
+<li><strong>Int:</strong> Represents integers (whole numbers), e.g., <code>let age: Int = 30</code></li>
+<li><strong>Double:</strong> Represents double-precision floating-point numbers (numbers with decimal points), e.g., <code>let price: Double = 99.99</code></li>
+<li><strong>Float:</strong> Represents single-precision floating-point numbers, generally less precise than <code>Double</code>.</li>
+<li><strong>String:</strong> Represents text, e.g., <code>let name: String = &quot;Alice&quot;</code>  String literals are enclosed in double quotes.</li>
+<li><strong>Bool:</strong> Represents Boolean values (true or false), e.g., <code>let isAdult: Bool = true</code></li>
+<li><strong>Character:</strong> Represents a single character, e.g., <code>let initial: Character = &quot;A&quot;</code>  Character literals are enclosed in single quotes.</li>
+</ul>
+<p>You can explicitly specify the data type of a variable or constant using the colon (<code>:</code>) followed by the type name, as shown in the examples above.  However, Swift&rsquo;s type inference often allows you to omit the explicit type declaration.</p>
+<h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>Swift supports a wide range of operators:</p>
+<ul>
+<li><strong>Arithmetic Operators:</strong>  <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo – remainder after division)</li>
+<li><strong>Comparison Operators:</strong> <code>==</code> (equal to), <code>!=</code> (not equal to), <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+<li><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT)</li>
+<li><strong>Assignment Operators:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%= </code></li>
+<li><strong>Ternary Conditional Operator:</strong> <code>condition ? value1 : value2</code> (evaluates to <code>value1</code> if the condition is true, otherwise <code>value2</code>)</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">x</span> = <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">y</span> = <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sum</span> = x <span style="color:#666">+</span> y
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">isGreater</span> = x <span style="color:#666">&gt;</span> y
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">result</span> = (x <span style="color:#666">&gt;</span> y) ? <span style="color:#4070a0">&#34;x is greater&#34;</span> : <span style="color:#4070a0">&#34;y is greater or equal&#34;</span>
+</span></span></code></pre></div><h3 class="heading" id="type-inference">
+  Type Inference
+  <a class="anchor" href="#type-inference">#</a>
+</h3>
+<p>Swift&rsquo;s type inference allows the compiler to automatically determine the type of a variable or constant based on its initial value.  This reduces the amount of code you need to write.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">inferredInteger</span> = <span style="color:#40a070">10</span>    <span style="color:#60a0b0;font-style:italic">// The type is inferred as Int</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">inferredString</span> = <span style="color:#4070a0">&#34;Hello&#34;</span> <span style="color:#60a0b0;font-style:italic">// The type is inferred as String</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">inferredDouble</span> = <span style="color:#40a070">3.14159</span> <span style="color:#60a0b0;font-style:italic">// The type is inferred as Double</span>
+</span></span></code></pre></div><p>Type inference is a powerful feature, but explicit type declarations can improve code readability and maintainability, especially in larger projects.  Use a combination of type inference and explicit typing to create clear and maintainable code.</p>
+<h2 class="heading" id="control-flow">
+  Control Flow
+  <a class="anchor" href="#control-flow">#</a>
+</h2>
+<p>Control flow statements determine the order in which code is executed.  Swift provides several ways to control the flow of your program, allowing for conditional execution and iteration.</p>
+<h3 class="heading" id="if-else-statements">
+  if-else Statements
+  <a class="anchor" href="#if-else-statements">#</a>
+</h3>
+<p><code>if-else</code> statements allow you to execute different blocks of code based on a condition.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">age</span> = <span style="color:#40a070">25</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> age <span style="color:#666">&gt;=</span> <span style="color:#40a070">18</span> {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;You are an adult.&#34;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;You are a minor.&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">temperature</span> = <span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> temperature <span style="color:#666">&gt;</span> <span style="color:#40a070">25</span> {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;It&#39;s a hot day.&#34;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> temperature <span style="color:#666">&gt;</span> <span style="color:#40a070">15</span> {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;It&#39;s a pleasant day.&#34;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;It&#39;s a cold day.&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You can have multiple <code>else if</code> blocks to handle different conditions.  The <code>else</code> block is optional and executes only if none of the preceding conditions are met.</p>
+<h3 class="heading" id="for-loops">
+  for Loops
+  <a class="anchor" href="#for-loops">#</a>
+</h3>
+<p><code>for</code> loops are used to iterate over a sequence of values.  Swift provides several ways to use <code>for</code> loops:</p>
+<p><strong>1. Range-based for loop:</strong> Iterates over a range of numbers.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1.</span>..<span style="color:#40a070">5</span> {  <span style="color:#60a0b0;font-style:italic">// Closed range (includes 5)</span>
+</span></span><span style="display:flex;"><span>    print(i)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1.</span>.&lt;<span style="color:#40a070">5</span> { <span style="color:#60a0b0;font-style:italic">// Half-open range (excludes 5)</span>
+</span></span><span style="display:flex;"><span>    print(i)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>2. Sequence-based for loop:</strong> Iterates over any sequence (like an array).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">names</span> = [<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;Charlie&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> name <span style="color:#007020;font-weight:bold">in</span> names {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">!&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>3.  <code>for-in</code> loop with index:</strong> To access both the value and index, use <code>enumerated()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (index, name) <span style="color:#007020;font-weight:bold">in</span> names.enumerated() {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Person </span><span style="color:#70a0d0">\(</span>index <span style="color:#666">+</span> <span style="color:#40a070">1</span><span style="color:#70a0d0">)</span><span style="color:#4070a0">: </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="while-loops">
+  while Loops
+  <a class="anchor" href="#while-loops">#</a>
+</h3>
+<p><code>while</code> loops repeat a block of code as long as a condition is true.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">counter</span> = <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> counter <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span> {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Counter: </span><span style="color:#70a0d0">\(</span>counter<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>    counter <span style="color:#666">+=</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>repeat-while</code> loops execute the code block at least once before checking the condition.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">counter2</span> = <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">repeat</span> {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Counter: </span><span style="color:#70a0d0">\(</span>counter2<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>    counter2 <span style="color:#666">+=</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">while</span> counter2 <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span>
+</span></span></code></pre></div><h3 class="heading" id="switch-statements">
+  switch Statements
+  <a class="anchor" href="#switch-statements">#</a>
+</h3>
+<p><code>switch</code> statements provide a more concise way to handle multiple conditions compared to nested <code>if-else</code> statements.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">dayOfWeek</span> = <span style="color:#40a070">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">switch</span> dayOfWeek {
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">1</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Monday&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">2</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Tuesday&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">3</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Wednesday&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">4</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Thursday&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">5</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Friday&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">6</span>, <span style="color:#40a070">7</span>: <span style="color:#60a0b0;font-style:italic">// Multiple cases can be combined</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Weekend&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">default</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Invalid day&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>default</code> case is optional and handles values not matched by other cases.  Note that <code>switch</code> statements in Swift are exhaustive;  the compiler will issue a warning if you don&rsquo;t handle all possible cases (unless you use a <code>fallthrough</code> statement or the <code>default</code> case).  Cases <em>do not</em> fall through implicitly as in some other languages; each <code>case</code> executes its code and then exits the <code>switch</code> unless <code>fallthrough</code> is explicitly used.</p>
+<h2 class="heading" id="functions">
+  Functions
+  <a class="anchor" href="#functions">#</a>
+</h2>
+<p>Functions are reusable blocks of code that perform specific tasks.  They are fundamental to structured programming and help make your code more modular, readable, and maintainable.</p>
+<h3 class="heading" id="defining-functions">
+  Defining Functions
+  <a class="anchor" href="#defining-functions">#</a>
+</h3>
+<p>Functions in Swift are defined using the <code>func</code> keyword, followed by the function name, parameters (in parentheses), and a return type (if any).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">greet</span>(name: <span style="color:#007020">String</span>) { <span style="color:#60a0b0;font-style:italic">// Function with one parameter and no return value</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">!&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>greet(name: <span style="color:#4070a0">&#34;Alice&#34;</span>) <span style="color:#60a0b0;font-style:italic">// Calling the function</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">add</span>(a: <span style="color:#007020">Int</span>, b: <span style="color:#007020">Int</span>) -&gt; <span style="color:#007020">Int</span> { <span style="color:#60a0b0;font-style:italic">// Function with two parameters and an Int return value</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">+</span> b
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sum</span> = add(a: <span style="color:#40a070">5</span>, b: <span style="color:#40a070">3</span>) <span style="color:#60a0b0;font-style:italic">// Calling the function and assigning the return value to a variable</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;Sum: </span><span style="color:#70a0d0">\(</span>sum<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span></code></pre></div><p>The function body is enclosed in curly braces <code>{}</code>.  If a function doesn&rsquo;t return a value, its return type is implicitly <code>Void</code> (or you can explicitly specify <code>-&gt; Void</code>).</p>
+<h3 class="heading" id="function-parameters-and-return-values">
+  Function Parameters and Return Values
+  <a class="anchor" href="#function-parameters-and-return-values">#</a>
+</h3>
+<p>Function parameters specify the input values a function accepts.  Return values specify the output value a function produces.  Parameters can have labels (used when calling the function) and internal names (used within the function).  You can also provide default parameter values.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">calculateArea</span>(width: <span style="color:#007020">Double</span>, height: <span style="color:#007020">Double</span>) -&gt; <span style="color:#007020">Double</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> width <span style="color:#666">*</span> height
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">area</span> = calculateArea(width: <span style="color:#40a070">10</span>, height: <span style="color:#40a070">5</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">greet</span>(personName name: <span style="color:#007020">String</span>, from place: <span style="color:#007020">String</span> = <span style="color:#4070a0">&#34;Unknown&#34;</span>) { <span style="color:#60a0b0;font-style:italic">//Default parameter value</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">! You&#39;re from </span><span style="color:#70a0d0">\(</span>place<span style="color:#70a0d0">)</span><span style="color:#4070a0">.&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>greet(personName: <span style="color:#4070a0">&#34;Bob&#34;</span>) <span style="color:#60a0b0;font-style:italic">// Uses the default value for &#39;place&#39;</span>
+</span></span><span style="display:flex;"><span>greet(personName: <span style="color:#4070a0">&#34;Charlie&#34;</span>, from: <span style="color:#4070a0">&#34;New York&#34;</span>)
+</span></span></code></pre></div><p>Parameters can be passed by value (the function receives a copy) or by reference (the function receives a pointer to the original data).  Swift uses pass-by-value by default for most data types.</p>
+<h3 class="heading" id="function-overloading">
+  Function Overloading
+  <a class="anchor" href="#function-overloading">#</a>
+</h3>
+<p>Function overloading means having multiple functions with the same name but different parameters.  The compiler determines which function to call based on the arguments provided.  This is <em>not</em> directly supported in Swift in the same way as in some other languages (like C++ or Java), because Swift&rsquo;s type system is much stricter.  However, you can achieve similar functionality through different techniques:</p>
+<ul>
+<li>
+<p><strong>Using different parameter names:</strong> Although functions share the same name, differing parameter labels enable distinct parameter sets.</p>
+</li>
+<li>
+<p><strong>Using different parameter types:</strong> The most common way is simply to create functions with the same name but different parameter types.</p>
+</li>
+<li>
+<p><strong>Using Generic Functions:</strong> Create a generic function that works with different data types.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">calculateArea</span>(width: <span style="color:#007020">Int</span>, height: <span style="color:#007020">Int</span>) -&gt; <span style="color:#007020">Int</span> { <span style="color:#007020;font-weight:bold">return</span> width <span style="color:#666">*</span> height }
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">calculateArea</span>(width: <span style="color:#007020">Double</span>, height: <span style="color:#007020">Double</span>) -&gt; <span style="color:#007020">Double</span> { <span style="color:#007020;font-weight:bold">return</span> width <span style="color:#666">*</span> height } <span style="color:#60a0b0;font-style:italic">// Different parameter type</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">areaInt</span> = calculateArea(width: <span style="color:#40a070">10</span>, height: <span style="color:#40a070">5</span>)  <span style="color:#60a0b0;font-style:italic">// Calls the Int version</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">areaDouble</span> = calculateArea(width: <span style="color:#40a070">10.5</span>, height: <span style="color:#40a070">5.2</span>) <span style="color:#60a0b0;font-style:italic">// Calls the Double version</span>
+</span></span></code></pre></div><p>This demonstrates overloading-like behavior by using the same function name but with different parameter types.  The compiler will choose the most appropriate function based on the types of arguments passed.</p>
+<h2 class="heading" id="working-with-collections">
+  Working with Collections
+  <a class="anchor" href="#working-with-collections">#</a>
+</h2>
+<p>Swift provides powerful built-in collection types for storing and managing groups of data.  This section covers arrays, dictionaries, and sets.</p>
+<h3 class="heading" id="arrays">
+  Arrays
+  <a class="anchor" href="#arrays">#</a>
+</h3>
+<p>Arrays are ordered collections of values of the same type.  They are accessed using their index (starting from 0).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">numbers</span>: [<span style="color:#007020">Int</span>] = [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>] <span style="color:#60a0b0;font-style:italic">// Explicit type declaration</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">names</span> = [<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;Charlie&#34;</span>] <span style="color:#60a0b0;font-style:italic">// Type inference</span>
+</span></span><span style="display:flex;"><span>print(numbers[<span style="color:#40a070">0</span>]) <span style="color:#60a0b0;font-style:italic">// Accessing the first element (output: 1)</span>
+</span></span><span style="display:flex;"><span>numbers.append(<span style="color:#40a070">6</span>) <span style="color:#60a0b0;font-style:italic">// Adding an element to the end</span>
+</span></span><span style="display:flex;"><span>numbers.insert(<span style="color:#40a070">0</span>, at: <span style="color:#40a070">0</span>) <span style="color:#60a0b0;font-style:italic">// Inserting an element at a specific index</span>
+</span></span><span style="display:flex;"><span>print(numbers.count) <span style="color:#60a0b0;font-style:italic">// Getting the number of elements (output: 7)</span>
+</span></span><span style="display:flex;"><span>numbers.remove(at: <span style="color:#40a070">1</span>) <span style="color:#60a0b0;font-style:italic">// Removing an element at a specific index</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> number <span style="color:#007020;font-weight:bold">in</span> numbers { print(number) } <span style="color:#60a0b0;font-style:italic">// Iterating through the array</span>
+</span></span></code></pre></div><p>Arrays are value types, meaning that when you copy an array, you create a new independent copy of the data.</p>
+<h3 class="heading" id="dictionaries">
+  Dictionaries
+  <a class="anchor" href="#dictionaries">#</a>
+</h3>
+<p>Dictionaries are unordered collections of key-value pairs.  Each key must be unique, and the keys and values can be of different types.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">person</span>: [<span style="color:#007020">String</span>: <span style="color:#007020">String</span>] = [<span style="color:#4070a0">&#34;name&#34;</span>: <span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;age&#34;</span>: <span style="color:#4070a0">&#34;30&#34;</span>, <span style="color:#4070a0">&#34;city&#34;</span>: <span style="color:#4070a0">&#34;New York&#34;</span>]
+</span></span><span style="display:flex;"><span>print(person[<span style="color:#4070a0">&#34;name&#34;</span>]<span style="color:#666">!</span>) <span style="color:#60a0b0;font-style:italic">// Accessing the value associated with a key (output: Alice) – ! used for forced unwrapping</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//It&#39;s good practice to use optional binding instead of forced unwrapping.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">age</span> = person[<span style="color:#4070a0">&#34;age&#34;</span>] { <span style="color:#60a0b0;font-style:italic">//Optional Binding - safer approach to unwrap optionals.</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Age: </span><span style="color:#70a0d0">\(</span>age<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Age not found&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>person[<span style="color:#4070a0">&#34;occupation&#34;</span>] = <span style="color:#4070a0">&#34;Engineer&#34;</span> <span style="color:#60a0b0;font-style:italic">// Adding a new key-value pair</span>
+</span></span><span style="display:flex;"><span>person[<span style="color:#4070a0">&#34;city&#34;</span>] = <span style="color:#4070a0">&#34;Los Angeles&#34;</span> <span style="color:#60a0b0;font-style:italic">// Updating the value for an existing key</span>
+</span></span><span style="display:flex;"><span>person.removeValue(forKey: <span style="color:#4070a0">&#34;age&#34;</span>) <span style="color:#60a0b0;font-style:italic">//Removing a key-value pair.</span>
+</span></span><span style="display:flex;"><span>print(person.count) <span style="color:#60a0b0;font-style:italic">// Getting the number of key-value pairs (output: 3)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (key, value) <span style="color:#007020;font-weight:bold">in</span> person {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">\(</span>key<span style="color:#70a0d0">)</span><span style="color:#4070a0">: </span><span style="color:#70a0d0">\(</span>value<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#60a0b0;font-style:italic">// Iterating through the dictionary</span>
+</span></span></code></pre></div><p>Keys are used to quickly access values; they are commonly strings, but can be any Hashable type. Note the use of optional binding to safely handle the potential absence of a key.</p>
+<h3 class="heading" id="sets">
+  Sets
+  <a class="anchor" href="#sets">#</a>
+</h3>
+<p>Sets are unordered collections of unique values of the same type.  They are useful when you need to ensure that all elements are distinct.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">uniqueNumbers</span>: Set&lt;<span style="color:#007020">Int</span>&gt; = [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>] <span style="color:#60a0b0;font-style:italic">// Duplicates are automatically removed</span>
+</span></span><span style="display:flex;"><span>print(uniqueNumbers) <span style="color:#60a0b0;font-style:italic">// Output: {1, 2, 3, 4, 5} (order may vary)</span>
+</span></span><span style="display:flex;"><span>uniqueNumbers.insert(<span style="color:#40a070">6</span>) <span style="color:#60a0b0;font-style:italic">// Adding an element</span>
+</span></span><span style="display:flex;"><span>uniqueNumbers.contains(<span style="color:#40a070">3</span>) <span style="color:#60a0b0;font-style:italic">// Checking if a value exists (output: true)</span>
+</span></span><span style="display:flex;"><span>uniqueNumbers.remove(<span style="color:#40a070">4</span>) <span style="color:#60a0b0;font-style:italic">// Removing an element</span>
+</span></span><span style="display:flex;"><span>print(uniqueNumbers.count) <span style="color:#60a0b0;font-style:italic">// Getting the number of elements (output: 5)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> number <span style="color:#007020;font-weight:bold">in</span> uniqueNumbers { print(number) } <span style="color:#60a0b0;font-style:italic">// Iterating through the set (order may vary)</span>
+</span></span></code></pre></div><p>Sets provide efficient operations for checking membership and removing duplicates.  The order of elements in a set is not guaranteed.</p>
+<h2 class="heading" id="object-oriented-programming-oop-basics">
+  Object-Oriented Programming (OOP) Basics
+  <a class="anchor" href="#object-oriented-programming-oop-basics">#</a>
+</h2>
+<p>Swift is a powerful language supporting object-oriented programming principles.  This section introduces the fundamental concepts of classes, structures, properties, methods, inheritance, and polymorphism.</p>
+<h3 class="heading" id="classes-and-structures">
+  Classes and Structures
+  <a class="anchor" href="#classes-and-structures">#</a>
+</h3>
+<p>Both classes and structures are blueprints for creating instances (objects) of data.  Classes are reference types (copying creates a new reference to the same data), while structures are value types (copying creates a completely independent copy).  Classes support inheritance, while structures do not.  Choose structures for simple data types and classes for more complex types requiring inheritance or reference semantics.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> <span style="color:#0e84b5;font-weight:bold">Point</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">x</span>: <span style="color:#007020">Double</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">y</span>: <span style="color:#007020">Double</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">name</span>: <span style="color:#007020">String</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">breed</span>: <span style="color:#007020">String</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">init</span>(name: <span style="color:#007020">String</span>, breed: <span style="color:#007020">String</span>) { <span style="color:#60a0b0;font-style:italic">// Initializer (constructor)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">self</span>.name = name
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">self</span>.breed = breed
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">point1</span> = Point(x: <span style="color:#40a070">10</span>, y: <span style="color:#40a070">20</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">point2</span> = point1 <span style="color:#60a0b0;font-style:italic">// point2 is a copy of point1</span>
+</span></span><span style="display:flex;"><span>point2.x = <span style="color:#40a070">30</span>       <span style="color:#60a0b0;font-style:italic">// Modifying point2 doesn&#39;t affect point1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">dog1</span> = Dog(name: <span style="color:#4070a0">&#34;Buddy&#34;</span>, breed: <span style="color:#4070a0">&#34;Golden Retriever&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">dog2</span> = dog1 <span style="color:#60a0b0;font-style:italic">// dog2 is a reference to the same object as dog1</span>
+</span></span><span style="display:flex;"><span>dog2.name = <span style="color:#4070a0">&#34;Max&#34;</span>  <span style="color:#60a0b0;font-style:italic">// Modifying dog2 also affects dog1</span>
+</span></span></code></pre></div><h3 class="heading" id="properties-and-methods">
+  Properties and Methods
+  <a class="anchor" href="#properties-and-methods">#</a>
+</h3>
+<p>Properties represent the data associated with an instance of a class or structure.  Methods define the actions or behaviors an object can perform.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> <span style="color:#0e84b5;font-weight:bold">Rectangle</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">width</span>: <span style="color:#007020">Double</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">height</span>: <span style="color:#007020">Double</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">area</span>() -&gt; <span style="color:#007020">Double</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> width <span style="color:#666">*</span> height
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">rectangle</span> = Rectangle(width: <span style="color:#40a070">5</span>, height: <span style="color:#40a070">10</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">area</span> = rectangle.area() <span style="color:#60a0b0;font-style:italic">// Calling the method</span>
+</span></span><span style="display:flex;"><span>print(area) <span style="color:#60a0b0;font-style:italic">// Output: 50</span>
+</span></span></code></pre></div><h3 class="heading" id="inheritance">
+  Inheritance
+  <a class="anchor" href="#inheritance">#</a>
+</h3>
+<p>Inheritance allows you to create a new class (subclass or derived class) based on an existing class (superclass or base class).  The subclass inherits the properties and methods of the superclass and can add its own.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">name</span>: <span style="color:#007020">String</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">init</span>(name: <span style="color:#007020">String</span>) { <span style="color:#007020;font-weight:bold">self</span>.name = name }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">speak</span>() { print(<span style="color:#4070a0">&#34;Generic animal sound&#34;</span>) }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span>: Animal { <span style="color:#60a0b0;font-style:italic">// Dog inherits from Animal</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">speak</span>() { print(<span style="color:#4070a0">&#34;Woof!&#34;</span>) } <span style="color:#60a0b0;font-style:italic">// Overriding a superclass method</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">dog</span> = Dog(name: <span style="color:#4070a0">&#34;Fido&#34;</span>)
+</span></span><span style="display:flex;"><span>dog.speak() <span style="color:#60a0b0;font-style:italic">// Output: Woof!</span>
+</span></span></code></pre></div><p>The <code>override</code> keyword indicates that a method is overriding a superclass method.</p>
+<h3 class="heading" id="polymorphism">
+  Polymorphism
+  <a class="anchor" href="#polymorphism">#</a>
+</h3>
+<p>Polymorphism allows objects of different classes to respond to the same method call in their own specific way.  This is often achieved through inheritance and method overriding.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">makeSound</span>() { print(<span style="color:#4070a0">&#34;Generic animal sound&#34;</span>) }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span>: Animal {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">makeSound</span>() { print(<span style="color:#4070a0">&#34;Meow!&#34;</span>) }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span>: Animal {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">makeSound</span>() { print(<span style="color:#4070a0">&#34;Woof!&#34;</span>) }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">animals</span>: [Animal] = [Cat(), Dog()]
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> animal <span style="color:#007020;font-weight:bold">in</span> animals {
+</span></span><span style="display:flex;"><span>    animal.makeSound() <span style="color:#60a0b0;font-style:italic">// Each animal makes its own sound</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This example demonstrates polymorphism: the <code>makeSound()</code> method is called on different animal objects, and each object responds appropriately based on its class.  This is a powerful concept for creating flexible and extensible code.</p>
+<h2 class="heading" id="optionals-and-error-handling">
+  Optionals and Error Handling
+  <a class="anchor" href="#optionals-and-error-handling">#</a>
+</h2>
+<p>Swift&rsquo;s optional type and robust error-handling mechanisms are crucial for writing safe and reliable code.  This section explains how to work with optionals and handle errors effectively.</p>
+<h3 class="heading" id="understanding-optionals">
+  Understanding Optionals
+  <a class="anchor" href="#understanding-optionals">#</a>
+</h3>
+<p>Optionals represent values that may or may not be present.  They are declared using a question mark (<code>?</code>) after the type.  An optional value can be either a wrapped value of the specified type or <code>nil</code> (the absence of a value).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">optionalString</span>: <span style="color:#007020">String</span>? = <span style="color:#4070a0">&#34;Hello&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">optionalInt</span>: <span style="color:#007020">Int</span>? = <span style="color:#007020;font-weight:bold">nil</span>
+</span></span></code></pre></div><p>Trying to access the value of an optional directly can lead to a runtime error if it&rsquo;s <code>nil</code>.  Therefore, it&rsquo;s essential to use safe unwrapping techniques.</p>
+<h3 class="heading" id="optional-binding">
+  Optional Binding
+  <a class="anchor" href="#optional-binding">#</a>
+</h3>
+<p>Optional binding is a safe way to unwrap an optional value and assign it to a constant or variable if it contains a value.  It avoids runtime errors by checking for <code>nil</code> before access.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">optionalString</span>: <span style="color:#007020">String</span>? = <span style="color:#4070a0">&#34;Hello&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">unwrappedString</span> = optionalString {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;String: </span><span style="color:#70a0d0">\(</span>unwrappedString<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>) <span style="color:#60a0b0;font-style:italic">// This line executes only if optionalString is not nil</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;String is nil&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You can also use optional binding with multiple optionals using <code>guard</code> statements (discussed in the next section) or by nesting <code>if let</code> statements.</p>
+<h3 class="heading" id="optional-chaining">
+  Optional Chaining
+  <a class="anchor" href="#optional-chaining">#</a>
+</h3>
+<p>Optional chaining provides a concise way to access members (properties or methods) of an optional value without causing a runtime error if the optional is <code>nil</code>.  It uses a question mark (<code>?</code>) after the optional value. If the optional is nil, the expression short-circuits and returns nil without crashing.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Person</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">address</span>: Address?
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Address</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">street</span>: <span style="color:#007020">String</span> = <span style="color:#4070a0">&#34;Unknown Street&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">person</span>: Person? = Person()
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">street</span> = person?.address?.street <span style="color:#60a0b0;font-style:italic">// street will be &#34;Unknown Street&#34; even if person or address are nil</span>
+</span></span><span style="display:flex;"><span>print(street ?? <span style="color:#4070a0">&#34;No Street Found&#34;</span>)  <span style="color:#60a0b0;font-style:italic">//Optional Coalescing operator handles nil value</span>
+</span></span></code></pre></div><h3 class="heading" id="error-handling-with-do-catch">
+  Error Handling with <code>do-catch</code>
+  <a class="anchor" href="#error-handling-with-do-catch">#</a>
+</h3>
+<p>Swift uses a <code>do-catch</code> mechanism for handling errors.  Functions that can throw errors are marked with the <code>throws</code> keyword.  The <code>do</code> block contains the code that might throw an error, and the <code>catch</code> block handles any errors thrown.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">enum</span> <span style="color:#0e84b5;font-weight:bold">MyError</span>: Error {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> networkError
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> fileError
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">fetchData</span>() <span style="color:#007020;font-weight:bold">throws</span> -&gt; <span style="color:#007020">String</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Simulate network request that could fail</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> arc4random_uniform(<span style="color:#40a070">2</span>) == <span style="color:#40a070">0</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">throw</span> MyError.networkError
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Data fetched successfully&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">data</span> = <span style="color:#007020;font-weight:bold">try</span> fetchData()
+</span></span><span style="display:flex;"><span>    print(data)
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">catch</span> MyError.networkError {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Network error occurred&#34;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">catch</span> {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;An unexpected error occurred&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Each <code>catch</code> block can handle specific types of errors. A general <code>catch</code> block can catch any type of error not handled by specific <code>catch</code> blocks.</p>
+<h3 class="heading" id="guard-statements">
+  Guard Statements
+  <a class="anchor" href="#guard-statements">#</a>
+</h3>
+<p><code>guard</code> statements are used to transfer control flow out of a scope if a condition is not met. They are frequently used with optional binding to handle nil values early in a function and improve readability.  They <em>must</em> include an <code>else</code> clause that executes if the condition is false.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">processData</span>(data: <span style="color:#007020">String</span>?) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">guard</span> <span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">unwrappedData</span> = data <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>        print(<span style="color:#4070a0">&#34;Data is nil. Exiting.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#60a0b0;font-style:italic">// Exits the function if data is nil</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Process unwrappedData here</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Processing data: </span><span style="color:#70a0d0">\(</span>unwrappedData<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>processData(data: <span style="color:#4070a0">&#34;Hello&#34;</span>)
+</span></span><span style="display:flex;"><span>processData(data: <span style="color:#007020;font-weight:bold">nil</span>)
+</span></span></code></pre></div><p><code>guard</code> statements help prevent deeply nested <code>if-let</code> structures, improving code clarity and maintainability.  They are especially useful for early exit conditions.</p>
+<h2 class="heading" id="closures">
+  Closures
+  <a class="anchor" href="#closures">#</a>
+</h2>
+<p>Closures are self-contained blocks of code that can be passed around and executed later.  They are a powerful feature in Swift, enabling functional programming paradigms.</p>
+<h3 class="heading" id="introduction-to-closures">
+  Introduction to Closures
+  <a class="anchor" href="#introduction-to-closures">#</a>
+</h3>
+<p>A closure is a function that can be written inline or separately and passed as a value.  They can capture values from their surrounding context.  A simple closure is shown below:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">numbers</span> = [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>]
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">doubledNumbers</span> = numbers.map { <span style="color:#bb60d5">$0</span> <span style="color:#666">*</span> <span style="color:#40a070">2</span> } <span style="color:#60a0b0;font-style:italic">//Closure in map function</span>
+</span></span><span style="display:flex;"><span>print(doubledNumbers) <span style="color:#60a0b0;font-style:italic">// Output: [2, 4, 6, 8, 10]</span>
+</span></span></code></pre></div><p>Here, <code>{ $0 * 2 }</code> is a closure that takes one argument (<code>$0</code> represents the first argument) and returns its double.  <code>map</code> applies this closure to each element of the array.  A more verbose way to write the same closure is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">doubledNumbers2</span> = numbers.map { (number: <span style="color:#007020">Int</span>) -&gt; <span style="color:#007020">Int</span> <span style="color:#007020;font-weight:bold">in</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> number <span style="color:#666">*</span> <span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This version explicitly declares the input parameter type (<code>Int</code>), the return type (<code>Int</code>), and uses the <code>return</code> keyword.</p>
+<h3 class="heading" id="trailing-closures">
+  Trailing Closures
+  <a class="anchor" href="#trailing-closures">#</a>
+</h3>
+<p>When the last argument to a function is a closure, you can write it outside the parentheses using a trailing closure. This enhances readability, especially when the closure is long.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">sortNumbers</span>(numbers: [<span style="color:#007020">Int</span>], sortOrder: (<span style="color:#007020">Int</span>, <span style="color:#007020">Int</span>) -&gt; <span style="color:#007020">Bool</span>) -&gt; [<span style="color:#007020">Int</span>] {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> numbers.sorted(by: sortOrder)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">numbers</span> = [<span style="color:#40a070">5</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">8</span>, <span style="color:#40a070">1</span>, <span style="color:#40a070">9</span>]
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sortedNumbers</span> = sortNumbers(numbers: numbers) { <span style="color:#bb60d5">$0</span> <span style="color:#666">&lt;</span> <span style="color:#bb60d5">$1</span> } <span style="color:#60a0b0;font-style:italic">// Trailing closure for ascending order</span>
+</span></span><span style="display:flex;"><span>print(sortedNumbers) <span style="color:#60a0b0;font-style:italic">// Output: [1, 2, 5, 8, 9]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sortedNumbersDescending</span> = sortNumbers(numbers: numbers) { <span style="color:#bb60d5">$0</span> <span style="color:#666">&gt;</span> <span style="color:#bb60d5">$1</span> } <span style="color:#60a0b0;font-style:italic">//Trailing closure for descending order</span>
+</span></span><span style="display:flex;"><span>print(sortedNumbersDescending) <span style="color:#60a0b0;font-style:italic">// Output: [9, 8, 5, 2, 1]</span>
+</span></span></code></pre></div><p>The trailing closure makes the code cleaner by separating the function call from the closure&rsquo;s implementation.</p>
+<h3 class="heading" id="capturing-values">
+  Capturing Values
+  <a class="anchor" href="#capturing-values">#</a>
+</h3>
+<p>Closures can capture values from their surrounding context. This means they can refer to and modify variables even after the surrounding scope has ended.  Swift provides different capture mechanisms.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">makeIncrementer</span>(incrementAmount: <span style="color:#007020">Int</span>) -&gt; () -&gt; <span style="color:#007020">Int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">runningTotal</span> = <span style="color:#40a070">0</span> <span style="color:#60a0b0;font-style:italic">// Variable captured by the inner closure</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">incrementer</span>() -&gt; <span style="color:#007020">Int</span> {
+</span></span><span style="display:flex;"><span>        runningTotal <span style="color:#666">+=</span> incrementAmount
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> runningTotal
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> incrementer <span style="color:#60a0b0;font-style:italic">//Returning a closure that can access runningTotal</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">incrementByTen</span> = makeIncrementer(incrementAmount: <span style="color:#40a070">10</span>)
+</span></span><span style="display:flex;"><span>print(incrementByTen()) <span style="color:#60a0b0;font-style:italic">// Output: 10</span>
+</span></span><span style="display:flex;"><span>print(incrementByTen()) <span style="color:#60a0b0;font-style:italic">// Output: 20</span>
+</span></span><span style="display:flex;"><span>print(incrementByTen()) <span style="color:#60a0b0;font-style:italic">// Output: 30</span>
+</span></span></code></pre></div><p>The inner closure (<code>incrementer</code>) captures <code>runningTotal</code> and <code>incrementAmount</code> from its surrounding scope.  Even after <code>makeIncrementer</code> finishes, <code>incrementer</code> continues to access and modify <code>runningTotal</code>. This example demonstrates capturing values by reference.  Swift automatically handles the capture mode based on context, but you can explicitly specify it (e.g., using <code>[weak self]</code> to prevent strong reference cycles if necessary) for better control.</p>
+<h2 class="heading" id="building-a-simple-app">
+  Building a Simple App
+  <a class="anchor" href="#building-a-simple-app">#</a>
+</h2>
+<p>This section walks you through building a basic iOS app using Xcode, illustrating UI design, connecting UI elements to code, and implementing app logic.  We&rsquo;ll create a simple app that displays a greeting based on user input.</p>
+<p><strong>Note:</strong> This section assumes basic familiarity with the Xcode interface and Swift concepts covered in previous sections.</p>
+<h3 class="heading" id="designing-the-user-interface">
+  Designing the User Interface
+  <a class="anchor" href="#designing-the-user-interface">#</a>
+</h3>
+<ol>
+<li><strong>Create a New Project:</strong> In Xcode, create a new iOS project, selecting the &ldquo;App&rdquo; template.</li>
+<li><strong>Open Main.storyboard:</strong>  This file contains the visual representation of your app&rsquo;s user interface.</li>
+<li><strong>Add UI Elements:</strong> Drag and drop the following UI elements from the Object library onto the storyboard:
+<ul>
+<li>A <code>TextField</code> for user input (name).</li>
+<li>A <code>Button</code> to trigger the greeting.</li>
+<li>A <code>Label</code> to display the greeting.</li>
+</ul>
+</li>
+<li><strong>Arrange and Style:</strong> Position the elements neatly on the screen.  You can customize their appearance (fonts, colors, etc.) using the Attributes inspector.  Give meaningful names to your UI elements in the Identity inspector (e.g., <code>nameTextField</code>, <code>greetButton</code>, <code>greetingLabel</code>).</li>
+</ol>
+<h3 class="heading" id="connecting-ui-elements-to-code">
+  Connecting UI Elements to Code
+  <a class="anchor" href="#connecting-ui-elements-to-code">#</a>
+</h3>
+<ol>
+<li><strong>Create Outlets and Actions:</strong>  Control-drag from each UI element in the storyboard to your <code>ViewController.swift</code> file.
+<ul>
+<li>For the <code>TextField</code> and <code>Label</code>, create outlets (properties in your view controller that refer to the UI elements).</li>
+<li>For the <code>Button</code>, create an action (a method in your view controller that&rsquo;s called when the button is tapped).</li>
+</ul>
+</li>
+<li><strong>Add Code to <code>ViewController.swift</code>:</strong>  Your <code>ViewController.swift</code> file should now contain code similar to this:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">UIKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">ViewController</span>: UIViewController {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">@IBOutlet</span> <span style="color:#007020;font-weight:bold">weak</span> <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">nameTextField</span>: UITextField!
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">@IBOutlet</span> <span style="color:#007020;font-weight:bold">weak</span> <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">greetingLabel</span>: UILabel!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">@IBAction</span> <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">greetButtonTapped</span>(<span style="color:#007020;font-weight:bold">_</span> sender: UIButton) {
+</span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic">// Implement greeting logic here</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">viewDidLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">super</span>.viewDidLoad()
+</span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic">// Any additional setup after loading the view.</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Replace the comments with your implementation logic.</p>
+<h3 class="heading" id="implementing-app-logic">
+  Implementing App Logic
+  <a class="anchor" href="#implementing-app-logic">#</a>
+</h3>
+<ol>
+<li><strong>Retrieve User Input:</strong> In the <code>greetButtonTapped</code> method, get the text from <code>nameTextField</code>.</li>
+<li><strong>Create a Greeting:</strong> Construct a greeting string using the input name. Handle potential nil values gracefully using optional binding or the nil-coalescing operator (<code>??</code>).</li>
+<li><strong>Update the Label:</strong> Set the text of <code>greetingLabel</code> to display the constructed greeting.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">@IBAction</span> <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">greetButtonTapped</span>(<span style="color:#007020;font-weight:bold">_</span> sender: UIButton) {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">guard</span> <span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">name</span> = nameTextField.text <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>            greetingLabel.text = <span style="color:#4070a0">&#34;Please enter a name.&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        greetingLabel.text = <span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">!&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>This completes the core logic.  Run the app in the simulator or on a device to test it. You can add more features (error handling, input validation) to enhance the app as you progress.  Remember to save your changes regularly.</p>
+<h2 class="heading" id="next-steps-and-resources">
+  Next Steps and Resources
+  <a class="anchor" href="#next-steps-and-resources">#</a>
+</h2>
+<p>Congratulations on completing the Beginner&rsquo;s Guide to Swift!  This section provides resources to continue your learning journey and stay connected with the Swift community.</p>
+<h3 class="heading" id="further-learning">
+  Further Learning
+  <a class="anchor" href="#further-learning">#</a>
+</h3>
+<p>To deepen your Swift expertise, consider exploring these areas:</p>
+<ul>
+<li><strong>Advanced Swift Concepts:</strong> Dive into more advanced topics like generics, protocols, extensions, error handling best practices, concurrency (using GCD or async/await), and memory management.</li>
+<li><strong>UI Development:</strong>  Learn more about building sophisticated user interfaces using SwiftUI or UIKit, including working with different UI controls, auto layout, and data binding.</li>
+<li><strong>Networking:</strong> Learn how to integrate network requests into your apps to fetch data from APIs and servers using URLSession or other networking frameworks.</li>
+<li><strong>Data Persistence:</strong> Explore different ways to store and retrieve data persistently, such as using Core Data, UserDefaults, or file storage.</li>
+<li><strong>Third-Party Libraries:</strong>  Familiarize yourself with popular third-party libraries that extend Swift&rsquo;s functionality and simplify common tasks.</li>
+<li><strong>Testing:</strong> Implement unit tests, UI tests, and other testing strategies to ensure the quality and robustness of your code.</li>
+<li><strong>Specific Platforms:</strong> Focus on a specific platform (iOS, macOS, watchOS, tvOS) to develop expertise in that ecosystem.</li>
+</ul>
+<h3 class="heading" id="useful-websites-and-documentation">
+  Useful Websites and Documentation
+  <a class="anchor" href="#useful-websites-and-documentation">#</a>
+</h3>
+<ul>
+<li><strong>Apple&rsquo;s Swift Documentation:</strong> This is your primary resource for in-depth information about the Swift language and its APIs. ( <a href="https://docs.swift.org/">https://docs.swift.org/</a> )</li>
+<li><strong>Apple Developer Website:</strong>  Provides comprehensive resources for iOS, macOS, watchOS, and tvOS development, including tutorials, sample code, and API references. ( <a href="https://developer.apple.com/">https://developer.apple.com/</a> )</li>
+<li><strong>Swift Playgrounds:</strong> A great interactive environment for learning and experimenting with Swift code. (Available on iPad and macOS)</li>
+<li><strong>Stack Overflow:</strong> A vast Q&amp;A site where you can find answers to many Swift-related questions. ( <a href="https://stackoverflow.com/">https://stackoverflow.com/</a> )</li>
+</ul>
+<h3 class="heading" id="swift-community">
+  Swift Community
+  <a class="anchor" href="#swift-community">#</a>
+</h3>
+<p>Engaging with the Swift community is a valuable way to learn, share knowledge, and get help.</p>
+<ul>
+<li><strong>Swift Forums:</strong> Apple provides forums for Swift developers to discuss topics and ask questions.</li>
+<li><strong>Swift Evolution Proposals:</strong>  Follow proposals for future Swift language enhancements.</li>
+<li><strong>Online Communities:</strong> Participate in online communities such as Reddit&rsquo;s r/swift or other relevant forums and groups.  Many experienced Swift developers are happy to help beginners.</li>
+<li><strong>Open-Source Projects:</strong> Contribute to or examine open-source Swift projects on GitHub to learn from real-world code examples.  Contributing to open source projects is also a great way to build your skills and portfolio.</li>
+</ul>
+<p>Remember to continue practicing regularly and building your own projects.  Consistent effort is key to mastering Swift development.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-kotlin/">
+                        Beginner&#39;s Guide to Kotlin
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-rust/">
+                        Beginner&#39;s Guide to Rust
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

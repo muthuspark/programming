@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to D | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-d/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-d/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to D">
+  <meta property="og:description" content="Introduction to D # What is D? # D is a general-purpose, compiled systems programming language. It’s designed to be a pragmatic language, combining the performance and low-level control of C/C&#43;&#43; with the developer productivity and safety features of more modern languages like Java or C#. D aims to be a better C&#43;&#43;, addressing some of the complexities and pitfalls of C&#43;&#43; while retaining its power and flexibility. It’s suitable for a wide range of applications, from high-performance computing and game development to scripting and embedded systems.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-10T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-d/">Beginner&#39;s Guide to D</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to D</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-02-10T00:00:00&#43;00:00">February 10, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      19 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-d">Introduction to D</a>
+      <ul>
+        <li><a href="#what-is-d">What is D?</a></li>
+        <li><a href="#why-learn-d">Why learn D?</a></li>
+        <li><a href="#ds-features-and-advantages">D&rsquo;s features and advantages</a></li>
+        <li><a href="#setting-up-your-environment">Setting up your environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-data-types">Basic Syntax and Data Types</a>
+      <ul>
+        <li><a href="#hello-world-program">Hello, world! program</a></li>
+        <li><a href="#variables-and-data-types-int-float-string-bool">Variables and data types (int, float, string, bool)</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#control-flow-if-else-switch">Control flow (if-else, switch)</a></li>
+        <li><a href="#loops-for-while">Loops (for, while)</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions-and-modules">Functions and Modules</a>
+      <ul>
+        <li><a href="#defining-and-calling-functions">Defining and calling functions</a></li>
+        <li><a href="#function-parameters-and-return-values">Function parameters and return values</a></li>
+        <li><a href="#using-modules-and-importing-libraries">Using modules and importing libraries</a></li>
+        <li><a href="#standard-library-overview">Standard library overview</a></li>
+      </ul>
+    </li>
+    <li><a href="#object-oriented-programming-in-d">Object-Oriented Programming in D</a>
+      <ul>
+        <li><a href="#classes-and-objects">Classes and objects</a></li>
+        <li><a href="#inheritance">Inheritance</a></li>
+        <li><a href="#polymorphism">Polymorphism</a></li>
+        <li><a href="#interfaces-and-abstract-classes">Interfaces and abstract classes</a></li>
+      </ul>
+    </li>
+    <li><a href="#memory-management-in-d">Memory Management in D</a>
+      <ul>
+        <li><a href="#garbage-collection">Garbage collection</a></li>
+        <li><a href="#manual-memory-management">Manual memory management</a></li>
+        <li><a href="#understanding-memory-leaks">Understanding memory leaks</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics">Advanced Topics</a>
+      <ul>
+        <li><a href="#templates-and-metaprogramming">Templates and metaprogramming</a></li>
+        <li><a href="#unit-testing">Unit testing</a></li>
+        <li><a href="#concurrency-and-parallelism">Concurrency and parallelism</a></li>
+        <li><a href="#working-with-external-libraries">Working with external libraries</a></li>
+      </ul>
+    </li>
+    <li><a href="#building-and-running-d-programs">Building and Running D Programs</a>
+      <ul>
+        <li><a href="#compiling-d-code">Compiling D code</a></li>
+        <li><a href="#running-your-d-programs">Running your D programs</a></li>
+        <li><a href="#debugging-your-code">Debugging your code</a></li>
+      </ul>
+    </li>
+    <li><a href="#further-learning-resources">Further Learning Resources</a>
+      <ul>
+        <li><a href="#official-d-website">Official D website</a></li>
+        <li><a href="#community-forums-and-resources">Community forums and resources</a></li>
+        <li><a href="#books-and-tutorials">Books and tutorials</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-d">
+  Introduction to D
+  <a class="anchor" href="#introduction-to-d">#</a>
+</h2>
+<h3 class="heading" id="what-is-d">
+  What is D?
+  <a class="anchor" href="#what-is-d">#</a>
+</h3>
+<p>D is a general-purpose, compiled systems programming language.  It&rsquo;s designed to be a pragmatic language, combining the performance and low-level control of C/C++ with the developer productivity and safety features of more modern languages like Java or C#.  D aims to be a better C++, addressing some of the complexities and pitfalls of C++ while retaining its power and flexibility.  It&rsquo;s suitable for a wide range of applications, from high-performance computing and game development to scripting and embedded systems.</p>
+<h3 class="heading" id="why-learn-d">
+  Why learn D?
+  <a class="anchor" href="#why-learn-d">#</a>
+</h3>
+<p>Learning D offers several compelling reasons:</p>
+<ul>
+<li><strong>High Performance:</strong> D compiles to native code, resulting in applications that are comparable in speed to C or C++.  This makes it ideal for performance-critical tasks.</li>
+<li><strong>Modern Features:</strong> D incorporates features like garbage collection, built-in unit testing, and powerful metaprogramming capabilities, significantly enhancing developer productivity and code maintainability.  These reduce development time and improve code quality compared to C/C++.</li>
+<li><strong>Improved Safety:</strong> While offering low-level control, D provides features to help prevent common programming errors such as memory leaks and buffer overflows, leading to more robust and reliable software.</li>
+<li><strong>Interoperability:</strong> D can readily interoperate with C code, allowing you to leverage existing C libraries and integrate with other systems.</li>
+<li><strong>Growing Community:</strong> While not as large as some other languages, the D community is active and supportive, providing resources and assistance to learners.</li>
+<li><strong>Clean Syntax:</strong>  D has a cleaner and more consistent syntax than C++, making it easier to learn and understand.</li>
+</ul>
+<h3 class="heading" id="ds-features-and-advantages">
+  D&rsquo;s features and advantages
+  <a class="anchor" href="#ds-features-and-advantages">#</a>
+</h3>
+<p>D offers a compelling combination of features and advantages:</p>
+<ul>
+<li><strong>Garbage Collection:</strong>  Automatic memory management reduces the risk of memory leaks and simplifies development.</li>
+<li><strong>Compile-time code generation (Metaprogramming):</strong> Allows for powerful code generation and customization, leading to highly optimized and specialized code.</li>
+<li><strong>Contract Programming:</strong> Enables specification of preconditions, postconditions, and invariants to improve code correctness and facilitate debugging.</li>
+<li><strong>Templates:</strong>  Provide generic programming capabilities, enabling the creation of reusable and highly adaptable code.</li>
+<li><strong>Built-in Unit Testing:</strong>  Facilitates writing and running unit tests directly within the language, promoting better testing practices.</li>
+<li><strong>Modules:</strong> A sophisticated module system promotes code organization and reusability.</li>
+<li><strong>Concurrency features:</strong> D offers features to easily write concurrent and parallel programs.</li>
+</ul>
+<h3 class="heading" id="setting-up-your-environment">
+  Setting up your environment
+  <a class="anchor" href="#setting-up-your-environment">#</a>
+</h3>
+<p>Setting up your D development environment depends on your operating system.  Generally, you&rsquo;ll need a D compiler and an appropriate IDE or text editor.</p>
+<p><strong>Step 1: Download a D compiler:</strong>  The primary D compiler is DMD (Digital Mars D).  Download the appropriate version for your operating system from the official DMD website.</p>
+<p><strong>Step 2: Install the compiler:</strong> Follow the installation instructions provided with the DMD download.  This typically involves extracting the archive and adding the compiler&rsquo;s bin directory to your system&rsquo;s PATH environment variable.</p>
+<p><strong>Step 3: Choose an IDE or text editor:</strong>  Several IDEs and text editors offer good support for D development.  Popular choices include:</p>
+<ul>
+<li><strong>Visual Studio Code:</strong> With the appropriate extensions, VS Code provides syntax highlighting, code completion, and debugging support.</li>
+<li><strong>Sublime Text:</strong> A lightweight and flexible text editor that can be enhanced with D-specific plugins.</li>
+<li><strong>Other IDEs:</strong> Some other IDEs may also offer D support, but may require additional configuration.</li>
+</ul>
+<p><strong>Step 4: Verify installation:</strong> After installation, open a command prompt or terminal and type <code>dmd --version</code>.  If the compiler is installed correctly, it should print the version number.</p>
+<p><strong>Step 5 (Optional): Install a package manager:</strong> Consider using a package manager like DUB to simplify dependency management for your D projects.  DUB can be installed separately after you have the DMD compiler.</p>
+<p>This provides a basic setup. More advanced configuration, such as setting up a debugger or integrating with build systems, will be detailed in later sections.</p>
+<h2 class="heading" id="basic-syntax-and-data-types">
+  Basic Syntax and Data Types
+  <a class="anchor" href="#basic-syntax-and-data-types">#</a>
+</h2>
+<h3 class="heading" id="hello-world-program">
+  Hello, world! program
+  <a class="anchor" href="#hello-world-program">#</a>
+</h3>
+<p>The simplest D program, printing &ldquo;Hello, world!&rdquo; to the console, demonstrates fundamental syntax:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">std.stdio</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Hello, world!&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>This code imports the <code>std.stdio</code> module for standard input/output operations, defines a <code>main</code> function (the program&rsquo;s entry point), and uses <code>writeln</code> to print the string to the console.  Note the use of semicolons to terminate statements and the <code>void</code> keyword indicating the <code>main</code> function doesn&rsquo;t return a value.</p>
+<h3 class="heading" id="variables-and-data-types-int-float-string-bool">
+  Variables and data types (int, float, string, bool)
+  <a class="anchor" href="#variables-and-data-types-int-float-string-bool">#</a>
+</h3>
+<p>D is statically-typed, meaning you must declare the type of a variable before using it.  Common data types include:</p>
+<ul>
+<li><strong><code>int</code>:</strong> Represents integers (whole numbers).  Example: <code>int x = 10;</code></li>
+<li><strong><code>float</code>:</strong> Represents single-precision floating-point numbers. Example: <code>float y = 3.14;</code></li>
+<li><strong><code>double</code>:</strong> Represents double-precision floating-point numbers. Example: <code>double z = 2.71828;</code></li>
+<li><strong><code>string</code>:</strong> Represents text strings. Example: <code>string name = &quot;D Programming Language&quot;;</code></li>
+<li><strong><code>bool</code>:</strong> Represents boolean values (true or false). Example: <code>bool isTrue = true;</code></li>
+</ul>
+<p>Variable declarations follow the pattern <code>type variableName = value;</code>.  Type inference is also supported:  <code>auto inferredValue = 10;</code> (the compiler deduces the type as <code>int</code>).</p>
+<h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>D supports a wide range of operators, including:</p>
+<ul>
+<li><strong>Arithmetic operators:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo)</li>
+<li><strong>Assignment operators:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code></li>
+<li><strong>Comparison operators:</strong> <code>==</code> (equals), <code>!=</code> (not equals), <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+<li><strong>Logical operators:</strong> <code>&amp;&amp;</code> (and), <code>||</code> (or), <code>!</code> (not)</li>
+<li><strong>Bitwise operators:</strong> <code>&amp;</code>, <code>|</code>, <code>^</code>, <code>~</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;</code></li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#902000">int</span> a <span style="color:#666">=</span> <span style="color:#40a070">10</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">int</span> b <span style="color:#666">=</span> <span style="color:#40a070">5</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">int</span> sum <span style="color:#666">=</span> a <span style="color:#666">+</span> b<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">bool</span> isEqual <span style="color:#666">=</span> <span style="color:#666">(</span>a <span style="color:#666">==</span> b<span style="color:#666">);</span>
+</span></span></code></pre></div><h3 class="heading" id="control-flow-if-else-switch">
+  Control flow (if-else, switch)
+  <a class="anchor" href="#control-flow-if-else-switch">#</a>
+</h3>
+<p><strong><code>if-else</code> statements:</strong>  Used for conditional execution.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#902000">int</span> age <span style="color:#666">=</span> <span style="color:#40a070">20</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>age <span style="color:#666">&gt;=</span> <span style="color:#40a070">18</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;You are an adult.&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;You are a minor.&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p><strong><code>switch</code> statements:</strong>  Used for multi-way branching based on the value of an expression.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#902000">int</span> day <span style="color:#666">=</span> <span style="color:#40a070">3</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">switch</span> <span style="color:#666">(</span>day<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">1</span><span style="color:#666">:</span> writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Monday&#34;</span><span style="color:#666">);</span> <span style="color:#007020;font-weight:bold">break</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">2</span><span style="color:#666">:</span> writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Tuesday&#34;</span><span style="color:#666">);</span> <span style="color:#007020;font-weight:bold">break</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">3</span><span style="color:#666">:</span> writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Wednesday&#34;</span><span style="color:#666">);</span> <span style="color:#007020;font-weight:bold">break</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">default</span><span style="color:#666">:</span> writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Other day&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>Note the use of <code>break</code> statements to prevent fallthrough between cases.</p>
+<h3 class="heading" id="loops-for-while">
+  Loops (for, while)
+  <a class="anchor" href="#loops-for-while">#</a>
+</h3>
+<p><strong><code>while</code> loop:</strong> Repeats a block of code as long as a condition is true.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#666">(</span>i <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span>i<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    i<span style="color:#666">++;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p><strong><code>for</code> loop:</strong>  A more versatile loop for iterating a specific number of times or over a range.  D offers several <code>for</code> loop variations, including range-based <code>for</code> loops:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Traditional for loop
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span> i <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span><span style="color:#666">;</span> i<span style="color:#666">++)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span>i<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Range-based for loop
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">foreach</span> <span style="color:#666">(</span>i<span style="color:#666">;</span> <span style="color:#40a070">0</span> <span style="color:#666">..</span> <span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#666">{</span> <span style="color:#60a0b0;font-style:italic">// Iterates from 0 up to (but not including) 5
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    writeln<span style="color:#666">(</span>i<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>These examples illustrate the basic syntax and common elements of D. More advanced features and concepts will be covered in subsequent sections.</p>
+<h2 class="heading" id="functions-and-modules">
+  Functions and Modules
+  <a class="anchor" href="#functions-and-modules">#</a>
+</h2>
+<h3 class="heading" id="defining-and-calling-functions">
+  Defining and calling functions
+  <a class="anchor" href="#defining-and-calling-functions">#</a>
+</h3>
+<p>Functions in D are blocks of reusable code.  They&rsquo;re defined using the <code>function</code> keyword (or <code>void</code> for functions that don&rsquo;t return a value), followed by the function name, parameter list (in parentheses), and the function body enclosed in curly braces <code>{}</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">greet</span><span style="color:#666">(</span><span style="color:#007020">string</span> name<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Hello, &#34;</span><span style="color:#666">,</span> name <span style="color:#666">+</span> <span style="color:#4070a0">&#34;!&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">int</span> <span style="color:#06287e">add</span><span style="color:#666">(</span><span style="color:#902000">int</span> a<span style="color:#666">,</span> <span style="color:#902000">int</span> b<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">+</span> b<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    greet<span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> sum <span style="color:#666">=</span> add<span style="color:#666">(</span><span style="color:#40a070">5</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Sum: &#34;</span><span style="color:#666">,</span> sum<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>Functions are called by their name, followed by parentheses containing the arguments.</p>
+<h3 class="heading" id="function-parameters-and-return-values">
+  Function parameters and return values
+  <a class="anchor" href="#function-parameters-and-return-values">#</a>
+</h3>
+<p>Function parameters specify input values.  The type of each parameter must be declared.  Return values specify the output of a function.  If a function doesn&rsquo;t return a value, its return type is <code>void</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#902000">int</span> <span style="color:#06287e">calculateArea</span><span style="color:#666">(</span><span style="color:#902000">int</span> length<span style="color:#666">,</span> <span style="color:#902000">int</span> width<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> length <span style="color:#666">*</span> width<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Function with default parameter value
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">string</span> <span style="color:#06287e">formatName</span><span style="color:#666">(</span><span style="color:#007020">string</span> firstName<span style="color:#666">,</span> <span style="color:#007020">string</span> lastName <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Doe&#34;</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> firstName <span style="color:#666">~</span> <span style="color:#4070a0">&#34; &#34;</span> <span style="color:#666">~</span> lastName<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// ~ is the string concatenation operator
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>The <code>formatName</code> example shows a function with a default parameter value. If <code>lastName</code> is not provided when calling the function, it defaults to &ldquo;Doe&rdquo;.</p>
+<h3 class="heading" id="using-modules-and-importing-libraries">
+  Using modules and importing libraries
+  <a class="anchor" href="#using-modules-and-importing-libraries">#</a>
+</h3>
+<p>D uses modules to organize code into reusable units.  Modules are similar to namespaces in other languages.  The <code>import</code> statement is used to access code from other modules.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">std.stdio</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Imports the standard I/O module
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">std.math</span><span style="color:#666">;</span>  <span style="color:#60a0b0;font-style:italic">// Imports the standard math module
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;PI: &#34;</span><span style="color:#666">,</span> PI<span style="color:#666">);</span> <span style="color:#60a0b0;font-style:italic">// Accessing PI from std.math
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>This example shows importing the <code>std.stdio</code> and <code>std.math</code> modules from the standard library.  The <code>PI</code> constant is then accessible in the <code>main</code> function.</p>
+<h3 class="heading" id="standard-library-overview">
+  Standard library overview
+  <a class="anchor" href="#standard-library-overview">#</a>
+</h3>
+<p>The D standard library provides a rich set of modules for various tasks, including:</p>
+<ul>
+<li><strong><code>std.stdio</code>:</strong>  Provides functions for standard input/output operations (e.g., <code>writeln</code>, <code>readln</code>).</li>
+<li><strong><code>std.string</code>:</strong> Offers string manipulation functions (e.g., <code>toUpper</code>, <code>replace</code>).</li>
+<li><strong><code>std.math</code>:</strong> Contains mathematical functions (e.g., <code>sin</code>, <code>cos</code>, <code>sqrt</code>, <code>PI</code>).</li>
+<li><strong><code>std.algorithm</code>:</strong> Provides algorithms for working with ranges of data (e.g., sorting, searching).</li>
+<li><strong><code>std.container</code>:</strong> Offers various data structures (e.g., arrays, linked lists, hash tables).</li>
+<li><strong><code>std.datetime</code>:</strong> Provides tools for working with dates and times.</li>
+<li><strong><code>std.file</code>:</strong> Contains functions for file I/O operations.</li>
+<li><strong><code>std.conv</code>:</strong>  Facilitates type conversions.</li>
+</ul>
+<p>The standard library is well-documented, and its modules provide a significant foundation for building D applications.  Consult the official D language documentation for a detailed overview of each module and its functions.  You can often find examples in the documentation which demonstrate common uses of these modules and functions.</p>
+<h2 class="heading" id="object-oriented-programming-in-d">
+  Object-Oriented Programming in D
+  <a class="anchor" href="#object-oriented-programming-in-d">#</a>
+</h2>
+<h3 class="heading" id="classes-and-objects">
+  Classes and objects
+  <a class="anchor" href="#classes-and-objects">#</a>
+</h3>
+<p>D supports object-oriented programming (OOP) through classes and objects. A class is a blueprint for creating objects.  Objects are instances of classes.  Classes define data (member variables) and functions (methods) that operate on that data.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">private</span> <span style="color:#007020">string</span> name<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">int</span> age<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">(</span><span style="color:#007020">string</span> name<span style="color:#666">,</span> <span style="color:#902000">int</span> age<span style="color:#666">)</span> <span style="color:#666">{</span> <span style="color:#60a0b0;font-style:italic">// Constructor
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> name<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">age</span> <span style="color:#666">=</span> age<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">bark</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Woof!&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020">string</span> <span style="color:#06287e">getName</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> name<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    Dog myDog <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Dog<span style="color:#666">(</span><span style="color:#4070a0">&#34;Buddy&#34;</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    myDog<span style="color:#666">.</span><span style="color:#4070a0">bark</span><span style="color:#666">();</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;My dog&#39;s name is &#34;</span><span style="color:#666">,</span> myDog<span style="color:#666">.</span><span style="color:#4070a0">getName</span><span style="color:#666">(),</span> <span style="color:#4070a0">&#34; and is &#34;</span><span style="color:#666">,</span> myDog<span style="color:#666">.</span><span style="color:#4070a0">age</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34; years old.&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>This example defines a <code>Dog</code> class with a private <code>name</code> and a public <code>age</code>.  The constructor initializes the object&rsquo;s state.  The <code>getName</code> method provides controlled access to the private <code>name</code> member.  Note the use of <code>this</code> to refer to the object&rsquo;s members.</p>
+<h3 class="heading" id="inheritance">
+  Inheritance
+  <a class="anchor" href="#inheritance">#</a>
+</h3>
+<p>Inheritance allows creating new classes (derived classes) based on existing classes (base classes).  Derived classes inherit the members of the base class and can add new members or override existing ones.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020">string</span> name<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#06287e">this</span><span style="color:#666">(</span><span style="color:#007020">string</span> name<span style="color:#666">)</span> <span style="color:#666">{</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> name<span style="color:#666">;</span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">eat</span><span style="color:#666">()</span> <span style="color:#666">{</span> writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Animal is eating&#34;</span><span style="color:#666">);</span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> <span style="color:#666">:</span> Animal <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#06287e">this</span><span style="color:#666">(</span><span style="color:#007020">string</span> name<span style="color:#666">)</span> <span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">super</span><span style="color:#666">(</span>name<span style="color:#666">)</span> <span style="color:#666">{}</span> <span style="color:#60a0b0;font-style:italic">// Call the base class constructor
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">bark</span><span style="color:#666">()</span> <span style="color:#666">{</span> writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Woof!&#34;</span><span style="color:#666">);</span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    Dog myDog <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Dog<span style="color:#666">(</span><span style="color:#4070a0">&#34;Buddy&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    myDog<span style="color:#666">.</span><span style="color:#4070a0">eat</span><span style="color:#666">();</span>
+</span></span><span style="display:flex;"><span>    myDog<span style="color:#666">.</span><span style="color:#4070a0">bark</span><span style="color:#666">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>The <code>Dog</code> class inherits from the <code>Animal</code> class.  The <code>: super(name)</code> in the <code>Dog</code> constructor calls the <code>Animal</code> constructor to initialize the inherited <code>name</code> member.</p>
+<h3 class="heading" id="polymorphism">
+  Polymorphism
+  <a class="anchor" href="#polymorphism">#</a>
+</h3>
+<p>Polymorphism allows objects of different classes to be treated as objects of a common type.  This is often achieved through virtual functions (functions declared with the <code>virtual</code> keyword) and inheritance.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> virtual <span style="color:#902000">void</span> <span style="color:#06287e">makeSound</span><span style="color:#666">()</span> <span style="color:#666">{</span> writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Generic animal sound&#34;</span><span style="color:#666">);</span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> <span style="color:#666">:</span> Animal <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#902000">void</span> <span style="color:#06287e">makeSound</span><span style="color:#666">()</span> <span style="color:#666">{</span> writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Woof!&#34;</span><span style="color:#666">);</span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span> <span style="color:#666">:</span> Animal <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#902000">void</span> <span style="color:#06287e">makeSound</span><span style="color:#666">()</span> <span style="color:#666">{</span> writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Meow!&#34;</span><span style="color:#666">);</span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    Animal<span style="color:#666">[]</span> animals <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#007020;font-weight:bold">new</span> Dog<span style="color:#666">(),</span> <span style="color:#007020;font-weight:bold">new</span> Cat<span style="color:#666">()];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">foreach</span> <span style="color:#666">(</span>animal<span style="color:#666">;</span> animals<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        animal<span style="color:#666">.</span><span style="color:#4070a0">makeSound</span><span style="color:#666">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>The <code>makeSound</code> function is declared as <code>virtual</code> in the base class and overridden in the derived classes.  The <code>main</code> function demonstrates polymorphism by calling <code>makeSound</code> on an array of <code>Animal</code> objects, resulting in different sounds depending on the actual object type.</p>
+<h3 class="heading" id="interfaces-and-abstract-classes">
+  Interfaces and abstract classes
+  <a class="anchor" href="#interfaces-and-abstract-classes">#</a>
+</h3>
+<p>Interfaces define a set of methods that classes must implement.  Abstract classes are classes that cannot be instantiated directly but serve as blueprints for derived classes.  They can contain both abstract methods (methods without implementation) and concrete methods.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">Pet</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">feed</span><span style="color:#666">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">play</span><span style="color:#666">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">abstract</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">string</span> name<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">(</span><span style="color:#007020">string</span> name<span style="color:#666">)</span> <span style="color:#666">{</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> name<span style="color:#666">;</span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">abstract</span> <span style="color:#902000">void</span> <span style="color:#06287e">makeSound</span><span style="color:#666">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> <span style="color:#666">:</span> Animal<span style="color:#666">,</span> Pet <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">(</span><span style="color:#007020">string</span> name<span style="color:#666">)</span> <span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">super</span><span style="color:#666">(</span>name<span style="color:#666">)</span> <span style="color:#666">{}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#902000">void</span> <span style="color:#06287e">makeSound</span><span style="color:#666">()</span> <span style="color:#666">{</span> writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Woof!&#34;</span><span style="color:#666">);</span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">feed</span><span style="color:#666">()</span> <span style="color:#666">{</span> writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Feeding the dog&#34;</span><span style="color:#666">);</span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">play</span><span style="color:#666">()</span> <span style="color:#666">{</span> writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Playing fetch with the dog&#34;</span><span style="color:#666">);</span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>  Dog myDog <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Dog<span style="color:#666">(</span><span style="color:#4070a0">&#34;Buddy&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>  myDog<span style="color:#666">.</span><span style="color:#4070a0">makeSound</span><span style="color:#666">();</span>
+</span></span><span style="display:flex;"><span>  myDog<span style="color:#666">.</span><span style="color:#4070a0">feed</span><span style="color:#666">();</span>
+</span></span><span style="display:flex;"><span>  myDog<span style="color:#666">.</span><span style="color:#4070a0">play</span><span style="color:#666">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>The <code>Pet</code> interface defines the <code>feed</code> and <code>play</code> methods.  The <code>Dog</code> class implements both the <code>Pet</code> interface and inherits from the <code>Animal</code> abstract class, providing implementations for the abstract methods.  Note that interfaces in D use the <code>interface</code> keyword and don&rsquo;t declare members with types as in C# or Java; the types are implicitly enforced when implementing the interface.</p>
+<h2 class="heading" id="memory-management-in-d">
+  Memory Management in D
+  <a class="anchor" href="#memory-management-in-d">#</a>
+</h2>
+<h3 class="heading" id="garbage-collection">
+  Garbage collection
+  <a class="anchor" href="#garbage-collection">#</a>
+</h3>
+<p>D primarily uses garbage collection (GC) for automatic memory management. This means that the D runtime automatically reclaims memory that is no longer being used by the program. This simplifies development by reducing the burden of manual memory management and minimizing the risk of memory leaks.  D&rsquo;s garbage collector is a non-moving, mark-and-sweep collector.  This means that objects are not moved in memory after they are allocated, which can improve performance in some situations but may lead to memory fragmentation over time.</p>
+<p>The GC is mostly automatic, but there are some things to keep in mind:</p>
+<ul>
+<li><strong>Object Lifetime:</strong> Objects are eligible for garbage collection when there are no more references to them.  If an object is still accessible through a variable or other reference, it will not be collected.</li>
+<li><strong>GC Overhead:</strong> While convenient, GC introduces some runtime overhead.  For extremely performance-critical applications, manual memory management (described below) might be considered, although this is generally less desirable due to increased complexity and error potential.</li>
+<li><strong>GC Configuration:</strong> The garbage collector&rsquo;s behavior can be tuned through various options and environment variables, allowing for some control over its operation depending on the application&rsquo;s needs.  Refer to the DMD documentation for details on GC configuration.</li>
+</ul>
+<h3 class="heading" id="manual-memory-management">
+  Manual memory management
+  <a class="anchor" href="#manual-memory-management">#</a>
+</h3>
+<p>While D strongly encourages the use of garbage collection, it also provides mechanisms for manual memory management, primarily using the <code>new</code> and <code>delete</code> operators.  Manual management is generally needed only for very low-level programming tasks or in situations where very precise control over memory allocation and deallocation is required.  Improper use can easily lead to memory leaks or segmentation faults.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#902000">void</span><span style="color:#666">*</span> ptr <span style="color:#666">=</span> malloc<span style="color:#666">(</span><span style="color:#40a070">1024</span><span style="color:#666">);</span> <span style="color:#60a0b0;font-style:italic">// Allocate 1024 bytes of memory
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// ... use the memory at ptr ...
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>free<span style="color:#666">(</span>ptr<span style="color:#666">);</span> <span style="color:#60a0b0;font-style:italic">// Deallocate the memory
+</span></span></span></code></pre></div><p>Using <code>malloc</code> and <code>free</code> is the most common way to do manual memory management.  It&rsquo;s crucial to always <code>free</code> the memory when you are done using it, otherwise a memory leak will occur.  Note that <code>malloc</code> and <code>free</code> are C-style functions,  but are readily usable in D code through the standard library.  While <code>new</code> and <code>delete</code> are also available, <code>malloc</code> and <code>free</code> offer a more low-level approach to manual memory handling.</p>
+<h3 class="heading" id="understanding-memory-leaks">
+  Understanding memory leaks
+  <a class="anchor" href="#understanding-memory-leaks">#</a>
+</h3>
+<p>A memory leak occurs when a program allocates memory but fails to deallocate it when it&rsquo;s no longer needed. This leads to a gradual increase in memory consumption, eventually causing the program to crash or run out of memory.</p>
+<p>Memory leaks are much more common when manual memory management is employed.   The most frequent cause is forgetting to call <code>free()</code> or the equivalent deallocation function after allocating memory with <code>malloc</code> or a similar function.  Even in garbage-collected environments, circular references can cause memory leaks;  this is where two or more objects refer to each other, preventing the garbage collector from reclaiming any of them.</p>
+<p>In D, memory leaks are usually a consequence of manual memory management or improper use of resources that require manual release, especially when interacting with C libraries. Effective use of RAII (Resource Acquisition Is Initialization) principles can help mitigate this, but generally, sticking to the garbage collected model within D will prevent most common memory leak issues.  Using tools like memory debuggers can help identify memory leaks in applications.</p>
+<h2 class="heading" id="advanced-topics">
+  Advanced Topics
+  <a class="anchor" href="#advanced-topics">#</a>
+</h2>
+<h3 class="heading" id="templates-and-metaprogramming">
+  Templates and metaprogramming
+  <a class="anchor" href="#templates-and-metaprogramming">#</a>
+</h3>
+<p>D&rsquo;s template system allows creating generic code that can work with various data types without requiring explicit type specifications.  This is similar to templates in C++ but with a more powerful and less error-prone approach in D.  D&rsquo;s compile-time metaprogramming capabilities, enabled through templates, allow for code generation at compile time, enabling highly optimized and customized code.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span>T <span style="color:#06287e">max</span><span style="color:#666">(</span>T<span style="color:#666">)(</span>T a<span style="color:#666">,</span> T b<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">&gt;</span> b <span style="color:#666">?</span> a <span style="color:#666">:</span> b<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> maxInt <span style="color:#666">=</span> max<span style="color:#666">(</span><span style="color:#40a070">5</span><span style="color:#666">,</span> <span style="color:#40a070">10</span><span style="color:#666">);</span>      <span style="color:#60a0b0;font-style:italic">// max() is used with integers
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#902000">double</span> maxDouble <span style="color:#666">=</span> max<span style="color:#666">(</span><span style="color:#40a070">3.14</span><span style="color:#666">,</span> <span style="color:#40a070">2.71</span><span style="color:#666">);</span> <span style="color:#60a0b0;font-style:italic">// max() is used with doubles
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Max int: &#34;</span><span style="color:#666">,</span> maxInt<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Max double: &#34;</span><span style="color:#666">,</span> maxDouble<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>This example shows a generic <code>max</code> function that works with any type <code>T</code> that supports the <code>&gt;</code> operator. The compiler generates separate code for each type used with <code>max</code>.</p>
+<h3 class="heading" id="unit-testing">
+  Unit testing
+  <a class="anchor" href="#unit-testing">#</a>
+</h3>
+<p>D has built-in support for unit testing through the <code>unittest</code> module.  Unit tests are functions marked with the <code>unittest</code> attribute.  The D runtime executes these functions automatically when running tests.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">std.stdio</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">std.unittest</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">add</span><span style="color:#666">(</span><span style="color:#902000">int</span> a<span style="color:#666">,</span> <span style="color:#902000">int</span> b<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">+</span> b<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">unittest</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">assert</span><span style="color:#666">(</span>add<span style="color:#666">(</span><span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">)</span> <span style="color:#666">==</span> <span style="color:#40a070">5</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">assert</span><span style="color:#666">(</span>add<span style="color:#666">(-</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">1</span><span style="color:#666">)</span> <span style="color:#666">==</span> <span style="color:#40a070">0</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// ... main program logic ...
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>This example shows a simple unit test for the <code>add</code> function using <code>assert</code>.  Running the program executes the unit test; any assertion failures will be reported.  More comprehensive testing frameworks are available via external libraries.</p>
+<h3 class="heading" id="concurrency-and-parallelism">
+  Concurrency and parallelism
+  <a class="anchor" href="#concurrency-and-parallelism">#</a>
+</h3>
+<p>D provides language features to simplify writing concurrent and parallel programs.  This includes support for threads, mutexes, condition variables, and other synchronization primitives.  D also offers high-level constructs for parallel programming, such as parallel foreach loops.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">std.thread</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">std.stdio</span><span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">worker</span><span style="color:#666">(</span><span style="color:#902000">int</span> id<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Thread &#34;</span><span style="color:#666">,</span> id<span style="color:#666">,</span> <span style="color:#4070a0">&#34; started.&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// ... do some work ...
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Thread &#34;</span><span style="color:#666">,</span> id<span style="color:#666">,</span> <span style="color:#4070a0">&#34; finished.&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">auto</span> threads <span style="color:#666">=</span> <span style="color:#666">[];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">foreach</span> <span style="color:#666">(</span>i<span style="color:#666">;</span> <span style="color:#40a070">0</span> <span style="color:#666">..</span> <span style="color:#40a070">4</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        threads <span style="color:#666">~=</span> spawn<span style="color:#666">(</span>worker<span style="color:#666">,</span> i<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">foreach</span> <span style="color:#666">(</span>thread<span style="color:#666">;</span> threads<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        thread<span style="color:#666">.</span><span style="color:#4070a0">join</span><span style="color:#666">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;All threads finished.&#34;</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>This code uses <code>spawn</code> to create four threads that execute the <code>worker</code> function concurrently. <code>join</code> waits for all threads to complete before exiting the <code>main</code> function.  Note that more complex concurrent programming necessitates proper synchronization to prevent data races and other concurrency issues.</p>
+<h3 class="heading" id="working-with-external-libraries">
+  Working with external libraries
+  <a class="anchor" href="#working-with-external-libraries">#</a>
+</h3>
+<p>D can easily interact with libraries written in other languages, particularly C.  This is achieved through the use of the <code>extern(C)</code> linkage specification.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-d" data-lang="d"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">extern</span><span style="color:#666">(</span>C<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> <span style="color:#06287e">addC</span><span style="color:#666">(</span><span style="color:#902000">int</span> a<span style="color:#666">,</span> <span style="color:#902000">int</span> b<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">int</span> sum <span style="color:#666">=</span> addC<span style="color:#666">(</span><span style="color:#40a070">5</span><span style="color:#666">,</span> <span style="color:#40a070">7</span><span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span>    writeln<span style="color:#666">(</span><span style="color:#4070a0">&#34;Sum (from C): &#34;</span><span style="color:#666">,</span> sum<span style="color:#666">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></div><p>This example declares a function <code>addC</code> that&rsquo;s defined in a C library.  The <code>extern(C)</code> linkage ensures correct function calling conventions between D and C.  The <code>import</code> statement for such a library would vary based on the build system and how the C library is packaged.  More complex scenarios with linking against libraries may involve using build systems like DUB or CMake.  DUB is often preferred for simpler D projects, enabling you to manage and integrate external dependencies smoothly.</p>
+<h2 class="heading" id="building-and-running-d-programs">
+  Building and Running D Programs
+  <a class="anchor" href="#building-and-running-d-programs">#</a>
+</h2>
+<h3 class="heading" id="compiling-d-code">
+  Compiling D code
+  <a class="anchor" href="#compiling-d-code">#</a>
+</h3>
+<p>The primary D compiler is DMD (Digital Mars D).  Compilation is typically done from the command line.  The basic compilation command is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dmd myprogram.d -o myprogram
+</span></span></code></pre></div><p>This command compiles <code>myprogram.d</code> and creates an executable named <code>myprogram</code>.  The <code>-o</code> flag specifies the output file name.  More complex projects might require a build system like DUB (D&rsquo;s package manager and build tool) or CMake, which handle dependencies and more sophisticated build configurations.</p>
+<p><strong>Using DUB:</strong>  DUB simplifies the build process, especially for projects with multiple files and dependencies.  A simple <code>dub build</code> command can compile your project.   You&rsquo;ll need a <code>dub.json</code> file to define your project&rsquo;s structure and dependencies.  This file typically specifies source files, libraries, and other build settings.  The structure and options within the <code>dub.json</code> file are described in the DUB documentation.</p>
+<p><strong>Using other build systems:</strong> Although less common for smaller D projects, build systems like CMake provide greater flexibility for complex projects or integrating D into larger, multi-language projects.  They would require a CMakeLists.txt file to describe the project structure and compilation steps.</p>
+<h3 class="heading" id="running-your-d-programs">
+  Running your D programs
+  <a class="anchor" href="#running-your-d-programs">#</a>
+</h3>
+<p>After successful compilation, D programs are executed like any other executable.  In most operating systems, you can run the program from the command line by typing its name (e.g., <code>./myprogram</code> on Linux/macOS or <code>myprogram.exe</code> on Windows).</p>
+<p>If you used DUB to build your project, the executable is often located in a subdirectory (typically <code>build/debug</code> or <code>build/release</code>) within your project directory.  Check the DUB output for the precise location of the executable after a successful build.</p>
+<h3 class="heading" id="debugging-your-code">
+  Debugging your code
+  <a class="anchor" href="#debugging-your-code">#</a>
+</h3>
+<p>Debugging is crucial for identifying and fixing errors in your code.  DMD supports debugging through various debugging tools:</p>
+<ul>
+<li>
+<p><strong>DMD&rsquo;s built-in debugger:</strong> While functional, DMD&rsquo;s built-in debugger is relatively basic.</p>
+</li>
+<li>
+<p><strong>GDB:</strong> The GNU Debugger (GDB) is a powerful and widely-used debugger that works well with DMD-compiled code. You&rsquo;ll need to compile your code with debugging symbols (typically using the <code>-g</code> flag with DMD or within your DUB/CMake configuration).  Then run GDB on your executable.</p>
+</li>
+<li>
+<p><strong>IDEs:</strong> Many IDEs (such as VS Code with the appropriate extensions) offer debugging capabilities with D, integrating breakpoints, stepping, variable inspection, and other helpful debugging features.  These provide a more user-friendly debugging experience compared to command-line debuggers.</p>
+</li>
+</ul>
+<p><strong>Common Debugging Techniques:</strong></p>
+<ul>
+<li><strong>Print Statements:</strong>  The simplest way to debug is to strategically place <code>writeln</code> statements in your code to print intermediate values and track program execution.</li>
+<li><strong>Breakpoints:</strong>  Using a debugger, you can set breakpoints in your code to pause execution at specific lines.  This allows you to examine variables and step through the code line by line.</li>
+<li><strong>Stepping:</strong>  Debuggers allow stepping through your code, executing one line at a time. This lets you closely observe variable changes and execution flow.</li>
+<li><strong>Watchpoints:</strong>  Watchpoints monitor specific variables, pausing execution when their values change.  This is useful for tracking down elusive bugs related to variable modification.</li>
+</ul>
+<p>The choice of debugger depends largely on individual preferences and the complexity of the project.  For simple projects, print statements might suffice.  For larger projects or more complex debugging needs, a fully-fledged debugger like GDB or an IDE&rsquo;s integrated debugger is strongly recommended.</p>
+<h2 class="heading" id="further-learning-resources">
+  Further Learning Resources
+  <a class="anchor" href="#further-learning-resources">#</a>
+</h2>
+<h3 class="heading" id="official-d-website">
+  Official D website
+  <a class="anchor" href="#official-d-website">#</a>
+</h3>
+<p>The official D website (<a href="https://dlang.org/">https://dlang.org/</a>) is the primary source of information about the D language.  It contains the language specification, tutorials, documentation for the standard library, and information about the D community and tools.  The website is regularly updated with the latest information and announcements.  Pay particular attention to the documentation section, which details the standard library modules and their functionality.</p>
+<h3 class="heading" id="community-forums-and-resources">
+  Community forums and resources
+  <a class="anchor" href="#community-forums-and-resources">#</a>
+</h3>
+<p>The D community is active and supportive.  Several online forums and resources provide assistance to D programmers:</p>
+<ul>
+<li><strong>The D Language Forum:</strong> This is a major hub for discussing D programming, asking questions, and getting help from experienced D developers.</li>
+<li><strong>Reddit&rsquo;s r/dlang subreddit:</strong> A subreddit dedicated to the D programming language, offering discussions, news, and links to relevant resources.</li>
+<li><strong>D Programming Language on GitHub:</strong> The official GitHub repository for the D language provides access to the language&rsquo;s source code, issue trackers, and related projects.</li>
+<li><strong>DUB (D&rsquo;s package manager):</strong> The DUB website and documentation provide information on using DUB, which is essential for managing dependencies and building larger D projects.  Understanding DUB is crucial for collaborating on and using external D libraries.</li>
+</ul>
+<p>These resources provide a platform for asking questions, sharing knowledge, and collaborating on D projects. Actively participating in the community is a great way to enhance your learning experience and connect with other D developers.</p>
+<h3 class="heading" id="books-and-tutorials">
+  Books and tutorials
+  <a class="anchor" href="#books-and-tutorials">#</a>
+</h3>
+<p>Several books and tutorials provide in-depth coverage of D programming:</p>
+<ul>
+<li><strong>&ldquo;Programming in D&rdquo; by Andrei Alexandrescu:</strong>  Considered a seminal work on D, this book offers a comprehensive overview of the language and its features.</li>
+<li><strong>&ldquo;D Cookbook&rdquo; by Bruce Eckel and Jack Danforth:</strong> This book provides practical examples and solutions to common programming tasks in D.</li>
+<li><strong>Online tutorials:</strong> Various websites and platforms offer introductory and advanced tutorials on D programming.  A simple web search for &ldquo;D programming tutorial&rdquo; will yield many relevant results.</li>
+</ul>
+<p>While the official documentation is essential, supplementary learning materials, such as books and online tutorials, can offer different perspectives and approaches to learning D, aiding in comprehension and broadening your understanding of the language&rsquo;s capabilities.  Choosing resources appropriate to your existing programming experience will ensure a smoother learning curve.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-prolog/">
+                        Beginner&#39;s Guide to Prolog
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-vba/">
+                        Beginner&#39;s Guide to VBA
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>

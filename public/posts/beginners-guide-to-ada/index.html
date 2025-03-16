@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Beginner&#39;s Guide to Ada | Beginner’s Guide to Programming Languages
+    
+</title>
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js"></script>
+<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-ada/"/>
+
+<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-ada/">
+  <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
+  <meta property="og:title" content="Beginner&#39;s Guide to Ada">
+  <meta property="og:description" content="Introduction to Ada # Why Learn Ada? # Ada is a powerful and expressive programming language prized for its reliability and safety. Unlike many languages that prioritize rapid development above all else, Ada emphasizes building robust and maintainable software, making it ideal for mission-critical applications where failures are unacceptable. Learning Ada equips you with skills highly valued in domains requiring high dependability, such as aerospace, defense, finance, and medical systems. Its strong typing system and compile-time checks help prevent common errors early in the development process, leading to fewer bugs and lower maintenance costs over the lifetime of a project. Ada’s features promote modularity and code reusability, which simplifies development and makes large projects more manageable. Although it might have a steeper learning curve than some more dynamically typed languages, the benefits in terms of software quality and long-term maintainability are significant.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-08T00:00:00+00:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.5015c48a8e033f524166da75d1f75528e8c05985d07019c86b8bbfd3e4213abd.css" media="all">
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-78L71VCGB2');
+        }
+      </script>
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3609399560636561" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+<body class="light">
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+    <div id="search"></div>
+</div>
+
+    </header>
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/beginners-guide-to-ada/">Beginner&#39;s Guide to Ada</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title" data-pagefind-body>Beginner&#39;s Guide to Ada</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-02-08T00:00:00&#43;00:00">February 8, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      17 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-ada">Introduction to Ada</a>
+      <ul>
+        <li><a href="#why-learn-ada">Why Learn Ada?</a></li>
+        <li><a href="#adas-history-and-applications">Ada&rsquo;s History and Applications</a></li>
+        <li><a href="#setting-up-your-ada-development-environment">Setting up your Ada Development Environment</a></li>
+        <li><a href="#choosing-an-ada-compiler">Choosing an Ada Compiler</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-syntax-and-structure">Basic Syntax and Structure</a>
+      <ul>
+        <li><a href="#hello-world-program">Hello, World! Program</a></li>
+        <li><a href="#data-types-integers-floats-booleans-characters">Data Types (Integers, Floats, Booleans, Characters)</a></li>
+        <li><a href="#variables-and-constants">Variables and Constants</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#control-structures-if-then-else-loops">Control Structures (if-then-else, loops)</a></li>
+        <li><a href="#input-and-output">Input and Output</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-structures">Data Structures</a>
+      <ul>
+        <li><a href="#arrays">Arrays</a></li>
+        <li><a href="#records">Records</a></li>
+        <li><a href="#access-types-pointers">Access Types (Pointers)</a></li>
+        <li><a href="#enumerated-types">Enumerated Types</a></li>
+      </ul>
+    </li>
+    <li><a href="#subprograms-and-modular-programming">Subprograms and Modular Programming</a>
+      <ul>
+        <li><a href="#procedures-and-functions">Procedures and Functions</a></li>
+        <li><a href="#parameters-and-arguments">Parameters and Arguments</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#separate-compilation">Separate Compilation</a></li>
+        <li><a href="#generic-units">Generic Units</a></li>
+      </ul>
+    </li>
+    <li><a href="#exception-handling">Exception Handling</a>
+      <ul>
+        <li><a href="#raising-and-handling-exceptions">Raising and Handling Exceptions</a></li>
+        <li><a href="#exception-propagation">Exception Propagation</a></li>
+        <li><a href="#defining-custom-exceptions">Defining Custom Exceptions</a></li>
+      </ul>
+    </li>
+    <li><a href="#object-oriented-programming-in-ada">Object-Oriented Programming in Ada</a>
+      <ul>
+        <li><a href="#introduction-to-oop-concepts-in-ada">Introduction to OOP Concepts in Ada</a></li>
+        <li><a href="#tasks-and-concurrency">Tasks and Concurrency</a></li>
+        <li><a href="#protected-objects">Protected Objects</a></li>
+        <li><a href="#introduction-to-adas-tasking-model">Introduction to Ada&rsquo;s Tasking Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-topics">Advanced Topics</a>
+      <ul>
+        <li><a href="#more-on-generics">More on Generics</a></li>
+        <li><a href="#aspect-oriented-programming-in-ada">Aspect-Oriented Programming in Ada</a></li>
+        <li><a href="#interfacing-with-other-languages">Interfacing with other languages</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction-to-ada">
+  Introduction to Ada
+  <a class="anchor" href="#introduction-to-ada">#</a>
+</h2>
+<h3 class="heading" id="why-learn-ada">
+  Why Learn Ada?
+  <a class="anchor" href="#why-learn-ada">#</a>
+</h3>
+<p>Ada is a powerful and expressive programming language prized for its reliability and safety.  Unlike many languages that prioritize rapid development above all else, Ada emphasizes building robust and maintainable software, making it ideal for mission-critical applications where failures are unacceptable.  Learning Ada equips you with skills highly valued in domains requiring high dependability, such as aerospace, defense, finance, and medical systems.  Its strong typing system and compile-time checks help prevent common errors early in the development process, leading to fewer bugs and lower maintenance costs over the lifetime of a project.  Ada’s features promote modularity and code reusability, which simplifies development and makes large projects more manageable. Although it might have a steeper learning curve than some more dynamically typed languages, the benefits in terms of software quality and long-term maintainability are significant.</p>
+<h3 class="heading" id="adas-history-and-applications">
+  Ada&rsquo;s History and Applications
+  <a class="anchor" href="#adas-history-and-applications">#</a>
+</h3>
+<p>Ada&rsquo;s origins trace back to the 1970s, when the United States Department of Defense sought a single, modern programming language to replace the plethora of languages then in use.  The resulting language, named after Ada Lovelace, was designed to be highly reliable and adaptable to various application domains.  Its initial standardization (Ada 83) was followed by subsequent revisions (Ada 95, Ada 2005, Ada 2012, and Ada 2022), each incorporating advancements in programming language design and addressing evolving needs.</p>
+<p>Ada&rsquo;s strength lies in its applicability to safety- and security-critical systems.  It&rsquo;s found in numerous high-stakes environments:</p>
+<ul>
+<li><strong>Aerospace:</strong>  Flight control systems, satellite navigation, and air traffic control.</li>
+<li><strong>Defense:</strong>  Weapon systems, command and control systems, and simulation software.</li>
+<li><strong>Finance:</strong>  High-frequency trading systems, banking applications, and risk management software.</li>
+<li><strong>Medical:</strong>  Medical devices, patient monitoring systems, and hospital information systems.</li>
+<li><strong>Railways:</strong>  Train control systems and signaling systems.</li>
+</ul>
+<p>Beyond these critical domains, Ada&rsquo;s features also make it suitable for general-purpose programming, though it is less prevalent in areas where rapid prototyping and quick iterations are prioritized over rigorous code correctness.</p>
+<h3 class="heading" id="setting-up-your-ada-development-environment">
+  Setting up your Ada Development Environment
+  <a class="anchor" href="#setting-up-your-ada-development-environment">#</a>
+</h3>
+<p>Setting up your Ada development environment involves choosing a compiler, an editor or IDE (Integrated Development Environment), and potentially some supporting tools.  The exact steps vary depending on your operating system (Windows, macOS, Linux), but the general process remains consistent:</p>
+<ol>
+<li>
+<p><strong>Choose a Compiler:</strong> Select an Ada compiler suitable for your platform (see the next section for recommendations).  Download and install the compiler according to the manufacturer&rsquo;s instructions.</p>
+</li>
+<li>
+<p><strong>Select an Editor or IDE:</strong> You can use a simple text editor like Notepad++ (Windows), TextMate (macOS), or gedit (Linux) for basic editing. However, a dedicated IDE provides more advanced features like syntax highlighting, code completion, debugging, and project management.  Popular choices include GPS (GNAT Programming Studio), which comes bundled with the GNAT compiler, and other specialized IDEs that support Ada.</p>
+</li>
+<li>
+<p><strong>Configure the Environment:</strong>  You may need to set environment variables (e.g., PATH) to ensure your compiler and other tools are accessible from the command line or your IDE.  The compiler documentation will usually provide detailed instructions on this step.</p>
+</li>
+<li>
+<p><strong>Test your Installation:</strong> Compile and run a simple &ldquo;Hello, world!&rdquo; program to verify that your compiler and development environment are correctly configured.</p>
+</li>
+</ol>
+<h3 class="heading" id="choosing-an-ada-compiler">
+  Choosing an Ada Compiler
+  <a class="anchor" href="#choosing-an-ada-compiler">#</a>
+</h3>
+<p>Several Ada compilers are available, both commercial and open-source.  A popular and widely used choice is the <strong>GNAT compiler</strong>, part of the GNU Compiler Collection (GCC).  GNAT is free and open-source, offering excellent support across various platforms.  It often comes bundled with GPS (GNAT Programming Studio), a full-featured IDE.</p>
+<p>Other compilers exist, some providing specialized features or targeting specific platforms.  When choosing a compiler, consider factors such as:</p>
+<ul>
+<li><strong>Platform compatibility:</strong> Ensure the compiler supports your operating system.</li>
+<li><strong>Licensing:</strong>  Determine whether the compiler is free/open-source or commercial.</li>
+<li><strong>Features:</strong> Consider whether any specialized features (e.g., specific Ada language extensions or integration with debugging tools) are important for your needs.</li>
+<li><strong>Community support:</strong> A compiler with a large and active community offers better support and troubleshooting resources.</li>
+</ul>
+<p>It&rsquo;s recommended to start with GNAT due to its widespread availability, robust features, and active community.  The GNAT community provides ample resources and documentation to help beginners get started.</p>
+<h2 class="heading" id="basic-syntax-and-structure">
+  Basic Syntax and Structure
+  <a class="anchor" href="#basic-syntax-and-structure">#</a>
+</h2>
+<h3 class="heading" id="hello-world-program">
+  Hello, World! Program
+  <a class="anchor" href="#hello-world-program">#</a>
+</h3>
+<p>The quintessential first program in any language demonstrates the basic syntax.  Here&rsquo;s the Ada equivalent:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Hello</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Hello, World!&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Hello</span>;
+</span></span></code></pre></div><p>Let&rsquo;s break this down:</p>
+<ul>
+<li>
+<p><code>with Ada.Text_IO; use Ada.Text_IO;</code>: These lines import the necessary library for input and output operations.  <code>with</code> declares the dependency, and <code>use</code> makes the library&rsquo;s functions directly accessible.</p>
+</li>
+<li>
+<p><code>procedure Hello is</code>: This declares a procedure named &ldquo;Hello,&rdquo; which is the main program unit.  The <code>is</code> keyword separates the declaration from the implementation.</p>
+</li>
+<li>
+<p><code>begin ... end Hello;</code>: This block contains the executable part of the program.  The <code>begin</code> keyword marks the start, and <code>end Hello;</code> marks the end, referencing the procedure&rsquo;s name.</p>
+</li>
+<li>
+<p><code>Put_Line(&quot;Hello, World!&quot;);</code>: This statement prints &ldquo;Hello, World!&rdquo; to the console and adds a newline character.</p>
+</li>
+</ul>
+<p>To compile and run this, save it as <code>hello.ada</code> (or a similar name with the <code>.ada</code> extension) and use your Ada compiler (e.g., <code>gnatmake hello.ada</code>).</p>
+<h3 class="heading" id="data-types-integers-floats-booleans-characters">
+  Data Types (Integers, Floats, Booleans, Characters)
+  <a class="anchor" href="#data-types-integers-floats-booleans-characters">#</a>
+</h3>
+<p>Ada is a strongly-typed language, meaning you must explicitly declare the type of each variable.  Some fundamental types include:</p>
+<ul>
+<li>
+<p><strong>Integer:</strong> Represents whole numbers.  Examples include <code>Integer</code>, <code>Short_Integer</code>, <code>Long_Integer</code>, etc., offering different ranges.</p>
+</li>
+<li>
+<p><strong>Float:</strong> Represents real numbers with decimal points.  Examples include <code>Float</code>, <code>Long_Float</code>.</p>
+</li>
+<li>
+<p><strong>Boolean:</strong> Represents truth values, either <code>True</code> or <code>False</code>.</p>
+</li>
+<li>
+<p><strong>Character:</strong> Represents a single character, enclosed in single quotes (e.g., <code>'A'</code>, <code>'%'</code>, <code>' '</code>).</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Data_Types</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   My_Integer : <span style="color:#902000">Integer</span> := <span style="color:#40a070">10</span>;
+</span></span><span style="display:flex;"><span>   My_Float   : <span style="color:#902000">Float</span>   := <span style="color:#40a070">3.14159</span>;
+</span></span><span style="display:flex;"><span>   My_Boolean : <span style="color:#902000">Boolean</span> := <span style="color:#007020;font-weight:bold">True</span>;
+</span></span><span style="display:flex;"><span>   My_Char    : <span style="color:#902000">Character</span> := &#39;<span style="color:#4070a0">X</span>&#39;;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Integer: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(My_Integer));
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Float: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Float</span>&#39;<span style="color:#4070a0">Image</span>(My_Float));
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Boolean: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Boolean</span>&#39;<span style="color:#4070a0">Image</span>(My_Boolean));
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Character: &#34;</span> <span style="color:#666">&amp;</span> My_Char);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Data_Types</span>;
+</span></span></code></pre></div><p>Note the use of  <code>Integer'Image</code>, <code>Float'Image</code>, and <code>Boolean'Image</code> to convert the values to strings for output.</p>
+<h3 class="heading" id="variables-and-constants">
+  Variables and Constants
+  <a class="anchor" href="#variables-and-constants">#</a>
+</h3>
+<p>Variables hold values that can change during program execution, while constants hold values that remain fixed.  Declarations use the <code>:=</code> operator for initialization.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Variables_Constants</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   Variable_Number : <span style="color:#902000">Integer</span> := <span style="color:#40a070">5</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#60add5">Constant_Number</span> : <span style="color:#007020;font-weight:bold">constant</span> <span style="color:#902000">Integer</span> := <span style="color:#40a070">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   Variable_Number := Variable_Number <span style="color:#666">+</span> <span style="color:#40a070">2</span>; <span style="color:#60a0b0;font-style:italic">-- Modifying a variable
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>   Put_Line(<span style="color:#4070a0">&#34;Variable: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(Variable_Number));
+</span></span><span style="display:flex;"><span>   <span style="color:#60a0b0;font-style:italic">-- Constant_Number := Constant_Number + 5; -- This would cause a compile-time error
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>   Put_Line(<span style="color:#4070a0">&#34;Constant: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(Constant_Number));
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Variables_Constants</span>;
+</span></span></code></pre></div><h3 class="heading" id="operators">
+  Operators
+  <a class="anchor" href="#operators">#</a>
+</h3>
+<p>Ada supports standard arithmetic operators (+, -, *, /, mod, **), comparison operators (=, /=, &lt;, &lt;=, &gt;, &gt;=), logical operators (and, or, xor, not), and others.</p>
+<h3 class="heading" id="control-structures-if-then-else-loops">
+  Control Structures (if-then-else, loops)
+  <a class="anchor" href="#control-structures-if-then-else-loops">#</a>
+</h3>
+<ul>
+<li><strong><code>if-then-else</code>:</strong> Conditional execution.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> Condition <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#60a0b0;font-style:italic">-- Code to execute if Condition is True
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#60a0b0;font-style:italic">-- Code to execute if Condition is False
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#007020;font-weight:bold">if</span>;
+</span></span></code></pre></div><ul>
+<li>
+<p><strong>Loops:</strong>  Ada offers several loop constructs:</p>
+<ul>
+<li>
+<p><strong><code>loop</code> &hellip; <code>end loop;</code>:</strong>  An infinite loop unless explicitly terminated with <code>exit</code>.</p>
+</li>
+<li>
+<p><strong><code>for</code> loop:</strong> Iterates a specified number of times.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> I <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1.</span>.<span style="color:#40a070">10</span> <span style="color:#007020;font-weight:bold">loop</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#60a0b0;font-style:italic">-- Code to execute 10 times
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#007020;font-weight:bold">loop</span>;
+</span></span></code></pre></div><ul>
+<li><strong><code>while</code> loop:</strong>  Repeats as long as a condition is true.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> Condition <span style="color:#007020;font-weight:bold">loop</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#60a0b0;font-style:italic">-- Code to execute while Condition is True
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#007020;font-weight:bold">loop</span>;
+</span></span></code></pre></div></li>
+</ul>
+<h3 class="heading" id="input-and-output">
+  Input and Output
+  <a class="anchor" href="#input-and-output">#</a>
+</h3>
+<p>The <code>Ada.Text_IO</code> package provides functions for basic input and output.  <code>Put_Line</code> outputs a string to the console, and <code>Get</code> or <code>Get_Line</code> can be used for input.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Input_Output</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   Name : <span style="color:#902000">String</span>(<span style="color:#40a070">1.</span>.<span style="color:#40a070">20</span>);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   Put(<span style="color:#4070a0">&#34;Enter your name: &#34;</span>);
+</span></span><span style="display:flex;"><span>   Get_Line(Name);
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Hello, &#34;</span> <span style="color:#666">&amp;</span> Name <span style="color:#666">&amp;</span> <span style="color:#4070a0">&#34;!&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Input_Output</span>;
+</span></span></code></pre></div><p>Remember to handle potential errors (e.g., user input exceeding the string length) in more robust applications.</p>
+<h2 class="heading" id="data-structures">
+  Data Structures
+  <a class="anchor" href="#data-structures">#</a>
+</h2>
+<h3 class="heading" id="arrays">
+  Arrays
+  <a class="anchor" href="#arrays">#</a>
+</h3>
+<p>Arrays in Ada are collections of elements of the same type, accessed via an index.  They are declared specifying the element type and the range of indices.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Arrays_Demo</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   Numbers : <span style="color:#007020;font-weight:bold">array</span> (<span style="color:#40a070">1.</span>.<span style="color:#40a070">5</span>) <span style="color:#007020;font-weight:bold">of</span> <span style="color:#902000">Integer</span> := (<span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>, <span style="color:#40a070">30</span>, <span style="color:#40a070">40</span>, <span style="color:#40a070">50</span>);
+</span></span><span style="display:flex;"><span>   Chars   : <span style="color:#007020;font-weight:bold">array</span> (<span style="color:#40a070">1.</span>.<span style="color:#40a070">10</span>) <span style="color:#007020;font-weight:bold">of</span> <span style="color:#902000">Character</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Numbers[3]: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(Numbers(<span style="color:#40a070">3</span>)));  <span style="color:#60a0b0;font-style:italic">-- Accessing an element
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>   Chars(<span style="color:#40a070">1</span>) := &#39;<span style="color:#4070a0">A</span>&#39;;
+</span></span><span style="display:flex;"><span>   Chars(<span style="color:#40a070">10</span>) := &#39;<span style="color:#4070a0">Z</span>&#39;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">for</span> I <span style="color:#007020;font-weight:bold">in</span> Chars&#39;<span style="color:#4070a0">Range</span> <span style="color:#007020;font-weight:bold">loop</span>
+</span></span><span style="display:flex;"><span>       Put(Chars(I));
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#007020;font-weight:bold">loop</span>;
+</span></span><span style="display:flex;"><span>   New_Line;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Arrays_Demo</span>;
+</span></span></code></pre></div><p>Note the use of <code>Numbers'Range</code> to iterate through the array&rsquo;s indices.  Ada also supports multi-dimensional arrays.</p>
+<h3 class="heading" id="records">
+  Records
+  <a class="anchor" href="#records">#</a>
+</h3>
+<p>Records group elements of potentially different types under a single name.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Records_Demo</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">Person</span> <span style="color:#007020;font-weight:bold">is</span> <span style="color:#007020;font-weight:bold">record</span>
+</span></span><span style="display:flex;"><span>      Name : <span style="color:#902000">String</span>(<span style="color:#40a070">1.</span>.<span style="color:#40a070">30</span>);
+</span></span><span style="display:flex;"><span>      Age  : <span style="color:#902000">Integer</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end record</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   My_Person : Person := (<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#40a070">30</span>);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Name: &#34;</span> <span style="color:#666">&amp;</span> My_Person.Name);
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Age: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(My_Person.Age));
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#007020;font-weight:bold">Record</span><span style="color:#06287e">s_Demo</span>;
+</span></span></code></pre></div><p>Elements within a record are accessed using the dot notation (e.g., <code>My_Person.Name</code>).</p>
+<h3 class="heading" id="access-types-pointers">
+  Access Types (Pointers)
+  <a class="anchor" href="#access-types-pointers">#</a>
+</h3>
+<p>Access types in Ada are similar to pointers in other languages.  They provide a way to dynamically allocate memory and refer to it indirectly.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Access_Types_Demo</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">Int_Ptr</span> <span style="color:#007020;font-weight:bold">is</span> <span style="color:#007020;font-weight:bold">access</span> <span style="color:#902000">Integer</span>;
+</span></span><span style="display:flex;"><span>   My_Int : Int_Ptr;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   My_Int := <span style="color:#007020;font-weight:bold">new</span> <span style="color:#902000">Integer</span>&#39;(<span style="color:#40a070">10</span>); <span style="color:#60a0b0;font-style:italic">-- Allocate memory and assign the address to My_Int
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>   Put_Line(<span style="color:#4070a0">&#34;Value: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(My_Int.<span style="color:#007020;font-weight:bold">all</span>)); <span style="color:#60a0b0;font-style:italic">-- Access the value using .all
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>   My_Int.<span style="color:#007020;font-weight:bold">all</span> := My_Int.<span style="color:#007020;font-weight:bold">all</span> <span style="color:#666">+</span> <span style="color:#40a070">5</span>; <span style="color:#60a0b0;font-style:italic">-- Modify the value
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>   Put_Line(<span style="color:#4070a0">&#34;New Value: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(My_Int.<span style="color:#007020;font-weight:bold">all</span>));
+</span></span><span style="display:flex;"><span>   My_Int := <span style="color:#007020;font-weight:bold">null</span>; <span style="color:#60a0b0;font-style:italic">-- Set the pointer to null;  Remember to deallocate using `Deallocate` if needed for larger objects
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Access_Types_Demo</span>;
+</span></span></code></pre></div><p>The <code>.all</code> attribute is used to access the value pointed to by the access type.  Remember that it&rsquo;s crucial to manage memory allocated with <code>new</code> appropriately to prevent memory leaks, though Ada&rsquo;s garbage collection will often handle this automatically for smaller objects.</p>
+<h3 class="heading" id="enumerated-types">
+  Enumerated Types
+  <a class="anchor" href="#enumerated-types">#</a>
+</h3>
+<p>Enumerated types define a set of named values.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Enumerated_Types_Demo</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">Day</span> <span style="color:#007020;font-weight:bold">is</span> (<span style="color:#bb60d5">Mon</span>, <span style="color:#bb60d5">Tue</span>, <span style="color:#bb60d5">Wed</span>, <span style="color:#bb60d5">Thu</span>, <span style="color:#bb60d5">Fri</span>, <span style="color:#bb60d5">Sat</span>, <span style="color:#bb60d5">Sun</span>);
+</span></span><span style="display:flex;"><span>   Today : Day := Mon;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">case</span> Today <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">when</span> Mon =&gt; Put_Line(<span style="color:#4070a0">&#34;It&#39;s Monday!&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">when</span> Tue =&gt; Put_Line(<span style="color:#4070a0">&#34;It&#39;s Tuesday!&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">when</span> <span style="color:#007020;font-weight:bold">others</span> =&gt; Put_Line(<span style="color:#4070a0">&#34;It&#39;s some other day!&#34;</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#007020;font-weight:bold">case</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Enumerated_Types_Demo</span>;
+</span></span></code></pre></div><p>Enumerated types are often used to improve code readability and prevent errors by restricting values to a predefined set.  The <code>case</code> statement provides a structured way to handle different enumerated values.</p>
+<h2 class="heading" id="subprograms-and-modular-programming">
+  Subprograms and Modular Programming
+  <a class="anchor" href="#subprograms-and-modular-programming">#</a>
+</h2>
+<h3 class="heading" id="procedures-and-functions">
+  Procedures and Functions
+  <a class="anchor" href="#procedures-and-functions">#</a>
+</h3>
+<p>Subprograms are reusable blocks of code that perform specific tasks.  Ada distinguishes between procedures and functions:</p>
+<ul>
+<li>
+<p><strong>Procedures:</strong>  Perform actions but don&rsquo;t return a value.</p>
+</li>
+<li>
+<p><strong>Functions:</strong> Perform actions and return a single value.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Procedures_Functions</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">Add</span>(<span style="color:#bb60d5">X</span>, <span style="color:#bb60d5">Y</span> : <span style="color:#bb60d5">Integer</span>) <span style="color:#007020;font-weight:bold">return</span> <span style="color:#902000">Integer</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">return</span> X <span style="color:#666">+</span> Y;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Add</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Greet</span>(<span style="color:#bb60d5">Name</span> : <span style="color:#bb60d5">String</span>) <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      Put_Line(<span style="color:#4070a0">&#34;Hello, &#34;</span> <span style="color:#666">&amp;</span> Name <span style="color:#666">&amp;</span> <span style="color:#4070a0">&#34;!&#34;</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Greet</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Sum: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(Add(<span style="color:#40a070">5</span>, <span style="color:#40a070">3</span>)));
+</span></span><span style="display:flex;"><span>   Greet(<span style="color:#4070a0">&#34;Bob&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Procedures_Functions</span>;
+</span></span></code></pre></div><h3 class="heading" id="parameters-and-arguments">
+  Parameters and Arguments
+  <a class="anchor" href="#parameters-and-arguments">#</a>
+</h3>
+<p>Parameters are variables declared in the subprogram&rsquo;s declaration, while arguments are the actual values passed when the subprogram is called. Ada supports several parameter modes:</p>
+<ul>
+<li>
+<p><strong><code>in</code>:</strong> The parameter receives a value but cannot be modified.  This is the default mode.</p>
+</li>
+<li>
+<p><strong><code>out</code>:</strong> The parameter&rsquo;s value is set by the subprogram and returned to the caller.</p>
+</li>
+<li>
+<p><strong><code>in out</code>:</strong> The parameter&rsquo;s value is passed in, modified by the subprogram, and the modified value is returned.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Parameters</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Modify</span>(<span style="color:#bb60d5">X</span> : <span style="color:#bb60d5">in</span> <span style="color:#bb60d5">out</span> <span style="color:#bb60d5">Integer</span>) <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      X := X <span style="color:#666">*</span> <span style="color:#40a070">2</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Modify</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   My_Number : <span style="color:#902000">Integer</span> := <span style="color:#40a070">10</span>;
+</span></span><span style="display:flex;"><span>   Modify(My_Number);
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Modified Number: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(My_Number));
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Parameters</span>;
+</span></span></code></pre></div><h3 class="heading" id="packages">
+  Packages
+  <a class="anchor" href="#packages">#</a>
+</h3>
+<p>Packages are units that group related declarations (types, variables, subprograms) into a cohesive unit.  They promote modularity, information hiding, and code reuse.  A package consists of two parts:</p>
+<ul>
+<li>
+<p><strong>Package specification:</strong>  Declares the elements that are visible to other parts of the program.</p>
+</li>
+<li>
+<p><strong>Package body:</strong> Contains the implementation details of the elements declared in the specification.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- my_math_package.ads (specification)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">package</span> <span style="color:#0e84b5;font-weight:bold">My_Math</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">Square</span>(<span style="color:#bb60d5">X</span> : <span style="color:#bb60d5">Integer</span>) <span style="color:#007020;font-weight:bold">return</span> <span style="color:#902000">Integer</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">My_Math</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- my_math_package.adb (body)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">package</span> <span style="color:#007020;font-weight:bold">body</span> <span style="color:#0e84b5;font-weight:bold">My_Math</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">Square</span>(<span style="color:#bb60d5">X</span> : <span style="color:#bb60d5">Integer</span>) <span style="color:#007020;font-weight:bold">return</span> <span style="color:#902000">Integer</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">return</span> X <span style="color:#666">*</span> X;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Square</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">My_Math</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">My_Math</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">My_Math</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Package_Demo</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Square of 5: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(Square(<span style="color:#40a070">5</span>)));
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Package_Demo</span>;
+</span></span></code></pre></div><h3 class="heading" id="separate-compilation">
+  Separate Compilation
+  <a class="anchor" href="#separate-compilation">#</a>
+</h3>
+<p>Ada supports separate compilation, allowing you to compile different parts of a program independently. This improves development efficiency and maintainability.  The compiler uses the package specifications to determine the interface between separately compiled units.</p>
+<h3 class="heading" id="generic-units">
+  Generic Units
+  <a class="anchor" href="#generic-units">#</a>
+</h3>
+<p>Generic units are templates for subprograms or packages that can be instantiated with different types or parameters.  This allows you to write reusable code that can work with various data types without modification.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">generic</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">Item</span> <span style="color:#007020;font-weight:bold">is</span> <span style="color:#007020;font-weight:bold">private</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">Find_Max</span>(<span style="color:#bb60d5">A</span> : <span style="color:#bb60d5">array</span> (<span style="color:#bb60d5">Integer</span> <span style="color:#bb60d5">range</span> &lt;&gt;) <span style="color:#007020;font-weight:bold">of</span> Item) <span style="color:#007020;font-weight:bold">return</span> Item;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Generic_Demo</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">My_Int</span> <span style="color:#007020;font-weight:bold">is</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#902000">Integer</span>;
+</span></span><span style="display:flex;"><span>   Numbers : <span style="color:#007020;font-weight:bold">array</span> (<span style="color:#40a070">1.</span>.<span style="color:#40a070">5</span>) <span style="color:#007020;font-weight:bold">of</span> My_Int := (<span style="color:#40a070">1</span>, <span style="color:#40a070">5</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">8</span>, <span style="color:#40a070">3</span>);
+</span></span><span style="display:flex;"><span>   Max_Number : My_Int;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">Max_Int</span> <span style="color:#007020;font-weight:bold">is</span> <span style="color:#007020;font-weight:bold">new</span> Find_Max(My_Int);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   Max_Number := Max_Int(Numbers);
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Max Number: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(Max_Number));
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Generic_Demo</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">--implementation of Find_Max (in a separate file)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">generic</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">Item</span> <span style="color:#007020;font-weight:bold">is</span> <span style="color:#007020;font-weight:bold">private</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">Find_Max</span>(<span style="color:#bb60d5">A</span> : <span style="color:#bb60d5">array</span> (<span style="color:#bb60d5">Integer</span> <span style="color:#bb60d5">range</span> &lt;&gt;) <span style="color:#007020;font-weight:bold">of</span> Item) <span style="color:#007020;font-weight:bold">return</span> Item <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   Max_Item : Item := A(A&#39;<span style="color:#4070a0">First</span>);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">for</span> I <span style="color:#007020;font-weight:bold">in</span> A&#39;<span style="color:#4070a0">Range</span> <span style="color:#007020;font-weight:bold">loop</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">if</span> A(I) <span style="color:#666">&gt;</span> Max_Item <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>         Max_Item := A(I);
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">end</span> <span style="color:#007020;font-weight:bold">if</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#007020;font-weight:bold">loop</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">return</span> Max_Item;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Find_Max</span>;
+</span></span></code></pre></div><p>The <code>generic</code> keyword defines the template.  The <code>is new</code> clause instantiates the generic unit with the specified type.  This example requires the <code>Find_Max</code> function&rsquo;s implementation to be compiled separately.</p>
+<h2 class="heading" id="exception-handling">
+  Exception Handling
+  <a class="anchor" href="#exception-handling">#</a>
+</h2>
+<p>Ada provides a robust mechanism for handling runtime errors using exceptions. This allows you to gracefully handle unexpected situations without causing program crashes.</p>
+<h3 class="heading" id="raising-and-handling-exceptions">
+  Raising and Handling Exceptions
+  <a class="anchor" href="#raising-and-handling-exceptions">#</a>
+</h3>
+<p>Exceptions are raised (triggered) when a runtime error occurs.  You can handle exceptions using a <code>try-except</code> block.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Exception_Handling</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   X, Y : <span style="color:#902000">Integer</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   Put(<span style="color:#4070a0">&#34;Enter two numbers: &#34;</span>);
+</span></span><span style="display:flex;"><span>   Get(X); Get(Y);
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      Put_Line(<span style="color:#4070a0">&#34;Result: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(X <span style="color:#666">/</span> Y));
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">exception</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">when</span> Constraint_Error =&gt; Put_Line(<span style="color:#4070a0">&#34;Division by zero!&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">when</span> <span style="color:#007020;font-weight:bold">others</span> =&gt; Put_Line(<span style="color:#4070a0">&#34;An error occurred.&#34;</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Exception_Handling</span>;
+</span></span></code></pre></div><p>In this example, <code>Constraint_Error</code> is raised if <code>Y</code> is zero (division by zero). The <code>exception</code> block catches the exception and executes the corresponding handler.  The <code>others</code> clause catches any other unhandled exceptions.</p>
+<h3 class="heading" id="exception-propagation">
+  Exception Propagation
+  <a class="anchor" href="#exception-propagation">#</a>
+</h3>
+<p>If an exception is not handled within a <code>try-except</code> block, it propagates up the call stack to the next enclosing block.  If no handler is found, the program terminates.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Exception_Propagation</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Subroutine</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">raise</span> Constraint_Error;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Subroutine</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      Subroutine;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">exception</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">when</span> Constraint_Error =&gt; Put_Line(<span style="color:#4070a0">&#34;Caught in main procedure!&#34;</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Exception_Propagation</span>;
+</span></span></code></pre></div><p>Here, <code>Constraint_Error</code> is raised in <code>Subroutine</code>. Since it&rsquo;s not handled there, it propagates to the main procedure where it is caught.</p>
+<h3 class="heading" id="defining-custom-exceptions">
+  Defining Custom Exceptions
+  <a class="anchor" href="#defining-custom-exceptions">#</a>
+</h3>
+<p>You can define your own exceptions to represent specific error conditions within your application.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Custom_Exceptions</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   Invalid_Input : <span style="color:#007020;font-weight:bold">exception</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Read_Number</span>(<span style="color:#bb60d5">Num</span> : <span style="color:#bb60d5">out</span> <span style="color:#bb60d5">Integer</span>) <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>       Get(Num);
+</span></span><span style="display:flex;"><span>       <span style="color:#007020;font-weight:bold">if</span> Num <span style="color:#666">&lt;</span> <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#007020;font-weight:bold">raise</span> Invalid_Input;
+</span></span><span style="display:flex;"><span>       <span style="color:#007020;font-weight:bold">end</span> <span style="color:#007020;font-weight:bold">if</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">exception</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#007020;font-weight:bold">when</span> Data_Error =&gt; Put_Line (<span style="color:#4070a0">&#34;Data Error!&#34;</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Read_Number</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   My_Number : <span style="color:#902000">Integer</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      Read_Number(My_Number);
+</span></span><span style="display:flex;"><span>      Put_Line(<span style="color:#4070a0">&#34;Number: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(My_Number));
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">exception</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">when</span> Invalid_Input =&gt; Put_Line(<span style="color:#4070a0">&#34;Invalid input: Number must be non-negative.&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">when</span> <span style="color:#007020;font-weight:bold">others</span> =&gt; Put_Line(<span style="color:#4070a0">&#34;An unexpected error occurred.&#34;</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Custom_Exceptions</span>;
+</span></span></code></pre></div><p><code>Invalid_Input</code> is a custom exception raised if the input number is negative.  This improves code clarity and allows for more specific error handling.  Note that the <code>Data_Error</code> exception in <code>Read_Number</code> is a standard exception and is handled within that procedure.  If it were not handled, it would propagate upwards to the outer <code>try-except</code> block.</p>
+<h2 class="heading" id="object-oriented-programming-in-ada">
+  Object-Oriented Programming in Ada
+  <a class="anchor" href="#object-oriented-programming-in-ada">#</a>
+</h2>
+<h3 class="heading" id="introduction-to-oop-concepts-in-ada">
+  Introduction to OOP Concepts in Ada
+  <a class="anchor" href="#introduction-to-oop-concepts-in-ada">#</a>
+</h3>
+<p>Ada supports object-oriented programming (OOP) features, although its approach differs somewhat from languages like Java or C++.  Ada emphasizes strong typing and safety, which influences its OOP implementation. Key OOP concepts in Ada include:</p>
+<ul>
+<li>
+<p><strong>Classes and Objects:</strong>  A class is a template for creating objects.  Objects are instances of a class.  Classes are declared using the <code>type ... is tagged ...</code> construct. The <code>tagged</code> keyword indicates that the type supports inheritance and polymorphism.</p>
+</li>
+<li>
+<p><strong>Inheritance:</strong> Ada supports both single and multiple inheritance.  A derived type inherits attributes and operations from a parent type.</p>
+</li>
+<li>
+<p><strong>Polymorphism:</strong> Ada achieves polymorphism through dispatching on tagged types.  This means that the correct method is selected at runtime based on the object&rsquo;s actual type.</p>
+</li>
+<li>
+<p><strong>Encapsulation:</strong> Ada enforces encapsulation through the use of private parts in packages and classes. This hides implementation details and protects data integrity.</p>
+</li>
+</ul>
+<p>Here&rsquo;s a basic example of a class and object in Ada:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">package</span> <span style="color:#0e84b5;font-weight:bold">My_Package</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">Shape</span> <span style="color:#007020;font-weight:bold">is</span> <span style="color:#007020;font-weight:bold">tagged</span> <span style="color:#007020;font-weight:bold">record</span>
+</span></span><span style="display:flex;"><span>     X,Y : <span style="color:#902000">Float</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end record</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Draw</span>(<span style="color:#bb60d5">S</span> : <span style="color:#bb60d5">in</span> <span style="color:#bb60d5">out</span> <span style="color:#bb60d5">Shape</span>);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">private</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- internal details hidden here
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">My_Package</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">package</span> <span style="color:#007020;font-weight:bold">body</span> <span style="color:#0e84b5;font-weight:bold">My_Package</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Draw</span>(<span style="color:#bb60d5">S</span> : <span style="color:#bb60d5">in</span> <span style="color:#bb60d5">out</span> <span style="color:#bb60d5">Shape</span>) <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      Put_Line(<span style="color:#4070a0">&#34;Drawing a generic shape at (&#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Float</span>&#39;<span style="color:#4070a0">Image</span>(S.X) <span style="color:#666">&amp;</span> <span style="color:#4070a0">&#34;, &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Float</span>&#39;<span style="color:#4070a0">Image</span>(S.Y) <span style="color:#666">&amp;</span> <span style="color:#4070a0">&#34;)&#34;</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Draw</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">My_Package</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">My_Package</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">My_Package</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">OOP_Demo</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   My_Shape : Shape := (X =&gt; <span style="color:#40a070">1.0</span>, Y =&gt; <span style="color:#40a070">2.0</span>);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   Draw(My_Shape);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">OOP_Demo</span>;
+</span></span></code></pre></div><h3 class="heading" id="tasks-and-concurrency">
+  Tasks and Concurrency
+  <a class="anchor" href="#tasks-and-concurrency">#</a>
+</h3>
+<p>Ada provides built-in support for concurrency through the use of tasks.  Tasks are independent units of execution that can run concurrently.  This allows for parallel processing and improved responsiveness in applications.  Tasks are declared similarly to procedures or functions.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">with</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>; <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Ada.Text_IO</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Concurrent_Demo</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">task</span> Counter <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Counter</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">task</span> <span style="color:#007020;font-weight:bold">body</span> Counter <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">for</span> I <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1.</span>.<span style="color:#40a070">10</span> <span style="color:#007020;font-weight:bold">loop</span>
+</span></span><span style="display:flex;"><span>         Put_Line(<span style="color:#4070a0">&#34;Counter: &#34;</span> <span style="color:#666">&amp;</span> <span style="color:#902000">Integer</span>&#39;<span style="color:#4070a0">Image</span>(I));
+</span></span><span style="display:flex;"><span>         <span style="color:#007020;font-weight:bold">delay</span> <span style="color:#40a070">0.5</span>; <span style="color:#60a0b0;font-style:italic">-- pause for 0.5 seconds
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#007020;font-weight:bold">end</span> <span style="color:#007020;font-weight:bold">loop</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Counter</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Main task starting...&#34;</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">delay</span> <span style="color:#40a070">2.0</span>;
+</span></span><span style="display:flex;"><span>   Put_Line(<span style="color:#4070a0">&#34;Main task finishing.&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Concurrent_Demo</span>;
+</span></span></code></pre></div><p>In this example, the <code>Counter</code> task runs concurrently with the main task. <code>delay</code> introduces a pause to allow both to execute noticeably.</p>
+<h3 class="heading" id="protected-objects">
+  Protected Objects
+  <a class="anchor" href="#protected-objects">#</a>
+</h3>
+<p>Protected objects provide a way to safely share data among multiple tasks. They encapsulate data and provide controlled access using protected procedures and entries. This prevents race conditions and ensures data integrity in concurrent environments.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ada" data-lang="ada"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">protected</span> <span style="color:#007020;font-weight:bold">body</span> Shared_Counter <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">entry</span> <span style="color:#06287e">Increment</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Decrement</span>;
+</span></span><span style="display:flex;"><span>   Counter : <span style="color:#902000">Integer</span> := <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">entry</span> <span style="color:#06287e">Increment</span> <span style="color:#06287e">when</span> <span style="color:#06287e">Counter</span> <span style="color:#666">&lt;</span> <span style="color:#06287e">100</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>       Counter := Counter <span style="color:#666">+</span> <span style="color:#40a070">1</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Increment</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">procedure</span> <span style="color:#06287e">Decrement</span> <span style="color:#007020;font-weight:bold">is</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>      Counter := Counter <span style="color:#666">-</span><span style="color:#40a070">1</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Decrement</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span> <span style="color:#06287e">Shared_Counter</span>;
+</span></span></code></pre></div><p>This uses a protected object to control access to a shared counter, allowing increment operations only when the counter is below 100.</p>
+<h3 class="heading" id="introduction-to-adas-tasking-model">
+  Introduction to Ada&rsquo;s Tasking Model
+  <a class="anchor" href="#introduction-to-adas-tasking-model">#</a>
+</h3>
+<p>Ada&rsquo;s tasking model is a powerful feature that allows for the creation of robust and reliable concurrent programs.  It uses a rendezvous mechanism for communication and synchronization between tasks.  This ensures that tasks interact in a predictable and controlled way. Ada also offers features like protected objects and conditional entry calls to manage resource sharing and prevent deadlocks. The model is designed to handle situations where tasks need to coordinate their actions, preventing race conditions and ensuring data consistency.  The Ada standard provides extensive support for debugging and analyzing concurrent programs to identify and resolve potential concurrency issues.</p>
+<h2 class="heading" id="advanced-topics">
+  Advanced Topics
+  <a class="anchor" href="#advanced-topics">#</a>
+</h2>
+<h3 class="heading" id="more-on-generics">
+  More on Generics
+  <a class="anchor" href="#more-on-generics">#</a>
+</h3>
+<p>Ada&rsquo;s generics provide powerful mechanisms for code reuse and abstraction beyond basic type parameters.  Here are some advanced aspects:</p>
+<ul>
+<li>
+<p><strong>Generic Formal Subprograms:</strong>  You can define generic units that accept subprograms as parameters. This allows you to create generic algorithms that can work with different functions or procedures.</p>
+</li>
+<li>
+<p><strong>Generic Formal Packages:</strong>  Similar to formal subprograms, you can use formal packages to create generic units that can work with different package implementations.</p>
+</li>
+<li>
+<p><strong>Generic Instantiation with Private Types:</strong>  When using private types as generic parameters, you can restrict the operations that can be performed on the type within the generic unit, increasing type safety and encapsulation.</p>
+</li>
+<li>
+<p><strong>Overloading Generic Units:</strong> You can create multiple generic units with the same name but different parameters.  The compiler selects the appropriate instantiation based on the context.</p>
+</li>
+<li>
+<p><strong>Generic Private Types:</strong> Private types within generic units provide even more control over how the generic is used, allowing more complex and flexible interfaces.</p>
+</li>
+</ul>
+<p>These features significantly enhance the flexibility and reusability of generic units, allowing you to create highly adaptable and robust code.</p>
+<h3 class="heading" id="aspect-oriented-programming-in-ada">
+  Aspect-Oriented Programming in Ada
+  <a class="anchor" href="#aspect-oriented-programming-in-ada">#</a>
+</h3>
+<p>While Ada doesn&rsquo;t have dedicated aspect-oriented programming (AOP) keywords like some languages, you can achieve similar functionality through several techniques:</p>
+<ul>
+<li>
+<p><strong>Pre- and Postconditions:</strong> Ada&rsquo;s contracts, including pre- and postconditions, can be used to define aspects that must hold before and after a subprogram execution.  These enforce constraints that act like aspects in AOP.</p>
+</li>
+<li>
+<p><strong>Exception Handlers:</strong>  Centralized exception handling provides a mechanism to address cross-cutting concerns like logging or error recovery.  The <code>exception</code> block acts as a way to &lsquo;weave&rsquo; in additional code.</p>
+</li>
+<li>
+<p><strong>Aspect-like Packages:</strong> You can encapsulate common cross-cutting concerns (logging, security, etc.) into packages.  Then you can call procedures from these packages from multiple parts of your code to modularly apply the aspects.</p>
+</li>
+</ul>
+<p>While not a full-fledged AOP language, Ada&rsquo;s features offer ways to manage concerns and code in a modular fashion, achieving many benefits of AOP.</p>
+<h3 class="heading" id="interfacing-with-other-languages">
+  Interfacing with other languages
+  <a class="anchor" href="#interfacing-with-other-languages">#</a>
+</h3>
+<p>Ada provides mechanisms for interfacing with other programming languages such as C and C++. This is essential when integrating Ada code with existing systems or libraries written in other languages.  The key techniques include:</p>
+<ul>
+<li>
+<p><strong>Foreign Language Interfaces:</strong> Ada&rsquo;s Foreign Language Interface (FLI) allows you to declare and call functions written in other languages.  This involves specifying the data types and calling conventions to match the external function&rsquo;s signature.  You would need to carefully consider data type mappings between Ada and the target language.</p>
+</li>
+<li>
+<p><strong>Foreign Language Procedures:</strong>  Declaring functions and procedures with <code>pragma Interface</code> and <code>pragma Import</code> allows you to link and call routines from other languages directly.</p>
+</li>
+<li>
+<p><strong>Data type mapping:</strong>  Careful consideration must be given to how different languages represent data structures; there might be a need for explicit conversion routines.</p>
+</li>
+<li>
+<p><strong>Calling Conventions:</strong> The way a function or procedure is called can vary between languages. The Ada FLI allows you to specify this to ensure compatibility.</p>
+</li>
+</ul>
+<p>Interfacing with other languages requires attention to detail and a thorough understanding of both Ada&rsquo;s and the external language&rsquo;s calling conventions and data representation.  The process usually involves compiler-specific options and linking steps.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-delphi/">
+                        Beginner&#39;s Guide to Delphi
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/beginners-guide-to-prolog/">
+                        Beginner&#39;s Guide to Prolog
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    
+    
+    <p>Made with ♥ in India</p>
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search", showSubResults: false, showImages: false });
+    });
+</script>
+<script defer src="/js/copy-code.js"></script>
+</html>
