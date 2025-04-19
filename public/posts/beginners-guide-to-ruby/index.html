@@ -8,11 +8,11 @@
 
 
 
-<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+<link rel="icon" type="image/ico" href="https://programming.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://programming.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://programming.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://programming.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://programming.muthu.co/apple-touch-icon.png">
 
 <meta name="description" content=""/>
 
@@ -25,12 +25,12 @@
 </title>
 <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/_pagefind/pagefind-ui.js"></script>
-<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-ruby/"/>
+<link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-ruby/"/>
 
-<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-ruby/">
+<meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-ruby/">
   <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
   <meta property="og:title" content="Beginner&#39;s Guide to Ruby">
-  <meta property="og:description" content="Getting Started with Ruby # Installing Ruby # Ruby’s installation process varies slightly depending on your operating system. Here’s a general guide, but you should always refer to the official Ruby website (https://www.ruby-lang.org/) for the most up-to-date and platform-specific instructions.
+  <meta property="og:description" content="Getting Started with Ruby#Installing Ruby#Ruby’s installation process varies slightly depending on your operating system. Here’s a general guide, but you should always refer to the official Ruby website (https://www.ruby-lang.org/) for the most up-to-date and platform-specific instructions.
 macOS: macOS often comes with an outdated version of Ruby pre-installed. It’s generally recommended to install Ruby using a package manager like rbenv or RVM. These tools allow you to manage multiple Ruby versions easily, which is crucial for working on different projects with different Ruby requirements. Instructions for installing and using these managers can be found on their respective websites.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -248,13 +248,15 @@ macOS: macOS often comes with an outdated version of Ruby pre-installed. It’s 
 </h3>
 <p>The REPL (Read-Eval-Print Loop) is an interactive environment where you can execute Ruby code line by line and see the immediate results.  It&rsquo;s a fantastic tool for learning and experimenting with Ruby.</p>
 <p>To start the REPL, simply type <code>irb</code> in your terminal and press Enter.  You&rsquo;ll be presented with a prompt (usually <code>&gt;&gt;</code>).  You can now type Ruby code directly, press Enter, and see the output immediately.</p>
-<pre tabindex="0"><code>irb(main):001:0&gt; puts &#34;Hello from IRB!&#34;
+<pre class="mermaid">irb(main):001:0&gt; puts &#34;Hello from IRB!&#34;
 Hello from IRB!
 =&gt; nil
 irb(main):002:0&gt; 2 + 2
 =&gt; 4
 irb(main):003:0&gt; exit
-</code></pre><p>The <code>=&gt; nil</code> indicates the return value of the <code>puts</code> method (it returns <code>nil</code>).  The REPL is excellent for testing snippets of code, exploring Ruby&rsquo;s methods, and quickly getting feedback.  Use <code>exit</code> or Ctrl+D to exit the REPL.</p>
+</pre>
+
+<p>The <code>=&gt; nil</code> indicates the return value of the <code>puts</code> method (it returns <code>nil</code>).  The REPL is excellent for testing snippets of code, exploring Ruby&rsquo;s methods, and quickly getting feedback.  Use <code>exit</code> or Ctrl+D to exit the REPL.</p>
 <h2 class="heading" id="ruby-fundamentals">
   Ruby Fundamentals
   <a class="anchor" href="#ruby-fundamentals">#</a>
@@ -670,6 +672,11 @@ irb(main):003:0&gt; exit
     
   </div>
 
+  
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
   
 
 

@@ -8,11 +8,11 @@
 
 
 
-<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+<link rel="icon" type="image/ico" href="https://programming.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://programming.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://programming.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://programming.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://programming.muthu.co/apple-touch-icon.png">
 
 <meta name="description" content=""/>
 
@@ -25,12 +25,12 @@
 </title>
 <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/_pagefind/pagefind-ui.js"></script>
-<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-racket/"/>
+<link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-racket/"/>
 
-<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-racket/">
+<meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-racket/">
   <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
   <meta property="og:title" content="Beginner&#39;s Guide to Racket">
-  <meta property="og:description" content="Introduction to Racket # What is Racket? # Racket is a programming language in the Lisp family, known for its powerful macro system, emphasis on language-oriented programming, and extensive library support. It’s designed to be both a practical language for building real-world applications and a powerful platform for experimenting with and extending programming language concepts. Racket’s design promotes creating and using domain-specific languages (DSLs) tailored to particular tasks, making it a flexible choice for various programming paradigms. Unlike many other Lisps, Racket emphasizes practicality and ease of use, especially for beginners.">
+  <meta property="og:description" content="Introduction to Racket#What is Racket?#Racket is a programming language in the Lisp family, known for its powerful macro system, emphasis on language-oriented programming, and extensive library support. It’s designed to be both a practical language for building real-world applications and a powerful platform for experimenting with and extending programming language concepts. Racket’s design promotes creating and using domain-specific languages (DSLs) tailored to particular tasks, making it a flexible choice for various programming paradigms. Unlike many other Lisps, Racket emphasizes practicality and ease of use, especially for beginners.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -247,8 +247,10 @@
 <p>The simplest Racket program prints &ldquo;Hello, world!&rdquo; to the console.  Open DrRacket and type the following code into the editor:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span>)<span style="">
 </span></span></span></code></pre></div><p>Click the &ldquo;Run&rdquo; button (or use the keyboard shortcut).  The output window will display:</p>
-<pre tabindex="0"><code>Hello, world!
-</code></pre><p>This short program uses the <code>displayln</code> function, which displays a string and adds a newline character at the end.  The parentheses denote function calls in Racket; <code>displayln</code> is the function, and <code>&quot;Hello, world!&quot;</code> is its argument (the string to be displayed).  This demonstrates the fundamental syntax of Racket:  expressions are enclosed in parentheses, with the first element being the function or operator and the remaining elements being its arguments.</p>
+<pre class="mermaid">Hello, world!
+</pre>
+
+<p>This short program uses the <code>displayln</code> function, which displays a string and adds a newline character at the end.  The parentheses denote function calls in Racket; <code>displayln</code> is the function, and <code>&quot;Hello, world!&quot;</code> is its argument (the string to be displayed).  This demonstrates the fundamental syntax of Racket:  expressions are enclosed in parentheses, with the first element being the function or operator and the remaining elements being its arguments.</p>
 <h2 class="heading" id="basic-syntax-and-data-types">
   Basic Syntax and Data Types
   <a class="anchor" href="#basic-syntax-and-data-types">#</a>
@@ -576,6 +578,11 @@
     
   </div>
 
+  
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
   
 
 

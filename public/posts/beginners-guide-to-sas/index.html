@@ -8,11 +8,11 @@
 
 
 
-<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+<link rel="icon" type="image/ico" href="https://programming.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://programming.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://programming.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://programming.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://programming.muthu.co/apple-touch-icon.png">
 
 <meta name="description" content=""/>
 
@@ -25,12 +25,12 @@
 </title>
 <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/_pagefind/pagefind-ui.js"></script>
-<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-sas/"/>
+<link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-sas/"/>
 
-<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-sas/">
+<meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-sas/">
   <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
   <meta property="og:title" content="Beginner&#39;s Guide to SAS">
-  <meta property="og:description" content="Introduction to SAS # What is SAS? # SAS (Statistical Analysis System) is a comprehensive software suite used for advanced analytics, business intelligence, data management, and predictive modeling. It’s a powerful tool employed across various industries, including healthcare, finance, and research, to process, analyze, and visualize large datasets. SAS offers a programming language (also called SAS) along with a graphical user interface (GUI) for ease of use. While it’s known for its statistical capabilities, its functionalities extend far beyond basic statistics, encompassing data warehousing, data mining, and creating reports and dashboards.">
+  <meta property="og:description" content="Introduction to SAS#What is SAS?#SAS (Statistical Analysis System) is a comprehensive software suite used for advanced analytics, business intelligence, data management, and predictive modeling. It’s a powerful tool employed across various industries, including healthcare, finance, and research, to process, analyze, and visualize large datasets. SAS offers a programming language (also called SAS) along with a graphical user interface (GUI) for ease of use. While it’s known for its statistical capabilities, its functionalities extend far beyond basic statistics, encompassing data warehousing, data mining, and creating reports and dashboards.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -709,13 +709,15 @@
 </h3>
 <p>This example demonstrates basic data analysis using a small dataset.  We&rsquo;ll use a dataset containing information about students&rsquo; scores in different subjects.</p>
 <p><strong>Dataset (student_scores.csv):</strong></p>
-<pre tabindex="0"><code>StudentID,Math,Science,English
+<pre class="mermaid">StudentID,Math,Science,English
 1,85,92,78
 2,76,88,85
 3,90,85,95
 4,82,79,80
 5,70,80,75
-</code></pre><p><strong>SAS Code:</strong></p>
+</pre>
+
+<p><strong>SAS Code:</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc import </span>datafile=<span style="color:#4070a0">&#34;student_scores.csv&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">out</span>=student_scores
 </span></span><span style="display:flex;"><span>    dbms=csv <span style="color:#007020;font-weight:bold">replace</span>;
@@ -735,13 +737,15 @@
 </h3>
 <p>This example shows how to clean and transform data. We&rsquo;ll use a dataset with missing values and inconsistent data formats.</p>
 <p><strong>Dataset (sales_data.csv):</strong></p>
-<pre tabindex="0"><code>Salesperson,Region,Sales,Date
+<pre class="mermaid">Salesperson,Region,Sales,Date
 John,North,10000,2023-10-26
 Jane,South,15000,2023-10-27
 Peter,North,.,2023-10-28
 Mary,East,12000,2023/10/29
 David,South,8000,2023-10-30
-</code></pre><p><strong>SAS Code:</strong></p>
+</pre>
+
+<p><strong>SAS Code:</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc import </span>datafile=<span style="color:#4070a0">&#34;sales_data.csv&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">out</span>=sales_data
 </span></span><span style="display:flex;"><span>    dbms=csv <span style="color:#007020;font-weight:bold">replace</span>;
@@ -871,6 +875,11 @@ David,South,8000,2023-10-30
     
   </div>
 
+  
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
   
 
 

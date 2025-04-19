@@ -8,11 +8,11 @@
 
 
 
-<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+<link rel="icon" type="image/ico" href="https://programming.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://programming.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://programming.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://programming.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://programming.muthu.co/apple-touch-icon.png">
 
 <meta name="description" content=""/>
 
@@ -25,12 +25,12 @@
 </title>
 <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/_pagefind/pagefind-ui.js"></script>
-<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-lua/"/>
+<link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-lua/"/>
 
-<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-lua/">
+<meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-lua/">
   <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
   <meta property="og:title" content="Beginner&#39;s Guide to Lua">
-  <meta property="og:description" content="Introduction to Lua # What is Lua? # Lua is a powerful, lightweight, and embeddable scripting language. Its design emphasizes simplicity, efficiency, and ease of use. It’s often used to extend the functionality of applications, games, and other software, but it’s also perfectly capable of standing on its own as a general-purpose scripting language. Lua’s syntax is relatively straightforward and easy to learn, making it accessible to both beginners and experienced programmers. Its small footprint means it can be readily integrated into resource-constrained environments.">
+  <meta property="og:description" content="Introduction to Lua#What is Lua?#Lua is a powerful, lightweight, and embeddable scripting language. Its design emphasizes simplicity, efficiency, and ease of use. It’s often used to extend the functionality of applications, games, and other software, but it’s also perfectly capable of standing on its own as a general-purpose scripting language. Lua’s syntax is relatively straightforward and easy to learn, making it accessible to both beginners and experienced programmers. Its small footprint means it can be readily integrated into resource-constrained environments.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -578,8 +578,10 @@
 </h3>
 <p>Lua&rsquo;s <code>package.path</code> variable specifies the search path for modules. It&rsquo;s a string with semicolons (<code>;</code>) separating paths on Windows and colons (<code>:</code>) on other systems. Each path entry can include <code>%s</code> which will be replaced with the module name being required.</p>
 <p>For example, a typical path might be:</p>
-<pre tabindex="0"><code>./?.lua;./?/init.lua;;
-</code></pre><p>This means Lua will first search in the current directory (<code>.</code>) for a file named after the module, then for an <code>init.lua</code> file within the module subdirectory.  The two consecutive semicolons signify the end of standard search locations.</p>
+<pre class="mermaid">./?.lua;./?/init.lua;;
+</pre>
+
+<p>This means Lua will first search in the current directory (<code>.</code>) for a file named after the module, then for an <code>init.lua</code> file within the module subdirectory.  The two consecutive semicolons signify the end of standard search locations.</p>
 <p>You can modify <code>package.path</code> to include additional directories where your modules are located.  This is often done at the start of your main script:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>package.path <span style="color:#666">=</span> package.path <span style="color:#666">..</span> <span style="color:#4070a0">&#34;;/path/to/my/modules/?.lua&#34;</span>  <span style="color:#60a0b0;font-style:italic">-- Adjust the path as needed</span>
 </span></span><span style="display:flex;"><span>
@@ -753,6 +755,11 @@
     
   </div>
 
+  
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
   
 
 

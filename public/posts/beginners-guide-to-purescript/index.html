@@ -8,11 +8,11 @@
 
 
 
-<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+<link rel="icon" type="image/ico" href="https://programming.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://programming.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://programming.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://programming.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://programming.muthu.co/apple-touch-icon.png">
 
 <meta name="description" content=""/>
 
@@ -25,12 +25,12 @@
 </title>
 <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/_pagefind/pagefind-ui.js"></script>
-<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-purescript/"/>
+<link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-purescript/"/>
 
-<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-purescript/">
+<meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-purescript/">
   <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
   <meta property="og:title" content="Beginner&#39;s Guide to PureScript">
-  <meta property="og:description" content="Introduction to PureScript # What is PureScript? # PureScript is a strongly-typed, functional programming language that compiles to JavaScript. It’s designed to be a pragmatic alternative to JavaScript, offering the benefits of a statically-typed language with a focus on purity and immutability while targeting the ubiquitous JavaScript ecosystem. This means you can write PureScript code and compile it to JavaScript that can run in web browsers or Node.js environments. PureScript leverages many concepts from Haskell, known for its powerful type system and elegant functional paradigm, but with a syntax designed for better readability and a more approachable learning curve. The compiler performs extensive type checking at compile time, catching many potential errors before runtime, leading to more robust and maintainable applications.">
+  <meta property="og:description" content="Introduction to PureScript#What is PureScript?#PureScript is a strongly-typed, functional programming language that compiles to JavaScript. It’s designed to be a pragmatic alternative to JavaScript, offering the benefits of a statically-typed language with a focus on purity and immutability while targeting the ubiquitous JavaScript ecosystem. This means you can write PureScript code and compile it to JavaScript that can run in web browsers or Node.js environments. PureScript leverages many concepts from Haskell, known for its powerful type system and elegant functional paradigm, but with a syntax designed for better readability and a more approachable learning curve. The compiler performs extensive type checking at compile time, catching many potential errors before runtime, leading to more robust and maintainable applications.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -461,11 +461,13 @@ processMaybe (Just n) = &#34;The number is: &#34; &lt;&gt; show n
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Project Structure:</strong> Your project will have a directory structure similar to this:</p>
-<pre tabindex="0"><code>my-simple-app/
+<pre class="mermaid">my-simple-app/
 ├── src/
 │   └── Main.purs
 └── spago.dhall
-</code></pre><p>We&rsquo;ll write our main application code in <code>src/Main.purs</code>.</p>
+</pre>
+
+<p>We&rsquo;ll write our main application code in <code>src/Main.purs</code>.</p>
 </li>
 </ol>
 <h3 class="heading" id="basic-ui-interaction">
@@ -596,6 +598,11 @@ main = do
     
   </div>
 
+  
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
   
 
 

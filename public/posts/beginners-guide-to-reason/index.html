@@ -8,11 +8,11 @@
 
 
 
-<link rel="icon" type="image/ico" href="https://guides.muthu.co/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://guides.muthu.co/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://guides.muthu.co/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://guides.muthu.co/android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://guides.muthu.co/apple-touch-icon.png">
+<link rel="icon" type="image/ico" href="https://programming.muthu.co/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://programming.muthu.co/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://programming.muthu.co/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://programming.muthu.co/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://programming.muthu.co/apple-touch-icon.png">
 
 <meta name="description" content=""/>
 
@@ -25,12 +25,12 @@
 </title>
 <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/_pagefind/pagefind-ui.js"></script>
-<link rel="canonical" href="https://guides.muthu.co/posts/beginners-guide-to-reason/"/>
+<link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-reason/"/>
 
-<meta property="og:url" content="https://guides.muthu.co/posts/beginners-guide-to-reason/">
+<meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-reason/">
   <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
   <meta property="og:title" content="Beginner&#39;s Guide to Reason">
-  <meta property="og:description" content="Introduction to Reason # What is Reason? # Reason is a syntactically delightful, strongly-typed language that compiles to JavaScript. It’s built on top of OCaml, inheriting its powerful type system and functional programming paradigms, but presents a syntax much more familiar to developers coming from languages like JavaScript, C&#43;&#43;, or Java. This makes it easier to learn and adopt for a broader range of developers while retaining the performance and reliability benefits of OCaml. Reason’s syntax aims for clarity and consistency, making code easier to read, write, and maintain. It’s particularly well-suited for building complex web applications, but its capabilities extend beyond the browser.">
+  <meta property="og:description" content="Introduction to Reason#What is Reason?#Reason is a syntactically delightful, strongly-typed language that compiles to JavaScript. It’s built on top of OCaml, inheriting its powerful type system and functional programming paradigms, but presents a syntax much more familiar to developers coming from languages like JavaScript, C&#43;&#43;, or Java. This makes it easier to learn and adopt for a broader range of developers while retaining the performance and reliability benefits of OCaml. Reason’s syntax aims for clarity and consistency, making code easier to read, write, and maintain. It’s particularly well-suited for building complex web applications, but its capabilities extend beyond the browser.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -556,11 +556,13 @@
   <a class="anchor" href="#namespaces-and-module-paths">#</a>
 </h3>
 <p>Reason&rsquo;s module system provides namespaces.  The module name acts as a namespace, preventing naming collisions between different modules.  Module paths are hierarchical.  Consider this example:</p>
-<pre tabindex="0"><code>src/
+<pre class="mermaid">src/
 ├── utils/
 │   └── stringUtils.re
 └── main.re
-</code></pre><p><code>stringUtils.re</code> might contain:</p>
+</pre>
+
+<p><code>stringUtils.re</code> might contain:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-reason" data-lang="reason"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/* File: src</span><span style="">/</span><span style="color:#60a0b0;font-style:italic">utils</span><span style="">/</span><span style="color:#60a0b0;font-style:italic">stringUtils.re */</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">StringUtils</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> uppercase <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">(</span>s<span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">string</span><span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=&gt;</span> <span style="color:#0e84b5;font-weight:bold">Js</span>.<span style="color:#0e84b5;font-weight:bold">String</span>.uppercase<span style="color:#007020;font-weight:bold">(</span>s<span style="color:#007020;font-weight:bold">);</span>
@@ -857,6 +859,11 @@
     
   </div>
 
+  
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
   
 
 
