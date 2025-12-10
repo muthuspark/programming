@@ -30,7 +30,7 @@
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-julia/">
   <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
   <meta property="og:title" content="Beginner&#39;s Guide to Julia">
-  <meta property="og:description" content="Introduction to Julia#Why Julia?#Julia is a high-level, high-performance dynamic programming language designed for numerical and scientific computing. Unlike many languages that excel in either ease of use or speed, Julia aims to be both. This is achieved through its unique design that combines the ease of use of languages like Python with the performance of compiled languages like C or Fortran.
+  <meta property="og:description" content="Introduction to Julia # Why Julia? # Julia is a high-level, high-performance dynamic programming language designed for numerical and scientific computing. Unlike many languages that excel in either ease of use or speed, Julia aims to be both. This is achieved through its unique design that combines the ease of use of languages like Python with the performance of compiled languages like C or Fortran.
 Key advantages for developers include:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -528,14 +528,12 @@ Key advantages for developers include:">
 </h3>
 <p>Creating your own Julia package involves organizing your code into a structured directory and defining a <code>Project.toml</code> file (for project information) and a <code>Manifest.toml</code> file (for recording package versions).</p>
 <p>A basic package structure looks like this:</p>
-<pre class="mermaid">MyPackage/
+<pre tabindex="0"><code>MyPackage/
 ├── Project.toml
 ├── Manifest.toml
 └── src/
     └── MyPackage.jl
-</pre>
-
-<p>The <code>Project.toml</code> file describes your package:</p>
+</code></pre><p>The <code>Project.toml</code> file describes your package:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>name = <span style="color:#4070a0">&#34;MyPackage&#34;</span>
 </span></span><span style="display:flex;"><span>uuid = <span style="color:#4070a0">&#34;your_uuid_here&#34;</span> <span style="color:#60a0b0;font-style:italic">#Generate using `uuidgen()`</span>
 </span></span><span style="display:flex;"><span>version = <span style="color:#4070a0">&#34;0.1.0&#34;</span>
@@ -587,11 +585,6 @@ Key advantages for developers include:">
     
   </div>
 
-  
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-  </script>
   
 
 

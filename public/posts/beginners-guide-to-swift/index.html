@@ -30,8 +30,8 @@
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-swift/">
   <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
   <meta property="og:title" content="Beginner&#39;s Guide to Swift">
-  <meta property="og:description" content="Setting Up Your Environment#This section guides you through setting up your development environment to begin coding in Swift. The primary tool you’ll need is Xcode, Apple’s integrated development environment (IDE).
-Installing Xcode#Xcode is a free download from the Mac App Store. To install it:
+  <meta property="og:description" content="Setting Up Your Environment # This section guides you through setting up your development environment to begin coding in Swift. The primary tool you’ll need is Xcode, Apple’s integrated development environment (IDE).
+Installing Xcode # Xcode is a free download from the Mac App Store. To install it:
 Open the Mac App Store: Locate the App Store icon on your Dock or in your Applications folder. Search for Xcode: Use the search bar within the App Store to find “Xcode”. Download and Install: Click the “Get” button and authenticate with your Apple ID. The download size is substantial (several gigabytes), so ensure you have a stable internet connection and sufficient free disk space. The installation process may take some time. Agree to the License Agreement: Once the download completes, launch the Xcode installer and accept the license agreement. Optional Components: Xcode may prompt you to install additional components, such as command-line tools. It’s recommended to install these as they provide extra functionality. After installation, Xcode should be accessible from your Applications folder or via Spotlight search.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -356,19 +356,19 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">age</span> = <span style="color:#40a070">25</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> age <span style="color:#666">&gt;=</span> <span style="color:#40a070">18</span> {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;You are an adult.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;You are an adult.&#34;</span>)
 </span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;You are a minor.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;You are a minor.&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">temperature</span> = <span style="color:#40a070">20</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> temperature <span style="color:#666">&gt;</span> <span style="color:#40a070">25</span> {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;It&#39;s a hot day.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;It&#39;s a hot day.&#34;</span>)
 </span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> temperature <span style="color:#666">&gt;</span> <span style="color:#40a070">15</span> {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;It&#39;s a pleasant day.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;It&#39;s a pleasant day.&#34;</span>)
 </span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;It&#39;s a cold day.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;It&#39;s a cold day.&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>You can have multiple <code>else if</code> blocks to handle different conditions.  The <code>else</code> block is optional and executes only if none of the preceding conditions are met.</p>
 <h3 class="heading" id="for-loops">
@@ -378,20 +378,20 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 <p><code>for</code> loops are used to iterate over a sequence of values.  Swift provides several ways to use <code>for</code> loops:</p>
 <p><strong>1. Range-based for loop:</strong> Iterates over a range of numbers.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1.</span>..<span style="color:#40a070">5</span> {  <span style="color:#60a0b0;font-style:italic">// Closed range (includes 5)</span>
-</span></span><span style="display:flex;"><span>    print(i)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(i)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1.</span>.&lt;<span style="color:#40a070">5</span> { <span style="color:#60a0b0;font-style:italic">// Half-open range (excludes 5)</span>
-</span></span><span style="display:flex;"><span>    print(i)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(i)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><strong>2. Sequence-based for loop:</strong> Iterates over any sequence (like an array).</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">names</span> = [<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;Charlie&#34;</span>]
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> name <span style="color:#007020;font-weight:bold">in</span> names {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">!&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">!&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><strong>3.  <code>for-in</code> loop with index:</strong> To access both the value and index, use <code>enumerated()</code>:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (index, name) <span style="color:#007020;font-weight:bold">in</span> names.enumerated() {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Person </span><span style="color:#70a0d0">\(</span>index <span style="color:#666">+</span> <span style="color:#40a070">1</span><span style="color:#70a0d0">)</span><span style="color:#4070a0">: </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Person </span><span style="color:#70a0d0">\(</span>index <span style="color:#666">+</span> <span style="color:#40a070">1</span><span style="color:#70a0d0">)</span><span style="color:#4070a0">: </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 class="heading" id="while-loops">
   while Loops
@@ -400,13 +400,13 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 <p><code>while</code> loops repeat a block of code as long as a condition is true.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">counter</span> = <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> counter <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span> {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Counter: </span><span style="color:#70a0d0">\(</span>counter<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Counter: </span><span style="color:#70a0d0">\(</span>counter<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
 </span></span><span style="display:flex;"><span>    counter <span style="color:#666">+=</span> <span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><code>repeat-while</code> loops execute the code block at least once before checking the condition.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">counter2</span> = <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">repeat</span> {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Counter: </span><span style="color:#70a0d0">\(</span>counter2<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Counter: </span><span style="color:#70a0d0">\(</span>counter2<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
 </span></span><span style="display:flex;"><span>    counter2 <span style="color:#666">+=</span> <span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">while</span> counter2 <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span>
 </span></span></code></pre></div><h3 class="heading" id="switch-statements">
@@ -418,19 +418,19 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">switch</span> dayOfWeek {
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">1</span>:
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Monday&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Monday&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">2</span>:
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Tuesday&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Tuesday&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">3</span>:
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Wednesday&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Wednesday&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">4</span>:
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Thursday&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Thursday&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">5</span>:
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Friday&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Friday&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#40a070">6</span>, <span style="color:#40a070">7</span>: <span style="color:#60a0b0;font-style:italic">// Multiple cases can be combined</span>
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Weekend&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Weekend&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">default</span>:
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Invalid day&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Invalid day&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>default</code> case is optional and handles values not matched by other cases.  Note that <code>switch</code> statements in Swift are exhaustive;  the compiler will issue a warning if you don&rsquo;t handle all possible cases (unless you use a <code>fallthrough</code> statement or the <code>default</code> case).  Cases <em>do not</em> fall through implicitly as in some other languages; each <code>case</code> executes its code and then exits the <code>switch</code> unless <code>fallthrough</code> is explicitly used.</p>
 <h2 class="heading" id="functions">
@@ -444,7 +444,7 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </h3>
 <p>Functions in Swift are defined using the <code>func</code> keyword, followed by the function name, parameters (in parentheses), and a return type (if any).</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">greet</span>(name: <span style="color:#007020">String</span>) { <span style="color:#60a0b0;font-style:italic">// Function with one parameter and no return value</span>
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">!&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">!&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>greet(name: <span style="color:#4070a0">&#34;Alice&#34;</span>) <span style="color:#60a0b0;font-style:italic">// Calling the function</span>
@@ -454,7 +454,7 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sum</span> = add(a: <span style="color:#40a070">5</span>, b: <span style="color:#40a070">3</span>) <span style="color:#60a0b0;font-style:italic">// Calling the function and assigning the return value to a variable</span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;Sum: </span><span style="color:#70a0d0">\(</span>sum<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Sum: </span><span style="color:#70a0d0">\(</span>sum<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
 </span></span></code></pre></div><p>The function body is enclosed in curly braces <code>{}</code>.  If a function doesn&rsquo;t return a value, its return type is implicitly <code>Void</code> (or you can explicitly specify <code>-&gt; Void</code>).</p>
 <h3 class="heading" id="function-parameters-and-return-values">
   Function Parameters and Return Values
@@ -468,7 +468,7 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">area</span> = calculateArea(width: <span style="color:#40a070">10</span>, height: <span style="color:#40a070">5</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">greet</span>(personName name: <span style="color:#007020">String</span>, from place: <span style="color:#007020">String</span> = <span style="color:#4070a0">&#34;Unknown&#34;</span>) { <span style="color:#60a0b0;font-style:italic">//Default parameter value</span>
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">! You&#39;re from </span><span style="color:#70a0d0">\(</span>place<span style="color:#70a0d0">)</span><span style="color:#4070a0">.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">\(</span>name<span style="color:#70a0d0">)</span><span style="color:#4070a0">! You&#39;re from </span><span style="color:#70a0d0">\(</span>place<span style="color:#70a0d0">)</span><span style="color:#4070a0">.&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>greet(personName: <span style="color:#4070a0">&#34;Bob&#34;</span>) <span style="color:#60a0b0;font-style:italic">// Uses the default value for &#39;place&#39;</span>
@@ -508,12 +508,12 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 <p>Arrays are ordered collections of values of the same type.  They are accessed using their index (starting from 0).</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">numbers</span>: [<span style="color:#007020">Int</span>] = [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>] <span style="color:#60a0b0;font-style:italic">// Explicit type declaration</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">names</span> = [<span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#4070a0">&#34;Charlie&#34;</span>] <span style="color:#60a0b0;font-style:italic">// Type inference</span>
-</span></span><span style="display:flex;"><span>print(numbers[<span style="color:#40a070">0</span>]) <span style="color:#60a0b0;font-style:italic">// Accessing the first element (output: 1)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(numbers[<span style="color:#40a070">0</span>]) <span style="color:#60a0b0;font-style:italic">// Accessing the first element (output: 1)</span>
 </span></span><span style="display:flex;"><span>numbers.append(<span style="color:#40a070">6</span>) <span style="color:#60a0b0;font-style:italic">// Adding an element to the end</span>
-</span></span><span style="display:flex;"><span>numbers.insert(<span style="color:#40a070">0</span>, at: <span style="color:#40a070">0</span>) <span style="color:#60a0b0;font-style:italic">// Inserting an element at a specific index</span>
-</span></span><span style="display:flex;"><span>print(numbers.count) <span style="color:#60a0b0;font-style:italic">// Getting the number of elements (output: 7)</span>
+</span></span><span style="display:flex;"><span>numbers.<span style="color:#007020">insert</span>(<span style="color:#40a070">0</span>, at: <span style="color:#40a070">0</span>) <span style="color:#60a0b0;font-style:italic">// Inserting an element at a specific index</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(numbers.<span style="color:#007020">count</span>) <span style="color:#60a0b0;font-style:italic">// Getting the number of elements (output: 7)</span>
 </span></span><span style="display:flex;"><span>numbers.remove(at: <span style="color:#40a070">1</span>) <span style="color:#60a0b0;font-style:italic">// Removing an element at a specific index</span>
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> number <span style="color:#007020;font-weight:bold">in</span> numbers { print(number) } <span style="color:#60a0b0;font-style:italic">// Iterating through the array</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> number <span style="color:#007020;font-weight:bold">in</span> numbers { <span style="color:#007020">print</span>(number) } <span style="color:#60a0b0;font-style:italic">// Iterating through the array</span>
 </span></span></code></pre></div><p>Arrays are value types, meaning that when you copy an array, you create a new independent copy of the data.</p>
 <h3 class="heading" id="dictionaries">
   Dictionaries
@@ -521,21 +521,21 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </h3>
 <p>Dictionaries are unordered collections of key-value pairs.  Each key must be unique, and the keys and values can be of different types.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">person</span>: [<span style="color:#007020">String</span>: <span style="color:#007020">String</span>] = [<span style="color:#4070a0">&#34;name&#34;</span>: <span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;age&#34;</span>: <span style="color:#4070a0">&#34;30&#34;</span>, <span style="color:#4070a0">&#34;city&#34;</span>: <span style="color:#4070a0">&#34;New York&#34;</span>]
-</span></span><span style="display:flex;"><span>print(person[<span style="color:#4070a0">&#34;name&#34;</span>]<span style="color:#666">!</span>) <span style="color:#60a0b0;font-style:italic">// Accessing the value associated with a key (output: Alice) – ! used for forced unwrapping</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(person[<span style="color:#4070a0">&#34;name&#34;</span>]<span style="color:#666">!</span>) <span style="color:#60a0b0;font-style:italic">// Accessing the value associated with a key (output: Alice) – ! used for forced unwrapping</span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//It&#39;s good practice to use optional binding instead of forced unwrapping.</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">age</span> = person[<span style="color:#4070a0">&#34;age&#34;</span>] { <span style="color:#60a0b0;font-style:italic">//Optional Binding - safer approach to unwrap optionals.</span>
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Age: </span><span style="color:#70a0d0">\(</span>age<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Age: </span><span style="color:#70a0d0">\(</span>age<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
 </span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Age not found&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Age not found&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>person[<span style="color:#4070a0">&#34;occupation&#34;</span>] = <span style="color:#4070a0">&#34;Engineer&#34;</span> <span style="color:#60a0b0;font-style:italic">// Adding a new key-value pair</span>
 </span></span><span style="display:flex;"><span>person[<span style="color:#4070a0">&#34;city&#34;</span>] = <span style="color:#4070a0">&#34;Los Angeles&#34;</span> <span style="color:#60a0b0;font-style:italic">// Updating the value for an existing key</span>
 </span></span><span style="display:flex;"><span>person.removeValue(forKey: <span style="color:#4070a0">&#34;age&#34;</span>) <span style="color:#60a0b0;font-style:italic">//Removing a key-value pair.</span>
-</span></span><span style="display:flex;"><span>print(person.count) <span style="color:#60a0b0;font-style:italic">// Getting the number of key-value pairs (output: 3)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(person.<span style="color:#007020">count</span>) <span style="color:#60a0b0;font-style:italic">// Getting the number of key-value pairs (output: 3)</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (key, value) <span style="color:#007020;font-weight:bold">in</span> person {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">\(</span>key<span style="color:#70a0d0">)</span><span style="color:#4070a0">: </span><span style="color:#70a0d0">\(</span>value<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0">\(</span>key<span style="color:#70a0d0">)</span><span style="color:#4070a0">: </span><span style="color:#70a0d0">\(</span>value<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
 </span></span><span style="display:flex;"><span>} <span style="color:#60a0b0;font-style:italic">// Iterating through the dictionary</span>
 </span></span></code></pre></div><p>Keys are used to quickly access values; they are commonly strings, but can be any Hashable type. Note the use of optional binding to safely handle the potential absence of a key.</p>
 <h3 class="heading" id="sets">
@@ -544,12 +544,12 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </h3>
 <p>Sets are unordered collections of unique values of the same type.  They are useful when you need to ensure that all elements are distinct.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">uniqueNumbers</span>: Set&lt;<span style="color:#007020">Int</span>&gt; = [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>] <span style="color:#60a0b0;font-style:italic">// Duplicates are automatically removed</span>
-</span></span><span style="display:flex;"><span>print(uniqueNumbers) <span style="color:#60a0b0;font-style:italic">// Output: {1, 2, 3, 4, 5} (order may vary)</span>
-</span></span><span style="display:flex;"><span>uniqueNumbers.insert(<span style="color:#40a070">6</span>) <span style="color:#60a0b0;font-style:italic">// Adding an element</span>
-</span></span><span style="display:flex;"><span>uniqueNumbers.contains(<span style="color:#40a070">3</span>) <span style="color:#60a0b0;font-style:italic">// Checking if a value exists (output: true)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(uniqueNumbers) <span style="color:#60a0b0;font-style:italic">// Output: {1, 2, 3, 4, 5} (order may vary)</span>
+</span></span><span style="display:flex;"><span>uniqueNumbers.<span style="color:#007020">insert</span>(<span style="color:#40a070">6</span>) <span style="color:#60a0b0;font-style:italic">// Adding an element</span>
+</span></span><span style="display:flex;"><span>uniqueNumbers.<span style="color:#007020">contains</span>(<span style="color:#40a070">3</span>) <span style="color:#60a0b0;font-style:italic">// Checking if a value exists (output: true)</span>
 </span></span><span style="display:flex;"><span>uniqueNumbers.remove(<span style="color:#40a070">4</span>) <span style="color:#60a0b0;font-style:italic">// Removing an element</span>
-</span></span><span style="display:flex;"><span>print(uniqueNumbers.count) <span style="color:#60a0b0;font-style:italic">// Getting the number of elements (output: 5)</span>
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> number <span style="color:#007020;font-weight:bold">in</span> uniqueNumbers { print(number) } <span style="color:#60a0b0;font-style:italic">// Iterating through the set (order may vary)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(uniqueNumbers.<span style="color:#007020">count</span>) <span style="color:#60a0b0;font-style:italic">// Getting the number of elements (output: 5)</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> number <span style="color:#007020;font-weight:bold">in</span> uniqueNumbers { <span style="color:#007020">print</span>(number) } <span style="color:#60a0b0;font-style:italic">// Iterating through the set (order may vary)</span>
 </span></span></code></pre></div><p>Sets provide efficient operations for checking membership and removing duplicates.  The order of elements in a set is not guaranteed.</p>
 <h2 class="heading" id="object-oriented-programming-oop-basics">
   Object-Oriented Programming (OOP) Basics
@@ -599,7 +599,7 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">rectangle</span> = Rectangle(width: <span style="color:#40a070">5</span>, height: <span style="color:#40a070">10</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">area</span> = rectangle.area() <span style="color:#60a0b0;font-style:italic">// Calling the method</span>
-</span></span><span style="display:flex;"><span>print(area) <span style="color:#60a0b0;font-style:italic">// Output: 50</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(area) <span style="color:#60a0b0;font-style:italic">// Output: 50</span>
 </span></span></code></pre></div><h3 class="heading" id="inheritance">
   Inheritance
   <a class="anchor" href="#inheritance">#</a>
@@ -608,11 +608,11 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> <span style="color:#bb60d5">name</span>: <span style="color:#007020">String</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">init</span>(name: <span style="color:#007020">String</span>) { <span style="color:#007020;font-weight:bold">self</span>.name = name }
-</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">speak</span>() { print(<span style="color:#4070a0">&#34;Generic animal sound&#34;</span>) }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">speak</span>() { <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Generic animal sound&#34;</span>) }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span>: Animal { <span style="color:#60a0b0;font-style:italic">// Dog inherits from Animal</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">speak</span>() { print(<span style="color:#4070a0">&#34;Woof!&#34;</span>) } <span style="color:#60a0b0;font-style:italic">// Overriding a superclass method</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">speak</span>() { <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Woof!&#34;</span>) } <span style="color:#60a0b0;font-style:italic">// Overriding a superclass method</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">dog</span> = Dog(name: <span style="color:#4070a0">&#34;Fido&#34;</span>)
@@ -624,15 +624,15 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </h3>
 <p>Polymorphism allows objects of different classes to respond to the same method call in their own specific way.  This is often achieved through inheritance and method overriding.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">makeSound</span>() { print(<span style="color:#4070a0">&#34;Generic animal sound&#34;</span>) }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">makeSound</span>() { <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Generic animal sound&#34;</span>) }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span>: Animal {
-</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">makeSound</span>() { print(<span style="color:#4070a0">&#34;Meow!&#34;</span>) }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">makeSound</span>() { <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Meow!&#34;</span>) }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span>: Animal {
-</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">makeSound</span>() { print(<span style="color:#4070a0">&#34;Woof!&#34;</span>) }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">override</span> <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">makeSound</span>() { <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Woof!&#34;</span>) }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">animals</span>: [Animal] = [Cat(), Dog()]
@@ -661,9 +661,9 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">optionalString</span>: <span style="color:#007020">String</span>? = <span style="color:#4070a0">&#34;Hello&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">unwrappedString</span> = optionalString {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;String: </span><span style="color:#70a0d0">\(</span>unwrappedString<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>) <span style="color:#60a0b0;font-style:italic">// This line executes only if optionalString is not nil</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;String: </span><span style="color:#70a0d0">\(</span>unwrappedString<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>) <span style="color:#60a0b0;font-style:italic">// This line executes only if optionalString is not nil</span>
 </span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;String is nil&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;String is nil&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>You can also use optional binding with multiple optionals using <code>guard</code> statements (discussed in the next section) or by nesting <code>if let</code> statements.</p>
 <h3 class="heading" id="optional-chaining">
@@ -681,7 +681,7 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">person</span>: Person? = Person()
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">street</span> = person?.address?.street <span style="color:#60a0b0;font-style:italic">// street will be &#34;Unknown Street&#34; even if person or address are nil</span>
-</span></span><span style="display:flex;"><span>print(street ?? <span style="color:#4070a0">&#34;No Street Found&#34;</span>)  <span style="color:#60a0b0;font-style:italic">//Optional Coalescing operator handles nil value</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(street ?? <span style="color:#4070a0">&#34;No Street Found&#34;</span>)  <span style="color:#60a0b0;font-style:italic">//Optional Coalescing operator handles nil value</span>
 </span></span></code></pre></div><h3 class="heading" id="error-handling-with-do-catch">
   Error Handling with <code>do-catch</code>
   <a class="anchor" href="#error-handling-with-do-catch">#</a>
@@ -702,11 +702,11 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">data</span> = <span style="color:#007020;font-weight:bold">try</span> fetchData()
-</span></span><span style="display:flex;"><span>    print(data)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(data)
 </span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">catch</span> MyError.networkError {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Network error occurred&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Network error occurred&#34;</span>)
 </span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">catch</span> {
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;An unexpected error occurred&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;An unexpected error occurred&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Each <code>catch</code> block can handle specific types of errors. A general <code>catch</code> block can catch any type of error not handled by specific <code>catch</code> blocks.</p>
 <h3 class="heading" id="guard-statements">
@@ -716,11 +716,11 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 <p><code>guard</code> statements are used to transfer control flow out of a scope if a condition is not met. They are frequently used with optional binding to handle nil values early in a function and improve readability.  They <em>must</em> include an <code>else</code> clause that executes if the condition is false.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">processData</span>(data: <span style="color:#007020">String</span>?) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">guard</span> <span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">unwrappedData</span> = data <span style="color:#007020;font-weight:bold">else</span> {
-</span></span><span style="display:flex;"><span>        print(<span style="color:#4070a0">&#34;Data is nil. Exiting.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Data is nil. Exiting.&#34;</span>)
 </span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#60a0b0;font-style:italic">// Exits the function if data is nil</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Process unwrappedData here</span>
-</span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Processing data: </span><span style="color:#70a0d0">\(</span>unwrappedData<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;Processing data: </span><span style="color:#70a0d0">\(</span>unwrappedData<span style="color:#70a0d0">)</span><span style="color:#4070a0">&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>processData(data: <span style="color:#4070a0">&#34;Hello&#34;</span>)
@@ -737,10 +737,10 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </h3>
 <p>A closure is a function that can be written inline or separately and passed as a value.  They can capture values from their surrounding context.  A simple closure is shown below:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">numbers</span> = [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>]
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">doubledNumbers</span> = numbers.map { <span style="color:#bb60d5">$0</span> <span style="color:#666">*</span> <span style="color:#40a070">2</span> } <span style="color:#60a0b0;font-style:italic">//Closure in map function</span>
-</span></span><span style="display:flex;"><span>print(doubledNumbers) <span style="color:#60a0b0;font-style:italic">// Output: [2, 4, 6, 8, 10]</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">doubledNumbers</span> = numbers.<span style="color:#007020">map</span> { <span style="color:#bb60d5">$0</span> <span style="color:#666">*</span> <span style="color:#40a070">2</span> } <span style="color:#60a0b0;font-style:italic">//Closure in map function</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(doubledNumbers) <span style="color:#60a0b0;font-style:italic">// Output: [2, 4, 6, 8, 10]</span>
 </span></span></code></pre></div><p>Here, <code>{ $0 * 2 }</code> is a closure that takes one argument (<code>$0</code> represents the first argument) and returns its double.  <code>map</code> applies this closure to each element of the array.  A more verbose way to write the same closure is:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">doubledNumbers2</span> = numbers.map { (number: <span style="color:#007020">Int</span>) -&gt; <span style="color:#007020">Int</span> <span style="color:#007020;font-weight:bold">in</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">doubledNumbers2</span> = numbers.<span style="color:#007020">map</span> { (number: <span style="color:#007020">Int</span>) -&gt; <span style="color:#007020">Int</span> <span style="color:#007020;font-weight:bold">in</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> number <span style="color:#666">*</span> <span style="color:#40a070">2</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This version explicitly declares the input parameter type (<code>Int</code>), the return type (<code>Int</code>), and uses the <code>return</code> keyword.</p>
@@ -750,15 +750,15 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </h3>
 <p>When the last argument to a function is a closure, you can write it outside the parentheses using a trailing closure. This enhances readability, especially when the closure is long.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">sortNumbers</span>(numbers: [<span style="color:#007020">Int</span>], sortOrder: (<span style="color:#007020">Int</span>, <span style="color:#007020">Int</span>) -&gt; <span style="color:#007020">Bool</span>) -&gt; [<span style="color:#007020">Int</span>] {
-</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> numbers.sorted(by: sortOrder)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> numbers.<span style="color:#007020">sorted</span>(by: sortOrder)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">numbers</span> = [<span style="color:#40a070">5</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">8</span>, <span style="color:#40a070">1</span>, <span style="color:#40a070">9</span>]
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sortedNumbers</span> = sortNumbers(numbers: numbers) { <span style="color:#bb60d5">$0</span> <span style="color:#666">&lt;</span> <span style="color:#bb60d5">$1</span> } <span style="color:#60a0b0;font-style:italic">// Trailing closure for ascending order</span>
-</span></span><span style="display:flex;"><span>print(sortedNumbers) <span style="color:#60a0b0;font-style:italic">// Output: [1, 2, 5, 8, 9]</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(sortedNumbers) <span style="color:#60a0b0;font-style:italic">// Output: [1, 2, 5, 8, 9]</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sortedNumbersDescending</span> = sortNumbers(numbers: numbers) { <span style="color:#bb60d5">$0</span> <span style="color:#666">&gt;</span> <span style="color:#bb60d5">$1</span> } <span style="color:#60a0b0;font-style:italic">//Trailing closure for descending order</span>
-</span></span><span style="display:flex;"><span>print(sortedNumbersDescending) <span style="color:#60a0b0;font-style:italic">// Output: [9, 8, 5, 2, 1]</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(sortedNumbersDescending) <span style="color:#60a0b0;font-style:italic">// Output: [9, 8, 5, 2, 1]</span>
 </span></span></code></pre></div><p>The trailing closure makes the code cleaner by separating the function call from the closure&rsquo;s implementation.</p>
 <h3 class="heading" id="capturing-values">
   Capturing Values
@@ -775,9 +775,9 @@ Open the Mac App Store: Locate the App Store icon on your Dock or in your Applic
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">incrementByTen</span> = makeIncrementer(incrementAmount: <span style="color:#40a070">10</span>)
-</span></span><span style="display:flex;"><span>print(incrementByTen()) <span style="color:#60a0b0;font-style:italic">// Output: 10</span>
-</span></span><span style="display:flex;"><span>print(incrementByTen()) <span style="color:#60a0b0;font-style:italic">// Output: 20</span>
-</span></span><span style="display:flex;"><span>print(incrementByTen()) <span style="color:#60a0b0;font-style:italic">// Output: 30</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(incrementByTen()) <span style="color:#60a0b0;font-style:italic">// Output: 10</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(incrementByTen()) <span style="color:#60a0b0;font-style:italic">// Output: 20</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(incrementByTen()) <span style="color:#60a0b0;font-style:italic">// Output: 30</span>
 </span></span></code></pre></div><p>The inner closure (<code>incrementer</code>) captures <code>runningTotal</code> and <code>incrementAmount</code> from its surrounding scope.  Even after <code>makeIncrementer</code> finishes, <code>incrementer</code> continues to access and modify <code>runningTotal</code>. This example demonstrates capturing values by reference.  Swift automatically handles the capture mode based on context, but you can explicitly specify it (e.g., using <code>[weak self]</code> to prevent strong reference cycles if necessary) for better control.</p>
 <h2 class="heading" id="building-a-simple-app">
   Building a Simple App

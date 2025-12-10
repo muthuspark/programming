@@ -30,7 +30,7 @@
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-ocaml/">
   <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
   <meta property="og:title" content="Beginner&#39;s Guide to OCaml">
-  <meta property="og:description" content="Introduction to OCaml#What is OCaml?#OCaml (Objective Caml) is a general-purpose, strongly-typed programming language with a focus on expressiveness, safety, and performance. It’s a dialect of the ML (Meta Language) family, known for its powerful type inference system which allows for concise code while catching many errors at compile time. OCaml features a sophisticated module system promoting code reusability and organization, and supports both imperative and functional programming paradigms. It’s particularly well-suited for applications requiring high reliability and efficiency, such as compilers, web servers, and financial systems.">
+  <meta property="og:description" content="Introduction to OCaml # What is OCaml? # OCaml (Objective Caml) is a general-purpose, strongly-typed programming language with a focus on expressiveness, safety, and performance. It’s a dialect of the ML (Meta Language) family, known for its powerful type inference system which allows for concise code while catching many errors at compile time. OCaml features a sophisticated module system promoting code reusability and organization, and supports both imperative and functional programming paradigms. It’s particularly well-suited for applications requiring high reliability and efficiency, such as compilers, web servers, and financial systems.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -256,7 +256,7 @@
   <a class="anchor" href="#your-first-ocaml-program">#</a>
 </h3>
 <p>The simplest OCaml program prints &ldquo;Hello, world!&rdquo; to the console.  Create a file named <code>hello.ml</code> and add the following code:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ocaml" data-lang="ocaml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> () <span style="color:#666">=</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ocaml" data-lang="ocaml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#007020">()</span> <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>  print_endline <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
 </span></span></code></pre></div><p>To compile and run this program, use the OCaml compiler, <code>ocamlopt</code>:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ocamlopt hello.ml -o hello
@@ -291,7 +291,7 @@
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ocaml" data-lang="ocaml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> age <span style="color:#666">:</span> <span style="color:#902000">int</span> <span style="color:#666">=</span> 30<span style="color:#666">;</span>     <span style="color:#60a0b0;font-style:italic">(* Explicit type annotation (optional but good practice) *)</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> pi <span style="color:#666">:</span> <span style="color:#902000">float</span> <span style="color:#666">=</span> 3<span style="color:#666">.</span>14159<span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> name <span style="color:#666">:</span> <span style="color:#902000">string</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> isAdult <span style="color:#666">:</span> <span style="color:#902000">bool</span> <span style="color:#666">=</span> true<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> isAdult <span style="color:#666">:</span> <span style="color:#902000">bool</span> <span style="color:#666">=</span> <span style="color:#007020">true</span><span style="color:#666">;</span>
 </span></span></code></pre></div><p>Type annotations (like <code>: int</code> above) are optional; OCaml&rsquo;s type inference usually deduces the type automatically.</p>
 <h3 class="heading" id="operators">
   Operators
@@ -359,7 +359,7 @@
 </h3>
 <p>Conditional statements use the <code>if-then-else</code> construct:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ocaml" data-lang="ocaml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> isPositive x <span style="color:#666">=</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> x <span style="color:#666">&gt;</span> 0 <span style="color:#007020;font-weight:bold">then</span> true <span style="color:#007020;font-weight:bold">else</span> false<span style="color:#666">;;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> x <span style="color:#666">&gt;</span> 0 <span style="color:#007020;font-weight:bold">then</span> <span style="color:#007020">true</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020">false</span><span style="color:#666">;;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> checkNumber x <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> x <span style="color:#666">&gt;</span> 0 <span style="color:#007020;font-weight:bold">then</span> print_endline <span style="color:#4070a0">&#34;Positive&#34;</span>
@@ -374,14 +374,14 @@
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ocaml" data-lang="ocaml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> printNumbers n <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#666">=</span> 0 <span style="color:#007020;font-weight:bold">to</span> n <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>    print_int i<span style="color:#666">;</span>
-</span></span><span style="display:flex;"><span>    print_newline ()
+</span></span><span style="display:flex;"><span>    print_newline <span style="color:#007020">()</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">done</span><span style="color:#666">;;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> countDown n <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> <span style="color:#007020;font-weight:bold">mutable</span> i <span style="color:#666">=</span> n <span style="color:#007020;font-weight:bold">in</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">while</span> i <span style="color:#666">&gt;</span> 0 <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>    print_int i<span style="color:#666">;</span>
-</span></span><span style="display:flex;"><span>    print_newline ()<span style="color:#666">;</span>
+</span></span><span style="display:flex;"><span>    print_newline <span style="color:#007020">()</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span>    i <span style="color:#666">&lt;-</span> i <span style="color:#666">-</span> 1
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">done</span><span style="color:#666">;;</span>
 </span></span></code></pre></div><p>Note that <code>for</code> loops iterate over a range inclusive of the start and end values.  <code>while</code> loops require mutable variables to change the loop condition.  Again,  recursive solutions are often preferred for their elegance and safety in OCaml.</p>
@@ -502,15 +502,15 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">Stack</span> <span style="color:#666">:</span> <span style="color:#0e84b5;font-weight:bold">STACK</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">struct</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">type</span> <span style="color:#007020;font-weight:bold">&#39;</span>a t <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">&#39;</span>a <span style="color:#902000">list</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> create () <span style="color:#666">=</span> []
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> create <span style="color:#007020">()</span> <span style="color:#666">=</span> <span style="color:#007020">[]</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> push x s <span style="color:#666">=</span> x <span style="color:#666">::</span> s
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> pop <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">function</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#666">|</span> [] <span style="color:#666">-&gt;</span> failwith <span style="color:#4070a0">&#34;Empty stack&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">|</span> <span style="color:#007020">[]</span> <span style="color:#666">-&gt;</span> failwith <span style="color:#4070a0">&#34;Empty stack&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#666">|</span> x<span style="color:#666">::</span>xs <span style="color:#666">-&gt;</span> <span style="color:#666">(</span>xs<span style="color:#666">,</span> x<span style="color:#666">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> is_empty s <span style="color:#666">=</span> s <span style="color:#666">=</span> []
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> is_empty s <span style="color:#666">=</span> s <span style="color:#666">=</span> <span style="color:#007020">[]</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span><span style="color:#666">;;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> stack <span style="color:#666">=</span> <span style="color:#0e84b5;font-weight:bold">Stack</span>.create ()<span style="color:#666">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> stack <span style="color:#666">=</span> <span style="color:#0e84b5;font-weight:bold">Stack</span>.create <span style="color:#007020">()</span><span style="color:#666">;;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> stack&#39; <span style="color:#666">=</span> <span style="color:#0e84b5;font-weight:bold">Stack</span>.push 10 stack<span style="color:#666">;;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#666">(</span>stack&#39;&#39;<span style="color:#666">,</span> val1<span style="color:#666">)</span> <span style="color:#666">=</span> <span style="color:#0e84b5;font-weight:bold">Stack</span>.pop stack&#39;<span style="color:#666">;;</span>
 </span></span></code></pre></div><p>This code defines an abstract stack using a list internally.  The user of the <code>Stack</code> module only interacts with the functions (<code>create</code>, <code>push</code>, <code>pop</code>, <code>is_empty</code>), not the internal list representation. This abstraction prevents accidental misuse of the stack&rsquo;s internal implementation.  The <code>'a</code> denotes a type variable, making the stack generic and able to hold elements of any type.</p>
@@ -598,7 +598,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">MakeOrderedSet</span> <span style="color:#666">(</span><span style="color:#0e84b5;font-weight:bold">C</span> <span style="color:#666">:</span> <span style="color:#0e84b5;font-weight:bold">COMPARABLE</span><span style="color:#666">)</span> <span style="color:#666">:</span> <span style="color:#0e84b5;font-weight:bold">ORDERED_SET</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">struct</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">type</span> t <span style="color:#666">=</span> <span style="color:#0e84b5;font-weight:bold">C</span>.t <span style="color:#902000">list</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> empty <span style="color:#666">=</span> []
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> empty <span style="color:#666">=</span> <span style="color:#007020">[]</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> add x s <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">if</span> <span style="color:#0e84b5;font-weight:bold">List</span>.mem x s <span style="color:#007020;font-weight:bold">then</span> s <span style="color:#007020;font-weight:bold">else</span> x <span style="color:#666">::</span> s
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">(* ... other operations ... *)</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span><span style="color:#666">;;</span>
@@ -661,7 +661,7 @@
 <p><strong><code>main.ml</code>:</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ocaml" data-lang="ocaml"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">open</span> <span style="color:#0e84b5;font-weight:bold">Factorial</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> () <span style="color:#666">=</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#007020">()</span> <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">match</span> <span style="color:#0e84b5;font-weight:bold">Sys</span>.argv <span style="color:#007020;font-weight:bold">with</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#666">|</span> <span style="color:#666">[|</span> <span style="color:#666">_;</span> n <span style="color:#666">|]</span> <span style="color:#666">-&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">try</span>

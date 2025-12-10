@@ -30,7 +30,7 @@
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-php/">
   <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
   <meta property="og:title" content="Beginner&#39;s Guide to PHP">
-  <meta property="og:description" content="Introduction to PHP#What is PHP?#PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scripting language embedded in HTML. This means PHP code is executed on the web server, not the user’s computer. The server processes the PHP code and sends the resulting HTML to the user’s browser, dynamically generating web pages. Unlike client-side languages like JavaScript, which run in the user’s browser, PHP interacts directly with databases and server resources to create interactive and data-driven websites.">
+  <meta property="og:description" content="Introduction to PHP # What is PHP? # PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scripting language embedded in HTML. This means PHP code is executed on the web server, not the user’s computer. The server processes the PHP code and sends the resulting HTML to the user’s browser, dynamically generating web pages. Unlike client-side languages like JavaScript, which run in the user’s browser, PHP interacts directly with databases and server resources to create interactive and data-driven websites.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -326,7 +326,7 @@
 <p>Comments are used to explain code and make it more readable.  PHP supports single-line and multi-line comments:</p>
 <ul>
 <li><strong>Single-line comment:</strong> <code>// This is a single-line comment</code></li>
-<li><strong>Multi-line comment:</strong> <code>/* This is a multi-line comment */</code></li>
+<li><strong>Multi-line comment:</strong> <code>/* This is a multi-line comment */</code></li>
 </ul>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
@@ -715,12 +715,12 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#bb60d5">$name</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#bb60d5">$breed</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> __construct(<span style="color:#bb60d5">$name</span>, <span style="color:#bb60d5">$breed</span>) { <span style="color:#60a0b0;font-style:italic">// Constructor
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">__construct</span>(<span style="color:#bb60d5">$name</span>, <span style="color:#bb60d5">$breed</span>) { <span style="color:#60a0b0;font-style:italic">// Constructor
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$name</span>;
 </span></span><span style="display:flex;"><span>      <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">breed</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$breed</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> __destruct() { <span style="color:#60a0b0;font-style:italic">// Destructor
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">__destruct</span>() { <span style="color:#60a0b0;font-style:italic">// Destructor
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Dog &#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">name</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34; is being destroyed.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }

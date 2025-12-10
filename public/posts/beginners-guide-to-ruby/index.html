@@ -30,7 +30,7 @@
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-ruby/">
   <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
   <meta property="og:title" content="Beginner&#39;s Guide to Ruby">
-  <meta property="og:description" content="Getting Started with Ruby#Installing Ruby#Ruby’s installation process varies slightly depending on your operating system. Here’s a general guide, but you should always refer to the official Ruby website (https://www.ruby-lang.org/) for the most up-to-date and platform-specific instructions.
+  <meta property="og:description" content="Getting Started with Ruby # Installing Ruby # Ruby’s installation process varies slightly depending on your operating system. Here’s a general guide, but you should always refer to the official Ruby website (https://www.ruby-lang.org/) for the most up-to-date and platform-specific instructions.
 macOS: macOS often comes with an outdated version of Ruby pre-installed. It’s generally recommended to install Ruby using a package manager like rbenv or RVM. These tools allow you to manage multiple Ruby versions easily, which is crucial for working on different projects with different Ruby requirements. Instructions for installing and using these managers can be found on their respective websites.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -248,15 +248,13 @@ macOS: macOS often comes with an outdated version of Ruby pre-installed. It’s 
 </h3>
 <p>The REPL (Read-Eval-Print Loop) is an interactive environment where you can execute Ruby code line by line and see the immediate results.  It&rsquo;s a fantastic tool for learning and experimenting with Ruby.</p>
 <p>To start the REPL, simply type <code>irb</code> in your terminal and press Enter.  You&rsquo;ll be presented with a prompt (usually <code>&gt;&gt;</code>).  You can now type Ruby code directly, press Enter, and see the output immediately.</p>
-<pre class="mermaid">irb(main):001:0&gt; puts &#34;Hello from IRB!&#34;
+<pre tabindex="0"><code>irb(main):001:0&gt; puts &#34;Hello from IRB!&#34;
 Hello from IRB!
 =&gt; nil
 irb(main):002:0&gt; 2 + 2
 =&gt; 4
 irb(main):003:0&gt; exit
-</pre>
-
-<p>The <code>=&gt; nil</code> indicates the return value of the <code>puts</code> method (it returns <code>nil</code>).  The REPL is excellent for testing snippets of code, exploring Ruby&rsquo;s methods, and quickly getting feedback.  Use <code>exit</code> or Ctrl+D to exit the REPL.</p>
+</code></pre><p>The <code>=&gt; nil</code> indicates the return value of the <code>puts</code> method (it returns <code>nil</code>).  The REPL is excellent for testing snippets of code, exploring Ruby&rsquo;s methods, and quickly getting feedback.  Use <code>exit</code> or Ctrl+D to exit the REPL.</p>
 <h2 class="heading" id="ruby-fundamentals">
   Ruby Fundamentals
   <a class="anchor" href="#ruby-fundamentals">#</a>
@@ -500,8 +498,8 @@ irb(main):003:0&gt; exit
 </span></span><span style="display:flex;"><span>  <span style="color:#007020">attr_accessor</span> <span style="color:#517918">:name</span>, <span style="color:#517918">:breed</span> <span style="color:#60a0b0;font-style:italic">#Creates getter and setter methods for name and breed</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">initialize</span>(<span style="color:#007020">name</span>, breed) <span style="color:#60a0b0;font-style:italic"># Constructor</span>
-</span></span><span style="display:flex;"><span>    @name <span style="color:#666">=</span> <span style="color:#007020">name</span>  <span style="color:#60a0b0;font-style:italic"># Instance variable, accessible via getter/setter methods</span>
-</span></span><span style="display:flex;"><span>    @breed <span style="color:#666">=</span> breed <span style="color:#60a0b0;font-style:italic"># Instance variable</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">@name</span> <span style="color:#666">=</span> <span style="color:#007020">name</span>  <span style="color:#60a0b0;font-style:italic"># Instance variable, accessible via getter/setter methods</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">@breed</span> <span style="color:#666">=</span> breed <span style="color:#60a0b0;font-style:italic"># Instance variable</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">bark</span>
@@ -509,7 +507,7 @@ irb(main):003:0&gt; exit
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">description</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;My name is </span><span style="color:#70a0d0">#{</span>@name<span style="color:#70a0d0">}</span><span style="color:#4070a0"> and I&#39;m a </span><span style="color:#70a0d0">#{</span>@breed<span style="color:#70a0d0">}</span><span style="color:#4070a0">.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;My name is </span><span style="color:#70a0d0">#{</span><span style="color:#bb60d5">@name</span><span style="color:#70a0d0">}</span><span style="color:#4070a0"> and I&#39;m a </span><span style="color:#70a0d0">#{</span><span style="color:#bb60d5">@breed</span><span style="color:#70a0d0">}</span><span style="color:#4070a0">.&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
@@ -672,11 +670,6 @@ irb(main):003:0&gt; exit
     
   </div>
 
-  
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-  </script>
   
 
 

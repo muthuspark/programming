@@ -30,7 +30,7 @@
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-powershell/">
   <meta property="og:site_name" content="Beginner’s Guide to Programming Languages">
   <meta property="og:title" content="Beginner&#39;s Guide to PowerShell">
-  <meta property="og:description" content="Introduction to PowerShell#What is PowerShell?#PowerShell is a cross-platform task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language. Unlike the older command prompt (cmd.exe), which primarily works with text-based commands, PowerShell uses cmdlets (pronounced “command-lets”). Cmdlets are specialized commands that interact with .NET objects, enabling more powerful and flexible scripting. This object-based approach allows for more complex manipulation and automation of system tasks. PowerShell’s scripting language is built on top of the .NET framework (and .NET Core for cross-platform compatibility), allowing access to a vast library of functions and capabilities.">
+  <meta property="og:description" content="Introduction to PowerShell # What is PowerShell? # PowerShell is a cross-platform task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language. Unlike the older command prompt (cmd.exe), which primarily works with text-based commands, PowerShell uses cmdlets (pronounced “command-lets”). Cmdlets are specialized commands that interact with .NET objects, enabling more powerful and flexible scripting. This object-based approach allows for more complex manipulation and automation of system tasks. PowerShell’s scripting language is built on top of the .NET framework (and .NET Core for cross-platform compatibility), allowing access to a vast library of functions and capabilities.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -538,7 +538,7 @@
 <p>In PowerShell, you declare variables using the <code>$</code> symbol followed by the variable name.  Variable names are case-insensitive but it&rsquo;s good practice to use consistent capitalization for readability.  You don&rsquo;t need to explicitly declare the data type; PowerShell infers it based on the assigned value.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$myString</span> = <span style="color:#4070a0">&#34;Hello, PowerShell!&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myNumber</span> = <span style="color:#40a070">123</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myBoolean</span> = $true
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myBoolean</span> = <span style="color:#bb60d5">$true</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myDate</span> = <span style="color:#007020">Get-Date</span>
 </span></span></code></pre></div><p>This code declares four variables: a string, an integer, a boolean, and a date.</p>
 <h3 class="heading" id="working-with-different-data-types-strings-numbers-booleans">
@@ -563,15 +563,15 @@
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$number2</span> = <span style="color:#40a070">5</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$sum</span> = <span style="color:#bb60d5">$number1</span> + <span style="color:#bb60d5">$number2</span> <span style="color:#60a0b0;font-style:italic">#Addition</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$booleanValue</span> = $true
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$booleanValue</span> = <span style="color:#bb60d5">$true</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$booleanValue</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;The value is true&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myArray</span> = @(<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myArray</span> = <span style="color:#bb60d5">@</span>(<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;The third element of the array is: </span>$(<span style="color:#bb60d5">$myArray</span>[<span style="color:#40a070">2</span>])<span style="color:#4070a0">&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myHashTable</span> = @{Name = <span style="color:#4070a0">&#34;John&#34;</span>; Age = <span style="color:#40a070">30</span>}
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myHashTable</span> = <span style="color:#bb60d5">@</span>{Name = <span style="color:#4070a0">&#34;John&#34;</span>; Age = <span style="color:#40a070">30</span>}
 </span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;John&#39;s age is: </span>$(<span style="color:#bb60d5">$myHashTable</span>.Age)<span style="color:#4070a0">&#34;</span>
 </span></span></code></pre></div><h3 class="heading" id="variable-scope">
   Variable scope
