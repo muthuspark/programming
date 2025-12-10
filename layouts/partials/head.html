@@ -13,11 +13,8 @@
 {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{ end }}
 
-{{- if .IsHome -}}
-<meta name="description" content="{{ site.Params.Description }}"/>
-{{- else -}}
-<meta name="description" content="{{ .Params.Description }}"/>
-{{- end }}
+{{- $description := .Params.Description | default .Summary | default site.Params.Description -}}
+<meta name="description" content="{{ $description }}"/>
 
 {{ if .Param "fediverse" }}
 <meta name="fediverse:creator" content="{{ .Params.Fediverse }}">
