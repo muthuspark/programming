@@ -2,6 +2,8 @@
 set -e  # Exit on any error
 
 hugo
+echo "Removing pagination redirect pages..."
+rm -rf public/page public/tags/page public/posts/page
 echo "Running pagefind..."
 npx -y pagefind --site public
 echo "Building site with Hugo..."
