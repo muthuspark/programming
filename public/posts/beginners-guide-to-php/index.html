@@ -36,14 +36,14 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-php/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-php/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to PHP">
-  <meta property="og:description" content="Introduction to PHP # What is PHP? # PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scripting language embedded in HTML. This means PHP code is executed on the web server, not the user’s computer. The server processes the PHP code and sends the resulting HTML to the user’s browser, dynamically generating web pages. Unlike client-side languages like JavaScript, which run in the user’s browser, PHP interacts directly with databases and server resources to create interactive and data-driven websites.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-03-17T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-17T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to PHP">
+	<meta property="og:description" content="Introduction to PHP # What is PHP? # PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scripting language embedded in HTML. This means PHP code is executed on the web server, not the user’s computer. The server processes the PHP code and sends the resulting HTML to the user’s browser, dynamically generating web pages. Unlike client-side languages like JavaScript, which run in the user’s browser, PHP interacts directly with databases and server resources to create interactive and data-driven websites.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-03-17T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-03-17T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -271,7 +271,7 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
   <a class="anchor" href="#hello-world-your-first-php-program">#</a>
 </h3>
 <p>The classic first program in any language is &ldquo;Hello, World!&rdquo;:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Hello, World!&#34;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>Save this code in a file named (for example) <code>hello.php</code> within your web server&rsquo;s document root directory (usually <code>htdocs</code> in XAMPP). Then, access the file through your web browser by entering its URL (something like <code>http://localhost/hello.php</code> if you&rsquo;re using XAMPP).  You should see &ldquo;Hello, World!&rdquo; displayed in your browser.  This simple program demonstrates the fundamental PHP syntax – the code is enclosed within <code>&lt;?php</code> and <code>?&gt;</code> tags, and the <code>echo</code> statement displays output.</p>
@@ -294,14 +294,14 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 <li><strong>Null (null):</strong> Represents the absence of a value.</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;John Doe&#34;</span>; <span style="color:#60a0b0;font-style:italic">// String
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$age</span> <span style="color:#666">=</span> <span style="color:#40a070">30</span>;       <span style="color:#60a0b0;font-style:italic">// Integer
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$height</span> <span style="color:#666">=</span> <span style="color:#40a070">5.10</span>;   <span style="color:#60a0b0;font-style:italic">// Float
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$isAdult</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span>;  <span style="color:#60a0b0;font-style:italic">// Boolean
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$colors</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">array</span>(<span style="color:#4070a0">&#34;red&#34;</span>, <span style="color:#4070a0">&#34;green&#34;</span>, <span style="color:#4070a0">&#34;blue&#34;</span>); <span style="color:#60a0b0;font-style:italic">// Array
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$emptyVar</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">null</span>; <span style="color:#60a0b0;font-style:italic">// Null
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$age</span> <span style="color:#666">=</span> <span style="color:#40a070">30</span>;       <span style="color:#60a0b0;font-style:italic">// Integer
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$height</span> <span style="color:#666">=</span> <span style="color:#40a070">5.10</span>;   <span style="color:#60a0b0;font-style:italic">// Float
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$isAdult</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span>;  <span style="color:#60a0b0;font-style:italic">// Boolean
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$colors</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">array</span>(<span style="color:#4070a0">&#34;red&#34;</span>, <span style="color:#4070a0">&#34;green&#34;</span>, <span style="color:#4070a0">&#34;blue&#34;</span>); <span style="color:#60a0b0;font-style:italic">// Array
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$emptyVar</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">null</span>; <span style="color:#60a0b0;font-style:italic">// Null
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><h3 class="heading" id="operators">
   Operators
   <a class="anchor" href="#operators">#</a>
@@ -315,16 +315,16 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 <li><strong>Increment/Decrement Operators:</strong> <code>++</code>, <code>--</code>.</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$x</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$y</span> <span style="color:#666">=</span> <span style="color:#40a070">5</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$sum</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$y</span>;       <span style="color:#60a0b0;font-style:italic">// Addition
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$diff</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">-</span> <span style="color:#bb60d5">$y</span>;      <span style="color:#60a0b0;font-style:italic">// Subtraction
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$product</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">*</span> <span style="color:#bb60d5">$y</span>;    <span style="color:#60a0b0;font-style:italic">// Multiplication
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$quotient</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">/</span> <span style="color:#bb60d5">$y</span>;   <span style="color:#60a0b0;font-style:italic">// Division
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$remainder</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">%</span> <span style="color:#bb60d5">$y</span>;  <span style="color:#60a0b0;font-style:italic">// Modulo
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$isGreater</span> <span style="color:#666">=</span> (<span style="color:#bb60d5">$x</span> <span style="color:#666">&gt;</span> <span style="color:#bb60d5">$y</span>); <span style="color:#60a0b0;font-style:italic">// Comparison
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$diff</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">-</span> <span style="color:#bb60d5">$y</span>;      <span style="color:#60a0b0;font-style:italic">// Subtraction
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$product</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">*</span> <span style="color:#bb60d5">$y</span>;    <span style="color:#60a0b0;font-style:italic">// Multiplication
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$quotient</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">/</span> <span style="color:#bb60d5">$y</span>;   <span style="color:#60a0b0;font-style:italic">// Division
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$remainder</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">%</span> <span style="color:#bb60d5">$y</span>;  <span style="color:#60a0b0;font-style:italic">// Modulo
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$isGreater</span> <span style="color:#666">=</span> (<span style="color:#bb60d5">$x</span> <span style="color:#666">&gt;</span> <span style="color:#bb60d5">$y</span>); <span style="color:#60a0b0;font-style:italic">// Comparison
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><h3 class="heading" id="comments">
   Comments
   <a class="anchor" href="#comments">#</a>
@@ -335,10 +335,10 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 <li><strong>Multi-line comment:</strong> <code>/* This is a multi-line comment */</code></li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// This is a single-line comment
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>;  <span style="color:#60a0b0;font-style:italic">// Assigning a value to the $name variable
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>;  <span style="color:#60a0b0;font-style:italic">// Assigning a value to the $name variable
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">/* This is a
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">     multi-line comment */</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$age</span> <span style="color:#666">=</span> <span style="color:#40a070">25</span>;
@@ -351,7 +351,7 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 <ul>
 <li><strong><code>if</code> statement:</strong> Executes a block of code only if a condition is true.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$age</span> <span style="color:#666">=</span> <span style="color:#40a070">20</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$age</span> <span style="color:#666">&gt;=</span> <span style="color:#40a070">18</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;You are an adult.&#34;</span>;
@@ -360,7 +360,7 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </span></span></span></code></pre></div><ul>
 <li><strong><code>if-else</code> statement:</strong> Executes one block of code if a condition is true, and another block if it&rsquo;s false.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$age</span> <span style="color:#666">=</span> <span style="color:#40a070">15</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$age</span> <span style="color:#666">&gt;=</span> <span style="color:#40a070">18</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;You are an adult.&#34;</span>;
@@ -371,7 +371,7 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </span></span></span></code></pre></div><ul>
 <li><strong><code>if-elseif-else</code> statement:</strong> Allows checking multiple conditions sequentially.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$grade</span> <span style="color:#666">=</span> <span style="color:#40a070">85</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$grade</span> <span style="color:#666">&gt;=</span> <span style="color:#40a070">90</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;A&#34;</span>;
@@ -386,7 +386,7 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </span></span></span></code></pre></div><ul>
 <li><strong><code>switch</code> statement:</strong> Provides a more concise way to handle multiple conditions based on the value of a single expression.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$day</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Monday&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">switch</span> (<span style="color:#bb60d5">$day</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> <span style="color:#4070a0">&#34;Monday&#34;</span><span style="color:#666">:</span>
@@ -412,60 +412,60 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 <ul>
 <li><strong>Indexed Arrays:</strong> Elements are accessed by their numerical index (starting from 0).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$numbers</span> <span style="color:#666">=</span> [<span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>, <span style="color:#40a070">30</span>, <span style="color:#40a070">40</span>, <span style="color:#40a070">50</span>]; <span style="color:#60a0b0;font-style:italic">//Using short array syntax (PHP 5.4+)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$numbers</span>[<span style="color:#40a070">0</span>]; <span style="color:#60a0b0;font-style:italic">// Output: 10
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$numbers</span>[<span style="color:#40a070">2</span>]; <span style="color:#60a0b0;font-style:italic">// Output: 30
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$numbers</span>[<span style="color:#40a070">0</span>]; <span style="color:#60a0b0;font-style:italic">// Output: 10
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$numbers</span>[<span style="color:#40a070">2</span>]; <span style="color:#60a0b0;font-style:italic">// Output: 30
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$fruits</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">array</span>(<span style="color:#4070a0">&#34;apple&#34;</span>, <span style="color:#4070a0">&#34;banana&#34;</span>, <span style="color:#4070a0">&#34;orange&#34;</span>); <span style="color:#60a0b0;font-style:italic">//Older array syntax
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$fruits</span>[<span style="color:#40a070">1</span>]; <span style="color:#60a0b0;font-style:italic">// Output: banana
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$fruits</span>[<span style="color:#40a070">1</span>]; <span style="color:#60a0b0;font-style:italic">// Output: banana
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><ul>
 <li><strong>Associative Arrays:</strong> Elements are accessed by their key (which can be a string).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$person</span> <span style="color:#666">=</span> [
 </span></span><span style="display:flex;"><span>    <span style="color:#4070a0">&#34;name&#34;</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#34;Alice&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#4070a0">&#34;age&#34;</span> <span style="color:#666">=&gt;</span> <span style="color:#40a070">30</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#4070a0">&#34;city&#34;</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#34;New York&#34;</span>
 </span></span><span style="display:flex;"><span>  ];
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$person</span>[<span style="color:#4070a0">&#34;name&#34;</span>]; <span style="color:#60a0b0;font-style:italic">// Output: Alice
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$person</span>[<span style="color:#4070a0">&#34;age&#34;</span>];  <span style="color:#60a0b0;font-style:italic">// Output: 30
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$person</span>[<span style="color:#4070a0">&#34;age&#34;</span>];  <span style="color:#60a0b0;font-style:italic">// Output: 30
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>Arrays can be multidimensional (arrays within arrays):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$matrix</span> <span style="color:#666">=</span> [
 </span></span><span style="display:flex;"><span>    [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>],
 </span></span><span style="display:flex;"><span>    [<span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>, <span style="color:#40a070">6</span>],
 </span></span><span style="display:flex;"><span>    [<span style="color:#40a070">7</span>, <span style="color:#40a070">8</span>, <span style="color:#40a070">9</span>]
 </span></span><span style="display:flex;"><span>  ];
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$matrix</span>[<span style="color:#40a070">1</span>][<span style="color:#40a070">2</span>]; <span style="color:#60a0b0;font-style:italic">// Output: 6
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>Many built-in functions are available for manipulating arrays (e.g., <code>count()</code>, <code>array_push()</code>, <code>sort()</code>, <code>in_array()</code>).</p>
 <h3 class="heading" id="strings">
   Strings
   <a class="anchor" href="#strings">#</a>
 </h3>
 <p>Strings in PHP are sequences of characters.  They can be defined using single quotes (&rsquo; &lsquo;) or double quotes (&rdquo; &ldquo;).  Double-quoted strings allow for variable interpolation (embedding variables directly within the string).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Bob&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$greeting</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;Hello, &#39;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">$name</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#39;!&#39;</span>; <span style="color:#60a0b0;font-style:italic">// Concatenation using the . operator
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$greeting2</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">$name</span><span style="color:#4070a0">!&#34;</span>;       <span style="color:#60a0b0;font-style:italic">// Variable interpolation
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$greeting</span>;  <span style="color:#60a0b0;font-style:italic">// Output: Hello, Bob!
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$greeting2</span>; <span style="color:#60a0b0;font-style:italic">// Output: Hello, Bob!
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$greeting2</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">$name</span><span style="color:#4070a0">!&#34;</span>;       <span style="color:#60a0b0;font-style:italic">// Variable interpolation
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$greeting</span>;  <span style="color:#60a0b0;font-style:italic">// Output: Hello, Bob!
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$greeting2</span>; <span style="color:#60a0b0;font-style:italic">// Output: Hello, Bob!
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>Many string manipulation functions are available (e.g., <code>strlen()</code>, <code>strpos()</code>, <code>substr()</code>, <code>str_replace()</code>).</p>
 <h3 class="heading" id="numbers">
   Numbers
   <a class="anchor" href="#numbers">#</a>
 </h3>
 <p>PHP supports integers and floating-point numbers.  Be mindful of potential precision issues with floating-point numbers due to how they&rsquo;re represented internally.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$integer</span> <span style="color:#666">=</span> <span style="color:#40a070">123</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$float</span> <span style="color:#666">=</span> <span style="color:#40a070">3.14159</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$sum</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$integer</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$float</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$sum</span>; <span style="color:#60a0b0;font-style:italic">// Output: 126.14159
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>Mathematical functions are available (e.g., <code>abs()</code>, <code>round()</code>, <code>sqrt()</code>, <code>pow()</code>).</p>
 <h3 class="heading" id="type-juggling-and-type-casting">
   Type Juggling and Type Casting
@@ -473,26 +473,26 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </h3>
 <p>PHP&rsquo;s loose typing allows for <em>type juggling</em>, where PHP automatically converts data types during operations.  However, it&rsquo;s often better to use <em>type casting</em> for explicit type conversion to avoid unexpected behavior.</p>
 <p><strong>Type Juggling:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$x</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;5&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$y</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$sum</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$y</span>; <span style="color:#60a0b0;font-style:italic">// $x is automatically converted to an integer (type juggling)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$sum</span>;     <span style="color:#60a0b0;font-style:italic">// Output: 15
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$sum</span>;     <span style="color:#60a0b0;font-style:italic">// Output: 15
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p><strong>Type Casting:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$x</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;5&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$y</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$sum</span> <span style="color:#666">=</span> (int)<span style="color:#bb60d5">$x</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$y</span>; <span style="color:#60a0b0;font-style:italic">// Explicit type casting of $x to an integer
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$sum</span>;           <span style="color:#60a0b0;font-style:italic">// Output: 15
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$sum</span>;           <span style="color:#60a0b0;font-style:italic">// Output: 15
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$floatString</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;3.14&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$floatNumber</span> <span style="color:#666">=</span> (float)<span style="color:#bb60d5">$floatString</span>; <span style="color:#60a0b0;font-style:italic">//Casting to float
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$floatNumber</span>; <span style="color:#60a0b0;font-style:italic">//Output: 3.14
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$floatNumber</span>; <span style="color:#60a0b0;font-style:italic">//Output: 3.14
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$boolInt</span> <span style="color:#666">=</span> (int) <span style="color:#007020;font-weight:bold">true</span>; <span style="color:#60a0b0;font-style:italic">//Casting boolean to integer - true becomes 1
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$boolInt</span>; <span style="color:#60a0b0;font-style:italic">//Output: 1
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$boolInt</span>; <span style="color:#60a0b0;font-style:italic">//Output: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>Type casting ensures clarity and avoids potential errors arising from implicit type conversions.  Common casting functions include <code>(int)</code>, <code>(float)</code>, <code>(string)</code>, <code>(bool)</code>, <code>(array)</code>.  Always cast to the intended type.</p>
 <h2 class="heading" id="functions">
   Functions
@@ -504,62 +504,62 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
   <a class="anchor" href="#defining-functions">#</a>
 </h3>
 <p>Functions are defined using the <code>function</code> keyword, followed by the function name, parentheses <code>()</code>, and curly braces <code>{}</code> enclosing the function&rsquo;s code.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">greet</span>(<span style="color:#bb60d5">$name</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">$name</span><span style="color:#4070a0">!&#34;</span>;
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  greet(<span style="color:#4070a0">&#34;Alice&#34;</span>); <span style="color:#60a0b0;font-style:italic">// Calling the function
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>The function name should follow the same rules as variable names (start with a letter or underscore, contain letters, numbers, and underscores).  It&rsquo;s good practice to use descriptive names that clearly indicate the function&rsquo;s purpose.</p>
 <h3 class="heading" id="function-arguments">
   Function Arguments
   <a class="anchor" href="#function-arguments">#</a>
 </h3>
 <p>Arguments (or parameters) are values passed to a function.  They are defined within the parentheses in the function definition.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">add</span>(<span style="color:#bb60d5">$x</span>, <span style="color:#bb60d5">$y</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$y</span>;
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$sum</span> <span style="color:#666">=</span> add(<span style="color:#40a070">5</span>, <span style="color:#40a070">3</span>); <span style="color:#60a0b0;font-style:italic">// Passing arguments to the function
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$sum</span>;       <span style="color:#60a0b0;font-style:italic">// Output: 8
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$sum</span>;       <span style="color:#60a0b0;font-style:italic">// Output: 8
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>You can have multiple arguments, separated by commas.  Arguments can be of any data type.</p>
 <h3 class="heading" id="return-values">
   Return Values
   <a class="anchor" href="#return-values">#</a>
 </h3>
 <p>Functions can return a value using the <code>return</code> statement.  If a function doesn&rsquo;t have an explicit <code>return</code> statement, it implicitly returns <code>null</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">getArea</span>(<span style="color:#bb60d5">$width</span>, <span style="color:#bb60d5">$height</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#bb60d5">$width</span> <span style="color:#666">*</span> <span style="color:#bb60d5">$height</span>;
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$area</span> <span style="color:#666">=</span> getArea(<span style="color:#40a070">10</span>, <span style="color:#40a070">5</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$area</span>; <span style="color:#60a0b0;font-style:italic">// Output: 50
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>The <code>return</code> statement immediately exits the function.  Any code after a <code>return</code> statement within the function will not be executed.</p>
 <h3 class="heading" id="function-scope">
   Function Scope
   <a class="anchor" href="#function-scope">#</a>
 </h3>
 <p>Scope refers to the accessibility of variables within a program.  Variables declared inside a function have <em>local scope</em>, meaning they are only accessible within that function.  Variables declared outside functions have <em>global scope</em>, accessible from anywhere in the script.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$globalVar</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;I&#39;m global&#34;</span>; <span style="color:#60a0b0;font-style:italic">// Global variable
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">myFunction</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">$localVar</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;I&#39;m local&#34;</span>; <span style="color:#60a0b0;font-style:italic">// Local variable
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$globalVar</span>; <span style="color:#60a0b0;font-style:italic">// Accessing global variable from inside the function
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$localVar</span>;  <span style="color:#60a0b0;font-style:italic">// Accessing local variable
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  }
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$globalVar</span>; <span style="color:#60a0b0;font-style:italic">// Accessing global variable from inside the function
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$localVar</span>;  <span style="color:#60a0b0;font-style:italic">// Accessing local variable
+</span></span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  myFunction();
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// echo $localVar; // This would cause an error because $localVar is out of scope here
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$globalVar</span>;  <span style="color:#60a0b0;font-style:italic">// Accessing global variable outside the function
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$globalVar</span>;  <span style="color:#60a0b0;font-style:italic">// Accessing global variable outside the function
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>To access a global variable from within a function, you can use the <code>global</code> keyword:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$globalVar</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;I&#39;m global&#34;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">accessGlobal</span>() {
@@ -568,7 +568,7 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  accessGlobal(); <span style="color:#60a0b0;font-style:italic">// Outputs: I&#39;m global
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>Using global variables within functions can make code harder to understand and maintain; it&rsquo;s generally better to pass data to functions as arguments and return values rather than relying heavily on global variables.  This promotes better encapsulation and reduces the risk of unintended side effects.</p>
 <h2 class="heading" id="working-with-files">
   Working with Files
@@ -580,7 +580,7 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
   <a class="anchor" href="#reading-files">#</a>
 </h3>
 <p>The most common way to read a file is using <code>file_get_contents()</code>, which reads the entire file into a single string:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$filename</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;my_file.txt&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$fileContent</span> <span style="color:#666">=</span> file_get_contents(<span style="color:#bb60d5">$filename</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$fileContent</span> <span style="color:#666">===</span> <span style="color:#007020;font-weight:bold">false</span>) {
@@ -590,17 +590,17 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>For larger files, reading line by line using <code>fopen()</code>, <code>fgets()</code>, and <code>fclose()</code> is more efficient:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$filename</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;my_large_file.txt&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$fileHandle</span> <span style="color:#666">=</span> fopen(<span style="color:#bb60d5">$filename</span>, <span style="color:#4070a0">&#34;r&#34;</span>); <span style="color:#60a0b0;font-style:italic">// &#34;r&#34; for reading
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$fileHandle</span> <span style="color:#666">===</span> <span style="color:#007020;font-weight:bold">false</span>) {
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$fileHandle</span> <span style="color:#666">===</span> <span style="color:#007020;font-weight:bold">false</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Error opening file.&#34;</span>;
 </span></span><span style="display:flex;"><span>  } <span style="color:#007020;font-weight:bold">else</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">while</span> ((<span style="color:#bb60d5">$line</span> <span style="color:#666">=</span> fgets(<span style="color:#bb60d5">$fileHandle</span>)) <span style="color:#666">!==</span> <span style="color:#007020;font-weight:bold">false</span>) {
 </span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#bb60d5">$line</span>; <span style="color:#60a0b0;font-style:italic">// Process each line individually
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    }
+</span></span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    fclose(<span style="color:#bb60d5">$fileHandle</span>); <span style="color:#60a0b0;font-style:italic">// Always close the file handle
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  }
+</span></span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p><code>fopen()</code> opens the file, <code>fgets()</code> reads one line at a time, and <code>fclose()</code> closes the file (crucial to release resources).</p>
 <h3 class="heading" id="writing-files">
@@ -608,7 +608,7 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
   <a class="anchor" href="#writing-files">#</a>
 </h3>
 <p>To write to a file, use <code>file_put_contents()</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$filename</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;output.txt&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$data</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;This is some text to write to the file.&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$bytesWritten</span> <span style="color:#666">=</span> file_put_contents(<span style="color:#bb60d5">$filename</span>, <span style="color:#bb60d5">$data</span>);
@@ -619,10 +619,10 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>This overwrites the file if it exists.  To append data to an existing file, use the <code>FILE_APPEND</code> flag:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$filename</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;output.txt&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$newData</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">This is additional text.&#34;</span>; <span style="color:#60a0b0;font-style:italic">//Add a newline character at the beginning
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$bytesAppended</span> <span style="color:#666">=</span> file_put_contents(<span style="color:#bb60d5">$filename</span>, <span style="color:#bb60d5">$newData</span>, FILE_APPEND);
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$bytesAppended</span> <span style="color:#666">=</span> file_put_contents(<span style="color:#bb60d5">$filename</span>, <span style="color:#bb60d5">$newData</span>, FILE_APPEND);
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$bytesAppended</span> <span style="color:#666">===</span> <span style="color:#007020;font-weight:bold">false</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Error appending to file.&#34;</span>;
 </span></span><span style="display:flex;"><span>  } <span style="color:#007020;font-weight:bold">else</span> {
@@ -630,10 +630,10 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>For more controlled writing (e.g., writing line by line), use <code>fopen()</code> with <code>&quot;w&quot;</code> (write) or <code>&quot;a&quot;</code> (append) mode, <code>fwrite()</code>, and <code>fclose()</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$filename</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;another_output.txt&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$fileHandle</span> <span style="color:#666">=</span> fopen(<span style="color:#bb60d5">$filename</span>, <span style="color:#4070a0">&#34;w&#34;</span>); <span style="color:#60a0b0;font-style:italic">// &#34;w&#34; for writing (overwrites)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$fileHandle</span> <span style="color:#666">===</span> <span style="color:#007020;font-weight:bold">false</span>) {
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$fileHandle</span> <span style="color:#666">===</span> <span style="color:#007020;font-weight:bold">false</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Error opening file.&#34;</span>;
 </span></span><span style="display:flex;"><span>  } <span style="color:#007020;font-weight:bold">else</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">$lines</span> <span style="color:#666">=</span> [<span style="color:#4070a0">&#34;Line 1</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>, <span style="color:#4070a0">&#34;Line 2</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>, <span style="color:#4070a0">&#34;Line 3</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>];
@@ -674,31 +674,31 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
   <a class="anchor" href="#classes-and-objects">#</a>
 </h3>
 <p>A <em>class</em> is a blueprint for creating objects.  It defines the properties (data) and methods (functions) that objects of that class will have.  An <em>object</em> is an instance of a class.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Properties and methods will go here
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  }
+</span></span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$myDog</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Dog(); <span style="color:#60a0b0;font-style:italic">// Creating an object (instance) of the Dog class
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>This code defines a <code>Dog</code> class and creates an object (<code>$myDog</code>) of that class.  The object is an instance of the blueprint defined by the class.</p>
 <h3 class="heading" id="properties-and-methods">
   Properties and Methods
   <a class="anchor" href="#properties-and-methods">#</a>
 </h3>
 <p><em>Properties</em> are variables that hold data within an object.  <em>Methods</em> are functions that operate on the object&rsquo;s data.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#bb60d5">$name</span>;       <span style="color:#60a0b0;font-style:italic">// Property: the dog&#39;s name
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#bb60d5">$breed</span>;      <span style="color:#60a0b0;font-style:italic">// Property: the dog&#39;s breed
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#bb60d5">$age</span>;        <span style="color:#60a0b0;font-style:italic">//Property: the dog&#39;s age
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#bb60d5">$breed</span>;      <span style="color:#60a0b0;font-style:italic">// Property: the dog&#39;s breed
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#bb60d5">$age</span>;        <span style="color:#60a0b0;font-style:italic">//Property: the dog&#39;s age
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">bark</span>() { <span style="color:#60a0b0;font-style:italic">// Method: makes the dog bark
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Woof!&#34;</span>;
+</span></span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Woof!&#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">introduce</span>() { <span style="color:#60a0b0;font-style:italic">//Method: introduces the dog
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;My name is &#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">name</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;, I am a &#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">breed</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;, and I am &#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">age</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34; years old.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>;
+</span></span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;My name is &#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">name</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;, I am a &#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">breed</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34;, and I am &#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">age</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34; years old.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
@@ -707,8 +707,8 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$myDog</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">breed</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Golden Retriever&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$myDog</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">age</span> <span style="color:#666">=</span> <span style="color:#40a070">3</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$myDog</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">bark</span>(); <span style="color:#60a0b0;font-style:italic">// Output: Woof!
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$myDog</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">introduce</span>(); <span style="color:#60a0b0;font-style:italic">//Output: My name is Buddy, I am a Golden Retriever, and I am 3 years old.
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$myDog</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">introduce</span>(); <span style="color:#60a0b0;font-style:italic">//Output: My name is Buddy, I am a Golden Retriever, and I am 3 years old.
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p><code>$this</code> refers to the current object.  Access properties and methods using the <code>-&gt;</code> operator (object operator).  The <code>public</code> access modifier makes the properties and methods accessible from anywhere. Other access modifiers include <code>private</code> (accessible only within the class) and <code>protected</code> (accessible within the class and its subclasses).</p>
 <h3 class="heading" id="constructors-and-destructors">
@@ -716,25 +716,25 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
   <a class="anchor" href="#constructors-and-destructors">#</a>
 </h3>
 <p>A <em>constructor</em> is a special method that is automatically called when an object is created.  It&rsquo;s used to initialize the object&rsquo;s properties.  A <em>destructor</em> is a special method that is automatically called when an object is destroyed (when it&rsquo;s no longer needed).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#bb60d5">$name</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#bb60d5">$breed</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">__construct</span>(<span style="color:#bb60d5">$name</span>, <span style="color:#bb60d5">$breed</span>) { <span style="color:#60a0b0;font-style:italic">// Constructor
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$name</span>;
+</span></span></span><span style="display:flex;"><span>      <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$name</span>;
 </span></span><span style="display:flex;"><span>      <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">breed</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$breed</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">__destruct</span>() { <span style="color:#60a0b0;font-style:italic">// Destructor
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Dog &#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">name</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34; is being destroyed.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>;
+</span></span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Dog &#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">name</span> <span style="color:#666">.</span> <span style="color:#4070a0">&#34; is being destroyed.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$myDog</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Dog(<span style="color:#4070a0">&#34;Lucy&#34;</span>, <span style="color:#4070a0">&#34;Labrador&#34;</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// ... use the object ...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#60a0b0;font-style:italic">//When the script finishes, the destructor is called automatically.
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//When the script finishes, the destructor is called automatically.
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>The constructor takes the dog&rsquo;s name and breed as arguments and initializes the properties.  The destructor prints a message when the object is destroyed.  Constructor and destructor names are predefined (<code>__construct</code> and <code>__destruct</code>).</p>
 <h3 class="heading" id="inheritance">
@@ -742,24 +742,24 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
   <a class="anchor" href="#inheritance">#</a>
 </h3>
 <p><em>Inheritance</em> allows you to create new classes (child classes or subclasses) based on existing classes (parent classes or superclasses).  The child class inherits the properties and methods of the parent class and can add its own properties and methods or override existing ones.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> { <span style="color:#60a0b0;font-style:italic">// Parent class
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#bb60d5">$name</span>;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#bb60d5">$name</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">makeSound</span>() {
 </span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Generic animal sound</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span> <span style="color:#007020;font-weight:bold">extends</span> Animal { <span style="color:#60a0b0;font-style:italic">// Child class inheriting from Animal
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">makeSound</span>() { <span style="color:#60a0b0;font-style:italic">//Overriding the method
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Meow!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>;
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">makeSound</span>() { <span style="color:#60a0b0;font-style:italic">//Overriding the method
+</span></span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Meow!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$myCat</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Cat();
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$myCat</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Whiskers&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$myCat</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">makeSound</span>(); <span style="color:#60a0b0;font-style:italic">// Output: Meow!
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>The <code>Cat</code> class inherits <code>name</code> and <code>makeSound()</code> from <code>Animal</code> but overrides <code>makeSound()</code> to provide cat-specific behavior.  <code>extends</code> keyword indicates inheritance.  Inheritance promotes code reusability and reduces redundancy.</p>
 <h2 class="heading" id="connecting-to-databases">
   Connecting to Databases
@@ -776,24 +776,24 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
   <a class="anchor" href="#connecting-to-a-mysql-database">#</a>
 </h3>
 <p>To connect to a MySQL database from PHP, you use the <code>mysqli</code> extension (or the older <code>mysql</code> extension, though <code>mysqli</code> is recommended for improved security and features).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// Database credentials
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$servername</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;localhost&#34;</span>;
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$servername</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;localhost&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$username</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;your_username&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$password</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;your_password&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$dbname</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;your_database_name&#34;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// Create connection
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$conn</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> mysqli(<span style="color:#bb60d5">$servername</span>, <span style="color:#bb60d5">$username</span>, <span style="color:#bb60d5">$password</span>, <span style="color:#bb60d5">$dbname</span>);
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$conn</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> mysqli(<span style="color:#bb60d5">$servername</span>, <span style="color:#bb60d5">$username</span>, <span style="color:#bb60d5">$password</span>, <span style="color:#bb60d5">$dbname</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// Check connection
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$conn</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">connect_error</span>) {
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$conn</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">connect_error</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">die</span>(<span style="color:#4070a0">&#34;Connection failed: &#34;</span> <span style="color:#666">.</span> <span style="color:#bb60d5">$conn</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">connect_error</span>);
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Connected successfully&#34;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//Remember to close the connection when finished:
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">$conn</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">close</span>();
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$conn</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">close</span>();
 </span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>Replace <code>&quot;your_username&quot;</code>, <code>&quot;your_password&quot;</code>, and <code>&quot;your_database_name&quot;</code> with your actual credentials.  Error handling is crucial to catch connection problems.  The <code>mysqli</code> object provides methods for executing SQL queries.</p>
 <h3 class="heading" id="performing-basic-crud-operations">
@@ -802,9 +802,9 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </h3>
 <p>CRUD stands for Create, Read, Update, and Delete – the four fundamental operations in database management.</p>
 <p><strong>Create (INSERT):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// ... (connection code from above) ...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$sql</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;INSERT INTO users (name, email) VALUES (&#39;John Doe&#39;, &#39;john.doe@example.com&#39;)&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$conn</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">query</span>(<span style="color:#bb60d5">$sql</span>) <span style="color:#666">===</span> <span style="color:#007020;font-weight:bold">TRUE</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;New record created successfully&#34;</span>;
@@ -813,12 +813,12 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// ... $conn-&gt;close(); ...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>This inserts a new row into the <code>users</code> table.</p>
 <p><strong>Read (SELECT):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// ... (connection code) ...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$sql</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;SELECT name, email FROM users&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$result</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$conn</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">query</span>(<span style="color:#bb60d5">$sql</span>);
 </span></span><span style="display:flex;"><span>
@@ -831,12 +831,12 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// ... $conn-&gt;close(); ...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>This selects data from the <code>users</code> table.</p>
 <p><strong>Update (UPDATE):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// ... (connection code) ...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$sql</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;UPDATE users SET email=&#39;john.updated@example.com&#39; WHERE name=&#39;John Doe&#39;&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$conn</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">query</span>(<span style="color:#bb60d5">$sql</span>) <span style="color:#666">===</span> <span style="color:#007020;font-weight:bold">TRUE</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Record updated successfully&#34;</span>;
@@ -845,12 +845,12 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// ... $conn-&gt;close(); ...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>This updates an existing row in the <code>users</code> table.</p>
 <p><strong>Delete (DELETE):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// ... (connection code) ...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$sql</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;DELETE FROM users WHERE name=&#39;John Doe&#39;&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$conn</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">query</span>(<span style="color:#bb60d5">$sql</span>) <span style="color:#666">===</span> <span style="color:#007020;font-weight:bold">TRUE</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">echo</span> <span style="color:#4070a0">&#34;Record deleted successfully&#34;</span>;
@@ -859,7 +859,7 @@ PHP (Hypertext Preprocessor) is a widely-used, open-source, server-side scriptin
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// ... $conn-&gt;close(); ...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">?&gt;</span><span style="">
 </span></span></span></code></pre></div><p>This deletes a row from the <code>users</code> table.  Always use <code>WHERE</code> clauses to avoid accidentally deleting all data.</p>
 <h3 class="heading" id="security-considerations">
   Security considerations

@@ -36,14 +36,14 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-plsql/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-plsql/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to PL/SQL">
-  <meta property="og:description" content="Introduction to PL/SQL # What is PL/SQL? # PL/SQL (Procedural Language/SQL) is Oracle’s procedural extension to SQL. While SQL is excellent for retrieving and manipulating data, it lacks the structure and control flow necessary for complex applications. PL/SQL addresses this limitation by adding programming constructs like variables, loops, conditional statements, and exception handling to the power of SQL. This allows developers to build robust, efficient, and reusable database applications. Essentially, PL/SQL lets you embed SQL statements within a procedural programming framework.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-13T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-13T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to PL/SQL">
+	<meta property="og:description" content="Introduction to PL/SQL # What is PL/SQL? # PL/SQL (Procedural Language/SQL) is Oracle’s procedural extension to SQL. While SQL is excellent for retrieving and manipulating data, it lacks the structure and control flow necessary for complex applications. PL/SQL addresses this limitation by adding programming constructs like variables, loops, conditional statements, and exception handling to the power of SQL. This allows developers to build robust, efficient, and reusable database applications. Essentially, PL/SQL lets you embed SQL statements within a procedural programming framework.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-02-13T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-13T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -247,50 +247,50 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
   <a class="anchor" href="#plsql-vs-sql">#</a>
 </h3>
 <table>
-  <thead>
-      <tr>
-          <th>Feature</th>
-          <th>SQL</th>
-          <th>PL/SQL</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Nature</strong></td>
-          <td>Declarative (what to do)</td>
-          <td>Procedural (how to do it)</td>
-      </tr>
-      <tr>
-          <td><strong>Structure</strong></td>
-          <td>Single statements</td>
-          <td>Blocks, procedures, functions, packages</td>
-      </tr>
-      <tr>
-          <td><strong>Control Flow</strong></td>
-          <td>Limited</td>
-          <td>Loops, conditional statements, etc.</td>
-      </tr>
-      <tr>
-          <td><strong>Variables</strong></td>
-          <td>No built-in variables</td>
-          <td>Supports variables and data types</td>
-      </tr>
-      <tr>
-          <td><strong>Error Handling</strong></td>
-          <td>Limited</td>
-          <td>Robust exception handling</td>
-      </tr>
-      <tr>
-          <td><strong>Reusability</strong></td>
-          <td>Low</td>
-          <td>High through stored procedures etc.</td>
-      </tr>
-      <tr>
-          <td><strong>Primary Use</strong></td>
-          <td>Data retrieval and manipulation</td>
-          <td>Complex database application logic</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Feature</th>
+					<th>SQL</th>
+					<th>PL/SQL</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Nature</strong></td>
+					<td>Declarative (what to do)</td>
+					<td>Procedural (how to do it)</td>
+			</tr>
+			<tr>
+					<td><strong>Structure</strong></td>
+					<td>Single statements</td>
+					<td>Blocks, procedures, functions, packages</td>
+			</tr>
+			<tr>
+					<td><strong>Control Flow</strong></td>
+					<td>Limited</td>
+					<td>Loops, conditional statements, etc.</td>
+			</tr>
+			<tr>
+					<td><strong>Variables</strong></td>
+					<td>No built-in variables</td>
+					<td>Supports variables and data types</td>
+			</tr>
+			<tr>
+					<td><strong>Error Handling</strong></td>
+					<td>Limited</td>
+					<td>Robust exception handling</td>
+			</tr>
+			<tr>
+					<td><strong>Reusability</strong></td>
+					<td>Low</td>
+					<td>High through stored procedures etc.</td>
+			</tr>
+			<tr>
+					<td><strong>Primary Use</strong></td>
+					<td>Data retrieval and manipulation</td>
+					<td>Complex database application logic</td>
+			</tr>
+	</tbody>
 </table>
 <h3 class="heading" id="setting-up-your-environment">
   Setting up your environment
@@ -321,26 +321,26 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
   <a class="anchor" href="#declaring-variables">#</a>
 </h3>
 <p>In PL/SQL, variables must be declared before they are used.  This is done using the <code>DECLARE</code> section within a PL/SQL block.  The basic syntax is:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>variable_name<span style="color:#bbb"> </span>datatype<span style="color:#bbb"> </span>[:<span style="color:#666">=</span><span style="color:#bbb"> </span>initial_value];<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Your PL/SQL code here
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><ul>
 <li><code>variable_name</code>:  A descriptive name for your variable (following standard identifier rules).</li>
 <li><code>datatype</code>:  Specifies the data type of the variable (see below).</li>
 <li><code>:= initial_value</code> (optional): Assigns an initial value to the variable.</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>employee_id<span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span><span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">123</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>employee_name<span style="color:#bbb"> </span>VARCHAR2(<span style="color:#40a070">50</span>)<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;John Doe&#39;</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>salary<span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Code to use the variables
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><p>The <code>/</code> at the end is a command-line terminator to indicate the end of the PL/SQL block.  In SQL Developer or similar IDEs, this is often handled automatically.</p>
 <h3 class="heading" id="data-types">
   Data Types
@@ -363,33 +363,33 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 </h3>
 <p>PL/SQL provides standard control structures for controlling the flow of execution:</p>
 <p><strong>1. IF-THEN-ELSE:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">IF</span><span style="color:#bbb"> </span>condition<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">IF</span><span style="color:#bbb"> </span>condition<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Code to execute if the condition is TRUE
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">ELSIF</span><span style="color:#bbb"> </span>another_condition<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ELSIF</span><span style="color:#bbb"> </span>another_condition<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Code to execute if the another_condition is TRUE
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">ELSE</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ELSE</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Code to execute if neither condition is TRUE
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IF</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IF</span>;<span style="color:#bbb">
 </span></span></span></code></pre></div><p><strong>2. Loops:</strong></p>
 <ul>
 <li><strong>LOOP:</strong> A simple loop that continues indefinitely until explicitly terminated using <code>EXIT</code> or <code>EXIT WHEN</code> condition.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>LOOP<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>LOOP<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Code to execute repeatedly
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">  </span>EXIT<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>condition;<span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>LOOP;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>EXIT<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>condition;<span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>LOOP;<span style="color:#bbb">
 </span></span></span></code></pre></div><ul>
 <li><strong>WHILE LOOP:</strong> Executes as long as a condition is TRUE.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>WHILE<span style="color:#bbb"> </span>condition<span style="color:#bbb"> </span>LOOP<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>WHILE<span style="color:#bbb"> </span>condition<span style="color:#bbb"> </span>LOOP<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Code to execute repeatedly
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>LOOP;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>LOOP;<span style="color:#bbb">
 </span></span></span></code></pre></div><ul>
 <li><strong>FOR LOOP:</strong> Iterates over a range of numbers or a collection.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">FOR</span><span style="color:#bbb"> </span>counter<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IN</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>..<span style="color:#40a070">10</span><span style="color:#bbb"> </span>LOOP<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Iterates from 1 to 10
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Code to execute for each iteration
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>LOOP;<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">FOR</span><span style="color:#bbb"> </span>counter<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IN</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>..<span style="color:#40a070">10</span><span style="color:#bbb"> </span>LOOP<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Iterates from 1 to 10
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Code to execute for each iteration
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>LOOP;<span style="color:#bbb">
 </span></span></span></code></pre></div><h3 class="heading" id="comments-and-formatting">
   Comments and Formatting
   <a class="anchor" href="#comments-and-formatting">#</a>
@@ -398,11 +398,11 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 <ul>
 <li><strong>Single-line comments:</strong> Begin with <code>--</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- This is a single-line comment
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- This is a single-line comment
 </span></span></span></code></pre></div><ul>
 <li><strong>Multi-line comments:</strong> Enclosed within <code>/*</code> and <code>*/</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/*
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/*
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">This is a 
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">multi-line comment
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">*/</span><span style="color:#bbb">
@@ -412,19 +412,19 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
   <a class="anchor" href="#exception-handling">#</a>
 </h3>
 <p>PL/SQL&rsquo;s exception-handling mechanism allows you to gracefully handle runtime errors.  This prevents unexpected application crashes and allows for more robust applications.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Variable declarations
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- PL/SQL code
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>NO_DATA_FOUND<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">-- Handle NO_DATA_FOUND exception
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;No data found.&#39;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;No data found.&#39;</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>OTHERS<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">-- Handle any other exception
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;An error occurred: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>SQLERRM);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;An error occurred: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>SQLERRM);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><p>The <code>EXCEPTION</code> block catches exceptions raised during the execution of the <code>BEGIN</code> block.  <code>WHEN</code> clauses specify the types of exceptions to handle.  <code>SQLERRM</code> provides information about the error.  <code>WHEN OTHERS</code> is a catch-all for any unhandled exceptions.  <code>DBMS_OUTPUT.PUT_LINE</code> is used for displaying output to the console (you may need to enable it using <code>SET SERVEROUTPUT ON</code> in your SQL client).</p>
 <h2 class="heading" id="working-with-data">
   Working with Data
@@ -435,21 +435,21 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
   <a class="anchor" href="#select-statements-in-plsql">#</a>
 </h3>
 <p>You can embed SQL <code>SELECT</code> statements directly within PL/SQL blocks to retrieve data from the database.  However, the way you handle the results differs from standard SQL queries.  For single-row retrieval, you can use <code>SELECT INTO</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>employee_name<span style="color:#bbb"> </span>VARCHAR2(<span style="color:#40a070">50</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>employee_salary<span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>first_name,<span style="color:#bbb"> </span>salary<span style="color:#bbb"> 
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>employee_name,<span style="color:#bbb"> </span>employee_salary<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>employees<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>employee_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">100</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;Employee Name: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>employee_name<span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;, Salary: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>employee_salary);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>NO_DATA_FOUND<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;Employee not found.&#39;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><p>For multiple rows, you need to use cursors (explained below).</p>
 <h3 class="heading" id="insert-update-delete-statements">
   INSERT, UPDATE, DELETE Statements
@@ -457,15 +457,15 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 </h3>
 <p>PL/SQL allows you to perform <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code> operations within PL/SQL blocks.  The syntax is very similar to standard SQL.</p>
 <p><strong>INSERT:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>employees<span style="color:#bbb"> </span>(employee_id,<span style="color:#bbb"> </span>first_name,<span style="color:#bbb"> </span>last_name,<span style="color:#bbb"> </span>salary)<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">VALUES</span><span style="color:#bbb"> </span>(<span style="color:#40a070">101</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Jane&#39;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Doe&#39;</span>,<span style="color:#bbb"> </span><span style="color:#40a070">60000</span>);<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>employees<span style="color:#bbb"> </span>(employee_id,<span style="color:#bbb"> </span>first_name,<span style="color:#bbb"> </span>last_name,<span style="color:#bbb"> </span>salary)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">VALUES</span><span style="color:#bbb"> </span>(<span style="color:#40a070">101</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Jane&#39;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;Doe&#39;</span>,<span style="color:#bbb"> </span><span style="color:#40a070">60000</span>);<span style="color:#bbb">
 </span></span></span></code></pre></div><p><strong>UPDATE:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>employees<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span>salary<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">65000</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>employee_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">100</span>;<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>employees<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span>salary<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">65000</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>employee_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">100</span>;<span style="color:#bbb">
 </span></span></span></code></pre></div><p><strong>DELETE:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>employees<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>employee_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">101</span>;<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>employees<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>employee_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">101</span>;<span style="color:#bbb">
 </span></span></span></code></pre></div><p>Remember to commit changes using <code>COMMIT;</code> after these DML statements.  You can also roll back changes using <code>ROLLBACK;</code>.  These are typically placed within the PL/SQL block&rsquo;s <code>BEGIN...END</code> section.</p>
 <h3 class="heading" id="cursors">
   Cursors
@@ -474,13 +474,13 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 <p>Cursors are essential for processing multiple rows returned by a <code>SELECT</code> statement.  A cursor is a named private SQL area that holds the data retrieved by a query.</p>
 <p><strong>Implicit Cursors:</strong>  Oracle implicitly creates cursors for single-row <code>SELECT INTO</code> statements.  However, for multiple rows, you need to explicitly define a cursor.</p>
 <p><strong>Explicit Cursors:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">CURSOR</span><span style="color:#bbb"> </span>emp_cursor<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IS</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>employee_id,<span style="color:#bbb"> </span>first_name,<span style="color:#bbb"> </span>salary<span style="color:#bbb"> 
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>employees<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>department_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>emp_record<span style="color:#bbb"> </span>emp_cursor<span style="color:#666">%</span>ROWTYPE;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">OPEN</span><span style="color:#bbb"> </span>emp_cursor;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>LOOP<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">FETCH</span><span style="color:#bbb"> </span>emp_cursor<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>emp_record;<span style="color:#bbb">
@@ -490,8 +490,8 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">                         </span><span style="color:#4070a0">&#39;, Salary: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>emp_record.salary);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>LOOP;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">CLOSE</span><span style="color:#bbb"> </span>emp_cursor;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><ul>
 <li><code>DECLARE</code>: Declares the cursor.</li>
 <li><code>CURSOR ... IS</code>:  The SQL query that defines the cursor.</li>
@@ -509,15 +509,15 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 <ul>
 <li><strong>Index-by tables (associative arrays):</strong> Similar to hash tables;  access elements using an index (key).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">TYPE</span><span style="color:#bbb"> </span>emp_salaries<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IS</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TABLE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OF</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INDEX</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">BY</span><span style="color:#bbb"> </span>PLS_INTEGER;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>salaries<span style="color:#bbb"> </span>emp_salaries;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>salaries(<span style="color:#40a070">1</span>)<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">50000</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>salaries(<span style="color:#40a070">2</span>)<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">60000</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;Salary 1: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>salaries(<span style="color:#40a070">1</span>));<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><ul>
 <li>
 <p><strong>Nested tables:</strong> Ordered collections of elements of the same type.</p>
@@ -536,24 +536,24 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
   <a class="anchor" href="#creating-procedures">#</a>
 </h3>
 <p>Procedures are subprograms that perform a specific task.  They don&rsquo;t return a value.  Here&rsquo;s how to create a procedure:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">PROCEDURE</span><span style="color:#bbb"> </span>update_employee_salary<span style="color:#bbb"> </span>(<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">PROCEDURE</span><span style="color:#bbb"> </span>update_employee_salary<span style="color:#bbb"> </span>(<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>p_employee_id<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>,<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>p_new_salary<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>)<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>employees<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span>salary<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>p_new_salary<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>employee_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>p_employee_id;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">COMMIT</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>NO_DATA_FOUND<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;Employee not found.&#39;</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>OTHERS<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;Error updating salary: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>SQLERRM);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">ROLLBACK</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><ul>
 <li><code>CREATE OR REPLACE PROCEDURE</code>: Creates or replaces an existing procedure.</li>
 <li><code>PROCEDURE name</code>:  The name of the procedure.</li>
@@ -567,20 +567,20 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
   <a class="anchor" href="#creating-functions">#</a>
 </h3>
 <p>Functions are similar to procedures, but they return a value.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FUNCTION</span><span style="color:#bbb"> </span>get_employee_salary<span style="color:#bbb"> </span>(<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FUNCTION</span><span style="color:#bbb"> </span>get_employee_salary<span style="color:#bbb"> </span>(<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>p_employee_id<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>)<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">RETURN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RETURN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>v_salary<span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>salary<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>v_salary<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>employees<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>employee_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>p_employee_id;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">RETURN</span><span style="color:#bbb"> </span>v_salary;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>NO_DATA_FOUND<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">RETURN</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">NULL</span>;<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Or handle the exception differently
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><ul>
 <li><code>CREATE OR REPLACE FUNCTION</code>: Creates or replaces an existing function.</li>
 <li><code>FUNCTION name</code>: The name of the function.</li>
@@ -602,16 +602,16 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
   <a class="anchor" href="#calling-procedures-and-functions">#</a>
 </h3>
 <p>Procedures are called using the <code>EXECUTE</code> statement or by simply calling the procedure name:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span>update_employee_salary(<span style="color:#40a070">100</span>,<span style="color:#bbb"> </span><span style="color:#40a070">70000</span>);<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Using EXECUTE
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>update_employee_salary(<span style="color:#40a070">101</span>,<span style="color:#bbb"> </span><span style="color:#40a070">75000</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">-- Direct call
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span>update_employee_salary(<span style="color:#40a070">100</span>,<span style="color:#bbb"> </span><span style="color:#40a070">70000</span>);<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">-- Using EXECUTE
+</span></span></span><span style="display:flex;"><span>update_employee_salary(<span style="color:#40a070">101</span>,<span style="color:#bbb"> </span><span style="color:#40a070">75000</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">-- Direct call
 </span></span></span></code></pre></div><p>Functions are called like built-in functions and can be used within expressions:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>emp_salary<span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>emp_salary<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span>get_employee_salary(<span style="color:#40a070">100</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;Employee salary: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>emp_salary);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><h3 class="heading" id="returning-values-from-functions">
   Returning Values from Functions
   <a class="anchor" href="#returning-values-from-functions">#</a>
@@ -634,15 +634,15 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 <li><strong>AFTER triggers:</strong> Execute after the triggering event.</li>
 </ul>
 <p>Example of a row-level AFTER INSERT trigger:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TRIGGER</span><span style="color:#bbb"> </span>audit_employee_inserts<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">AFTER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span>employees<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FOR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">EACH</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ROW</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TRIGGER</span><span style="color:#bbb"> </span>audit_employee_inserts<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">AFTER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ON</span><span style="color:#bbb"> </span>employees<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">FOR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">EACH</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">ROW</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>employee_audit<span style="color:#bbb"> </span>(employee_id,<span style="color:#bbb"> </span>action,<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">timestamp</span>)<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">VALUES</span><span style="color:#bbb"> </span>(:<span style="color:#007020;font-weight:bold">NEW</span>.employee_id,<span style="color:#bbb"> </span><span style="color:#4070a0">&#39;INSERT&#39;</span>,<span style="color:#bbb"> </span>SYSTIMESTAMP);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><p>This trigger inserts a record into an <code>employee_audit</code> table whenever a new row is inserted into the <code>employees</code> table.  <code>:NEW</code> refers to the new row being inserted.  <code>:OLD</code> would refer to the old row in UPDATE or DELETE triggers.</p>
 <h3 class="heading" id="packages">
   Packages
@@ -654,63 +654,63 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 <li><strong>Package body:</strong> Contains the implementation details of the elements declared in the specification.</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Package Specification
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span>PACKAGE<span style="color:#bbb"> </span>employee_package<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Package Specification
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span>PACKAGE<span style="color:#bbb"> </span>employee_package<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">PROCEDURE</span><span style="color:#bbb"> </span>get_employee_details<span style="color:#bbb"> </span>(p_employee_id<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>,<span style="color:#bbb"> </span>p_details<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OUT</span><span style="color:#bbb"> </span>VARCHAR2);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FUNCTION</span><span style="color:#bbb"> </span>calculate_bonus<span style="color:#bbb"> </span>(p_salary<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">RETURN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>employee_package;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>employee_package;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">-- Package Body
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span>PACKAGE<span style="color:#bbb"> </span>BODY<span style="color:#bbb"> </span>employee_package<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Package Body
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span>PACKAGE<span style="color:#bbb"> </span>BODY<span style="color:#bbb"> </span>employee_package<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">PROCEDURE</span><span style="color:#bbb"> </span>get_employee_details<span style="color:#bbb"> </span>(p_employee_id<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>,<span style="color:#bbb"> </span>p_details<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OUT</span><span style="color:#bbb"> </span>VARCHAR2)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IS</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">-- Implementation to retrieve employee details
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FUNCTION</span><span style="color:#bbb"> </span>calculate_bonus<span style="color:#bbb"> </span>(p_salary<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">RETURN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IS</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">-- Implementation to calculate bonus
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>employee_package;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>employee_package;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><h3 class="heading" id="ref-cursors">
   Ref Cursors
   <a class="anchor" href="#ref-cursors">#</a>
 </h3>
 <p>Ref cursors are database handles that allow you to work with result sets returned by dynamic SQL or stored procedures.  They provide more flexibility than standard cursors, as they can be passed as parameters between PL/SQL blocks.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">TYPE</span><span style="color:#bbb"> </span>ref_cursor_type<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IS</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REF</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">CURSOR</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>emp_cursor<span style="color:#bbb"> </span>ref_cursor_type;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>employee_record<span style="color:#bbb"> </span>employees<span style="color:#666">%</span>ROWTYPE;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">OPEN</span><span style="color:#bbb"> </span>emp_cursor<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FOR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>employees<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>department_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>LOOP<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">FETCH</span><span style="color:#bbb"> </span>emp_cursor<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>employee_record;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>EXIT<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>emp_cursor<span style="color:#666">%</span>NOTFOUND;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">-- Process employee_record
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>LOOP;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>LOOP;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">CLOSE</span><span style="color:#bbb"> </span>emp_cursor;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><p>The <code>ref_cursor_type</code> is a type defined to handle the reference cursor.  A ref cursor is opened using a <code>SELECT</code> statement, similar to a regular explicit cursor.</p>
 <h3 class="heading" id="dynamic-sql">
   Dynamic SQL
   <a class="anchor" href="#dynamic-sql">#</a>
 </h3>
 <p>Dynamic SQL allows you to construct and execute SQL statements at runtime. This is useful when the SQL statement is not known at compile time, for example, when building a generic data access layer or handling user input to construct queries.  This is generally done using the <code>EXECUTE IMMEDIATE</code> statement.  However, you need to be extremely cautious to avoid SQL injection vulnerabilities if user input is involved.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>v_sql<span style="color:#bbb"> </span>VARCHAR2(<span style="color:#40a070">200</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>v_employee_id<span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span><span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">100</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>v_sql<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;SELECT salary FROM employees WHERE employee_id = &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>v_employee_id;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IMMEDIATE</span><span style="color:#bbb"> </span>v_sql<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>v_salary;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;Employee Salary: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>v_salary);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>OTHERS<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;Error: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>SQLERRM);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><p>This example constructs the SQL statement dynamically and executes it using <code>EXECUTE IMMEDIATE</code>.  Note the potential SQL injection vulnerability if <code>v_employee_id</code> was derived from user input; you would want to use parameterized queries instead of string concatenation to mitigate this risk in a production environment. Using bind variables with <code>EXECUTE IMMEDIATE</code> is the safer approach to prevent SQL injection vulnerabilities.</p>
 <h2 class="heading" id="example-programs">
   Example Programs
@@ -722,12 +722,12 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
   <a class="anchor" href="#simple-calculator-program">#</a>
 </h3>
 <p>This program performs basic arithmetic operations (+, -, *, /) based on user input.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DECLARE</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>num1<span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>num2<span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">operator</span><span style="color:#bbb"> </span>VARCHAR2(<span style="color:#40a070">1</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">result</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>num1<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">&amp;</span>num1;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>num2<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#666">&amp;</span>num2;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">operator</span><span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;&amp;operator&#39;</span>;<span style="color:#bbb">
@@ -750,24 +750,24 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;Result: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">result</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IF</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>OTHERS<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;An error occurred: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>SQLERRM);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><p>This uses substitution variables (<code>&amp;</code>) for user input.  Remember to replace the substitution variables with actual values when running the code in SQL*Plus or a similar tool.</p>
 <h3 class="heading" id="data-validation-program">
   Data Validation Program
   <a class="anchor" href="#data-validation-program">#</a>
 </h3>
 <p>This program validates that an employee ID exists in the <code>employees</code> table before updating their salary.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">PROCEDURE</span><span style="color:#bbb"> </span>update_salary_with_validation<span style="color:#bbb"> </span>(<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">PROCEDURE</span><span style="color:#bbb"> </span>update_salary_with_validation<span style="color:#bbb"> </span>(<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>p_employee_id<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>,<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>p_new_salary<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>)<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>v_count<span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">COUNT</span>(<span style="color:#666">*</span>)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">INTO</span><span style="color:#bbb"> </span>v_count<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>employees<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>employee_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>p_employee_id;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">IF</span><span style="color:#bbb"> </span>v_count<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>employees<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">SET</span><span style="color:#bbb"> </span>salary<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>p_new_salary<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>employee_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>p_employee_id;<span style="color:#bbb">
@@ -776,28 +776,28 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">ELSE</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;Employee ID not found.&#39;</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IF</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>OTHERS<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;An error occurred: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>SQLERRM);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">ROLLBACK</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><p>This procedure checks if the employee ID exists before attempting the update, adding a layer of data integrity.</p>
 <h3 class="heading" id="report-generation-program">
   Report Generation Program
   <a class="anchor" href="#report-generation-program">#</a>
 </h3>
 <p>This program generates a report of employees&rsquo; names and salaries who earn more than a specified amount.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">PROCEDURE</span><span style="color:#bbb"> </span>generate_employee_report<span style="color:#bbb"> </span>(<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">PROCEDURE</span><span style="color:#bbb"> </span>generate_employee_report<span style="color:#bbb"> </span>(<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>p_min_salary<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IN</span><span style="color:#bbb"> </span><span style="color:#007020">NUMBER</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>)<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">AS</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">CURSOR</span><span style="color:#bbb"> </span>emp_cursor<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">IS</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>first_name,<span style="color:#bbb"> </span>last_name,<span style="color:#bbb"> </span>salary<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>employees<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>salary<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span>p_min_salary;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>emp_record<span style="color:#bbb"> </span>emp_cursor<span style="color:#666">%</span>ROWTYPE;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">BEGIN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;Employee Report (Salary &gt; &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>p_min_salary<span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;)&#39;</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;------------------------------------&#39;</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">OPEN</span><span style="color:#bbb"> </span>emp_cursor;<span style="color:#bbb">
@@ -808,11 +808,11 @@ PL/SQL (Procedural Language/SQL) is Oracle&rsquo;s procedural extension to SQL. 
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span>LOOP;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">CLOSE</span><span style="color:#bbb"> </span>emp_cursor;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;------------------------------------&#39;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">EXCEPTION</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">WHEN</span><span style="color:#bbb"> </span>OTHERS<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">THEN</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>DBMS_OUTPUT.PUT_LINE(<span style="color:#4070a0">&#39;An error occurred: &#39;</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>SQLERRM);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">/</span><span style="color:#bbb">
 </span></span></span></code></pre></div><p>This procedure uses a cursor to iterate through the results of a query and display them in a formatted report.  Remember that <code>DBMS_OUTPUT.PUT_LINE</code> is for simple reporting; for more complex reports, you&rsquo;d typically write the output to a file or use a reporting tool.</p>
 <p>Remember to replace placeholder table and column names with your actual database schema.  These examples provide a starting point; more sophisticated error handling, input sanitization, and output mechanisms would be needed for real-world applications.</p>
 

@@ -36,14 +36,14 @@ Objective-C is a general-purpose, object-oriented programming language that adds
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-objective-c/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-objective-c/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Objective-C">
-  <meta property="og:description" content="Introduction to Objective-C # What is Objective-C? # Objective-C is a general-purpose, object-oriented programming language that adds Smalltalk-style messaging to the C programming language. It’s essentially C with an object-oriented layer built on top. This means you can use all the features of C within Objective-C code, but also leverage powerful object-oriented concepts like classes, objects, inheritance, and polymorphism to create more modular, reusable, and maintainable code. Objective-C’s syntax is relatively straightforward, building upon C’s familiar structure while introducing its own unique elements, primarily related to message passing. Understanding C fundamentals is highly beneficial before diving into Objective-C.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-03-06T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-06T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Objective-C">
+	<meta property="og:description" content="Introduction to Objective-C # What is Objective-C? # Objective-C is a general-purpose, object-oriented programming language that adds Smalltalk-style messaging to the C programming language. It’s essentially C with an object-oriented layer built on top. This means you can use all the features of C within Objective-C code, but also leverage powerful object-oriented concepts like classes, objects, inheritance, and polymorphism to create more modular, reusable, and maintainable code. Objective-C’s syntax is relatively straightforward, building upon C’s familiar structure while introducing its own unique elements, primarily related to message passing. Understanding C fundamentals is highly beneficial before diving into Objective-C.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-03-06T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-03-06T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Objective-C is a general-purpose, object-oriented programming language that adds
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Objective-C is a general-purpose, object-oriented programming language that adds
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -288,8 +288,8 @@ Objective-C is a general-purpose, object-oriented programming language that adds
 </h3>
 <p>The traditional &ldquo;Hello, world!&rdquo; program in Objective-C demonstrates the fundamental structure of an Objective-C application.  While the implementation details vary depending on the application type (command-line, iOS app, etc.), the core concept remains the same:  using the <code>NSLog</code> function to print output to the console.</p>
 <p>Here&rsquo;s a simple command-line version:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#007020">#import &lt;Foundation/Foundation.h&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#007020">#import &lt;Foundation/Foundation.h&gt;
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">int</span> argc, <span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">char</span> <span style="color:#666">*</span> argv[]) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">@autoreleasepool</span> {
 </span></span><span style="display:flex;"><span>        NSLog(<span style="color:#4070a0">@&#34;Hello, world!&#34;</span>);
@@ -311,10 +311,10 @@ Objective-C is a general-purpose, object-oriented programming language that adds
 <li><strong><code>NSString</code>:</strong>  Strings of text (Objective-C objects).</li>
 </ul>
 <p>Variable declaration follows a similar pattern to C:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#902000">int</span> age <span style="color:#666">=</span> <span style="color:#40a070">30</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#902000">int</span> age <span style="color:#666">=</span> <span style="color:#40a070">30</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">float</span> price <span style="color:#666">=</span> <span style="color:#40a070">99.99</span>;
 </span></span><span style="display:flex;"><span>NSString <span style="color:#666">*</span>name <span style="color:#666">=</span> <span style="color:#4070a0">@&#34;John Doe&#34;</span>; <span style="color:#60a0b0;font-style:italic">// Note the asterisk (*) for object pointers.
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">BOOL</span> isAdult <span style="color:#666">=</span> <span style="color:#007020">YES</span>;
+</span></span></span><span style="display:flex;"><span><span style="color:#902000">BOOL</span> isAdult <span style="color:#666">=</span> <span style="color:#007020">YES</span>;
 </span></span></code></pre></div><p>Note the use of <code>*</code> before <code>name</code>.  In Objective-C, strings and most other complex data types are objects, and variables holding them are pointers to those objects.</p>
 <h3 class="heading" id="operators">
   Operators
@@ -327,7 +327,7 @@ Objective-C is a general-purpose, object-oriented programming language that adds
 </h3>
 <p>Control flow statements in Objective-C are similar to those in C:</p>
 <p><strong><code>if</code>, <code>else</code>:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#902000">int</span> score <span style="color:#666">=</span> <span style="color:#40a070">85</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#902000">int</span> score <span style="color:#666">=</span> <span style="color:#40a070">85</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (score <span style="color:#666">&gt;=</span> <span style="color:#40a070">90</span>) {
 </span></span><span style="display:flex;"><span>    NSLog(<span style="color:#4070a0">@&#34;A grade&#34;</span>);
 </span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> (score <span style="color:#666">&gt;=</span> <span style="color:#40a070">80</span>) {
@@ -336,11 +336,11 @@ Objective-C is a general-purpose, object-oriented programming language that adds
 </span></span><span style="display:flex;"><span>    NSLog(<span style="color:#4070a0">@&#34;Below B grade&#34;</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><strong><code>for</code> loop:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>; i<span style="color:#666">++</span>) {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>; i<span style="color:#666">++</span>) {
 </span></span><span style="display:flex;"><span>    NSLog(<span style="color:#4070a0">@&#34;%d&#34;</span>, i);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><strong><code>while</code> loop:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#902000">int</span> count <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#902000">int</span> count <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (count <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span>) {
 </span></span><span style="display:flex;"><span>    NSLog(<span style="color:#4070a0">@&#34;%d&#34;</span>, count);
 </span></span><span style="display:flex;"><span>    count<span style="color:#666">++</span>;
@@ -371,11 +371,11 @@ Objective-C is a general-purpose, object-oriented programming language that adds
   <a class="anchor" href="#methods">#</a>
 </h3>
 <p>Methods define the behavior of objects. They are essentially functions associated with a class.  In Objective-C, methods are invoked using message passing.  The syntax is slightly different from C functions:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Method declaration in the @interface
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>- (<span style="color:#902000">void</span>)<span style="color:#06287e">printDescription</span>; <span style="color:#60a0b0;font-style:italic">// Instance method
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Method declaration in the @interface
+</span></span></span><span style="display:flex;"><span>- (<span style="color:#902000">void</span>)<span style="color:#06287e">printDescription</span>; <span style="color:#60a0b0;font-style:italic">// Instance method
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Method implementation in the @implementation
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>- (<span style="color:#902000">void</span>)<span style="color:#06287e">printDescription</span> {
+</span></span></span><span style="display:flex;"><span>- (<span style="color:#902000">void</span>)<span style="color:#06287e">printDescription</span> {
 </span></span><span style="display:flex;"><span>    NSLog(<span style="color:#4070a0">@&#34;This is a description.&#34;</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>-</code> indicates an <em>instance method</em> (associated with a specific object).  A <code>+</code> indicates a <em>class method</em> (associated with the class itself).  The return type (<code>void</code> in this example) specifies the type of value the method returns.</p>
@@ -384,7 +384,7 @@ Objective-C is a general-purpose, object-oriented programming language that adds
   <a class="anchor" href="#properties">#</a>
 </h3>
 <p>Properties provide a convenient way to access and manage the instance variables of an object. They encapsulate the getter and setter methods for instance variables, improving code readability and maintainability.  You declare properties in the <code>@interface</code> using the <code>@property</code> directive:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@interface</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> : <span style="color:#0e84b5;font-weight:bold">NSObject</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@interface</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> : <span style="color:#0e84b5;font-weight:bold">NSObject</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@property</span> (<span style="color:#007020;font-weight:bold">nonatomic</span>, <span style="color:#007020;font-weight:bold">strong</span>) NSString <span style="color:#666">*</span>name;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@property</span> (<span style="color:#007020;font-weight:bold">nonatomic</span>, <span style="color:#007020;font-weight:bold">assign</span>) <span style="color:#902000">int</span> age;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@end</span>
@@ -394,13 +394,13 @@ Objective-C is a general-purpose, object-oriented programming language that adds
   <a class="anchor" href="#inheritance">#</a>
 </h3>
 <p>Inheritance allows you to create new classes (subclasses) based on existing classes (superclasses). The subclass inherits the properties and methods of the superclass and can add its own unique features.  This promotes code reuse and establishes an &ldquo;is-a&rdquo; relationship.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Superclass
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">@interface</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> : <span style="color:#0e84b5;font-weight:bold">NSObject</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Superclass
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@interface</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> : <span style="color:#0e84b5;font-weight:bold">NSObject</span>
 </span></span><span style="display:flex;"><span>- (<span style="color:#902000">void</span>)<span style="color:#06287e">makeSound</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@end</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Subclass inheriting from Animal
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">@interface</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> : <span style="color:#0e84b5;font-weight:bold">Animal</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@interface</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> : <span style="color:#0e84b5;font-weight:bold">Animal</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@end</span>
 </span></span></code></pre></div><p>Here, <code>Dog</code> inherits from <code>Animal</code>.</p>
 <h3 class="heading" id="polymorphism">
@@ -423,16 +423,16 @@ Objective-C is a general-purpose, object-oriented programming language that adds
 </h3>
 <p>Arrays in Objective-C are ordered collections of objects.  They&rsquo;re implemented using the <code>NSArray</code> class.  <code>NSArray</code> objects are immutable; once created, their contents cannot be changed.  To modify arrays, use <code>NSMutableArray</code>.</p>
 <p><strong>Creating an NSArray:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSArray <span style="color:#666">*</span>myArray <span style="color:#666">=</span> @[<span style="color:#4070a0">@&#34;apple&#34;</span>, <span style="color:#4070a0">@&#34;banana&#34;</span>, <span style="color:#4070a0">@&#34;cherry&#34;</span>]; <span style="color:#60a0b0;font-style:italic">// Using array literal
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>NSArray <span style="color:#666">*</span>anotherArray <span style="color:#666">=</span> [NSArray <span style="color:#002070;font-weight:bold">arrayWithObjects</span>:<span style="color:#4070a0">@&#34;one&#34;</span>, <span style="color:#4070a0">@&#34;two&#34;</span>, <span style="color:#4070a0">@&#34;three&#34;</span>, <span style="color:#007020">nil</span>]; <span style="color:#60a0b0;font-style:italic">// Using arrayWithObjects:
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSArray <span style="color:#666">*</span>myArray <span style="color:#666">=</span> @[<span style="color:#4070a0">@&#34;apple&#34;</span>, <span style="color:#4070a0">@&#34;banana&#34;</span>, <span style="color:#4070a0">@&#34;cherry&#34;</span>]; <span style="color:#60a0b0;font-style:italic">// Using array literal
+</span></span></span><span style="display:flex;"><span>NSArray <span style="color:#666">*</span>anotherArray <span style="color:#666">=</span> [NSArray <span style="color:#002070;font-weight:bold">arrayWithObjects</span>:<span style="color:#4070a0">@&#34;one&#34;</span>, <span style="color:#4070a0">@&#34;two&#34;</span>, <span style="color:#4070a0">@&#34;three&#34;</span>, <span style="color:#007020">nil</span>]; <span style="color:#60a0b0;font-style:italic">// Using arrayWithObjects:
 </span></span></span></code></pre></div><p><strong>Accessing elements:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSString <span style="color:#666">*</span>firstElement <span style="color:#666">=</span> myArray[<span style="color:#40a070">0</span>]; <span style="color:#60a0b0;font-style:italic">// Accessing element at index 0
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSString <span style="color:#666">*</span>firstElement <span style="color:#666">=</span> myArray[<span style="color:#40a070">0</span>]; <span style="color:#60a0b0;font-style:italic">// Accessing element at index 0
 </span></span></span></code></pre></div><p><strong>Iterating through an array:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (NSString <span style="color:#666">*</span>item <span style="color:#007020;font-weight:bold">in</span> myArray) {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (NSString <span style="color:#666">*</span>item <span style="color:#007020;font-weight:bold">in</span> myArray) {
 </span></span><span style="display:flex;"><span>    NSLog(<span style="color:#4070a0">@&#34;%@&#34;</span>, item);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><code>NSMutableArray</code> allows modification:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSMutableArray <span style="color:#666">*</span>mutableArray <span style="color:#666">=</span> [NSMutableArray <span style="color:#002070;font-weight:bold">arrayWithArray</span>:myArray];
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSMutableArray <span style="color:#666">*</span>mutableArray <span style="color:#666">=</span> [NSMutableArray <span style="color:#002070;font-weight:bold">arrayWithArray</span>:myArray];
 </span></span><span style="display:flex;"><span>[mutableArray <span style="color:#002070;font-weight:bold">addObject</span>:<span style="color:#4070a0">@&#34;date&#34;</span>];
 </span></span><span style="display:flex;"><span>[mutableArray <span style="color:#002070;font-weight:bold">removeObjectAtIndex</span>:<span style="color:#40a070">1</span>];
 </span></span></code></pre></div><h3 class="heading" id="dictionaries">
@@ -441,13 +441,13 @@ Objective-C is a general-purpose, object-oriented programming language that adds
 </h3>
 <p>Dictionaries in Objective-C store data in key-value pairs.  They&rsquo;re implemented using the <code>NSDictionary</code> class (immutable) and <code>NSMutableDictionary</code> (mutable).</p>
 <p><strong>Creating an NSDictionary:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSDictionary <span style="color:#666">*</span>myDictionary <span style="color:#666">=</span> @{<span style="color:#4070a0">@&#34;name&#34;</span><span style="color:#666">:</span> <span style="color:#4070a0">@&#34;John Doe&#34;</span>, <span style="color:#4070a0">@&#34;age&#34;</span><span style="color:#666">:</span> <span style="color:#40a070">@30</span>, <span style="color:#4070a0">@&#34;city&#34;</span><span style="color:#666">:</span> <span style="color:#4070a0">@&#34;New York&#34;</span>}; <span style="color:#60a0b0;font-style:italic">// Using dictionary literal
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSDictionary <span style="color:#666">*</span>myDictionary <span style="color:#666">=</span> @{<span style="color:#4070a0">@&#34;name&#34;</span><span style="color:#666">:</span> <span style="color:#4070a0">@&#34;John Doe&#34;</span>, <span style="color:#4070a0">@&#34;age&#34;</span><span style="color:#666">:</span> <span style="color:#40a070">@30</span>, <span style="color:#4070a0">@&#34;city&#34;</span><span style="color:#666">:</span> <span style="color:#4070a0">@&#34;New York&#34;</span>}; <span style="color:#60a0b0;font-style:italic">// Using dictionary literal
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>NSDictionary <span style="color:#666">*</span>anotherDictionary <span style="color:#666">=</span> [NSDictionary <span style="color:#002070;font-weight:bold">dictionaryWithObjectsAndKeys</span>:<span style="color:#4070a0">@&#34;Alice&#34;</span>, <span style="color:#4070a0">@&#34;name&#34;</span>, <span style="color:#40a070">@25</span>, <span style="color:#4070a0">@&#34;age&#34;</span>, <span style="color:#4070a0">@&#34;London&#34;</span>, <span style="color:#4070a0">@&#34;city&#34;</span>, <span style="color:#007020">nil</span>];
 </span></span></code></pre></div><p><strong>Accessing values:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSString <span style="color:#666">*</span>name <span style="color:#666">=</span> myDictionary[<span style="color:#4070a0">@&#34;name&#34;</span>];
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSString <span style="color:#666">*</span>name <span style="color:#666">=</span> myDictionary[<span style="color:#4070a0">@&#34;name&#34;</span>];
 </span></span></code></pre></div><p><strong>Iterating through a dictionary:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (NSString <span style="color:#666">*</span>key <span style="color:#007020;font-weight:bold">in</span> myDictionary) {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (NSString <span style="color:#666">*</span>key <span style="color:#007020;font-weight:bold">in</span> myDictionary) {
 </span></span><span style="display:flex;"><span>    NSLog(<span style="color:#4070a0">@&#34;%@: %@&#34;</span>, key, myDictionary[key]);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 class="heading" id="strings">
@@ -456,10 +456,10 @@ Objective-C is a general-purpose, object-oriented programming language that adds
 </h3>
 <p>Strings in Objective-C are represented by the <code>NSString</code> class. They are immutable. <code>NSMutableString</code> provides mutable string capabilities.</p>
 <p><strong>Creating an NSString:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSString <span style="color:#666">*</span>myString <span style="color:#666">=</span> <span style="color:#4070a0">@&#34;Hello, world!&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSString <span style="color:#666">*</span>myString <span style="color:#666">=</span> <span style="color:#4070a0">@&#34;Hello, world!&#34;</span>;
 </span></span><span style="display:flex;"><span>NSString <span style="color:#666">*</span>anotherString <span style="color:#666">=</span> [NSString <span style="color:#002070;font-weight:bold">stringWithFormat</span>:<span style="color:#4070a0">@&#34;The value is %d&#34;</span>, <span style="color:#40a070">10</span>];
 </span></span></code></pre></div><p><strong>String manipulation (using NSMutableString):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSMutableString <span style="color:#666">*</span>mutableString <span style="color:#666">=</span> [NSMutableString <span style="color:#002070;font-weight:bold">stringWithString</span>:myString];
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSMutableString <span style="color:#666">*</span>mutableString <span style="color:#666">=</span> [NSMutableString <span style="color:#002070;font-weight:bold">stringWithString</span>:myString];
 </span></span><span style="display:flex;"><span>[mutableString <span style="color:#002070;font-weight:bold">appendString</span>:<span style="color:#4070a0">@&#34;!&#34;</span>];
 </span></span><span style="display:flex;"><span>[mutableString <span style="color:#002070;font-weight:bold">replaceCharactersInRange</span>:NSMakeRange(<span style="color:#40a070">0</span>, <span style="color:#40a070">5</span>) <span style="color:#002070;font-weight:bold">withString</span>:<span style="color:#4070a0">@&#34;Howdy&#34;</span>];
 </span></span></code></pre></div><p>String operations include concatenation (<code>stringWithFormat</code>, <code>appendString</code>), substring extraction (<code>substringWithRange</code>), comparison, and many more.</p>
@@ -472,12 +472,12 @@ Objective-C is a general-purpose, object-oriented programming language that adds
 <li><strong><code>NSInteger</code> and <code>NSUInteger</code>:</strong> Platform-specific integer types (32-bit or 64-bit depending on the architecture).  These are preferred over <code>int</code> for better portability.</li>
 <li><strong><code>NSNumber</code>:</strong>  An object-oriented wrapper for C numeric data types.  Useful for storing numbers within collections like <code>NSArray</code> and <code>NSDictionary</code>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSInteger myInt <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>NSInteger myInt <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">double</span> myDouble <span style="color:#666">=</span> <span style="color:#40a070">3.14159</span>;
 </span></span><span style="display:flex;"><span>NSNumber <span style="color:#666">*</span>numberObject <span style="color:#666">=</span> @(myInt); <span style="color:#60a0b0;font-style:italic">// Using a number literal
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Converting NSNumber back to a primitive type:
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>NSInteger intValue <span style="color:#666">=</span> [numberObject integerValue];
+</span></span></span><span style="display:flex;"><span>NSInteger intValue <span style="color:#666">=</span> [numberObject integerValue];
 </span></span></code></pre></div><p>Remember that <code>NSNumber</code> is an object, unlike the primitive numeric types.  This distinction is important when working with collections that require objects.</p>
 <h2 class="heading" id="memory-management">
   Memory Management
@@ -514,41 +514,41 @@ Objective-C is a general-purpose, object-oriented programming language that adds
   <a class="anchor" href="#protocols">#</a>
 </h3>
 <p>Protocols in Objective-C are similar to interfaces in other languages. They define a set of methods that a class can adopt.  A class that adopts a protocol agrees to implement the methods specified by that protocol.  Protocols enhance code flexibility and allow for loose coupling between classes.  A class can adopt multiple protocols.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Protocol definition
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">@protocol</span> <span style="color:#0e84b5;font-weight:bold">MyProtocol</span> <span style="color:#666">&lt;</span>NSObject<span style="color:#666">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Protocol definition
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@protocol</span> <span style="color:#0e84b5;font-weight:bold">MyProtocol</span> <span style="color:#666">&lt;</span>NSObject<span style="color:#666">&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#666">-</span> (<span style="color:#902000">void</span>)myMethod;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@end</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Class adopting the protocol
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">@interface</span> <span style="color:#0e84b5;font-weight:bold">MyClass</span> : <span style="color:#0e84b5;font-weight:bold">NSObject</span> <span style="color:#666">&lt;</span>MyProtocol<span style="color:#666">&gt;</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@interface</span> <span style="color:#0e84b5;font-weight:bold">MyClass</span> : <span style="color:#0e84b5;font-weight:bold">NSObject</span> <span style="color:#666">&lt;</span>MyProtocol<span style="color:#666">&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@end</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@implementation</span> <span style="color:#0e84b5;font-weight:bold">MyClass</span>
 </span></span><span style="display:flex;"><span>- (<span style="color:#902000">void</span>)<span style="color:#06287e">myMethod</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Implementation of myMethod
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@end</span>
 </span></span></code></pre></div><h3 class="heading" id="categories">
   Categories
   <a class="anchor" href="#categories">#</a>
 </h3>
 <p>Categories provide a way to add methods to an existing class <em>without</em> subclassing.  This is useful for extending the functionality of classes you don&rsquo;t own or want to modify directly.  Categories are particularly helpful for organizing code and keeping it modular.  A class can have multiple categories.  However, categories cannot add or override instance variables.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Category declaration
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">@interface</span> <span style="color:#0e84b5;font-weight:bold">NSString</span> <span style="color:#002070;font-weight:bold">(MyStringAdditions)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Category declaration
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@interface</span> <span style="color:#0e84b5;font-weight:bold">NSString</span> <span style="color:#002070;font-weight:bold">(MyStringAdditions)</span>
 </span></span><span style="display:flex;"><span>- (NSString <span style="color:#666">*</span>)<span style="color:#06287e">reverseString</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@end</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@implementation</span> <span style="color:#0e84b5;font-weight:bold">NSString</span> <span style="color:#002070;font-weight:bold">(MyStringAdditions)</span>
 </span></span><span style="display:flex;"><span>- (NSString <span style="color:#666">*</span>)<span style="color:#06287e">reverseString</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Implementation to reverse the string
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@end</span>
 </span></span></code></pre></div><h3 class="heading" id="blocks">
   Blocks
   <a class="anchor" href="#blocks">#</a>
 </h3>
 <p>Blocks are anonymous functions that can be passed around like objects.  They&rsquo;re a powerful tool for creating closures and asynchronous operations.  They capture variables from their surrounding scope.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#902000">int</span> multiplier <span style="color:#666">=</span> <span style="color:#40a070">5</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#902000">int</span> multiplier <span style="color:#666">=</span> <span style="color:#40a070">5</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">void</span> (<span style="color:#666">^</span>myBlock)(<span style="color:#902000">int</span>) <span style="color:#666">=</span> <span style="color:#666">^</span>(<span style="color:#902000">int</span> x) {
 </span></span><span style="display:flex;"><span>    NSLog(<span style="color:#4070a0">@&#34;%d&#34;</span>, x <span style="color:#666">*</span> multiplier);
 </span></span><span style="display:flex;"><span>};
@@ -559,23 +559,23 @@ Objective-C is a general-purpose, object-oriented programming language that adds
   <a class="anchor" href="#grand-central-dispatch-gcd">#</a>
 </h3>
 <p>GCD is a powerful concurrency framework provided by Apple. It simplifies multithreading and task management.  GCD allows you to easily manage tasks and distribute them across multiple cores, improving application performance.  Key concepts include queues (serial and concurrent), dispatch functions (<code>dispatch_async</code>, <code>dispatch_sync</code>), and semaphores.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>dispatch_queue_t myQueue <span style="color:#666">=</span> dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span style="color:#40a070">0</span>);
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span>dispatch_queue_t myQueue <span style="color:#666">=</span> dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span style="color:#40a070">0</span>);
 </span></span><span style="display:flex;"><span>dispatch_async(myQueue, <span style="color:#666">^</span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Perform a long-running task here
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>});
+</span></span></span><span style="display:flex;"><span>});
 </span></span></code></pre></div><h3 class="heading" id="exception-handling">
   Exception Handling
   <a class="anchor" href="#exception-handling">#</a>
 </h3>
 <p>Objective-C uses exceptions to handle runtime errors.  The <code>@try</code>, <code>@catch</code>, and <code>@finally</code> blocks are used for exception handling.  <code>@try</code> contains the code that might throw an exception, <code>@catch</code> handles specific exceptions, and <code>@finally</code> executes regardless of whether an exception occurred.  Exception handling should be used judiciously, primarily for handling truly exceptional situations rather than normal program flow control.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@try</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-objectivec" data-lang="objectivec"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">@try</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Code that might throw an exception
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>} <span style="color:#007020;font-weight:bold">@catch</span> (NSException <span style="color:#666">*</span>exception) {
+</span></span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">@catch</span> (NSException <span style="color:#666">*</span>exception) {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Handle the exception
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    NSLog(<span style="color:#4070a0">@&#34;Exception caught: %@&#34;</span>, exception);
+</span></span></span><span style="display:flex;"><span>    NSLog(<span style="color:#4070a0">@&#34;Exception caught: %@&#34;</span>, exception);
 </span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">@finally</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Clean up resources
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>These advanced topics are essential for building robust and efficient Objective-C applications.  Understanding protocols, categories, blocks, GCD, and exception handling will allow you to write more maintainable, scalable, and responsive code.</p>
 <h2 class="heading" id="building-a-simple-app">
   Building a Simple App

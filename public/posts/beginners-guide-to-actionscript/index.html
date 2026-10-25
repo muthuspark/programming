@@ -36,14 +36,14 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-actionscript/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-actionscript/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to ActionScript">
-  <meta property="og:description" content="Introduction to ActionScript # What is ActionScript? # ActionScript is a programming language based on ECMAScript (the standard upon which JavaScript is also based) that’s used to create interactive content and applications within the Adobe Flash platform (now largely superseded by Adobe Animate and technologies like HTML5 Canvas). While Flash Player itself is largely deprecated, understanding ActionScript remains valuable for working with legacy Flash projects and for grasping fundamental programming concepts applicable to other languages. ActionScript allows developers to control animations, handle user input, interact with external data sources, and create complex interactive experiences. It offers features like object-oriented programming, event handling, and a rich library of classes for creating multimedia applications.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-02T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-02T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to ActionScript">
+	<meta property="og:description" content="Introduction to ActionScript # What is ActionScript? # ActionScript is a programming language based on ECMAScript (the standard upon which JavaScript is also based) that’s used to create interactive content and applications within the Adobe Flash platform (now largely superseded by Adobe Animate and technologies like HTML5 Canvas). While Flash Player itself is largely deprecated, understanding ActionScript remains valuable for working with legacy Flash projects and for grasping fundamental programming concepts applicable to other languages. ActionScript allows developers to control animations, handle user input, interact with external data sources, and create complex interactive experiences. It offers features like object-oriented programming, event handling, and a rich library of classes for creating multimedia applications.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-02-02T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-02T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -262,7 +262,7 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
   <a class="anchor" href="#hello-world-in-actionscript">#</a>
 </h3>
 <p>The classic &ldquo;Hello World&rdquo; program demonstrates the basic syntax of ActionScript. In Animate, you typically add this to a frame&rsquo;s ActionScript panel or within a function attached to an event:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Hello, World!&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Hello, World!&#34;</span>);
 </span></span></code></pre></div><p>The <code>trace()</code> function outputs text to the output window in Animate.  This is analogous to <code>console.log()</code> in JavaScript.  To view the output, you&rsquo;ll need to open Animate&rsquo;s Output panel (typically found under Window &gt; Output).  This simple line of code demonstrates the fundamental structure of an ActionScript statement and how to produce basic output.  More complex applications build upon this foundation.</p>
 <h2 class="heading" id="basic-syntax-and-data-types">
   Basic Syntax and Data Types
@@ -273,14 +273,14 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
   <a class="anchor" href="#variables-and-constants">#</a>
 </h3>
 <p>ActionScript uses variables to store data that can change during the execution of a program.  Variables are declared using the <code>var</code> keyword, followed by the variable name and an optional assignment of an initial value.  Variable names must start with a letter and can contain letters, numbers, and underscores.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myVariable<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Declare a Number variable and assign it the value 10
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> myString<span style="color:#666">:</span><span style="color:#007020">String</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello&#34;</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Declare a String variable
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> myBoolean<span style="color:#666">:</span><span style="color:#007020">Boolean</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Declare a Boolean variable
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myVariable<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Declare a Number variable and assign it the value 10
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myString<span style="color:#666">:</span><span style="color:#007020">String</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello&#34;</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Declare a String variable
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myBoolean<span style="color:#666">:</span><span style="color:#007020">Boolean</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Declare a Boolean variable
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Assigning a new value to the variable
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>myVariable <span style="color:#666">=</span> <span style="color:#40a070">20</span><span style="color:#666">;</span>
+</span></span></span><span style="display:flex;"><span>myVariable <span style="color:#666">=</span> <span style="color:#40a070">20</span><span style="color:#666">;</span>
 </span></span></code></pre></div><p>ActionScript 3.0 also supports constants, which are variables whose values cannot be changed after they are initialized. Constants are declared using the <code>const</code> keyword.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> MY_CONSTANT<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">3.14159</span><span style="color:#666">;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> MY_CONSTANT<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">3.14159</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// MY_CONSTANT = 20; // This will result in a compiler error.
 </span></span></span></code></pre></div><p>It&rsquo;s good practice to use descriptive variable names to improve code readability.  The use of uppercase for constants (like <code>MY_CONSTANT</code>) is a common convention to highlight them as immutable values.</p>
 <h3 class="heading" id="data-types-number-string-boolean-etc">
@@ -297,7 +297,7 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 <li><strong>Null:</strong> Represents the intentional absence of a value.</li>
 <li><strong>Undefined:</strong> Represents a variable that has been declared but has not been assigned a value.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> age<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">30</span><span style="color:#666">;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> age<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">30</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> name<span style="color:#666">:</span><span style="color:#007020">String</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;John Doe&#34;</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> isAdult<span style="color:#666">:</span><span style="color:#007020">Boolean</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myArray<span style="color:#666">:</span><span style="color:#007020">Array</span> <span style="color:#666">=</span> [<span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;four&#34;</span>];
@@ -316,23 +316,23 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 <li><strong>Comparison Operators:</strong> <code>==</code> (equals), <code>!=</code> (not equals), <code>&gt;</code> (greater than), <code>&lt;</code> (less than), <code>&gt;=</code> (greater than or equals), <code>&lt;=</code> (less than or equals)</li>
 <li><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> x<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span><span style="color:#666">;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> x<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> y<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">5</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> sum<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#666">+</span> y<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// sum = 15
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> difference<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#666">-</span> y<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// difference = 5
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> product<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#666">*</span> y<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// product = 50
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> quotient<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#235388">/ y; /</span><span style="color:#666">/</span> quotient <span style="color:#666">=</span> <span style="color:#40a070">2</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> difference<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#666">-</span> y<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// difference = 5
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> product<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#666">*</span> y<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// product = 50
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> quotient<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#235388">/ y; /</span><span style="color:#666">/</span> quotient <span style="color:#666">=</span> <span style="color:#40a070">2</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> remainder<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> x <span style="color:#666">%</span> y<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// remainder = 0
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> isEqual<span style="color:#666">:</span><span style="color:#007020">Boolean</span> <span style="color:#666">=</span> (x <span style="color:#666">==</span> y); <span style="color:#60a0b0;font-style:italic">// isEqual = false
 </span></span></span></code></pre></div><h3 class="heading" id="comments">
   Comments
   <a class="anchor" href="#comments">#</a>
 </h3>
 <p>Comments are used to explain code and improve readability. ActionScript supports single-line comments (using <code>//</code>) and multi-line comments (using <code>/* */</code>).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/*
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">This is a
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">multi-line comment
@@ -363,22 +363,22 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
   <a class="anchor" href="#adding-and-removing-display-objects">#</a>
 </h3>
 <p>You add display objects to the stage (or to other display objects acting as containers) using the <code>addChild()</code> method.  The order in which you add children affects their stacking order (objects added later are drawn on top).  You remove display objects using the <code>removeChild()</code> method.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Create a new Sprite
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> mySprite<span style="color:#666">:</span><span style="color:#007020">Sprite</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#007020">Sprite</span>();
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Create a new Sprite
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> mySprite<span style="color:#666">:</span><span style="color:#007020">Sprite</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#007020">Sprite</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Create a new shape (example, you would typically use drawing API)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> myShape<span style="color:#666">:</span><span style="color:#007020">Shape</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#007020">Shape</span>();
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myShape<span style="color:#666">:</span><span style="color:#007020">Shape</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#007020">Shape</span>();
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// ...add graphic commands to myShape...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Add the shape to the sprite
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>mySprite.addChild(myShape);
+</span></span></span><span style="display:flex;"><span>mySprite.addChild(myShape);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Add the sprite to the stage
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>addChild(mySprite);
+</span></span></span><span style="display:flex;"><span>addChild(mySprite);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Remove the sprite from the stage after a delay (example)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>setTimeout(<span style="color:#007020;font-weight:bold">function</span>()<span style="color:#666">:</span>void{
+</span></span></span><span style="display:flex;"><span>setTimeout(<span style="color:#007020;font-weight:bold">function</span>()<span style="color:#666">:</span>void{
 </span></span><span style="display:flex;"><span>  removeChild(mySprite);
 </span></span><span style="display:flex;"><span>}<span style="color:#666">,</span> <span style="color:#40a070">3000</span>); <span style="color:#60a0b0;font-style:italic">// Remove after 3 seconds.
 </span></span></span></code></pre></div><p>Remember to replace the example shape creation with actual drawing commands using <code>graphics</code> properties (covered in more advanced tutorials).</p>
@@ -395,7 +395,7 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 <li><strong>rotation:</strong> Rotates the object in degrees (0-360).</li>
 <li><strong>alpha:</strong> Controls the transparency of the object (0.0 is fully transparent, 1.0 is fully opaque).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span>mySprite.x <span style="color:#666">=</span> <span style="color:#40a070">100</span><span style="color:#666">;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span>mySprite.x <span style="color:#666">=</span> <span style="color:#40a070">100</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span>mySprite.y <span style="color:#666">=</span> <span style="color:#40a070">50</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span>mySprite.scaleX <span style="color:#666">=</span> <span style="color:#40a070">1.5</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span>mySprite.rotation <span style="color:#666">=</span> <span style="color:#40a070">45</span><span style="color:#666">;</span>
@@ -413,22 +413,22 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 <li><strong><code>mouseOut</code>:</strong> Dispatched when the mouse cursor leaves the object&rsquo;s boundary.</li>
 <li><strong><code>click</code>:</strong> Dispatched when the mouse button is pressed and released over the object (a combination of <code>mouseDown</code> and <code>mouseUp</code>).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span>mySprite.addEventListener(<span style="color:#007020">MouseEvent</span>.CLICK<span style="color:#666">,</span> handleClick);
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span>mySprite.addEventListener(<span style="color:#007020">MouseEvent</span>.CLICK<span style="color:#666">,</span> handleClick);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> handleClick(event<span style="color:#666">:</span><span style="color:#007020">MouseEvent</span>)<span style="color:#666">:</span>void {
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Sprite clicked!&#34;</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// Add your code to handle the click event here.
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>mySprite.addEventListener(<span style="color:#007020">MouseEvent</span>.ROLL_OVER<span style="color:#666">,</span> handleRollOver);
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> handleRollOver(event<span style="color:#666">:</span><span style="color:#007020">MouseEvent</span>)<span style="color:#666">:</span>void {
 </span></span><span style="display:flex;"><span>  mySprite.alpha <span style="color:#666">=</span> <span style="color:#40a070">0.5</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">//Make the sprite semi-transparent
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>mySprite.addEventListener(<span style="color:#007020">MouseEvent</span>.ROLL_OUT<span style="color:#666">,</span> handleRollOut);
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> handleRollOut(event<span style="color:#666">:</span><span style="color:#007020">MouseEvent</span>)<span style="color:#666">:</span>void{
 </span></span><span style="display:flex;"><span>  mySprite.alpha <span style="color:#666">=</span> <span style="color:#40a070">1</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">//Return to full opacity
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This code adds event listeners for <code>click</code>, <code>rollOver</code> (mouseOver), and <code>rollOut</code> (mouseOut) events to the <code>mySprite</code> object.  When these events occur, the corresponding handler functions are executed. Remember to remove event listeners when they are no longer needed to prevent memory leaks, especially in larger projects.</p>
 <h2 class="heading" id="control-flow-and-loops">
   Control Flow and Loops
@@ -439,7 +439,7 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
   <a class="anchor" href="#conditional-statements-if-else-if-else">#</a>
 </h3>
 <p>Conditional statements allow you to execute different blocks of code based on whether a condition is true or false.  ActionScript uses the <code>if</code>, <code>else if</code>, and <code>else</code> keywords to create conditional statements.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> age<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">20</span><span style="color:#666">;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> age<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> <span style="color:#40a070">20</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (age <span style="color:#666">&gt;=</span> <span style="color:#40a070">18</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;You are an adult.&#34;</span>);
@@ -457,14 +457,14 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 <ul>
 <li><strong><code>for</code> loop:</strong>  Useful when you know the number of iterations in advance.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span> i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> i<span style="color:#666">++</span>) {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span> i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> i<span style="color:#666">++</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Iteration: &#34;</span> <span style="color:#666">+</span> i);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This loop iterates 10 times, with <code>i</code> taking values from 0 to 9.</p>
 <ul>
 <li><strong><code>while</code> loop:</strong> Repeats a block of code as long as a condition is true.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Iteration: &#34;</span> <span style="color:#666">+</span> i);
 </span></span><span style="display:flex;"><span>  i<span style="color:#666">++;</span>
@@ -473,7 +473,7 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 <ul>
 <li><strong><code>do...while</code> loop:</strong> Similar to a <code>while</code> loop, but the code block is executed at least once before the condition is checked.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Iteration: &#34;</span> <span style="color:#666">+</span> i);
 </span></span><span style="display:flex;"><span>  i<span style="color:#666">++;</span>
@@ -486,19 +486,19 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 <ul>
 <li><strong><code>break</code> statement:</strong>  Immediately exits the current loop.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span> i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> i<span style="color:#666">++</span>) {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span> i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> i<span style="color:#666">++</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (i <span style="color:#666">==</span> <span style="color:#40a070">5</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">break</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Exit the loop when i is 5
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  }
+</span></span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Iteration: &#34;</span> <span style="color:#666">+</span> i);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><ul>
 <li><strong><code>continue</code> statement:</strong> Skips the rest of the current iteration and proceeds to the next iteration of the loop.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span> i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> i<span style="color:#666">++</span>) {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">var</span> i<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span><span style="color:#666">;</span> i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span><span style="color:#666">;</span> i<span style="color:#666">++</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (i <span style="color:#666">%</span> <span style="color:#40a070">2</span> <span style="color:#666">==</span> <span style="color:#40a070">0</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">continue</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// Skip even numbers
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  }
+</span></span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Iteration: &#34;</span> <span style="color:#666">+</span> i);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><code>break</code> and <code>continue</code> statements offer ways to control the flow within loops, allowing for more flexible and efficient code when handling specific conditions during iteration.  They should be used judiciously to avoid making code harder to read and understand.</p>
@@ -511,24 +511,24 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
   <a class="anchor" href="#creating-functions">#</a>
 </h3>
 <p>Functions are reusable blocks of code that perform specific tasks.  They help organize code, improve readability, and avoid redundancy.  In ActionScript, you create functions using the <code>function</code> keyword.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> greet(name<span style="color:#666">:</span><span style="color:#007020">String</span>)<span style="color:#666">:</span><span style="color:#007020">String</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> greet(name<span style="color:#666">:</span><span style="color:#007020">String</span>)<span style="color:#666">:</span><span style="color:#007020">String</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Hello, &#34;</span> <span style="color:#666">+</span> name <span style="color:#666">+</span> <span style="color:#4070a0">&#34;!&#34;</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> message<span style="color:#666">:</span><span style="color:#007020">String</span> <span style="color:#666">=</span> greet(<span style="color:#4070a0">&#34;Alice&#34;</span>); <span style="color:#60a0b0;font-style:italic">// Call the function and store the result
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">trace</span>(message); <span style="color:#60a0b0;font-style:italic">// Output: Hello, Alice!
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">trace</span>(message); <span style="color:#60a0b0;font-style:italic">// Output: Hello, Alice!
 </span></span></span></code></pre></div><p>This example defines a function named <code>greet</code> that takes a string argument (<code>name</code>) and returns a greeting string.  The <code>:String</code> after the parameter name indicates the parameter&rsquo;s type, and the <code>:String</code> after the closing parenthesis specifies the return type of the function.  Note that type annotations are not strictly enforced in all ActionScript contexts but are recommended for better code clarity and maintainability.</p>
 <h3 class="heading" id="function-parameters-and-return-values">
   Function Parameters and Return Values
   <a class="anchor" href="#function-parameters-and-return-values">#</a>
 </h3>
 <p>Function parameters are values passed to the function when it&rsquo;s called.  Return values are the values the function sends back after it&rsquo;s finished executing.  A function can have zero or more parameters and can return a value of any data type or <code>void</code> if it doesn&rsquo;t return a value.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> add(x<span style="color:#666">:</span><span style="color:#007020">Number</span><span style="color:#666">,</span> y<span style="color:#666">:</span><span style="color:#007020">Number</span>)<span style="color:#666">:</span><span style="color:#007020">Number</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> add(x<span style="color:#666">:</span><span style="color:#007020">Number</span><span style="color:#666">,</span> y<span style="color:#666">:</span><span style="color:#007020">Number</span>)<span style="color:#666">:</span><span style="color:#007020">Number</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> x <span style="color:#666">+</span> y<span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> sum<span style="color:#666">:</span><span style="color:#007020">Number</span> <span style="color:#666">=</span> add(<span style="color:#40a070">5</span><span style="color:#666">,</span> <span style="color:#40a070">3</span>); <span style="color:#60a0b0;font-style:italic">// sum will be 8
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">trace</span>(sum);
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">trace</span>(sum);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> displayMessage(message<span style="color:#666">:</span><span style="color:#007020">String</span>)<span style="color:#666">:</span>void{
 </span></span><span style="display:flex;"><span>    <span style="color:#06287e">trace</span>(message);
@@ -541,17 +541,17 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
   <a class="anchor" href="#using-built-in-methods">#</a>
 </h3>
 <p>ActionScript provides many built-in methods for working with different data types and objects. For example, the <code>String</code> object has methods like <code>toUpperCase()</code>, <code>toLowerCase()</code>, <code>substring()</code>, and many more.  The <code>Array</code> object has methods for adding, removing, and searching elements, such as <code>push()</code>, <code>pop()</code>, <code>indexOf()</code>, etc.  These built-in methods significantly reduce the amount of code you need to write for common tasks.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myString<span style="color:#666">:</span><span style="color:#007020">String</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello, World!&#34;</span><span style="color:#666">;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myString<span style="color:#666">:</span><span style="color:#007020">String</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello, World!&#34;</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> upperCaseString<span style="color:#666">:</span><span style="color:#007020">String</span> <span style="color:#666">=</span> myString.toUpperCase(); <span style="color:#60a0b0;font-style:italic">// upperCaseString will be &#34;HELLO, WORLD!&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">trace</span>(upperCaseString);
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">trace</span>(upperCaseString);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myArray<span style="color:#666">:</span><span style="color:#007020">Array</span> <span style="color:#666">=</span> [<span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">4</span><span style="color:#666">,</span> <span style="color:#40a070">5</span>];
 </span></span><span style="display:flex;"><span>myArray.push(<span style="color:#40a070">6</span>); <span style="color:#60a0b0;font-style:italic">// Add 6 to the end of the array
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">trace</span>(myArray); <span style="color:#60a0b0;font-style:italic">// Output: 1,2,3,4,5,6
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">trace</span>(myArray); <span style="color:#60a0b0;font-style:italic">// Output: 1,2,3,4,5,6
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> index<span style="color:#666">:</span><span style="color:#007020">int</span> <span style="color:#666">=</span> myArray.indexOf(<span style="color:#40a070">3</span>); <span style="color:#60a0b0;font-style:italic">// Find the index of 3
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">trace</span>(index); <span style="color:#60a0b0;font-style:italic">// Output: 2
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">trace</span>(index); <span style="color:#60a0b0;font-style:italic">// Output: 2
 </span></span></span></code></pre></div><h3 class="heading" id="object-oriented-programming-concepts-brief-introduction">
   Object-Oriented Programming Concepts (brief introduction)
   <a class="anchor" href="#object-oriented-programming-concepts-brief-introduction">#</a>
@@ -575,7 +575,7 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 </li>
 </ul>
 <p>A simple example of a class:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> Dog {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> Dog {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">var</span> name<span style="color:#666">:</span><span style="color:#007020">String</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> Dog(name<span style="color:#666">:</span><span style="color:#007020">String</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">this</span>.name <span style="color:#666">=</span> name<span style="color:#666">;</span>
@@ -587,7 +587,7 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myDog<span style="color:#666">:</span>Dog <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Dog(<span style="color:#4070a0">&#34;Buddy&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#06287e">trace</span>(myDog.name); <span style="color:#60a0b0;font-style:italic">// Output: Buddy
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">trace</span>(myDog.bark()); <span style="color:#60a0b0;font-style:italic">// Output: Woof!
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">trace</span>(myDog.bark()); <span style="color:#60a0b0;font-style:italic">// Output: Woof!
 </span></span></span></code></pre></div><p>This illustrates a basic class <code>Dog</code> with properties and methods. OOP principles are explored more thoroughly in advanced ActionScript tutorials.</p>
 <h2 class="heading" id="working-with-timeline-and-animations">
   Working with Timeline and Animations
@@ -636,18 +636,18 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 </li>
 </ol>
 <p>Example (Conceptual – the exact implementation depends on your Animate version and how you&rsquo;ve structured your project):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//This code snippet is highly simplified and would need adaptation based on your setup.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//This code snippet is highly simplified and would need adaptation based on your setup.
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Generally tweening is done visually through Animate&#39;s interface, not exclusively with ActionScript.
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//This illustrates a basic concept.
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Assume &#39;myMC&#39; is a MovieClip instance on the stage
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> fl.transitions.Tween<span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> fl.transitions.easing.<span style="color:#666">*;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myTween<span style="color:#666">:</span>Tween <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Tween(myMC<span style="color:#666">,</span><span style="color:#4070a0">&#34;x&#34;</span><span style="color:#666">,</span>Strong.easeOut<span style="color:#666">,</span><span style="color:#40a070">100</span><span style="color:#666">,</span><span style="color:#40a070">300</span><span style="color:#666">,</span><span style="color:#40a070">2</span><span style="color:#666">,</span><span style="color:#007020;font-weight:bold">true</span>);
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Tween from x=100 to x=300 in 2 seconds using Strong.easeOut easing.
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//More advanced scenarios will require more code for handling multiple properties, events, and complex easing functions
 </span></span></span></code></pre></div><p>This ActionScript code uses the <code>Tween</code> class (part of the Flash Professional API – availability and specifics may differ based on your Animate version).  It&rsquo;s important to note that directly creating tweens via ActionScript is less common than using Animate&rsquo;s visual tweening tools. However, using ActionScript provides more dynamic and complex control over animations.  Consult Animate&rsquo;s documentation for specifics on tweening and the API.</p>
 <h2 class="heading" id="event-handling-and-user-interaction">
@@ -659,14 +659,14 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
   <a class="anchor" href="#event-listeners">#</a>
 </h3>
 <p>Event listeners are crucial for creating interactive ActionScript applications.  They allow your code to respond to various events, such as mouse clicks, keyboard presses, and other user actions or system events.  An event listener is essentially a function that is executed when a specific event occurs on a particular object.  You attach event listeners to objects using the <code>addEventListener()</code> method.  This method takes two arguments: the type of event you&rsquo;re listening for (specified as a string constant) and the function to execute when that event occurs (the event handler).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Example: Adding a click listener to a button
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Example: Adding a click listener to a button
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>myButton.addEventListener(<span style="color:#007020">MouseEvent</span>.CLICK<span style="color:#666">,</span> handleClick);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> handleClick(event<span style="color:#666">:</span><span style="color:#007020">MouseEvent</span>)<span style="color:#666">:</span>void {
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Button clicked!&#34;</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//Add code to handle the button click here.
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This code adds a click event listener to an object named <code>myButton</code>. When the user clicks <code>myButton</code>, the <code>handleClick</code> function is called.  The <code>event</code> object contains information about the event that triggered the listener.  It&rsquo;s crucial to remove event listeners using <code>removeEventListener()</code> when they are no longer needed, especially in complex projects, to avoid memory leaks and unexpected behavior.</p>
 <h3 class="heading" id="common-events-mouseevent-keyboardevent">
   Common Events (MouseEvent, KeyboardEvent)
@@ -681,14 +681,14 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
 </li>
 </ul>
 <p>For instance:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Adding a keyboard listener to the stage
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>stage.addEventListener(<span style="color:#007020">KeyboardEvent</span>.KEY_DOWN<span style="color:#666">,</span> handleKeyDown);
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Adding a keyboard listener to the stage
+</span></span></span><span style="display:flex;"><span>stage.addEventListener(<span style="color:#007020">KeyboardEvent</span>.KEY_DOWN<span style="color:#666">,</span> handleKeyDown);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> handleKeyDown(event<span style="color:#666">:</span><span style="color:#007020">KeyboardEvent</span>)<span style="color:#666">:</span>void{
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (event.keyCode <span style="color:#666">==</span> <span style="color:#007020">Keyboard</span>.SPACE) {
 </span></span><span style="display:flex;"><span>    <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Spacebar pressed!&#34;</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">//Add your spacebar handling code here.
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  }
+</span></span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This example adds a listener for the <code>KEY_DOWN</code> event to the <code>stage</code> object.  When a key is pressed, the <code>handleKeyDown</code> function is called, and it checks if the pressed key is the spacebar (<code>Keyboard.SPACE</code>).</p>
 <h3 class="heading" id="handling-user-input">
@@ -701,18 +701,18 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
   <a class="anchor" href="#creating-interactive-elements">#</a>
 </h3>
 <p>Interactive elements are created by combining visual elements (display objects) with event listeners.  A simple example is a button that triggers an action when clicked:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Create a button (using a pre-made button component or by drawing one)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">var</span> myButton<span style="color:#666">:</span><span style="color:#007020">Sprite</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#007020">Sprite</span>(); <span style="color:#60a0b0;font-style:italic">//Or use a more appropriate class for a button
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Create a button (using a pre-made button component or by drawing one)
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myButton<span style="color:#666">:</span><span style="color:#007020">Sprite</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> <span style="color:#007020">Sprite</span>(); <span style="color:#60a0b0;font-style:italic">//Or use a more appropriate class for a button
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// ... add visual components to myButton (graphics, text, etc.) ...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>myButton.addEventListener(<span style="color:#007020">MouseEvent</span>.CLICK<span style="color:#666">,</span> buttonClickHandler);
 </span></span><span style="display:flex;"><span>addChild(myButton);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> buttonClickHandler(event<span style="color:#666">:</span><span style="color:#007020">MouseEvent</span>)<span style="color:#666">:</span>void {
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">trace</span>(<span style="color:#4070a0">&#34;Button Clicked!&#34;</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//Perform Actions
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#60a0b0;font-style:italic">//Example: Move a character
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  myCharacter.x <span style="color:#666">+=</span> <span style="color:#40a070">10</span><span style="color:#666">;</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//Example: Move a character
+</span></span></span><span style="display:flex;"><span>  myCharacter.x <span style="color:#666">+=</span> <span style="color:#40a070">10</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This creates a simple interactive button.  More complex interactive elements can be created by combining multiple event listeners, conditional statements, and other programming techniques.  Remember to properly manage memory by removing event listeners when they are no longer needed.  The approach to creating visual components (<code>myButton</code>) would vary depending on the development tools and techniques used.  This example is a conceptual illustration.</p>
 <h2 class="heading" id="advanced-topics-brief-overview">
@@ -724,7 +724,7 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
   <a class="anchor" href="#classes-and-objects">#</a>
 </h3>
 <p>ActionScript 3.0 is an object-oriented programming language.  Understanding classes and objects is fundamental to building robust and maintainable applications.  A class serves as a blueprint for creating objects. It defines the properties (data) and methods (functions) that objects of that class will possess.  Objects are instances of classes; you create objects using the <code>new</code> keyword.  Classes promote code reusability, organization, and maintainability.  Proper use of encapsulation (bundling data and methods that operate on that data within a class) helps protect data integrity and simplifies code structure.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> Animal {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> Animal {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">var</span> name<span style="color:#666">:</span><span style="color:#007020">String</span><span style="color:#666">;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> Animal(name<span style="color:#666">:</span><span style="color:#007020">String</span>){
 </span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">this</span>.name <span style="color:#666">=</span> name<span style="color:#666">;</span>
@@ -755,8 +755,8 @@ ActionScript is a programming language based on ECMAScript (the standard upon wh
   <a class="anchor" href="#working-with-external-libraries">#</a>
 </h3>
 <p>External libraries provide pre-built functionality, saving you development time and effort. ActionScript allows you to incorporate external libraries into your projects.  This is typically done by importing classes from the library using the <code>import</code> statement.  Many libraries are available, ranging from game development libraries to specialized UI components and networking tools.  Managing external dependencies and understanding how the library functions are essential aspects of using external code.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> com.example.MyLibraryClass<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">//Example import statement
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-actionscript" data-lang="actionscript"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> com.example.MyLibraryClass<span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">//Example import statement
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> myObject<span style="color:#666">:</span>MyLibraryClass <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> MyLibraryClass();
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//Use methods and properties of MyLibraryClass
 </span></span></span></code></pre></div><p>This shows a simple import statement; the specific path will vary depending on the location of your library files.</p>

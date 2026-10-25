@@ -37,15 +37,15 @@ Key advantages for developers include:"/>
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-julia/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-julia/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Julia">
-  <meta property="og:description" content="Introduction to Julia # Why Julia? # Julia is a high-level, high-performance dynamic programming language designed for numerical and scientific computing. Unlike many languages that excel in either ease of use or speed, Julia aims to be both. This is achieved through its unique design that combines the ease of use of languages like Python with the performance of compiled languages like C or Fortran.
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Julia">
+	<meta property="og:description" content="Introduction to Julia # Why Julia? # Julia is a high-level, high-performance dynamic programming language designed for numerical and scientific computing. Unlike many languages that excel in either ease of use or speed, Julia aims to be both. This is achieved through its unique design that combines the ease of use of languages like Python with the performance of compiled languages like C or Fortran.
 Key advantages for developers include:">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-20T00:00:00+00:00">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-02-20T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-20T00:00:00+00:00">
 
 
 
@@ -59,7 +59,7 @@ Key advantages for developers include:">
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -67,7 +67,7 @@ Key advantages for developers include:">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -248,12 +248,12 @@ Key advantages for developers include:">
   <a class="anchor" href="#running-your-first-julia-code">#</a>
 </h3>
 <p>The simplest way to run Julia code is directly within the REPL.  Just type your code and press Enter. For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>julia<span style="color:#666">&gt;</span> println(<span style="color:#4070a0">&#34;Hello, world!&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>julia<span style="color:#666">&gt;</span> println(<span style="color:#4070a0">&#34;Hello, world!&#34;</span>)
 </span></span><span style="display:flex;"><span>Hello, world!
 </span></span></code></pre></div><p>For larger programs, you&rsquo;ll typically create a <code>.jl</code> file (e.g., <code>myprogram.jl</code>).  You can then run this file from the command line using the Julia executable:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>julia myprogram.jl
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>julia myprogram.jl
 </span></span></code></pre></div><p>Alternatively, you can load the file into the REPL using the <code>include()</code> function:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>julia<span style="color:#666">&gt;</span> include(<span style="color:#4070a0">&#34;myprogram.jl&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>julia<span style="color:#666">&gt;</span> include(<span style="color:#4070a0">&#34;myprogram.jl&#34;</span>)
 </span></span></code></pre></div><h3 class="heading" id="the-repl-your-interactive-coding-environment">
   The REPL: Your Interactive Coding Environment
   <a class="anchor" href="#the-repl-your-interactive-coding-environment">#</a>
@@ -277,17 +277,17 @@ Key advantages for developers include:">
   <a class="anchor" href="#variables-and-assignment">#</a>
 </h3>
 <p>Julia is dynamically typed, meaning you don&rsquo;t need to explicitly declare the type of a variable.  Variable assignment uses the <code>=</code> operator.  Variable names are case-sensitive and can contain letters, numbers, and underscores, but must start with a letter.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#40a070">10</span>       <span style="color:#60a0b0;font-style:italic"># Assigns the integer 10 to the variable x</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#40a070">10</span>       <span style="color:#60a0b0;font-style:italic"># Assigns the integer 10 to the variable x</span>
 </span></span><span style="display:flex;"><span>y <span style="color:#666">=</span> <span style="color:#40a070">3.14</span>    <span style="color:#60a0b0;font-style:italic"># Assigns the floating-point number 3.14 to y</span>
 </span></span><span style="display:flex;"><span>name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Julia&#34;</span> <span style="color:#60a0b0;font-style:italic"># Assigns the string &#34;Julia&#34; to name</span>
 </span></span></code></pre></div><p>Multiple assignments are also possible:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>a, b <span style="color:#666">=</span> <span style="color:#40a070">5</span>, <span style="color:#40a070">15</span>  <span style="color:#60a0b0;font-style:italic"># Assigns 5 to a and 15 to b</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>a, b <span style="color:#666">=</span> <span style="color:#40a070">5</span>, <span style="color:#40a070">15</span>  <span style="color:#60a0b0;font-style:italic"># Assigns 5 to a and 15 to b</span>
 </span></span></code></pre></div><h3 class="heading" id="numbers-and-arithmetic-operations">
   Numbers and Arithmetic Operations
   <a class="anchor" href="#numbers-and-arithmetic-operations">#</a>
 </h3>
 <p>Julia supports various numeric types, including integers (<code>Int64</code>, <code>Int32</code>, etc.), floating-point numbers (<code>Float64</code>, <code>Float32</code>), and complex numbers.  Standard arithmetic operations are supported:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#40a070">10</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#40a070">10</span>
 </span></span><span style="display:flex;"><span>y <span style="color:#666">=</span> <span style="color:#40a070">3</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>sum <span style="color:#666">=</span> x <span style="color:#666">+</span> y       <span style="color:#60a0b0;font-style:italic"># Addition</span>
@@ -301,7 +301,7 @@ Key advantages for developers include:">
   <a class="anchor" href="#strings-and-string-manipulation">#</a>
 </h3>
 <p>Strings in Julia are sequences of characters enclosed in double quotes (<code>&quot;</code>).  String manipulation is supported through various functions and operators.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>str <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello, Julia!&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>str <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello, Julia!&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>length(str)       <span style="color:#60a0b0;font-style:italic"># Returns the length of the string</span>
 </span></span><span style="display:flex;"><span>uppercase(str)    <span style="color:#60a0b0;font-style:italic"># Converts the string to uppercase</span>
@@ -322,7 +322,7 @@ Key advantages for developers include:">
   <a class="anchor" href="#booleans-and-logical-operators">#</a>
 </h3>
 <p>Julia&rsquo;s boolean type has two values: <code>true</code> and <code>false</code>.  Logical operators are used to combine or modify boolean values:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#007020">true</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#007020">true</span>
 </span></span><span style="display:flex;"><span>y <span style="color:#666">=</span> <span style="color:#007020">false</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>x <span style="color:#666">&amp;&amp;</span> y       <span style="color:#60a0b0;font-style:italic"># Logical AND (both must be true)</span>
@@ -340,12 +340,12 @@ Key advantages for developers include:">
 </h3>
 <p>Arrays and tuples are fundamental data structures in Julia.</p>
 <p><strong>Arrays:</strong>  Arrays are mutable (changeable) ordered collections of elements of the same type. They are created using square brackets <code>[]</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>arr <span style="color:#666">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>] <span style="color:#60a0b0;font-style:italic"># An array of integers</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>arr <span style="color:#666">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>] <span style="color:#60a0b0;font-style:italic"># An array of integers</span>
 </span></span><span style="display:flex;"><span>arr[<span style="color:#40a070">1</span>] <span style="color:#666">=</span> <span style="color:#40a070">10</span>          <span style="color:#60a0b0;font-style:italic"># Modify the first element</span>
 </span></span><span style="display:flex;"><span>push!(arr, <span style="color:#40a070">6</span>)        <span style="color:#60a0b0;font-style:italic"># Add an element to the end</span>
 </span></span><span style="display:flex;"><span>pop!(arr)            <span style="color:#60a0b0;font-style:italic"># Remove the last element</span>
 </span></span></code></pre></div><p><strong>Tuples:</strong> Tuples are immutable (unchangeable) ordered collections of elements, potentially of different types. They are created using parentheses <code>()</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>tup <span style="color:#666">=</span> (<span style="color:#40a070">1</span>, <span style="color:#4070a0">&#34;hello&#34;</span>, <span style="color:#40a070">3.14</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>tup <span style="color:#666">=</span> (<span style="color:#40a070">1</span>, <span style="color:#4070a0">&#34;hello&#34;</span>, <span style="color:#40a070">3.14</span>)
 </span></span><span style="display:flex;"><span>tup[<span style="color:#40a070">1</span>] <span style="color:#60a0b0;font-style:italic"># Accessing elements (immutable; cannot be changed)</span>
 </span></span></code></pre></div><p>Arrays are generally preferred when you need a mutable collection, while tuples are suitable when you want to ensure data integrity and prevent accidental modifications.  Note that the first element in both arrays and tuples is indexed by 1 (not 0, as in some other languages).</p>
 <h2 class="heading" id="control-flow">
@@ -357,7 +357,7 @@ Key advantages for developers include:">
   <a class="anchor" href="#conditional-statements-if-else">#</a>
 </h3>
 <p>Conditional statements control the execution flow of a program based on conditions.  Julia uses <code>if</code>, <code>elseif</code>, and <code>else</code> keywords:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#40a070">10</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#40a070">10</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> x <span style="color:#666">&gt;</span> <span style="color:#40a070">5</span>
 </span></span><span style="display:flex;"><span>    println(<span style="color:#4070a0">&#34;x is greater than 5&#34;</span>)
@@ -377,7 +377,7 @@ Key advantages for developers include:">
 </h3>
 <p>Julia offers both <code>for</code> and <code>while</code> loops for iterative operations.</p>
 <p><strong><code>for</code> loop:</strong>  The <code>for</code> loop iterates over a sequence (e.g., an array, range, or iterator).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>arr <span style="color:#666">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>]
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>arr <span style="color:#666">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>]
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> arr
 </span></span><span style="display:flex;"><span>    println(i)
@@ -394,7 +394,7 @@ Key advantages for developers include:">
 </span></span><span style="display:flex;"><span>    println(<span style="color:#4070a0">&#34;Element at index </span><span style="color:#70a0d0">$i</span><span style="color:#4070a0">: &#34;</span>, arr[i])
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span></code></pre></div><p><strong><code>while</code> loop:</strong> The <code>while</code> loop repeatedly executes a block of code as long as a condition is true.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>i <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>i <span style="color:#666">=</span> <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> i <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span>
 </span></span><span style="display:flex;"><span>    println(i)
 </span></span><span style="display:flex;"><span>    i <span style="color:#666">+=</span> <span style="color:#40a070">1</span>
@@ -408,7 +408,7 @@ Key advantages for developers include:">
 <ul>
 <li><strong><code>break</code>:</strong> Immediately terminates the loop and transfers control to the statement after the loop.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">10</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">10</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> i <span style="color:#666">==</span> <span style="color:#40a070">5</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">break</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
@@ -417,7 +417,7 @@ Key advantages for developers include:">
 </span></span></code></pre></div><ul>
 <li><strong><code>continue</code>:</strong> Skips the rest of the current iteration and proceeds to the next iteration.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">10</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">10</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> i <span style="color:#666">==</span> <span style="color:#40a070">5</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">continue</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
@@ -433,7 +433,7 @@ Key advantages for developers include:">
   <a class="anchor" href="#defining-and-calling-functions">#</a>
 </h3>
 <p>Functions are reusable blocks of code that perform specific tasks.  They are defined using the <code>function</code> keyword and called using their name followed by parentheses <code>()</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> greet(name)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> greet(name)
 </span></span><span style="display:flex;"><span>    println(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">$name!</span><span style="color:#4070a0">&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
@@ -444,7 +444,7 @@ Key advantages for developers include:">
   <a class="anchor" href="#function-arguments-and-return-values">#</a>
 </h3>
 <p>Functions can accept arguments and return values.  Return values are specified using the <code>return</code> keyword.  If no <code>return</code> statement is present, the function implicitly returns the value of the last expression evaluated.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> add(x, y)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> add(x, y)
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> x <span style="color:#666">+</span> y
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
@@ -456,7 +456,7 @@ Key advantages for developers include:">
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>squared <span style="color:#666">=</span> square(<span style="color:#40a070">4</span>) <span style="color:#60a0b0;font-style:italic">#squared will be 16</span>
 </span></span></code></pre></div><p>Arguments can have default values:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> greet(name<span style="color:#666">=</span><span style="color:#4070a0">&#34;World&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> greet(name<span style="color:#666">=</span><span style="color:#4070a0">&#34;World&#34;</span>)
 </span></span><span style="display:flex;"><span>    println(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">$name!</span><span style="color:#4070a0">&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
@@ -467,7 +467,7 @@ Key advantages for developers include:">
   <a class="anchor" href="#anonymous-functions-lambdas">#</a>
 </h3>
 <p>Anonymous functions, also known as lambdas, are functions without a name. They are defined using <code>-&gt;</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>add <span style="color:#666">=</span> (x, y) <span style="color:#666">-&gt;</span> x <span style="color:#666">+</span> y
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>add <span style="color:#666">=</span> (x, y) <span style="color:#666">-&gt;</span> x <span style="color:#666">+</span> y
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>sum <span style="color:#666">=</span> add(<span style="color:#40a070">5</span>, <span style="color:#40a070">3</span>) <span style="color:#60a0b0;font-style:italic"># sum will be 8</span>
 </span></span><span style="display:flex;"><span>
@@ -479,7 +479,7 @@ Key advantages for developers include:">
   <a class="anchor" href="#multiple-dispatch">#</a>
 </h3>
 <p>Multiple dispatch is a powerful feature of Julia that allows a function to behave differently depending on the types of its arguments.  Julia automatically selects the most specific version of a function based on the argument types.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>add(x<span style="color:#666">::</span><span style="color:#902000">Int64</span>, y<span style="color:#666">::</span><span style="color:#902000">Int64</span>) <span style="color:#666">=</span> x <span style="color:#666">+</span> y  <span style="color:#60a0b0;font-style:italic"># Function for two integers</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>add(x<span style="color:#666">::</span><span style="color:#902000">Int64</span>, y<span style="color:#666">::</span><span style="color:#902000">Int64</span>) <span style="color:#666">=</span> x <span style="color:#666">+</span> y  <span style="color:#60a0b0;font-style:italic"># Function for two integers</span>
 </span></span><span style="display:flex;"><span>add(x<span style="color:#666">::</span><span style="color:#902000">Float64</span>, y<span style="color:#666">::</span><span style="color:#902000">Float64</span>) <span style="color:#666">=</span> x <span style="color:#666">+</span> y <span style="color:#60a0b0;font-style:italic">#Function for two floats</span>
 </span></span><span style="display:flex;"><span>add(x<span style="color:#666">::</span><span style="color:#902000">String</span>, y<span style="color:#666">::</span><span style="color:#902000">String</span>) <span style="color:#666">=</span> x <span style="color:#666">*</span> y <span style="color:#60a0b0;font-style:italic">#Function for string concatenation</span>
 </span></span><span style="display:flex;"><span>
@@ -502,17 +502,17 @@ Key advantages for developers include:">
   <a class="anchor" href="#installing-and-using-packages">#</a>
 </h3>
 <p>To install a package, type <code>]</code> to enter the Pkg REPL mode, then use the <code>add</code> command followed by the package name:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>] add Plots  <span style="color:#60a0b0;font-style:italic"># Installs the Plots package</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>] add Plots  <span style="color:#60a0b0;font-style:italic"># Installs the Plots package</span>
 </span></span></code></pre></div><p>After installation, you can use the package by importing it using the <code>using</code> keyword:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">using</span> Plots
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">using</span> Plots
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plot(<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">10</span>) <span style="color:#60a0b0;font-style:italic">#Using a function from the Plots package</span>
 </span></span></code></pre></div><p>To update all installed packages:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>] update
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>] update
 </span></span></code></pre></div><p>To remove a package:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>] rm Plots
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>] rm Plots
 </span></span></code></pre></div><p>The <code>status</code> command lists all installed packages and their versions:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>] status
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>] status
 </span></span></code></pre></div><p>You can find more packages in the Julia package registry at <a href="https://pkg.julialang.org/">https://pkg.julialang.org/</a>.</p>
 <h3 class="heading" id="commonly-used-packages">
   Commonly Used Packages
@@ -541,7 +541,7 @@ Key advantages for developers include:">
 └── src/
     └── MyPackage.jl
 </code></pre><p>The <code>Project.toml</code> file describes your package:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>name = <span style="color:#4070a0">&#34;MyPackage&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>name = <span style="color:#4070a0">&#34;MyPackage&#34;</span>
 </span></span><span style="display:flex;"><span>uuid = <span style="color:#4070a0">&#34;your_uuid_here&#34;</span> <span style="color:#60a0b0;font-style:italic">#Generate using `uuidgen()`</span>
 </span></span><span style="display:flex;"><span>version = <span style="color:#4070a0">&#34;0.1.0&#34;</span>
 </span></span><span style="display:flex;"><span>authors = [<span style="color:#4070a0">&#34;Your Name &lt;your.email@example.com&gt;&#34;</span>]
@@ -557,7 +557,7 @@ Key advantages for developers include:">
 </h3>
 <p>Metaprogramming in Julia allows you to write code that generates or manipulates other code.  This can lead to highly flexible and expressive programs, enabling code generation, code modification, and domain-specific language (DSL) creation.  Julia&rsquo;s powerful macro system facilitates metaprogramming.</p>
 <p>Macros are functions that operate on the Julia Abstract Syntax Tree (AST), allowing modifications before the code is compiled.  They are defined using the <code>macro</code> keyword:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">macro</span> mymacro(expr)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">macro</span> mymacro(expr)
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># Manipulate the expression &#39;expr&#39; here</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#666">:</span>(<span style="color:#666">$</span>expr <span style="color:#666">+</span> <span style="color:#40a070">1</span>) <span style="color:#60a0b0;font-style:italic">#Example: Add 1 to the expression</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>

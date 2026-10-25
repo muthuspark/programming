@@ -36,14 +36,14 @@ ColdFusion is a rapid web application development platform built on a robust scr
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-coldfusion/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-coldfusion/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to ColdFusion">
-  <meta property="og:description" content="Introduction to ColdFusion # What is ColdFusion? # ColdFusion is a rapid web application development platform built on a robust scripting language. It allows developers to quickly build and deploy dynamic websites, web applications, and services. ColdFusion excels at handling database interactions, generating dynamic content, and integrating with various systems. Its tag-based syntax is relatively easy to learn, making it a popular choice for both beginners and experienced developers. The platform handles many of the complexities of web development behind the scenes, allowing developers to focus on the application logic and user experience. At its core, ColdFusion simplifies the process of creating server-side code that interacts with databases and generates HTML, making web development more efficient.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-12-28T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-28T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to ColdFusion">
+	<meta property="og:description" content="Introduction to ColdFusion # What is ColdFusion? # ColdFusion is a rapid web application development platform built on a robust scripting language. It allows developers to quickly build and deploy dynamic websites, web applications, and services. ColdFusion excels at handling database interactions, generating dynamic content, and integrating with various systems. Its tag-based syntax is relatively easy to learn, making it a popular choice for both beginners and experienced developers. The platform handles many of the complexities of web development behind the scenes, allowing developers to focus on the application logic and user experience. At its core, ColdFusion simplifies the process of creating server-side code that interacts with databases and generates HTML, making web development more efficient.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2024-12-28T00:00:00+00:00">
+		<meta property="article:modified_time" content="2024-12-28T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ ColdFusion is a rapid web application development platform built on a robust scr
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ ColdFusion is a rapid web application development platform built on a robust scr
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -297,7 +297,7 @@ ColdFusion is a rapid web application development platform built on a robust scr
   <a class="anchor" href="#your-first-coldfusion-page-cfm">#</a>
 </h3>
 <p>A ColdFusion page, typically with the extension <code>.cfm</code>, contains a mix of HTML and CFML code.  The ColdFusion server processes the CFML tags, generating dynamic HTML that is sent to the user&rsquo;s browser.  Let&rsquo;s create a simple &ldquo;Hello, World!&rdquo; page:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#007020">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#007020">&lt;!DOCTYPE html&gt;</span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#062873;font-weight:bold">html</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#062873;font-weight:bold">head</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#062873;font-weight:bold">title</span>&gt;My First ColdFusion Page&lt;/<span style="color:#062873;font-weight:bold">title</span>&gt;
@@ -359,7 +359,7 @@ multiple lines. ---&gt;
   <a class="anchor" href="#outputting-data-to-the-browser-using-cfoutput">#</a>
 </h3>
 <p>The <code>&lt;cfoutput&gt;</code> tag is fundamental for displaying dynamic content generated by ColdFusion.  Anything placed inside the <code>&lt;cfoutput&gt;</code> and <code>&lt;/cfoutput&gt;</code> tags will be rendered to the browser.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#062873;font-weight:bold">cfset</span> <span style="">#</span><span style="color:#4070a0">myName </span><span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span><span style="">#</span>&gt;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#062873;font-weight:bold">cfset</span> <span style="">#</span><span style="color:#4070a0">myName </span><span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span><span style="">#</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#062873;font-weight:bold">cfoutput</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#062873;font-weight:bold">p</span>&gt;Hello, #myName#!&lt;/<span style="color:#062873;font-weight:bold">p</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#062873;font-weight:bold">cfoutput</span>&gt;

@@ -36,14 +36,14 @@ PostScript is a powerful, interpreted page description language (PDL).  This mea
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-postscript/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-postscript/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to PostScript">
-  <meta property="og:description" content="Introduction to PostScript # What is PostScript? # PostScript is a powerful, interpreted page description language (PDL). This means it’s a programming language specifically designed to describe the appearance of a page to a printer or other output device. Unlike raster graphics formats (like JPEG or PNG) which store an image as a grid of pixels, PostScript describes the page using vector graphics and text commands. This allows for high-quality output at any resolution, as the printer renders the description according to its own capabilities. PostScript code contains instructions for drawing lines, curves, shapes, text, and manipulating images, offering a great deal of flexibility and control over the final output.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-12T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-12T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to PostScript">
+	<meta property="og:description" content="Introduction to PostScript # What is PostScript? # PostScript is a powerful, interpreted page description language (PDL). This means it’s a programming language specifically designed to describe the appearance of a page to a printer or other output device. Unlike raster graphics formats (like JPEG or PNG) which store an image as a grid of pixels, PostScript describes the page using vector graphics and text commands. This allows for high-quality output at any resolution, as the printer renders the description according to its own capabilities. PostScript code contains instructions for drawing lines, curves, shapes, text, and manipulating images, offering a great deal of flexibility and control over the final output.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-01-12T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-12T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ PostScript is a powerful, interpreted page description language (PDL).  This mea
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ PostScript is a powerful, interpreted page description language (PDL).  This mea
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -316,14 +316,14 @@ PostScript is a powerful, interpreted page description language (PDL).  This mea
 <ul>
 <li><strong>Lines:</strong> Use <code>moveto</code> to set the starting point and <code>lineto</code> to draw a line to subsequent points.  <code>stroke</code> renders the line.  For example:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#06287e">newpath</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#06287e">newpath</span>
 </span></span><span style="display:flex;"><span><span style="color:#40a070">100</span> <span style="color:#40a070">100</span> <span style="color:#06287e">moveto</span>
 </span></span><span style="display:flex;"><span><span style="color:#40a070">200</span> <span style="color:#40a070">200</span> <span style="color:#06287e">lineto</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">stroke</span>
 </span></span></code></pre></div><ul>
 <li><strong>Rectangles:</strong> Use <code>newpath</code>, <code>moveto</code>, <code>lineto</code>, and <code>rlineto</code> (relative lineto) to create rectangles.  <code>closepath</code> closes the path.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#06287e">newpath</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#06287e">newpath</span>
 </span></span><span style="display:flex;"><span><span style="color:#40a070">100</span> <span style="color:#40a070">100</span> <span style="color:#06287e">moveto</span>
 </span></span><span style="display:flex;"><span><span style="color:#40a070">100</span> <span style="color:#40a070">0</span> <span style="color:#06287e">rlineto</span>
 </span></span><span style="display:flex;"><span><span style="color:#40a070">100</span> <span style="color:#40a070">100</span> <span style="color:#06287e">rlineto</span>
@@ -349,9 +349,9 @@ PostScript is a powerful, interpreted page description language (PDL).  This mea
 <li><strong>DeviceCMYK:</strong> Uses four numbers (cyan, magenta, yellow, black, each 0.0 to 1.0) to specify colors.</li>
 </ul>
 <p>To set the color, use the <code>setgray</code>, <code>setrgbcolor</code>, or <code>setcmykcolor</code> operators, respectively.  For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#40a070">0.5</span> <span style="color:#06287e">setgray</span>  <span style="color:#60a0b0;font-style:italic">% Set gray level to 50%
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#40a070">1</span> <span style="color:#40a070">0</span> <span style="color:#40a070">0</span> <span style="color:#06287e">setrgbcolor</span> <span style="color:#60a0b0;font-style:italic">% Set color to red
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#40a070">0</span> <span style="color:#40a070">1</span> <span style="color:#40a070">0</span> <span style="color:#06287e">setrgbcolor</span> <span style="color:#60a0b0;font-style:italic">% Set color to green
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#40a070">0.5</span> <span style="color:#06287e">setgray</span>  <span style="color:#60a0b0;font-style:italic">% Set gray level to 50%
+</span></span></span><span style="display:flex;"><span><span style="color:#40a070">1</span> <span style="color:#40a070">0</span> <span style="color:#40a070">0</span> <span style="color:#06287e">setrgbcolor</span> <span style="color:#60a0b0;font-style:italic">% Set color to red
+</span></span></span><span style="display:flex;"><span><span style="color:#40a070">0</span> <span style="color:#40a070">1</span> <span style="color:#40a070">0</span> <span style="color:#06287e">setrgbcolor</span> <span style="color:#60a0b0;font-style:italic">% Set color to green
 </span></span></span></code></pre></div><p>The color is then applied when you stroke or fill a path.</p>
 <h3 class="heading" id="filling-and-stroking">
   Filling and Stroking
@@ -370,9 +370,9 @@ PostScript is a powerful, interpreted page description language (PDL).  This mea
   <a class="anchor" href="#creating-text">#</a>
 </h3>
 <p>PostScript&rsquo;s text creation involves selecting a font, setting the text position, and then showing the text.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#bb60d5">/Helvetica</span> <span style="color:#06287e">findfont</span> <span style="color:#40a070">12</span> <span style="color:#06287e">scalefont</span> <span style="color:#06287e">setfont</span>  <span style="color:#60a0b0;font-style:italic">% Select Helvetica font, size 12
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#40a070">100</span> <span style="color:#40a070">100</span> <span style="color:#06287e">moveto</span>  <span style="color:#60a0b0;font-style:italic">% Set text position
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#4070a0">(Hello, world!)</span> <span style="color:#06287e">show</span>  <span style="color:#60a0b0;font-style:italic">% Show the text
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#bb60d5">/Helvetica</span> <span style="color:#06287e">findfont</span> <span style="color:#40a070">12</span> <span style="color:#06287e">scalefont</span> <span style="color:#06287e">setfont</span>  <span style="color:#60a0b0;font-style:italic">% Select Helvetica font, size 12
+</span></span></span><span style="display:flex;"><span><span style="color:#40a070">100</span> <span style="color:#40a070">100</span> <span style="color:#06287e">moveto</span>  <span style="color:#60a0b0;font-style:italic">% Set text position
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">(Hello, world!)</span> <span style="color:#06287e">show</span>  <span style="color:#60a0b0;font-style:italic">% Show the text
 </span></span></span></code></pre></div><p><code>findfont</code> searches for the font, <code>scalefont</code> sets its size, and <code>setfont</code> applies the font. <code>moveto</code> positions the text, and <code>show</code> displays it.</p>
 <h3 class="heading" id="fonts-and-typefaces">
   Fonts and Typefaces
@@ -393,11 +393,11 @@ PostScript is a powerful, interpreted page description language (PDL).  This mea
   <a class="anchor" href="#procedures-and-functions">#</a>
 </h3>
 <p>Procedures are reusable blocks of PostScript code.  They are defined using the <code>define</code> operator (or, more commonly for modern PostScript, using a name and a <code>{}</code> block)  and are invoked by name.  Procedures improve code modularity and readability.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#bb60d5">/myproc</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#bb60d5">/myproc</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#40a070">100</span> <span style="color:#40a070">100</span> <span style="color:#06287e">moveto</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#4070a0">(Hello)</span> <span style="color:#06287e">show</span>
 </span></span><span style="display:flex;"><span>} <span style="color:#06287e">def</span>  <span style="color:#60a0b0;font-style:italic">% Define the procedure
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">myproc</span>  <span style="color:#60a0b0;font-style:italic">% Invoke the procedure
 </span></span></span></code></pre></div><p>Functions are similar to procedures but always return a value.  They are defined using the <code>def</code> operator and use the stack to receive parameters and return results.  This enables more structured coding and the creation of reusable components.</p>
 <h3 class="heading" id="working-with-dictionaries">
@@ -405,14 +405,14 @@ PostScript is a powerful, interpreted page description language (PDL).  This mea
   <a class="anchor" href="#working-with-dictionaries">#</a>
 </h3>
 <p>Dictionaries store data in key-value pairs. They are useful for organizing and accessing related information.  They are defined using angle brackets (<code>&lt;&lt; &gt;&gt;</code>).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span>&lt;&lt; <span style="color:#bb60d5">/width</span> <span style="color:#40a070">200</span> <span style="color:#bb60d5">/height</span> <span style="color:#40a070">100</span> &gt;&gt;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span>&lt;&lt; <span style="color:#bb60d5">/width</span> <span style="color:#40a070">200</span> <span style="color:#bb60d5">/height</span> <span style="color:#40a070">100</span> &gt;&gt;
 </span></span></code></pre></div><p>Values are accessed using the <code>get</code> operator.  Dictionaries are used extensively in PostScript for managing fonts, images, and other complex objects.</p>
 <h3 class="heading" id="conditional-statements">
   Conditional Statements
   <a class="anchor" href="#conditional-statements">#</a>
 </h3>
 <p>PostScript supports conditional statements using <code>if</code>, <code>ifelse</code>, and similar constructs.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#06287e">gt</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#06287e">gt</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#4070a0">(1 is greater than 2)</span> <span style="color:#06287e">show</span>
 </span></span><span style="display:flex;"><span>} {
 </span></span><span style="display:flex;"><span>    <span style="color:#4070a0">(1 is not greater than 2)</span> <span style="color:#06287e">show</span>
@@ -426,13 +426,13 @@ PostScript is a powerful, interpreted page description language (PDL).  This mea
 <ul>
 <li><strong><code>loop</code>:</strong>  A simple loop that iterates a specified number of times.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#bb60d5">/i</span> <span style="color:#40a070">0</span> <span style="color:#06287e">def</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#bb60d5">/i</span> <span style="color:#40a070">0</span> <span style="color:#06287e">def</span>
 </span></span><span style="display:flex;"><span><span style="color:#40a070">10</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#06287e">i</span> <span style="color:#40a070">1</span> <span style="color:#06287e">add</span> <span style="color:#bb60d5">/i</span> <span style="color:#06287e">exch</span> <span style="color:#06287e">def</span>  <span style="color:#60a0b0;font-style:italic">% increment counter
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#06287e">i</span> <span style="color:#06287e">show</span>
+</span></span></span><span style="display:flex;"><span>    <span style="color:#06287e">i</span> <span style="color:#06287e">show</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#06287e">i</span> <span style="color:#40a070">10</span> <span style="color:#06287e">lt</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic">% Check termination condition. Continue if i &lt; 10
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#40a070">100</span> <span style="color:#40a070">100</span> <span style="color:#06287e">moveto</span>
+</span></span></span><span style="display:flex;"><span>        <span style="color:#40a070">100</span> <span style="color:#40a070">100</span> <span style="color:#06287e">moveto</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#4070a0">(Looping)</span> <span style="color:#06287e">show</span>
 </span></span><span style="display:flex;"><span>    } <span style="color:#06287e">if</span>
 </span></span><span style="display:flex;"><span>} <span style="color:#06287e">loop</span>
@@ -450,12 +450,12 @@ PostScript is a powerful, interpreted page description language (PDL).  This mea
 </h3>
 <p>Let&rsquo;s illustrate PostScript programming with a few examples:</p>
 <p><strong>Example 1: Drawing a simple rectangle:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">% Define the rectangle&#39;s dimensions
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bb60d5">/width</span> <span style="color:#40a070">100</span> <span style="color:#06287e">def</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">% Define the rectangle&#39;s dimensions
+</span></span></span><span style="display:flex;"><span><span style="color:#bb60d5">/width</span> <span style="color:#40a070">100</span> <span style="color:#06287e">def</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">/height</span> <span style="color:#40a070">50</span> <span style="color:#06287e">def</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">% Create the path
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">newpath</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">newpath</span>
 </span></span><span style="display:flex;"><span><span style="color:#40a070">0</span> <span style="color:#40a070">0</span> <span style="color:#06287e">moveto</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">width</span> <span style="color:#40a070">0</span> <span style="color:#06287e">rlineto</span>
 </span></span><span style="display:flex;"><span><span style="color:#40a070">0</span> <span style="color:#06287e">height</span> <span style="color:#06287e">rlineto</span>
@@ -463,24 +463,24 @@ PostScript is a powerful, interpreted page description language (PDL).  This mea
 </span></span><span style="display:flex;"><span><span style="color:#06287e">closepath</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">% Set the color (gray)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#40a070">0.8</span> <span style="color:#06287e">setgray</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#40a070">0.8</span> <span style="color:#06287e">setgray</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">% Stroke the path (draw the outline)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">stroke</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">stroke</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">% Fill the rectangle with the color
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">fill</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">fill</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">showpage</span>
 </span></span></code></pre></div><p>This code defines a rectangle, sets a gray fill color, and draws it.  <code>rlineto</code> draws a line relative to the current point.  <code>showpage</code> ejects the page.</p>
 <p><strong>Example 2:  Adding text:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">% Select a font and size
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bb60d5">/Times-Roman</span> <span style="color:#06287e">findfont</span> <span style="color:#40a070">14</span> <span style="color:#06287e">scalefont</span> <span style="color:#06287e">setfont</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-postscript" data-lang="postscript"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">% Select a font and size
+</span></span></span><span style="display:flex;"><span><span style="color:#bb60d5">/Times-Roman</span> <span style="color:#06287e">findfont</span> <span style="color:#40a070">14</span> <span style="color:#06287e">scalefont</span> <span style="color:#06287e">setfont</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">% Set text position
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#40a070">100</span> <span style="color:#40a070">100</span> <span style="color:#06287e">moveto</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#40a070">100</span> <span style="color:#40a070">100</span> <span style="color:#06287e">moveto</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">% Show the text
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#4070a0">(Hello, PostScript!)</span> <span style="color:#06287e">show</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">(Hello, PostScript!)</span> <span style="color:#06287e">show</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">showpage</span>
 </span></span></code></pre></div><p>This example shows how to choose a font (Times-Roman), set its size, position the text, and display it.</p>
 <h3 class="heading" id="generating-pdf-files">

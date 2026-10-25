@@ -36,14 +36,14 @@ Haskell is a purely functional programming language.  This means it emphasizes i
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-haskell/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-haskell/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Haskell">
-  <meta property="og:description" content="Introduction to Haskell # What is Haskell? # Haskell is a purely functional programming language. This means it emphasizes immutability (values don’t change after they’re created) and expressions rather than statements (a function always returns a value). It’s known for its strong type system, which helps catch errors at compile time, and its powerful features like lazy evaluation, which allows for efficient handling of potentially infinite data structures. Unlike imperative languages like Python or Java, Haskell doesn’t rely on mutable state or side effects (actions that change something outside the function’s scope). This leads to cleaner, more predictable, and often more concise code. Haskell is particularly well-suited for tasks requiring high reliability, concurrency, and mathematical precision, such as compiler development, financial modeling, and data analysis.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-28T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-28T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Haskell">
+	<meta property="og:description" content="Introduction to Haskell # What is Haskell? # Haskell is a purely functional programming language. This means it emphasizes immutability (values don’t change after they’re created) and expressions rather than statements (a function always returns a value). It’s known for its strong type system, which helps catch errors at compile time, and its powerful features like lazy evaluation, which allows for efficient handling of potentially infinite data structures. Unlike imperative languages like Python or Java, Haskell doesn’t rely on mutable state or side effects (actions that change something outside the function’s scope). This leads to cleaner, more predictable, and often more concise code. Haskell is particularly well-suited for tasks requiring high reliability, concurrency, and mathematical precision, such as compiler development, financial modeling, and data analysis.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-02-28T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-28T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -272,11 +272,11 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#your-first-haskell-program">#</a>
 </h3>
 <p>Let&rsquo;s write a simple program that prints &ldquo;Hello, world!&rdquo; to the console.  Create a new file named <code>hello.hs</code> and add the following code:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">IO</span> <span style="color:#007020">()</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">IO</span> <span style="color:#007020">()</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">=</span> putStrLn <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
 </span></span></code></pre></div><p>This code defines a function <code>main</code> which is the entry point of your program.  <code>IO ()</code> indicates that <code>main</code> performs input/output operations and returns nothing (represented by <code>()</code>). <code>putStrLn</code> is a function that prints a string to the console, followed by a newline character.</p>
 <p>To compile and run this program, open your terminal, navigate to the directory containing <code>hello.hs</code>, and type:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ghc hello.hs
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ghc hello.hs
 </span></span><span style="display:flex;"><span>./hello
 </span></span></code></pre></div><p>This will compile the code and then execute the compiled program, printing &ldquo;Hello, world!&rdquo; to your console.  This simple example introduces the basic structure of a Haskell program and shows you how to use the GHC compiler.</p>
 <h2 class="heading" id="basic-syntax-and-concepts">
@@ -304,7 +304,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#variables-and-bindings">#</a>
 </h3>
 <p>In Haskell, we don&rsquo;t declare variables in the same way as in imperative languages. Instead, we use <em>bindings</em> to associate names with values.  Bindings are created using the <code>=</code> operator.  The <code>let</code> keyword introduces a local binding, while bindings outside any <code>let</code> expression have global scope within the current module.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> x <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">10</span>  <span style="color:#60a0b0;font-style:italic">-- x is bound to 10</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> x <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">10</span>  <span style="color:#60a0b0;font-style:italic">-- x is bound to 10</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">y</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">5</span>       <span style="color:#60a0b0;font-style:italic">-- y is bound to 5</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">z</span> <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#666">+</span> y   <span style="color:#60a0b0;font-style:italic">-- z is bound to 15</span>
 </span></span></code></pre></div><p>Note that <code>x</code>, <code>y</code>, and <code>z</code> are immutable; their values cannot be changed after they are bound.</p>
@@ -313,10 +313,10 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#functions-and-their-definitions">#</a>
 </h3>
 <p>Functions are first-class citizens in Haskell. They can be passed as arguments to other functions, returned as results, and stored in data structures.  A function definition has the form:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">functionName</span> <span style="color:#007020;font-weight:bold">::</span> argumentType <span style="color:#007020;font-weight:bold">-&gt;</span> resultType  <span style="color:#60a0b0;font-style:italic">-- Type signature (optional but recommended)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">functionName</span> <span style="color:#007020;font-weight:bold">::</span> argumentType <span style="color:#007020;font-weight:bold">-&gt;</span> resultType  <span style="color:#60a0b0;font-style:italic">-- Type signature (optional but recommended)</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">functionName</span> argument <span style="color:#007020;font-weight:bold">=</span> expression
 </span></span></code></pre></div><p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">add</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">add</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">add</span> x y <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#666">+</span> y
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">greet</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">String</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">String</span>
@@ -327,7 +327,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#type-annotations">#</a>
 </h3>
 <p>Type annotations specify the type of a variable or function. While often inferred by the compiler, explicitly adding them improves code readability and helps catch errors early.  Annotations are placed after the name, using the <code>::</code> symbol.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">myVar</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">myVar</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">myVar</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">42</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">myFunc</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Bool</span>
@@ -337,7 +337,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#operators">#</a>
 </h3>
 <p>Operators in Haskell are just functions with special syntax.  They can be infix (placed between operands, like <code>+</code>), prefix (placed before the operand, like <code>not</code>), or postfix (placed after the operand, which is less common in Haskell).  Many operators are overloaded, meaning they can work on different types (e.g., <code>+</code> works on <code>Int</code>, <code>Double</code>, etc.).  Parentheses can be used to control the order of operations.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">result1</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">5</span> <span style="color:#666">+</span> <span style="color:#40a070">2</span> <span style="color:#666">*</span> <span style="color:#40a070">3</span>   <span style="color:#60a0b0;font-style:italic">-- Standard operator precedence applies</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">result1</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">5</span> <span style="color:#666">+</span> <span style="color:#40a070">2</span> <span style="color:#666">*</span> <span style="color:#40a070">3</span>   <span style="color:#60a0b0;font-style:italic">-- Standard operator precedence applies</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">result2</span> <span style="color:#007020;font-weight:bold">=</span> (<span style="color:#40a070">5</span> <span style="color:#666">+</span> <span style="color:#40a070">2</span>) <span style="color:#666">*</span> <span style="color:#40a070">3</span> <span style="color:#60a0b0;font-style:italic">-- Parentheses override precedence</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">result3</span> <span style="color:#007020;font-weight:bold">=</span> not <span style="color:#902000">True</span>   <span style="color:#60a0b0;font-style:italic">-- Prefix operator</span>
 </span></span></code></pre></div><p>Understanding operator precedence and associativity (whether an operator groups from left to right or right to left) is crucial for writing correct Haskell code.  The Haskell report provides a complete precedence table.</p>
@@ -350,7 +350,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#lists">#</a>
 </h3>
 <p>Lists are ordered collections of elements of the same type. They are denoted by square brackets <code>[]</code> and elements are separated by commas.  Lists are homogeneous; all elements must have the same type.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">myList</span> <span style="color:#007020;font-weight:bold">::</span> [<span style="color:#902000">Int</span>]
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">myList</span> <span style="color:#007020;font-weight:bold">::</span> [<span style="color:#902000">Int</span>]
 </span></span><span style="display:flex;"><span><span style="color:#06287e">myList</span> <span style="color:#007020;font-weight:bold">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>]
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">emptyList</span> <span style="color:#007020;font-weight:bold">::</span> [<span style="color:#902000">Char</span>]
@@ -371,7 +371,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#tuples">#</a>
 </h3>
 <p>Tuples are similar to lists, but they can contain elements of different types.  They are enclosed in parentheses <code>()</code>, and the number of elements determines the tuple&rsquo;s type.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">myTuple</span> <span style="color:#007020;font-weight:bold">::</span> (<span style="color:#902000">Int</span>, <span style="color:#902000">String</span>, <span style="color:#902000">Bool</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">myTuple</span> <span style="color:#007020;font-weight:bold">::</span> (<span style="color:#902000">Int</span>, <span style="color:#902000">String</span>, <span style="color:#902000">Bool</span>)
 </span></span><span style="display:flex;"><span><span style="color:#06287e">myTuple</span> <span style="color:#007020;font-weight:bold">=</span> (<span style="color:#40a070">10</span>, <span style="color:#4070a0">&#34;hello&#34;</span>, <span style="color:#902000">True</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">anotherTuple</span> <span style="color:#007020;font-weight:bold">::</span> (<span style="color:#902000">Double</span>, <span style="color:#902000">Char</span>)
@@ -385,13 +385,13 @@ Haskell is a purely functional programming language.  This means it emphasizes i
 <ul>
 <li><strong><code>Maybe a</code></strong>: Represents a value that might be present (<code>Just a</code>) or absent (<code>Nothing</code>).  <code>a</code> represents the type of the potential value.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">safeHead</span> <span style="color:#007020;font-weight:bold">::</span> [a] <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Maybe</span> a
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">safeHead</span> <span style="color:#007020;font-weight:bold">::</span> [a] <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Maybe</span> a
 </span></span><span style="display:flex;"><span><span style="color:#06287e">safeHead</span> <span style="color:#902000">[]</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Nothing</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">safeHead</span> (x<span style="color:#902000">:</span><span style="color:#007020;font-weight:bold">_</span>) <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Just</span> x
 </span></span></code></pre></div><ul>
 <li><strong><code>Either a b</code></strong>: Represents a value that could be either a value of type <code>a</code> (representing success) or a value of type <code>b</code> (representing failure or an error).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">safeDivision</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Either</span> <span style="color:#902000">String</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">safeDivision</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Either</span> <span style="color:#902000">String</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">safeDivision</span> <span style="color:#007020;font-weight:bold">_</span> <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Left</span> <span style="color:#4070a0">&#34;Division by zero!&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">safeDivision</span> x y <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Right</span> (x `div` y)
 </span></span></code></pre></div><h3 class="heading" id="pattern-matching">
@@ -399,7 +399,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#pattern-matching">#</a>
 </h3>
 <p>Pattern matching is a powerful feature that allows you to deconstruct data structures and bind their components to variables.  It&rsquo;s used in function definitions, <code>let</code> expressions, and <code>case</code> statements.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Example using pattern matching in a function definition:</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Example using pattern matching in a function definition:</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">processList</span> <span style="color:#007020;font-weight:bold">::</span> [<span style="color:#902000">Int</span>] <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">processList</span> <span style="color:#902000">[]</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">processList</span> (x<span style="color:#902000">:</span>xs) <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#666">+</span> sum xs
@@ -418,9 +418,9 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#conditional-statements-if-then-else">#</a>
 </h3>
 <p>Haskell&rsquo;s <code>if-then-else</code> construct works similarly to other languages, but with a crucial difference:  it&rsquo;s an <em>expression</em>, meaning it always returns a value.  The syntax is:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">result</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">if</span> condition <span style="color:#007020;font-weight:bold">then</span> value1 <span style="color:#007020;font-weight:bold">else</span> value2
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">result</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">if</span> condition <span style="color:#007020;font-weight:bold">then</span> value1 <span style="color:#007020;font-weight:bold">else</span> value2
 </span></span></code></pre></div><p>Both <code>value1</code> and <code>value2</code> must have the same type.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">isPositive</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Bool</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">isPositive</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Bool</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">isPositive</span> x <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">if</span> x <span style="color:#666">&gt;</span> <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">then</span> <span style="color:#902000">True</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#902000">False</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">absValue</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
@@ -431,7 +431,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#guards">#</a>
 </h3>
 <p>Guards provide a more concise way to express conditional logic, particularly when you have multiple conditions.  They use the <code>|</code> symbol to separate conditions.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">signum</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">signum</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">signum</span> x
 </span></span><span style="display:flex;"><span>  <span style="color:#666">|</span> x <span style="color:#666">&gt;</span> <span style="color:#40a070">0</span>     <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#666">|</span> x <span style="color:#666">==</span> <span style="color:#40a070">0</span>    <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">0</span>
@@ -449,7 +449,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#case-expressions">#</a>
 </h3>
 <p>Case expressions provide a structured way to handle multiple possibilities based on the value of an expression.  They are particularly useful when dealing with algebraic data types (discussed later).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">showMaybe</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Maybe</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">String</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">showMaybe</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Maybe</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">String</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">showMaybe</span> x <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">case</span> x <span style="color:#007020;font-weight:bold">of</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#902000">Just</span> val <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#4070a0">&#34;Just &#34;</span> <span style="color:#666">++</span> show val
 </span></span><span style="display:flex;"><span>  <span style="color:#902000">Nothing</span>  <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#4070a0">&#34;Nothing&#34;</span>
@@ -459,7 +459,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#recursion">#</a>
 </h3>
 <p>Recursion is a fundamental concept in functional programming and is heavily used in Haskell.  A recursive function calls itself until it reaches a base case, which stops the recursion.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">factorial</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">factorial</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">factorial</span> <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">factorial</span> n <span style="color:#007020;font-weight:bold">=</span> n <span style="color:#666">*</span> factorial (n <span style="color:#666">-</span> <span style="color:#40a070">1</span>)
 </span></span><span style="display:flex;"><span>
@@ -480,7 +480,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
 <ul>
 <li><strong><code>map</code></strong>: Applies a function to each element of a list, producing a new list with the transformed elements.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">double</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">double</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">double</span> x <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#666">*</span> <span style="color:#40a070">2</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">numbers</span> <span style="color:#007020;font-weight:bold">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>]
@@ -488,14 +488,14 @@ Haskell is a purely functional programming language.  This means it emphasizes i
 </span></span></code></pre></div><ul>
 <li><strong><code>filter</code></strong>: Selects elements from a list that satisfy a given predicate (a boolean function).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">isEven</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Bool</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">isEven</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Bool</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">isEven</span> x <span style="color:#007020;font-weight:bold">=</span> x `mod` <span style="color:#40a070">2</span> <span style="color:#666">==</span> <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">evenNumbers</span> <span style="color:#007020;font-weight:bold">=</span> filter isEven numbers  <span style="color:#60a0b0;font-style:italic">-- evenNumbers will be [2, 4]</span>
 </span></span></code></pre></div><ul>
 <li><strong><code>foldl</code> (left fold) and <code>foldr</code> (right fold)</strong>: Combine the elements of a list into a single value using a given function.  <code>foldl</code> processes the list from left to right; <code>foldr</code> processes it from right to left.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">sumList</span> <span style="color:#007020;font-weight:bold">::</span> [<span style="color:#902000">Int</span>] <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">sumList</span> <span style="color:#007020;font-weight:bold">::</span> [<span style="color:#902000">Int</span>] <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">sumList</span> xs <span style="color:#007020;font-weight:bold">=</span> foldl (<span style="color:#666">+</span>) <span style="color:#40a070">0</span> xs  <span style="color:#60a0b0;font-style:italic">-- or foldr (+) 0 xs (both give the same result for sum)</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">productList</span> <span style="color:#007020;font-weight:bold">::</span> [<span style="color:#902000">Int</span>] <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
@@ -505,16 +505,16 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#lambda-expressions">#</a>
 </h3>
 <p>Lambda expressions (anonymous functions) allow you to define functions without giving them a name.  They are useful for short, simple functions used only once.  The syntax is:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">\</span>arguments <span style="color:#007020;font-weight:bold">-&gt;</span> expression
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">\</span>arguments <span style="color:#007020;font-weight:bold">-&gt;</span> expression
 </span></span></code></pre></div><p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">addOne</span> <span style="color:#007020;font-weight:bold">=</span> map (<span style="color:#06287e">\</span>x <span style="color:#007020;font-weight:bold">-&gt;</span> x <span style="color:#666">+</span> <span style="color:#40a070">1</span>) [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>] <span style="color:#60a0b0;font-style:italic">-- addOne will be [2, 3, 4]</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">addOne</span> <span style="color:#007020;font-weight:bold">=</span> map (<span style="color:#06287e">\</span>x <span style="color:#007020;font-weight:bold">-&gt;</span> x <span style="color:#666">+</span> <span style="color:#40a070">1</span>) [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>] <span style="color:#60a0b0;font-style:italic">-- addOne will be [2, 3, 4]</span>
 </span></span></code></pre></div><p>This creates a lambda function that adds 1 to its argument and then applies it using <code>map</code>.</p>
 <h3 class="heading" id="function-composition">
   Function Composition
   <a class="anchor" href="#function-composition">#</a>
 </h3>
 <p>Function composition combines two or more functions into a single function. The <code>(.)</code> operator performs composition:  <code>(f . g) x</code> is equivalent to <code>f (g x)</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">addOne</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">addOne</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">addOne</span> x <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#666">+</span> <span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">square</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
@@ -534,7 +534,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
   <a class="anchor" href="#creating-your-own-modules">#</a>
 </h3>
 <p>To create a module, save your Haskell code in a file named <code>&lt;ModuleName&gt;.hs</code>.  The module declaration appears at the top of the file:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span> <span style="color:#007020;font-weight:bold">where</span>  <span style="color:#60a0b0;font-style:italic">-- Module declaration</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span> <span style="color:#007020;font-weight:bold">where</span>  <span style="color:#60a0b0;font-style:italic">-- Module declaration</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Function definitions, data type declarations, etc. go here</span>
 </span></span><span style="display:flex;"><span>
@@ -566,7 +566,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
 </li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">Data.List</span> (<span style="color:#06287e">sort</span>) <span style="color:#60a0b0;font-style:italic">-- Imports only the sort function from Data.List</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">Data.List</span> (<span style="color:#06287e">sort</span>) <span style="color:#60a0b0;font-style:italic">-- Imports only the sort function from Data.List</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#007020;font-weight:bold">qualified</span> <span style="color:#0e84b5;font-weight:bold">Data.Map</span> <span style="color:#007020;font-weight:bold">as</span> M <span style="color:#60a0b0;font-style:italic">-- Imports Data.Map under the alias M</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">IO</span> <span style="color:#007020">()</span>
@@ -595,7 +595,7 @@ Haskell is a purely functional programming language.  This means it emphasizes i
 <li><strong>Incorrect use of type classes:</strong>  Misunderstanding the constraints of type classes (like <code>Eq</code>, <code>Ord</code>, <code>Show</code>).</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">add</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#06287e">add</span> <span style="color:#007020;font-weight:bold">::</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">add</span> x y <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#666">+</span> y
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">do</span>

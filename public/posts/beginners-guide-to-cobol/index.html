@@ -36,14 +36,14 @@ COBOL (Common Business-Oriented Language) is a compiled English-like programming
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-cobol/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-cobol/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to COBOL">
-  <meta property="og:description" content="Introduction to COBOL # What is COBOL? # COBOL (Common Business-Oriented Language) is a compiled English-like programming language designed for business applications. It’s known for its readability and its ability to handle large volumes of data efficiently. Unlike languages focused on system-level programming or web development, COBOL excels at tasks such as processing transactions, managing files, and performing complex calculations within a business context. Its structure is highly procedural, making it easy to understand the flow of a program. Key features include strong support for file handling, decimal arithmetic (crucial for financial applications), and robust error handling.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-21T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-21T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to COBOL">
+	<meta property="og:description" content="Introduction to COBOL # What is COBOL? # COBOL (Common Business-Oriented Language) is a compiled English-like programming language designed for business applications. It’s known for its readability and its ability to handle large volumes of data efficiently. Unlike languages focused on system-level programming or web development, COBOL excels at tasks such as processing transactions, managing files, and performing complex calculations within a business context. Its structure is highly procedural, making it easy to understand the flow of a program. Key features include strong support for file handling, decimal arithmetic (crucial for financial applications), and robust error handling.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-02-21T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-21T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ COBOL (Common Business-Oriented Language) is a compiled English-like programming
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ COBOL (Common Business-Oriented Language) is a compiled English-like programming
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -364,13 +364,13 @@ COBOL (Common Business-Oriented Language) is a compiled English-like programming
 <p>In COBOL, variables and constants are declared in the DATA DIVISION.  Variables hold values that can change during program execution, while constants maintain a fixed value throughout.</p>
 <p><strong>Variables:</strong>  Variables are declared using the <code>PIC</code> clause to specify their data type and format (as explained previously).  They are assigned values through assignment statements or input operations.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">05  QU</span><span style="color:#bb60d5">ANTITY</span> <span style="color:#902000">PIC 9(5)</span>.       <span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">05  PR</span><span style="color:#bb60d5">ICE</span>    <span style="color:#902000">PIC 99V99</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">05  TO</span><span style="color:#bb60d5">TAL</span>    <span style="color:#902000">PIC 9(7)V99</span>.<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">05  QU</span><span style="color:#bb60d5">ANTITY</span> <span style="color:#902000">PIC 9(5)</span>.       <span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">05  PR</span><span style="color:#bb60d5">ICE</span>    <span style="color:#902000">PIC 99V99</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">05  TO</span><span style="color:#bb60d5">TAL</span>    <span style="color:#902000">PIC 9(7)V99</span>.<span style="">
 </span></span></span></code></pre></div><p><strong>Constants:</strong> Constants are declared using the <code>VALUE</code> clause along with the <code>PIC</code> clause. Their values cannot be changed during program execution.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">05 TAX</span><span style="color:#666">-</span><span style="color:#bb60d5">RATE</span> <span style="color:#902000">PIC V99</span> <span style="color:#007020">VALUE</span> <span style="color:#40a070">0</span>.<span style="color:#40a070">06</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">05  PI</span>       <span style="color:#902000">PIC 9V99</span> <span style="color:#007020">VALUE</span> <span style="color:#40a070">3</span>.<span style="color:#40a070">14</span>.<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">05 TAX</span><span style="color:#666">-</span><span style="color:#bb60d5">RATE</span> <span style="color:#902000">PIC V99</span> <span style="color:#007020">VALUE</span> <span style="color:#40a070">0</span>.<span style="color:#40a070">06</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">05  PI</span>       <span style="color:#902000">PIC 9V99</span> <span style="color:#007020">VALUE</span> <span style="color:#40a070">3</span>.<span style="color:#40a070">14</span>.<span style="">
 </span></span></span></code></pre></div><h3 class="heading" id="arithmetic-operations">
   Arithmetic Operations
   <a class="anchor" href="#arithmetic-operations">#</a>
@@ -394,7 +394,7 @@ COBOL (Common Business-Oriented Language) is a compiled English-like programming
 </li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">COMPUT</span><span style="color:#bb60d5">E</span> <span style="color:#bb60d5">TOTAL</span> <span style="color:#666">=</span> <span style="color:#bb60d5">QUANTITY</span> <span style="color:#666">*</span> <span style="color:#bb60d5">PRICE</span> <span style="color:#666">+</span> (<span style="color:#bb60d5">QUANTITY</span> <span style="color:#666">*</span> <span style="color:#bb60d5">PRICE</span>) <span style="color:#666">*</span> <span style="color:#bb60d5">TAX-RATE</span>.<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">COMPUT</span><span style="color:#bb60d5">E</span> <span style="color:#bb60d5">TOTAL</span> <span style="color:#666">=</span> <span style="color:#bb60d5">QUANTITY</span> <span style="color:#666">*</span> <span style="color:#bb60d5">PRICE</span> <span style="color:#666">+</span> (<span style="color:#bb60d5">QUANTITY</span> <span style="color:#666">*</span> <span style="color:#bb60d5">PRICE</span>) <span style="color:#666">*</span> <span style="color:#bb60d5">TAX-RATE</span>.<span style="">
 </span></span></span></code></pre></div><h3 class="heading" id="string-manipulation">
   String Manipulation
   <a class="anchor" href="#string-manipulation">#</a>
@@ -412,13 +412,13 @@ COBOL (Common Business-Oriented Language) is a compiled English-like programming
 </li>
 </ul>
 <p>Example (STRING):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">05  FI</span><span style="color:#bb60d5">RST-NAME</span> <span style="color:#902000">PIC X(20)</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">05  LA</span><span style="color:#bb60d5">ST-NAME</span>  <span style="color:#902000">PIC X(30)</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">05  FU</span><span style="color:#bb60d5">LL-NAME</span>  <span style="color:#902000">PIC X(50)</span>.<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">05  FI</span><span style="color:#bb60d5">RST-NAME</span> <span style="color:#902000">PIC X(20)</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">05  LA</span><span style="color:#bb60d5">ST-NAME</span>  <span style="color:#902000">PIC X(30)</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">05  FU</span><span style="color:#bb60d5">LL-NAME</span>  <span style="color:#902000">PIC X(50)</span>.<span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">... so</span><span style="color:#bb60d5">me</span> <span style="color:#007020">code</span> <span style="color:#007020">to</span> <span style="color:#bb60d5">populate</span> <span style="color:#bb60d5">FIRST-NAME</span> <span style="color:#007020;font-weight:bold">and</span> <span style="color:#bb60d5">LAST-NAME</span> ...<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">... so</span><span style="color:#bb60d5">me</span> <span style="color:#007020">code</span> <span style="color:#007020">to</span> <span style="color:#bb60d5">populate</span> <span style="color:#bb60d5">FIRST-NAME</span> <span style="color:#007020;font-weight:bold">and</span> <span style="color:#bb60d5">LAST-NAME</span> ...<span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">STRING</span> <span style="color:#bb60d5">FIRST-NAME</span> <span style="color:#007020">DELIMITED</span> <span style="color:#007020">BY</span> <span style="color:#007020">SIZE
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">STRING</span> <span style="color:#bb60d5">FIRST-NAME</span> <span style="color:#007020">DELIMITED</span> <span style="color:#007020">BY</span> <span style="color:#007020">SIZE
 </span></span></span><span style="display:flex;"><span><span style="color:#007020">      </span> <span style="color:#007020">INTO</span> <span style="color:#bb60d5">LAST-NAME</span> <span style="color:#007020">DELIMITED</span> <span style="color:#007020">BY</span> <span style="color:#007020">SIZE
 </span></span></span><span style="display:flex;"><span><span style="color:#007020">      </span> <span style="color:#007020">DELIMITED</span> <span style="color:#007020">BY</span> <span style="color:#60add5">SPACE
 </span></span></span><span style="display:flex;"><span><span style="color:#60add5">      </span> <span style="color:#007020">INTO</span> <span style="color:#bb60d5">FULL-NAME</span><span style="">
@@ -429,10 +429,10 @@ COBOL (Common Business-Oriented Language) is a compiled English-like programming
 </h3>
 <p>COBOL uses tables (essentially arrays) to store collections of data of the same type.  They are declared in the DATA DIVISION using OCCURS clauses.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">01  SA</span><span style="color:#bb60d5">LES-DATA</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">    05</span>  <span style="color:#bb60d5">SALES-RECORD</span> <span style="color:#007020">OCCURS</span> <span style="color:#40a070">12 </span><span style="color:#007020">TIMES</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">      </span>  <span style="color:#40a070">10  </span><span style="color:#bb60d5">MONTH</span>      <span style="color:#902000">PIC 99</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">      </span>  <span style="color:#40a070">10  </span><span style="color:#bb60d5">SALES-AMOUNT</span> <span style="color:#902000">PIC 9(7)V99</span>.<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">01  SA</span><span style="color:#bb60d5">LES-DATA</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">    05</span>  <span style="color:#bb60d5">SALES-RECORD</span> <span style="color:#007020">OCCURS</span> <span style="color:#40a070">12 </span><span style="color:#007020">TIMES</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">      </span>  <span style="color:#40a070">10  </span><span style="color:#bb60d5">MONTH</span>      <span style="color:#902000">PIC 99</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">      </span>  <span style="color:#40a070">10  </span><span style="color:#bb60d5">SALES-AMOUNT</span> <span style="color:#902000">PIC 9(7)V99</span>.<span style="">
 </span></span></span></code></pre></div><p>This declares a table called <code>SALES-DATA</code> with 12 elements (<code>SALES-RECORD</code>). Each element contains a month number (<code>MONTH</code>) and a sales amount (<code>SALES-AMOUNT</code>).  You can access individual elements using array indexing (subscripting).  For example, <code>SALES-AMOUNT(3)</code> refers to the sales amount for the third month.  Note that indexing starts from 1, not 0, as is usual in many other languages.  Iterating through tables often involves using <code>PERFORM</code> loops (discussed in later sections).</p>
 <h2 class="heading" id="control-structures">
   Control Structures
@@ -443,13 +443,13 @@ COBOL (Common Business-Oriented Language) is a compiled English-like programming
   <a class="anchor" href="#if-then-else-statements">#</a>
 </h3>
 <p>COBOL uses <code>IF-THEN-ELSE</code> statements to implement conditional logic.  The basic structure is:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">IF con</span><span style="color:#bb60d5">dition</span> <span style="color:#007020;font-weight:bold">THEN
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">IF con</span><span style="color:#bb60d5">dition</span> <span style="color:#007020;font-weight:bold">THEN
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">   </span> <span style="color:#bb60d5">statement-1</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">    st</span><span style="color:#bb60d5">atement-2</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">ELSE
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">    st</span><span style="color:#bb60d5">atement-2</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ELSE
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">   </span> <span style="color:#bb60d5">statement-3</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">    st</span><span style="color:#bb60d5">atement-4</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">END-IF</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">    st</span><span style="color:#bb60d5">atement-4</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">END-IF</span><span style="">
 </span></span></span></code></pre></div><p>Conditions are typically comparisons using relational operators:</p>
 <ul>
 <li><code>=</code>  (equal to)</li>
@@ -460,17 +460,17 @@ COBOL (Common Business-Oriented Language) is a compiled English-like programming
 <li><code>&gt;</code>= (not equal to)</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">IF QUA</span><span style="color:#bb60d5">NTITY</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">100 </span><span style="color:#007020;font-weight:bold">THEN
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">IF QUA</span><span style="color:#bb60d5">NTITY</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">100 </span><span style="color:#007020;font-weight:bold">THEN
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">   </span> <span style="color:#007020;font-weight:bold">COMPUTE</span> <span style="color:#bb60d5">DISCOUNT</span> <span style="color:#666">=</span> <span style="color:#bb60d5">PRICE</span> <span style="color:#666">*</span> <span style="color:#40a070">0</span>.<span style="color:#40a070">10
-</span></span></span><span style="display:flex;"><span><span style="color:#40a070"></span><span style="color:#007020;font-weight:bold">ELSE
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ELSE
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">   </span> <span style="color:#007020;font-weight:bold">COMPUTE</span> <span style="color:#bb60d5">DISCOUNT</span> <span style="color:#666">=</span> <span style="color:#40a070">0
-</span></span></span><span style="display:flex;"><span><span style="color:#40a070"></span><span style="color:#60a0b0;font-style:italic">END-IF</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">END-IF</span><span style="">
 </span></span></span></code></pre></div><p>Multiple conditions can be combined using <code>AND</code> and <code>OR</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">IF (QU</span><span style="color:#bb60d5">ANTITY</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">100</span>) <span style="color:#007020;font-weight:bold">AND </span>(<span style="color:#bb60d5">CUSTOMER-TYPE</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;PREMIUM&#34;</span>) <span style="color:#007020;font-weight:bold">THEN
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">IF (QU</span><span style="color:#bb60d5">ANTITY</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">100</span>) <span style="color:#007020;font-weight:bold">AND </span>(<span style="color:#bb60d5">CUSTOMER-TYPE</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;PREMIUM&#34;</span>) <span style="color:#007020;font-weight:bold">THEN
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">   </span> <span style="color:#007020;font-weight:bold">COMPUTE</span> <span style="color:#bb60d5">DISCOUNT</span> <span style="color:#666">=</span> <span style="color:#bb60d5">PRICE</span> <span style="color:#666">*</span> <span style="color:#40a070">0</span>.<span style="color:#40a070">20
-</span></span></span><span style="display:flex;"><span><span style="color:#40a070"></span><span style="color:#007020;font-weight:bold">ELSE
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ELSE
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">   </span> <span style="color:#007020;font-weight:bold">COMPUTE</span> <span style="color:#bb60d5">DISCOUNT</span> <span style="color:#666">=</span> <span style="color:#40a070">0
-</span></span></span><span style="display:flex;"><span><span style="color:#40a070"></span><span style="color:#60a0b0;font-style:italic">END-IF</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">END-IF</span><span style="">
 </span></span></span></code></pre></div><p><code>IF</code> statements can also be nested.</p>
 <h3 class="heading" id="perform-loops">
   PERFORM Loops
@@ -480,21 +480,21 @@ COBOL (Common Business-Oriented Language) is a compiled English-like programming
 <ul>
 <li><strong>Simple PERFORM:</strong> Executes a paragraph or section a specified number of times.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">PERFOR</span><span style="color:#bb60d5">M</span> <span style="color:#bb60d5">PROCESS-SALES</span> <span style="color:#40a070">12 </span><span style="color:#007020">TIMES</span>.<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">PERFOR</span><span style="color:#bb60d5">M</span> <span style="color:#bb60d5">PROCESS-SALES</span> <span style="color:#40a070">12 </span><span style="color:#007020">TIMES</span>.<span style="">
 </span></span></span></code></pre></div><p>This executes the paragraph named <code>PROCESS-SALES</code> twelve times.</p>
 <ul>
 <li><strong>PERFORM UNTIL:</strong> Repeats a paragraph or section until a condition becomes true.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">PERFOR</span><span style="color:#bb60d5">M</span> <span style="color:#007020">UNTIL</span> <span style="color:#bb60d5">EOF-FLAG</span> <span style="color:#666">=</span> <span style="color:#40a070">1
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">PERFOR</span><span style="color:#bb60d5">M</span> <span style="color:#007020">UNTIL</span> <span style="color:#bb60d5">EOF-FLAG</span> <span style="color:#666">=</span> <span style="color:#40a070">1
 </span></span></span><span style="display:flex;"><span><span style="color:#40a070">    </span><span style="color:#007020;font-weight:bold">READ</span> <span style="color:#bb60d5">CUSTOMER-FILE</span> <span style="color:#007020">AT</span> <span style="color:#007020;font-weight:bold">END</span> <span style="color:#007020;font-weight:bold">MOVE</span> <span style="color:#40a070">1 </span><span style="color:#007020">TO</span> <span style="color:#bb60d5">EOF-FLAG</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">END-PE</span><span style="color:#bb60d5">RFORM</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">END-PE</span><span style="color:#bb60d5">RFORM</span>.<span style="">
 </span></span></span></code></pre></div><p>This reads records from <code>CUSTOMER-FILE</code> until the end of the file is reached (<code>EOF-FLAG</code> becomes 1).</p>
 <ul>
 <li><strong>PERFORM VARYING:</strong>  Similar to a <code>for</code> loop in other languages, it iterates through a counter variable.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">PERFOR</span><span style="color:#bb60d5">M</span> <span style="color:#007020">VARYING</span> <span style="color:#bb60d5">MONTH</span> <span style="color:#007020">FROM</span> <span style="color:#40a070">1 </span><span style="color:#007020">BY</span> <span style="color:#40a070">1 </span><span style="color:#007020">UNTIL</span> <span style="color:#bb60d5">MONTH</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">12
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">PERFOR</span><span style="color:#bb60d5">M</span> <span style="color:#007020">VARYING</span> <span style="color:#bb60d5">MONTH</span> <span style="color:#007020">FROM</span> <span style="color:#40a070">1 </span><span style="color:#007020">BY</span> <span style="color:#40a070">1 </span><span style="color:#007020">UNTIL</span> <span style="color:#bb60d5">MONTH</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">12
 </span></span></span><span style="display:flex;"><span><span style="color:#40a070">    </span><span style="color:#bb60d5">PROCESS-MONTHLY-SALES</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">END-PE</span><span style="color:#bb60d5">RFORM</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">END-PE</span><span style="color:#bb60d5">RFORM</span>.<span style="">
 </span></span></span></code></pre></div><p>This iterates through months from 1 to 12, executing <code>PROCESS-MONTHLY-SALES</code> for each month.</p>
 <h3 class="heading" id="go-to-statements-and-why-to-avoid-them">
   GO TO Statements (and why to avoid them)
@@ -507,11 +507,11 @@ COBOL (Common Business-Oriented Language) is a compiled English-like programming
 </h3>
 <p>Control structures can be nested within each other to create complex logic.  For example, you can nest <code>IF-THEN-ELSE</code> statements within <code>PERFORM</code> loops, or <code>PERFORM</code> loops within <code>IF-THEN-ELSE</code> structures.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">PERFOR</span><span style="color:#bb60d5">M</span> <span style="color:#007020">VARYING</span> <span style="color:#bb60d5">I</span> <span style="color:#007020">FROM</span> <span style="color:#40a070">1 </span><span style="color:#007020">BY</span> <span style="color:#40a070">1 </span><span style="color:#007020">UNTIL</span> <span style="color:#bb60d5">I</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">10
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">PERFOR</span><span style="color:#bb60d5">M</span> <span style="color:#007020">VARYING</span> <span style="color:#bb60d5">I</span> <span style="color:#007020">FROM</span> <span style="color:#40a070">1 </span><span style="color:#007020">BY</span> <span style="color:#40a070">1 </span><span style="color:#007020">UNTIL</span> <span style="color:#bb60d5">I</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">10
 </span></span></span><span style="display:flex;"><span><span style="color:#40a070">    </span><span style="color:#007020;font-weight:bold">IF </span>(<span style="color:#bb60d5">I</span> <span style="color:#06287e">MOD</span> <span style="color:#40a070">2</span>) <span style="color:#666">=</span> <span style="color:#40a070">0 </span><span style="color:#007020;font-weight:bold">THEN
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">       </span> <span style="color:#007020;font-weight:bold">DISPLAY </span><span style="color:#4070a0">&#34;Even number: &#34;</span> <span style="color:#bb60d5">I</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">    EN</span><span style="color:#bb60d5">D-IF</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">END-PE</span><span style="color:#bb60d5">RFORM</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">    EN</span><span style="color:#bb60d5">D-IF</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">END-PE</span><span style="color:#bb60d5">RFORM</span>.<span style="">
 </span></span></span></code></pre></div><p>This code iterates from 1 to 10, displaying only even numbers.  The <code>IF-THEN-ELSE</code> statement is nested inside the <code>PERFORM</code> loop.  Careful indentation and clear naming conventions are crucial when working with nested structures to maintain code readability.</p>
 <p>Nested structures should be used judiciously, as overly complex nesting can make the code harder to understand.  Consider refactoring your code into smaller, more manageable modules if the nesting becomes excessive.</p>
 <h2 class="heading" id="advanced-cobol-concepts">
@@ -527,19 +527,19 @@ COBOL (Common Business-Oriented Language) is a compiled English-like programming
 <p><strong>Calling a Subprogram:</strong>  The <code>CALL</code> statement is used to invoke a subprogram, passing parameters as needed.  The <code>USING</code> clause specifies the parameters.</p>
 <p>Example:</p>
 <p><strong>Main Program:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">CALL &#34;</span><span style="color:#bb60d5">CALCULATE-TOTAL</span><span style="color:#4070a0">&#34; USING  QUANTITY, PRICE, TOTAL.
-</span></span></span><span style="display:flex;"><span><span style="color:#4070a0"></span><span style="color:#60a0b0;font-style:italic">DISPLA</span><span style="color:#bb60d5">Y</span> <span style="color:#4070a0">&#34;Total: &#34;</span> <span style="color:#bb60d5">TOTAL</span>.<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">CALL &#34;</span><span style="color:#bb60d5">CALCULATE-TOTAL</span><span style="color:#4070a0">&#34; USING  QUANTITY, PRICE, TOTAL.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">DISPLA</span><span style="color:#bb60d5">Y</span> <span style="color:#4070a0">&#34;Total: &#34;</span> <span style="color:#bb60d5">TOTAL</span>.<span style="">
 </span></span></span></code></pre></div><p><strong>Subprogram (CALCULATE-TOTAL):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">IDENTI</span><span style="color:#bb60d5">FICATION</span> <span style="color:#007020;font-weight:bold">DIVISION</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">PROGRA</span><span style="color:#bb60d5">M-ID</span>. <span style="color:#bb60d5">CALCULATE-TOTAL</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">DATA D</span><span style="color:#bb60d5">IVISION</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">WORKIN</span><span style="color:#bb60d5">G-STORAGE</span> <span style="color:#007020;font-weight:bold">SECTION</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">01  QU</span><span style="color:#bb60d5">ANTITY-PARAM</span> <span style="color:#902000">PIC 9(5)</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">01  PR</span><span style="color:#bb60d5">ICE-PARAM</span>    <span style="color:#902000">PIC 99V99</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">01  TO</span><span style="color:#bb60d5">TAL-PARAM</span>    <span style="color:#902000">PIC 9(7)V99</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">PROCED</span><span style="color:#bb60d5">URE</span> <span style="color:#007020;font-weight:bold">DIVISION</span> <span style="color:#007020">USING</span> <span style="color:#bb60d5">QUANTITY-PARAM</span>, <span style="color:#bb60d5">PRICE-PARAM</span>, <span style="color:#bb60d5">TOTAL-PARAM</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">COMPUT</span><span style="color:#bb60d5">E</span> <span style="color:#bb60d5">TOTAL-PARAM</span> <span style="color:#666">=</span> <span style="color:#bb60d5">QUANTITY-PARAM</span> <span style="color:#666">*</span> <span style="color:#bb60d5">PRICE-PARAM</span>.<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic">EXIT P</span><span style="color:#bb60d5">ROGRAM</span>.<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cobol" data-lang="cobol"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">IDENTI</span><span style="color:#bb60d5">FICATION</span> <span style="color:#007020;font-weight:bold">DIVISION</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">PROGRA</span><span style="color:#bb60d5">M-ID</span>. <span style="color:#bb60d5">CALCULATE-TOTAL</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">DATA D</span><span style="color:#bb60d5">IVISION</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">WORKIN</span><span style="color:#bb60d5">G-STORAGE</span> <span style="color:#007020;font-weight:bold">SECTION</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">01  QU</span><span style="color:#bb60d5">ANTITY-PARAM</span> <span style="color:#902000">PIC 9(5)</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">01  PR</span><span style="color:#bb60d5">ICE-PARAM</span>    <span style="color:#902000">PIC 99V99</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">01  TO</span><span style="color:#bb60d5">TAL-PARAM</span>    <span style="color:#902000">PIC 9(7)V99</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">PROCED</span><span style="color:#bb60d5">URE</span> <span style="color:#007020;font-weight:bold">DIVISION</span> <span style="color:#007020">USING</span> <span style="color:#bb60d5">QUANTITY-PARAM</span>, <span style="color:#bb60d5">PRICE-PARAM</span>, <span style="color:#bb60d5">TOTAL-PARAM</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">COMPUT</span><span style="color:#bb60d5">E</span> <span style="color:#bb60d5">TOTAL-PARAM</span> <span style="color:#666">=</span> <span style="color:#bb60d5">QUANTITY-PARAM</span> <span style="color:#666">*</span> <span style="color:#bb60d5">PRICE-PARAM</span>.<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">EXIT P</span><span style="color:#bb60d5">ROGRAM</span>.<span style="">
 </span></span></span></code></pre></div><h3 class="heading" id="error-handling-and-exception-management">
   Error Handling and Exception Management
   <a class="anchor" href="#error-handling-and-exception-management">#</a>

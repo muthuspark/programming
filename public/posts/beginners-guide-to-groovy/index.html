@@ -36,14 +36,14 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-groovy/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-groovy/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Groovy">
-  <meta property="og:description" content="Introduction to Groovy # What is Groovy? # Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM). It’s built on top of Java and seamlessly integrates with existing Java libraries and frameworks. Groovy aims to be a more concise and expressive alternative to Java, offering features like dynamic typing, closures (anonymous functions), and built-in support for working with lists and maps. It’s often used for scripting, building web applications (with frameworks like Grails), and improving the productivity of Java developers. While syntactically similar to Java in many respects, Groovy allows for a more flexible and less verbose coding style.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-03-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-01T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Groovy">
+	<meta property="og:description" content="Introduction to Groovy # What is Groovy? # Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM). It’s built on top of Java and seamlessly integrates with existing Java libraries and frameworks. Groovy aims to be a more concise and expressive alternative to Java, offering features like dynamic typing, closures (anonymous functions), and built-in support for working with lists and maps. It’s often used for scripting, building web applications (with frameworks like Grails), and improving the productivity of Java developers. While syntactically similar to Java in many respects, Groovy allows for a more flexible and less verbose coding style.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-03-01T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-03-01T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -237,45 +237,45 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
   <a class="anchor" href="#groovy-vs-java">#</a>
 </h3>
 <table>
-  <thead>
-      <tr>
-          <th>Feature</th>
-          <th>Groovy</th>
-          <th>Java</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Typing</td>
-          <td>Dynamic (with static typing support)</td>
-          <td>Statically typed</td>
-      </tr>
-      <tr>
-          <td>Syntax</td>
-          <td>More concise and expressive</td>
-          <td>More verbose</td>
-      </tr>
-      <tr>
-          <td>Development Speed</td>
-          <td>Faster</td>
-          <td>Slower (generally)</td>
-      </tr>
-      <tr>
-          <td>Learning Curve</td>
-          <td>Relatively easier</td>
-          <td>Steeper</td>
-      </tr>
-      <tr>
-          <td>Interoperability</td>
-          <td>Seamless with Java</td>
-          <td>N/A</td>
-      </tr>
-      <tr>
-          <td>Metaprogramming</td>
-          <td>Rich support</td>
-          <td>Limited</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Feature</th>
+					<th>Groovy</th>
+					<th>Java</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Typing</td>
+					<td>Dynamic (with static typing support)</td>
+					<td>Statically typed</td>
+			</tr>
+			<tr>
+					<td>Syntax</td>
+					<td>More concise and expressive</td>
+					<td>More verbose</td>
+			</tr>
+			<tr>
+					<td>Development Speed</td>
+					<td>Faster</td>
+					<td>Slower (generally)</td>
+			</tr>
+			<tr>
+					<td>Learning Curve</td>
+					<td>Relatively easier</td>
+					<td>Steeper</td>
+			</tr>
+			<tr>
+					<td>Interoperability</td>
+					<td>Seamless with Java</td>
+					<td>N/A</td>
+			</tr>
+			<tr>
+					<td>Metaprogramming</td>
+					<td>Rich support</td>
+					<td>Limited</td>
+			</tr>
+	</tbody>
 </table>
 <h3 class="heading" id="setting-up-your-environment">
   Setting up your environment
@@ -303,14 +303,14 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
   <a class="anchor" href="#variables-and-data-types">#</a>
 </h3>
 <p>Groovy is dynamically typed, meaning you don&rsquo;t explicitly declare the data type of a variable.  The type is inferred at runtime.  Variable names start with a letter or underscore and can contain letters, numbers, and underscores.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;John Doe&#34;</span> <span style="color:#60a0b0;font-style:italic">// String
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">def</span> age <span style="color:#666">=</span> <span style="color:#40a070">30</span>          <span style="color:#60a0b0;font-style:italic">// Integer
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">def</span> height <span style="color:#666">=</span> <span style="color:#40a070">5.11</span>     <span style="color:#60a0b0;font-style:italic">// Double
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">def</span> isAdult <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span>    <span style="color:#60a0b0;font-style:italic">// Boolean
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">def</span> list <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">]</span>  <span style="color:#60a0b0;font-style:italic">// List
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">def</span> map <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#002070;font-weight:bold">name:</span><span style="color:#4070a0">&#34;John&#34;</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">age:</span><span style="color:#40a070">30</span><span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Map
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;John Doe&#34;</span> <span style="color:#60a0b0;font-style:italic">// String
+</span></span></span><span style="display:flex;"><span><span style="color:#902000">def</span> age <span style="color:#666">=</span> <span style="color:#40a070">30</span>          <span style="color:#60a0b0;font-style:italic">// Integer
+</span></span></span><span style="display:flex;"><span><span style="color:#902000">def</span> height <span style="color:#666">=</span> <span style="color:#40a070">5.11</span>     <span style="color:#60a0b0;font-style:italic">// Double
+</span></span></span><span style="display:flex;"><span><span style="color:#902000">def</span> isAdult <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span>    <span style="color:#60a0b0;font-style:italic">// Boolean
+</span></span></span><span style="display:flex;"><span><span style="color:#902000">def</span> list <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">]</span>  <span style="color:#60a0b0;font-style:italic">// List
+</span></span></span><span style="display:flex;"><span><span style="color:#902000">def</span> map <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#002070;font-weight:bold">name:</span><span style="color:#4070a0">&#34;John&#34;</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">age:</span><span style="color:#40a070">30</span><span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Map
 </span></span></span></code></pre></div><p><code>def</code> is the most common way to declare variables.  However, you can explicitly specify types for better readability and compile-time checks:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>String city <span style="color:#666">=</span> <span style="color:#4070a0">&#34;New York&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>String city <span style="color:#666">=</span> <span style="color:#4070a0">&#34;New York&#34;</span>
 </span></span><span style="display:flex;"><span>Integer zipCode <span style="color:#666">=</span> <span style="color:#40a070">10001</span>
 </span></span></code></pre></div><h3 class="heading" id="operators">
   Operators
@@ -328,7 +328,7 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 </h3>
 <p>Groovy&rsquo;s control structures are similar to Java&rsquo;s, but often more concise:</p>
 <p><strong>if-else:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> x <span style="color:#666">=</span> <span style="color:#40a070">10</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> x <span style="color:#666">=</span> <span style="color:#40a070">10</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>x <span style="color:#666">&gt;</span> <span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    println <span style="color:#4070a0">&#34;x is greater than 5&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
@@ -338,20 +338,20 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 <ul>
 <li><strong>for loop (iterating over a range):</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span>i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1</span><span style="color:#666">..</span><span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span>i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#40a070">1</span><span style="color:#666">..</span><span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    println i
 </span></span><span style="display:flex;"><span><span style="color:#666">}</span>
 </span></span></code></pre></div><ul>
 <li><strong>for loop (iterating over a collection):</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> names <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;Bob&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;Charlie&#34;</span><span style="color:#666">]</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> names <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;Bob&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;Charlie&#34;</span><span style="color:#666">]</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span>name <span style="color:#007020;font-weight:bold">in</span> names<span style="color:#666">)</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    println name
 </span></span><span style="display:flex;"><span><span style="color:#666">}</span>
 </span></span></code></pre></div><ul>
 <li><strong>while loop:</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#666">(</span>i <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span><span style="color:#666">)</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    println i
 </span></span><span style="display:flex;"><span>    i<span style="color:#666">++</span>
@@ -359,7 +359,7 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 </span></span></code></pre></div><ul>
 <li><strong>each loop (for collections):</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#666">[</span><span style="color:#4070a0">&#34;apple&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;banana&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;cherry&#34;</span><span style="color:#666">].</span><span style="color:#4070a0">each</span> <span style="color:#666">{</span> fruit <span style="color:#666">-&gt;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#666">[</span><span style="color:#4070a0">&#34;apple&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;banana&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;cherry&#34;</span><span style="color:#666">].</span><span style="color:#4070a0">each</span> <span style="color:#666">{</span> fruit <span style="color:#666">-&gt;</span>
 </span></span><span style="display:flex;"><span>    println fruit<span style="color:#666">.</span><span style="color:#4070a0">toUpperCase</span><span style="color:#666">()</span>
 </span></span><span style="display:flex;"><span><span style="color:#666">}</span>
 </span></span></code></pre></div><h3 class="heading" id="working-with-strings">
@@ -367,13 +367,13 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
   <a class="anchor" href="#working-with-strings">#</a>
 </h3>
 <p>Groovy provides convenient methods for string manipulation:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> message <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> message <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
 </span></span><span style="display:flex;"><span>println message<span style="color:#666">.</span><span style="color:#4070a0">toUpperCase</span><span style="color:#666">()</span>      <span style="color:#60a0b0;font-style:italic">// HELLO, WORLD!
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println message<span style="color:#666">.</span><span style="color:#4070a0">toLowerCase</span><span style="color:#666">()</span>      <span style="color:#60a0b0;font-style:italic">// hello, world!
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println message<span style="color:#666">.</span><span style="color:#4070a0">length</span><span style="color:#666">()</span>           <span style="color:#60a0b0;font-style:italic">// 13
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println message<span style="color:#666">.</span><span style="color:#4070a0">substring</span><span style="color:#666">(</span><span style="color:#40a070">7</span><span style="color:#666">)</span>      <span style="color:#60a0b0;font-style:italic">// world!
+</span></span></span><span style="display:flex;"><span>println message<span style="color:#666">.</span><span style="color:#4070a0">toLowerCase</span><span style="color:#666">()</span>      <span style="color:#60a0b0;font-style:italic">// hello, world!
+</span></span></span><span style="display:flex;"><span>println message<span style="color:#666">.</span><span style="color:#4070a0">length</span><span style="color:#666">()</span>           <span style="color:#60a0b0;font-style:italic">// 13
+</span></span></span><span style="display:flex;"><span>println message<span style="color:#666">.</span><span style="color:#4070a0">substring</span><span style="color:#666">(</span><span style="color:#40a070">7</span><span style="color:#666">)</span>      <span style="color:#60a0b0;font-style:italic">// world!
 </span></span></span></code></pre></div><p>String interpolation is supported using <code>${}</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>
 </span></span><span style="display:flex;"><span>println <span style="color:#4070a0">&#34;Hello, ${name}!&#34;</span>       <span style="color:#60a0b0;font-style:italic">// Hello, Alice!
 </span></span></span></code></pre></div><h3 class="heading" id="working-with-collections-lists-maps">
   Working with Collections (Lists, Maps)
@@ -381,18 +381,18 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 </h3>
 <p>Groovy simplifies working with lists and maps:</p>
 <p><strong>Lists:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> numbers <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">4</span><span style="color:#666">,</span> <span style="color:#40a070">5</span><span style="color:#666">]</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> numbers <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">4</span><span style="color:#666">,</span> <span style="color:#40a070">5</span><span style="color:#666">]</span>
 </span></span><span style="display:flex;"><span>println numbers<span style="color:#666">[</span><span style="color:#40a070">0</span><span style="color:#666">]</span>             <span style="color:#60a0b0;font-style:italic">// Accessing element at index 0 (1)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>numbers <span style="color:#666">&lt;&lt;</span> <span style="color:#40a070">6</span>                  <span style="color:#60a0b0;font-style:italic">// Adding an element
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>numbers<span style="color:#666">.</span><span style="color:#4070a0">add</span><span style="color:#666">(</span><span style="color:#40a070">7</span><span style="color:#666">)</span>                <span style="color:#60a0b0;font-style:italic">// Adding an element using add()
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>numbers<span style="color:#666">.</span><span style="color:#4070a0">remove</span><span style="color:#666">(</span><span style="color:#40a070">2</span><span style="color:#666">)</span>             <span style="color:#60a0b0;font-style:italic">// Removing element 2
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println numbers<span style="color:#666">.</span><span style="color:#4070a0">size</span><span style="color:#666">()</span>         <span style="color:#60a0b0;font-style:italic">// Getting size of the list
+</span></span></span><span style="display:flex;"><span>numbers <span style="color:#666">&lt;&lt;</span> <span style="color:#40a070">6</span>                  <span style="color:#60a0b0;font-style:italic">// Adding an element
+</span></span></span><span style="display:flex;"><span>numbers<span style="color:#666">.</span><span style="color:#4070a0">add</span><span style="color:#666">(</span><span style="color:#40a070">7</span><span style="color:#666">)</span>                <span style="color:#60a0b0;font-style:italic">// Adding an element using add()
+</span></span></span><span style="display:flex;"><span>numbers<span style="color:#666">.</span><span style="color:#4070a0">remove</span><span style="color:#666">(</span><span style="color:#40a070">2</span><span style="color:#666">)</span>             <span style="color:#60a0b0;font-style:italic">// Removing element 2
+</span></span></span><span style="display:flex;"><span>println numbers<span style="color:#666">.</span><span style="color:#4070a0">size</span><span style="color:#666">()</span>         <span style="color:#60a0b0;font-style:italic">// Getting size of the list
 </span></span></span></code></pre></div><p><strong>Maps:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> person <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#002070;font-weight:bold">name:</span> <span style="color:#4070a0">&#34;Bob&#34;</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">age:</span> <span style="color:#40a070">30</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">city:</span> <span style="color:#4070a0">&#34;London&#34;</span><span style="color:#666">]</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> person <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#002070;font-weight:bold">name:</span> <span style="color:#4070a0">&#34;Bob&#34;</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">age:</span> <span style="color:#40a070">30</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">city:</span> <span style="color:#4070a0">&#34;London&#34;</span><span style="color:#666">]</span>
 </span></span><span style="display:flex;"><span>println person<span style="color:#666">.</span><span style="color:#4070a0">name</span>            <span style="color:#60a0b0;font-style:italic">// Accessing value using key
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>person<span style="color:#666">.</span><span style="color:#4070a0">country</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;UK&#34;</span>         <span style="color:#60a0b0;font-style:italic">// Adding a new key-value pair
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println person<span style="color:#666">.</span><span style="color:#4070a0">containsKey</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;age&#34;</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Checking if a key exists
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println person<span style="color:#666">.</span><span style="color:#4070a0">size</span><span style="color:#666">()</span>         <span style="color:#60a0b0;font-style:italic">// Getting size of the map
+</span></span></span><span style="display:flex;"><span>person<span style="color:#666">.</span><span style="color:#4070a0">country</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;UK&#34;</span>         <span style="color:#60a0b0;font-style:italic">// Adding a new key-value pair
+</span></span></span><span style="display:flex;"><span>println person<span style="color:#666">.</span><span style="color:#4070a0">containsKey</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;age&#34;</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Checking if a key exists
+</span></span></span><span style="display:flex;"><span>println person<span style="color:#666">.</span><span style="color:#4070a0">size</span><span style="color:#666">()</span>         <span style="color:#60a0b0;font-style:italic">// Getting size of the map
 </span></span></span></code></pre></div><p>Lists and Maps are dynamically sized and can contain elements of different data types.  Many useful methods are available for manipulating collections.</p>
 <h2 class="heading" id="object-oriented-programming-in-groovy">
   Object-Oriented Programming in Groovy
@@ -403,7 +403,7 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
   <a class="anchor" href="#classes-and-objects">#</a>
 </h3>
 <p>Groovy fully supports object-oriented programming.  Classes are defined using the <code>class</code> keyword:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> <span style="color:#666">{</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    String name
 </span></span><span style="display:flex;"><span>    String breed
 </span></span><span style="display:flex;"><span>
@@ -422,7 +422,7 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
   <a class="anchor" href="#constructors">#</a>
 </h3>
 <p>Constructors in Groovy are similar to Java, but Groovy offers a more concise syntax.  A constructor with no arguments is automatically generated if you don&rsquo;t define one.  You can define constructors with parameters:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span> <span style="color:#666">{</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    String name
 </span></span><span style="display:flex;"><span>    String color
 </span></span><span style="display:flex;"><span>
@@ -444,7 +444,7 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
   <a class="anchor" href="#inheritance">#</a>
 </h3>
 <p>Inheritance is achieved using the <code>extends</code> keyword:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> <span style="color:#666">{</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    String name
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">eat</span><span style="color:#666">()</span> <span style="color:#666">{</span>
@@ -461,14 +461,14 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> myDog <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Dog<span style="color:#666">()</span>
 </span></span><span style="display:flex;"><span>myDog<span style="color:#666">.</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Rover&#34;</span>
 </span></span><span style="display:flex;"><span>myDog<span style="color:#666">.</span><span style="color:#4070a0">eat</span><span style="color:#666">()</span>   <span style="color:#60a0b0;font-style:italic">// Output: Eating...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>myDog<span style="color:#666">.</span><span style="color:#4070a0">bark</span><span style="color:#666">()</span> <span style="color:#60a0b0;font-style:italic">// Output: Woof!
+</span></span></span><span style="display:flex;"><span>myDog<span style="color:#666">.</span><span style="color:#4070a0">bark</span><span style="color:#666">()</span> <span style="color:#60a0b0;font-style:italic">// Output: Woof!
 </span></span></span></code></pre></div><p>Groovy supports single inheritance (a class can extend only one other class).</p>
 <h3 class="heading" id="polymorphism">
   Polymorphism
   <a class="anchor" href="#polymorphism">#</a>
 </h3>
 <p>Polymorphism allows objects of different classes to be treated as objects of a common type.  This is readily achieved in Groovy through method overriding:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> <span style="color:#666">{</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">makeSound</span><span style="color:#666">()</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>        println <span style="color:#4070a0">&#34;Generic animal sound&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
@@ -500,7 +500,7 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
   <a class="anchor" href="#interfaces">#</a>
 </h3>
 <p>Interfaces are defined using the <code>interface</code> keyword.  Classes can implement multiple interfaces using the <code>implements</code> keyword:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">Pet</span> <span style="color:#666">{</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">Pet</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">void</span> <span style="color:#06287e">play</span><span style="color:#666">()</span>
 </span></span><span style="display:flex;"><span><span style="color:#666">}</span>
 </span></span><span style="display:flex;"><span>
@@ -526,17 +526,17 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
   <a class="anchor" href="#closures">#</a>
 </h3>
 <p>Closures are anonymous functions that can be passed as arguments to methods or assigned to variables. They are a powerful feature that enables functional programming paradigms in Groovy.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> greet <span style="color:#666">=</span> <span style="color:#666">{</span> name <span style="color:#666">-&gt;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> greet <span style="color:#666">=</span> <span style="color:#666">{</span> name <span style="color:#666">-&gt;</span>
 </span></span><span style="display:flex;"><span>    println <span style="color:#4070a0">&#34;Hello, ${name}!&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#666">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>greet<span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Output: Hello, Alice!
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> numbers <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> <span style="color:#40a070">4</span><span style="color:#666">,</span> <span style="color:#40a070">5</span><span style="color:#666">]</span>
 </span></span><span style="display:flex;"><span>numbers<span style="color:#666">.</span><span style="color:#4070a0">each</span> <span style="color:#666">{</span> number <span style="color:#666">-&gt;</span>
 </span></span><span style="display:flex;"><span>    println number <span style="color:#666">*</span> <span style="color:#40a070">2</span>
 </span></span><span style="display:flex;"><span><span style="color:#666">}</span> <span style="color:#60a0b0;font-style:italic">// Output: 2, 4, 6, 8, 10
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> sum <span style="color:#666">=</span> numbers<span style="color:#666">.</span><span style="color:#4070a0">inject</span><span style="color:#666">(</span><span style="color:#40a070">0</span><span style="color:#666">)</span> <span style="color:#666">{</span> acc<span style="color:#666">,</span> num <span style="color:#666">-&gt;</span> acc <span style="color:#666">+</span> num <span style="color:#666">}</span>
 </span></span><span style="display:flex;"><span>println sum <span style="color:#60a0b0;font-style:italic">// Output: 15
 </span></span></span></code></pre></div><p>Closures can access variables from their enclosing scope (closures have lexical closures).  The <code>it</code> variable implicitly represents the closure&rsquo;s single parameter if only one is used.  <code>inject</code> is a method demonstrating the power of closures for functional operations.</p>
@@ -547,7 +547,7 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 <p>Groovy&rsquo;s metaprogramming capabilities allow you to modify the behavior of your code at runtime. This can be used to create DSLs (Domain-Specific Languages), generate code dynamically, and add methods to classes at runtime.  This is primarily achieved through <code>ExpandoMetaClass</code>.  However, since Groovy 3.0, using <code>ExpandoMetaClass</code> is discouraged, and alternative approaches (like using categories) should be favored for improved maintainability and to avoid potential runtime conflicts.</p>
 <p><strong>Using Categories (Preferred):</strong></p>
 <p>Categories allow you to extend existing classes without modifying the original class code.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">StringCategory</span> <span style="color:#666">{</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">StringCategory</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">static</span> String <span style="color:#06287e">reverse</span><span style="color:#666">(</span>String str<span style="color:#666">)</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>        str<span style="color:#666">.</span><span style="color:#4070a0">reverse</span><span style="color:#666">()</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
@@ -555,14 +555,14 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>use<span style="color:#666">(</span>StringCategory<span style="color:#666">)</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    println <span style="color:#4070a0">&#34;hello&#34;</span><span style="color:#666">.</span><span style="color:#4070a0">reverse</span><span style="color:#666">()</span> <span style="color:#60a0b0;font-style:italic">// Output: olleh
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#666">}</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#666">}</span>
 </span></span></code></pre></div><p><strong>Note:</strong> While <code>ExpandoMetaClass</code> is less recommended, understanding its basic functionality can still be useful for encountering legacy code.  It should be used cautiously, ideally only in well-defined, controlled contexts and with rigorous testing.</p>
 <h3 class="heading" id="builders">
   Builders
   <a class="anchor" href="#builders">#</a>
 </h3>
 <p>Groovy&rsquo;s builders provide a fluent, declarative syntax for creating complex objects.  They offer an alternative to nested constructor calls, making code more readable and maintainable.  The most common builder is the <code>MarkupBuilder</code>, used for generating XML or HTML.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> writer <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> StringWriter<span style="color:#666">()</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> writer <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> StringWriter<span style="color:#666">()</span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> xml <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> MarkupBuilder<span style="color:#666">(</span>writer<span style="color:#666">)</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>xml<span style="color:#666">.</span><span style="color:#4070a0">person</span> <span style="color:#666">{</span>
@@ -600,7 +600,7 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 </h3>
 <p>Groovy offers convenient methods for reading and writing files.  The <code>File</code> class provides a straightforward interface:</p>
 <p><strong>Reading a file:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> file <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> File<span style="color:#666">(</span><span style="color:#4070a0">&#34;my_file.txt&#34;</span><span style="color:#666">)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> file <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> File<span style="color:#666">(</span><span style="color:#4070a0">&#34;my_file.txt&#34;</span><span style="color:#666">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>file<span style="color:#666">.</span><span style="color:#4070a0">exists</span><span style="color:#666">())</span> <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    file<span style="color:#666">.</span><span style="color:#4070a0">eachLine</span> <span style="color:#666">{</span> line <span style="color:#666">-&gt;</span>
 </span></span><span style="display:flex;"><span>        println line
@@ -610,17 +610,17 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 </span></span><span style="display:flex;"><span><span style="color:#666">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Alternatively, read the entire file content into a String:
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">def</span> content <span style="color:#666">=</span> file<span style="color:#666">.</span><span style="color:#4070a0">text</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#902000">def</span> content <span style="color:#666">=</span> file<span style="color:#666">.</span><span style="color:#4070a0">text</span>
 </span></span><span style="display:flex;"><span>println content
 </span></span></code></pre></div><p><strong>Writing to a file:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> file <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> File<span style="color:#666">(</span><span style="color:#4070a0">&#34;output.txt&#34;</span><span style="color:#666">)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#902000">def</span> file <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> File<span style="color:#666">(</span><span style="color:#4070a0">&#34;output.txt&#34;</span><span style="color:#666">)</span>
 </span></span><span style="display:flex;"><span>file<span style="color:#666">.</span><span style="color:#4070a0">withWriter</span> <span style="color:#666">{</span> writer <span style="color:#666">-&gt;</span>
 </span></span><span style="display:flex;"><span>    writer<span style="color:#666">.</span><span style="color:#4070a0">writeLine</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;This is the first line.&#34;</span><span style="color:#666">)</span>
 </span></span><span style="display:flex;"><span>    writer<span style="color:#666">.</span><span style="color:#4070a0">writeLine</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;This is the second line.&#34;</span><span style="color:#666">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#666">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Or using &lt;&lt; operator for simple appending:
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>file <span style="color:#666">&lt;&lt;</span> <span style="color:#4070a0">&#34;This line is appended.&#34;</span>
+</span></span></span><span style="display:flex;"><span>file <span style="color:#666">&lt;&lt;</span> <span style="color:#4070a0">&#34;This line is appended.&#34;</span>
 </span></span></code></pre></div><p>Remember to handle potential exceptions (e.g., <code>FileNotFoundException</code>) when working with files.</p>
 <h3 class="heading" id="working-with-json-and-xml">
   Working with JSON and XML
@@ -628,19 +628,19 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 </h3>
 <p>Groovy provides built-in support for handling JSON and XML data.  The <code>JsonOutput</code> and <code>XmlSlurper</code> classes are commonly used:</p>
 <p><strong>JSON:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">groovy.json.JsonOutput</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">groovy.json.JsonOutput</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> data <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#002070;font-weight:bold">name:</span> <span style="color:#4070a0">&#34;John&#34;</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">age:</span> <span style="color:#40a070">30</span><span style="color:#666">,</span> <span style="color:#002070;font-weight:bold">city:</span> <span style="color:#4070a0">&#34;New York&#34;</span><span style="color:#666">]</span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> jsonString <span style="color:#666">=</span> JsonOutput<span style="color:#666">.</span><span style="color:#4070a0">toJson</span><span style="color:#666">(</span>data<span style="color:#666">)</span>
 </span></span><span style="display:flex;"><span>println jsonString <span style="color:#60a0b0;font-style:italic">// Output: {&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;New York&#34;}
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">groovy.json.JsonSlurper</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> slurper <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> JsonSlurper<span style="color:#666">()</span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> parsedJson <span style="color:#666">=</span> slurper<span style="color:#666">.</span><span style="color:#4070a0">parseText</span><span style="color:#666">(</span>jsonString<span style="color:#666">)</span>
 </span></span><span style="display:flex;"><span>println parsedJson<span style="color:#666">.</span><span style="color:#4070a0">name</span> <span style="color:#60a0b0;font-style:italic">// Output: John
 </span></span></span></code></pre></div><p><strong>XML:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">groovy.xml.XmlSlurper</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">groovy.xml.XmlSlurper</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> xmlString <span style="color:#666">=</span> <span style="color:#4070a0">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0">&lt;person&gt;
@@ -651,14 +651,14 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> xml <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> XmlSlurper<span style="color:#666">().</span><span style="color:#4070a0">parseText</span><span style="color:#666">(</span>xmlString<span style="color:#666">)</span>
 </span></span><span style="display:flex;"><span>println xml<span style="color:#666">.</span><span style="color:#4070a0">name</span><span style="color:#666">.</span><span style="color:#4070a0">text</span><span style="color:#666">()</span> <span style="color:#60a0b0;font-style:italic">// Output: Jane
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>println xml<span style="color:#666">.</span><span style="color:#4070a0">age</span><span style="color:#666">.</span><span style="color:#4070a0">text</span><span style="color:#666">()</span>  <span style="color:#60a0b0;font-style:italic">// Output: 25
+</span></span></span><span style="display:flex;"><span>println xml<span style="color:#666">.</span><span style="color:#4070a0">age</span><span style="color:#666">.</span><span style="color:#4070a0">text</span><span style="color:#666">()</span>  <span style="color:#60a0b0;font-style:italic">// Output: 25
 </span></span></span></code></pre></div><p>These classes simplify parsing and generating JSON and XML data.  For more complex scenarios, consider using libraries like <code>jackson</code> (for JSON) for enhanced performance and features.</p>
 <h3 class="heading" id="making-http-requests">
   Making HTTP Requests
   <a class="anchor" href="#making-http-requests">#</a>
 </h3>
 <p>Groovy offers several ways to make HTTP requests, including using the built-in <code>HttpURLConnection</code> or dedicated libraries like <code>HttpBuilder</code> or <code>OkHttp</code>.  <code>HttpBuilder</code> is frequently preferred for its ease of use.  You&rsquo;ll likely need to add the <code>http-builder</code> dependency to your project (e.g., using Gradle or Maven).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">groovyx.net.http.HTTPBuilder</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">groovyx.net.http.HTTPBuilder</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> http <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> HTTPBuilder<span style="color:#666">(</span><span style="color:#4070a0">&#39;https://api.example.com&#39;</span><span style="color:#666">)</span>
 </span></span><span style="display:flex;"><span>
@@ -682,7 +682,7 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 </h3>
 <p>Groovy integrates well with various testing frameworks.  Spock is a popular choice, offering a more expressive and readable syntax compared to JUnit.</p>
 <p><strong>Spock Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">spock.lang.*</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">spock.lang.*</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">CalculatorSpec</span> <span style="color:#007020;font-weight:bold">extends</span> Specification <span style="color:#666">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">def</span> <span style="color:#4070a0">&#34;addition of two numbers&#34;</span><span style="color:#666">(</span><span style="color:#902000">int</span> a<span style="color:#666">,</span> <span style="color:#902000">int</span> b<span style="color:#666">,</span> <span style="color:#902000">int</span> expected<span style="color:#666">)</span> <span style="color:#666">{</span>
@@ -733,7 +733,7 @@ Groovy is a powerful, dynamic language for the Java Virtual Machine (JVM).  It&r
 </li>
 </ul>
 <p><strong>Example (using JDBC - conceptual):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">java.sql.*</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">java.sql.*</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> connection <span style="color:#666">=</span> DriverManager<span style="color:#666">.</span><span style="color:#4070a0">getConnection</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;jdbc:mysql://localhost:3306/mydatabase&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;user&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;password&#34;</span><span style="color:#666">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">def</span> statement <span style="color:#666">=</span> connection<span style="color:#666">.</span><span style="color:#4070a0">createStatement</span><span style="color:#666">()</span>

@@ -36,14 +36,14 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-sas/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-sas/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to SAS">
-  <meta property="og:description" content="Introduction to SAS # What is SAS? # SAS (Statistical Analysis System) is a comprehensive software suite used for advanced analytics, business intelligence, data management, and predictive modeling. It’s a powerful tool employed across various industries, including healthcare, finance, and research, to process, analyze, and visualize large datasets. SAS offers a programming language (also called SAS) along with a graphical user interface (GUI) for ease of use. While it’s known for its statistical capabilities, its functionalities extend far beyond basic statistics, encompassing data warehousing, data mining, and creating reports and dashboards.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-15T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-15T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to SAS">
+	<meta property="og:description" content="Introduction to SAS # What is SAS? # SAS (Statistical Analysis System) is a comprehensive software suite used for advanced analytics, business intelligence, data management, and predictive modeling. It’s a powerful tool employed across various industries, including healthcare, finance, and research, to process, analyze, and visualize large datasets. SAS offers a programming language (also called SAS) along with a graphical user interface (GUI) for ease of use. While it’s known for its statistical capabilities, its functionalities extend far beyond basic statistics, encompassing data warehousing, data mining, and creating reports and dashboards.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-02-15T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-15T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -297,7 +297,7 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
   <a class="anchor" href="#the-sas-data-step">#</a>
 </h3>
 <p>The SAS DATA step is the fundamental building block of SAS programming. It&rsquo;s a procedural programming language used to create, modify, and manage SAS datasets.  The DATA step executes one observation at a time, reading data, performing calculations, and writing the results to a new dataset.  The basic structure of a DATA step is as follows:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA </span>new_dataset;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA </span>new_dataset;
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">  * statements to process data;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span></code></pre></div><p><code>DATA new_dataset;</code>  This statement begins the DATA step and specifies the name of the new dataset to be created.
@@ -312,7 +312,7 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 <ul>
 <li><strong>External files:</strong>  Data can be read from text files (e.g., CSV, txt), Excel spreadsheets, or databases.  The <code>INPUT</code> statement is used to read data from these sources, specifying the variable names and formats.  For example:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA </span>mydata;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA </span>mydata;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">INPUT</span> Name $ Age Height Weight;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">  DATALINES;</span>
 </span></span><span style="display:flex;"><span>John 30 72 180
@@ -335,7 +335,7 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 <ul>
 <li><strong>Creating new variables:</strong>  Use assignment statements (<code>=</code>) to create new variables based on existing ones.  For example:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA </span>mydata;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA </span>mydata;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">INPUT</span> Name $ Age;
 </span></span><span style="display:flex;"><span>  BMI = Weight / (Height/<span style="color:#40a070">100</span>)**<span style="color:#40a070">2</span>;  <span style="color:#60a0b0;font-style:italic">/* Calculate BMI */</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">  DATALINES;</span>
@@ -412,11 +412,11 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 </h3>
 <p><code>PROC PRINT</code> is a fundamental SAS procedure used to display the contents of a SAS dataset. It provides a simple and quick way to view the data, check for errors, and understand the structure of the dataset.</p>
 <p><strong>Basic Syntax:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC PRINT </span>DATA=dataset_name<span style="color:#007020;font-weight:bold">;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC PRINT </span>DATA=dataset_name<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span></code></pre></div><p>Replace <code>dataset_name</code> with the name of the SAS dataset you want to display.  Options can be added to customize the output (e.g., specifying variables to display, controlling the format).</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC PRINT </span>DATA=mydata<span style="color:#007020;font-weight:bold">;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC PRINT </span>DATA=mydata<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span></code></pre></div><p>This will print all variables and observations from the dataset <code>mydata</code>.</p>
 <h3 class="heading" id="proc-means">
@@ -425,12 +425,12 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 </h3>
 <p><code>PROC MEANS</code> is a powerful procedure used to calculate descriptive statistics for numeric variables in a SAS dataset. It can compute summary statistics such as the mean, standard deviation, minimum, maximum, and more.</p>
 <p><strong>Basic Syntax:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC MEANS </span>DATA=dataset_name MEAN STD MIN MAX;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC MEANS </span>DATA=dataset_name MEAN STD MIN MAX;
 </span></span><span style="display:flex;"><span>  VAR variable1 variable2 ...<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span></code></pre></div><p>Replace <code>dataset_name</code> with your dataset name, and list the variables you want to calculate statistics for in the <code>VAR</code> statement.  You can specify other statistics beyond the ones shown (e.g., median, percentiles).</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC MEANS </span>DATA=sales_data MEAN STD MIN MAX;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC MEANS </span>DATA=sales_data MEAN STD MIN MAX;
 </span></span><span style="display:flex;"><span>  VAR Sales Revenue Profit<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span></code></pre></div><p>This will compute the mean, standard deviation, minimum, and maximum for the <code>Sales</code>, <code>Revenue</code>, and <code>Profit</code> variables in the <code>sales_data</code> dataset.</p>
@@ -440,12 +440,12 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 </h3>
 <p><code>PROC FREQ</code> is used to generate frequency tables and perform chi-square tests. It&rsquo;s particularly useful for categorical variables, showing the number of observations for each category and calculating percentages.</p>
 <p><strong>Basic Syntax:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC FREQ </span>DATA=dataset_name;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC FREQ </span>DATA=dataset_name;
 </span></span><span style="display:flex;"><span>  TABLES variable1 variable2 ...<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span></code></pre></div><p>List the categorical variables for which you want frequency tables in the <code>TABLES</code> statement.  Options can be added to control the output (e.g., to calculate percentages, perform chi-square tests).</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC FREQ </span>DATA=customer_data;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC FREQ </span>DATA=customer_data;
 </span></span><span style="display:flex;"><span>  TABLES Gender*Region / CHISQ; <span style="color:#60a0b0;font-style:italic">/* Chi-square test for association between Gender and Region */</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span></code></pre></div><h3 class="heading" id="proc-sql">
@@ -454,12 +454,12 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 </h3>
 <p><code>PROC SQL</code> allows you to use SQL (Structured Query Language) statements to access and manipulate SAS datasets.  It&rsquo;s a very powerful tool for complex data manipulations that might be difficult or cumbersome to achieve using only the DATA step.</p>
 <p><strong>Basic Syntax:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC SQL;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC SQL;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">SELECT</span> statement<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">QUIT;</span>
 </span></span></code></pre></div><p>The <code>SELECT</code> statement follows standard SQL syntax.  You can use <code>WHERE</code> clauses for filtering, <code>JOIN</code> statements to combine datasets, and other SQL commands.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC SQL;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC SQL;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">CREATE</span> <span style="color:#007020;font-weight:bold">TABLE</span> HighSales <span style="color:#007020;font-weight:bold">AS</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">SELECT</span> *
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">FROM</span> SalesData
@@ -472,12 +472,12 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 </h3>
 <p><code>PROC SORT</code> is used to sort the observations in a SAS dataset based on one or more variables.  Sorting is crucial for many data analysis tasks, such as preparing data for merging or specific analyses.</p>
 <p><strong>Basic Syntax:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC SORT </span>DATA=dataset_name <span style="color:#007020;font-weight:bold">OUT</span>=sorted_dataset_name;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC SORT </span>DATA=dataset_name <span style="color:#007020;font-weight:bold">OUT</span>=sorted_dataset_name;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">BY</span> variable1 variable2 ...<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span></code></pre></div><p>Specify the input dataset (<code>dataset_name</code>) and the output dataset (<code>sorted_dataset_name</code>). List the variables to sort by in the <code>BY</code> statement.  The observations will be sorted in ascending order by default; you can use the <code>DESCENDING</code> option to sort in descending order.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC SORT </span>DATA=customer_data <span style="color:#007020;font-weight:bold">OUT</span>=sorted_customer_data;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC SORT </span>DATA=customer_data <span style="color:#007020;font-weight:bold">OUT</span>=sorted_customer_data;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">BY</span> LastName FirstName<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span></code></pre></div><p>This sorts the <code>customer_data</code> dataset by <code>LastName</code> (ascending) and then by <code>FirstName</code> (ascending) within each <code>LastName</code> group, creating a new sorted dataset called <code>sorted_customer_data</code>.</p>
@@ -553,7 +553,7 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 <ul>
 <li><strong>WHERE statement:</strong>  Using a <code>WHERE</code> statement in the DATA step to select observations based on conditions.  For example:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA </span>subset_data;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA </span>subset_data;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">SET</span> original_data;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WHERE</span> Age &gt; <span style="color:#40a070">30</span> <span style="color:#007020;font-weight:bold">AND</span> Gender = <span style="color:#4070a0">&#39;Male&#39;</span><span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
@@ -580,7 +580,7 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 <ul>
 <li><strong>Using the LIBNAME statement:</strong>  This is the most common method. The <code>LIBNAME</code> statement assigns a libref (library reference) to a physical location on your file system.  The libref is a shorthand name you&rsquo;ll use to refer to the library in your SAS code.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">LIBNAME</span> mylib <span style="color:#4070a0">&#39;C:\MySASData&#39;</span>;  <span style="color:#60a0b0;font-style:italic">/* For Windows */</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">LIBNAME</span> mylib <span style="color:#4070a0">&#39;C:\MySASData&#39;</span>;  <span style="color:#60a0b0;font-style:italic">/* For Windows */</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">LIBNAME</span> mylib <span style="color:#4070a0">&#39;/home/user/MySASData&#39;</span>;  <span style="color:#60a0b0;font-style:italic">/* For Linux/macOS */</span>
 </span></span></code></pre></div><p>Replace <code>'C:\MySASData'</code> or  <code>'/home/user/MySASData'</code> with the actual path to the directory where you want to store your datasets.  The directory must exist before you run the <code>LIBNAME</code> statement.</p>
 <ul>
@@ -599,19 +599,19 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 <ul>
 <li><strong>Listing library contents:</strong> The <code>PROC CONTENTS</code> procedure lists the datasets within a specified library.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC CONTENTS </span>DATA=mylib<span style="color:#40a070">.</span>mydata<span style="color:#007020;font-weight:bold">;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC CONTENTS </span>DATA=mylib<span style="color:#40a070">.</span>mydata<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span></code></pre></div><p>This would show the contents of the <code>mydata</code> dataset in the library <code>mylib</code>.  Omitting the dataset name will list all datasets in the library.</p>
 <ul>
 <li><strong>Deleting datasets:</strong> Use the <code>DELETE</code> statement within a <code>PROC DATASETS</code> to delete datasets from a library.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC DATASETS </span>LIBRARY=mylib;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC DATASETS </span>LIBRARY=mylib;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">DELETE</span> mydata<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">QUIT;</span>
 </span></span></code></pre></div><ul>
 <li><strong>Renaming datasets:</strong> Use the <code>PROC DATASETS</code> to rename datasets within a library.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC DATASETS </span>LIBRARY=mylib;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC DATASETS </span>LIBRARY=mylib;
 </span></span><span style="display:flex;"><span>  CHANGE mydata=new_mydata<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">QUIT;</span>
 </span></span></code></pre></div><ul>
@@ -625,20 +625,20 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 <ul>
 <li><strong>In DATA steps:</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA </span>new_dataset;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA </span>new_dataset;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">SET</span> mylib<span style="color:#40a070">.</span>mydata<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span></code></pre></div><p>This reads data from the <code>mydata</code> dataset in the <code>mylib</code> library.</p>
 <ul>
 <li><strong>In PROC steps:</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC PRINT </span>DATA=mylib<span style="color:#40a070">.</span>mydata<span style="color:#007020;font-weight:bold">;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC PRINT </span>DATA=mylib<span style="color:#40a070">.</span>mydata<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span></code></pre></div><p>This prints the contents of the <code>mydata</code> dataset in the <code>mylib</code> library.</p>
 <ul>
 <li><strong>In PROC SQL:</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC SQL;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC SQL;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">SELECT</span> * <span style="color:#007020;font-weight:bold">FROM</span> mylib<span style="color:#40a070">.</span>mydata<span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">QUIT;</span>
 </span></span></code></pre></div><p>This selects all data from the <code>mydata</code> dataset in the <code>mylib</code> library using PROC SQL.  Using librefs makes your code more portable and easier to manage, as you only need to change the <code>LIBNAME</code> statement to point to a different directory if you move or copy your data.  Avoid hardcoding file paths directly into your code.</p>
@@ -653,7 +653,7 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 <p>SAS macros are powerful tools that allow you to automate repetitive tasks and create reusable code blocks.  A macro is essentially a piece of code that can be called multiple times with different parameters.  They enhance code modularity and readability, especially when dealing with similar operations on multiple datasets or variables.</p>
 <p><strong>Basic Structure:</strong></p>
 <p>A macro definition begins with a <code>%MACRO</code> statement, followed by the macro code, and ends with a <code>%MEND</code> statement.  Macros are invoked using a <code>%</code> symbol followed by the macro name.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020">%MACRO</span> mymacro(param1, param2);
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020">%MACRO</span> mymacro(param1, param2);
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">/* Macro code here, using &amp;param1 and &amp;param2 */</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">%MEND</span> mymacro;
 </span></span><span style="display:flex;"><span>
@@ -665,7 +665,7 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 </h3>
 <p>SAS arrays provide a way to store and manipulate multiple variables as a single unit.  This allows for efficient processing of variables with similar characteristics, avoiding repetitive code.  Arrays can be used within DATA steps to perform calculations, manipulations, or conditional processing on groups of variables simultaneously.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA </span>mydata;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA </span>mydata;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">INPUT</span> var1 var2 var3 var4;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">ARRAY</span> vars(<span style="color:#40a070">4</span>) var1-var4;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">DO</span> i = <span style="color:#40a070">1</span> TO <span style="color:#40a070">4</span>;
@@ -684,7 +684,7 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 <p>Formats control how data is displayed, while informats determine how data is read into SAS.  They are crucial for ensuring data is displayed appropriately, converting data types, and providing user-friendly output.  SAS provides many pre-defined formats and informats, but you can also create custom ones to meet specific needs.</p>
 <p><strong>Example:</strong></p>
 <p>The <code>DATE9.</code> format displays dates in the YYYYMMDD format.  You can create a custom format to display dates in a different style, or to represent numeric codes with descriptive labels.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC FORMAT;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PROC FORMAT;</span>
 </span></span><span style="display:flex;"><span>  VALUE genderfmt <span style="color:#40a070">1</span>=<span style="color:#4070a0">&#39;Male&#39;</span> <span style="color:#40a070">2</span>=<span style="color:#4070a0">&#39;Female&#39;</span><span style="color:#007020;font-weight:bold">;
 </span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">RUN;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">
@@ -722,7 +722,7 @@ SAS (Statistical Analysis System) is a comprehensive software suite used for adv
 4,82,79,80
 5,70,80,75
 </code></pre><p><strong>SAS Code:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc import </span>datafile=<span style="color:#4070a0">&#34;student_scores.csv&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc import </span>datafile=<span style="color:#4070a0">&#34;student_scores.csv&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">out</span>=student_scores
 </span></span><span style="display:flex;"><span>    dbms=csv <span style="color:#007020;font-weight:bold">replace</span>;
 </span></span><span style="display:flex;"><span>    getnames=yes<span style="color:#007020;font-weight:bold">;
@@ -748,7 +748,7 @@ Peter,North,.,2023-10-28
 Mary,East,12000,2023/10/29
 David,South,8000,2023-10-30
 </code></pre><p><strong>SAS Code:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc import </span>datafile=<span style="color:#4070a0">&#34;sales_data.csv&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc import </span>datafile=<span style="color:#4070a0">&#34;sales_data.csv&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">out</span>=sales_data
 </span></span><span style="display:flex;"><span>    dbms=csv <span style="color:#007020;font-weight:bold">replace</span>;
 </span></span><span style="display:flex;"><span>    getnames=yes<span style="color:#007020;font-weight:bold">;
@@ -770,7 +770,7 @@ David,South,8000,2023-10-30
 </h3>
 <p>This example demonstrates creating reports using <code>PROC PRINT</code> and <code>PROC MEANS</code> with formatting options.  We&rsquo;ll use the <code>student_scores</code> dataset from Example 1.</p>
 <p><strong>SAS Code:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc print </span>data=student_scores <span style="color:#007020;font-weight:bold">label</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sas" data-lang="sas"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">proc print </span>data=student_scores <span style="color:#007020;font-weight:bold">label</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">title</span> <span style="color:#4070a0">&#34;Student Scores&#34;</span>;
 </span></span><span style="display:flex;"><span>  var StudentID Math Science English;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">label</span> Math=<span style="color:#4070a0">&#34;Math Score&#34;</span> Science=<span style="color:#4070a0">&#34;Science Score&#34;</span> English=<span style="color:#4070a0">&#34;English Score&#34;</span><span style="color:#007020;font-weight:bold">;

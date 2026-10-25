@@ -36,14 +36,14 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-elm/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-elm/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Elm">
-  <meta property="og:description" content="Introduction to Elm # What is Elm? # Elm is a functional programming language that compiles to JavaScript. It’s designed for building web user interfaces (UIs) with a focus on simplicity, performance, and developer experience. Unlike JavaScript, Elm boasts a strong type system which catches many errors during compilation, leading to fewer runtime exceptions. This results in a more predictable and robust development process. Elm’s architecture promotes a clear separation of concerns, making code easier to understand, maintain, and scale. Its declarative style encourages thinking about the desired UI state rather than the imperative steps to reach it, fostering cleaner and more readable code.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-29T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-29T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Elm">
+	<meta property="og:description" content="Introduction to Elm # What is Elm? # Elm is a functional programming language that compiles to JavaScript. It’s designed for building web user interfaces (UIs) with a focus on simplicity, performance, and developer experience. Unlike JavaScript, Elm boasts a strong type system which catches many errors during compilation, leading to fewer runtime exceptions. This results in a more predictable and robust development process. Elm’s architecture promotes a clear separation of concerns, making code easier to understand, maintain, and scale. Its declarative style encourages thinking about the desired UI state rather than the imperative steps to reach it, fostering cleaner and more readable code.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-01-29T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-29T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -243,7 +243,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
 </li>
 <li>
 <p><strong>The Elm compiler:</strong> Open your terminal and run the following command:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g elm
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g elm
 </span></span></code></pre></div><p>(or <code>yarn global add elm</code> if you use yarn). This installs the Elm compiler globally on your system, making it accessible from any directory.</p>
 </li>
 <li>
@@ -256,12 +256,12 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
   <a class="anchor" href="#hello-world-your-first-elm-program">#</a>
 </h3>
 <p>Create a new file named <code>Main.elm</code>.  Paste the following code into the file:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Html</span> <span style="color:#bb60d5">exposing</span> <span style="color:#06287e">(..)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Html</span> <span style="color:#bb60d5">exposing</span> <span style="color:#06287e">(..)</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">main </span><span style="color:#06287e">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">text</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
 </span></span></code></pre></div><p>Now, open your terminal, navigate to the directory containing <code>Main.elm</code>, and run:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>elm reactor
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>elm reactor
 </span></span></code></pre></div><p>This command starts the Elm reactor, a development server that compiles and serves your Elm code. You should see &ldquo;Hello, world!&rdquo; displayed in your browser.  If you make changes to <code>Main.elm</code> and save the file, the reactor will automatically recompile and update the browser, providing a rapid development cycle.  The <code>reactor</code> command offers live reloading and other helpful features during development.</p>
 <h2 class="heading" id="basic-syntax-and-concepts">
   Basic Syntax and Concepts
@@ -275,7 +275,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
 <ul>
 <li>
 <p><strong>Numbers:</strong> Elm uses standard numeric types.  There&rsquo;s no distinction between integers and floating-point numbers; they are all represented as <code>Float</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">x</span> <span style="color:#06287e">=</span> <span style="color:#40a070">3.</span><span style="color:#40a070">14159</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">y</span> <span style="color:#06287e">=</span> <span style="color:#40a070">10</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">in</span>
@@ -283,14 +283,14 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Strings:</strong> Strings are sequences of characters enclosed in double quotes.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">greeting</span> <span style="color:#06287e">=</span> <span style="color:#4070a0">&#34;Hello, Elm!&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">in</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">greeting</span> <span style="color:#60a0b0;font-style:italic">-- Results in &#34;Hello, Elm!&#34;</span>
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Booleans:</strong> Elm uses the standard <code>True</code> and <code>False</code> values for boolean logic.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">isTrue</span> <span style="color:#06287e">=</span> <span style="color:#902000">True</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">isFalse</span> <span style="color:#06287e">=</span> <span style="color:#902000">False</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">in</span>
@@ -302,7 +302,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
   <a class="anchor" href="#variables-and-immutability">#</a>
 </h3>
 <p>In Elm, variables are immutable. Once a value is assigned to a variable, it cannot be changed.  This immutability is a core principle of functional programming and contributes to Elm&rsquo;s predictability and reliability.  Instead of modifying variables, you create new variables with new values.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">x</span> <span style="color:#06287e">=</span> <span style="color:#40a070">5</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">y</span> <span style="color:#06287e">=</span> <span style="color:#bb60d5">x</span> <span style="color:#06287e">+</span> <span style="color:#40a070">2</span> <span style="color:#60a0b0;font-style:italic">-- y is a new variable with the value 7; x remains 5</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">in</span>
@@ -312,7 +312,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
   <a class="anchor" href="#functions">#</a>
 </h3>
 <p>Functions are first-class citizens in Elm.  They can be passed as arguments to other functions and returned as values from functions.  Here&rsquo;s the basic syntax for defining a function:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#bb60d5">add</span> <span style="color:#06287e">:</span> <span style="color:#902000">Float</span> <span style="color:#06287e">-&gt;</span> <span style="color:#902000">Float</span> <span style="color:#06287e">-&gt;</span> <span style="color:#902000">Float</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#bb60d5">add</span> <span style="color:#06287e">:</span> <span style="color:#902000">Float</span> <span style="color:#06287e">-&gt;</span> <span style="color:#902000">Float</span> <span style="color:#06287e">-&gt;</span> <span style="color:#902000">Float</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">add</span> <span style="color:#bb60d5">x</span> <span style="color:#bb60d5">y</span> <span style="color:#06287e">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">x</span> <span style="color:#06287e">+</span> <span style="color:#bb60d5">y</span>
 </span></span><span style="display:flex;"><span>
@@ -326,12 +326,12 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
 <ul>
 <li>
 <p><strong>Lists:</strong>  Lists are ordered collections of elements of the same type.  They are immutable; you can&rsquo;t modify an existing list, but you can create new lists based on existing ones.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#bb60d5">myList</span> <span style="color:#06287e">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>]
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#bb60d5">myList</span> <span style="color:#06287e">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>]
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">newList</span> <span style="color:#06287e">=</span> <span style="color:#40a070">6</span> <span style="color:#06287e">::</span> <span style="color:#bb60d5">myList</span> <span style="color:#60a0b0;font-style:italic">-- Prepends 6 to create a new list [6,1,2,3,4,5]</span>
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Tuples:</strong> Tuples are ordered collections of elements that can have different types.  Like lists, they are immutable.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#bb60d5">myTuple</span> <span style="color:#06287e">=</span> (<span style="color:#4070a0">&#34;Hello&#34;</span>, <span style="color:#40a070">10</span>, <span style="color:#902000">True</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#bb60d5">myTuple</span> <span style="color:#06287e">=</span> (<span style="color:#4070a0">&#34;Hello&#34;</span>, <span style="color:#40a070">10</span>, <span style="color:#902000">True</span>)
 </span></span></code></pre></div></li>
 </ul>
 <h3 class="heading" id="records">
@@ -339,7 +339,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
   <a class="anchor" href="#records">#</a>
 </h3>
 <p>Records are similar to objects in other languages.  They group related data together under named fields.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#007020;font-weight:bold">alias</span> <span style="color:#902000">Person</span> <span style="color:#06287e">=</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#007020;font-weight:bold">alias</span> <span style="color:#902000">Person</span> <span style="color:#06287e">=</span>
 </span></span><span style="display:flex;"><span>    { <span style="color:#bb60d5">name</span> <span style="color:#06287e">:</span> <span style="color:#902000">String</span>
 </span></span><span style="display:flex;"><span>    , <span style="color:#bb60d5">age</span> <span style="color:#06287e">:</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span>    , <span style="color:#bb60d5">city</span> <span style="color:#06287e">:</span> <span style="color:#902000">String</span>
@@ -380,7 +380,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
   <a class="anchor" href="#creating-your-first-elm-app-with-tea">#</a>
 </h3>
 <p>A basic TEA application typically looks like this:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Html</span> <span style="color:#bb60d5">exposing</span> <span style="color:#06287e">(..)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Html</span> <span style="color:#bb60d5">exposing</span> <span style="color:#06287e">(..)</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- MODEL</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#007020;font-weight:bold">alias</span> <span style="color:#902000">Model</span> <span style="color:#06287e">=</span>
@@ -436,7 +436,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
   <a class="anchor" href="#custom-types">#</a>
 </h3>
 <p>Elm allows you to define your own custom data types using the <code>type</code> keyword.  This provides a way to represent more complex data structures than the basic types.  Custom types can be algebraic data types (ADTs), which allow you to define types that can be one of several different forms (similar to sum types or tagged unions in other languages).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">Shape</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#902000">Shape</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#06287e">=</span> <span style="color:#902000">Circle</span> <span style="color:#902000">Float</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#06287e">|</span> <span style="color:#902000">Rectangle</span> <span style="color:#902000">Float</span> <span style="color:#902000">Float</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#06287e">|</span> <span style="color:#902000">Square</span> <span style="color:#902000">Float</span>
@@ -456,7 +456,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
   <a class="anchor" href="#pattern-matching">#</a>
 </h3>
 <p>Pattern matching is a powerful feature that allows you to concisely handle different cases of a custom type or other data structures (like tuples or lists).  It&rsquo;s used in the <code>area</code> function above.  The <code>case</code> expression checks the shape and executes the corresponding branch.  Pattern matching improves code readability and reduces the need for nested <code>if-else</code> statements.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#bb60d5">myList</span> <span style="color:#007020;font-weight:bold">of</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#bb60d5">myList</span> <span style="color:#007020;font-weight:bold">of</span>
 </span></span><span style="display:flex;"><span>    [] <span style="color:#06287e">-&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#4070a0">&#34;Empty list&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">x</span> <span style="color:#06287e">::</span> <span style="color:#bb60d5">xs</span> <span style="color:#06287e">-&gt;</span>
@@ -467,7 +467,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
   <a class="anchor" href="#modules-and-organization">#</a>
 </h3>
 <p>As your Elm projects grow, organizing your code into modules becomes crucial.  Modules help to separate concerns, improve code readability, and promote reusability.  A module is a file containing Elm code; the filename (without the <code>.elm</code> extension) is the module&rsquo;s name.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- In MyModule.elm</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- In MyModule.elm</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">myFunction</span> <span style="color:#06287e">:</span> <span style="color:#902000">Int</span> <span style="color:#06287e">-&gt;</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">myFunction</span> <span style="color:#bb60d5">x</span> <span style="color:#06287e">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">x</span> <span style="color:#06287e">*</span> <span style="color:#40a070">2</span>
@@ -482,7 +482,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
   <a class="anchor" href="#working-with-html">#</a>
 </h3>
 <p>Elm provides a simple and declarative way to create HTML using its <code>Html</code> module.  You construct HTML elements using functions that mirror the HTML structure, passing attributes and children as arguments.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Html</span> <span style="color:#bb60d5">exposing</span> <span style="color:#06287e">(..)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Html</span> <span style="color:#bb60d5">exposing</span> <span style="color:#06287e">(..)</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">view</span> <span style="color:#06287e">:</span> <span style="color:#902000">Model</span> <span style="color:#06287e">-&gt;</span> <span style="color:#902000">Html</span> <span style="color:#902000">Msg</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">view</span> <span style="color:#bb60d5">model</span> <span style="color:#06287e">=</span>
@@ -496,7 +496,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
   <a class="anchor" href="#handling-http-requests">#</a>
 </h3>
 <p>Elm&rsquo;s <code>Http</code> package is used for making HTTP requests.  This typically involves sending a request (e.g., <code>GET</code> or <code>POST</code>) and then handling the response, which might involve updating the model based on the received data.  Error handling is crucial to gracefully manage network issues.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Http</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Http</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Json.Decode</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#902000">Decode</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">fetchUserData</span> <span style="color:#06287e">:</span> <span style="color:#902000">Cmd</span> <span style="color:#902000">Msg</span>
@@ -542,7 +542,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
 </h3>
 <p>The Elm debugger helps you step through your code, inspect variables, and understand the flow of execution. While not as feature-rich as debuggers for some other languages, it&rsquo;s effective for identifying issues within your Elm code.  The primary method of debugging is through using <code>Debug.log</code> to print values to the browser&rsquo;s console.  This can help you track the state of your application at different points in time and verify the values of variables. More sophisticated debugging can be achieved through the use of browser developer tools to examine the application&rsquo;s behavior.  By carefully placing <code>Debug.log</code> calls throughout your code, particularly within your <code>Update</code> function, you can monitor how the model changes in response to different messages.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Debug</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Debug</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">update</span> <span style="color:#06287e">:</span> <span style="color:#902000">Msg</span> <span style="color:#06287e">-&gt;</span> <span style="color:#902000">Model</span> <span style="color:#06287e">-&gt;</span> <span style="color:#902000">Model</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">update</span> <span style="color:#bb60d5">msg</span> <span style="color:#bb60d5">model</span> <span style="color:#06287e">=</span>
@@ -563,7 +563,7 @@ Elm is a functional programming language that compiles to JavaScript.  It&rsquo;
 </h3>
 <p>Elm&rsquo;s testing framework allows you to write unit tests to verify the correctness of individual functions or modules.  The <code>elm-test</code> package provides the tools for creating and running tests.  Tests are written in Elm itself, promoting a consistent and reliable testing process.  Tests typically involve asserting that a function produces the expected output for a given input.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#bb60d5">exposing</span> <span style="color:#06287e">(..)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elm" data-lang="elm"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#bb60d5">exposing</span> <span style="color:#06287e">(..)</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import </span><span style="color:#0e84b5;font-weight:bold">MyModule</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">myFunctionTest</span> <span style="color:#06287e">=</span>

@@ -36,14 +36,14 @@ Smalltalk is a dynamically typed, reflective, object-oriented programming langua
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-smalltalk/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-smalltalk/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Smalltalk">
-  <meta property="og:description" content="Introduction to Smalltalk # What is Smalltalk? # Smalltalk is a dynamically typed, reflective, object-oriented programming language. Unlike many languages that evolved from a design document, Smalltalk emerged from a research project at Xerox PARC in the 1970s, aiming to create a truly object-oriented system. Everything in Smalltalk is an object, including classes, methods, and even the code itself. This results in a highly consistent and elegant programming model. Smalltalk emphasizes live coding, with immediate feedback on code changes, allowing for rapid prototyping and experimentation. Its image-based persistence means the entire system’s state is saved and restored, providing a seamless development experience.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-24T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-24T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Smalltalk">
+	<meta property="og:description" content="Introduction to Smalltalk # What is Smalltalk? # Smalltalk is a dynamically typed, reflective, object-oriented programming language. Unlike many languages that evolved from a design document, Smalltalk emerged from a research project at Xerox PARC in the 1970s, aiming to create a truly object-oriented system. Everything in Smalltalk is an object, including classes, methods, and even the code itself. This results in a highly consistent and elegant programming model. Smalltalk emphasizes live coding, with immediate feedback on code changes, allowing for rapid prototyping and experimentation. Its image-based persistence means the entire system’s state is saved and restored, providing a seamless development experience.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-01-24T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-24T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Smalltalk is a dynamically typed, reflective, object-oriented programming langua
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Smalltalk is a dynamically typed, reflective, object-oriented programming langua
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -374,7 +374,7 @@ Smalltalk is a dynamically typed, reflective, object-oriented programming langua
   <a class="anchor" href="#defining-methods">#</a>
 </h3>
 <p>Methods define the behavior of objects. They are added to a class within the class browser.  A method consists of a method name (selector), a list of arguments (if any), and a body of code that specifies its functionality. For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-smalltalk" data-lang="smalltalk"><span style="display:flex;"><span><span style="color:#06287e">area</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-smalltalk" data-lang="smalltalk"><span style="display:flex;"><span><span style="color:#06287e">area</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#666">^</span> <span style="color:#007020">self</span> <span style="color:#06287e">width</span> <span style="color:#06287e">*</span> <span style="color:#007020">self</span> <span style="color:#06287e">height</span> 
 </span></span></code></pre></div><p>This <code>area</code> method calculates the area of a rectangle by multiplying its <code>width</code> and <code>height</code>. The <code>^</code> symbol indicates that the value following it is the result returned by the method.  The <code>self</code> keyword refers to the object the method is called on.</p>
 <h3 class="heading" id="instance-variables">

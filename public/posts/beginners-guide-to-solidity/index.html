@@ -36,14 +36,14 @@ Solidity is a contract-oriented, high-level programming language designed for im
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-solidity/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-solidity/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Solidity">
-  <meta property="og:description" content="Introduction to Solidity # What is Solidity? # Solidity is a contract-oriented, high-level programming language designed for implementing smart contracts on various blockchain platforms, most notably Ethereum. Smart contracts are self-executing contracts with the terms of the agreement between buyer and seller being directly written into lines of code. Solidity’s syntax is influenced by JavaScript, C&#43;&#43;, and Python, making it relatively accessible to developers with experience in these languages. It allows developers to define data structures, functions, and modifiers that dictate the logic and behavior of smart contracts. These contracts then run on the blockchain, ensuring transparency, immutability, and security. Solidity handles crucial aspects like managing accounts, handling transactions, and interacting with other contracts within the blockchain ecosystem.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-03T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-03T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Solidity">
+	<meta property="og:description" content="Introduction to Solidity # What is Solidity? # Solidity is a contract-oriented, high-level programming language designed for implementing smart contracts on various blockchain platforms, most notably Ethereum. Smart contracts are self-executing contracts with the terms of the agreement between buyer and seller being directly written into lines of code. Solidity’s syntax is influenced by JavaScript, C&#43;&#43;, and Python, making it relatively accessible to developers with experience in these languages. It allows developers to define data structures, functions, and modifiers that dictate the logic and behavior of smart contracts. These contracts then run on the blockchain, ensuring transparency, immutability, and security. Solidity handles crucial aspects like managing accounts, handling transactions, and interacting with other contracts within the blockchain ecosystem.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-02-03T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-03T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Solidity is a contract-oriented, high-level programming language designed for im
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Solidity is a contract-oriented, high-level programming language designed for im
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -314,22 +314,22 @@ Solidity is a contract-oriented, high-level programming language designed for im
 <p><strong>Events:</strong> Events are used to emit information to the outside world (useful for off-chain applications to monitor contract events).</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/* This is a
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">   multi-line comment */</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>; <span style="color:#60a0b0;font-style:italic">// Specifies the Solidity compiler version
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">contract</span> <span style="color:#0e84b5;font-weight:bold">MyContract</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">uint256</span> <span style="color:#007020;font-weight:bold">public</span> myNumber; <span style="color:#60a0b0;font-style:italic">// State variable
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">setNumber</span>(<span style="color:#902000">uint256</span> _newNumber) <span style="color:#007020;font-weight:bold">public</span> { <span style="color:#60a0b0;font-style:italic">// Function
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        myNumber <span style="color:#666">=</span> _newNumber;
+</span></span></span><span style="display:flex;"><span>        myNumber <span style="color:#666">=</span> _newNumber;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">getNumber</span>() <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">view</span> <span style="color:#007020;font-weight:bold">returns</span> (<span style="color:#902000">uint256</span>) { <span style="color:#60a0b0;font-style:italic">// Function that returns a value
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">return</span> myNumber;
+</span></span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> myNumber;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 class="heading" id="variables-and-data-types">
@@ -360,12 +360,12 @@ Solidity is a contract-oriented, high-level programming language designed for im
 <p><strong><code>bytes1</code>, <code>bytes2</code>, <code>bytes32</code>, etc.</strong> represent byte arrays of the corresponding size. <code>bytes</code> is a dynamic byte array with unbounded size.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#902000">uint256</span> myUint <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#902000">uint256</span> myUint <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">int256</span> myInt <span style="color:#666">=</span> <span style="color:#666">-</span><span style="color:#40a070">5</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">bool</span> myBool <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">string</span> <span style="color:#007020;font-weight:bold">memory</span> myString <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello, Solidity!&#34;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">address</span> myAddress <span style="color:#666">=</span> <span style="color:#40a070">0x5B38Da6a701c568545dCfcB03FcB875f56beddC4</span>;  <span style="color:#60a0b0;font-style:italic">// Example address
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">bytes32</span> myBytes32 <span style="color:#666">=</span> <span style="color:#40a070">0xabcdef1234567890abcdef1234567890abcdef</span>;
+</span></span></span><span style="display:flex;"><span><span style="color:#902000">bytes32</span> myBytes32 <span style="color:#666">=</span> <span style="color:#40a070">0xabcdef1234567890abcdef1234567890abcdef</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">bytes</span> <span style="color:#007020;font-weight:bold">memory</span> myBytes <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Dynamic Bytes&#34;</span>;
 </span></span></code></pre></div><h3 class="heading" id="operators">
   Operators
@@ -386,11 +386,11 @@ Solidity is a contract-oriented, high-level programming language designed for im
 <p><strong>Assignment Operators:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>**=</code></p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#902000">uint256</span> a <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#902000">uint256</span> a <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">uint256</span> b <span style="color:#666">=</span> <span style="color:#40a070">5</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">uint256</span> sum <span style="color:#666">=</span> a <span style="color:#666">+</span> b; <span style="color:#60a0b0;font-style:italic">// 15
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">bool</span> isEqual <span style="color:#666">=</span> (a <span style="color:#666">==</span> b); <span style="color:#60a0b0;font-style:italic">// false
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">bool</span> isGreater <span style="color:#666">=</span> (a <span style="color:#666">&gt;</span> b); <span style="color:#60a0b0;font-style:italic">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#902000">bool</span> isEqual <span style="color:#666">=</span> (a <span style="color:#666">==</span> b); <span style="color:#60a0b0;font-style:italic">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#902000">bool</span> isGreater <span style="color:#666">=</span> (a <span style="color:#666">&gt;</span> b); <span style="color:#60a0b0;font-style:italic">// true
 </span></span></span></code></pre></div><h3 class="heading" id="control-structures">
   Control Structures
   <a class="anchor" href="#control-structures">#</a>
@@ -407,22 +407,22 @@ Solidity is a contract-oriented, high-level programming language designed for im
 <p><strong><code>while</code> loop:</strong> Repeats a block of code as long as a condition is true.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#902000">uint256</span> x <span style="color:#666">=</span> <span style="color:#40a070">5</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#902000">uint256</span> x <span style="color:#666">=</span> <span style="color:#40a070">5</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (x <span style="color:#666">&gt;</span> <span style="color:#40a070">0</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Code to execute if x is greater than 0
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Code to execute otherwise
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">uint256</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>; i<span style="color:#666">++</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Code to execute 10 times
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">uint256</span> j <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (j <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Code to execute while j is less than 5
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    j<span style="color:#666">++</span>;
+</span></span></span><span style="display:flex;"><span>    j<span style="color:#666">++</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 class="heading" id="smart-contracts-101">
   Smart Contracts 101
@@ -433,21 +433,21 @@ Solidity is a contract-oriented, high-level programming language designed for im
   <a class="anchor" href="#defining-a-smart-contract">#</a>
 </h3>
 <p>A smart contract in Solidity is defined using the <code>contract</code> keyword followed by the contract name and a pair of curly braces <code>{}</code> enclosing its contents.  Within the contract, you declare state variables (data stored persistently on the blockchain), define functions that govern the contract&rsquo;s behavior, and can include modifiers and events.  The <code>pragma</code> directive at the beginning specifies the Solidity compiler version to use, ensuring compatibility.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">contract</span> <span style="color:#0e84b5;font-weight:bold">MyFirstContract</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">uint256</span> <span style="color:#007020;font-weight:bold">public</span> myVariable; <span style="color:#60a0b0;font-style:italic">// State variable
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">constructor</span>(<span style="color:#902000">uint256</span> initialValue) { <span style="color:#60a0b0;font-style:italic">// Constructor
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        myVariable <span style="color:#666">=</span> initialValue;
+</span></span></span><span style="display:flex;"><span>        myVariable <span style="color:#666">=</span> initialValue;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">setVariable</span>(<span style="color:#902000">uint256</span> newValue) <span style="color:#007020;font-weight:bold">public</span> { <span style="color:#60a0b0;font-style:italic">// Function
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        myVariable <span style="color:#666">=</span> newValue;
+</span></span></span><span style="display:flex;"><span>        myVariable <span style="color:#666">=</span> newValue;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">getVariable</span>() <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">view</span> <span style="color:#007020;font-weight:bold">returns</span> (<span style="color:#902000">uint256</span>) { <span style="color:#60a0b0;font-style:italic">// Function
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">return</span> myVariable;
+</span></span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> myVariable;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The example above shows a simple contract with a state variable <code>myVariable</code>, a constructor to initialize it, and functions to set and retrieve its value. The <code>public</code> keyword means these functions can be called externally.</p>
@@ -470,7 +470,7 @@ Solidity is a contract-oriented, high-level programming language designed for im
 <p><strong><code>external</code>:</strong>  Similar to <code>public</code>, but the function code is only executed when called externally.  It&rsquo;s slightly more gas-efficient for external calls than <code>public</code>.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">contract</span> <span style="color:#0e84b5;font-weight:bold">MyContract</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">uint256</span> <span style="color:#007020;font-weight:bold">public</span> myPublicVar;
@@ -485,15 +485,15 @@ Solidity is a contract-oriented, high-level programming language designed for im
   <a class="anchor" href="#modifiers">#</a>
 </h3>
 <p>Modifiers are used to add extra functionality to functions.  They&rsquo;re particularly useful for implementing access control, input validation, or other common tasks.  Modifiers are defined using the <code>modifier</code> keyword, and they can take arguments.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">contract</span> <span style="color:#0e84b5;font-weight:bold">MyContract</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">uint256</span> <span style="color:#007020;font-weight:bold">public</span> myValue;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">modifier</span> <span style="color:#06287e">onlyAdmin</span>() {
 </span></span><span style="display:flex;"><span>        <span style="color:#007020">require</span>(<span style="color:#007020">msg</span>.<span style="color:#007020">sender</span> <span style="color:#666">==</span> <span style="color:#902000">address</span>(<span style="color:#40a070">0x123</span>...)); <span style="color:#60a0b0;font-style:italic">// Replace with admin address
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">_</span>; <span style="color:#60a0b0;font-style:italic">// This executes the function after the modifier&#39;s check
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    }
+</span></span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">_</span>; <span style="color:#60a0b0;font-style:italic">// This executes the function after the modifier&#39;s check
+</span></span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">setValue</span>(<span style="color:#902000">uint256</span> newValue) <span style="color:#007020;font-weight:bold">public</span> onlyAdmin {
 </span></span><span style="display:flex;"><span>        myValue <span style="color:#666">=</span> newValue;
@@ -505,7 +505,7 @@ Solidity is a contract-oriented, high-level programming language designed for im
   <a class="anchor" href="#events">#</a>
 </h3>
 <p>Events are used to emit information from a smart contract to the outside world, typically used for off-chain applications to monitor contract activity.  They&rsquo;re defined using the <code>event</code> keyword.  Events are indexed to allow efficient filtering of log entries.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">contract</span> <span style="color:#0e84b5;font-weight:bold">MyContract</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">event</span> <span style="color:#0e84b5;font-weight:bold">ValueChanged</span>(<span style="color:#902000">uint256</span> oldValue, <span style="color:#902000">uint256</span> newValue);
@@ -514,7 +514,7 @@ Solidity is a contract-oriented, high-level programming language designed for im
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">setValue</span>(<span style="color:#902000">uint256</span> newValue) <span style="color:#007020;font-weight:bold">public</span> {
 </span></span><span style="display:flex;"><span>        emit ValueChanged(myValue, newValue); <span style="color:#60a0b0;font-style:italic">// Emit the event
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        myValue <span style="color:#666">=</span> newValue;
+</span></span></span><span style="display:flex;"><span>        myValue <span style="color:#666">=</span> newValue;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>In this example, the <code>ValueChanged</code> event is emitted whenever the <code>myValue</code> variable is updated.  Off-chain applications can listen for this event to track changes in the contract&rsquo;s state.  Indexed parameters (declared with <code>indexed</code>) are more efficient for querying events.</p>
@@ -529,14 +529,14 @@ Solidity is a contract-oriented, high-level programming language designed for im
 <p>Arrays in Solidity are ordered lists of elements of the same type.  They can be either dynamically sized (their size can change during runtime) or statically sized (their size is fixed at compile time).</p>
 <p><strong>Dynamically Sized Arrays:</strong></p>
 <p>Declared using square brackets <code>[]</code> without specifying a size.  Their size grows as elements are added.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">contract</span> <span style="color:#0e84b5;font-weight:bold">MyContract</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">uint256</span>[] <span style="color:#007020;font-weight:bold">public</span> myArray;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">addToArray</span>(<span style="color:#902000">uint256</span> _value) <span style="color:#007020;font-weight:bold">public</span> {
 </span></span><span style="display:flex;"><span>        myArray.push(_value); <span style="color:#60a0b0;font-style:italic">// Add an element to the end
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    }
+</span></span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">getArrayLength</span>() <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">view</span> <span style="color:#007020;font-weight:bold">returns</span> (<span style="color:#902000">uint256</span>) {
 </span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> myArray.length;
@@ -544,14 +544,14 @@ Solidity is a contract-oriented, high-level programming language designed for im
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><strong>Statically Sized Arrays:</strong></p>
 <p>Declared with a specified size within the square brackets.  Their size cannot be changed after creation.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">contract</span> <span style="color:#0e84b5;font-weight:bold">MyContract</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">uint256</span>[<span style="color:#40a070">5</span>] <span style="color:#007020;font-weight:bold">public</span> myStaticArray; <span style="color:#60a0b0;font-style:italic">// Array of size 5
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">setArrayElement</span>(<span style="color:#902000">uint256</span> _index, <span style="color:#902000">uint256</span> _value) <span style="color:#007020;font-weight:bold">public</span> {
 </span></span><span style="display:flex;"><span>        myStaticArray[_index] <span style="color:#666">=</span> _value; <span style="color:#60a0b0;font-style:italic">// Assign a value to an element
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    }
+</span></span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Remember that accessing elements outside the array&rsquo;s bounds will result in an error.</p>
 <h3 class="heading" id="mappings">
@@ -559,11 +559,11 @@ Solidity is a contract-oriented, high-level programming language designed for im
   <a class="anchor" href="#mappings">#</a>
 </h3>
 <p>Mappings are similar to dictionaries or hash tables in other programming languages.  They associate keys of one type to values of another type.  Mappings are not stored as arrays; instead, they use a hash function to quickly access values based on their keys.  They are always dynamically sized.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">contract</span> <span style="color:#0e84b5;font-weight:bold">MyContract</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">mapping</span>(<span style="color:#902000">address</span> <span style="color:#666">=&gt;</span> <span style="color:#902000">uint256</span>) <span style="color:#007020;font-weight:bold">public</span> balances; <span style="color:#60a0b0;font-style:italic">// Maps addresses to balances
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">setBalance</span>(<span style="color:#902000">address</span> _address, <span style="color:#902000">uint256</span> _balance) <span style="color:#007020;font-weight:bold">public</span> {
 </span></span><span style="display:flex;"><span>        balances[_address] <span style="color:#666">=</span> _balance;
 </span></span><span style="display:flex;"><span>    }
@@ -578,7 +578,7 @@ Solidity is a contract-oriented, high-level programming language designed for im
   <a class="anchor" href="#structs">#</a>
 </h3>
 <p>Structs are user-defined data types that group together multiple variables of potentially different types.  They are useful for organizing related data.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">contract</span> <span style="color:#0e84b5;font-weight:bold">MyContract</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">struct</span> <span style="color:#0e84b5;font-weight:bold">Person</span> {
@@ -633,13 +633,13 @@ Solidity is a contract-oriented, high-level programming language designed for im
 </li>
 </ul>
 <p>Example usage:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">pragma solidity</span> <span style="color:#666">^</span><span style="color:#40a070">0</span>.<span style="color:#40a070">8</span>.<span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">contract</span> <span style="color:#0e84b5;font-weight:bold">MyContract</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">myFunction</span>() <span style="color:#007020;font-weight:bold">public</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#007020">require</span>(<span style="color:#007020">msg</span>.<span style="color:#007020">sender</span> <span style="color:#666">==</span> <span style="color:#40a070">0x123</span>..., <span style="color:#4070a0">&#34;Only allowed for this address!&#34;</span>);
 </span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic">// ... your code ...
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    }
+</span></span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 class="heading" id="math-library">
   Math Library
@@ -647,11 +647,11 @@ Solidity is a contract-oriented, high-level programming language designed for im
 </h3>
 <p>Solidity doesn&rsquo;t have a dedicated Math library in the same way as some other languages.  However, it provides several built-in mathematical functions and operators, including addition, subtraction, multiplication, division, modulo (<code>%</code>), exponentiation (<code>**</code>), and bitwise operations. For more complex mathematical operations, you may need to implement your own functions or utilize external libraries (but be cautious when using external libraries and thoroughly audit them).</p>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#902000">uint256</span> a <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#902000">uint256</span> a <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">uint256</span> b <span style="color:#666">=</span> <span style="color:#40a070">5</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">uint256</span> sum <span style="color:#666">=</span> a <span style="color:#666">+</span> b; <span style="color:#60a0b0;font-style:italic">// 15
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">uint256</span> product <span style="color:#666">=</span> a <span style="color:#666">*</span> b; <span style="color:#60a0b0;font-style:italic">//50
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">uint256</span> modulo <span style="color:#666">=</span> a <span style="color:#666">%</span> b; <span style="color:#60a0b0;font-style:italic">//0
+</span></span></span><span style="display:flex;"><span><span style="color:#902000">uint256</span> product <span style="color:#666">=</span> a <span style="color:#666">*</span> b; <span style="color:#60a0b0;font-style:italic">//50
+</span></span></span><span style="display:flex;"><span><span style="color:#902000">uint256</span> modulo <span style="color:#666">=</span> a <span style="color:#666">%</span> b; <span style="color:#60a0b0;font-style:italic">//0
 </span></span></span></code></pre></div><h3 class="heading" id="string-library">
   String Library
   <a class="anchor" href="#string-library">#</a>

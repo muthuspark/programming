@@ -36,14 +36,14 @@ PureScript is a strongly-typed, functional programming language that compiles to
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-purescript/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-purescript/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to PureScript">
-  <meta property="og:description" content="Introduction to PureScript # What is PureScript? # PureScript is a strongly-typed, functional programming language that compiles to JavaScript. It’s designed to be a pragmatic alternative to JavaScript, offering the benefits of a statically-typed language with a focus on purity and immutability while targeting the ubiquitous JavaScript ecosystem. This means you can write PureScript code and compile it to JavaScript that can run in web browsers or Node.js environments. PureScript leverages many concepts from Haskell, known for its powerful type system and elegant functional paradigm, but with a syntax designed for better readability and a more approachable learning curve. The compiler performs extensive type checking at compile time, catching many potential errors before runtime, leading to more robust and maintainable applications.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-11T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-11T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to PureScript">
+	<meta property="og:description" content="Introduction to PureScript # What is PureScript? # PureScript is a strongly-typed, functional programming language that compiles to JavaScript. It’s designed to be a pragmatic alternative to JavaScript, offering the benefits of a statically-typed language with a focus on purity and immutability while targeting the ubiquitous JavaScript ecosystem. This means you can write PureScript code and compile it to JavaScript that can run in web browsers or Node.js environments. PureScript leverages many concepts from Haskell, known for its powerful type system and elegant functional paradigm, but with a syntax designed for better readability and a more approachable learning curve. The compiler performs extensive type checking at compile time, catching many potential errors before runtime, leading to more robust and maintainable applications.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-01-11T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-11T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ PureScript is a strongly-typed, functional programming language that compiles to
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ PureScript is a strongly-typed, functional programming language that compiles to
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -463,7 +463,7 @@ processMaybe (Just n) = &#34;The number is: &#34; &lt;&gt; show n
 </li>
 <li>
 <p><strong>Install Dependencies:</strong> We&rsquo;ll need libraries for DOM manipulation, networking, and potentially testing. Add them using <code>spago install</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spago install purescript-dom purescript-aff purescript-node purescript-maybe purescript-result
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spago install purescript-dom purescript-aff purescript-node purescript-maybe purescript-result
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Project Structure:</strong> Your project will have a directory structure similar to this:</p>
@@ -526,7 +526,7 @@ main = do
   <a class="anchor" href="#testing-your-application">#</a>
 </h3>
 <p>To add testing, install <code>purescript-test</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spago install purescript-test
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spago install purescript-test
 </span></span></code></pre></div><p>Then, create a test file (e.g., <code>src/Test.purs</code>) and write tests for your functions.  This example is highly simplified; proper testing requires more comprehensive coverage.  Spago will run these tests using <code>spago test</code>.</p>
 <p>Remember to compile and run your application using <code>spago build</code> and the appropriate command for your chosen runtime environment (e.g., <code>spago serve</code> for a web application or a command to execute the Node.js file for a backend application).  This example requires adjustments based on the specific packages used and the complexities of error handling, JSON decoding, and other factors.  Consult the documentation for each package used.</p>
 <h2 class="heading" id="conclusion-and-next-steps">

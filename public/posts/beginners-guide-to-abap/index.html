@@ -36,14 +36,14 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-abap/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-abap/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to ABAP">
-  <meta property="og:description" content="Introduction to ABAP # What is ABAP? # ABAP (Advanced Business Application Programming) is a high-level programming language developed by SAP. It’s specifically designed for building and extending SAP’s enterprise resource planning (ERP) software. ABAP programs interact with SAP’s database and its various modules (like Finance, Sales, and HR) to provide customized functionality and automate business processes. While object-oriented programming (OOP) concepts are now central to modern ABAP, it retains aspects of its procedural roots, offering a relatively straightforward syntax for those familiar with other imperative programming languages.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-12T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-12T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to ABAP">
+	<meta property="og:description" content="Introduction to ABAP # What is ABAP? # ABAP (Advanced Business Application Programming) is a high-level programming language developed by SAP. It’s specifically designed for building and extending SAP’s enterprise resource planning (ERP) software. ABAP programs interact with SAP’s database and its various modules (like Finance, Sales, and HR) to provide customized functionality and automate business processes. While object-oriented programming (OOP) concepts are now central to modern ABAP, it retains aspects of its procedural roots, offering a relatively straightforward syntax for those familiar with other imperative programming languages.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-02-12T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-12T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -275,7 +275,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
   <a class="anchor" href="#writing-your-first-abap-program">#</a>
 </h3>
 <p>The simplest ABAP program consists of a <code>REPORT</code> statement followed by a <code>WRITE</code> statement.  This program will display a message on the screen.  Here&rsquo;s an example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">REPORT</span> <span style="color:#bb60d5">zfirst_program</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">REPORT</span> <span style="color:#bb60d5">zfirst_program</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#4070a0">&#39;Hello, ABAP!&#39;</span>.
 </span></span></code></pre></div><p>To execute this program:</p>
@@ -307,9 +307,9 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
   <a class="anchor" href="#declaring-variables">#</a>
 </h3>
 <p>Variables in ABAP are declared using the <code>DATA</code> statement.  The syntax is:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span> <span style="color:#bb60d5">&lt;variable_name&gt;</span> <span style="color:#bb60d5">TYPE</span> <span style="color:#bb60d5">&lt;data_type&gt;</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span> <span style="color:#bb60d5">&lt;variable_name&gt;</span> <span style="color:#bb60d5">TYPE</span> <span style="color:#bb60d5">&lt;data_type&gt;</span>.
 </span></span></code></pre></div><p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_integer</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span>,
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_integer</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span>,
 </span></span><span style="display:flex;"><span>      <span style="color:#bb60d5">lv_string</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">string</span>,
 </span></span><span style="display:flex;"><span>      <span style="color:#bb60d5">lv_packed</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">p</span> <span style="color:#007020;font-weight:bold">DECIMALS</span> <span style="color:#40a070">2</span>. <span style="color:#60a0b0;font-style:italic">&#34;Packed number with 2 decimal places
 </span></span></span></code></pre></div><p>This declares three variables: <code>lv_integer</code> (integer), <code>lv_string</code> (string), and <code>lv_packed</code> (packed number with two decimal places).  The prefix <code>lv_</code> is a common convention for local variables.  You can assign values to variables using the <code>=</code>, assignment operator.</p>
@@ -324,15 +324,15 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
 <li><strong>Logical Operators:</strong> <code>AND</code>, <code>OR</code>, <code>NOT</code>.</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_a</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="color:#40a070">10</span>,
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_a</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="color:#40a070">10</span>,
 </span></span><span style="display:flex;"><span>      <span style="color:#bb60d5">lv_b</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="color:#40a070">5</span>,
 </span></span><span style="display:flex;"><span>      <span style="color:#bb60d5">lv_result</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">lv_result</span> <span style="color:#666">=</span> <span style="color:#bb60d5">lv_a</span> <span style="color:#666">+</span> <span style="color:#bb60d5">lv_b</span>.  <span style="color:#60a0b0;font-style:italic">&#34;Addition
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#bb60d5">lv_result</span>.
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#bb60d5">lv_result</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">IF</span> <span style="color:#bb60d5">lv_a</span> <span style="color:#666">&gt;</span> <span style="color:#bb60d5">lv_b</span>.      <span style="color:#60a0b0;font-style:italic">&#34;Comparison
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#4070a0">&#39;lv_a is greater than lv_b&#39;</span>.
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#4070a0">&#39;lv_a is greater than lv_b&#39;</span>.
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ENDIF</span>.
 </span></span></code></pre></div><p>This code performs addition and a comparison, demonstrating the use of arithmetic and comparison operators. Remember to always choose appropriate data types for variables to avoid runtime errors.</p>
 <h2 class="heading" id="control-structures">
@@ -344,7 +344,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
   <a class="anchor" href="#if-else-statements">#</a>
 </h3>
 <p>IF-ELSE statements control the flow of execution based on conditions.  The basic syntax is:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">IF</span> <span style="color:#bb60d5">&lt;condition&gt;</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">IF</span> <span style="color:#bb60d5">&lt;condition&gt;</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">&lt;statements&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ELSEIF</span> <span style="color:#bb60d5">&lt;condition&gt;</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">&lt;statements&gt;</span>
@@ -353,7 +353,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ENDIF</span>.
 </span></span></code></pre></div><p><code>&lt;condition&gt;</code> is a Boolean expression that evaluates to true or false.  <code>&lt;statements&gt;</code> are the ABAP statements to be executed if the corresponding condition is true.  The <code>ELSEIF</code> part is optional and can be repeated multiple times.  The <code>ELSE</code> part is also optional and executes if none of the preceding conditions are true.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_age</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="color:#40a070">25</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_age</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="color:#40a070">25</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">IF</span> <span style="color:#bb60d5">lv_age</span> <span style="color:#666">&lt;</span> <span style="color:#40a070">18</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#4070a0">&#39;Minor&#39;</span>.
@@ -370,16 +370,16 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
 <ul>
 <li><strong><code>DO</code> loop:</strong> Executes a block of code a fixed number of times.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_count</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_count</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DO</span> <span style="color:#40a070">10</span> <span style="color:#007020;font-weight:bold">TIMES</span>.  <span style="color:#60a0b0;font-style:italic">&#34;Executes 10 times
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#bb60d5">lv_count</span> <span style="color:#666">=</span> <span style="color:#bb60d5">lv_count</span> <span style="color:#666">+</span> <span style="color:#40a070">1</span>.
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">lv_count</span> <span style="color:#666">=</span> <span style="color:#bb60d5">lv_count</span> <span style="color:#666">+</span> <span style="color:#40a070">1</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#bb60d5">lv_count</span>.
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ENDDO</span>.
 </span></span></code></pre></div><ul>
 <li><strong><code>WHILE</code> loop:</strong> Executes a block of code as long as a condition is true.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_count</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="color:#40a070">0</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_count</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="color:#40a070">0</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">WHILE</span> <span style="color:#bb60d5">lv_count</span> <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">lv_count</span> <span style="color:#666">=</span> <span style="color:#bb60d5">lv_count</span> <span style="color:#666">+</span> <span style="color:#40a070">1</span>.
@@ -388,10 +388,10 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
 </span></span></code></pre></div><ul>
 <li><strong><code>LOOP AT</code> (for internal tables):</strong> Iterates over the rows of an internal table.  This is crucial for processing data stored in internal tables. (Internal tables are covered in later sections)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">&#34;Example requires an internal table &#39;itab&#39; to be defined and populated beforehand.
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">LOOP AT </span><span style="color:#bb60d5">itab</span> <span style="color:#007020;font-weight:bold">INTO</span> <span style="color:#007020;font-weight:bold">DATA</span>(<span style="color:#bb60d5">ls_itab</span>).
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">&#34;Example requires an internal table &#39;itab&#39; to be defined and populated beforehand.
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">LOOP AT </span><span style="color:#bb60d5">itab</span> <span style="color:#007020;font-weight:bold">INTO</span> <span style="color:#007020;font-weight:bold">DATA</span>(<span style="color:#bb60d5">ls_itab</span>).
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#bb60d5">ls_itab</span><span style="color:#666">-</span><span style="color:#bb60d5">field1</span>, <span style="color:#bb60d5">ls_itab</span><span style="color:#666">-</span><span style="color:#bb60d5">field2</span>. <span style="color:#60a0b0;font-style:italic">&#34; Access fields of the table line
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">ENDLOOP</span>.
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ENDLOOP</span>.
 </span></span></code></pre></div><ul>
 <li><strong><code>FOR</code> loop:</strong> Iterates over a range of values.  Less commonly used in ABAP compared to <code>LOOP AT</code> for table processing.</li>
 </ul>
@@ -400,7 +400,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
   <a class="anchor" href="#case-statements">#</a>
 </h3>
 <p>CASE statements provide a concise way to handle multiple conditions.  The syntax is:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CASE</span> <span style="color:#bb60d5">&lt;expression&gt;</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CASE</span> <span style="color:#bb60d5">&lt;expression&gt;</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WHEN</span> <span style="color:#bb60d5">&lt;value1&gt;</span>.
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">&lt;statements&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WHEN</span> <span style="color:#bb60d5">&lt;value2&gt;</span>.
@@ -410,7 +410,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ENDCASE</span>.
 </span></span></code></pre></div><p><code>&lt;expression&gt;</code> is an expression that evaluates to a specific value.  Each <code>WHEN</code> clause specifies a value to be compared against the expression.  The <code>WHEN OTHERS</code> clause is optional and executes if none of the other conditions are met.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_day</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">c</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="color:#4070a0">&#39;MON&#39;</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_day</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">c</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="color:#4070a0">&#39;MON&#39;</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CASE</span> <span style="color:#bb60d5">lv_day</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WHEN</span> <span style="color:#4070a0">&#39;MON&#39;</span>.
@@ -431,7 +431,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
   <a class="anchor" href="#declaring-and-initializing-internal-tables">#</a>
 </h3>
 <p>Internal tables are declared using the <code>DATA</code> statement with the <code>TYPE TABLE OF</code> keyword. You specify the line type (structure or elementary data type) that each entry in the table will hold.  There are different table types, but for beginners, <code>STANDARD TABLE</code> is a good starting point.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">TYPES</span>: <span style="color:#007020;font-weight:bold">BEGIN OF</span> <span style="color:#bb60d5">ty_flight</span>,
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">TYPES</span>: <span style="color:#007020;font-weight:bold">BEGIN OF</span> <span style="color:#bb60d5">ty_flight</span>,
 </span></span><span style="display:flex;"><span>         <span style="color:#bb60d5">carrid</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">string</span>,
 </span></span><span style="display:flex;"><span>         <span style="color:#bb60d5">connid</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">string</span>,
 </span></span><span style="display:flex;"><span>       <span style="color:#007020;font-weight:bold">END OF</span> <span style="color:#bb60d5">ty_flight</span>.
@@ -445,27 +445,27 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
 <ul>
 <li><strong>Adding entries:</strong>  The <code>APPEND</code> statement adds a single line to the end of a table. You can use the <code>INTO</code> addition to populate the table line directly from a structure or work area.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">ls_flight</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">ty_flight</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">ls_flight</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">ty_flight</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">ls_flight</span><span style="color:#666">-</span><span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;LH&#39;</span>.
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">ls_flight</span><span style="color:#666">-</span><span style="color:#bb60d5">connid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;4711&#39;</span>.
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">APPEND</span> <span style="color:#bb60d5">ls_flight</span> <span style="color:#007020;font-weight:bold">TO</span> <span style="color:#bb60d5">gt_flights</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">&#34;Alternatively, using a more concise notation
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">APPEND</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="">#</span>( <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;UA&#39;</span> <span style="color:#bb60d5">connid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;1234&#39;</span> ) <span style="color:#007020;font-weight:bold">TO</span> <span style="color:#bb60d5">gt_flights</span>.
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">APPEND</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="">#</span>( <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;UA&#39;</span> <span style="color:#bb60d5">connid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;1234&#39;</span> ) <span style="color:#007020;font-weight:bold">TO</span> <span style="color:#bb60d5">gt_flights</span>.
 </span></span></code></pre></div><ul>
 <li><strong>Deleting entries:</strong> The <code>DELETE</code> statement removes entries from an internal table.  You can delete individual lines using a <code>WHERE</code> clause or all lines at once.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DELETE</span> <span style="color:#bb60d5">gt_flights</span> <span style="color:#007020;font-weight:bold">WHERE</span> <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;LH&#39;</span>. <span style="color:#60a0b0;font-style:italic">&#34;Deletes all lines with carrid = &#39;LH&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">DELETE</span> <span style="color:#bb60d5">gt_flights</span>.                 <span style="color:#60a0b0;font-style:italic">&#34;Deletes all lines
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DELETE</span> <span style="color:#bb60d5">gt_flights</span> <span style="color:#007020;font-weight:bold">WHERE</span> <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;LH&#39;</span>. <span style="color:#60a0b0;font-style:italic">&#34;Deletes all lines with carrid = &#39;LH&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DELETE</span> <span style="color:#bb60d5">gt_flights</span>.                 <span style="color:#60a0b0;font-style:italic">&#34;Deletes all lines
 </span></span></span></code></pre></div><h3 class="heading" id="reading-data-from-internal-tables">
   Reading data from internal tables
   <a class="anchor" href="#reading-data-from-internal-tables">#</a>
 </h3>
 <p>You can access individual table entries using the <code>READ TABLE</code> statement.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">READ</span> <span style="color:#007020;font-weight:bold">TABLE</span> <span style="color:#bb60d5">gt_flights</span> <span style="color:#007020;font-weight:bold">INTO</span> <span style="color:#bb60d5">ls_flight</span> <span style="color:#007020;font-weight:bold">WITH</span> <span style="color:#007020;font-weight:bold">KEY</span> <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;UA&#39;</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">READ</span> <span style="color:#007020;font-weight:bold">TABLE</span> <span style="color:#bb60d5">gt_flights</span> <span style="color:#007020;font-weight:bold">INTO</span> <span style="color:#bb60d5">ls_flight</span> <span style="color:#007020;font-weight:bold">WITH</span> <span style="color:#007020;font-weight:bold">KEY</span> <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;UA&#39;</span>.
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">IF</span> <span style="color:#bb60d5">sy</span><span style="color:#666">-</span><span style="color:#bb60d5">subrc</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span>.  <span style="color:#60a0b0;font-style:italic">&#34; sy-subrc indicates success (0) or failure (4)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#bb60d5">ls_flight</span><span style="color:#666">-</span><span style="color:#bb60d5">connid</span>.
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#bb60d5">ls_flight</span><span style="color:#666">-</span><span style="color:#bb60d5">connid</span>.
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ELSE</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#4070a0">&#39;Flight not found&#39;</span>.
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ENDIF</span>.
@@ -475,7 +475,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
   <a class="anchor" href="#looping-through-internal-tables">#</a>
 </h3>
 <p>The most common way to process all lines of an internal table is using the <code>LOOP AT</code> statement.  We already saw an example in the Control Structures section. Let&rsquo;s expand on it:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">LOOP AT </span><span style="color:#bb60d5">gt_flights</span> <span style="color:#007020;font-weight:bold">INTO</span> <span style="color:#bb60d5">ls_flight</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">LOOP AT </span><span style="color:#bb60d5">gt_flights</span> <span style="color:#007020;font-weight:bold">INTO</span> <span style="color:#bb60d5">ls_flight</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#bb60d5">ls_flight</span><span style="color:#666">-</span><span style="color:#bb60d5">carrid</span>, <span style="color:#bb60d5">ls_flight</span><span style="color:#666">-</span><span style="color:#bb60d5">connid</span>.
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ENDLOOP</span>.
 </span></span></code></pre></div><p>This code iterates through each line of <code>gt_flights</code>, placing each line into the work area <code>ls_flight</code>.  You can then access the fields of each line within the loop.  Remember to always define a work area with the same structure as the table line type.  Using <code>DATA(ls_flight)</code> instead of <code>DATA ls_flight</code> is a modern, concise method of declaring and initializing the work area within the loop statement.</p>
@@ -490,13 +490,13 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
   <a class="anchor" href="#select-statements">#</a>
 </h3>
 <p>The <code>SELECT</code> statement retrieves data from database tables.  It&rsquo;s the most common way to access data in ABAP.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span> <span style="color:#bb60d5">carrid</span> <span style="color:#bb60d5">connid</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span> <span style="color:#bb60d5">carrid</span> <span style="color:#bb60d5">connid</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">FROM</span> <span style="color:#bb60d5">scarr</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">INTO</span> <span style="color:#007020;font-weight:bold">CORRESPONDING FIELDS OF</span> <span style="color:#007020;font-weight:bold">TABLE</span> <span style="color:#bb60d5">gt_flights</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WHERE</span> <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;LH&#39;</span>.
 </span></span></code></pre></div><p>This example selects the <code>carrid</code> and <code>connid</code> fields from the <code>scarr</code> table (which likely contains airline carrier data) and places them into the internal table <code>gt_flights</code>. The <code>WHERE</code> clause filters the results to only include entries where <code>carrid</code> is &lsquo;LH&rsquo;.  <code>INTO CORRESPONDING FIELDS OF TABLE</code> efficiently maps the selected fields to the corresponding fields in the internal table structure.</p>
 <p>If you only need a single row, you can use <code>INTO</code> instead of <code>INTO CORRESPONDING FIELDS OF TABLE</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span> <span style="color:#007020;font-weight:bold">SINGLE</span> <span style="color:#bb60d5">carrid</span> <span style="color:#bb60d5">connid</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span> <span style="color:#007020;font-weight:bold">SINGLE</span> <span style="color:#bb60d5">carrid</span> <span style="color:#bb60d5">connid</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">FROM</span> <span style="color:#bb60d5">scarr</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">INTO</span> <span style="">@</span><span style="color:#bb60d5">DATA</span>(<span style="color:#bb60d5">ls_flight</span>)
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WHERE</span> <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;LH&#39;</span>.
@@ -513,15 +513,15 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
 <ul>
 <li><strong><code>INSERT</code>:</strong> Adds a new row to a table.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">INSERT</span> <span style="color:#007020;font-weight:bold">INTO</span> <span style="color:#bb60d5">scarr</span> <span style="color:#007020;font-weight:bold">VALUES</span> (<span style="color:#4070a0">&#39;AZ&#39;</span>, <span style="color:#4070a0">&#39;Air Zaïre&#39;</span>, <span style="color:#4070a0">&#39;KIN&#39;</span>, ...). <span style="color:#60a0b0;font-style:italic">&#34; Requires all fields to be populated
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">INSERT</span> <span style="color:#007020;font-weight:bold">INTO</span> <span style="color:#bb60d5">scarr</span> <span style="color:#007020;font-weight:bold">VALUES</span> (<span style="color:#4070a0">&#39;AZ&#39;</span>, <span style="color:#4070a0">&#39;Air Zaïre&#39;</span>, <span style="color:#4070a0">&#39;KIN&#39;</span>, ...). <span style="color:#60a0b0;font-style:italic">&#34; Requires all fields to be populated
 </span></span></span></code></pre></div><ul>
 <li><strong><code>UPDATE</code>:</strong> Modifies existing rows.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">UPDATE</span> <span style="color:#bb60d5">scarr</span> <span style="color:#bb60d5">SET</span> <span style="color:#bb60d5">carrname</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;New Airline Name&#39;</span> <span style="color:#007020;font-weight:bold">WHERE</span> <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;AZ&#39;</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">UPDATE</span> <span style="color:#bb60d5">scarr</span> <span style="color:#bb60d5">SET</span> <span style="color:#bb60d5">carrname</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;New Airline Name&#39;</span> <span style="color:#007020;font-weight:bold">WHERE</span> <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;AZ&#39;</span>.
 </span></span></code></pre></div><ul>
 <li><strong><code>DELETE</code>:</strong> Removes rows from a table.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DELETE</span> <span style="color:#007020;font-weight:bold">FROM</span> <span style="color:#bb60d5">scarr</span> <span style="color:#007020;font-weight:bold">WHERE</span> <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;AZ&#39;</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DELETE</span> <span style="color:#007020;font-weight:bold">FROM</span> <span style="color:#bb60d5">scarr</span> <span style="color:#007020;font-weight:bold">WHERE</span> <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;AZ&#39;</span>.
 </span></span></code></pre></div><p><strong>Important:</strong>  Always use appropriate error handling (checking <code>sy-subrc</code>) after <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code> statements to ensure the operations were successful.  In production code, you would wrap these commands within a suitable exception handling mechanism using <code>TRY...CATCH</code> blocks.</p>
 <h3 class="heading" id="open-sql-vs-native-sql">
   Open SQL vs Native SQL
@@ -547,13 +547,13 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
   <a class="anchor" href="#creating-and-using-subroutines-form-routines">#</a>
 </h3>
 <p>Subroutines are blocks of code that perform a specific task. They improve code organization and reusability.  A subroutine is defined using the <code>FORM</code> and <code>ENDFORM</code> statements.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">FORM</span> <span style="color:#06287e">calculate_sum</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">FORM</span> <span style="color:#06287e">calculate_sum</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_sum</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">lv_sum</span> <span style="color:#666">=</span> <span style="color:#bb60d5">lv_a</span> <span style="color:#666">+</span> <span style="color:#bb60d5">lv_b</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#4070a0">&#39;Sum:&#39;</span>, <span style="color:#bb60d5">lv_sum</span>.
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ENDFORM</span>.
 </span></span></code></pre></div><p>This defines a subroutine named <code>calculate_sum</code> that calculates and displays the sum of two variables (<code>lv_a</code> and <code>lv_b</code>).  These variables must be declared and assigned values in the main program before calling the subroutine. To use this subroutine:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_a</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="color:#40a070">10</span>,
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span>: <span style="color:#bb60d5">lv_a</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="color:#40a070">10</span>,
 </span></span><span style="display:flex;"><span>      <span style="color:#bb60d5">lv_b</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#007020;font-weight:bold">VALUE</span> <span style="color:#40a070">20</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">PERFORM</span> <span style="color:#06287e">calculate_sum</span>.
@@ -563,7 +563,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
   <a class="anchor" href="#passing-parameters-to-subroutines">#</a>
 </h3>
 <p>To make subroutines more flexible, you can pass parameters. This allows the subroutine to work with different data without modification. Parameters are declared within the <code>FORM</code> statement using the <code>USING</code> addition.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">FORM</span> <span style="color:#06287e">calculate_sum</span> <span style="color:#007020;font-weight:bold">USING</span> <span style="color:#bb60d5">p_a</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#bb60d5">p_b</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#007020;font-weight:bold">CHANGING</span> <span style="color:#bb60d5">p_sum</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">FORM</span> <span style="color:#06287e">calculate_sum</span> <span style="color:#007020;font-weight:bold">USING</span> <span style="color:#bb60d5">p_a</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#bb60d5">p_b</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span> <span style="color:#007020;font-weight:bold">CHANGING</span> <span style="color:#bb60d5">p_sum</span> <span style="color:#007020;font-weight:bold">TYPE </span><span style="color:#bb60d5">i</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">p_sum</span> <span style="color:#666">=</span> <span style="color:#bb60d5">p_a</span> <span style="color:#666">+</span> <span style="color:#bb60d5">p_b</span>.
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ENDFORM</span>.
 </span></span><span style="display:flex;"><span>
@@ -597,7 +597,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
   <a class="anchor" href="#classes-and-objects">#</a>
 </h3>
 <p>In OOABAP, a <em>class</em> is a blueprint for creating <em>objects</em>. A class defines the structure and behavior of objects. It specifies the data (attributes) and actions (methods) that objects of that class will have.  An <em>object</em> is an instance of a class—a concrete realization of the class blueprint.  Think of a class as a cookie cutter and objects as the cookies it produces.  All the cookies have the same shape, but they are individual entities.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CLASS</span> <span style="color:#bb60d5">zcl_flight</span> <span style="color:#007020;font-weight:bold">DEFINITION</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CLASS</span> <span style="color:#bb60d5">zcl_flight</span> <span style="color:#007020;font-weight:bold">DEFINITION</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">PUBLIC SECTION</span>.
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">CLASS-METHODS</span> <span style="color:#bb60d5">class_method</span>.
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">METHODS</span>: <span style="color:#bb60d5">constructor</span>,
@@ -609,7 +609,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CLASS</span> <span style="color:#bb60d5">zcl_flight</span> <span style="color:#007020;font-weight:bold">IMPLEMENTATION</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">METHOD</span> <span style="color:#06287e">constructor</span>.
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">carrid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;LH&#39;</span>.  <span style="color:#60a0b0;font-style:italic">&#34;Setting default values in the constructor.
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#bb60d5">connid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;1234&#39;</span>.
+</span></span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">connid</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;1234&#39;</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">ENDMETHOD</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">METHOD</span> <span style="color:#06287e">get_flight_data</span>.
@@ -617,7 +617,7 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">ENDMETHOD</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">METHOD</span> <span style="color:#06287e">class_method</span>. <span style="color:#60a0b0;font-style:italic">&#34;Example of a class method
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#4070a0">&#39;This is a class method.&#39;</span>.
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">WRITE</span>: / <span style="color:#4070a0">&#39;This is a class method.&#39;</span>.
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">ENDMETHOD</span>.
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ENDCLASS</span>.
 </span></span></code></pre></div><p>This code defines a class <code>zcl_flight</code>.  The <code>DEFINITION</code> section declares the class structure, including methods (<code>constructor</code>, <code>get_flight_data</code>, <code>class_method</code>) and attributes (<code>carrid</code>, <code>connid</code>). The <code>IMPLEMENTATION</code> section provides the actual code for the methods. The <code>constructor</code> method is a special method that is called when an object is created.</p>
@@ -634,9 +634,9 @@ ABAP (Advanced Business Application Programming) is a high-level programming lan
 </li>
 </ul>
 <p>Creating an object and calling its methods:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span> <span style="color:#bb60d5">lo_flight</span> <span style="color:#007020;font-weight:bold">TYPE REF TO</span> <span style="color:#bb60d5">zcl_flight</span>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DATA</span> <span style="color:#bb60d5">lo_flight</span> <span style="color:#007020;font-weight:bold">TYPE REF TO</span> <span style="color:#bb60d5">zcl_flight</span>.
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE OBJECT</span> <span style="color:#bb60d5">lo_flight</span>. <span style="color:#60a0b0;font-style:italic">&#34;Creates an instance of zcl_flight. Constructor is called.
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">CALL METHOD</span> <span style="color:#bb60d5">lo_flight</span><span style="color:#666">-&gt;</span><span style="color:#bb60d5">get_flight_data</span>.
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CALL METHOD</span> <span style="color:#bb60d5">lo_flight</span><span style="color:#666">-&gt;</span><span style="color:#bb60d5">get_flight_data</span>.
 </span></span></code></pre></div><h3 class="heading" id="inheritance-and-polymorphism-brief-overview">
   Inheritance and Polymorphism (brief overview)
   <a class="anchor" href="#inheritance-and-polymorphism-brief-overview">#</a>

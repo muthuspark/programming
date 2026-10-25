@@ -36,14 +36,14 @@ Racket is a programming language in the Lisp family, known for its powerful macr
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-racket/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-racket/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Racket">
-  <meta property="og:description" content="Introduction to Racket # What is Racket? # Racket is a programming language in the Lisp family, known for its powerful macro system, emphasis on language-oriented programming, and extensive library support. It’s designed to be both a practical language for building real-world applications and a powerful platform for experimenting with and extending programming language concepts. Racket’s design promotes creating and using domain-specific languages (DSLs) tailored to particular tasks, making it a flexible choice for various programming paradigms. Unlike many other Lisps, Racket emphasizes practicality and ease of use, especially for beginners.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-25T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-25T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Racket">
+	<meta property="og:description" content="Introduction to Racket # What is Racket? # Racket is a programming language in the Lisp family, known for its powerful macro system, emphasis on language-oriented programming, and extensive library support. It’s designed to be both a practical language for building real-world applications and a powerful platform for experimenting with and extending programming language concepts. Racket’s design promotes creating and using domain-specific languages (DSLs) tailored to particular tasks, making it a flexible choice for various programming paradigms. Unlike many other Lisps, Racket emphasizes practicality and ease of use, especially for beginners.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-01-25T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-25T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -251,7 +251,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
   <a class="anchor" href="#your-first-racket-program">#</a>
 </h3>
 <p>The simplest Racket program prints &ldquo;Hello, world!&rdquo; to the console.  Open DrRacket and type the following code into the editor:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span>)<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span>)<span style="">
 </span></span></span></code></pre></div><p>Click the &ldquo;Run&rdquo; button (or use the keyboard shortcut).  The output window will display:</p>
 <pre tabindex="0"><code>Hello, world!
 </code></pre><p>This short program uses the <code>displayln</code> function, which displays a string and adds a newline character at the end.  The parentheses denote function calls in Racket; <code>displayln</code> is the function, and <code>&quot;Hello, world!&quot;</code> is its argument (the string to be displayed).  This demonstrates the fundamental syntax of Racket:  expressions are enclosed in parentheses, with the first element being the function or operator and the remaining elements being its arguments.</p>
@@ -325,7 +325,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
   <a class="anchor" href="#variables-and-assignments">#</a>
 </h3>
 <p>Variables in Racket are assigned values using <code>define</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> x <span style="color:#40a070">10</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> x <span style="color:#40a070">10</span>)
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> y <span style="color:#40a070">5</span>)
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> sum (<span style="color:#007020">+</span> x y))  <span style="color:#60a0b0;font-style:italic">; sum will be 15</span>
 </span></span></code></pre></div><p><code>define</code> creates a variable binding.  The variable&rsquo;s name is <code>x</code>, <code>y</code> or <code>sum</code> and their values are assigned on the right side of the <code>define</code> expression.  Note that <code>define</code> is not an assignment statement in the traditional sense; it creates a new binding.  Racket also supports more advanced binding mechanisms like <code>let</code> and <code>let*</code> which are useful for creating local variable scopes.</p>
@@ -341,13 +341,13 @@ Racket is a programming language in the Lisp family, known for its powerful macr
 <ul>
 <li><strong><code>if</code>:</strong>  The simplest conditional statement. It evaluates a condition and executes one of two branches depending on whether the condition is true or false.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020">&gt;</span> x <span style="color:#40a070">5</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020">&gt;</span> x <span style="color:#40a070">5</span>)
 </span></span><span style="display:flex;"><span>    (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;x is greater than 5&#34;</span>)
 </span></span><span style="display:flex;"><span>    (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;x is not greater than 5&#34;</span>))<span style="">
 </span></span></span></code></pre></div><ul>
 <li><strong><code>cond</code>:</strong> A more general conditional that allows for multiple conditions and branches.  It&rsquo;s especially useful when dealing with multiple possibilities.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">cond</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">cond</span>
 </span></span><span style="display:flex;"><span>  [(<span style="color:#007020">&gt;</span> x <span style="color:#40a070">10</span>) (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;x is greater than 10&#34;</span>)]
 </span></span><span style="display:flex;"><span>  [(<span style="color:#007020">&gt;</span> x <span style="color:#40a070">5</span>) (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;x is greater than 5&#34;</span>)]
 </span></span><span style="display:flex;"><span>  [<span style="color:#007020;font-weight:bold">else</span> (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;x is 5 or less&#34;</span>)])<span style="">
@@ -360,7 +360,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
 <ul>
 <li><strong><code>for</code>:</strong>  Provides a concise way to iterate over a sequence of values or a range.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">for</span> ([i (<span style="color:#007020">in-range</span> <span style="color:#40a070">1</span> <span style="color:#40a070">11</span>)])  <span style="color:#60a0b0;font-style:italic">; Iterate from 1 to 10 (inclusive)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">for</span> ([i (<span style="color:#007020">in-range</span> <span style="color:#40a070">1</span> <span style="color:#40a070">11</span>)])  <span style="color:#60a0b0;font-style:italic">; Iterate from 1 to 10 (inclusive)</span>
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020">displayln</span> i))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">for</span> ([i (<span style="color:#007020">in-list</span> <span style="color:#666">&#39;</span>(<span style="color:#517918">a</span> <span style="color:#517918">b</span> <span style="color:#517918">c</span>))]) <span style="color:#60a0b0;font-style:italic">; Iterate through a list</span>
@@ -369,7 +369,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
 <ul>
 <li><strong><code>while</code>:</strong> Executes a block of code repeatedly as long as a condition is true.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">let</span> ([i <span style="color:#40a070">0</span>])
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">let</span> ([i <span style="color:#40a070">0</span>])
 </span></span><span style="display:flex;"><span>  (while (<span style="color:#007020">&lt;</span> i <span style="color:#40a070">10</span>)
 </span></span><span style="display:flex;"><span>    (<span style="color:#007020">displayln</span> i)
 </span></span><span style="display:flex;"><span>    (<span style="color:#007020;font-weight:bold">set!</span> i (<span style="color:#007020">+</span> i <span style="color:#40a070">1</span>))))<span style="">
@@ -379,7 +379,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
   <a class="anchor" href="#defining-functions">#</a>
 </h3>
 <p>Functions in Racket are defined using <code>define</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> (add-numbers x y)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> (add-numbers x y)
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020">+</span> x y))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> (greet name)
@@ -394,7 +394,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
   <a class="anchor" href="#function-definition-and-application">#</a>
 </h3>
 <p>Functions in Racket are first-class citizens, meaning they can be passed as arguments to other functions, returned as values from functions, and stored in data structures.  We&rsquo;ve already seen how to define functions using <code>define</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> (square x)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> (square x)
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020">*</span> x x))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(square <span style="color:#40a070">5</span>)  <span style="color:#60a0b0;font-style:italic">; Returns 25</span>
@@ -407,11 +407,11 @@ Racket is a programming language in the Lisp family, known for its powerful macr
 <ul>
 <li><strong><code>map</code>:</strong> Applies a function to each element of a list and returns a new list containing the results.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">map</span> square <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span>)) <span style="color:#60a0b0;font-style:italic">; Returns &#39;(1 4 9 16)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">map</span> square <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span>)) <span style="color:#60a0b0;font-style:italic">; Returns &#39;(1 4 9 16)</span>
 </span></span></code></pre></div><ul>
 <li><strong><code>filter</code>:</strong> Selects elements from a list that satisfy a given predicate (a function that returns a boolean).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">filter</span> <span style="color:#007020">even?</span> <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span> <span style="color:#40a070">5</span> <span style="color:#40a070">6</span>)) <span style="color:#60a0b0;font-style:italic">; Returns &#39;(2 4 6)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">filter</span> <span style="color:#007020">even?</span> <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span> <span style="color:#40a070">5</span> <span style="color:#40a070">6</span>)) <span style="color:#60a0b0;font-style:italic">; Returns &#39;(2 4 6)</span>
 </span></span><span style="display:flex;"><span><span style="color:#666">```</span>  (<span style="color:#666">`</span><span style="color:#517918">even?</span><span style="color:#666">`</span> <span style="color:#517918">is</span> <span style="color:#517918">a</span> <span style="color:#517918">built-in</span> <span style="color:#517918">function</span> <span style="color:#517918">that</span> <span style="color:#517918">checks</span> <span style="color:#517918">if</span> <span style="color:#517918">a</span> <span style="color:#517918">number</span> <span style="color:#517918">is</span> <span style="color:#517918">even.</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">*</span> **<span style="color:#666">`</span><span style="color:#517918">foldl</span><span style="color:#666">`</span> (<span style="color:#517918">or</span> <span style="color:#666">`</span><span style="color:#517918">foldr</span><span style="color:#666">`</span>):**  Accumulates a result by applying a function cumulatively to the elements of a list.
@@ -423,14 +423,14 @@ Racket is a programming language in the Lisp family, known for its powerful macr
   <a class="anchor" href="#lambda-expressions">#</a>
 </h3>
 <p>Lambda expressions (anonymous functions) allow you to create functions without giving them a name. They are particularly useful when you need a function for a short-lived task and don&rsquo;t want to clutter your code with named function definitions.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">map</span> (<span style="color:#007020;font-weight:bold">lambda</span> (x) (<span style="color:#007020">*</span> x <span style="color:#40a070">2</span>)) <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>)) <span style="color:#60a0b0;font-style:italic">; Returns &#39;(2 4 6)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">map</span> (<span style="color:#007020;font-weight:bold">lambda</span> (x) (<span style="color:#007020">*</span> x <span style="color:#40a070">2</span>)) <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>)) <span style="color:#60a0b0;font-style:italic">; Returns &#39;(2 4 6)</span>
 </span></span></code></pre></div><p>The syntax is <code>(lambda (parameters) body)</code>.  This creates a function that takes the specified parameters and executes the provided body.</p>
 <h3 class="heading" id="recursion">
   Recursion
   <a class="anchor" href="#recursion">#</a>
 </h3>
 <p>Recursion is a powerful technique where a function calls itself to solve a problem.  Racket supports recursion effectively. Here&rsquo;s an example of a recursive function to calculate the factorial of a number:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> (factorial n)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> (factorial n)
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020">=</span> n <span style="color:#40a070">0</span>)
 </span></span><span style="display:flex;"><span>      <span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span>      (<span style="color:#007020">*</span> n (factorial (<span style="color:#007020">-</span> n <span style="color:#40a070">1</span>)))))
@@ -447,7 +447,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
 </h3>
 <p>Modules in Racket provide a way to organize code into reusable units, promoting modularity and code reusability. A module is a self-contained unit that defines functions, variables, and other entities.  They help to manage namespaces and prevent naming conflicts.</p>
 <p>To create a module, you save your Racket code in a file with the <code>.rkt</code> extension.  The first line of the file typically specifies the module&rsquo;s name and imports any necessary libraries.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">#lang </span><span style="color:#0e84b5;font-weight:bold">racket</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">#lang </span><span style="color:#0e84b5;font-weight:bold">racket</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">provide</span> my-function)
 </span></span><span style="display:flex;"><span>
@@ -455,7 +455,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020">+</span> x <span style="color:#40a070">10</span>))<span style="">
 </span></span></span></code></pre></div><p>This creates a module named <code>my-module.rkt</code> (assuming you save it with this name). <code>#lang racket</code> specifies the language, <code>provide</code> declares what&rsquo;s exported (made available to other modules), and the rest is the module&rsquo;s content.</p>
 <p>To use this module in another file:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">#lang </span><span style="color:#0e84b5;font-weight:bold">racket</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">#lang </span><span style="color:#0e84b5;font-weight:bold">racket</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">require</span> <span style="color:#4070a0">&#34;my-module.rkt&#34;</span>)
 </span></span><span style="display:flex;"><span>
@@ -468,7 +468,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
 <p>Namespaces in Racket prevent naming conflicts between modules.  Each module has its own namespace, so you can use the same name for different entities in different modules without causing errors.  The <code>provide</code> and <code>require</code> forms manage what&rsquo;s exported from and imported into a module.</p>
 <p>For example, if two modules both define a function named <code>add</code>, the import mechanism ensures that each <code>add</code> function is accessible through its module&rsquo;s namespace. This avoids ambiguity and confusion.</p>
 <p>You can also use <code>require</code> to import specific elements from a module:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">require</span> racket/string [<span style="color:#007020">string-append</span> :string-append])<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">require</span> racket/string [<span style="color:#007020">string-append</span> :string-append])<span style="">
 </span></span></span></code></pre></div><p>This only imports the <code>string-append</code> function, renaming it to simply <code>string-append</code>.</p>
 <h3 class="heading" id="writing-larger-programs">
   Writing Larger Programs
@@ -486,12 +486,12 @@ Racket is a programming language in the Lisp family, known for its powerful macr
   <a class="anchor" href="#reading-from-the-console">#</a>
 </h3>
 <p>Racket provides several ways to read input from the console.  The simplest is using <code>read</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">display</span> <span style="color:#4070a0">&#34;Enter a number: &#34;</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">display</span> <span style="color:#4070a0">&#34;Enter a number: &#34;</span>)
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> num (<span style="color:#007020">read</span>))
 </span></span><span style="display:flex;"><span>(<span style="color:#007020">displayln</span> (<span style="color:#007020">+</span> num <span style="color:#40a070">10</span>))<span style="">
 </span></span></span></code></pre></div><p>This code prompts the user to enter a number, reads the input using <code>read</code> (which reads a single S-expression), and then prints the number plus 10.  <code>read</code> is powerful but expects correctly formatted Racket input; it&rsquo;s not ideal for handling arbitrary user input which might contain errors.</p>
 <p>For more robust console input handling, especially for strings that might contain spaces, consider using <code>read-line</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">display</span> <span style="color:#4070a0">&#34;Enter your name: &#34;</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">display</span> <span style="color:#4070a0">&#34;Enter your name: &#34;</span>)
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> name (<span style="color:#007020">read-line</span>))
 </span></span><span style="display:flex;"><span>(<span style="color:#007020">displayln</span> (<span style="color:#007020">string-append</span> <span style="color:#4070a0">&#34;Hello, &#34;</span> name <span style="color:#4070a0">&#34;!&#34;</span>))<span style="">
 </span></span></span></code></pre></div><p><code>read-line</code> reads an entire line of text from the console, including spaces.</p>
@@ -500,23 +500,23 @@ Racket is a programming language in the Lisp family, known for its powerful macr
   <a class="anchor" href="#writing-to-the-console">#</a>
 </h3>
 <p>The primary function for writing to the console is <code>display</code> or <code>displayln</code>.  <code>display</code> outputs text; <code>displayln</code> outputs text followed by a newline character.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">display</span> <span style="color:#4070a0">&#34;Hello, &#34;</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">display</span> <span style="color:#4070a0">&#34;Hello, &#34;</span>)
 </span></span><span style="display:flex;"><span>(<span style="color:#007020">display</span> <span style="color:#4070a0">&#34;world!</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>) <span style="color:#60a0b0;font-style:italic">; \n adds a newline</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;This is on a new line.&#34;</span>)<span style="">
 </span></span></span></code></pre></div><p>You can also use <code>printf</code> for formatted output, similar to C&rsquo;s <code>printf</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">printf</span> <span style="color:#4070a0">&#34;The value of x is: ~a</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span> <span style="color:#40a070">10</span>) <span style="color:#60a0b0;font-style:italic">; ~a is a placeholder for arbitrary values.</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020">printf</span> <span style="color:#4070a0">&#34;The value of x is: ~a</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span> <span style="color:#40a070">10</span>) <span style="color:#60a0b0;font-style:italic">; ~a is a placeholder for arbitrary values.</span>
 </span></span></code></pre></div><h3 class="heading" id="file-input-and-output">
   File Input and Output
   <a class="anchor" href="#file-input-and-output">#</a>
 </h3>
 <p>Racket provides functions for reading from and writing to files.  Here&rsquo;s how to write data to a file:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> output-port (<span style="color:#007020">open-output-file</span> <span style="color:#4070a0">&#34;my-file.txt&#34;</span>))
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> output-port (<span style="color:#007020">open-output-file</span> <span style="color:#4070a0">&#34;my-file.txt&#34;</span>))
 </span></span><span style="display:flex;"><span>(<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;This text will be written to the file.&#34;</span> output-port)
 </span></span><span style="display:flex;"><span>(<span style="color:#007020">close-output-port</span> output-port)<span style="">
 </span></span></span></code></pre></div><p>This code opens a file named &ldquo;my-file.txt&rdquo; for writing, writes a line of text to it, and then closes the file.  It&rsquo;s crucial to close the output port to ensure data is written correctly to disk.</p>
 <p>Reading from a file is done similarly:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> input-port (<span style="color:#007020">open-input-file</span> <span style="color:#4070a0">&#34;my-file.txt&#34;</span>))
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define</span> input-port (<span style="color:#007020">open-input-file</span> <span style="color:#4070a0">&#34;my-file.txt&#34;</span>))
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">let</span> loop ([line (<span style="color:#007020">read-line</span> input-port)])
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">when</span> (<span style="color:#007020">not</span> (<span style="color:#007020">eof-object?</span> line))
 </span></span><span style="display:flex;"><span>    (<span style="color:#007020">displayln</span> line)
@@ -533,7 +533,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
 </h3>
 <p>Racket&rsquo;s macro system is a powerful feature allowing you to extend the language itself.  Macros operate on the code&rsquo;s <em>syntax</em> before it&rsquo;s evaluated, enabling you to create new language constructs and abstractions.  A macro transforms one piece of code into another before the transformed code is evaluated.</p>
 <p>A simple example demonstrates creating a macro that defines a function with a default argument:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">#lang </span><span style="color:#0e84b5;font-weight:bold">racket</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">#lang </span><span style="color:#0e84b5;font-weight:bold">racket</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">define-syntax-rule</span> (define-with-default name params default-value body <span style="color:#007020;font-weight:bold">...</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">begin</span>
@@ -572,7 +572,7 @@ Racket is a programming language in the Lisp family, known for its powerful macr
   <a class="anchor" href="#exception-handling">#</a>
 </h3>
 <p>Racket uses a sophisticated exception handling mechanism.  Exceptions are raised using <code>raise</code> and caught using <code>with-handlers</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">with-handlers</span> ([<span style="color:#007020">exn:fail?</span> (<span style="color:#007020;font-weight:bold">lambda</span> (<span style="color:#007020">exn</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-racket" data-lang="racket"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">with-handlers</span> ([<span style="color:#007020">exn:fail?</span> (<span style="color:#007020;font-weight:bold">lambda</span> (<span style="color:#007020">exn</span>)
 </span></span><span style="display:flex;"><span>                            (<span style="color:#007020">displayln</span> <span style="color:#4070a0">&#34;An error occurred!&#34;</span>))])
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">begin</span>
 </span></span><span style="display:flex;"><span>    (<span style="color:#007020">raise</span> (<span style="color:#007020">exn:fail</span> <span style="color:#4070a0">&#34;Something went wrong&#34;</span>))

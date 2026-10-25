@@ -36,14 +36,14 @@ Idris is a purely functional programming language with dependent types.  This me
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-idris/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-idris/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Idris">
-  <meta property="og:description" content="Introduction to Idris # What is Idris? # Idris is a purely functional programming language with dependent types. This means it combines the benefits of functional programming (like immutability, referential transparency, and higher-order functions) with the power of dependent types, allowing you to express complex program properties and prove them correct within the type system. Unlike languages like Haskell, which have a separate type system, Idris’s type system is deeply integrated, allowing for powerful compile-time guarantees and enhanced code reliability. This makes Idris particularly well-suited for projects requiring high levels of correctness, such as formal verification and compiler development. It also excels in areas where precise control over data structures and their invariants is critical.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-12-21T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-21T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Idris">
+	<meta property="og:description" content="Introduction to Idris # What is Idris? # Idris is a purely functional programming language with dependent types. This means it combines the benefits of functional programming (like immutability, referential transparency, and higher-order functions) with the power of dependent types, allowing you to express complex program properties and prove them correct within the type system. Unlike languages like Haskell, which have a separate type system, Idris’s type system is deeply integrated, allowing for powerful compile-time guarantees and enhanced code reliability. This makes Idris particularly well-suited for projects requiring high levels of correctness, such as formal verification and compiler development. It also excels in areas where precise control over data structures and their invariants is critical.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2024-12-21T00:00:00+00:00">
+		<meta property="article:modified_time" content="2024-12-21T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Idris is a purely functional programming language with dependent types.  This me
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Idris is a purely functional programming language with dependent types.  This me
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -248,10 +248,10 @@ Idris is a purely functional programming language with dependent types.  This me
   <a class="anchor" href="#your-first-idris-program">#</a>
 </h3>
 <p>Let&rsquo;s write a simple &ldquo;Hello, world!&rdquo; program in Idris:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
 </span></span><span style="display:flex;"><span>main <span style="color:#007020;font-weight:bold">=</span> putStrLn <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
 </span></span></code></pre></div><p>Save this code as a file named <code>hello.idr</code>.  Then, compile and run it from your terminal using:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>idris hello.idr
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>idris hello.idr
 </span></span><span style="display:flex;"><span>./hello
 </span></span></code></pre></div><p>This will compile your code and then execute the <code>main</code> function, printing &ldquo;Hello, world!&rdquo; to the console.  The <code>main</code> function&rsquo;s type signature <code>IO ()</code> indicates that it performs input/output operations and returns no value (represented by <code>()</code>). <code>putStrLn</code> is a function that prints a string to the console and adds a newline character. This simple example introduces basic Idris syntax and the compilation/execution process.</p>
 <h2 class="heading" id="idris-basics">
@@ -265,7 +265,7 @@ Idris is a purely functional programming language with dependent types.  This me
 <p>Idris is a statically-typed language, meaning that the type of every expression is known at compile time.  Idris uses a powerful type system based on dependent types, but even without delving into the complexities of dependent types, understanding basic type declarations and inference is crucial.</p>
 <p>Type annotations in Idris are usually optional. Idris&rsquo;s type inference system is sophisticated enough to deduce the types of many expressions automatically.  However, providing explicit type annotations improves code readability, aids in understanding complex code, and can help catch errors early.</p>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">x</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">x</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span>x <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">5</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>y <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">10</span>  <span style="color:#60a0b0;font-style:italic">-- Idris infers y to be of type Int</span>
@@ -290,7 +290,7 @@ Idris is a purely functional programming language with dependent types.  This me
 </li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">myInt</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">myInt</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span>myInt <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">42</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">myBool</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Bool</span>
@@ -304,7 +304,7 @@ Idris is a purely functional programming language with dependent types.  This me
 </h3>
 <p>Functions in Idris are defined using the <code>=</code> symbol.  The type signature (the type of the function&rsquo;s input and output) is optional, but recommended for clarity and to aid type inference.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">addOne</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">addOne</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span>addOne x <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#007020;font-weight:bold">+</span> <span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">greet</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">String</span>
@@ -316,7 +316,7 @@ Idris is a purely functional programming language with dependent types.  This me
 </h3>
 <p>Pattern matching is a powerful feature in Idris that allows you to define functions that behave differently based on the structure of their input. It&rsquo;s often used with algebraic data types (discussed later), but can also be used with simpler types like integers.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">factorial</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Nat</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Nat</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">factorial</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Nat</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Nat</span>
 </span></span><span style="display:flex;"><span>factorial <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span>factorial n <span style="color:#007020;font-weight:bold">=</span> n <span style="color:#007020;font-weight:bold">*</span> factorial <span style="color:#007020;font-weight:bold">(</span>n <span style="color:#007020;font-weight:bold">-</span> <span style="color:#40a070">1</span><span style="color:#007020;font-weight:bold">)</span>
 </span></span></code></pre></div><p>This defines the factorial function using pattern matching. If the input <code>n</code> is 0, it returns 1; otherwise, it recursively calls itself with <code>n-1</code>. <code>Nat</code> is a natural number type (non-negative integers).</p>
@@ -326,7 +326,7 @@ Idris is a purely functional programming language with dependent types.  This me
 </h3>
 <p>Lists in Idris are represented using the <code>List</code> type constructor.  A list of integers would be denoted as <code>List Int</code>.  You can create lists using square brackets <code>[]</code> or by using the <code>::</code> (cons) operator to add an element to the head of a list.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">myList</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">List</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">myList</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">List</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span>myList <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">[</span><span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span><span style="color:#007020;font-weight:bold">]</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">anotherList</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">List</span> <span style="color:#902000">Int</span>
@@ -350,7 +350,7 @@ Idris is a purely functional programming language with dependent types.  This me
   <a class="anchor" href="#vectors-and-their-dependent-types">#</a>
 </h3>
 <p>A prime example of dependent types in Idris is the <code>Vect</code> type.  <code>Vect n a</code> represents a vector of length <code>n</code> containing elements of type <code>a</code>.  The length <code>n</code> is a <em>value</em> that affects the <em>type</em>.  You can&rsquo;t create a <code>Vect 5 Int</code> and then try to access its 6th element; the type system will prevent this at compile time.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">myVector</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Vect</span> <span style="color:#40a070">3</span> <span style="color:#902000">Int</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">myVector</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Vect</span> <span style="color:#40a070">3</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span>myVector <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">[</span><span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span><span style="color:#007020;font-weight:bold">]</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- This will cause a type error:</span>
@@ -363,7 +363,7 @@ Idris is a purely functional programming language with dependent types.  This me
 </h3>
 <p>Dependent types enable type-level computation.  This means you can perform calculations and logic <em>within</em> the type system itself, before runtime. This is often used to enforce constraints and perform sophisticated static analysis.  For example, you can define a type that represents the result of a computation, and the type system will guarantee that the computation has been performed correctly at compile time.</p>
 <p>Consider a function that calculates the factorial:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">factorial</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Nat</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Nat</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#06287e">factorial</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Nat</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Nat</span>
 </span></span><span style="display:flex;"><span>factorial zero <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span>factorial <span style="color:#007020;font-weight:bold">(</span>suc n<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">=</span> suc n <span style="color:#007020;font-weight:bold">*</span> factorial n
 </span></span><span style="display:flex;"><span>
@@ -387,7 +387,7 @@ Idris is a purely functional programming language with dependent types.  This me
 </h3>
 <p>Type classes in Idris provide a way to define a set of operations that can be applied to different types.  They are similar to interfaces or traits in other languages but are integrated more deeply into the type system.  A type class defines a signature (a set of functions with specified types), and types can be declared as <em>instances</em> of a type class by providing implementations for those functions.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#902000">Show</span> a <span style="color:#007020;font-weight:bold">where</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#902000">Show</span> a <span style="color:#007020;font-weight:bold">where</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">show</span> <span style="color:#007020;font-weight:bold">:</span> a <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">String</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">instance</span> showInt <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Show</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">where</span>
@@ -410,14 +410,14 @@ Idris is a purely functional programming language with dependent types.  This me
 <ul>
 <li><strong>Records:</strong>  Records group together named fields of potentially different types.  They are useful for representing structured data.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#902000">Person</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Person</span> <span style="color:#007020;font-weight:bold">{</span> name <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span>, age <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">}</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#902000">Person</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Person</span> <span style="color:#007020;font-weight:bold">{</span> name <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">String</span>, age <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">myPerson</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Person</span>
 </span></span><span style="display:flex;"><span>myPerson <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Person</span> <span style="color:#007020;font-weight:bold">{</span> name <span style="color:#007020;font-weight:bold">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>, age <span style="color:#007020;font-weight:bold">=</span> <span style="color:#40a070">30</span> <span style="color:#007020;font-weight:bold">}</span>
 </span></span></code></pre></div><ul>
 <li><strong>Variants (Algebraic Data Types):</strong> Variants represent values that can be one of several possible types. They are fundamental to expressing complex data structures.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#902000">Shape</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Circle</span> <span style="color:#902000">Float</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#902000">Rectangle</span> <span style="color:#902000">Float</span> <span style="color:#902000">Float</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#902000">Shape</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Circle</span> <span style="color:#902000">Float</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#902000">Rectangle</span> <span style="color:#902000">Float</span> <span style="color:#902000">Float</span>
 </span></span></code></pre></div><p>This defines a <code>Shape</code> type that can be either a <code>Circle</code> (with a radius) or a <code>Rectangle</code> (with width and height).</p>
 <h3 class="heading" id="modules-and-namespaces">
   Modules and Namespaces
@@ -425,13 +425,13 @@ Idris is a purely functional programming language with dependent types.  This me
 </h3>
 <p>Modules in Idris organize code into separate files, providing namespaces and preventing naming collisions.  A module declaration starts with <code>module</code>.  You can export specific items from a module using the <code>export</code> keyword.</p>
 <p>Example (file: <code>MyModule.idr</code>):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span> <span style="color:#007020;font-weight:bold">where</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span> <span style="color:#007020;font-weight:bold">where</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>export
 </span></span><span style="display:flex;"><span><span style="color:#06287e">myFunction</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span>myFunction x <span style="color:#007020;font-weight:bold">=</span> x <span style="color:#007020;font-weight:bold">*</span> <span style="color:#40a070">2</span>
 </span></span></code></pre></div><p>To use <code>myFunction</code> in another file:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
 </span></span><span style="display:flex;"><span>main <span style="color:#007020;font-weight:bold">=</span> putStrLn <span style="color:#007020;font-weight:bold">(</span>show <span style="color:#007020;font-weight:bold">(</span><span style="color:#902000">MyModule</span><span style="color:#007020;font-weight:bold">.</span>myFunction <span style="color:#40a070">5</span><span style="color:#007020;font-weight:bold">))</span> <span style="color:#60a0b0;font-style:italic">-- Output: 10</span>
@@ -441,7 +441,7 @@ Idris is a purely functional programming language with dependent types.  This me
 </h3>
 <p>Idris uses exceptions for error handling.  The <code>IO</code> monad provides facilities for exception handling.  The <code>try</code> and <code>catch</code> keywords are used to handle exceptions.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">System.IO</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">System.IO</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
 </span></span><span style="display:flex;"><span>main <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">do</span>
@@ -464,7 +464,7 @@ Idris is a purely functional programming language with dependent types.  This me
   <a class="anchor" href="#building-a-simple-calculator">#</a>
 </h3>
 <p>Let&rsquo;s build a simple calculator that can perform addition, subtraction, multiplication, and division. We&rsquo;ll use pattern matching to handle different operations:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#902000">Operation</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Add</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#902000">Subtract</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#902000">Multiply</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#902000">Divide</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">data</span> <span style="color:#902000">Operation</span> <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Add</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#902000">Subtract</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#902000">Multiply</span> <span style="color:#007020;font-weight:bold">|</span> <span style="color:#902000">Divide</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">calculate</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">Operation</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Maybe</span> <span style="color:#902000">Int</span>
 </span></span><span style="display:flex;"><span>calculate <span style="color:#902000">Add</span> x y <span style="color:#007020;font-weight:bold">=</span> <span style="color:#902000">Just</span> <span style="color:#007020;font-weight:bold">(</span>x <span style="color:#007020;font-weight:bold">+</span> y<span style="color:#007020;font-weight:bold">)</span>
@@ -497,7 +497,7 @@ Idris is a purely functional programming language with dependent types.  This me
   <a class="anchor" href="#implementing-a-small-game">#</a>
 </h3>
 <p>Let&rsquo;s create a simple number guessing game:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">System.Random</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">System.Random</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>
 </span></span><span style="display:flex;"><span>main <span style="color:#007020;font-weight:bold">=</span> <span style="color:#007020;font-weight:bold">do</span>
@@ -522,7 +522,7 @@ Idris is a purely functional programming language with dependent types.  This me
 </h3>
 <p>Idris can interact with external libraries through the use of Foreign Function Interfaces (FFIs).  The specifics depend on the library and its availability as an Idris binding.  If a direct Idris binding isn&rsquo;t available, you might need to create one, which can be a complex undertaking.</p>
 <p>A simplified example (assuming a hypothetical library for image processing):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Assuming an Idris binding exists for the hypothetical image library</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-idris" data-lang="idris"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Assuming an Idris binding exists for the hypothetical image library</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">ImageProcessing</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">main</span> <span style="color:#007020;font-weight:bold">:</span> <span style="color:#902000">IO</span> <span style="color:#007020;font-weight:bold">()</span>

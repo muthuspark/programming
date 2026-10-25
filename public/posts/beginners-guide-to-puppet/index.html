@@ -36,14 +36,14 @@ Puppet is a powerful open-source configuration management tool used to automate 
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-puppet/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-puppet/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Puppet">
-  <meta property="og:description" content="Introduction to Puppet # What is Puppet? # Puppet is a powerful open-source configuration management tool used to automate infrastructure management across your data center or cloud. It allows you to define the desired state of your systems (servers, network devices, etc.) in a declarative language, and then Puppet ensures that those systems are configured correctly. This means specifying what you want your systems to look like, rather than how to get them there. Puppet handles the details of making the necessary changes, ensuring consistency and reducing manual effort. It manages everything from package installations and service configurations to user accounts and file permissions.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-08T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-08T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Puppet">
+	<meta property="og:description" content="Introduction to Puppet # What is Puppet? # Puppet is a powerful open-source configuration management tool used to automate infrastructure management across your data center or cloud. It allows you to define the desired state of your systems (servers, network devices, etc.) in a declarative language, and then Puppet ensures that those systems are configured correctly. This means specifying what you want your systems to look like, rather than how to get them there. Puppet handles the details of making the necessary changes, ensuring consistency and reducing manual effort. It manages everything from package installations and service configurations to user accounts and file permissions.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-01-08T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-08T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Puppet is a powerful open-source configuration management tool used to automate 
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Puppet is a powerful open-source configuration management tool used to automate 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -302,9 +302,9 @@ Puppet is a powerful open-source configuration management tool used to automate 
 </h3>
 <p>Puppet manages <em>resources</em>. A resource represents a single manageable item on a system, such as a package, a service, a file, or a user. Each resource has a <em>type</em> that specifies what kind of resource it is (e.g., <code>package</code>, <code>service</code>, <code>file</code>, <code>user</code>).  Resources are declared in manifests, specifying their type and the desired state. Puppet then ensures that the actual state of the resource matches the desired state.</p>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">package</span> {<span style="color:#4070a0">&#39;httpd&#39;</span>:<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;present&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">package</span> {<span style="color:#4070a0">&#39;httpd&#39;</span>:<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;present&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span></code></pre></div><p>This declares a resource of type <code>package</code> named <code>httpd</code> with the desired state <code>present</code> (meaning it should be installed).</p>
 <h3 class="heading" id="classes-and-inheritance">
   Classes and Inheritance
@@ -312,14 +312,14 @@ Puppet is a powerful open-source configuration management tool used to automate 
 </h3>
 <p>Classes are reusable blocks of Puppet code that group related resources.  They provide a powerful mechanism for modularizing and organizing your configurations.  Classes promote reusability and make it easier to manage complex systems.</p>
 <p>Inheritance allows you to create classes that inherit properties and behaviors from other classes.  This promotes code reuse and avoids redundancy.  This is achieved using the <code>include</code> keyword or by specifying parent classes within a class definition.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#4070a0">webserver</span> {<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#007020;font-weight:bold">package</span> { <span style="color:#4070a0">&#39;httpd&#39;</span>: <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">present</span> }<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#007020;font-weight:bold">service</span> { <span style="color:#4070a0">&#39;httpd&#39;</span>: <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">running</span> }<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#4070a0">webserver</span> {<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">package</span> { <span style="color:#4070a0">&#39;httpd&#39;</span>: <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">present</span> }<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">service</span> { <span style="color:#4070a0">&#39;httpd&#39;</span>: <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">running</span> }<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#4070a0">apache_server</span> <span style="color:#007020;font-weight:bold">inherits</span> <span style="color:#4070a0">webserver</span> {<span style="color:#60a0b0;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#4070a0">apache_server</span> <span style="color:#007020;font-weight:bold">inherits</span> <span style="color:#4070a0">webserver</span> {<span style="color:#60a0b0;font-style:italic">
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">  # Add apache-specific configurations here</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span></code></pre></div><p>Here, <code>apache_server</code> inherits from <code>webserver</code>, inheriting the package and service declarations.</p>
 <h3 class="heading" id="variables-and-data-types">
   Variables and Data Types
@@ -335,20 +335,20 @@ Puppet is a powerful open-source configuration management tool used to automate 
 <li><strong>Arrays:</strong> Ordered lists of values.</li>
 <li><strong>Hashes:</strong> Key-value pairs.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#bb60d5">$my_package</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;httpd&#39;</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#bb60d5">$package_ensure</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;present&#39;</span><span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#bb60d5">$my_package</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;httpd&#39;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#bb60d5">$package_ensure</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;present&#39;</span><span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">package</span> { <span style="color:#bb60d5">$my_package:</span> <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#bb60d5">$package_ensure</span> }<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">package</span> { <span style="color:#bb60d5">$my_package:</span> <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#bb60d5">$package_ensure</span> }<span style="">
 </span></span></span></code></pre></div><p>This example uses variables to make the manifest more flexible.</p>
 <h3 class="heading" id="templates-and-erb">
   Templates and ERB
   <a class="anchor" href="#templates-and-erb">#</a>
 </h3>
 <p>Templates allow you to generate files dynamically based on the values of variables.  Puppet commonly uses Embedded Ruby (ERB) templates, allowing you to embed Ruby code within the template to generate the content. This is particularly useful for creating configuration files that vary based on the system&rsquo;s environment.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">file</span> { <span style="color:#4070a0">&#39;/etc/httpd/conf/httpd.conf&#39;</span>:<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">ensure</span>  <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;file&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">source</span>  <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;puppet:///modules/apache/httpd.conf.erb&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">file</span> { <span style="color:#4070a0">&#39;/etc/httpd/conf/httpd.conf&#39;</span>:<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">ensure</span>  <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;file&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">source</span>  <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;puppet:///modules/apache/httpd.conf.erb&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span></code></pre></div><p>This creates a file <code>/etc/httpd/conf/httpd.conf</code> from the ERB template <code>httpd.conf.erb</code>. The template can then use ERB tags like <code>&lt;% %&gt;</code> to dynamically generate content based on Puppet variables.</p>
 <h2 class="heading" id="writing-your-first-puppet-manifest">
   Writing Your First Puppet Manifest
@@ -360,87 +360,87 @@ Puppet is a powerful open-source configuration management tool used to automate 
   <a class="anchor" href="#installing-a-package">#</a>
 </h3>
 <p>The simplest Puppet manifest involves installing a package.  This example installs the <code>httpd</code> package (Apache web server) on systems where the package manager supports it:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">package</span> { <span style="color:#4070a0">&#39;httpd&#39;</span>:<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;present&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">package</span> { <span style="color:#4070a0">&#39;httpd&#39;</span>:<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;present&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span></code></pre></div><p><code>ensure =&gt; 'present'</code> means that the package should be installed if it&rsquo;s not already.  If it&rsquo;s already installed, Puppet will do nothing.  <code>ensure =&gt; 'absent'</code> would remove the package.</p>
 <h3 class="heading" id="managing-a-service">
   Managing a Service
   <a class="anchor" href="#managing-a-service">#</a>
 </h3>
 <p>Once a package is installed, you&rsquo;ll often want to manage the associated service. This example ensures the <code>httpd</code> service is running and enabled:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">service</span> { <span style="color:#4070a0">&#39;httpd&#39;</span>:<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;running&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">enable</span> <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">true</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">service</span> { <span style="color:#4070a0">&#39;httpd&#39;</span>:<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;running&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">enable</span> <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">true</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span></code></pre></div><p><code>ensure =&gt; 'running'</code> starts the service if it&rsquo;s not already running. <code>enable =&gt; true</code> ensures that the service starts automatically at boot time.</p>
 <h3 class="heading" id="creating-files-and-directories">
   Creating Files and Directories
   <a class="anchor" href="#creating-files-and-directories">#</a>
 </h3>
 <p>Puppet can create files and directories, setting permissions and ownership. This example creates a directory and a file within it:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Create directory</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">file</span> { <span style="color:#4070a0">&#39;/var/www&#39;</span>:<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">ensure</span>  <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;directory&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">mode</span>    <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;0755&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">owner</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">group</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="color:#60a0b0;font-style:italic">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Create directory</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">file</span> { <span style="color:#4070a0">&#39;/var/www&#39;</span>:<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">ensure</span>  <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;directory&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">mode</span>    <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;0755&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">owner</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">group</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="color:#60a0b0;font-style:italic">
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Create file</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">file</span> { <span style="color:#4070a0">&#39;/var/www/index.html&#39;</span>:<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">ensure</span>  <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;file&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">mode</span>    <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;0644&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">owner</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">group</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">content</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;&lt;html&gt;Hello, Puppet!&lt;/html&gt;&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">file</span> { <span style="color:#4070a0">&#39;/var/www/index.html&#39;</span>:<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">ensure</span>  <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;file&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">mode</span>    <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;0644&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">owner</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">group</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">content</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;&lt;html&gt;Hello, Puppet!&lt;/html&gt;&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span></code></pre></div><p>This creates the <code>/var/www</code> directory with 755 permissions (read, write, execute for owner; read, execute for group and others) and the <code>index.html</code> file with 644 permissions (read, write for owner; read for group and others).</p>
 <h3 class="heading" id="managing-users-and-groups">
   Managing Users and Groups
   <a class="anchor" href="#managing-users-and-groups">#</a>
 </h3>
 <p>Puppet can also manage users and groups. This example creates a user and adds them to a group:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">user</span> { <span style="color:#4070a0">&#39;john&#39;</span>:<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">ensure</span>     <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;present&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">comment</span>    <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;John Doe&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">shell</span>      <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;/bin/bash&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">gid</span>        <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;users&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">password</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;password&#39;</span>,<span style="color:#60a0b0;font-style:italic"> # Use a more secure method for production!</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">user</span> { <span style="color:#4070a0">&#39;john&#39;</span>:<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">ensure</span>     <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;present&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">comment</span>    <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;John Doe&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">shell</span>      <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;/bin/bash&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">gid</span>        <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;users&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">password</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;password&#39;</span>,<span style="color:#60a0b0;font-style:italic"> # Use a more secure method for production!</span><span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#4070a0">group</span> { <span style="color:#4070a0">&#39;users&#39;</span>:<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;present&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">group</span> { <span style="color:#4070a0">&#39;users&#39;</span>:<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;present&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span></code></pre></div><p>Remember that setting passwords directly in manifests is generally discouraged in production environments.  More secure methods, such as using a dedicated password management system, should be implemented.</p>
 <h3 class="heading" id="example-simple-web-server-configuration">
   Example: Simple Web Server Configuration
   <a class="anchor" href="#example-simple-web-server-configuration">#</a>
 </h3>
 <p>Combining the above elements, let&rsquo;s configure a basic web server:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">package</span> { <span style="color:#4070a0">&#39;httpd&#39;</span>:<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;present&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">package</span> { <span style="color:#4070a0">&#39;httpd&#39;</span>:<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;present&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">service</span> { <span style="color:#4070a0">&#39;httpd&#39;</span>:<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;running&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">enable</span> <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">true</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">service</span> { <span style="color:#4070a0">&#39;httpd&#39;</span>:<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;running&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">enable</span> <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">true</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">file</span> { <span style="color:#4070a0">&#39;/var/www&#39;</span>:<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">ensure</span>  <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;directory&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">mode</span>    <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;0755&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">owner</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">group</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">file</span> { <span style="color:#4070a0">&#39;/var/www&#39;</span>:<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">ensure</span>  <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;directory&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">mode</span>    <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;0755&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">owner</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">group</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">file</span> { <span style="color:#4070a0">&#39;/var/www/index.html&#39;</span>:<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">ensure</span>  <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;file&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">mode</span>    <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;0644&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">owner</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">group</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#4070a0">content</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;&lt;html&gt;Hello, Puppet! This is a simple web server.&lt;/html&gt;&#39;</span>,<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">file</span> { <span style="color:#4070a0">&#39;/var/www/index.html&#39;</span>:<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">ensure</span>  <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;file&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">mode</span>    <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;0644&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">owner</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">group</span>   <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;root&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#4070a0">content</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#39;&lt;html&gt;Hello, Puppet! This is a simple web server.&lt;/html&gt;&#39;</span>,<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span></code></pre></div><p>This manifest installs the Apache web server, ensures it&rsquo;s running, creates a directory for web content, and places a simple HTML file in that directory. Remember to save this code as a <code>.pp</code> file (e.g., <code>webserver.pp</code>) and then apply it using the Puppet agent.  This is a rudimentary example; production web server configurations will be significantly more complex.</p>
 <h2 class="heading" id="modules-and-modules-corrected--modules-and-their-use">
   Modules and Modules (Corrected:  Modules and their Use)
@@ -477,7 +477,7 @@ Puppet is a powerful open-source configuration management tool used to automate 
 <p><strong>Add metadata:</strong> Create a <code>metadata.json</code> file inside the <code>mymodule</code> directory. This file provides information about your module, such as name, author, and dependencies.  A basic example:</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&#34;name&#34;</span>: <span style="color:#4070a0">&#34;mymodule&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&#34;author&#34;</span>: <span style="color:#4070a0">&#34;Your Name&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&#34;description&#34;</span>: <span style="color:#4070a0">&#34;My custom Puppet module&#34;</span>,
@@ -503,7 +503,7 @@ Puppet is a powerful open-source configuration management tool used to automate 
   <a class="anchor" href="#module-dependencies">#</a>
 </h3>
 <p>Modules can depend on other modules. This allows you to build complex configurations from smaller, reusable components.  Dependencies are declared in the <code>metadata.json</code> file. For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&#34;name&#34;</span>: <span style="color:#4070a0">&#34;mymodule&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&#34;dependencies&#34;</span>: [
 </span></span><span style="display:flex;"><span>    { <span style="color:#062873;font-weight:bold">&#34;name&#34;</span>: <span style="color:#4070a0">&#34;puppetlabs-apache&#34;</span>, <span style="color:#062873;font-weight:bold">&#34;version&#34;</span>: <span style="color:#4070a0">&#34;&gt;= 1.0.0&#34;</span> }
@@ -541,11 +541,11 @@ Puppet is a powerful open-source configuration management tool used to automate 
 </h3>
 <p>Puppet allows for conditional logic using the <code>if</code>, <code>unless</code>, <code>case</code>, and <code>selector</code> statements. This enables dynamic configurations based on facts, variables, or other conditions.</p>
 <p><strong>Example (using <code>if</code>):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#bb60d5">$operatingsystem</span> <span style="color:#666">==</span> <span style="color:#4070a0">&#39;Linux&#39;</span> {<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#007020;font-weight:bold">package</span> { <span style="color:#4070a0">&#39;vim&#39;</span>: <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">present</span> }<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>} <span style="color:#007020;font-weight:bold">elsif</span> <span style="color:#bb60d5">$operatingsystem</span> <span style="color:#666">==</span> <span style="color:#4070a0">&#39;Windows&#39;</span> {<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>  <span style="color:#007020;font-weight:bold">package</span> { <span style="color:#4070a0">&#39;notepad++&#39;</span>: <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">present</span> }<span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span>}<span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#bb60d5">$operatingsystem</span> <span style="color:#666">==</span> <span style="color:#4070a0">&#39;Linux&#39;</span> {<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">package</span> { <span style="color:#4070a0">&#39;vim&#39;</span>: <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">present</span> }<span style="">
+</span></span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">elsif</span> <span style="color:#bb60d5">$operatingsystem</span> <span style="color:#666">==</span> <span style="color:#4070a0">&#39;Windows&#39;</span> {<span style="">
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">package</span> { <span style="color:#4070a0">&#39;notepad++&#39;</span>: <span style="color:#4070a0">ensure</span> <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">present</span> }<span style="">
+</span></span></span><span style="display:flex;"><span>}<span style="">
 </span></span></span></code></pre></div><p>This example installs <code>vim</code> on Linux systems and <code>notepad++</code> on Windows systems.</p>
 <h3 class="heading" id="using-puppets-built-in-functions">
   Using Puppet&rsquo;s Built-in Functions
@@ -553,8 +553,8 @@ Puppet is a powerful open-source configuration management tool used to automate 
 </h3>
 <p>Puppet provides a wealth of built-in functions to simplify tasks such as string manipulation, file operations, and network management.  These functions are accessed using the function call syntax (<code>function_name()</code>).  Consulting the Puppet documentation provides a comprehensive list of available functions.</p>
 <p><strong>Example (using <code>concat</code>):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#bb60d5">$my_string</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;${hostname}-server&#34;</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">notice</span>(<span style="color:#4070a0">concat</span>(<span style="color:#4070a0">&#34;This is my server: &#34;</span>, <span style="color:#bb60d5">$my_string))</span><span style="">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-puppet" data-lang="puppet"><span style="display:flex;"><span><span style="color:#bb60d5">$my_string</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;${hostname}-server&#34;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">notice</span>(<span style="color:#4070a0">concat</span>(<span style="color:#4070a0">&#34;This is my server: &#34;</span>, <span style="color:#bb60d5">$my_string))</span><span style="">
 </span></span></span></code></pre></div><h3 class="heading" id="working-with-external-data">
   Working with External Data
   <a class="anchor" href="#working-with-external-data">#</a>

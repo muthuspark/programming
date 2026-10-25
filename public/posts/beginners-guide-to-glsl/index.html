@@ -36,14 +36,14 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-glsl/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-glsl/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to GLSL">
-  <meta property="og:description" content="Introduction to GLSL # What is GLSL? # GLSL (OpenGL Shading Language) is a high-level shading language used to write programs that run on a graphics processing unit (GPU). These programs, called shaders, control various aspects of the rendering process within OpenGL, including vertex processing (transforming the position and attributes of 3D models), fragment processing (determining the color of each pixel), and compute operations (performing general-purpose computations on the GPU). GLSL is based on C, making it relatively easy to learn for programmers familiar with C-style languages. It provides built-in functions and types specifically designed for graphics programming, enabling developers to create complex visual effects and manipulate graphical data efficiently.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-19T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-19T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to GLSL">
+	<meta property="og:description" content="Introduction to GLSL # What is GLSL? # GLSL (OpenGL Shading Language) is a high-level shading language used to write programs that run on a graphics processing unit (GPU). These programs, called shaders, control various aspects of the rendering process within OpenGL, including vertex processing (transforming the position and attributes of 3D models), fragment processing (determining the color of each pixel), and compute operations (performing general-purpose computations on the GPU). GLSL is based on C, making it relatively easy to learn for programmers familiar with C-style languages. It provides built-in functions and types specifically designed for graphics programming, enabling developers to create complex visual effects and manipulate graphical data efficiently.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-01-19T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-19T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -288,7 +288,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
 <li><strong><code>mat2</code>, <code>mat3</code>, <code>mat4</code>:</strong> Represent 2x2, 3x3, and 4x4 matrices, respectively. These are crucial for transformations in 3D graphics.</li>
 </ul>
 <p>Variable declarations follow the pattern:  <code>dataType variableName = initialValue;</code>  The <code>initialValue</code> is optional; if omitted, the variable will be uninitialized (its value will be unpredictable).  For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">float</span> myVariable; <span style="color:#60a0b0;font-style:italic">// Uninitialized float</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">float</span> myVariable; <span style="color:#60a0b0;font-style:italic">// Uninitialized float</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">int</span> myCounter <span style="color:#666">=</span> <span style="color:#40a070">0</span>; <span style="color:#60a0b0;font-style:italic">// Integer initialized to 0</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">vec3</span> myColor <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">vec3</span>(<span style="color:#40a070">1.0</span>, <span style="color:#40a070">0.0</span>, <span style="color:#40a070">0.0</span>); <span style="color:#60a0b0;font-style:italic">// vec3 initialized to red</span>
 </span></span></code></pre></div><h3 class="heading" id="basic-operators-----">
@@ -303,7 +303,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
 <li><strong><code>/</code> (division):</strong> Divides two values.</li>
 </ul>
 <p>These operators work on scalar types (<code>int</code>, <code>float</code>) and vectors.  When used with vectors, the operation is performed component-wise. For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">vec3</span> a <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">vec3</span>(<span style="color:#40a070">1.0</span>, <span style="color:#40a070">2.0</span>, <span style="color:#40a070">3.0</span>);
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">vec3</span> a <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">vec3</span>(<span style="color:#40a070">1.0</span>, <span style="color:#40a070">2.0</span>, <span style="color:#40a070">3.0</span>);
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">vec3</span> b <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">vec3</span>(<span style="color:#40a070">4.0</span>, <span style="color:#40a070">5.0</span>, <span style="color:#40a070">6.0</span>);
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">vec3</span> c <span style="color:#666">=</span> a <span style="color:#666">+</span> b; <span style="color:#60a0b0;font-style:italic">// c will be vec3(5.0, 7.0, 9.0)</span>
 </span></span></code></pre></div><h3 class="heading" id="comments">
@@ -316,7 +316,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
 <li><strong>Multi-line comments:</strong> Enclosed between <code>/*</code> and <code>*/</code>.</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/* This is a
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">   multi-line comment */</span>
@@ -338,7 +338,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
   <a class="anchor" href="#vertex-shader-structure">#</a>
 </h3>
 <p>A vertex shader is a program that runs once for each vertex in a 3D model. Its primary purpose is to transform the position of each vertex and potentially modify other vertex attributes.  The basic structure of a vertex shader is as follows:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020">#version 330 core // Specify OpenGL Shading Language version</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020">#version 330 core // Specify OpenGL Shading Language version</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020;font-weight:bold">vec3</span> position; <span style="color:#60a0b0;font-style:italic">// Input vertex attribute</span>
 </span></span><span style="display:flex;"><span>
@@ -387,7 +387,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
 <li><strong>Projection matrix:</strong> Transforms the vertex from camera space to clip space.</li>
 </ol>
 <p>These matrices are typically passed as <code>uniform</code> variables from the application to the shader.  The transformation is done by multiplying the vertex position by these matrices:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">uniform</span> mat4 modelMatrix;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">uniform</span> mat4 modelMatrix;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">uniform</span> mat4 viewMatrix;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">uniform</span> mat4 projectionMatrix;
 </span></span><span style="display:flex;"><span>
@@ -399,7 +399,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
   <a class="anchor" href="#example-simple-vertex-transformation">#</a>
 </h3>
 <p>This example shows a vertex shader that transforms vertices using a model, view, and projection matrix:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020">#version 330 core</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020">#version 330 core</span>
 </span></span><span style="display:flex;"><span>layout (location <span style="color:#666">=</span> <span style="color:#40a070">0</span>) <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020;font-weight:bold">vec3</span> position; <span style="color:#60a0b0;font-style:italic">// Vertex position attribute</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">uniform</span> mat4 model;
@@ -419,7 +419,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
   <a class="anchor" href="#fragment-shader-structure">#</a>
 </h3>
 <p>A fragment shader runs once for each fragment (potential pixel) generated during the rasterization stage of the OpenGL pipeline.  Its primary purpose is to determine the color of each fragment. The basic structure of a fragment shader is:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020">#version 330 core</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020">#version 330 core</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020;font-weight:bold">vec3</span> vColor; <span style="color:#60a0b0;font-style:italic">// Input from vertex shader</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">out</span> <span style="color:#007020;font-weight:bold">vec4</span> fragColor; <span style="color:#60a0b0;font-style:italic">// Output color</span>
@@ -486,7 +486,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
   <a class="anchor" href="#example-simple-color-generation">#</a>
 </h3>
 <p>This example shows a fragment shader that generates a smooth color gradient:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020">#version 330 core</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020">#version 330 core</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020;font-weight:bold">vec2</span> uv; <span style="color:#60a0b0;font-style:italic">// Interpolated texture coordinates from vertex shader (used as a gradient)</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">out</span> <span style="color:#007020;font-weight:bold">vec4</span> fragColor;
@@ -535,7 +535,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
 </li>
 </ol>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">uniform</span> <span style="color:#007020;font-weight:bold">sampler2D</span> myTexture;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">uniform</span> <span style="color:#007020;font-weight:bold">sampler2D</span> myTexture;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020;font-weight:bold">vec2</span> texCoord; <span style="color:#60a0b0;font-style:italic">// Texture coordinates interpolated from vertex shader</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">out</span> <span style="color:#007020;font-weight:bold">vec4</span> fragColor;
 </span></span><span style="display:flex;"><span>
@@ -559,7 +559,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
 </li>
 </ul>
 <p>A simplified lighting calculation:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">uniform</span> <span style="color:#007020;font-weight:bold">vec3</span> lightDirection;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">uniform</span> <span style="color:#007020;font-weight:bold">vec3</span> lightDirection;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">uniform</span> <span style="color:#007020;font-weight:bold">vec3</span> lightColor;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020;font-weight:bold">vec3</span> normal; <span style="color:#60a0b0;font-style:italic">// Interpolated normal from vertex shader</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020;font-weight:bold">vec3</span> surfaceColor;
@@ -578,7 +578,7 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
 </h3>
 <p>Uniform variables are used to pass data from the CPU (your application) to the GPU (your shaders). They are declared using the <code>uniform</code> keyword in your shaders and their values are set using OpenGL functions before drawing.  They are constant throughout the execution of the shader for a single draw call.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">uniform</span> <span style="color:#007020;font-weight:bold">vec3</span> lightColor; <span style="color:#60a0b0;font-style:italic">// In the shader</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">uniform</span> <span style="color:#007020;font-weight:bold">vec3</span> lightColor; <span style="color:#60a0b0;font-style:italic">// In the shader</span>
 </span></span></code></pre></div><p>In your application code (using a library like OpenGL or similar), you would then set the value of this uniform using an appropriate OpenGL function (e.g., <code>glUniform3fv</code>).  Uniforms are very useful for providing parameters such as light color, model/view/projection matrices, texture samplers and other data that doesn’t change per vertex or fragment but may change between draw calls.</p>
 <h2 class="heading" id="advanced-glsl-concepts-optional">
   Advanced GLSL Concepts (Optional)
@@ -675,14 +675,14 @@ GLSL (OpenGL Shading Language) is a high-level shading language used to write pr
 </h3>
 <p>This example renders a simple triangle using a vertex shader that transforms the vertices and a fragment shader that assigns a solid color. Note that this is a simplified, conceptual example. The actual code will vary based on the specific graphics library and OpenGL version used.</p>
 <p><strong>Vertex Shader (<code>triangle.vert</code>):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020">#version 330 core</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020">#version 330 core</span>
 </span></span><span style="display:flex;"><span>layout (location <span style="color:#666">=</span> <span style="color:#40a070">0</span>) <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020;font-weight:bold">vec3</span> aPos;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">void</span> main() {
 </span></span><span style="display:flex;"><span>    gl_Position <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">vec4</span>(aPos, <span style="color:#40a070">1.0</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><strong>Fragment Shader (<code>triangle.frag</code>):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020">#version 330 core</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-glsl" data-lang="glsl"><span style="display:flex;"><span><span style="color:#007020">#version 330 core</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">out</span> <span style="color:#007020;font-weight:bold">vec4</span> FragColor;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">void</span> main() {

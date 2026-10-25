@@ -36,14 +36,14 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-common-lisp/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-common-lisp/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Common Lisp">
-  <meta property="og:description" content="Introduction to Common Lisp # What is Common Lisp? # Common Lisp (often abbreviated as CL) is a high-level, general-purpose programming language with a long and rich history. It’s known for its powerful macro system, dynamic typing, and extensive standard library. Unlike many modern languages that prioritize specific paradigms (like object-oriented programming), Common Lisp is multi-paradigm, allowing you to write code in a functional, object-oriented, imperative, or even metaprogramming style, often within the same project. This flexibility makes it suitable for a wide range of tasks, from web development and artificial intelligence to systems programming and scripting. Its homoiconicity (code is data) allows for incredibly powerful metaprogramming capabilities.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-21T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-21T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Common Lisp">
+	<meta property="og:description" content="Introduction to Common Lisp # What is Common Lisp? # Common Lisp (often abbreviated as CL) is a high-level, general-purpose programming language with a long and rich history. It’s known for its powerful macro system, dynamic typing, and extensive standard library. Unlike many modern languages that prioritize specific paradigms (like object-oriented programming), Common Lisp is multi-paradigm, allowing you to write code in a functional, object-oriented, imperative, or even metaprogramming style, often within the same project. This flexibility makes it suitable for a wide range of tasks, from web development and artificial intelligence to systems programming and scripting. Its homoiconicity (code is data) allows for incredibly powerful metaprogramming capabilities.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-01-21T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-21T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -377,12 +377,12 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
   <a class="anchor" href="#defining-functions">#</a>
 </h3>
 <p>Functions in Common Lisp are defined using the <code>defun</code> macro.  The basic syntax is:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">function-name</span> (<span style="color:#bb60d5">parameter1</span> <span style="color:#bb60d5">parameter2</span> <span style="color:#666">...</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">function-name</span> (<span style="color:#bb60d5">parameter1</span> <span style="color:#bb60d5">parameter2</span> <span style="color:#666">...</span>)
 </span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Optional documentation string&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">body-expressions</span>)
 </span></span></code></pre></div><p><code>function-name</code> is a symbol that names the function.  <code>parameter1</code>, <code>parameter2</code>, etc., are the function&rsquo;s parameters.  <code>body-expressions</code> are the expressions that the function evaluates.  The optional documentation string provides a description of the function.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">add</span> (<span style="color:#bb60d5">x</span> <span style="color:#bb60d5">y</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">add</span> (<span style="color:#bb60d5">x</span> <span style="color:#bb60d5">y</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#06287e">+</span> <span style="color:#bb60d5">x</span> <span style="color:#bb60d5">y</span>))
 </span></span></code></pre></div><p>This defines a function named <code>add</code> that takes two parameters, <code>x</code> and <code>y</code>, and returns their sum.</p>
 <h3 class="heading" id="function-arguments-and-parameters">
@@ -398,14 +398,14 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
 <p><strong>Optional parameters:</strong>  These parameters have default values if they are not provided during the function call.  They are defined using <code>&amp;optional</code>.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">greet</span> (<span style="color:#bb60d5">name</span> <span style="color:#007020;font-weight:bold">&amp;optional</span> <span style="color:#bb60d5">greeting</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">greet</span> (<span style="color:#bb60d5">name</span> <span style="color:#007020;font-weight:bold">&amp;optional</span> <span style="color:#bb60d5">greeting</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">if</span> <span style="color:#bb60d5">greeting</span>
 </span></span><span style="display:flex;"><span>      (<span style="color:#06287e">format</span> <span style="color:#60add5">t</span> <span style="color:#4070a0">&#34;~a, ~a!~%&#34;</span> <span style="color:#bb60d5">greeting</span> <span style="color:#bb60d5">name</span>)
 </span></span><span style="display:flex;"><span>      (<span style="color:#06287e">format</span> <span style="color:#60add5">t</span> <span style="color:#4070a0">&#34;Hello, ~a!~%&#34;</span> <span style="color:#bb60d5">name</span>)))
 </span></span></code></pre></div><ul>
 <li><strong>Rest parameters:</strong> These parameters collect any remaining arguments into a list. They are defined using <code>&amp;rest</code>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">sum-all</span> (<span style="color:#007020;font-weight:bold">&amp;rest</span> <span style="color:#bb60d5">numbers</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">sum-all</span> (<span style="color:#007020;font-weight:bold">&amp;rest</span> <span style="color:#bb60d5">numbers</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#06287e">reduce</span> <span style="color:#06287e">#&#39;+</span> <span style="color:#bb60d5">numbers</span> <span style="color:#517918">:initial-value</span> <span style="color:#40a070">0</span>))
 </span></span></code></pre></div><h3 class="heading" id="conditional-statements-if-cond-when-unless">
   Conditional statements (if, cond, when, unless)
@@ -415,22 +415,22 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
 <ul>
 <li><strong><code>if</code>:</strong>  The most basic conditional.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">if</span> <span style="color:#902000">condition</span> <span style="color:#bb60d5">then-expression</span> <span style="color:#bb60d5">else-expression</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">if</span> <span style="color:#902000">condition</span> <span style="color:#bb60d5">then-expression</span> <span style="color:#bb60d5">else-expression</span>)
 </span></span></code></pre></div><ul>
 <li><strong><code>cond</code>:</strong>  A more general conditional that allows for multiple conditions.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">cond</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">cond</span>
 </span></span><span style="display:flex;"><span>  (<span style="color:#bb60d5">condition1</span> <span style="color:#bb60d5">expression1</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#bb60d5">condition2</span> <span style="color:#bb60d5">expression2</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#60add5">t</span> <span style="color:#bb60d5">expression3</span>))  <span style="color:#60a0b0;font-style:italic">; t acts as an else clause</span>
 </span></span></code></pre></div><ul>
 <li><strong><code>when</code>:</strong> Executes the expression only if the condition is true.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">when</span> <span style="color:#902000">condition</span> <span style="color:#bb60d5">expression</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">when</span> <span style="color:#902000">condition</span> <span style="color:#bb60d5">expression</span>)
 </span></span></code></pre></div><ul>
 <li><strong><code>unless</code>:</strong> Executes the expression only if the condition is false.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">unless</span> <span style="color:#902000">condition</span> <span style="color:#bb60d5">expression</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">unless</span> <span style="color:#902000">condition</span> <span style="color:#bb60d5">expression</span>)
 </span></span></code></pre></div><h3 class="heading" id="loops-do-dotimes-dolist">
   Loops (do, dotimes, dolist)
   <a class="anchor" href="#loops-do-dotimes-dolist">#</a>
@@ -439,17 +439,17 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
 <ul>
 <li><strong><code>do</code>:</strong> A general-purpose looping macro offering great flexibility.  It allows you to specify initialization, test conditions, and step expressions.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">do</span> ((<span style="color:#bb60d5">i</span> <span style="color:#40a070">0</span> (<span style="color:#06287e">+</span> <span style="color:#bb60d5">i</span> <span style="color:#40a070">1</span>))) ((<span style="color:#06287e">&gt;</span> <span style="color:#bb60d5">i</span> <span style="color:#40a070">10</span>) <span style="color:#bb60d5">i</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">do</span> ((<span style="color:#bb60d5">i</span> <span style="color:#40a070">0</span> (<span style="color:#06287e">+</span> <span style="color:#bb60d5">i</span> <span style="color:#40a070">1</span>))) ((<span style="color:#06287e">&gt;</span> <span style="color:#bb60d5">i</span> <span style="color:#40a070">10</span>) <span style="color:#bb60d5">i</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#06287e">print</span> <span style="color:#bb60d5">i</span>))
 </span></span></code></pre></div><ul>
 <li><strong><code>dotimes</code>:</strong>  Iterates a specified number of times.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">dotimes</span> (<span style="color:#bb60d5">i</span> <span style="color:#40a070">5</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">dotimes</span> (<span style="color:#bb60d5">i</span> <span style="color:#40a070">5</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#06287e">print</span> <span style="color:#bb60d5">i</span>))
 </span></span></code></pre></div><ul>
 <li><strong><code>dolist</code>:</strong> Iterates over the elements of a list.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">dolist</span> (<span style="color:#bb60d5">x</span> <span style="color:#666">&#39;</span>(<span style="color:#bb60d5">a</span> <span style="color:#bb60d5">b</span> <span style="color:#bb60d5">c</span>))
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">dolist</span> (<span style="color:#bb60d5">x</span> <span style="color:#666">&#39;</span>(<span style="color:#bb60d5">a</span> <span style="color:#bb60d5">b</span> <span style="color:#bb60d5">c</span>))
 </span></span><span style="display:flex;"><span>  (<span style="color:#06287e">print</span> <span style="color:#bb60d5">x</span>))
 </span></span></code></pre></div><h3 class="heading" id="function-scope-and-closures">
   Function scope and closures
@@ -463,7 +463,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
 <p><strong>Closures:</strong> A closure is a function that &ldquo;remembers&rdquo; its surrounding lexical environment even after it&rsquo;s been created. This enables you to create functions that maintain state.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">let</span> ((<span style="color:#06287e">count</span> <span style="color:#40a070">0</span>))
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">let</span> ((<span style="color:#06287e">count</span> <span style="color:#40a070">0</span>))
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020">defun</span> <span style="color:#bb60d5">increment</span> ()
 </span></span><span style="display:flex;"><span>    (<span style="color:#007020">incf</span> <span style="color:#06287e">count</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#06287e">count</span>))
@@ -511,7 +511,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
   <a class="anchor" href="#list-comprehensions">#</a>
 </h3>
 <p>While Common Lisp doesn&rsquo;t have list comprehensions in the same syntax as some other languages (like Python), you can achieve similar results using <code>loop</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">loop</span> <span style="color:#bb60d5">for</span> <span style="color:#bb60d5">x</span> <span style="color:#bb60d5">in</span> <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span> <span style="color:#40a070">5</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">loop</span> <span style="color:#bb60d5">for</span> <span style="color:#bb60d5">x</span> <span style="color:#bb60d5">in</span> <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span> <span style="color:#40a070">5</span>)
 </span></span><span style="display:flex;"><span>      <span style="color:#007020">when</span> (<span style="color:#06287e">evenp</span> <span style="color:#bb60d5">x</span>)
 </span></span><span style="display:flex;"><span>      <span style="color:#bb60d5">collect</span> <span style="color:#bb60d5">x</span>) <span style="color:#60a0b0;font-style:italic">; Returns (2 4)</span>
 </span></span></code></pre></div><p>This code iterates through the list <code>(1 2 3 4 5)</code>, checks if each element is even (<code>evenp</code>), and collects the even numbers into a new list.</p>
@@ -523,22 +523,22 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
 <ul>
 <li><strong><code>map</code>:</strong> Applies a function to each element of a list.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#06287e">mapcar</span> <span style="color:#06287e">#&#39;1+</span> <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>)) <span style="color:#60a0b0;font-style:italic">; Returns (2 3 4)  (#&#39;1+ is a function that adds 1)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#06287e">mapcar</span> <span style="color:#06287e">#&#39;1+</span> <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>)) <span style="color:#60a0b0;font-style:italic">; Returns (2 3 4)  (#&#39;1+ is a function that adds 1)</span>
 </span></span></code></pre></div><ul>
 <li><strong><code>reduce</code>:</strong> Applies a binary function cumulatively to the elements of a list.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#06287e">reduce</span> <span style="color:#06287e">#&#39;+</span> <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>)) <span style="color:#60a0b0;font-style:italic">; Returns 6 (+ is the addition function)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#06287e">reduce</span> <span style="color:#06287e">#&#39;+</span> <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>)) <span style="color:#60a0b0;font-style:italic">; Returns 6 (+ is the addition function)</span>
 </span></span></code></pre></div><ul>
 <li><strong><code>remove-if</code> / <code>remove-if-not</code>:</strong> Filters a list based on a predicate function.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#06287e">remove-if</span> <span style="color:#06287e">#&#39;evenp</span> <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span> <span style="color:#40a070">5</span>)) <span style="color:#60a0b0;font-style:italic">; Returns (1 3 5)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#06287e">remove-if</span> <span style="color:#06287e">#&#39;evenp</span> <span style="color:#666">&#39;</span>(<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span> <span style="color:#40a070">5</span>)) <span style="color:#60a0b0;font-style:italic">; Returns (1 3 5)</span>
 </span></span></code></pre></div><h3 class="heading" id="recursion-in-lisp">
   Recursion in Lisp
   <a class="anchor" href="#recursion-in-lisp">#</a>
 </h3>
 <p>Recursion is a natural and elegant way to solve many problems in Lisp.  Because lists are recursive data structures, recursive functions often map naturally to how lists are processed.</p>
 <p>Example:  A function to calculate the factorial of a number:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">factorial</span> (<span style="color:#bb60d5">n</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">factorial</span> (<span style="color:#bb60d5">n</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">if</span> (<span style="color:#06287e">=</span> <span style="color:#bb60d5">n</span> <span style="color:#40a070">0</span>)
 </span></span><span style="display:flex;"><span>      <span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span>      (<span style="color:#06287e">*</span> <span style="color:#bb60d5">n</span> (<span style="color:#bb60d5">factorial</span> (<span style="color:#06287e">-</span> <span style="color:#bb60d5">n</span> <span style="color:#40a070">1</span>)))))
@@ -560,7 +560,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
   <a class="anchor" href="#simple-macro-examples">#</a>
 </h3>
 <p>Let&rsquo;s create a simple macro that defines a function with a default value for an argument:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defmacro</span> <span style="color:#bb60d5">defun-with-default</span> (<span style="color:#bb60d5">name</span> <span style="color:#bb60d5">params</span> <span style="color:#007020;font-weight:bold">&amp;body</span> <span style="color:#bb60d5">body</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defmacro</span> <span style="color:#bb60d5">defun-with-default</span> (<span style="color:#bb60d5">name</span> <span style="color:#bb60d5">params</span> <span style="color:#007020;font-weight:bold">&amp;body</span> <span style="color:#bb60d5">body</span>)
 </span></span><span style="display:flex;"><span>  <span style="color:#666">`</span>(<span style="color:#007020">defun</span> <span style="color:#666">,</span><span style="color:#bb60d5">name</span> (<span style="color:#666">,</span><span style="color:#bb60d5">params</span> <span style="color:#007020;font-weight:bold">&amp;optional</span> (<span style="color:#bb60d5">arg2</span> <span style="color:#40a070">10</span>))
 </span></span><span style="display:flex;"><span>     <span style="color:#666">,@</span><span style="color:#bb60d5">body</span>))
 </span></span><span style="display:flex;"><span>
@@ -571,7 +571,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
 </span></span><span style="display:flex;"><span>(<span style="color:#06287e">print</span> (<span style="color:#bb60d5">my-func</span> <span style="color:#40a070">5</span> <span style="color:#40a070">20</span>)) <span style="color:#60a0b0;font-style:italic">; Output: 25</span>
 </span></span></code></pre></div><p>This macro <code>defun-with-default</code> takes a function name, parameters, and body as input and generates a <code>defun</code> form with an optional parameter <code>arg2</code> having a default value of 10.</p>
 <p>Another example showing a simple macro for repetitive code:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defmacro</span> <span style="color:#bb60d5">log-message</span> (<span style="color:#bb60d5">message</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defmacro</span> <span style="color:#bb60d5">log-message</span> (<span style="color:#bb60d5">message</span>)
 </span></span><span style="display:flex;"><span>  <span style="color:#666">`</span>(<span style="color:#06287e">format</span> <span style="color:#60add5">t</span> <span style="color:#4070a0">&#34;LOG: ~a~%&#34;</span> <span style="color:#666">,</span><span style="color:#bb60d5">message</span>))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#bb60d5">log-message</span> <span style="color:#4070a0">&#34;Starting process&#34;</span>)
@@ -583,7 +583,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
 </h3>
 <p><strong>Hygiene:</strong>  Hygiene is a crucial aspect of macro writing. It ensures that variables created within a macro don&rsquo;t accidentally clash with variables in the surrounding code.  Lisp macros are generally hygienic, meaning that variables created inside a macro are distinct from variables outside it.</p>
 <p><strong>Macro Expansion:</strong> The process of transforming a macro call into its expanded form is called macro expansion. You can see the expanded form using the <code>macroexpand-1</code> function.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defmacro</span> <span style="color:#bb60d5">my-macro</span> (<span style="color:#bb60d5">x</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defmacro</span> <span style="color:#bb60d5">my-macro</span> (<span style="color:#bb60d5">x</span>)
 </span></span><span style="display:flex;"><span>  <span style="color:#666">`</span>(<span style="color:#06287e">+</span> <span style="color:#666">,</span><span style="color:#bb60d5">x</span> <span style="color:#40a070">1</span>))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#06287e">macroexpand-1</span> <span style="color:#666">&#39;</span>(<span style="color:#bb60d5">my-macro</span> <span style="color:#40a070">5</span>)) <span style="color:#60a0b0;font-style:italic">;Output: (+ 5 1)</span>
@@ -598,7 +598,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
   <a class="anchor" href="#classes-and-objects">#</a>
 </h3>
 <p>In CLOS, classes are defined using the <code>defclass</code> macro.  Objects are instances of classes, created using the <code>make-instance</code> function.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defclass</span> <span style="color:#bb60d5">dog</span> ()
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defclass</span> <span style="color:#bb60d5">dog</span> ()
 </span></span><span style="display:flex;"><span>  ((<span style="color:#bb60d5">name</span> <span style="color:#517918">:initarg</span> <span style="color:#517918">:name</span> <span style="color:#517918">:accessor</span> <span style="color:#bb60d5">dog-name</span>)
 </span></span><span style="display:flex;"><span>   (<span style="color:#bb60d5">breed</span> <span style="color:#517918">:initarg</span> <span style="color:#517918">:breed</span> <span style="color:#517918">:accessor</span> <span style="color:#bb60d5">dog-breed</span>)))
 </span></span><span style="display:flex;"><span>
@@ -612,7 +612,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
   <a class="anchor" href="#methods-and-inheritance">#</a>
 </h3>
 <p>Methods are associated with classes and are called using generic functions (discussed below).  Inheritance allows you to create new classes based on existing ones.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defclass</span> <span style="color:#bb60d5">golden-retriever</span> (<span style="color:#bb60d5">dog</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defclass</span> <span style="color:#bb60d5">golden-retriever</span> (<span style="color:#bb60d5">dog</span>)
 </span></span><span style="display:flex;"><span>  ((<span style="color:#bb60d5">temperament</span> <span style="color:#517918">:initform</span> <span style="color:#4070a0">&#34;Friendly&#34;</span> <span style="color:#517918">:accessor</span> <span style="color:#bb60d5">golden-retriever-temperament</span>)))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020">defmethod</span> <span style="color:#bb60d5">describe-dog</span> ((<span style="color:#bb60d5">dog</span> <span style="color:#bb60d5">dog</span>))
@@ -643,7 +643,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
 </h3>
 <p>Common Lisp uses packages to manage namespaces.  A package is a collection of symbols, preventing naming conflicts between different parts of your code or libraries.  The <code>in-package</code> function switches to a specific package.  <code>export</code> makes symbols visible to other packages, and <code>import</code> brings symbols from other packages into the current one.  Packages are crucial for organizing large projects and avoiding symbol clashes when using external libraries.  Understanding how packages work is essential for managing dependencies and creating modular code.</p>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">in-package</span> <span style="color:#517918">:cl-user</span>)  <span style="color:#60a0b0;font-style:italic">; Switch to the user package</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">in-package</span> <span style="color:#517918">:cl-user</span>)  <span style="color:#60a0b0;font-style:italic">; Switch to the user package</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020">defpackage</span> <span style="color:#517918">:my-utils</span>
 </span></span><span style="display:flex;"><span>  (<span style="color:#517918">:use</span> <span style="color:#517918">:cl</span>)
@@ -664,7 +664,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
 </h3>
 <p>Common Lisp provides robust exception handling mechanisms using <code>handler-case</code>, <code>ignore-errors</code>, and <code>error</code>.</p>
 <p><code>handler-case</code> allows you to specify handlers for specific conditions:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">handler-case</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">handler-case</span>
 </span></span><span style="display:flex;"><span>    (<span style="color:#007020;font-weight:bold">progn</span>
 </span></span><span style="display:flex;"><span>      (<span style="color:#06287e">/</span> <span style="color:#40a070">10</span> <span style="color:#40a070">0</span>) <span style="color:#60a0b0;font-style:italic">;Will cause a division by zero error</span>
 </span></span><span style="display:flex;"><span>      (<span style="color:#06287e">print</span> <span style="color:#4070a0">&#34;This won&#39;t be printed&#34;</span>))
@@ -673,7 +673,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
 </span></span><span style="display:flex;"><span>  (<span style="color:#902000">error</span> (<span style="color:#902000">condition</span>)
 </span></span><span style="display:flex;"><span>    (<span style="color:#06287e">format</span> <span style="color:#60add5">t</span> <span style="color:#4070a0">&#34;Generic error: ~a~%&#34;</span> <span style="color:#902000">condition</span>)))
 </span></span></code></pre></div><p><code>ignore-errors</code> suppresses error messages:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">ignore-errors</span> (<span style="color:#06287e">/</span> <span style="color:#40a070">10</span> <span style="color:#40a070">0</span>)) <span style="color:#60a0b0;font-style:italic">; No error message is shown</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">ignore-errors</span> (<span style="color:#06287e">/</span> <span style="color:#40a070">10</span> <span style="color:#40a070">0</span>)) <span style="color:#60a0b0;font-style:italic">; No error message is shown</span>
 </span></span></code></pre></div><p><code>error</code> signals an error condition.</p>
 <h3 class="heading" id="inputoutput-operations">
   Input/output operations
@@ -685,7 +685,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
   <a class="anchor" href="#working-with-files">#</a>
 </h3>
 <p>To work with files, you typically use <code>open</code> to create a stream, then perform I/O operations using functions like <code>read-line</code> or <code>write-line</code>, and finally <code>close</code> the stream when you&rsquo;re done.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">with-open-file</span> (<span style="color:#0e84b5;font-weight:bold">stream</span> <span style="color:#4070a0">&#34;my-file.txt&#34;</span> <span style="color:#517918">:direction</span> <span style="color:#517918">:output</span> <span style="color:#517918">:if-exists</span> <span style="color:#517918">:supersede</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">with-open-file</span> (<span style="color:#0e84b5;font-weight:bold">stream</span> <span style="color:#4070a0">&#34;my-file.txt&#34;</span> <span style="color:#517918">:direction</span> <span style="color:#517918">:output</span> <span style="color:#517918">:if-exists</span> <span style="color:#517918">:supersede</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#06287e">format</span> <span style="color:#0e84b5;font-weight:bold">stream</span> <span style="color:#4070a0">&#34;Hello, world!~%&#34;</span>))
 </span></span></code></pre></div><p>This creates a file named &ldquo;my-file.txt&rdquo; and writes &ldquo;Hello, world!&rdquo; to it.  Error handling (using <code>handler-case</code>) is recommended for robust file operations.</p>
 <h3 class="heading" id="common-lisp-libraries">
@@ -717,7 +717,7 @@ Common Lisp (often abbreviated as CL) is a high-level, general-purpose programmi
   <a class="anchor" href="#a-small-example-application">#</a>
 </h3>
 <p>Let&rsquo;s build a simple program that calculates the factorial of a number.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">factorial</span> (<span style="color:#bb60d5">n</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#007020">defun</span> <span style="color:#bb60d5">factorial</span> (<span style="color:#bb60d5">n</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">if</span> (<span style="color:#06287e">=</span> <span style="color:#bb60d5">n</span> <span style="color:#40a070">0</span>)
 </span></span><span style="display:flex;"><span>      <span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span>      (<span style="color:#06287e">*</span> <span style="color:#bb60d5">n</span> (<span style="color:#bb60d5">factorial</span> (<span style="color:#06287e">-</span> <span style="color:#bb60d5">n</span> <span style="color:#40a070">1</span>)))))

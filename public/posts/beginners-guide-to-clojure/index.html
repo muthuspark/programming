@@ -36,14 +36,14 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-clojure/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-clojure/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Clojure">
-  <meta property="og:description" content="Introduction to Clojure # What is Clojure? # Clojure is a modern, pragmatic dialect of the Lisp programming language. It’s designed for concurrency, simplicity, and reliability, making it a powerful tool for building robust and scalable applications. Unlike many other Lisps, Clojure primarily targets the Java Virtual Machine (JVM), giving it access to a vast ecosystem of libraries and tools. Its core philosophy emphasizes immutability (data that cannot be changed after creation) and functional programming paradigms, which contribute to cleaner code and easier concurrency management. Clojure also boasts a strong focus on interactive development, with a powerful Read-Eval-Print Loop (REPL) that allows for rapid experimentation and iterative refinement.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-23T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-23T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Clojure">
+	<meta property="og:description" content="Introduction to Clojure # What is Clojure? # Clojure is a modern, pragmatic dialect of the Lisp programming language. It’s designed for concurrency, simplicity, and reliability, making it a powerful tool for building robust and scalable applications. Unlike many other Lisps, Clojure primarily targets the Java Virtual Machine (JVM), giving it access to a vast ecosystem of libraries and tools. Its core philosophy emphasizes immutability (data that cannot be changed after creation) and functional programming paradigms, which contribute to cleaner code and easier concurrency management. Clojure also boasts a strong focus on interactive development, with a powerful Read-Eval-Print Loop (REPL) that allows for rapid experimentation and iterative refinement.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-02-23T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-23T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -275,14 +275,14 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
   <a class="anchor" href="#your-first-clojure-program">#</a>
 </h3>
 <p>Let&rsquo;s create a simple &ldquo;Hello, world!&rdquo; program.  First, create a new directory for your project.  Then, navigate to that directory in your terminal and execute the following command:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lein new app hello-world
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lein new app hello-world
 </span></span></code></pre></div><p>This creates a new Clojure project named <code>hello-world</code>. Navigate into the <code>src/hello_world</code> directory.  Open the <code>core.clj</code> file and replace its contents with:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">ns </span><span style="color:#bb60d5">hello-world.core</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">ns </span><span style="color:#bb60d5">hello-world.core</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">defn </span><span style="color:#bb60d5">-main</span> [<span style="color:#666">&amp;</span> <span style="color:#bb60d5">args</span>]
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020">println </span><span style="color:#4070a0">&#34;Hello, world!&#34;</span>))
 </span></span></code></pre></div><p>This code defines a namespace (<code>hello-world.core</code>) and a function (<code>-main</code>) that prints &ldquo;Hello, world!&rdquo; to the console.  To run your program, navigate to the <code>hello-world</code> directory in your terminal and execute:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lein run
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lein run
 </span></span></code></pre></div><p>You should see &ldquo;Hello, world!&rdquo; printed to your console. This completes your first Clojure program!  Congratulations!</p>
 <h2 class="heading" id="core-concepts">
   Core Concepts
@@ -315,7 +315,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
 <ul>
 <li><strong>Functions:</strong> Functions are first-class citizens in Clojure. They can be passed as arguments to other functions, returned from functions, and stored in data structures.  They are defined using the <code>defn</code> macro.  Example:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">defn </span><span style="color:#bb60d5">add</span> [<span style="color:#bb60d5">x</span> <span style="color:#bb60d5">y</span>] (<span style="color:#007020">+ </span><span style="color:#bb60d5">x</span> <span style="color:#bb60d5">y</span>))
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">defn </span><span style="color:#bb60d5">add</span> [<span style="color:#bb60d5">x</span> <span style="color:#bb60d5">y</span>] (<span style="color:#007020">+ </span><span style="color:#bb60d5">x</span> <span style="color:#bb60d5">y</span>))
 </span></span></code></pre></div><ul>
 <li><strong>Immutability:</strong>  Data structures in Clojure are immutable.  When you perform an operation that seemingly modifies a data structure, a <em>new</em> data structure is created with the changes, leaving the original structure unchanged. This property simplifies concurrent programming by eliminating the possibility of race conditions and making code easier to reason about.  For example, <code>(conj [1 2] 3)</code> creates a <em>new</em> vector <code>[1 2 3]</code>, leaving the original <code>[1 2]</code> vector untouched.</li>
 </ul>
@@ -329,7 +329,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
   <a class="anchor" href="#namespaces">#</a>
 </h3>
 <p>Namespaces provide a way to organize your code into logical units, preventing naming collisions and improving code maintainability.  Namespaces are declared using the <code>ns</code> macro.  They help structure large projects and make code easier to reuse and share.  Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">ns </span><span style="color:#bb60d5">my-project.core</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">ns </span><span style="color:#bb60d5">my-project.core</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">defn </span><span style="color:#bb60d5">my-function</span> [<span style="color:#bb60d5">x</span>] (<span style="color:#007020">* </span><span style="color:#bb60d5">x</span> <span style="color:#40a070">2</span>))
 </span></span></code></pre></div><p>This defines a namespace called <code>my-project.core</code>, containing a function <code>my-function</code>.  This helps to keep functions organized and avoids conflicts with similarly-named functions in other parts of your project or in external libraries.  Using namespaces helps to make your code more modular and scalable.</p>
@@ -383,7 +383,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
   <a class="anchor" href="#destructuring">#</a>
 </h3>
 <p>Destructuring is a powerful feature that allows you to extract values from data structures, such as vectors and maps, into individual variables. This improves code readability and reduces boilerplate.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">let </span>[[<span style="color:#bb60d5">a</span> <span style="color:#bb60d5">b</span> <span style="color:#bb60d5">c</span>] [<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>]
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">let </span>[[<span style="color:#bb60d5">a</span> <span style="color:#bb60d5">b</span> <span style="color:#bb60d5">c</span>] [<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>]
 </span></span><span style="display:flex;"><span>      {<span style="color:#517918">:keys</span> [<span style="color:#bb60d5">x</span> <span style="color:#bb60d5">y</span>]} {<span style="color:#517918">:x</span> <span style="color:#40a070">10</span> <span style="color:#517918">:y</span> <span style="color:#40a070">20</span>}]
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020">println </span><span style="color:#bb60d5">a</span> <span style="color:#bb60d5">b</span> <span style="color:#bb60d5">c</span> <span style="color:#bb60d5">x</span> <span style="color:#bb60d5">y</span>))  <span style="color:#60a0b0;font-style:italic">;;Prints: 1 2 3 10 20</span>
 </span></span></code></pre></div><p>This example destructures a vector and a map into variables <code>a</code>, <code>b</code>, <code>c</code>, <code>x</code>, and <code>y</code>.</p>
@@ -392,7 +392,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
   <a class="anchor" href="#using-maps-and-keywords">#</a>
 </h3>
 <p>Maps are essential for representing data with named attributes. Keywords are symbols that start with a colon <code>:</code>, often used as keys in maps for better readability and efficiency.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">def </span><span style="color:#bb60d5">user</span> {<span style="color:#517918">:name</span> <span style="color:#4070a0">&#34;Bob&#34;</span> <span style="color:#517918">:age</span> <span style="color:#40a070">25</span> <span style="color:#517918">:city</span> <span style="color:#4070a0">&#34;New York&#34;</span>})
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">def </span><span style="color:#bb60d5">user</span> {<span style="color:#517918">:name</span> <span style="color:#4070a0">&#34;Bob&#34;</span> <span style="color:#517918">:age</span> <span style="color:#40a070">25</span> <span style="color:#517918">:city</span> <span style="color:#4070a0">&#34;New York&#34;</span>})
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020">println </span>(<span style="color:#517918">:name</span> <span style="color:#bb60d5">user</span>))  <span style="color:#60a0b0;font-style:italic">;; Prints: Bob</span>
 </span></span><span style="display:flex;"><span>
@@ -411,7 +411,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
   <a class="anchor" href="#pure-functions">#</a>
 </h3>
 <p>A pure function always produces the same output for the same input and has no side effects.  This means it doesn&rsquo;t modify any external state or rely on external factors beyond its inputs.  Pure functions are easier to test, reason about, and parallelize.  In Clojure, most built-in functions are pure.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">defn </span><span style="color:#bb60d5">square</span> [<span style="color:#bb60d5">x</span>] (<span style="color:#007020">* </span><span style="color:#bb60d5">x</span> <span style="color:#bb60d5">x</span>))  <span style="color:#60a0b0;font-style:italic">;; A pure function</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">defn </span><span style="color:#bb60d5">square</span> [<span style="color:#bb60d5">x</span>] (<span style="color:#007020">* </span><span style="color:#bb60d5">x</span> <span style="color:#bb60d5">x</span>))  <span style="color:#60a0b0;font-style:italic">;; A pure function</span>
 </span></span></code></pre></div><p>This <code>square</code> function always returns the square of its input; it doesn&rsquo;t change any global variables or depend on external factors.</p>
 <h3 class="heading" id="higher-order-functions-map-filter-reduce">
   Higher-Order Functions: <code>map</code>, <code>filter</code>, <code>reduce</code>
@@ -421,21 +421,21 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
 <ul>
 <li><strong><code>map</code>:</strong> Applies a function to each element of a sequence.  Example:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020">map inc </span>[<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>])  <span style="color:#60a0b0;font-style:italic">;; =&gt; (2 3 4)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020">map inc </span>[<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>])  <span style="color:#60a0b0;font-style:italic">;; =&gt; (2 3 4)</span>
 </span></span></code></pre></div><ul>
 <li><strong><code>filter</code>:</strong> Selects elements from a sequence that satisfy a predicate (a function that returns true or false).  Example:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020">filter </span><span style="color:#bb60d5">even?</span> [<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span> <span style="color:#40a070">5</span>])  <span style="color:#60a0b0;font-style:italic">;; =&gt; (2 4)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020">filter </span><span style="color:#bb60d5">even?</span> [<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span> <span style="color:#40a070">4</span> <span style="color:#40a070">5</span>])  <span style="color:#60a0b0;font-style:italic">;; =&gt; (2 4)</span>
 </span></span></code></pre></div><ul>
 <li><strong><code>reduce</code>:</strong> Applies a function cumulatively to the items of a sequence, reducing it to a single value. Example:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020">reduce + </span><span style="color:#40a070">0</span> [<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>])  <span style="color:#60a0b0;font-style:italic">;; =&gt; 6</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020">reduce + </span><span style="color:#40a070">0</span> [<span style="color:#40a070">1</span> <span style="color:#40a070">2</span> <span style="color:#40a070">3</span>])  <span style="color:#60a0b0;font-style:italic">;; =&gt; 6</span>
 </span></span></code></pre></div><h3 class="heading" id="recursion">
   Recursion
   <a class="anchor" href="#recursion">#</a>
 </h3>
 <p>Recursion is a fundamental technique in functional programming where a function calls itself.  Clojure supports recursion elegantly, often used as an alternative to loops.  However, it’s crucial to ensure that recursive functions have a base case to prevent infinite recursion.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">defn </span><span style="color:#bb60d5">factorial</span> [<span style="color:#bb60d5">n</span>]
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">defn </span><span style="color:#bb60d5">factorial</span> [<span style="color:#bb60d5">n</span>]
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">if </span>(<span style="color:#007020">&lt;= </span><span style="color:#bb60d5">n</span> <span style="color:#40a070">1</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span>    (<span style="color:#007020">* </span><span style="color:#bb60d5">n</span> (<span style="color:#06287e">factorial</span> (<span style="color:#007020">dec </span><span style="color:#bb60d5">n</span>)))))
@@ -447,7 +447,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
   <a class="anchor" href="#lazy-sequences">#</a>
 </h3>
 <p>Lazy sequences are sequences whose elements are computed only when they are needed. This is highly beneficial for working with potentially infinite or very large sequences, avoiding unnecessary computation.  Clojure&rsquo;s <code>lazy-seq</code> macro is key to creating lazy sequences.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">def </span><span style="color:#bb60d5">lazy-naturals</span> (<span style="color:#06287e">lazy-seq</span> (<span style="color:#007020">cons </span><span style="color:#40a070">1</span> (<span style="color:#06287e">lazy-seq</span> (<span style="color:#007020">map inc </span><span style="color:#bb60d5">lazy-naturals</span>)))))
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">def </span><span style="color:#bb60d5">lazy-naturals</span> (<span style="color:#06287e">lazy-seq</span> (<span style="color:#007020">cons </span><span style="color:#40a070">1</span> (<span style="color:#06287e">lazy-seq</span> (<span style="color:#007020">map inc </span><span style="color:#bb60d5">lazy-naturals</span>)))))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020">take </span><span style="color:#40a070">5</span> <span style="color:#bb60d5">lazy-naturals</span>)  <span style="color:#60a0b0;font-style:italic">;; =&gt; (1 2 3 4 5)</span>
 </span></span></code></pre></div><p>This defines <code>lazy-naturals</code>, a lazy sequence of natural numbers.  <code>take</code> only computes the first five elements; the rest remain unevaluated until accessed.  This prevents computing an infinite sequence unnecessarily.  Lazy sequences are crucial for efficient handling of large or potentially infinite data streams.</p>
@@ -465,14 +465,14 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
   <a class="anchor" href="#simple-macro-examples">#</a>
 </h3>
 <p>Let&rsquo;s create a simple macro that defines a function that adds two numbers:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">defmacro </span><span style="color:#bb60d5">add-numbers</span> [<span style="color:#bb60d5">x</span> <span style="color:#bb60d5">y</span>]
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">defmacro </span><span style="color:#bb60d5">add-numbers</span> [<span style="color:#bb60d5">x</span> <span style="color:#bb60d5">y</span>]
 </span></span><span style="display:flex;"><span>  <span style="color:#666">`</span>(<span style="color:#007020;font-weight:bold">let </span>[<span style="color:#bb60d5">sum</span> (<span style="color:#007020">+ </span><span style="color:#666">~</span><span style="color:#bb60d5">x</span> <span style="color:#666">~</span><span style="color:#bb60d5">y</span>)]
 </span></span><span style="display:flex;"><span>     <span style="color:#bb60d5">sum</span>))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#06287e">add-numbers</span> <span style="color:#40a070">5</span> <span style="color:#40a070">3</span>)  <span style="color:#60a0b0;font-style:italic">;; =&gt; 8</span>
 </span></span></code></pre></div><p>This <code>add-numbers</code> macro takes two arguments <code>x</code> and <code>y</code> and generates code that adds them using <code>let</code>.  The <code>~</code> (tilde) is a syntax quote that prevents premature evaluation of <code>x</code> and <code>y</code>.  The backtick <code>`</code> is a quasiquote, indicating that the expression should be treated as code to be generated.</p>
 <p>Another example illustrating a more powerful capability is creating a simple logging macro:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">defmacro </span><span style="color:#bb60d5">log-message</span> [<span style="color:#bb60d5">message</span>]
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">defmacro </span><span style="color:#bb60d5">log-message</span> [<span style="color:#bb60d5">message</span>]
 </span></span><span style="display:flex;"><span>  <span style="color:#666">`</span>(<span style="color:#007020">println </span><span style="color:#4070a0">&#34;LOG: &#34;</span> <span style="color:#666">~</span><span style="color:#bb60d5">message</span>))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#06287e">log-message</span> <span style="color:#4070a0">&#34;This is a log message.&#34;</span>)
@@ -483,7 +483,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
 </h3>
 <p>Reader macros modify how Clojure reads code from source files. They allow you to introduce new syntax to the language. Reader macros are defined using the <code>#</code> character followed by a regular expression and a function that transforms the matched input. They alter the parsing process itself, changing how code is initially interpreted.</p>
 <p>For instance, we might create a reader macro to easily define vectors of numbers:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#06287e">defreader</span> <span style="color:#666">#</span><span style="color:#4070a0">&#34;^\[nums\s+(.+?)\]&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#06287e">defreader</span> <span style="color:#666">#</span><span style="color:#4070a0">&#34;^\[nums\s+(.+?)\]&#34;</span>
 </span></span><span style="display:flex;"><span>           (<span style="color:#007020;font-weight:bold">fn </span>[[<span style="color:#bb60d5">_</span> <span style="color:#bb60d5">numbers</span>]]
 </span></span><span style="display:flex;"><span>             (<span style="color:#007020">map </span><span style="color:#bb60d5">read-string</span> (<span style="color:#06287e">clojure.string/split</span> <span style="color:#bb60d5">numbers</span> <span style="color:#666">#</span><span style="color:#4070a0">&#34;\s+&#34;</span>))))
 </span></span><span style="display:flex;"><span>
@@ -499,7 +499,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
   <a class="anchor" href="#concurrency-and-parallelism-with-coreasync">#</a>
 </h3>
 <p>Clojure excels at concurrency, leveraging the JVM&rsquo;s capabilities and its own immutable data structures to simplify parallel programming.  <code>core.async</code> is a powerful library providing channels and go blocks for building concurrent systems.  Channels act as communication pathways between concurrently running processes, allowing for efficient data exchange without shared mutable state.  Go blocks are used to launch concurrent processes that communicate over channels.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#06287e">require</span> <span style="color:#666">&#39;</span>[<span style="color:#bb60d5">clojure.core.async</span> <span style="color:#517918">:refer</span> [<span style="color:#bb60d5">chan</span> <span style="color:#bb60d5">put!</span> <span style="color:#bb60d5">take!</span> <span style="color:#bb60d5">go</span>]])
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#06287e">require</span> <span style="color:#666">&#39;</span>[<span style="color:#bb60d5">clojure.core.async</span> <span style="color:#517918">:refer</span> [<span style="color:#bb60d5">chan</span> <span style="color:#bb60d5">put!</span> <span style="color:#bb60d5">take!</span> <span style="color:#bb60d5">go</span>]])
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">def </span><span style="color:#bb60d5">c</span> (<span style="color:#06287e">chan</span>))
 </span></span><span style="display:flex;"><span>
@@ -515,7 +515,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
 <ul>
 <li><strong>Atoms:</strong> Atoms provide a simple way to manage a single mutable value.  They are accessed and modified using the <code>swap!</code> function, ensuring atomic operations (all-or-nothing changes).  This prevents race conditions in concurrent scenarios.  Example:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">def </span><span style="color:#bb60d5">my-atom</span> (<span style="color:#06287e">atom</span> <span style="color:#40a070">0</span>))
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">def </span><span style="color:#bb60d5">my-atom</span> (<span style="color:#06287e">atom</span> <span style="color:#40a070">0</span>))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#06287e">swap!</span> <span style="color:#bb60d5">my-atom</span> <span style="color:#bb60d5">inc</span>)  <span style="color:#60a0b0;font-style:italic">;; Atomically increments the atom</span>
 </span></span><span style="display:flex;"><span>(<span style="color:#06287e">swap!</span> <span style="color:#bb60d5">my-atom</span> <span style="color:#007020">+ </span><span style="color:#40a070">10</span>) <span style="color:#60a0b0;font-style:italic">;; Atomically adds 10</span>
@@ -529,7 +529,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
   <a class="anchor" href="#software-transactional-memory-stm">#</a>
 </h3>
 <p>Software Transactional Memory (STM) is a concurrency control mechanism that allows multiple threads to access and modify shared data concurrently without explicit locking.  Clojure&rsquo;s <code>ref</code>s and the associated <code>dosync</code> macro facilitate STM.  Transactions are atomic: either all changes within a <code>dosync</code> block succeed, or none do.  This simplifies concurrency considerably compared to traditional lock-based approaches.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">def </span><span style="color:#bb60d5">counter</span> (<span style="color:#007020">ref </span><span style="color:#40a070">0</span>))
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">def </span><span style="color:#bb60d5">counter</span> (<span style="color:#007020">ref </span><span style="color:#40a070">0</span>))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#06287e">dosync</span>
 </span></span><span style="display:flex;"><span>  (<span style="color:#007020">alter </span><span style="color:#bb60d5">counter</span> <span style="color:#bb60d5">inc</span>))  <span style="color:#60a0b0;font-style:italic">;; Atomically increments the ref</span>
@@ -559,7 +559,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
 <li>Create a new project directory.</li>
 <li>Create a file named <code>deps.edn</code> with the following content (adjusting the version as needed):</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="color:#517918">:deps</span> {<span style="color:#bb60d5">org.clojure/clojure</span> {<span style="color:#517918">:mvn/version</span> <span style="color:#4070a0">&#34;1.11.1&#34;</span>}}}
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>{<span style="color:#517918">:deps</span> {<span style="color:#bb60d5">org.clojure/clojure</span> {<span style="color:#517918">:mvn/version</span> <span style="color:#4070a0">&#34;1.11.1&#34;</span>}}}
 </span></span></code></pre></div><ol start="3">
 <li>Create a directory <code>src</code> and inside that, <code>todo_list</code>. Then, create <code>core.clj</code> inside of <code>todo_list</code>.</li>
 </ol>
@@ -579,7 +579,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
   <a class="anchor" href="#implementing-core-features">#</a>
 </h3>
 <p>Let&rsquo;s implement the core features in <code>src/todo_list/core.clj</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">ns </span><span style="color:#bb60d5">todo-list.core</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">ns </span><span style="color:#bb60d5">todo-list.core</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">def </span><span style="color:#bb60d5">tasks</span> (<span style="color:#06287e">atom</span> []))
 </span></span><span style="display:flex;"><span>
@@ -608,7 +608,7 @@ Clojure is a modern, pragmatic dialect of the Lisp programming language.  It&rsq
   <a class="anchor" href="#testing-your-application">#</a>
 </h3>
 <p>We can write simple tests using a testing framework like <code>clojure.test</code>.  Create a file named <code>test/todo_list/core_test.clj</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">ns </span><span style="color:#bb60d5">todo-list.core-test</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">ns </span><span style="color:#bb60d5">todo-list.core-test</span>
 </span></span><span style="display:flex;"><span>  (<span style="color:#517918">:require</span> [<span style="color:#bb60d5">clojure.test</span> <span style="color:#517918">:refer</span> <span style="color:#517918">:all</span>]
 </span></span><span style="display:flex;"><span>            [<span style="color:#bb60d5">todo-list.core</span> <span style="color:#517918">:refer</span> <span style="color:#517918">:all</span>]))
 </span></span><span style="display:flex;"><span>

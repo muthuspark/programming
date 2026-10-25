@@ -36,14 +36,14 @@ PowerShell is a cross-platform task automation and configuration management fram
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-powershell/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-powershell/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to PowerShell">
-  <meta property="og:description" content="Introduction to PowerShell # What is PowerShell? # PowerShell is a cross-platform task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language. Unlike the older command prompt (cmd.exe), which primarily works with text-based commands, PowerShell uses cmdlets (pronounced “command-lets”). Cmdlets are specialized commands that interact with .NET objects, enabling more powerful and flexible scripting. This object-based approach allows for more complex manipulation and automation of system tasks. PowerShell’s scripting language is built on top of the .NET framework (and .NET Core for cross-platform compatibility), allowing access to a vast library of functions and capabilities.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-27T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-27T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to PowerShell">
+	<meta property="og:description" content="Introduction to PowerShell # What is PowerShell? # PowerShell is a cross-platform task automation and configuration management framework from Microsoft, consisting of a command-line shell and scripting language. Unlike the older command prompt (cmd.exe), which primarily works with text-based commands, PowerShell uses cmdlets (pronounced “command-lets”). Cmdlets are specialized commands that interact with .NET objects, enabling more powerful and flexible scripting. This object-based approach allows for more complex manipulation and automation of system tasks. PowerShell’s scripting language is built on top of the .NET framework (and .NET Core for cross-platform compatibility), allowing access to a vast library of functions and capabilities.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-02-27T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-27T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ PowerShell is a cross-platform task automation and configuration management fram
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ PowerShell is a cross-platform task automation and configuration management fram
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -275,45 +275,45 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#powershell-vs-command-prompt">#</a>
 </h3>
 <table>
-  <thead>
-      <tr>
-          <th>Feature</th>
-          <th>PowerShell</th>
-          <th>Command Prompt (cmd.exe)</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Data Handling</strong></td>
-          <td>Object-based</td>
-          <td>Text-based</td>
-      </tr>
-      <tr>
-          <td><strong>Scripting</strong></td>
-          <td>Powerful, flexible scripting language</td>
-          <td>Limited batch scripting capabilities</td>
-      </tr>
-      <tr>
-          <td><strong>Cmdlets</strong></td>
-          <td>Specialized commands interacting with objects</td>
-          <td>Basic internal commands</td>
-      </tr>
-      <tr>
-          <td><strong>Interface</strong></td>
-          <td>More user-friendly, tab completion, etc.</td>
-          <td>Simpler, but less intuitive</td>
-      </tr>
-      <tr>
-          <td><strong>Automation</strong></td>
-          <td>Highly automatable</td>
-          <td>Limited automation capabilities</td>
-      </tr>
-      <tr>
-          <td><strong>Cross-platform</strong></td>
-          <td>Available on Windows, macOS, Linux</td>
-          <td>Primarily Windows</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Feature</th>
+					<th>PowerShell</th>
+					<th>Command Prompt (cmd.exe)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Data Handling</strong></td>
+					<td>Object-based</td>
+					<td>Text-based</td>
+			</tr>
+			<tr>
+					<td><strong>Scripting</strong></td>
+					<td>Powerful, flexible scripting language</td>
+					<td>Limited batch scripting capabilities</td>
+			</tr>
+			<tr>
+					<td><strong>Cmdlets</strong></td>
+					<td>Specialized commands interacting with objects</td>
+					<td>Basic internal commands</td>
+			</tr>
+			<tr>
+					<td><strong>Interface</strong></td>
+					<td>More user-friendly, tab completion, etc.</td>
+					<td>Simpler, but less intuitive</td>
+			</tr>
+			<tr>
+					<td><strong>Automation</strong></td>
+					<td>Highly automatable</td>
+					<td>Limited automation capabilities</td>
+			</tr>
+			<tr>
+					<td><strong>Cross-platform</strong></td>
+					<td>Available on Windows, macOS, Linux</td>
+					<td>Primarily Windows</td>
+			</tr>
+	</tbody>
 </table>
 <h3 class="heading" id="installing-powershell">
   Installing PowerShell
@@ -499,7 +499,7 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#outputting-text-to-the-console-write-host">#</a>
 </h3>
 <p>The <code>Write-Host</code> cmdlet sends text directly to the PowerShell console.  It&rsquo;s useful for displaying messages, results, or debugging information.  Unlike other cmdlets that output objects, <code>Write-Host</code> outputs only text, making it unsuitable for further processing within a pipeline.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;The current time is: </span>$(<span style="color:#bb60d5">$date</span>)<span style="color:#4070a0">&#34;</span> <span style="color:#60a0b0;font-style:italic">#Using variable interpolation</span>
 </span></span></code></pre></div><p>The second example uses variable interpolation (<code>$(...)</code>) to embed the value of the <code>$date</code> variable within the output string.</p>
 <h3 class="heading" id="reading-text-from-files-get-content">
@@ -507,7 +507,7 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#reading-text-from-files-get-content">#</a>
 </h3>
 <p><code>Get-Content</code> reads the contents of a text file.  It returns the content as an array of strings, with each line of the file represented as a separate string element.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$fileContent</span> = <span style="color:#007020">Get-Content</span> C:\path\to\myfile.txt
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$fileContent</span> = <span style="color:#007020">Get-Content</span> C:\path\to\myfile.txt
 </span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#bb60d5">$fileContent</span> <span style="color:#60a0b0;font-style:italic">#Displays the entire file content</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#bb60d5">$fileContent</span>[<span style="color:#40a070">0</span>] <span style="color:#60a0b0;font-style:italic">#Displays the first line</span>
 </span></span></code></pre></div><p>You can also use <code>Get-Content</code> with parameters to modify its behavior, such as <code>-Raw</code> to read the entire file into a single string instead of an array of lines.</p>
@@ -516,7 +516,7 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#writing-text-to-files-set-content">#</a>
 </h3>
 <p><code>Set-Content</code> writes text to a file, overwriting any existing content.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#4070a0">&#34;This is some text.&#34;</span> | <span style="color:#007020">Set-Content</span> C:\path\to\myfile.txt
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#4070a0">&#34;This is some text.&#34;</span> | <span style="color:#007020">Set-Content</span> C:\path\to\myfile.txt
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myText</span> = <span style="color:#4070a0">&#34;This is another line.&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myText</span> | <span style="color:#007020">Set-Content</span> -Path C:\path\to\myfile.txt <span style="color:#60a0b0;font-style:italic">#Overwrites previous content</span>
 </span></span></code></pre></div><p>The first example pipes a string directly to <code>Set-Content</code>. The second example uses a variable containing the text.  If the file doesn&rsquo;t exist, <code>Set-Content</code> creates it.  To append text to a file instead of overwriting, use <code>Add-Content</code>.</p>
@@ -542,7 +542,7 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#declaring-variables">#</a>
 </h3>
 <p>In PowerShell, you declare variables using the <code>$</code> symbol followed by the variable name.  Variable names are case-insensitive but it&rsquo;s good practice to use consistent capitalization for readability.  You don&rsquo;t need to explicitly declare the data type; PowerShell infers it based on the assigned value.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$myString</span> = <span style="color:#4070a0">&#34;Hello, PowerShell!&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$myString</span> = <span style="color:#4070a0">&#34;Hello, PowerShell!&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myNumber</span> = <span style="color:#40a070">123</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myBoolean</span> = <span style="color:#bb60d5">$true</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$myDate</span> = <span style="color:#007020">Get-Date</span>
@@ -560,7 +560,7 @@ PowerShell is a cross-platform task automation and configuration management fram
 <li><strong>Hashtables:</strong> Unordered collections of key-value pairs.  Created using <code>@{}</code> or <code>[ordered]@{ }</code>.</li>
 <li><strong>Dates:</strong> Represent dates and times.  Often obtained using <code>Get-Date</code>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Example of different data types and operations</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Example of different data types and operations</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$string1</span> = <span style="color:#4070a0">&#34;Hello&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$string2</span> = <span style="color:#4070a0">&#34; World&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$combinedString</span> = <span style="color:#bb60d5">$string1</span> + <span style="color:#bb60d5">$string2</span> <span style="color:#60a0b0;font-style:italic">#String concatenation</span>
@@ -589,7 +589,7 @@ PowerShell is a cross-platform task automation and configuration management fram
 <li><strong>Local scope:</strong> Variables declared within a function or script block are local; only accessible within that function or block.</li>
 <li><strong>Script scope:</strong> Variables declared at the top level of a script are script-scoped.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Global scope variable</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Global scope variable</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">$globalVariable</span> = <span style="color:#4070a0">&#34;I&#39;m global!&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#007020">MyFunction</span> {
@@ -616,14 +616,14 @@ PowerShell is a cross-platform task automation and configuration management fram
 <ul>
 <li><strong><code>for</code> loop with a counter:</strong>  Useful when you know the number of iterations in advance.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#bb60d5">$i</span> = <span style="color:#40a070">0</span>; <span style="color:#bb60d5">$i</span> <span style="color:#666">-lt</span> <span style="color:#40a070">5</span>; <span style="color:#bb60d5">$i</span>++) {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#bb60d5">$i</span> = <span style="color:#40a070">0</span>; <span style="color:#bb60d5">$i</span> <span style="color:#666">-lt</span> <span style="color:#40a070">5</span>; <span style="color:#bb60d5">$i</span>++) {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Iteration: </span><span style="color:#bb60d5">$i</span><span style="color:#4070a0">&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This loop iterates five times, with <code>$i</code> taking values 0, 1, 2, 3, and 4.  The loop continues as long as <code>$i</code> is less than 5 (<code>-lt</code>).  <code>$i++</code> increments <code>$i</code> by 1 in each iteration.</p>
 <ul>
 <li><strong><code>for</code> loop with <code>in</code>:</strong> Iterates over each element in a collection.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$myArray</span> = <span style="color:#4070a0">&#34;apple&#34;</span>, <span style="color:#4070a0">&#34;banana&#34;</span>, <span style="color:#4070a0">&#34;cherry&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$myArray</span> = <span style="color:#4070a0">&#34;apple&#34;</span>, <span style="color:#4070a0">&#34;banana&#34;</span>, <span style="color:#4070a0">&#34;cherry&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#bb60d5">$fruit</span> <span style="color:#007020;font-weight:bold">in</span> <span style="color:#bb60d5">$myArray</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Fruit: </span><span style="color:#bb60d5">$fruit</span><span style="color:#4070a0">&#34;</span>
 </span></span><span style="display:flex;"><span>}
@@ -633,7 +633,7 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#while-loops">#</a>
 </h3>
 <p><code>While</code> loops repeat a block of code as long as a specified condition is true.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$count</span> = <span style="color:#40a070">0</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$count</span> = <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (<span style="color:#bb60d5">$count</span> <span style="color:#666">-lt</span> <span style="color:#40a070">3</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Count: </span><span style="color:#bb60d5">$count</span><span style="color:#4070a0">&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">$count</span>++
@@ -644,7 +644,7 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#if-else-statements">#</a>
 </h3>
 <p><code>If-else</code> statements execute different blocks of code based on a condition.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$age</span> = <span style="color:#40a070">20</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$age</span> = <span style="color:#40a070">20</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$age</span> <span style="color:#666">-ge</span> <span style="color:#40a070">18</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;You are an adult.&#34;</span>
 </span></span><span style="display:flex;"><span>}
@@ -660,7 +660,7 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#switch-statements">#</a>
 </h3>
 <p><code>Switch</code> statements provide a concise way to handle multiple conditions based on the value of an expression.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$dayOfWeek</span> = <span style="color:#4070a0">&#34;Monday&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#bb60d5">$dayOfWeek</span> = <span style="color:#4070a0">&#34;Monday&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">switch</span> (<span style="color:#bb60d5">$dayOfWeek</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Monday&#34;</span> { <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;It&#39;s the start of the work week.&#34;</span> }
 </span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Friday&#34;</span> { <span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Almost weekend!&#34;</span> }
@@ -678,7 +678,7 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#creating-functions">#</a>
 </h3>
 <p>Functions are reusable blocks of code that perform specific tasks.  They help organize your scripts, improve readability, and promote code reusability.  You create functions using the <code>function</code> keyword (or the shorthand <code>function &lt;function-name&gt;</code>), followed by a script block (<code>{ }</code>).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#007020">Get-Greeting</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#007020">Get-Greeting</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">param</span>(
 </span></span><span style="display:flex;"><span>    [<span style="color:#60add5">string</span>]<span style="color:#bb60d5">$name</span>
 </span></span><span style="display:flex;"><span>  )
@@ -692,7 +692,7 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#function-parameters">#</a>
 </h3>
 <p>Function parameters allow you to pass data into your functions, making them more versatile.  You define parameters within the <code>param()</code> block, specifying the parameter name and optionally its data type.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#007020">Add-Numbers</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#007020">Add-Numbers</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">param</span>(
 </span></span><span style="display:flex;"><span>    [<span style="color:#60add5">int</span>]<span style="color:#bb60d5">$number1</span>,
 </span></span><span style="display:flex;"><span>    [<span style="color:#60add5">int</span>]<span style="color:#bb60d5">$number2</span>
@@ -708,7 +708,7 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#returning-values-from-functions">#</a>
 </h3>
 <p>Functions typically return a value using the <code>return</code> keyword.  The returned value can then be assigned to a variable or used in other parts of your script.  If no <code>return</code> statement is used, the function implicitly returns <code>$null</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#007020">Get-FullName</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span><span style="color:#bbb"> </span><span style="color:#007020">Get-FullName</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">param</span>(
 </span></span><span style="display:flex;"><span>    [<span style="color:#60add5">string</span>]<span style="color:#bb60d5">$firstName</span>,
 </span></span><span style="display:flex;"><span>    [<span style="color:#60add5">string</span>]<span style="color:#bb60d5">$lastName</span>
@@ -735,14 +735,14 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#selecting-properties-select-object">#</a>
 </h3>
 <p>The <code>Select-Object</code> cmdlet allows you to choose specific properties from a collection of objects.  This is useful for simplifying output and focusing on relevant information.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Get-Process</span> | <span style="color:#007020">Select-Object</span> -Property Name, Id, CPU
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Get-Process</span> | <span style="color:#007020">Select-Object</span> -Property Name, Id, CPU
 </span></span></code></pre></div><p>This command retrieves all running processes (<code>Get-Process</code>) and then selects only the <code>Name</code>, <code>Id</code>, and <code>CPU</code> properties from each process object, resulting in a more concise output.  You can select multiple properties by separating them with commas.  If you omit <code>-Property</code>, it will return all properties.  The <code>-ExpandProperty</code> parameter can return only a single property as a list of simple values rather than objects.</p>
 <h3 class="heading" id="filtering-objects-where-object">
   Filtering objects (<code>Where-Object</code>)
   <a class="anchor" href="#filtering-objects-where-object">#</a>
 </h3>
 <p>The <code>Where-Object</code> cmdlet filters a collection of objects, selecting only those that meet a specified condition.  Conditions are expressed using script blocks (<code>{ }</code>).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Get-Process</span> | <span style="color:#007020">Where-Object</span> {<span style="color:#bb60d5">$_</span>.CPU <span style="color:#666">-gt</span> <span style="color:#40a070">10</span>} | <span style="color:#007020">Select-Object</span> Name, CPU
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Get-Process</span> | <span style="color:#007020">Where-Object</span> {<span style="color:#bb60d5">$_</span>.CPU <span style="color:#666">-gt</span> <span style="color:#40a070">10</span>} | <span style="color:#007020">Select-Object</span> Name, CPU
 </span></span></code></pre></div><p>This command filters the list of running processes, selecting only those consuming more than 10% CPU (<code>$_.CPU -gt 10</code>).  <code>$_.CPU</code> refers to the <code>CPU</code> property of each process object. The <code>Select-Object</code> part is then used to make the output more readable, showing only the process name and its CPU usage.  You can use various comparison operators within the script block (e.g., <code>-lt</code>, <code>-eq</code>, <code>-ne</code>, <code>-like</code>).  <code>-like</code> is particularly useful for pattern matching within strings.</p>
 <p>Combining <code>Select-Object</code> and <code>Where-Object</code> allows you to efficiently extract and manipulate specific data from object collections, a key aspect of PowerShell&rsquo;s power and flexibility.  Mastering these cmdlets is crucial for effective data processing and management within PowerShell.</p>
 <h2 class="heading" id="modules-and-aliases">
@@ -754,7 +754,7 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#using-modules">#</a>
 </h3>
 <p>PowerShell modules are collections of cmdlets, functions, providers, and variables that extend PowerShell&rsquo;s functionality.  Modules provide a structured way to organize and manage related commands.  To use a module, you need to import it using the <code>Import-Module</code> cmdlet.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Import-Module</span> ActiveDirectory
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Import-Module</span> ActiveDirectory
 </span></span><span style="display:flex;"><span><span style="color:#007020">Get-ADUser</span> -Filter * <span style="color:#60a0b0;font-style:italic">#Now you can use Active Directory cmdlets</span>
 </span></span></code></pre></div><p>This imports the <code>ActiveDirectory</code> module, making its cmdlets (like <code>Get-ADUser</code>) available in your current session.  After importing, you can use the cmdlets provided by that module.  If you try to use a cmdlet from a module that isn&rsquo;t imported, you will get an error.  The location of modules can vary depending on your system configuration. You can check available modules using <code>Get-Module -ListAvailable</code>.</p>
 <p>Once imported, cmdlets from the module are available for use until the session ends. If you need to use the cmdlets in a new session, you must import the module again. You can also specify the path to a module when importing. This is useful if the module is not in a standard location.  For example, if your module is located in <code>C:\MyModules\MyCustomModule.psm1</code>, you would use <code>Import-Module -Name &quot;C:\MyModules\MyCustomModule.psm1&quot;</code>.</p>
@@ -763,7 +763,7 @@ PowerShell is a cross-platform task automation and configuration management fram
   <a class="anchor" href="#creating-aliases">#</a>
 </h3>
 <p>Aliases are shortcuts for cmdlets or functions. They provide a more concise way to type commands, particularly for frequently used ones. You create aliases using the <code>New-Alias</code> cmdlet:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">New-Alias</span> -Name ga -Value <span style="color:#007020">Get-Alias</span>  <span style="color:#60a0b0;font-style:italic"># ga is now an alias for Get-Alias</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">New-Alias</span> -Name ga -Value <span style="color:#007020">Get-Alias</span>  <span style="color:#60a0b0;font-style:italic"># ga is now an alias for Get-Alias</span>
 </span></span><span style="display:flex;"><span>ga <span style="color:#60a0b0;font-style:italic">#Using the alias</span>
 </span></span></code></pre></div><p>This creates an alias <code>ga</code> for the <code>Get-Alias</code> cmdlet. Now, typing <code>ga</code> is equivalent to typing <code>Get-Alias</code>.  Aliases are session-specific; they are lost when the PowerShell session ends.  PowerShell has many built-in aliases, such as <code>dir</code> (for <code>Get-ChildItem</code>) and <code>ls</code> (also for <code>Get-ChildItem</code>).  You can list existing aliases with <code>Get-Alias</code>.  To remove an alias, use <code>Remove-Alias -Name &lt;alias-name&gt;</code>.</p>
 <p>Using aliases and modules is crucial for managing and expanding your PowerShell capabilities.  They streamline your commands, making them more efficient to use and more readable.  Organize your scripts and cmdlets effectively using modules.  Use aliases judiciously to create shorter, more memorable command names without sacrificing clarity.</p>
@@ -777,7 +777,7 @@ PowerShell is a cross-platform task automation and configuration management fram
 </h3>
 <p>PowerShell Remoting allows you to run PowerShell commands on remote computers.  It&rsquo;s a powerful feature for managing multiple systems and automating tasks across a network.  To enable remoting, you first need to configure the target computer(s) to accept remote connections.  This typically involves running the <code>Enable-PSRemoting</code> cmdlet on the remote machine.  You&rsquo;ll likely need administrative privileges on the remote machine to do this.  The remote machine will also require a firewall exception to permit the necessary network traffic for PowerShell remoting.</p>
 <p>Once remoting is enabled, you can connect to remote computers using the <code>Invoke-Command</code> cmdlet.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Invoke-Command</span> -ComputerName remotecomputer -ScriptBlock {<span style="color:#007020">Get-Process</span>}
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020">Invoke-Command</span> -ComputerName remotecomputer -ScriptBlock {<span style="color:#007020">Get-Process</span>}
 </span></span></code></pre></div><p>This runs the <code>Get-Process</code> cmdlet on the computer named &ldquo;remotecomputer&rdquo; and displays the results on your local machine.  <code>-ScriptBlock</code> specifies the command to be executed remotely.   You can use other parameters such as <code>-Credential</code> to specify credentials if you don&rsquo;t have access to the remote machine with your current credentials.  For increased security, consider using certificates for authentication instead of simple passwords.</p>
 <p>PowerShell Remoting is crucial for managing and automating tasks across multiple computers. Securely configuring remoting and understanding its capabilities is key to successfully administrating networks and automating complex IT operations.  Explore the various parameters of <code>Invoke-Command</code> for greater control and flexibility in your remote management.</p>
 <h3 class="heading" id="writing-powershell-scripts-ps1-files">
@@ -786,18 +786,18 @@ PowerShell is a cross-platform task automation and configuration management fram
 </h3>
 <p>PowerShell scripts are saved as <code>.ps1</code> files.  These files contain a sequence of PowerShell commands that can be executed as a single unit.  This is essential for automating complex tasks and creating reusable tools.</p>
 <p>Create a simple script (e.g., <code>myScript.ps1</code>):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># This script displays a greeting.</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># This script displays a greeting.</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">Write-Host</span> <span style="color:#4070a0">&#34;Hello from my script!&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">Get-ChildItem</span> C:\temp
 </span></span></code></pre></div><p>To execute the script:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>.\myScript.ps1
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>.\myScript.ps1
 </span></span></code></pre></div><p>The <code>.\</code> is crucial; it tells PowerShell to execute the script from the current directory.  Without it, PowerShell might try to find and run an executable file (which might not be safe!).  Scripts can contain variables, functions, loops, and other PowerShell constructs to create more sophisticated automation.  You can run PowerShell scripts from the command line, scheduled tasks, or even integrate them into other applications.  Always test your scripts thoroughly before deploying them to a production environment.</p>
 <h3 class="heading" id="error-handling">
   Error handling
   <a class="anchor" href="#error-handling">#</a>
 </h3>
 <p>Robust scripts include error handling to gracefully manage unexpected situations.  The <code>try-catch</code> statement is used for this:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">try</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">try</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic"># Code that might throw an error</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020">Get-Content</span> C:\path\to\nonexistentfile.txt
 </span></span><span style="display:flex;"><span>}

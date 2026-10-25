@@ -36,14 +36,14 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-f/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-f/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to F#">
-  <meta property="og:description" content="Introduction to F# # What is F#? # F# (pronounced “F sharp”) is a functional-first, strongly-typed, open-source programming language. It runs on the .NET platform, giving you access to the vast ecosystem of libraries and tools available within the .NET world. Unlike many languages that prioritize imperative programming (telling the computer how to do something step-by-step), F# emphasizes declarative programming (telling the computer what to do, leaving the how to the compiler and runtime). This leads to more concise, robust, and easier-to-reason-about code. F# blends functional programming paradigms with object-oriented features, providing flexibility for various programming tasks. Its type system helps catch errors at compile time, resulting in fewer runtime surprises.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-19T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-19T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to F#">
+	<meta property="og:description" content="Introduction to F# # What is F#? # F# (pronounced “F sharp”) is a functional-first, strongly-typed, open-source programming language. It runs on the .NET platform, giving you access to the vast ecosystem of libraries and tools available within the .NET world. Unlike many languages that prioritize imperative programming (telling the computer how to do something step-by-step), F# emphasizes declarative programming (telling the computer what to do, leaving the how to the compiler and runtime). This leads to more concise, robust, and easier-to-reason-about code. F# blends functional programming paradigms with object-oriented features, providing flexibility for various programming tasks. Its type system helps catch errors at compile time, resulting in fewer runtime surprises.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-02-19T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-19T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -286,11 +286,11 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
 <p>Add the following code:</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span>printfn <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span>printfn <span style="color:#4070a0">&#34;Hello, world!&#34;</span>
 </span></span></code></pre></div><ol start="3">
 <li>Open a terminal or command prompt, navigate to the directory containing <code>HelloWorld.fs</code>, and compile and run the code using the following command:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dotnet run --project HelloWorld.fs
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dotnet run --project HelloWorld.fs
 </span></span></code></pre></div><p>This will print &ldquo;Hello, world!&rdquo; to your console.  This simple example demonstrates the basic structure of an F# program: a single expression (the <code>printfn</code> function call) that prints text to the console.  <code>printfn</code> is a function specifically designed for printing with a newline character.  We&rsquo;ll explore more advanced concepts in the following chapters.</p>
 <h2 class="heading" id="f-fundamentals">
   F# Fundamentals
@@ -302,7 +302,7 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
 </h3>
 <p>F# uses a concise and expressive syntax.  Semicolons are generally optional (except when multiple expressions are placed on a single line).  Whitespace is significant, influencing how the compiler interprets your code.  Indentation is crucial for defining code blocks (like the body of a function).</p>
 <p>F# functions are defined using the <code>let</code> keyword, followed by the function name, parameters (in parentheses), and the function body (the expression that produces the result).  For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">add</span> x y <span style="color:#666">=</span> x <span style="color:#666">+</span> y
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">add</span> x y <span style="color:#666">=</span> x <span style="color:#666">+</span> y
 </span></span></code></pre></div><p>This defines a function called <code>add</code> that takes two arguments (<code>x</code> and <code>y</code>) and returns their sum.</p>
 <p>Function calls are straightforward:  <code>add 2 3</code> would return 5.</p>
 <h3 class="heading" id="data-types-int-float-string-bool">
@@ -317,7 +317,7 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
 <li><strong><code>bool</code>:</strong> Represents Boolean values (true or false). Example: <code>let isTrue = true</code></li>
 </ul>
 <p>F# performs type inference, meaning you often don&rsquo;t need to explicitly specify the type; the compiler can deduce it from the context. However, explicitly specifying types can improve code readability and maintainability.  You can do so using type annotations:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">x</span> <span style="color:#666">:</span> int <span style="color:#666">=</span> 10
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">x</span> <span style="color:#666">:</span> int <span style="color:#666">=</span> 10
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">y</span> <span style="color:#666">:</span> <span style="color:#902000">float</span> <span style="color:#666">=</span> 3<span style="color:#666">.</span>14159
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">name</span> <span style="color:#666">:</span> <span style="color:#902000">string</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;F#&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">isTrue</span> <span style="color:#666">:</span> <span style="color:#902000">bool</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span>
@@ -326,13 +326,13 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#variables-and-immutability">#</a>
 </h3>
 <p>F# emphasizes immutability.  Once a variable is assigned a value, it cannot be changed. This is a core tenet of functional programming and helps prevent unexpected side effects.  The <code>let</code> keyword is used to bind a value to a name (creating an immutable variable):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">x</span> <span style="color:#666">=</span> 5
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">x</span> <span style="color:#666">=</span> 5
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// The following line would produce a compile-time error:
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// x &lt;- 10  // Assignment is not allowed for immutable variables
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">y</span> <span style="color:#666">=</span> x <span style="color:#666">+</span> 2 <span style="color:#60a0b0;font-style:italic">// y will be 7, x remains 5.
 </span></span></span></code></pre></div><p>To simulate mutable state, you can use mutable variables with the <code>mutable</code> keyword. However, excessive use of mutable variables should be avoided to preserve the benefits of functional programming.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">mutable</span> count <span style="color:#666">=</span> 0
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">mutable</span> count <span style="color:#666">=</span> 0
 </span></span><span style="display:flex;"><span>count <span style="color:#666">&lt;-</span> count <span style="color:#666">+</span> 1 <span style="color:#60a0b0;font-style:italic">// count is now 1
 </span></span></span></code></pre></div><h3 class="heading" id="operators">
   Operators
@@ -340,16 +340,16 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
 </h3>
 <p>F# supports standard arithmetic operators (+, -, *, /, %), comparison operators (=, &lt;&gt;, &lt;, &gt;, &lt;=, &gt;=), logical operators (&amp;&amp;, ||, not), and others.  Operator precedence follows standard mathematical rules.  Parentheses can be used to control the order of operations.</p>
 <p>Examples:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sum</span> <span style="color:#666">=</span> 10 <span style="color:#666">+</span> 5 <span style="color:#666">*</span> 2 <span style="color:#60a0b0;font-style:italic">// sum will be 20 (multiplication has higher precedence)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">isEqual</span> <span style="color:#666">=</span> 5 <span style="color:#666">=</span> 5  <span style="color:#60a0b0;font-style:italic">// isEqual will be true
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">isGreater</span> <span style="color:#666">=</span> 10 <span style="color:#666">&gt;</span> 5 <span style="color:#60a0b0;font-style:italic">// isGreater will be true
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sum</span> <span style="color:#666">=</span> 10 <span style="color:#666">+</span> 5 <span style="color:#666">*</span> 2 <span style="color:#60a0b0;font-style:italic">// sum will be 20 (multiplication has higher precedence)
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">isEqual</span> <span style="color:#666">=</span> 5 <span style="color:#666">=</span> 5  <span style="color:#60a0b0;font-style:italic">// isEqual will be true
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">isGreater</span> <span style="color:#666">=</span> 10 <span style="color:#666">&gt;</span> 5 <span style="color:#60a0b0;font-style:italic">// isGreater will be true
 </span></span></span></code></pre></div><h3 class="heading" id="comments">
   Comments
   <a class="anchor" href="#comments">#</a>
 </h3>
 <p>Comments in F# are used to explain the code and improve readability.  Single-line comments start with <code>//</code>, and multi-line comments are enclosed within <code>(*</code> and <code>*)</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">(* This is a
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">   multi-line comment *)</span>
 </span></span></code></pre></div><p>Using comments effectively is crucial for making your code easier to understand, both for yourself and others who might work with it later.</p>
@@ -362,72 +362,72 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#lists">#</a>
 </h3>
 <p>Lists are ordered, immutable collections of elements of the same type.  They are commonly used to represent sequences of data.  Lists are created using square brackets <code>[]</code> or the <code>list</code> function.  List elements are accessed using indexing (starting from 0), pattern matching, or list functions.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">numbers</span> <span style="color:#666">=</span> <span style="color:#666">[</span>1<span style="color:#666">;</span> 2<span style="color:#666">;</span> 3<span style="color:#666">;</span> 4<span style="color:#666">;</span> 5<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// List literal
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">numbers</span> <span style="color:#666">=</span> <span style="color:#666">[</span>1<span style="color:#666">;</span> 2<span style="color:#666">;</span> 3<span style="color:#666">;</span> 4<span style="color:#666">;</span> 5<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// List literal
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">emptyList</span> <span style="color:#666">=</span> <span style="color:#007020">[]</span> <span style="color:#60a0b0;font-style:italic">// Empty list
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">moreNumbers</span> <span style="color:#666">=</span> <span style="color:#666">[</span>6<span style="color:#666">;</span> 7<span style="color:#666">;</span> 8<span style="color:#666">]</span> <span style="color:#666">|&gt;</span> <span style="color:#0e84b5;font-weight:bold">List</span>.append numbers <span style="color:#60a0b0;font-style:italic">// List concatenation
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Accessing elements (using indexing - not recommended for large lists due to inefficiency):
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>printfn <span style="color:#4070a0">&#34;%d&#34;</span> numbers<span style="color:#666">.[</span>0<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Prints 1
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>printfn <span style="color:#4070a0">&#34;%d&#34;</span> numbers<span style="color:#666">.[</span>0<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Prints 1
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// More efficient ways to work with lists (using pattern matching and functions):
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">match</span> numbers <span style="color:#007020;font-weight:bold">with</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">match</span> numbers <span style="color:#007020;font-weight:bold">with</span>
 </span></span><span style="display:flex;"><span><span style="color:#666">|</span> first <span style="color:#666">::</span> rest <span style="color:#666">-&gt;</span> printfn <span style="color:#4070a0">&#34;First element: %d&#34;</span> first <span style="color:#60a0b0;font-style:italic">// Pattern matching to get the head and tail
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#666">|</span> <span style="color:#007020">[]</span> <span style="color:#666">-&gt;</span> printfn <span style="color:#4070a0">&#34;Empty list&#34;</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#666">|</span> <span style="color:#007020">[]</span> <span style="color:#666">-&gt;</span> printfn <span style="color:#4070a0">&#34;Empty list&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sumOfNumbers</span> <span style="color:#666">=</span> <span style="color:#0e84b5;font-weight:bold">List</span>.sum numbers <span style="color:#60a0b0;font-style:italic">// Using a list function to sum all the numbers
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">doubledNumbers</span> <span style="color:#666">=</span> <span style="color:#0e84b5;font-weight:bold">List</span>.map <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">fun</span> x <span style="color:#666">-&gt;</span> x <span style="color:#666">*</span> 2<span style="color:#666">)</span> numbers <span style="color:#60a0b0;font-style:italic">// Using map to double each element
 </span></span></span></code></pre></div><h3 class="heading" id="arrays">
   Arrays
   <a class="anchor" href="#arrays">#</a>
 </h3>
 <p>Arrays are mutable, ordered collections of elements of the same type.  They provide efficient random access to elements but are less flexible for modifications than lists due to their immutability.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">numbersArray</span> <span style="color:#666">=</span> <span style="color:#666">[|</span>1<span style="color:#666">;</span> 2<span style="color:#666">;</span> 3<span style="color:#666">;</span> 4<span style="color:#666">;</span> 5<span style="color:#666">|]</span> <span style="color:#60a0b0;font-style:italic">// Array literal
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">numbersArray</span> <span style="color:#666">=</span> <span style="color:#666">[|</span>1<span style="color:#666">;</span> 2<span style="color:#666">;</span> 3<span style="color:#666">;</span> 4<span style="color:#666">;</span> 5<span style="color:#666">|]</span> <span style="color:#60a0b0;font-style:italic">// Array literal
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Accessing elements:
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>printfn <span style="color:#4070a0">&#34;%d&#34;</span> numbersArray<span style="color:#666">.[</span>0<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Prints 1
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>printfn <span style="color:#4070a0">&#34;%d&#34;</span> numbersArray<span style="color:#666">.[</span>0<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Prints 1
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Modifying elements:
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>numbersArray<span style="color:#666">.[</span>0<span style="color:#666">]</span> <span style="color:#666">&lt;-</span> 10 <span style="color:#60a0b0;font-style:italic">// Allowed because arrays are mutable
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>printfn <span style="color:#4070a0">&#34;%d&#34;</span> numbersArray<span style="color:#666">.[</span>0<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Prints 10
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>numbersArray<span style="color:#666">.[</span>0<span style="color:#666">]</span> <span style="color:#666">&lt;-</span> 10 <span style="color:#60a0b0;font-style:italic">// Allowed because arrays are mutable
+</span></span></span><span style="display:flex;"><span>printfn <span style="color:#4070a0">&#34;%d&#34;</span> numbersArray<span style="color:#666">.[</span>0<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Prints 10
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Array length
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>printfn <span style="color:#4070a0">&#34;%d&#34;</span> numbersArray<span style="color:#666">.</span>Length <span style="color:#60a0b0;font-style:italic">// Prints 5
+</span></span></span><span style="display:flex;"><span>printfn <span style="color:#4070a0">&#34;%d&#34;</span> numbersArray<span style="color:#666">.</span>Length <span style="color:#60a0b0;font-style:italic">// Prints 5
 </span></span></span></code></pre></div><h3 class="heading" id="tuples">
   Tuples
   <a class="anchor" href="#tuples">#</a>
 </h3>
 <p>Tuples are immutable collections of elements of potentially different types.  They are useful for grouping related data that might not necessarily belong together in a more structured type.  Elements are accessed using their index.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">person</span> <span style="color:#666">=</span> <span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">,</span> 30<span style="color:#666">,</span> <span style="color:#4070a0">&#34;Software Engineer&#34;</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Tuple of string, int, string
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">person</span> <span style="color:#666">=</span> <span style="color:#666">(</span><span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">,</span> 30<span style="color:#666">,</span> <span style="color:#4070a0">&#34;Software Engineer&#34;</span><span style="color:#666">)</span> <span style="color:#60a0b0;font-style:italic">// Tuple of string, int, string
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Accessing elements:
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>printfn <span style="color:#4070a0">&#34;%s&#34;</span> person<span style="color:#666">.[</span>0<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Prints &#34;Alice&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>printfn <span style="color:#4070a0">&#34;%d&#34;</span> person<span style="color:#666">.[</span>1<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Prints 30
+</span></span></span><span style="display:flex;"><span>printfn <span style="color:#4070a0">&#34;%s&#34;</span> person<span style="color:#666">.[</span>0<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Prints &#34;Alice&#34;
+</span></span></span><span style="display:flex;"><span>printfn <span style="color:#4070a0">&#34;%d&#34;</span> person<span style="color:#666">.[</span>1<span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// Prints 30
 </span></span></span></code></pre></div><h3 class="heading" id="records">
   Records
   <a class="anchor" href="#records">#</a>
 </h3>
 <p>Records are immutable data structures that group named fields of potentially different types. They offer a more readable and maintainable way to represent data compared to tuples, especially when dealing with complex data.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#0e84b5;font-weight:bold">Person</span> <span style="color:#666">=</span> <span style="color:#666">{</span> Name <span style="color:#666">:</span> <span style="color:#902000">string</span><span style="color:#666">;</span> Age <span style="color:#666">:</span> int<span style="color:#666">;</span> Occupation <span style="color:#666">:</span> <span style="color:#902000">string</span> <span style="color:#666">}</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#0e84b5;font-weight:bold">Person</span> <span style="color:#666">=</span> <span style="color:#666">{</span> Name <span style="color:#666">:</span> <span style="color:#902000">string</span><span style="color:#666">;</span> Age <span style="color:#666">:</span> int<span style="color:#666">;</span> Occupation <span style="color:#666">:</span> <span style="color:#902000">string</span> <span style="color:#666">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">alice</span> <span style="color:#666">=</span> <span style="color:#666">{</span> Name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span><span style="color:#666">;</span> Age <span style="color:#666">=</span> 30<span style="color:#666">;</span> Occupation <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Software Engineer&#34;</span> <span style="color:#666">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Accessing fields:
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>printfn <span style="color:#4070a0">&#34;%s&#34;</span> alice<span style="color:#666">.</span>Name <span style="color:#60a0b0;font-style:italic">// Prints &#34;Alice&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>printfn <span style="color:#4070a0">&#34;%d&#34;</span> alice<span style="color:#666">.</span>Age <span style="color:#60a0b0;font-style:italic">// Prints 30
+</span></span></span><span style="display:flex;"><span>printfn <span style="color:#4070a0">&#34;%s&#34;</span> alice<span style="color:#666">.</span>Name <span style="color:#60a0b0;font-style:italic">// Prints &#34;Alice&#34;
+</span></span></span><span style="display:flex;"><span>printfn <span style="color:#4070a0">&#34;%d&#34;</span> alice<span style="color:#666">.</span>Age <span style="color:#60a0b0;font-style:italic">// Prints 30
 </span></span></span></code></pre></div><h3 class="heading" id="discriminated-unions-dus">
   Discriminated Unions (DUs)
   <a class="anchor" href="#discriminated-unions-dus">#</a>
 </h3>
 <p>Discriminated unions represent values that can be one of several named cases, each potentially carrying data. They&rsquo;re ideal for modeling situations with multiple possible states or types of data.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#0e84b5;font-weight:bold">Shape</span> <span style="color:#666">=</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#0e84b5;font-weight:bold">Shape</span> <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#666">|</span> Circle <span style="color:#007020;font-weight:bold">of</span> <span style="color:#902000">float</span> <span style="color:#60a0b0;font-style:italic">// Radius
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#666">|</span> Rectangle <span style="color:#007020;font-weight:bold">of</span> <span style="color:#902000">float</span> <span style="color:#666">*</span> <span style="color:#902000">float</span> <span style="color:#60a0b0;font-style:italic">// Width, Height
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#666">|</span> Square <span style="color:#007020;font-weight:bold">of</span> <span style="color:#902000">float</span> <span style="color:#60a0b0;font-style:italic">// Side length
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>    <span style="color:#666">|</span> Rectangle <span style="color:#007020;font-weight:bold">of</span> <span style="color:#902000">float</span> <span style="color:#666">*</span> <span style="color:#902000">float</span> <span style="color:#60a0b0;font-style:italic">// Width, Height
+</span></span></span><span style="display:flex;"><span>    <span style="color:#666">|</span> Square <span style="color:#007020;font-weight:bold">of</span> <span style="color:#902000">float</span> <span style="color:#60a0b0;font-style:italic">// Side length
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">circle</span> <span style="color:#666">=</span> Circle 5<span style="color:#666">.</span>0
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">rectangle</span> <span style="color:#666">=</span> Rectangle <span style="color:#666">(</span>4<span style="color:#666">.</span>0<span style="color:#666">,</span> 6<span style="color:#666">.</span>0<span style="color:#666">)</span>
 </span></span><span style="display:flex;"><span>
@@ -446,32 +446,32 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#defining-functions">#</a>
 </h3>
 <p>Functions in F# are defined using the <code>let</code> keyword, followed by the function name, parameters (in parentheses), and the function body (an expression that produces the result).  Functions are first-class citizens in F#, meaning they can be passed as arguments to other functions, returned as values from functions, and stored in data structures.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Function with two integer parameters
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">add</span> x y <span style="color:#666">=</span> x <span style="color:#666">+</span> y
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Function with two integer parameters
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">add</span> x y <span style="color:#666">=</span> x <span style="color:#666">+</span> y
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Function with a single parameter and type annotation
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">square</span> <span style="color:#666">(</span>x<span style="color:#666">:</span> int<span style="color:#666">)</span> <span style="color:#666">=</span> x <span style="color:#666">*</span> x
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">square</span> <span style="color:#666">(</span>x<span style="color:#666">:</span> int<span style="color:#666">)</span> <span style="color:#666">=</span> x <span style="color:#666">*</span> x
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Function with no parameters
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">greet</span> <span style="color:#007020">()</span> <span style="color:#666">=</span> printfn <span style="color:#4070a0">&#34;Hello!&#34;</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">greet</span> <span style="color:#007020">()</span> <span style="color:#666">=</span> printfn <span style="color:#4070a0">&#34;Hello!&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Function returning a tuple
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">getPersonNameAndAge</span> name age <span style="color:#666">=</span> <span style="color:#666">(</span>name<span style="color:#666">,</span> age<span style="color:#666">)</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">getPersonNameAndAge</span> name age <span style="color:#666">=</span> <span style="color:#666">(</span>name<span style="color:#666">,</span> age<span style="color:#666">)</span>
 </span></span></code></pre></div><h3 class="heading" id="function-application">
   Function Application
   <a class="anchor" href="#function-application">#</a>
 </h3>
 <p>Function application is straightforward: place the arguments after the function name.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sum</span> <span style="color:#666">=</span> add 5 10 <span style="color:#60a0b0;font-style:italic">// sum will be 15
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">numSquared</span> <span style="color:#666">=</span> square 7  <span style="color:#60a0b0;font-style:italic">// numSquared will be 49
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>greet<span style="color:#007020">()</span> <span style="color:#60a0b0;font-style:italic">// Prints &#34;Hello!&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">personInfo</span> <span style="color:#666">=</span> getPersonNameAndAge <span style="color:#4070a0">&#34;Alice&#34;</span> 30 <span style="color:#60a0b0;font-style:italic">// personInfo will be (&#34;Alice&#34;, 30)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sum</span> <span style="color:#666">=</span> add 5 10 <span style="color:#60a0b0;font-style:italic">// sum will be 15
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">numSquared</span> <span style="color:#666">=</span> square 7  <span style="color:#60a0b0;font-style:italic">// numSquared will be 49
+</span></span></span><span style="display:flex;"><span>greet<span style="color:#007020">()</span> <span style="color:#60a0b0;font-style:italic">// Prints &#34;Hello!&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">personInfo</span> <span style="color:#666">=</span> getPersonNameAndAge <span style="color:#4070a0">&#34;Alice&#34;</span> 30 <span style="color:#60a0b0;font-style:italic">// personInfo will be (&#34;Alice&#34;, 30)
 </span></span></span></code></pre></div><h3 class="heading" id="if-then-else-statements">
   If-Then-Else Statements
   <a class="anchor" href="#if-then-else-statements">#</a>
 </h3>
 <p>Conditional logic is handled using <code>if-then-else</code> expressions.  Note that <code>if-then-else</code> expressions in F# are expressions, meaning they return a value.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">isPositive</span> x <span style="color:#666">=</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">isPositive</span> x <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> x <span style="color:#666">&gt;</span> 0 <span style="color:#007020;font-weight:bold">then</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">true</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">else</span>
@@ -487,7 +487,7 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#pattern-matching">#</a>
 </h3>
 <p>Pattern matching is a powerful mechanism for selecting different code branches based on the structure of a value.  It&rsquo;s more expressive and often more concise than nested <code>if-then-else</code> statements.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">describeShape</span> shape <span style="color:#666">=</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">describeShape</span> shape <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">match</span> shape <span style="color:#007020;font-weight:bold">with</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#666">|</span> Circle r <span style="color:#666">-&gt;</span> sprintf <span style="color:#4070a0">&#34;Circle with radius %f&#34;</span> r
 </span></span><span style="display:flex;"><span>    <span style="color:#666">|</span> Rectangle <span style="color:#666">(</span>w<span style="color:#666">,</span> h<span style="color:#666">)</span> <span style="color:#666">-&gt;</span> sprintf <span style="color:#4070a0">&#34;Rectangle with width %f and height %f&#34;</span> w h
@@ -498,17 +498,17 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#loops">#</a>
 </h3>
 <p>While F# favors recursion and functional approaches, loops are still available. However,  prefer using functional constructs like <code>List.map</code>, <code>List.fold</code>, <code>List.filter</code>, etc., whenever possible, as they generally lead to more readable and maintainable code.  The <code>for</code> loop and <code>while</code> loop are available:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// For loop
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#666">=</span> 0 <span style="color:#007020;font-weight:bold">to</span> 9 <span style="color:#007020;font-weight:bold">do</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// For loop
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#666">=</span> 0 <span style="color:#007020;font-weight:bold">to</span> 9 <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>    printfn <span style="color:#4070a0">&#34;%d&#34;</span> i
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// While loop
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">mutable</span> i <span style="color:#666">=</span> 0
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">mutable</span> i <span style="color:#666">=</span> 0
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> i <span style="color:#666">&lt;</span> 10 <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>    printfn <span style="color:#4070a0">&#34;%d&#34;</span> i
 </span></span><span style="display:flex;"><span>    i <span style="color:#666">&lt;-</span> i <span style="color:#666">+</span> 1
 </span></span></code></pre></div><p>However, for most iterative tasks, using recursive functions or higher-order functions like <code>List.iter</code> will often result in cleaner and more functional code. For instance, a more functional way to iterate and print numbers would be:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#666">[</span>0<span style="color:#666">..</span>9<span style="color:#666">]</span> <span style="color:#666">|&gt;</span> <span style="color:#0e84b5;font-weight:bold">List</span>.iter <span style="color:#666">(</span>printfn <span style="color:#4070a0">&#34;%d&#34;</span><span style="color:#666">)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#666">[</span>0<span style="color:#666">..</span>9<span style="color:#666">]</span> <span style="color:#666">|&gt;</span> <span style="color:#0e84b5;font-weight:bold">List</span>.iter <span style="color:#666">(</span>printfn <span style="color:#4070a0">&#34;%d&#34;</span><span style="color:#666">)</span>
 </span></span></code></pre></div><p>This approach avoids mutable variables and relies on the expressive power of F#&rsquo;s functional features.</p>
 <h2 class="heading" id="object-oriented-programming-in-f">
   Object-Oriented Programming in F#
@@ -520,12 +520,12 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#classes-and-objects">#</a>
 </h3>
 <p>Classes are defined using the <code>type</code> keyword followed by the class name and its members (fields and methods).  Objects are instances of classes.  Fields can be mutable or immutable.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#0e84b5;font-weight:bold">Dog</span><span style="color:#666">(</span>name<span style="color:#666">:</span> <span style="color:#902000">string</span><span style="color:#666">,</span> breed<span style="color:#666">:</span> <span style="color:#902000">string</span><span style="color:#666">)</span> <span style="color:#666">=</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#0e84b5;font-weight:bold">Dog</span><span style="color:#666">(</span>name<span style="color:#666">:</span> <span style="color:#902000">string</span><span style="color:#666">,</span> breed<span style="color:#666">:</span> <span style="color:#902000">string</span><span style="color:#666">)</span> <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">mutable</span> age <span style="color:#666">=</span> 0 <span style="color:#60a0b0;font-style:italic">// Mutable field
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">member</span> this.<span style="color:#06287e">Name</span> <span style="color:#666">=</span> name <span style="color:#60a0b0;font-style:italic">// Immutable property
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">member</span> this.<span style="color:#06287e">Breed</span> <span style="color:#666">=</span> breed <span style="color:#60a0b0;font-style:italic">// Immutable property
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">member</span> this.<span style="color:#06287e">Age</span> <span style="color:#666">=</span> age <span style="color:#60a0b0;font-style:italic">// Property that accesses the mutable field
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">member</span> this.<span style="color:#06287e">Bark</span><span style="color:#007020">()</span> <span style="color:#666">=</span> printfn <span style="color:#4070a0">&#34;%s says Woof!&#34;</span> name
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">member</span> this.<span style="color:#06287e">Name</span> <span style="color:#666">=</span> name <span style="color:#60a0b0;font-style:italic">// Immutable property
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">member</span> this.<span style="color:#06287e">Breed</span> <span style="color:#666">=</span> breed <span style="color:#60a0b0;font-style:italic">// Immutable property
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">member</span> this.<span style="color:#06287e">Age</span> <span style="color:#666">=</span> age <span style="color:#60a0b0;font-style:italic">// Property that accesses the mutable field
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">member</span> this.<span style="color:#06287e">Bark</span><span style="color:#007020">()</span> <span style="color:#666">=</span> printfn <span style="color:#4070a0">&#34;%s says Woof!&#34;</span> name
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">member</span> this.<span style="color:#06287e">GrowOlder</span><span style="color:#007020">()</span> <span style="color:#666">=</span> age <span style="color:#666">&lt;-</span> age <span style="color:#666">+</span> 1 <span style="color:#60a0b0;font-style:italic">// Method modifying a mutable field
 </span></span></span></code></pre></div><p>This defines a <code>Dog</code> class with a constructor taking <code>name</code> and <code>breed</code> as arguments.  Note the use of <code>member</code> to define properties and methods.</p>
 <h3 class="heading" id="interfaces">
@@ -533,7 +533,7 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#interfaces">#</a>
 </h3>
 <p>Interfaces define contracts that classes must implement. They specify the signatures of methods but don&rsquo;t provide implementations.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#0e84b5;font-weight:bold">IAnimal</span> <span style="color:#666">=</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#0e84b5;font-weight:bold">IAnimal</span> <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">abstract</span> <span style="color:#007020;font-weight:bold">member</span> MakeSound <span style="color:#666">:</span> <span style="color:#902000">unit</span> <span style="color:#666">-&gt;</span> <span style="color:#902000">unit</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#0e84b5;font-weight:bold">Cat</span><span style="color:#666">(</span>name<span style="color:#666">:</span> <span style="color:#902000">string</span><span style="color:#666">)</span> <span style="color:#666">=</span>
@@ -548,7 +548,7 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#inheritance">#</a>
 </h3>
 <p>Inheritance allows a class to inherit members from a base class.  The derived class can override methods or add new members.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#0e84b5;font-weight:bold">Animal</span><span style="color:#666">(</span>name<span style="color:#666">:</span> <span style="color:#902000">string</span><span style="color:#666">)</span> <span style="color:#666">=</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> <span style="color:#0e84b5;font-weight:bold">Animal</span><span style="color:#666">(</span>name<span style="color:#666">:</span> <span style="color:#902000">string</span><span style="color:#666">)</span> <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">member</span> this.<span style="color:#06287e">Name</span> <span style="color:#666">=</span> name
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">abstract</span> <span style="color:#007020;font-weight:bold">member</span> MakeSound <span style="color:#666">:</span> <span style="color:#902000">unit</span> <span style="color:#666">-&gt;</span> <span style="color:#902000">unit</span>
 </span></span><span style="display:flex;"><span>
@@ -565,11 +565,11 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#polymorphism">#</a>
 </h3>
 <p>Polymorphism allows objects of different classes to be treated as objects of a common type (typically an interface).  This is enabled through interface implementation and method overriding.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">makeSound</span> animal <span style="color:#666">=</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">makeSound</span> animal <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>    animal<span style="color:#666">.</span>MakeSound<span style="color:#007020">()</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">animals</span> <span style="color:#666">=</span> <span style="color:#666">[</span> myCat<span style="color:#666">;</span> myDog <span style="color:#666">]</span> <span style="color:#60a0b0;font-style:italic">// List of objects implementing IAnimal
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>animals <span style="color:#666">|&gt;</span> <span style="color:#0e84b5;font-weight:bold">List</span>.iter makeSound <span style="color:#60a0b0;font-style:italic">// Calls MakeSound on each animal
+</span></span></span><span style="display:flex;"><span>animals <span style="color:#666">|&gt;</span> <span style="color:#0e84b5;font-weight:bold">List</span>.iter makeSound <span style="color:#60a0b0;font-style:italic">// Calls MakeSound on each animal
 </span></span></span></code></pre></div><p>The <code>makeSound</code> function can accept any object implementing <code>IAnimal</code>, demonstrating polymorphism.  The appropriate <code>MakeSound</code> implementation (either from <code>Cat</code> or <code>Dog2</code>) will be invoked at runtime.  This promotes flexibility and code reusability.  Remember that while F# supports OOP features, the functional approach is often the preferred style for its benefits in terms of conciseness, readability, and maintainability.</p>
 <h2 class="heading" id="functional-programming-concepts">
   Functional Programming Concepts
@@ -581,16 +581,16 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#higher-order-functions">#</a>
 </h3>
 <p>Higher-order functions are functions that either take other functions as arguments or return functions as results.  This allows for abstracting over operations and creating reusable components.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">addOne</span> x <span style="color:#666">=</span> x <span style="color:#666">+</span> 1
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">addOne</span> x <span style="color:#666">=</span> x <span style="color:#666">+</span> 1
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">double</span> x <span style="color:#666">=</span> x <span style="color:#666">*</span> 2
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">applyFunction</span> f x <span style="color:#666">=</span> f x <span style="color:#60a0b0;font-style:italic">// Higher-order function
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">result1</span> <span style="color:#666">=</span> applyFunction addOne 5   <span style="color:#60a0b0;font-style:italic">// result1 will be 6
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">result2</span> <span style="color:#666">=</span> applyFunction <span style="color:#902000">double</span> 5    <span style="color:#60a0b0;font-style:italic">// result2 will be 10
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">result2</span> <span style="color:#666">=</span> applyFunction <span style="color:#902000">double</span> 5    <span style="color:#60a0b0;font-style:italic">// result2 will be 10
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">makeAdder</span> n <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">fun</span> x <span style="color:#666">-&gt;</span> x <span style="color:#666">+</span> n <span style="color:#60a0b0;font-style:italic">// Higher-order function returning a function
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">addFive</span> <span style="color:#666">=</span> makeAdder 5
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">result3</span> <span style="color:#666">=</span> addFive 10 <span style="color:#60a0b0;font-style:italic">// result3 will be 15
 </span></span></span></code></pre></div><p><code>applyFunction</code> is a higher-order function because it takes another function (<code>f</code>) as an argument. <code>makeAdder</code> is a higher-order function because it returns a new function.</p>
@@ -599,18 +599,18 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#function-composition">#</a>
 </h3>
 <p>Function composition combines multiple functions into a single function that applies them sequentially.  The output of one function becomes the input of the next.  The <code>&gt;&gt;</code> operator is used for forward composition (left-to-right), and the <code>&lt;&lt;</code> operator for backward composition (right-to-left).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">composedFunction</span> <span style="color:#666">=</span> addOne <span style="color:#666">&gt;&gt;</span> <span style="color:#902000">double</span> <span style="color:#60a0b0;font-style:italic">// Compose addOne and double
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">result</span> <span style="color:#666">=</span> composedFunction 5 <span style="color:#60a0b0;font-style:italic">// result will be 12 (5 + 1) * 2
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">composedFunction</span> <span style="color:#666">=</span> addOne <span style="color:#666">&gt;&gt;</span> <span style="color:#902000">double</span> <span style="color:#60a0b0;font-style:italic">// Compose addOne and double
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">result</span> <span style="color:#666">=</span> composedFunction 5 <span style="color:#60a0b0;font-style:italic">// result will be 12 (5 + 1) * 2
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">composedFunction2</span> <span style="color:#666">=</span> <span style="color:#902000">double</span> <span style="color:#666">&lt;&lt;</span> addOne <span style="color:#60a0b0;font-style:italic">// Backward composition
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">result2</span> <span style="color:#666">=</span> composedFunction2 5 <span style="color:#60a0b0;font-style:italic">// result2 will also be 12
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">result2</span> <span style="color:#666">=</span> composedFunction2 5 <span style="color:#60a0b0;font-style:italic">// result2 will also be 12
 </span></span></span></code></pre></div><p>Function composition enhances code readability and maintainability by breaking down complex operations into smaller, more manageable parts.</p>
 <h3 class="heading" id="recursion">
   Recursion
   <a class="anchor" href="#recursion">#</a>
 </h3>
 <p>Recursion is a technique where a function calls itself to solve a problem. It&rsquo;s a fundamental concept in functional programming.  Base cases must be defined to stop the recursive calls.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">rec</span> factorial n <span style="color:#666">=</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">rec</span> factorial n <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> n <span style="color:#666">=</span> 0 <span style="color:#007020;font-weight:bold">then</span>
 </span></span><span style="display:flex;"><span>        1
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">else</span>
@@ -628,7 +628,7 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#pure-functions">#</a>
 </h3>
 <p>A pure function always produces the same output for the same input and has no side effects. This makes them highly testable and reusable.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">addPure</span> x y <span style="color:#666">=</span> x <span style="color:#666">+</span> y <span style="color:#60a0b0;font-style:italic">// Pure function
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">addPure</span> x y <span style="color:#666">=</span> x <span style="color:#666">+</span> y <span style="color:#60a0b0;font-style:italic">// Pure function
 </span></span></span></code></pre></div><p><code>addPure</code> is a pure function because it only depends on its input and doesn&rsquo;t modify any external state.  Pure functions are essential building blocks in functional programming, fostering modularity, testability, and predictability.  Contrast this with a function that would, for instance, modify a global variable.  That function would <em>not</em> be pure.</p>
 <h2 class="heading" id="advanced-topics">
   Advanced Topics
@@ -640,12 +640,12 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#modules">#</a>
 </h3>
 <p>Modules are containers for related functions, types, and values.  They help organize code into logical units and prevent naming conflicts.  Modules are declared using the <code>module</code> keyword.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">MathFunctions</span> <span style="color:#666">=</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">MathFunctions</span> <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">add</span> x y <span style="color:#666">=</span> x <span style="color:#666">+</span> y
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">subtract</span> x y <span style="color:#666">=</span> x <span style="color:#666">-</span> y
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Accessing module members:
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sum</span> <span style="color:#666">=</span> <span style="color:#0e84b5;font-weight:bold">MathFunctions</span>.add 5 10
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">sum</span> <span style="color:#666">=</span> <span style="color:#0e84b5;font-weight:bold">MathFunctions</span>.add 5 10
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">difference</span> <span style="color:#666">=</span> <span style="color:#0e84b5;font-weight:bold">MathFunctions</span>.subtract 10 5
 </span></span></code></pre></div><p>Modules provide a namespace for functions, preventing naming clashes and improving code structure, particularly beneficial in larger projects.</p>
 <h3 class="heading" id="asynchronous-programming">
@@ -653,7 +653,7 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#asynchronous-programming">#</a>
 </h3>
 <p>F# provides excellent support for asynchronous programming using asynchronous workflows. This allows for performing long-running operations without blocking the main thread, crucial for building responsive applications.  Asynchronous workflows are defined using the <code>async</code> keyword.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">open</span> <span style="color:#0e84b5;font-weight:bold">System</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">open</span> <span style="color:#0e84b5;font-weight:bold">System</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">open</span> <span style="color:#0e84b5;font-weight:bold">System.Net.Http</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">getWebPageAsync</span> url <span style="color:#666">=</span>
@@ -676,15 +676,15 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#error-handling">#</a>
 </h3>
 <p>F# uses the <code>result</code> type for error handling.  A <code>result</code> value can be either <code>Ok(value)</code> or <code>Error(exception)</code>, representing success or failure, respectively. This enables robust error management without exceptions.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">divide</span> x y <span style="color:#666">=</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">divide</span> x y <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> y <span style="color:#666">=</span> 0 <span style="color:#007020;font-weight:bold">then</span>
 </span></span><span style="display:flex;"><span>        Error <span style="color:#4070a0">&#34;Division by zero&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">else</span>
 </span></span><span style="display:flex;"><span>        Ok <span style="color:#666">(</span>x <span style="color:#666">/</span> y<span style="color:#666">)</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">result</span> <span style="color:#666">=</span> divide 10 2  <span style="color:#60a0b0;font-style:italic">// Ok 5
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">errorResult</span> <span style="color:#666">=</span> divide 10 0 <span style="color:#60a0b0;font-style:italic">// Error &#34;Division by zero&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">errorResult</span> <span style="color:#666">=</span> divide 10 0 <span style="color:#60a0b0;font-style:italic">// Error &#34;Division by zero&#34;
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">match</span> result <span style="color:#007020;font-weight:bold">with</span>
 </span></span><span style="display:flex;"><span><span style="color:#666">|</span> Ok value <span style="color:#666">-&gt;</span> printfn <span style="color:#4070a0">&#34;Result: %d&#34;</span> value
 </span></span><span style="display:flex;"><span><span style="color:#666">|</span> Error message <span style="color:#666">-&gt;</span> printfn <span style="color:#4070a0">&#34;Error: %s&#34;</span> message
@@ -694,7 +694,7 @@ F# (pronounced &ldquo;F sharp&rdquo;) is a functional-first, strongly-typed, ope
   <a class="anchor" href="#working-with-the-net-framework">#</a>
 </h3>
 <p>F# seamlessly interoperates with the .NET Framework, enabling access to a wide range of libraries and APIs.  This allows you to leverage existing .NET code and integrate F# into .NET projects.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">open</span> <span style="color:#0e84b5;font-weight:bold">System.IO</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fsharp" data-lang="fsharp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">open</span> <span style="color:#0e84b5;font-weight:bold">System.IO</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> <span style="color:#bb60d5">writeToFile</span> filename content <span style="color:#666">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">use</span> writer <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> StreamWriter<span style="color:#666">(</span>filename<span style="color:#666">)</span>

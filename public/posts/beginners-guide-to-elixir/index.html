@@ -36,14 +36,14 @@ Elixir is a dynamic, functional language designed for building scalable and main
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-elixir/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-elixir/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Elixir">
-  <meta property="og:description" content="Introduction to Elixir # What is Elixir? # Elixir is a dynamic, functional language designed for building scalable and maintainable applications. It runs on the Erlang Virtual Machine (BEAM), known for its fault tolerance and concurrency capabilities. Elixir leverages the BEAM’s strengths to offer developers a powerful toolset for creating distributed, highly available systems. It combines the elegance of functional programming with features like metaprogramming and macros, allowing for highly expressive and efficient code. Unlike Erlang, Elixir offers a more modern syntax and a growing ecosystem of libraries and tools, making it approachable for developers from various backgrounds.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-24T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-24T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Elixir">
+	<meta property="og:description" content="Introduction to Elixir # What is Elixir? # Elixir is a dynamic, functional language designed for building scalable and maintainable applications. It runs on the Erlang Virtual Machine (BEAM), known for its fault tolerance and concurrency capabilities. Elixir leverages the BEAM’s strengths to offer developers a powerful toolset for creating distributed, highly available systems. It combines the elegance of functional programming with features like metaprogramming and macros, allowing for highly expressive and efficient code. Unlike Erlang, Elixir offers a more modern syntax and a growing ecosystem of libraries and tools, making it approachable for developers from various backgrounds.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-02-24T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-24T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -287,7 +287,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
 <p>Add the following code:</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#0e84b5;font-weight:bold">IO</span><span style="color:#666">.</span>puts(<span style="color:#4070a0">&#34;Hello, world!&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#0e84b5;font-weight:bold">IO</span><span style="color:#666">.</span>puts(<span style="color:#4070a0">&#34;Hello, world!&#34;</span>)
 </span></span></code></pre></div><ol start="3">
 <li>Open your terminal, navigate to the directory containing <code>hello.ex</code>, and run the code using the command <code>elixir hello.ex</code>.</li>
 </ol>
@@ -332,7 +332,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#variables">#</a>
 </h3>
 <p>Variables are assigned using the <code>=</code> operator.  Variable names start with a lowercase letter and can contain letters, numbers, and underscores.  For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>
 </span></span><span style="display:flex;"><span>age <span style="color:#666">=</span> <span style="color:#40a070">30</span>
 </span></span></code></pre></div><p>Elixir uses immutability, meaning once a variable is assigned a value, it cannot be reassigned to a different value.  Instead of reassigning, you typically create new bindings.</p>
 <h3 class="heading" id="operators">
@@ -341,13 +341,13 @@ Elixir is a dynamic, functional language designed for building scalable and main
 </h3>
 <p>Elixir provides standard arithmetic operators (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>//</code> (integer division), <code>rem</code> (modulo)), comparison operators (<code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>), and logical operators (<code>and</code>, <code>or</code>, <code>not</code>).</p>
 <p>String concatenation is done using the <code>&lt;&gt;</code> operator:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>greeting <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello&#34;</span> <span style="color:#666">&lt;&gt;</span> <span style="color:#4070a0">&#34;, world!&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>greeting <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello&#34;</span> <span style="color:#666">&lt;&gt;</span> <span style="color:#4070a0">&#34;, world!&#34;</span>
 </span></span></code></pre></div><h3 class="heading" id="control-structures-ifelse-case">
   Control Structures (if/else, case)
   <a class="anchor" href="#control-structures-ifelse-case">#</a>
 </h3>
 <p><strong><code>if/else</code>:</strong>  Conditional execution based on a boolean expression.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>age <span style="color:#666">=</span> <span style="color:#40a070">20</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>age <span style="color:#666">=</span> <span style="color:#40a070">20</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> age <span style="color:#666">&gt;=</span> <span style="color:#40a070">18</span> <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#0e84b5;font-weight:bold">IO</span><span style="color:#666">.</span>puts(<span style="color:#4070a0">&#34;Adult&#34;</span>)
@@ -355,7 +355,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
 </span></span><span style="display:flex;"><span>  <span style="color:#0e84b5;font-weight:bold">IO</span><span style="color:#666">.</span>puts(<span style="color:#4070a0">&#34;Minor&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span></code></pre></div><p><strong><code>case</code>:</strong>  Multi-way branching based on pattern matching.  This is a powerful construct in Elixir.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>status <span style="color:#666">=</span> <span style="color:#517918">:ok</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>status <span style="color:#666">=</span> <span style="color:#517918">:ok</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> status <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#517918">:ok</span> <span style="color:#666">-&gt;</span> <span style="color:#0e84b5;font-weight:bold">IO</span><span style="color:#666">.</span>puts(<span style="color:#4070a0">&#34;Success&#34;</span>)
@@ -367,7 +367,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#functions">#</a>
 </h3>
 <p>Functions are defined using the <code>def</code> keyword:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">defmodule</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span> <span style="color:#007020;font-weight:bold">do</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">defmodule</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span> <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">def</span> greet(name) <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#0e84b5;font-weight:bold">IO</span><span style="color:#666">.</span>puts(<span style="color:#4070a0">&#34;Hello, &#34;</span> <span style="color:#666">&lt;&gt;</span> name <span style="color:#666">&lt;&gt;</span> <span style="color:#4070a0">&#34;!&#34;</span>)
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>
@@ -380,7 +380,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#pattern-matching">#</a>
 </h3>
 <p>Pattern matching is a core feature of Elixir. It&rsquo;s used to compare data structures against patterns and bind variables to parts of the data that match.  This is used extensively in <code>case</code> statements, function arguments, and more.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>tuple <span style="color:#666">=</span> {<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>}
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>tuple <span style="color:#666">=</span> {<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> tuple <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>  {a, b, c} <span style="color:#666">-&gt;</span> <span style="color:#0e84b5;font-weight:bold">IO</span><span style="color:#666">.</span>puts(<span style="color:#4070a0">&#34;a: </span><span style="color:#70a0d0">#{</span>a<span style="color:#70a0d0">}</span><span style="color:#4070a0">, b: </span><span style="color:#70a0d0">#{</span>b<span style="color:#70a0d0">}</span><span style="color:#4070a0">, c: </span><span style="color:#70a0d0">#{</span>c<span style="color:#70a0d0">}</span><span style="color:#4070a0">&#34;</span>)
@@ -404,7 +404,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#defining-modules">#</a>
 </h3>
 <p>Modules are the fundamental building blocks of Elixir code. They provide a way to organize code into logical units, preventing naming conflicts and promoting reusability.  A module is defined using the <code>defmodule</code> keyword followed by the module name and a <code>do...end</code> block containing the module&rsquo;s contents.  Conventionally, module names are capitalized.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">defmodule</span> <span style="color:#0e84b5;font-weight:bold">Greeter</span> <span style="color:#007020;font-weight:bold">do</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">defmodule</span> <span style="color:#0e84b5;font-weight:bold">Greeter</span> <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">def</span> greet(name) <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#0e84b5;font-weight:bold">IO</span><span style="color:#666">.</span>puts(<span style="color:#4070a0">&#34;Hello, </span><span style="color:#70a0d0">#{</span>name<span style="color:#70a0d0">}</span><span style="color:#4070a0">!&#34;</span>)
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>
@@ -422,11 +422,11 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#importing-modules">#</a>
 </h3>
 <p>To avoid repeatedly writing the module name when calling its functions, you can import the module using the <code>import</code> keyword.  This allows you to call functions directly by their name.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">Greeter</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">Greeter</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>greet(<span style="color:#4070a0">&#34;Bob&#34;</span>)  <span style="color:#60a0b0;font-style:italic"># Greeter.greet(&#34;Bob&#34;) is no longer needed</span>
 </span></span></code></pre></div><p>You can also import specific functions from a module, avoiding potential naming conflicts:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">Greeter</span>, <span style="color:#517918">only</span>: [<span style="color:#517918">greet</span>: <span style="color:#40a070">1</span>] <span style="color:#60a0b0;font-style:italic">#only imports greet/1</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">Greeter</span>, <span style="color:#517918">only</span>: [<span style="color:#517918">greet</span>: <span style="color:#40a070">1</span>] <span style="color:#60a0b0;font-style:italic">#only imports greet/1</span>
 </span></span></code></pre></div><p>It&rsquo;s generally good practice to be selective about what you import to avoid ambiguity.</p>
 <h3 class="heading" id="namespaces">
   Namespaces
@@ -434,7 +434,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
 </h3>
 <p>Elixir uses namespaces to manage the organization of modules and prevent naming collisions.  The module name itself acts as a namespace.  For example, the <code>Greeter</code> module resides in its own namespace, preventing a conflict with another module that might also have a function named <code>greet</code>.</p>
 <p>The <code>alias</code> macro can create aliases for modules to shorten their names when used extensively within a specific scope.  This enhances readability without the use of <code>import</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">alias</span> <span style="color:#0e84b5;font-weight:bold">Greeter</span>, <span style="color:#517918">as</span>: <span style="color:#0e84b5;font-weight:bold">G</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">alias</span> <span style="color:#0e84b5;font-weight:bold">Greeter</span>, <span style="color:#517918">as</span>: <span style="color:#0e84b5;font-weight:bold">G</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#0e84b5;font-weight:bold">G</span><span style="color:#666">.</span>greet(<span style="color:#4070a0">&#34;Charlie&#34;</span>) <span style="color:#60a0b0;font-style:italic"># Using the alias G for Greeter</span>
 </span></span></code></pre></div><p>Namespaces and aliases help in building large, complex applications by keeping modules organized and preventing confusion caused by naming conflicts.</p>
@@ -464,7 +464,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#lists">#</a>
 </h3>
 <p>Lists are ordered collections of elements. They are represented using square brackets <code>[]</code>. Lists are linked lists, meaning accessing elements towards the end is less efficient.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>list <span style="color:#666">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>]
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>list <span style="color:#666">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>]
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#Adding to a list creates a new list</span>
 </span></span><span style="display:flex;"><span>new_list <span style="color:#666">=</span> [<span style="color:#40a070">0</span> <span style="color:#666">|</span> list] <span style="color:#60a0b0;font-style:italic"># =&gt; [0, 1, 2, 3, 4, 5] (cons operator adds to the beginning)</span>
 </span></span></code></pre></div><p>The <code>|</code> (cons) operator adds an element to the beginning of a list, creating a new list. Other functions like <code>Enum.append/2</code> add to the end but also create a new list</p>
@@ -473,7 +473,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#tuples">#</a>
 </h3>
 <p>Tuples are also ordered collections of elements, but unlike lists, they are immutable from the moment of creation. They are represented using curly braces <code>{}</code>.  Accessing elements is more efficient than in lists.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>tuple <span style="color:#666">=</span> {<span style="color:#40a070">1</span>, <span style="color:#4070a0">&#34;hello&#34;</span>, <span style="color:#517918">:ok</span>}
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>tuple <span style="color:#666">=</span> {<span style="color:#40a070">1</span>, <span style="color:#4070a0">&#34;hello&#34;</span>, <span style="color:#517918">:ok</span>}
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#Attempting to change the tuple leads to an error:</span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#tuple = put_elem(tuple, 0, 10) #does not work</span>
 </span></span></code></pre></div><h3 class="heading" id="maps">
@@ -481,7 +481,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#maps">#</a>
 </h3>
 <p>Maps are collections of key-value pairs. Keys are typically atoms or strings, while values can be any Elixir data type. Maps are denoted with <code>%{}</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>map <span style="color:#666">=</span> %{<span style="color:#4070a0">&#34;name&#34;</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;age&#34;</span> <span style="color:#666">=&gt;</span> <span style="color:#40a070">30</span>}
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>map <span style="color:#666">=</span> %{<span style="color:#4070a0">&#34;name&#34;</span> <span style="color:#666">=&gt;</span> <span style="color:#4070a0">&#34;Alice&#34;</span>, <span style="color:#4070a0">&#34;age&#34;</span> <span style="color:#666">=&gt;</span> <span style="color:#40a070">30</span>}
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#Accessing values:</span>
 </span></span><span style="display:flex;"><span>name <span style="color:#666">=</span> map[<span style="color:#4070a0">&#34;name&#34;</span>]  <span style="color:#60a0b0;font-style:italic"># =&gt; &#34;Alice&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#Creating new maps:</span>
@@ -493,7 +493,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#keywords">#</a>
 </h3>
 <p>Keywords are similar to atoms but are primarily used as keys in maps. They are written as <code>:key_name</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>person <span style="color:#666">=</span> %{<span style="color:#517918">name</span>: <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#517918">age</span>: <span style="color:#40a070">25</span>} <span style="color:#60a0b0;font-style:italic"># Using keywords as keys</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>person <span style="color:#666">=</span> %{<span style="color:#517918">name</span>: <span style="color:#4070a0">&#34;Bob&#34;</span>, <span style="color:#517918">age</span>: <span style="color:#40a070">25</span>} <span style="color:#60a0b0;font-style:italic"># Using keywords as keys</span>
 </span></span></code></pre></div><p>Keywords offer a cleaner syntax for defining maps and are often preferred when the keys are known at compile time.  They provide a self-documenting way of representing data.</p>
 <h2 class="heading" id="concurrency-with-processes">
   Concurrency with Processes
@@ -509,7 +509,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#spawning-processes">#</a>
 </h3>
 <p>New processes are created using the <code>spawn/1</code> or <code>Task.async/1</code> functions. <code>spawn/1</code> takes a function as an argument and starts that function in a new process.  <code>Task.async/1</code> provides a more streamlined way to create tasks and retrieve their results.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Using spawn/1</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Using spawn/1</span>
 </span></span><span style="display:flex;"><span>pid <span style="color:#666">=</span> spawn(<span style="color:#007020;font-weight:bold">fn</span> <span style="color:#666">-&gt;</span> <span style="color:#0e84b5;font-weight:bold">IO</span><span style="color:#666">.</span>puts(<span style="color:#4070a0">&#34;Hello from a new process!&#34;</span>); <span style="color:#517918">:ok</span> <span style="color:#007020;font-weight:bold">end</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Using Task.async/1 (for getting result)</span>
@@ -521,7 +521,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#message-passing">#</a>
 </h3>
 <p>Processes communicate by sending messages to each other.  The <code>send/2</code> function sends a message to a specified process, and the <code>receive</code> macro receives messages.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Sender process</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Sender process</span>
 </span></span><span style="display:flex;"><span>send(pid, <span style="color:#4070a0">&#34;Message from the parent&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Receiver process (within the spawned process, example)</span>
@@ -534,7 +534,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#process-supervision">#</a>
 </h3>
 <p>Supervision is crucial for building robust and fault-tolerant systems.  A supervisor process monitors its child processes and restarts them if they crash. This prevents a single process failure from bringing down the entire application.  Elixir uses a tree-like structure called a <em>supervision tree</em> to manage processes and their supervision.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Example supervisor (simplified)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Example supervisor (simplified)</span>
 </span></span><span style="display:flex;"><span><span style="color:#0e84b5;font-weight:bold">Supervisor</span><span style="color:#666">.</span>start_link(
 </span></span><span style="display:flex;"><span>  [
 </span></span><span style="display:flex;"><span>    {<span style="color:#0e84b5;font-weight:bold">MyWorker</span>, []},
@@ -555,7 +555,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#trycatch-blocks">#</a>
 </h3>
 <p>Elixir uses <code>try...catch</code> blocks for handling exceptions.  A <code>try</code> block contains the code that might raise an exception, and a <code>catch</code> block handles any exceptions that occur.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">try</span> <span style="color:#007020;font-weight:bold">do</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">try</span> <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic"># Code that might raise an exception</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#40a070">1</span> <span style="color:#666">/</span> <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">catch</span>
@@ -567,7 +567,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#raising-exceptions">#</a>
 </h3>
 <p>Exceptions are raised using the <code>raise/1</code> or <code>raise/2</code> functions.  <code>raise/1</code> takes an exception term as an argument, while <code>raise/2</code> allows specifying a stacktrace.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">raise</span> <span style="color:#4070a0">&#34;Division by zero&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">raise</span> <span style="color:#4070a0">&#34;Division by zero&#34;</span>
 </span></span></code></pre></div><p>Raising custom exceptions helps in separating different error conditions and provides more context than simply returning an error value.</p>
 <h3 class="heading" id="handling-errors-gracefully">
   Handling Errors Gracefully
@@ -603,14 +603,14 @@ Elixir is a dynamic, functional language designed for building scalable and main
   <a class="anchor" href="#creating-a-new-project">#</a>
 </h3>
 <p>To create a new Elixir project, use the <code>mix new</code> command. This generates a basic project structure with the necessary files.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mix new my_project
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mix new my_project
 </span></span></code></pre></div><p>This command creates a directory named <code>my_project</code> containing the project files. You can then navigate into the directory (<code>cd my_project</code>) and start developing your application.  Options are available to customize the project template (e.g., <code>mix new my_project --sup</code> to create a project with a supervisor).</p>
 <h3 class="heading" id="managing-dependencies">
   Managing Dependencies
   <a class="anchor" href="#managing-dependencies">#</a>
 </h3>
 <p>Elixir uses Hex, a package manager, to manage project dependencies.  Dependencies are declared in the <code>mix.exs</code> file.  This file uses Elixir&rsquo;s configuration system to describe the project and its dependencies.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">defmodule</span> <span style="color:#0e84b5;font-weight:bold">MyProject.MixProject</span> <span style="color:#007020;font-weight:bold">do</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">defmodule</span> <span style="color:#0e84b5;font-weight:bold">MyProject.MixProject</span> <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Mix.Project</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">def</span> project <span style="color:#007020;font-weight:bold">do</span>
@@ -629,7 +629,7 @@ Elixir is a dynamic, functional language designed for building scalable and main
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span></code></pre></div><p>After updating the <code>deps</code> function in <code>mix.exs</code>, use the following command to fetch the specified packages:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mix deps.get
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mix deps.get
 </span></span></code></pre></div><p>This downloads and installs the dependencies.  To update dependencies, you can run <code>mix deps.update</code>.</p>
 <h3 class="heading" id="running-tasks">
   Running Tasks

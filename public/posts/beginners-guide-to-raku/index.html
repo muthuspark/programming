@@ -36,14 +36,14 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-raku/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-raku/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Raku">
-  <meta property="og:description" content="Introduction to Raku # What is Raku? # Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive programming language designed for both beginners and experienced programmers. It’s built on the principles of elegance, readability, and concurrency, offering a modern approach to software development. Raku incorporates many features found in other modern languages while maintaining a unique and powerful paradigm of its own. It prioritizes developer happiness and productivity through features like sophisticated metaprogramming capabilities, built-in concurrency support, and a rich standard library. The language is designed to be easy to learn, yet capable of handling complex tasks with grace.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-16T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-16T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Raku">
+	<meta property="og:description" content="Introduction to Raku # What is Raku? # Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive programming language designed for both beginners and experienced programmers. It’s built on the principles of elegance, readability, and concurrency, offering a modern approach to software development. Raku incorporates many features found in other modern languages while maintaining a unique and powerful paradigm of its own. It prioritizes developer happiness and productivity through features like sophisticated metaprogramming capabilities, built-in concurrency support, and a rich standard library. The language is designed to be easy to learn, yet capable of handling complex tasks with grace.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-01-16T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-16T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -259,9 +259,9 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#running-your-first-raku-program">#</a>
 </h3>
 <p>The simplest Raku program is a &ldquo;Hello, world!&rdquo; program.  Create a file named <code>hello.raku</code> (or any name ending in <code>.raku</code>) containing the following line:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello, world!</span>&#34;;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello, world!</span>&#34;;
 </span></span></code></pre></div><p>To run this program, open your terminal or command prompt, navigate to the directory where you saved the file, and type:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>raku hello.raku
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>raku hello.raku
 </span></span></code></pre></div><p>Press Enter.  You should see &ldquo;Hello, world!&rdquo; printed on the console.  This simple example demonstrates the basic syntax of Raku—using the <code>say</code> function to output text to the console.  Congratulations, you&rsquo;ve run your first Raku program!</p>
 <h2 class="heading" id="basic-syntax-and-data-types">
   Basic Syntax and Data Types
@@ -277,7 +277,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 <li><code>@</code> (at sign): Array variable. Holds an ordered list of values.</li>
 <li><code>%</code> (percent sign): Hash variable. Holds a collection of key-value pairs.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> &#34;<span style="color:#4070a0">Alice</span>&#34;;  <span style="color:#60a0b0;font-style:italic"># Scalar variable</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> &#34;<span style="color:#4070a0">Alice</span>&#34;;  <span style="color:#60a0b0;font-style:italic"># Scalar variable</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@numbers</span> <span style="color:#666">=</span> <span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span>; <span style="color:#60a0b0;font-style:italic"># Array variable</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">%details</span> <span style="color:#666">=</span> <span style="color:#4070a0">name</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">Bob</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">age</span> <span style="color:#666">=&gt;</span> <span style="color:#40a070">30</span>; <span style="color:#60a0b0;font-style:italic"># Hash variable</span>
 </span></span><span style="display:flex;"><span>
@@ -285,7 +285,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">@numbers</span>; <span style="color:#60a0b0;font-style:italic"># Outputs: (1 2 3)</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">%details</span>; <span style="color:#60a0b0;font-style:italic"># Outputs: name =&gt; &#34;Bob&#34;, age =&gt; 30</span>
 </span></span></code></pre></div><p>Constants are declared using the <code>constant</code> keyword.  Their values cannot be changed after declaration.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">constant</span> <span style="color:#bb60d5">$PI</span> <span style="color:#666">=</span> <span style="color:#40a070">3.14159</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">constant</span> <span style="color:#bb60d5">$PI</span> <span style="color:#666">=</span> <span style="color:#40a070">3.14159</span>;
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># $PI = 3.14;  # This would result in a compile-time error</span>
 </span></span></code></pre></div><p>The <code>my</code> keyword declares lexical variables, which are scoped to the block of code in which they are defined.  Variables declared without <code>my</code> (though generally discouraged) are package variables, having broader scope.</p>
 <h3 class="heading" id="data-types-scalars-lists-hashes">
@@ -305,12 +305,12 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 </li>
 <li>
 <p><strong>Lists:</strong> Ordered collections of values.  They are created using commas <code>,</code> or the <code>[...]</code> syntax.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@list</span> <span style="color:#666">=</span> <span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> &#34;<span style="color:#4070a0">four</span>&#34;; <span style="color:#60a0b0;font-style:italic"># List of mixed types</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@list</span> <span style="color:#666">=</span> <span style="color:#40a070">1</span><span style="color:#666">,</span> <span style="color:#40a070">2</span><span style="color:#666">,</span> <span style="color:#40a070">3</span><span style="color:#666">,</span> &#34;<span style="color:#4070a0">four</span>&#34;; <span style="color:#60a0b0;font-style:italic"># List of mixed types</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@anotherList</span> <span style="color:#666">=</span> <span style="color:#666">[</span><span style="color:#40a070">5</span><span style="color:#666">,</span> <span style="color:#40a070">6</span><span style="color:#666">,</span> <span style="color:#40a070">7</span><span style="color:#666">]</span>; <span style="color:#60a0b0;font-style:italic"># Another way to define a list</span>
 </span></span></code></pre></div></li>
 <li>
 <p><strong>Hashes:</strong> Unordered collections of key-value pairs. Keys are typically strings, but can be other data types as well.  They are created using <code>=&gt;</code> or the <code>{ }</code> syntax.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">%hash</span> <span style="color:#666">=</span> <span style="color:#4070a0">name</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">Charlie</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">age</span> <span style="color:#666">=&gt;</span> <span style="color:#40a070">25</span>; <span style="color:#60a0b0;font-style:italic"># Using =&gt;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">%hash</span> <span style="color:#666">=</span> <span style="color:#4070a0">name</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">Charlie</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">age</span> <span style="color:#666">=&gt;</span> <span style="color:#40a070">25</span>; <span style="color:#60a0b0;font-style:italic"># Using =&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">%anotherHash</span> <span style="color:#666">=</span> { <span style="color:#4070a0">city</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">New York</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">country</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">USA</span>&#34; }; <span style="color:#60a0b0;font-style:italic"># Using curly braces</span>
 </span></span></code></pre></div></li>
 </ul>
@@ -333,7 +333,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 <ul>
 <li><strong><code>if</code>/<code>elsif</code>/<code>else</code> statements:</strong>  Used for conditional execution.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">5</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">x is greater than 5</span>&#34;;
 </span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">elsif</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">==</span> <span style="color:#40a070">5</span> {
@@ -344,7 +344,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 </span></span></code></pre></div><ul>
 <li><strong><code>for</code> loop:</strong> Iterates over a list or range.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#40a070">1</span><span style="color:#666">..</span><span style="color:#40a070">5</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#bb60d5">$i</span> { <span style="color:#60a0b0;font-style:italic"># Iterates from 1 to 5</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#40a070">1</span><span style="color:#666">..</span><span style="color:#40a070">5</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#bb60d5">$i</span> { <span style="color:#60a0b0;font-style:italic"># Iterates from 1 to 5</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> <span style="color:#bb60d5">$i</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -354,7 +354,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 </span></span></code></pre></div><ul>
 <li><strong><code>while</code> loop:</strong> Repeats a block of code as long as a condition is true.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$count</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$count</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#bb60d5">$count</span> <span style="color:#666">&lt;</span> <span style="color:#40a070">3</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> <span style="color:#bb60d5">$count</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">$count</span><span style="color:#666">++</span>;
@@ -362,7 +362,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 </span></span></code></pre></div><ul>
 <li><strong><code>loop</code> loop:</strong>  A general-purpose loop that continues indefinitely until explicitly stopped using <code>last</code>, <code>break</code>, or a condition within.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">loop</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">loop</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Looping...</span>&#34;;
 </span></span><span style="display:flex;"><span>    <span style="color:#007020">last</span> <span style="color:#007020;font-weight:bold">if</span> <span style="color:#bb60d5">$count</span> <span style="color:#666">&gt;=</span> <span style="color:#40a070">5</span>; <span style="color:#60a0b0;font-style:italic"># Exit the loop if count is 5 or more.</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">$count</span><span style="color:#666">++</span>;
@@ -378,16 +378,16 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 </h3>
 <p>Raku provides several ways to handle input and output:</p>
 <p><strong>Output:</strong> The simplest way to output data is using the <code>say</code> function, which automatically adds a newline character at the end:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello, world!</span>&#34;;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello, world!</span>&#34;;
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#40a070">1</span> <span style="color:#666">+</span> <span style="color:#40a070">2</span>;  <span style="color:#60a0b0;font-style:italic"># Outputs 3</span>
 </span></span></code></pre></div><p>For more fine-grained control, use <code>print</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020">print</span> &#34;<span style="color:#4070a0">This is a line. </span>&#34;;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020">print</span> &#34;<span style="color:#4070a0">This is a line. </span>&#34;;
 </span></span><span style="display:flex;"><span><span style="color:#007020">print</span> &#34;<span style="color:#4070a0">This is on the same line.</span><span style="color:#4070a0;font-weight:bold">\n</span>&#34;; <span style="color:#60a0b0;font-style:italic"># \n adds a newline explicitly.</span>
 </span></span></code></pre></div><p><strong>Input:</strong>  The <code>prompt</code> function is used to get input from the user:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> <span style="color:#007020">prompt</span> &#34;<span style="color:#4070a0">What is your name? </span>&#34;;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> <span style="color:#007020">prompt</span> &#34;<span style="color:#4070a0">What is your name? </span>&#34;;
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello, </span><span style="color:#bb60d5">$name</span><span style="color:#4070a0">!</span>&#34;;
 </span></span></code></pre></div><p>For reading from a file, use the <code>slurp</code> function (for reading entire file content into a string) or the <code>IO::Handle</code> class for more complex file operations:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$file-content</span> <span style="color:#666">=</span> <span style="color:#007020">slurp</span>(&#34;<span style="color:#4070a0">my-file.txt</span>&#34;);
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$file-content</span> <span style="color:#666">=</span> <span style="color:#007020">slurp</span>(&#34;<span style="color:#4070a0">my-file.txt</span>&#34;);
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$file-content</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$fh</span> <span style="color:#666">=</span> <span style="color:#007020">open</span>(&#34;<span style="color:#4070a0">my-file.txt</span>&#34;<span style="color:#666">,</span> :<span style="color:#4070a0">r</span>); <span style="color:#60a0b0;font-style:italic">#open file for reading</span>
@@ -402,7 +402,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#working-with-strings">#</a>
 </h3>
 <p>Raku provides extensive support for string manipulation.  Strings are enclosed in double quotes (<code>&quot;</code>) or single quotes (<code>'</code>).  Double-quoted strings allow for interpolation (embedding variables within the string):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> &#34;<span style="color:#4070a0">Alice</span>&#34;;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$name</span> <span style="color:#666">=</span> &#34;<span style="color:#4070a0">Alice</span>&#34;;
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello, </span><span style="color:#bb60d5">$name</span><span style="color:#4070a0">!</span>&#34;;  <span style="color:#60a0b0;font-style:italic"># Interpolation; outputs &#34;Hello, Alice!&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> &#39;<span style="color:#4070a0">Hello, $name!</span>&#39;;  <span style="color:#60a0b0;font-style:italic"># No interpolation; outputs &#34;Hello, $name!&#34;</span>
 </span></span></code></pre></div><p>String methods include:</p>
@@ -418,7 +418,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#working-with-numbers">#</a>
 </h3>
 <p>Raku handles integers and floating-point numbers seamlessly.  Basic arithmetic operations are straightforward:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$a</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$a</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$b</span> <span style="color:#666">=</span> <span style="color:#40a070">3</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$a</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$b</span>;  <span style="color:#60a0b0;font-style:italic"># Addition</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$a</span> <span style="color:#666">-</span> <span style="color:#bb60d5">$b</span>;  <span style="color:#60a0b0;font-style:italic"># Subtraction</span>
@@ -426,7 +426,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$a</span> <span style="color:#666">/</span> <span style="color:#bb60d5">$b</span>;  <span style="color:#60a0b0;font-style:italic"># Division (floating-point result)</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$a</span> <span style="color:#bb60d5">%</span> <span style="color:#bb60d5">$b</span>;  <span style="color:#60a0b0;font-style:italic"># Modulo (remainder)</span>
 </span></span></code></pre></div><p>Raku also provides numerous math functions via the <code>Math</code> module:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Math</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Math</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#007020">sqrt</span>(<span style="color:#40a070">25</span>); <span style="color:#60a0b0;font-style:italic"># Square root</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#007020">sin</span>(<span style="color:#60add5">π</span><span style="color:#666">/</span><span style="color:#40a070">2</span>); <span style="color:#60a0b0;font-style:italic"># Sine function (requires importing π)</span>
 </span></span></code></pre></div><h3 class="heading" id="data-structures-arrays-hashes">
@@ -434,13 +434,13 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#data-structures-arrays-hashes">#</a>
 </h3>
 <p><strong>Arrays:</strong>  Ordered collections of elements.  Access elements using their index (starting from 0):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@array</span> <span style="color:#666">=</span> &lt;<span style="color:#4070a0">apple banana cherry</span>&gt;;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@array</span> <span style="color:#666">=</span> &lt;<span style="color:#4070a0">apple banana cherry</span>&gt;;
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">@array</span><span style="color:#666">[</span><span style="color:#40a070">0</span><span style="color:#666">]</span>; <span style="color:#60a0b0;font-style:italic"># Outputs: apple</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">@array</span><span style="color:#666">.</span><span style="color:#007020">elems</span>; <span style="color:#60a0b0;font-style:italic">#Number of elements in the array</span>
 </span></span><span style="display:flex;"><span><span style="color:#bb60d5">@array</span><span style="color:#666">.</span><span style="color:#007020">push</span>(&#34;<span style="color:#4070a0">date</span>&#34;); <span style="color:#60a0b0;font-style:italic"># Add an element to the end</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">@array</span>;
 </span></span></code></pre></div><p><strong>Hashes:</strong> Collections of key-value pairs. Access values using their keys:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">%hash</span> <span style="color:#666">=</span> <span style="color:#4070a0">fruit</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">apple</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">color</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">red</span>&#34;;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">%hash</span> <span style="color:#666">=</span> <span style="color:#4070a0">fruit</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">apple</span>&#34;<span style="color:#666">,</span> <span style="color:#4070a0">color</span> <span style="color:#666">=&gt;</span> &#34;<span style="color:#4070a0">red</span>&#34;;
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">%hash</span>&lt;<span style="color:#4070a0">fruit</span>&gt;;  <span style="color:#60a0b0;font-style:italic"># Outputs: apple</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">%hash</span><span style="color:#666">.</span><span style="color:#007020">keys</span>; <span style="color:#60a0b0;font-style:italic">#Outputs keys as a list</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">%hash</span><span style="color:#666">.</span><span style="color:#007020">values</span>; <span style="color:#60a0b0;font-style:italic">#Outputs values as a list</span>
@@ -455,7 +455,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#defining-functions">#</a>
 </h3>
 <p>In Raku, functions (and subroutines; the terms are often used interchangeably) are defined using the <code>sub</code> keyword followed by the function name, parameters in parentheses, and the code block enclosed in curly braces <code>{}</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#06287e">greet</span>(<span style="color:#902000">Str</span> <span style="color:#bb60d5">$name</span>) {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#06287e">greet</span>(<span style="color:#902000">Str</span> <span style="color:#bb60d5">$name</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello, </span><span style="color:#bb60d5">$name</span><span style="color:#4070a0">!</span>&#34;;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -466,7 +466,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#function-parameters">#</a>
 </h3>
 <p>Functions can accept multiple parameters, and you can specify parameter types for better type safety and code clarity.  Parameters can have default values:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#007020">add</span>(<span style="color:#902000">Int</span> <span style="color:#bb60d5">$a</span><span style="color:#666">,</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$b</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span>) { <span style="color:#60a0b0;font-style:italic"># $b has a default value of 0</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#007020">add</span>(<span style="color:#902000">Int</span> <span style="color:#bb60d5">$a</span><span style="color:#666">,</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$b</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span>) { <span style="color:#60a0b0;font-style:italic"># $b has a default value of 0</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#bb60d5">$a</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$b</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -488,7 +488,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#return-values">#</a>
 </h3>
 <p>Functions return values using the <code>return</code> keyword or implicitly by the last statement evaluated.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#06287e">square</span>(<span style="color:#902000">Numeric</span> <span style="color:#bb60d5">$x</span>) {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#06287e">square</span>(<span style="color:#902000">Numeric</span> <span style="color:#bb60d5">$x</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#bb60d5">$x</span> <span style="color:#666">*</span> <span style="color:#bb60d5">$x</span>; <span style="color:#60a0b0;font-style:italic"># Explicit return</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -503,7 +503,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#anonymous-functions">#</a>
 </h3>
 <p>Anonymous functions (also called closures or lambdas) are functions without a name. They are defined using the <code>-&gt;</code> operator:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$add</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$a</span><span style="color:#666">,</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$b</span> { <span style="color:#bb60d5">$a</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$b</span> };  <span style="color:#60a0b0;font-style:italic"># Anonymous function assigned to $add</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$add</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$a</span><span style="color:#666">,</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$b</span> { <span style="color:#bb60d5">$a</span> <span style="color:#666">+</span> <span style="color:#bb60d5">$b</span> };  <span style="color:#60a0b0;font-style:italic"># Anonymous function assigned to $add</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$add</span>(<span style="color:#40a070">7</span><span style="color:#666">,</span> <span style="color:#40a070">2</span>);  <span style="color:#60a0b0;font-style:italic"># Outputs 9</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">@numbers</span> <span style="color:#666">=</span> <span style="color:#40a070">1</span><span style="color:#666">..</span><span style="color:#40a070">5</span>;
@@ -519,7 +519,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#classes-and-objects">#</a>
 </h3>
 <p>Raku supports object-oriented programming (OOP) through classes and objects.  A class is a blueprint for creating objects.  Objects are instances of a class.  Classes are defined using the <code>class</code> keyword:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">has</span> <span style="color:#902000">Str</span> <span style="color:#bb60d5">$.name</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">has</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$.age</span>;
 </span></span><span style="display:flex;"><span>
@@ -537,7 +537,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#methods">#</a>
 </h3>
 <p>Methods are functions defined within a class. They operate on the object&rsquo;s data:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Cat</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">has</span> <span style="color:#902000">Str</span> <span style="color:#bb60d5">$.name</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">has</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$.age</span>;
 </span></span><span style="display:flex;"><span>
@@ -559,7 +559,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#inheritance">#</a>
 </h3>
 <p>Inheritance allows you to create new classes based on existing classes.  The new class inherits the attributes and methods of the parent class:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">has</span> <span style="color:#902000">Str</span> <span style="color:#bb60d5">$.name</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">has</span> <span style="color:#902000">Int</span> <span style="color:#bb60d5">$.age</span>;
 </span></span><span style="display:flex;"><span>
@@ -585,7 +585,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#polymorphism">#</a>
 </h3>
 <p>Polymorphism allows objects of different classes to respond to the same method call in their own specific way.  This is demonstrated in the inheritance example above: both <code>Animal</code> and <code>Dog</code> have a <code>speak</code> method, but they produce different outputs.  This is a key benefit of OOP in Raku, enabling flexibility and code reusability.  Another example could be using a common interface:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">role</span> <span style="color:#0e84b5;font-weight:bold">SoundMaker</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">role</span> <span style="color:#0e84b5;font-weight:bold">SoundMaker</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">method</span> <span style="color:#06287e">make-sound</span>() {
 </span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">A generic sound</span>&#34;;
 </span></span><span style="display:flex;"><span>    }
@@ -617,7 +617,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#exception-handling">#</a>
 </h3>
 <p>Raku uses <code>try</code>, <code>catch</code>, and <code>finally</code> blocks for exception handling.  Exceptions are objects that represent errors or exceptional situations during program execution.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">try</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">try</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$result</span> <span style="color:#666">=</span> <span style="color:#40a070">10</span> <span style="color:#666">/</span> <span style="color:#40a070">0</span>; <span style="color:#60a0b0;font-style:italic"># This will cause a division by zero error</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> <span style="color:#bb60d5">$result</span>;
 </span></span><span style="display:flex;"><span>} catch {
@@ -636,18 +636,18 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#modules-and-packages">#</a>
 </h3>
 <p>Modules and packages organize Raku code into reusable units. Modules contain code, while packages group related modules.  Modules are imported using the <code>use</code> keyword:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Math</span>; <span style="color:#60a0b0;font-style:italic">#Import the Math module</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">Math</span>; <span style="color:#60a0b0;font-style:italic">#Import the Math module</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#007020">sqrt</span>(<span style="color:#40a070">25</span>); <span style="color:#60a0b0;font-style:italic"># Use a function from the Math module</span>
 </span></span></code></pre></div><p>Creating your own module involves placing code in a file named <code>&lt;modulename&gt;.raku</code> (e.g., <code>MyModule.raku</code>) and using the <code>module</code> keyword:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># MyModule.raku</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># MyModule.raku</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">sub</span> <span style="color:#06287e">greet</span>(<span style="color:#902000">Str</span> <span style="color:#bb60d5">$name</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello from MyModule, </span><span style="color:#bb60d5">$name</span><span style="color:#4070a0">!</span>&#34;;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Then, you would import it into another file:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">use</span> <span style="color:#0e84b5;font-weight:bold">MyModule</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">greet</span>(&#34;<span style="color:#4070a0">World</span>&#34;); <span style="color:#60a0b0;font-style:italic">#Calls the greet subroutine from MyModule</span>
 </span></span></code></pre></div><p>Packages provide a way to group related modules to avoid naming conflicts.</p>
@@ -657,7 +657,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 </h3>
 <p>Raku offers built-in support for concurrency and parallelism. Concurrency involves managing multiple tasks seemingly at the same time, while parallelism involves running multiple tasks truly simultaneously on multiple cores.</p>
 <p><strong>Concurrency:</strong>  Raku&rsquo;s <code>start</code> keyword allows you to create and manage asynchronous tasks:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$promise</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">start</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#bb60d5">$promise</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">start</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020">sleep</span> <span style="color:#40a070">2</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> &#34;<span style="color:#4070a0">Task completed!</span>&#34;;
 </span></span><span style="display:flex;"><span>};
@@ -665,7 +665,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Doing other things...</span>&#34;;
 </span></span><span style="display:flex;"><span><span style="color:#007020">say</span> <span style="color:#bb60d5">$promise</span><span style="color:#666">.</span><span style="color:#007020">await</span>;  <span style="color:#60a0b0;font-style:italic"># Wait for the task to finish and get its result</span>
 </span></span></code></pre></div><p><strong>Parallelism:</strong> Raku&rsquo;s <code>react</code> construct enables running multiple tasks in parallel:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">react</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">react</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">whenever</span> <span style="color:#007020;font-weight:bold">supply</span> <span style="color:#40a070">1</span><span style="color:#666">..</span><span style="color:#40a070">5</span> <span style="color:#007020;font-weight:bold">-&gt;</span> <span style="color:#bb60d5">$i</span> {
 </span></span><span style="display:flex;"><span>      <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Processing number: </span><span style="color:#bb60d5">$i</span>&#34;;
 </span></span><span style="display:flex;"><span>    }
@@ -676,7 +676,7 @@ Raku (formerly known as Perl 6) is a powerful, dynamic, and highly expressive pr
   <a class="anchor" href="#metaprogramming">#</a>
 </h3>
 <p>Metaprogramming involves writing code that manipulates or generates other code at compile time or runtime.  Raku&rsquo;s powerful metaprogramming capabilities allow you to create DSLs (domain-specific languages), code generation tools, and other advanced features:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MyClass</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-raku" data-lang="raku"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">my</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MyClass</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">method</span> <span style="color:#06287e">foo</span>() {
 </span></span><span style="display:flex;"><span>        <span style="color:#007020">say</span> &#34;<span style="color:#4070a0">Hello from foo</span>&#34;;
 </span></span><span style="display:flex;"><span>    }

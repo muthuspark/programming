@@ -36,14 +36,14 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-hlsl/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-hlsl/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to HLSL">
-  <meta property="og:description" content="Introduction to HLSL # What is HLSL? # High-Level Shading Language (HLSL) is a programming language developed by Microsoft for writing shaders. Shaders are small programs that run on a graphics processing unit (GPU) to determine how objects are rendered on the screen. They control various aspects of rendering, including lighting, texturing, and effects. HLSL is specifically designed to be used with DirectX, Microsoft’s graphics API, making it a crucial tool for game developers and other graphics programmers working within the DirectX ecosystem. HLSL provides a relatively high-level interface, abstracting away many low-level GPU details, while still offering fine-grained control over the rendering process.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-20T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to HLSL">
+	<meta property="og:description" content="Introduction to HLSL # What is HLSL? # High-Level Shading Language (HLSL) is a programming language developed by Microsoft for writing shaders. Shaders are small programs that run on a graphics processing unit (GPU) to determine how objects are rendered on the screen. They control various aspects of rendering, including lighting, texturing, and effects. HLSL is specifically designed to be used with DirectX, Microsoft’s graphics API, making it a crucial tool for game developers and other graphics programmers working within the DirectX ecosystem. HLSL provides a relatively high-level interface, abstracting away many low-level GPU details, while still offering fine-grained control over the rendering process.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-01-20T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-20T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -297,7 +297,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 <li><strong><code>matrix</code>:</strong> Represents matrices (e.g., <code>matrix 4x4</code> for a 4x4 matrix).  Commonly used for transformations.</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float4</span> color <span style="color:#666">=</span> <span style="color:#902000">float4</span>(<span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">1.0f</span>); <span style="color:#60a0b0;font-style:italic">// Red color (RGBA)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float4</span> color <span style="color:#666">=</span> <span style="color:#902000">float4</span>(<span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">1.0f</span>); <span style="color:#60a0b0;font-style:italic">// Red color (RGBA)</span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">float3</span> position <span style="color:#666">=</span> <span style="color:#902000">float3</span>(<span style="color:#40a070">10.0f</span>, <span style="color:#40a070">5.0f</span>, <span style="color:#40a070">0.0f</span>);
 </span></span><span style="display:flex;"><span><span style="color:#902000">int</span> count <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">bool</span> isVisible <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span>;
@@ -315,7 +315,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 <li><strong>Bitwise Operators:</strong> <code>&amp;</code>, <code>|</code>, <code>^</code>, <code>~</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;</code> (These are less frequently used in typical shaders.)</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float</span> a <span style="color:#666">=</span> <span style="color:#40a070">10.0f</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float</span> a <span style="color:#666">=</span> <span style="color:#40a070">10.0f</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">float</span> b <span style="color:#666">=</span> <span style="color:#40a070">5.0f</span>;
 </span></span><span style="display:flex;"><span><span style="color:#902000">float</span> sum <span style="color:#666">=</span> a <span style="color:#666">+</span> b;
 </span></span><span style="display:flex;"><span><span style="color:#902000">bool</span> isEqual <span style="color:#666">=</span> (a <span style="color:#666">==</span> b);
@@ -327,7 +327,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 <ul>
 <li><strong><code>if</code>-<code>else</code>:</strong> Conditional execution of code blocks.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020">distance</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">10.0f</span>) {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020">distance</span> <span style="color:#666">&gt;</span> <span style="color:#40a070">10.0f</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">discard</span>; <span style="color:#60a0b0;font-style:italic">// Discard the current pixel</span>
 </span></span><span style="display:flex;"><span>} <span style="color:#007020;font-weight:bold">else</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Process the pixel</span>
@@ -335,13 +335,13 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 </span></span></code></pre></div><ul>
 <li><strong><code>for</code> loop:</strong> Iterative execution of a code block.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>; i<span style="color:#666">++</span>) {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>; i<span style="color:#666">++</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Do something 10 times</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><ul>
 <li><strong><code>while</code> loop:</strong>  Repeated execution of a code block as long as a condition is true.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (i <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// Do something until i reaches 10</span>
 </span></span><span style="display:flex;"><span>    i<span style="color:#666">++</span>;
@@ -352,12 +352,12 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 </h3>
 <p>Functions allow you to encapsulate reusable blocks of code.  HLSL provides many built-in functions (for example, mathematical functions, texture sampling functions), and you can also define your own custom functions.</p>
 <p><strong>Example (Custom Function):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float</span> calculateDistance(<span style="color:#902000">float3</span> a, <span style="color:#902000">float3</span> b) {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float</span> calculateDistance(<span style="color:#902000">float3</span> a, <span style="color:#902000">float3</span> b) {
 </span></span><span style="display:flex;"><span>  <span style="color:#902000">float3</span> diff <span style="color:#666">=</span> a <span style="color:#666">-</span> b;
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020">length</span>(diff); <span style="color:#60a0b0;font-style:italic">// length() is a built-in function</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><strong>Example (Calling a function):</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float</span> <span style="color:#007020">distance</span> <span style="color:#666">=</span> calculateDistance(<span style="color:#902000">float3</span>(<span style="color:#40a070">1</span>,<span style="color:#40a070">2</span>,<span style="color:#40a070">3</span>), <span style="color:#902000">float3</span>(<span style="color:#40a070">4</span>,<span style="color:#40a070">5</span>,<span style="color:#40a070">6</span>));
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float</span> <span style="color:#007020">distance</span> <span style="color:#666">=</span> calculateDistance(<span style="color:#902000">float3</span>(<span style="color:#40a070">1</span>,<span style="color:#40a070">2</span>,<span style="color:#40a070">3</span>), <span style="color:#902000">float3</span>(<span style="color:#40a070">4</span>,<span style="color:#40a070">5</span>,<span style="color:#40a070">6</span>));
 </span></span></code></pre></div><h3 class="heading" id="comments">
   Comments
   <a class="anchor" href="#comments">#</a>
@@ -366,11 +366,11 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 <ul>
 <li><strong>Single-line comments:</strong>  Start with <code>//</code> and extend to the end of the line.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// This is a single-line comment</span>
 </span></span></code></pre></div><ul>
 <li><strong>Multi-line comments:</strong>  Enclosed within <code>/*</code> and <code>*/</code>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/*
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">/*
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">This is a
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">multi-line comment
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">*/</span>
@@ -385,12 +385,12 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 </h3>
 <p>Vectors in HLSL are fundamental data structures representing collections of numbers.  They are extensively used to represent positions, directions, colors, and other multi-component data. HLSL provides built-in vector types: <code>float2</code>, <code>float3</code>, and <code>float4</code>, representing 2D, 3D, and 4D vectors, respectively.  Each component within a vector is a floating-point number.</p>
 <p><strong>Declaration and Initialization:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float2</span> uv <span style="color:#666">=</span> <span style="color:#902000">float2</span>(<span style="color:#40a070">0.5f</span>, <span style="color:#40a070">0.5f</span>); <span style="color:#60a0b0;font-style:italic">// Texture coordinates</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float2</span> uv <span style="color:#666">=</span> <span style="color:#902000">float2</span>(<span style="color:#40a070">0.5f</span>, <span style="color:#40a070">0.5f</span>); <span style="color:#60a0b0;font-style:italic">// Texture coordinates</span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">float3</span> position <span style="color:#666">=</span> <span style="color:#902000">float3</span>(<span style="color:#40a070">1.0f</span>, <span style="color:#40a070">2.0f</span>, <span style="color:#40a070">3.0f</span>); <span style="color:#60a0b0;font-style:italic">// 3D position</span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">float4</span> color <span style="color:#666">=</span> <span style="color:#902000">float4</span>(<span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">1.0f</span>); <span style="color:#60a0b0;font-style:italic">// Red color (RGBA)</span>
 </span></span></code></pre></div><p><strong>Accessing Vector Components:</strong></p>
 <p>Individual components of a vector can be accessed using their index (starting from 0):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float</span> x <span style="color:#666">=</span> position.x; <span style="color:#60a0b0;font-style:italic">// Access the x-component of &#39;position&#39;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float</span> x <span style="color:#666">=</span> position.x; <span style="color:#60a0b0;font-style:italic">// Access the x-component of &#39;position&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">float</span> r <span style="color:#666">=</span> color.r;     <span style="color:#60a0b0;font-style:italic">// Access the red component of &#39;color&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">float</span> y <span style="color:#666">=</span> uv[<span style="color:#40a070">1</span>];       <span style="color:#60a0b0;font-style:italic">// Another way to access the y-component of &#39;uv&#39;</span>
 </span></span></code></pre></div><p><strong>Built-in Vector Functions:</strong></p>
@@ -407,7 +407,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 </h3>
 <p>Matrices in HLSL are two-dimensional arrays of numbers. They are essential for representing transformations like rotations, translations, and scaling in 3D graphics.  HLSL supports various matrix types, notably <code>matrix</code>, which is typically a 4x4 matrix used for transformations in 3D space.</p>
 <p><strong>Declaration and Initialization:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">matrix</span> worldMatrix; <span style="color:#60a0b0;font-style:italic">// Declare a 4x4 matrix</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">matrix</span> worldMatrix; <span style="color:#60a0b0;font-style:italic">// Declare a 4x4 matrix</span>
 </span></span><span style="display:flex;"><span><span style="color:#902000">matrix</span> viewMatrix <span style="color:#666">=</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>,
@@ -439,7 +439,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 <li><strong>Scaling:</strong> Changing the size of an object. Represented by a scaling matrix.</li>
 </ul>
 <p>Applying transformations usually involves multiplying the object&rsquo;s position vector by the transformation matrix (or a combination of transformation matrices).  For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float4</span> transformedPosition <span style="color:#666">=</span> <span style="color:#007020">mul</span>(worldMatrix, <span style="color:#902000">float4</span>(position, <span style="color:#40a070">1.0f</span>));
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">float4</span> transformedPosition <span style="color:#666">=</span> <span style="color:#007020">mul</span>(worldMatrix, <span style="color:#902000">float4</span>(position, <span style="color:#40a070">1.0f</span>));
 </span></span></code></pre></div><p>This code snippet multiplies the <code>position</code> vector (converted to a <code>float4</code> by adding a <code>1.0f</code> w-component, typical for homogenous coordinates) by the <code>worldMatrix</code>, resulting in <code>transformedPosition</code> representing the object&rsquo;s position after applying the world transformation.  Multiple transformations (e.g., world, view, projection) are commonly combined by multiplying their corresponding matrices.</p>
 <h2 class="heading" id="vertex-shaders">
   Vertex Shaders
@@ -463,7 +463,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 </ul>
 <p><strong>Output Structure:</strong>  This structure usually includes the transformed vertex position (<code>float4 Position</code>), but may also pass on other attributes modified by the vertex shader.  The position is typically a <code>float4</code> using homogenous coordinates (w-component).</p>
 <p><strong>Example Structures:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Input structure</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Input structure</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> VS_INPUT
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">float3</span> Position <span style="color:#666">:</span> POSITION;
@@ -491,7 +491,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 </ol>
 <p>The final transformed position is then passed to the rasterizer.</p>
 <p><strong>Example Transformation Code:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>VS_OUTPUT main(VS_INPUT input)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>VS_OUTPUT main(VS_INPUT input)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    VS_OUTPUT output;
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">float4</span> worldPosition <span style="color:#666">=</span> <span style="color:#007020">mul</span>(<span style="color:#902000">float4</span>(input.Position, <span style="color:#40a070">1.0f</span>), worldMatrix); <span style="color:#60a0b0;font-style:italic">//Apply world matrix</span>
@@ -510,7 +510,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
   <a class="anchor" href="#example-simple-vertex-shader">#</a>
 </h3>
 <p>This example shows a basic vertex shader that transforms vertices and passes texture coordinates:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Input structure</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Input structure</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> VS_INPUT
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">float3</span> Position <span style="color:#666">:</span> POSITION;
@@ -554,7 +554,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 <p><strong>Input Structure:</strong>  This structure contains the interpolated values of the attributes passed from the vertex shader for the current pixel.  The interpolation is done by the rasterizer between the vertex attributes.</p>
 <p><strong>Output Structure:</strong> This structure typically contains a single <code>float4</code> representing the final color of the pixel (RGBA).</p>
 <p><strong>Example Structures:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Input structure</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Input structure</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> PS_INPUT
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">float4</span> Position <span style="color:#666">:</span> SV_POSITION; <span style="color:#60a0b0;font-style:italic">//Interpolated position (from VS)</span>
@@ -573,7 +573,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
   <a class="anchor" href="#coloring-pixels">#</a>
 </h3>
 <p>The simplest pixel shader assigns a solid color to each pixel:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>PS_OUTPUT main(PS_INPUT input)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>PS_OUTPUT main(PS_INPUT input)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    PS_OUTPUT output;
 </span></span><span style="display:flex;"><span>    output.Color <span style="color:#666">=</span> <span style="color:#902000">float4</span>(<span style="color:#40a070">1.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">0.0f</span>, <span style="color:#40a070">1.0f</span>); <span style="color:#60a0b0;font-style:italic">// Red color</span>
@@ -585,7 +585,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
   <a class="anchor" href="#texture-sampling">#</a>
 </h3>
 <p>Texture sampling is a crucial aspect of pixel shaders. It involves retrieving color data from a texture based on texture coordinates.  HLSL provides the <code>sampler2D</code> type and functions like <code>texture2D</code> to access textures:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>sampler2D myTexture <span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">register</span>(s0); <span style="color:#60a0b0;font-style:italic">//Declare a texture sampler</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>sampler2D myTexture <span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">register</span>(s0); <span style="color:#60a0b0;font-style:italic">//Declare a texture sampler</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>PS_OUTPUT main(PS_INPUT input)
 </span></span><span style="display:flex;"><span>{
@@ -599,7 +599,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
   <a class="anchor" href="#example-simple-pixel-shader">#</a>
 </h3>
 <p>This example shows a pixel shader that samples a texture and applies a simple color multiplication:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Input structure</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Input structure</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">struct</span> PS_INPUT
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#902000">float4</span> Position <span style="color:#666">:</span> SV_POSITION;
@@ -645,7 +645,7 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 <li><strong>Mipmap Levels:</strong>  Samplers can access mipmap levels (pre-generated lower-resolution versions of the texture) to optimize rendering at different distances.</li>
 </ul>
 <p><strong>Sampler Declaration:</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">SamplerState</span> mySampler <span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">register</span>(s0);
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#902000">SamplerState</span> mySampler <span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">register</span>(s0);
 </span></span></code></pre></div><p>This declares a sampler state named <code>mySampler</code> and assigns it to register <code>s0</code>. The sampler state&rsquo;s properties (filter type, address mode, etc.) are set in your application code.</p>
 <h3 class="heading" id="texture-filtering">
   Texture Filtering
@@ -658,8 +658,8 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 <li><strong>Anisotropic Filtering:</strong>  A more advanced technique that provides higher-quality filtering for textures viewed at oblique angles.  It reduces blurring and artifacts along elongated surfaces.</li>
 </ul>
 <p>These filtering methods are configured through the sampler state.  For example,  using point sampling might look like this in your application code (DirectX specific):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// DirectX code (Illustrative)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>D3D11_SAMPLER_DESC sampDesc;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// DirectX code (Illustrative)
+</span></span></span><span style="display:flex;"><span>D3D11_SAMPLER_DESC sampDesc;
 </span></span><span style="display:flex;"><span>ZeroMemory(<span style="color:#666">&amp;</span>sampDesc, <span style="color:#007020;font-weight:bold">sizeof</span>(sampDesc));
 </span></span><span style="display:flex;"><span>sampDesc.Filter <span style="color:#666">=</span> D3D11_FILTER_MIN_MAG_MIP_POINT; <span style="color:#60a0b0;font-style:italic">//Point sampling
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// ... other sampler state settings ...
@@ -674,8 +674,8 @@ High-Level Shading Language (HLSL) is a programming language developed by Micros
 <li><strong>Mirror:</strong> The texture coordinates are mirrored.</li>
 </ul>
 <p>These modes also influence how the texture behaves at the edges, affecting the visual appearance.  These are set within the sampler state description in your application&rsquo;s DirectX code, similar to how filtering is set. For example, setting a clamp address mode might look similar to this (DirectX specific):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// DirectX code (Illustrative)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>sampDesc.AddressU <span style="color:#666">=</span> D3D11_TEXTURE_ADDRESS_CLAMP;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// DirectX code (Illustrative)
+</span></span></span><span style="display:flex;"><span>sampDesc.AddressU <span style="color:#666">=</span> D3D11_TEXTURE_ADDRESS_CLAMP;
 </span></span><span style="display:flex;"><span>sampDesc.AddressV <span style="color:#666">=</span> D3D11_TEXTURE_ADDRESS_CLAMP;
 </span></span><span style="display:flex;"><span>sampDesc.AddressW <span style="color:#666">=</span> D3D11_TEXTURE_ADDRESS_CLAMP; <span style="color:#60a0b0;font-style:italic">//For 3D textures
 </span></span></span></code></pre></div><p>Properly selecting texture filtering and addressing modes is crucial for achieving high-quality visuals in your application and minimizing artifacts.  The choice depends on the specific visual style and performance requirements.</p>

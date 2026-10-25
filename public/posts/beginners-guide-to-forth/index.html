@@ -36,14 +36,14 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-forth/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-forth/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Forth">
-  <meta property="og:description" content="Introduction to Forth # What is Forth? # Forth is a highly unusual and powerful stack-based programming language. Unlike most languages where code operates on variables stored in memory locations, Forth primarily manipulates data residing on a stack. This stack is a Last-In, First-Out (LIFO) data structure. Operations are performed directly on the top elements of the stack, pushing results back onto the stack. This leads to a concise and efficient coding style. Forth is also extensible; programmers can define new words (functions or commands) from existing ones, building up complex functionality from simple primitives. The language itself is highly interactive, allowing for immediate testing and experimentation within a command-line interpreter (REPL). It’s often described as a “concatenative” language because words are concatenated to create more complex words.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-01-06T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-06T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Forth">
+	<meta property="og:description" content="Introduction to Forth # What is Forth? # Forth is a highly unusual and powerful stack-based programming language. Unlike most languages where code operates on variables stored in memory locations, Forth primarily manipulates data residing on a stack. This stack is a Last-In, First-Out (LIFO) data structure. Operations are performed directly on the top elements of the stack, pushing results back onto the stack. This leads to a concise and efficient coding style. Forth is also extensible; programmers can define new words (functions or commands) from existing ones, building up complex functionality from simple primitives. The language itself is highly interactive, allowing for immediate testing and experimentation within a command-line interpreter (REPL). It’s often described as a “concatenative” language because words are concatenated to create more complex words.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-01-06T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-01-06T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -328,10 +328,10 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
   <a class="anchor" href="#defining-and-using-your-own-words">#</a>
 </h3>
 <p>One of Forth&rsquo;s most powerful features is its extensibility. You define new words using a simple colon definition:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">SQUARE</span> <span style="color:#60a0b0;font-style:italic">( n -- n^2 )</span> <span style="color:#007020;font-weight:bold">DUP * ;
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">SQUARE</span> <span style="color:#60a0b0;font-style:italic">( n -- n^2 )</span> <span style="color:#007020;font-weight:bold">DUP * ;
 </span></span></span></code></pre></div><p>This defines a word called <code>SQUARE</code>.  The part within the parentheses <code>( n -- n^2 )</code> is called a stack comment. It shows how the stack changes; <code>n</code> represents a number on the stack before the word is executed, and <code>n^2</code> shows the result on the stack afterward.   <code>DUP *</code> represents the operations performed.  <code>DUP</code> duplicates the number, and <code>*</code> multiplies the top two elements.</p>
 <p>To use the newly defined <code>SQUARE</code> word:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#40a070">5</span> <span style="color:#06287e">SQUARE</span> <span style="color:#007020;font-weight:bold">.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#40a070">5</span> <span style="color:#06287e">SQUARE</span> <span style="color:#007020;font-weight:bold">.
 </span></span></span></code></pre></div><p>This pushes <code>5</code> onto the stack, executes <code>SQUARE</code> (which squares it), and then uses the <code>.</code> (dot) word to print the result (<code>25</code>) to the console.</p>
 <p>Defining your own words is the basis of building complex functionality in Forth, allowing you to structure code into manageable and reusable components.  You can build upon these components, layer upon layer, to create increasingly sophisticated programs.</p>
 <h2 class="heading" id="core-forth-syntax-and-vocabulary">
@@ -382,14 +382,14 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
 <ul>
 <li>
 <p><strong>Variables:</strong> Variables are created using the <code>VARIABLE</code> word, followed by the variable name.  A variable holds a single value that can be changed during program execution.  The <code>!</code> (store) word places a value into a variable, and the <code>@</code> (fetch) word retrieves the value.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">VARIABLE</span> <span style="color:#0e84b5;font-weight:bold">MYVAR</span>  <span style="color:#60a0b0;font-style:italic">\ Creates a variable named MYVAR
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#40a070">10</span> <span style="color:#06287e">MYVAR</span> <span style="color:#007020;font-weight:bold">! </span>     <span style="color:#60a0b0;font-style:italic">\ Stores 10 in MYVAR
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">MYVAR</span> <span style="color:#007020;font-weight:bold">@ . </span>      <span style="color:#60a0b0;font-style:italic">\ Retrieves and prints the value of MYVAR (10)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">VARIABLE</span> <span style="color:#0e84b5;font-weight:bold">MYVAR</span>  <span style="color:#60a0b0;font-style:italic">\ Creates a variable named MYVAR
+</span></span></span><span style="display:flex;"><span><span style="color:#40a070">10</span> <span style="color:#06287e">MYVAR</span> <span style="color:#007020;font-weight:bold">! </span>     <span style="color:#60a0b0;font-style:italic">\ Stores 10 in MYVAR
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">MYVAR</span> <span style="color:#007020;font-weight:bold">@ . </span>      <span style="color:#60a0b0;font-style:italic">\ Retrieves and prints the value of MYVAR (10)
 </span></span></span></code></pre></div></li>
 <li>
 <p><strong>Constants:</strong> Constants are created using the <code>CONSTANT</code> word, followed by the constant name and value.  Once defined, the value of a constant cannot be changed.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CONSTANT</span> <span style="color:#0e84b5;font-weight:bold">PI</span> <span style="color:#40a070">3</span><span style="color:#902000">.14159</span>  <span style="color:#60a0b0;font-style:italic">\ Defines a constant PI
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">PI</span> <span style="color:#007020;font-weight:bold">. </span>              <span style="color:#60a0b0;font-style:italic">\ Prints the value of PI
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CONSTANT</span> <span style="color:#0e84b5;font-weight:bold">PI</span> <span style="color:#40a070">3</span><span style="color:#902000">.14159</span>  <span style="color:#60a0b0;font-style:italic">\ Defines a constant PI
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">PI</span> <span style="color:#007020;font-weight:bold">. </span>              <span style="color:#60a0b0;font-style:italic">\ Prints the value of PI
 </span></span></span></code></pre></div></li>
 </ul>
 <h3 class="heading" id="control-structures-if-else-then">
@@ -397,11 +397,11 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
   <a class="anchor" href="#control-structures-if-else-then">#</a>
 </h3>
 <p>Forth provides conditional execution using <code>IF</code>, <code>ELSE</code>, and <code>THEN</code>. The syntax is straightforward:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">TEST</span> <span style="color:#60a0b0;font-style:italic">( flag -- )</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">TEST</span> <span style="color:#60a0b0;font-style:italic">( flag -- )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">DUP IF </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">True</span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">CR ELSE </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">False</span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">CR THEN ;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#40a070">1</span> <span style="color:#06287e">TEST</span> <span style="color:#60a0b0;font-style:italic">\ Prints &#34;True&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#40a070">0</span> <span style="color:#06287e">TEST</span> <span style="color:#60a0b0;font-style:italic">\ Prints &#34;False&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#40a070">0</span> <span style="color:#06287e">TEST</span> <span style="color:#60a0b0;font-style:italic">\ Prints &#34;False&#34;
 </span></span></span></code></pre></div><p>The <code>IF</code> word checks the top stack element (a flag, typically 0 for false and anything else for true). If true, the code between <code>IF</code> and <code>ELSE</code> (or <code>IF</code> and <code>THEN</code> if no <code>ELSE</code> is present) is executed. Otherwise, the code between <code>ELSE</code> and <code>THEN</code> is executed (if present). The <code>THEN</code> word marks the end of the conditional block.</p>
 <h3 class="heading" id="control-structures-begin-again-until-while-repeat">
   Control Structures: BEGIN, AGAIN, UNTIL, WHILE, REPEAT
@@ -420,9 +420,9 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
 </li>
 </ul>
 <p>Example using <code>BEGIN ... UNTIL</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">COUNTDOWN</span> <span style="color:#60a0b0;font-style:italic">( n -- )</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">COUNTDOWN</span> <span style="color:#60a0b0;font-style:italic">( n -- )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">BEGIN DUP 0&gt; WHILE DUP . 1- REPEAT DROP ;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#40a070">5</span> <span style="color:#06287e">COUNTDOWN</span> <span style="color:#60a0b0;font-style:italic">\ Prints 5 4 3 2 1
 </span></span></span></code></pre></div><p>The <code>COUNTDOWN</code> word demonstrates a loop that counts down from a given number until it reaches 0.  The <code>DUP 0&gt;</code> condition within the <code>WHILE</code> statement ensures that the loop continues as long as the current number is greater than 0.  The <code>DROP</code> word removes the final 0 from the stack after the loop terminates.  Note that other variations or combinations of these words might exist in different Forth dialects.  Understanding their core functionality is key to writing iterative Forth code.</p>
 <h2 class="heading" id="data-structures-in-forth">
@@ -436,17 +436,17 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
 </h3>
 <p>Forth doesn&rsquo;t have built-in array types in the same way as languages like C++ or Python. However, arrays can be simulated using contiguous memory locations. You allocate a block of memory using a word like <code>ALLOCATE</code> (the specific word may vary depending on the Forth system) and then access elements using pointer arithmetic.</p>
 <p>Example (Illustrative, the exact words might vary across Forth systems):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">\ Allocate space for an array of 10 integers
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#40a070">10</span> <span style="color:#007020;font-weight:bold">2* </span> <span style="color:#60a0b0;font-style:italic">\ 2 bytes per integer (assuming 16-bit integers)  ALLOCATE  CREATE myarray
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">\ Allocate space for an array of 10 integers
+</span></span></span><span style="display:flex;"><span><span style="color:#40a070">10</span> <span style="color:#007020;font-weight:bold">2* </span> <span style="color:#60a0b0;font-style:italic">\ 2 bytes per integer (assuming 16-bit integers)  ALLOCATE  CREATE myarray
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">\Store values
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#40a070">0</span> <span style="color:#06287e">myarray</span> <span style="color:#007020;font-weight:bold">! </span> <span style="color:#60a0b0;font-style:italic">\ Store 0 at the beginning of the array
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#40a070">2</span> <span style="color:#06287e">myarray</span> <span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">+ ! </span><span style="color:#60a0b0;font-style:italic">\ Store 2 at myarray[1]
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#40a070">4</span> <span style="color:#06287e">myarray</span> <span style="color:#40a070">4</span> <span style="color:#007020;font-weight:bold">+ ! </span><span style="color:#60a0b0;font-style:italic">\ Store 4 at myarray[2]
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span><span style="color:#40a070">0</span> <span style="color:#06287e">myarray</span> <span style="color:#007020;font-weight:bold">! </span> <span style="color:#60a0b0;font-style:italic">\ Store 0 at the beginning of the array
+</span></span></span><span style="display:flex;"><span><span style="color:#40a070">2</span> <span style="color:#06287e">myarray</span> <span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">+ ! </span><span style="color:#60a0b0;font-style:italic">\ Store 2 at myarray[1]
+</span></span></span><span style="display:flex;"><span><span style="color:#40a070">4</span> <span style="color:#06287e">myarray</span> <span style="color:#40a070">4</span> <span style="color:#007020;font-weight:bold">+ ! </span><span style="color:#60a0b0;font-style:italic">\ Store 4 at myarray[2]
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">\ Access values
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">myarray</span> <span style="color:#007020;font-weight:bold">@ . </span><span style="color:#60a0b0;font-style:italic">\ Prints the value of myarray[0]
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">myarray</span> <span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">+ @ . </span><span style="color:#60a0b0;font-style:italic">\ Prints the value of myarray[1]
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">myarray</span> <span style="color:#007020;font-weight:bold">@ . </span><span style="color:#60a0b0;font-style:italic">\ Prints the value of myarray[0]
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">myarray</span> <span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">+ @ . </span><span style="color:#60a0b0;font-style:italic">\ Prints the value of myarray[1]
 </span></span></span></code></pre></div><p>This example uses <code>CREATE</code> to define a variable that holds the starting address of the allocated memory and <code>!</code> and <code>@</code> to store to and fetch from memory.  Remember that array indices start at 0.  Error handling (checking for out-of-bounds access) is usually the programmer&rsquo;s responsibility.</p>
 <h3 class="heading" id="structures">
   Structures
@@ -454,28 +454,28 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
 </h3>
 <p>Similar to arrays, Forth doesn&rsquo;t have a direct equivalent of structures (or structs) in the same way as C or C++. Structures are usually implemented using contiguous memory blocks.  You&rsquo;d define offsets for each member of the structure and use these offsets to access individual fields.  This requires careful management of memory addresses and sizes.</p>
 <p>Example (Illustrative, system-specific words may differ):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">\ Define a structure for a point (x, y coordinates)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">CREATE </span><span style="color:#06287e">point</span>  <span style="color:#60a0b0;font-style:italic">\ Creates a variable to hold the address of the structure
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">\ Define a structure for a point (x, y coordinates)
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE </span><span style="color:#06287e">point</span>  <span style="color:#60a0b0;font-style:italic">\ Creates a variable to hold the address of the structure
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">\ Define offsets
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">CONSTANT</span> <span style="color:#0e84b5;font-weight:bold">x-offset</span> <span style="color:#40a070">0</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CONSTANT</span> <span style="color:#0e84b5;font-weight:bold">x-offset</span> <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CONSTANT</span> <span style="color:#0e84b5;font-weight:bold">y-offset</span> <span style="color:#40a070">2</span>  <span style="color:#60a0b0;font-style:italic">\ Assuming 2-byte integers
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">create-point</span> <span style="color:#60a0b0;font-style:italic">( x y -- )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">point</span> <span style="color:#007020;font-weight:bold">@ </span> <span style="color:#60a0b0;font-style:italic">\ Get the base address of the structure
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">DUP </span><span style="color:#06287e">x-offset</span> <span style="color:#007020;font-weight:bold">+ ! </span><span style="color:#60a0b0;font-style:italic">\ Store x
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">SWAP </span><span style="color:#06287e">y-offset</span> <span style="color:#007020;font-weight:bold">+ ! </span><span style="color:#60a0b0;font-style:italic">\ Store y
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">DUP </span><span style="color:#06287e">x-offset</span> <span style="color:#007020;font-weight:bold">+ ! </span><span style="color:#60a0b0;font-style:italic">\ Store x
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">SWAP </span><span style="color:#06287e">y-offset</span> <span style="color:#007020;font-weight:bold">+ ! </span><span style="color:#60a0b0;font-style:italic">\ Store y
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">;
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">get-x</span> <span style="color:#60a0b0;font-style:italic">( addr -- x )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">x-offset</span> <span style="color:#007020;font-weight:bold">+ @ ;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">get-y</span> <span style="color:#60a0b0;font-style:italic">( addr -- y )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">y-offset</span> <span style="color:#007020;font-weight:bold">+ @ ;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#40a070">10</span> <span style="color:#40a070">20</span> <span style="color:#06287e">create-point</span> <span style="color:#60a0b0;font-style:italic">\ Create a point (10, 20)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">point</span> <span style="color:#007020;font-weight:bold">@ </span><span style="color:#06287e">get-x</span> <span style="color:#007020;font-weight:bold">. </span><span style="color:#60a0b0;font-style:italic">\ Print the x coordinate
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#06287e">point</span> <span style="color:#007020;font-weight:bold">@ </span><span style="color:#06287e">get-y</span> <span style="color:#007020;font-weight:bold">. </span><span style="color:#60a0b0;font-style:italic">\ Print the y coordinate
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">point</span> <span style="color:#007020;font-weight:bold">@ </span><span style="color:#06287e">get-x</span> <span style="color:#007020;font-weight:bold">. </span><span style="color:#60a0b0;font-style:italic">\ Print the x coordinate
+</span></span></span><span style="display:flex;"><span><span style="color:#06287e">point</span> <span style="color:#007020;font-weight:bold">@ </span><span style="color:#06287e">get-y</span> <span style="color:#007020;font-weight:bold">. </span><span style="color:#60a0b0;font-style:italic">\ Print the y coordinate
 </span></span></span></code></pre></div><p>This illustrates a basic structure representation.  Again, error handling and robust memory management are the developer&rsquo;s responsibility.</p>
 <h3 class="heading" id="memory-management">
   Memory Management
@@ -520,13 +520,13 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
 </h3>
 <p>While not as visually apparent as in some other languages, recursion is possible in Forth.  However, since Forth operates on a stack, excessive recursion can quickly lead to stack overflow errors. It&rsquo;s vital to use recursion judiciously and ensure your recursive functions have a well-defined base case to prevent infinite loops.  Usually, recursion in Forth is implemented by defining a word that calls itself.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">factorial</span> <span style="color:#60a0b0;font-style:italic">( n -- n! )</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">factorial</span> <span style="color:#60a0b0;font-style:italic">( n -- n! )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">DUP </span><span style="color:#40a070">1</span> <span style="color:#007020;font-weight:bold">&gt; IF
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">DUP 1- RECURSE *
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>  <span style="color:#007020;font-weight:bold">ELSE
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">DROP </span><span style="color:#40a070">1</span>
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">DUP 1- RECURSE *
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">ELSE
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">DROP </span><span style="color:#40a070">1</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">THEN ;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#40a070">5</span> <span style="color:#06287e">factorial</span> <span style="color:#007020;font-weight:bold">. </span><span style="color:#60a0b0;font-style:italic">\ Output: 120
 </span></span></span></code></pre></div><p>This example demonstrates a recursive calculation of a factorial.  Note that the recursive call <code>RECURSE</code> is used within the <code>IF</code> condition. The <code>ELSE</code> condition defines the base case (when <code>n</code> is not greater than 1).</p>
 <h3 class="heading" id="metaprogramming-in-forth">
@@ -544,33 +544,33 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
   <a class="anchor" href="#simple-calculator">#</a>
 </h3>
 <p>A simple calculator is an excellent introductory project. It can perform basic arithmetic operations (+, -, *, /) on numbers entered by the user.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">get-number</span> <span style="color:#60a0b0;font-style:italic">( -- n )</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">get-number</span> <span style="color:#60a0b0;font-style:italic">( -- n )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">CR </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Enter a number: </span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">ACCEPT </span><span style="color:#06287e">NUMBER</span> <span style="color:#007020;font-weight:bold">;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">calculate</span> <span style="color:#60a0b0;font-style:italic">( -- )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">get-number</span> <span style="color:#06287e">get-number</span> <span style="color:#007020;font-weight:bold">+ CR </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Result: </span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">. ;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">subtract</span> <span style="color:#60a0b0;font-style:italic">( -- )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">get-number</span> <span style="color:#06287e">get-number</span> <span style="color:#007020;font-weight:bold">- CR </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Result: </span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">. ;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">multiply</span> <span style="color:#60a0b0;font-style:italic">( -- )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">get-number</span> <span style="color:#06287e">get-number</span> <span style="color:#007020;font-weight:bold">* CR </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Result: </span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">. ;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">divide</span> <span style="color:#60a0b0;font-style:italic">( -- )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">get-number</span> <span style="color:#06287e">get-number</span> <span style="color:#007020;font-weight:bold">/ CR </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Result: </span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">. ;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">calculator</span> <span style="color:#60a0b0;font-style:italic">( -- )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">BEGIN
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">CR </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">1: Add, 2: Subtract, 3: Multiply, 4: Divide, 0: Exit</span><span style="color:#06287e">&#34;</span>
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">CR </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">1: Add, 2: Subtract, 3: Multiply, 4: Divide, 0: Exit</span><span style="color:#06287e">&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Enter your choice: </span><span style="color:#06287e">&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#06287e">NUMBER</span> <span style="color:#007020;font-weight:bold">DUP </span><span style="color:#40a070">1</span> <span style="color:#06287e">=</span> <span style="color:#007020;font-weight:bold">IF </span><span style="color:#06287e">calculate</span> <span style="color:#007020;font-weight:bold">EXIT THEN
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">DUP </span><span style="color:#40a070">2</span> <span style="color:#06287e">=</span> <span style="color:#007020;font-weight:bold">IF </span><span style="color:#06287e">subtract</span> <span style="color:#007020;font-weight:bold">EXIT THEN
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">DUP </span><span style="color:#40a070">3</span> <span style="color:#06287e">=</span> <span style="color:#007020;font-weight:bold">IF </span><span style="color:#06287e">multiply</span> <span style="color:#007020;font-weight:bold">EXIT THEN
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">DUP </span><span style="color:#40a070">4</span> <span style="color:#06287e">=</span> <span style="color:#007020;font-weight:bold">IF </span><span style="color:#06287e">divide</span> <span style="color:#007020;font-weight:bold">EXIT THEN
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">DUP </span><span style="color:#40a070">0</span> <span style="color:#06287e">=</span> <span style="color:#007020;font-weight:bold">IF EXIT THEN
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">DROP </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Invalid choice</span><span style="color:#06287e">&#34;</span>
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">DUP </span><span style="color:#40a070">2</span> <span style="color:#06287e">=</span> <span style="color:#007020;font-weight:bold">IF </span><span style="color:#06287e">subtract</span> <span style="color:#007020;font-weight:bold">EXIT THEN
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">DUP </span><span style="color:#40a070">3</span> <span style="color:#06287e">=</span> <span style="color:#007020;font-weight:bold">IF </span><span style="color:#06287e">multiply</span> <span style="color:#007020;font-weight:bold">EXIT THEN
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">DUP </span><span style="color:#40a070">4</span> <span style="color:#06287e">=</span> <span style="color:#007020;font-weight:bold">IF </span><span style="color:#06287e">divide</span> <span style="color:#007020;font-weight:bold">EXIT THEN
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">DUP </span><span style="color:#40a070">0</span> <span style="color:#06287e">=</span> <span style="color:#007020;font-weight:bold">IF EXIT THEN
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">DROP </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Invalid choice</span><span style="color:#06287e">&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">AGAIN ;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">calculator</span>
 </span></span></code></pre></div><p>This example demonstrates basic input (<code>ACCEPT</code>, <code>NUMBER</code>), arithmetic operations, and conditional logic (<code>IF</code>, <code>THEN</code>, <code>ELSE</code>).  Error handling (e.g., division by zero) could be added to enhance robustness.</p>
 <h3 class="heading" id="text-based-game">
@@ -578,15 +578,15 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
   <a class="anchor" href="#text-based-game">#</a>
 </h3>
 <p>A simple text-based game like &ldquo;Hangman&rdquo; or &ldquo;Guess the Number&rdquo; is an excellent way to practice using control structures, strings, and user input.  Let’s outline a “Guess the Number” game:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">guess-number</span> <span style="color:#60a0b0;font-style:italic">( -- )</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">guess-number</span> <span style="color:#60a0b0;font-style:italic">( -- )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#40a070">100</span> <span style="color:#40a070">1</span> <span style="color:#06287e">RANDOM</span>  <span style="color:#60a0b0;font-style:italic">\ Generate a random number between 1 and 100
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">BEGIN
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">CR </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Guess a number (1-100): </span><span style="color:#06287e">&#34;</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">BEGIN
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">CR </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Guess a number (1-100): </span><span style="color:#06287e">&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#06287e">NUMBER</span> <span style="color:#007020;font-weight:bold">DUP </span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">OVER </span><span style="color:#06287e">=</span> <span style="color:#007020;font-weight:bold">IF </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">You got it!</span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">EXIT THEN
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">OVER &lt; IF </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Too low!</span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">ELSE </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Too high!</span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">THEN
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>  <span style="color:#007020;font-weight:bold">AGAIN ;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">OVER &lt; IF </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Too low!</span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">ELSE </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Too high!</span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">THEN
+</span></span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">AGAIN ;
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">guess-number</span>
 </span></span></code></pre></div><p>This simplified example demonstrates using random number generation (<code>RANDOM</code>), user input, and loops (<code>BEGIN</code>, <code>AGAIN</code>).  More sophisticated games would involve more complex logic, potentially including scoring, multiple levels, and more extensive user interaction.</p>
 <h3 class="heading" id="working-with-external-hardware">
@@ -596,15 +596,15 @@ Forth is a highly unusual and powerful stack-based programming language. Unlike 
 <p>Interfacing with external hardware is a more advanced application but demonstrates Forth&rsquo;s power in embedded systems.  This requires understanding the specific hardware and its communication protocols (e.g., I2C, SPI).  The implementation will be highly system-specific, depending on the hardware, operating system, and Forth system being used.  The examples below are highly illustrative and would need adaptations based on the particular hardware and Forth system.</p>
 <p><strong>Illustrative Example (Conceptual):</strong></p>
 <p>Assume you have a sensor connected to a port that returns a value when you send a specific command.  A simplified Forth interaction might look like this:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">\ Assuming &#39;send-command&#39; and &#39;read-sensor&#39; are Forth words
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-forth" data-lang="forth"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">\ Assuming &#39;send-command&#39; and &#39;read-sensor&#39; are Forth words
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">\ that interface with the specific hardware
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">read-sensor-value</span> <span style="color:#60a0b0;font-style:italic">( -- value )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">send-command</span> <span style="color:#06287e">read-sensor</span> <span style="color:#007020;font-weight:bold">;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">:</span> <span style="color:#0e84b5;font-weight:bold">process-sensor-data</span> <span style="color:#60a0b0;font-style:italic">( -- )</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#06287e">read-sensor-value</span> <span style="color:#007020;font-weight:bold">CR </span><span style="color:#4070a0">.&#34;</span> <span style="color:#4070a0">Sensor value: </span><span style="color:#06287e">&#34;</span> <span style="color:#007020;font-weight:bold">. ;
-</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#06287e">process-sensor-data</span>
 </span></span></code></pre></div><p>This showcases the fundamental steps: sending a command to the hardware, receiving data, and processing it.  The specifics of <code>send-command</code> and <code>read-sensor</code> depend entirely on the communication protocols and the hardware&rsquo;s interface.  This area necessitates a detailed understanding of both Forth and the hardware&rsquo;s technical documentation. Remember to always consult the datasheet of your hardware and your Forth system&rsquo;s documentation to ensure you are using the appropriate words and addressing hardware correctly to prevent damage.</p>
 <h2 class="heading" id="where-to-go-from-here">

@@ -36,14 +36,14 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 <link rel="canonical" href="https://programming.muthu.co/posts/beginners-guide-to-lua/"/>
 
 <meta property="og:url" content="https://programming.muthu.co/posts/beginners-guide-to-lua/">
-  <meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
-  <meta property="og:title" content="Beginner&#39;s Guide to Lua">
-  <meta property="og:description" content="Introduction to Lua # What is Lua? # Lua is a powerful, lightweight, and embeddable scripting language. Its design emphasizes simplicity, efficiency, and ease of use. It’s often used to extend the functionality of applications, games, and other software, but it’s also perfectly capable of standing on its own as a general-purpose scripting language. Lua’s syntax is relatively straightforward and easy to learn, making it accessible to both beginners and experienced programmers. Its small footprint means it can be readily integrated into resource-constrained environments.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-03-02T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-02T00:00:00+00:00">
+	<meta property="og:site_name" content="Beginner&#39;s Guide to Programming Languages">
+	<meta property="og:title" content="Beginner&#39;s Guide to Lua">
+	<meta property="og:description" content="Introduction to Lua # What is Lua? # Lua is a powerful, lightweight, and embeddable scripting language. Its design emphasizes simplicity, efficiency, and ease of use. It’s often used to extend the functionality of applications, games, and other software, but it’s also perfectly capable of standing on its own as a general-purpose scripting language. Lua’s syntax is relatively straightforward and easy to learn, making it accessible to both beginners and experienced programmers. Its small footprint means it can be readily integrated into resource-constrained environments.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-03-02T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-03-02T00:00:00+00:00">
 
 
 
@@ -57,7 +57,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.bf20fa3116bb88b8098b0b269e05388206df54bfad8b25fbabaea60c51d46ce2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.c94c2ae00490bb83d637db9419f2f7f4b69c0302eb0790a9e12071cbd6f8b621.css" media="all">
 
 
 
@@ -65,7 +65,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-78L71VCGB2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -257,7 +257,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
   <a class="anchor" href="#running-your-first-lua-script">#</a>
 </h3>
 <p>Once you have the Lua interpreter set up, create a new text file (e.g., <code>hello.lua</code>) and add the following code:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;Hello, world!&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;Hello, world!&#34;</span>)
 </span></span></code></pre></div><p>Save the file.  To run this script, open your command line or terminal, navigate to the directory where you saved <code>hello.lua</code>, and type <code>lua hello.lua</code> (or <code>lua.exe hello.lua</code> on Windows).  Press Enter.  You should see the message &ldquo;Hello, world!&rdquo; printed to the console. This simple program demonstrates the basic structure of a Lua script and the use of the <code>print</code> function to display output.  Congratulations, you&rsquo;ve run your first Lua program!</p>
 <h2 class="heading" id="basic-syntax-and-data-types">
   Basic Syntax and Data Types
@@ -274,11 +274,11 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 <li><strong>Booleans:</strong> Lua uses the keywords <code>true</code> and <code>false</code> to represent boolean values.</li>
 </ul>
 <p>Variable assignment is done using the <code>=</code> operator.  For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#40a070">10</span>          <span style="color:#60a0b0;font-style:italic">-- Number</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#40a070">10</span>          <span style="color:#60a0b0;font-style:italic">-- Number</span>
 </span></span><span style="display:flex;"><span>name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Lua&#34;</span>    <span style="color:#60a0b0;font-style:italic">-- String</span>
 </span></span><span style="display:flex;"><span>is_active <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span> <span style="color:#60a0b0;font-style:italic">-- Boolean</span>
 </span></span></code></pre></div><p>You can also declare multiple variables on a single line:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>a, b, c <span style="color:#666">=</span> <span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>a, b, c <span style="color:#666">=</span> <span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>
 </span></span></code></pre></div><h3 class="heading" id="operators-arithmetic-comparison-logical">
   Operators (Arithmetic, Comparison, Logical)
   <a class="anchor" href="#operators-arithmetic-comparison-logical">#</a>
@@ -290,7 +290,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 <li><strong>Logical Operators:</strong> <code>and</code>, <code>or</code>, <code>not</code></li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>result <span style="color:#666">=</span> <span style="color:#40a070">10</span> <span style="color:#666">+</span> <span style="color:#40a070">5</span> <span style="color:#666">*</span> <span style="color:#40a070">2</span>  <span style="color:#60a0b0;font-style:italic">-- Arithmetic</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>result <span style="color:#666">=</span> <span style="color:#40a070">10</span> <span style="color:#666">+</span> <span style="color:#40a070">5</span> <span style="color:#666">*</span> <span style="color:#40a070">2</span>  <span style="color:#60a0b0;font-style:italic">-- Arithmetic</span>
 </span></span><span style="display:flex;"><span>equal <span style="color:#666">=</span> (a <span style="color:#666">==</span> b)     <span style="color:#60a0b0;font-style:italic">-- Comparison</span>
 </span></span><span style="display:flex;"><span>is_true <span style="color:#666">=</span> (a <span style="color:#666">&gt;</span> <span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">and</span> b <span style="color:#666">&lt;</span> <span style="color:#40a070">10</span>) <span style="color:#60a0b0;font-style:italic">-- Logical</span>
 </span></span></code></pre></div><h3 class="heading" id="comments">
@@ -302,7 +302,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 <li><strong>Single-line comments:</strong> Begin with <code>--</code> and extend to the end of the line.</li>
 <li><strong>Multi-line comments:</strong> Enclose text within <code>--[[</code> and <code>]]</code>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- This is a single-line comment</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- This is a single-line comment</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">--[[
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">This is a
@@ -313,9 +313,9 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
   <a class="anchor" href="#basic-input-and-output">#</a>
 </h3>
 <p>The primary function for outputting data to the console is <code>print()</code>.  It can accept multiple arguments, separated by commas:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;The value of x is:&#34;</span>, x)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;The value of x is:&#34;</span>, x)
 </span></span></code></pre></div><p>For basic input, Lua provides the <code>io.read()</code> function. This function typically reads a single line from the console:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>name <span style="color:#666">=</span> io.read()
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>name <span style="color:#666">=</span> io.read()
 </span></span><span style="display:flex;"><span>print(<span style="color:#4070a0">&#34;Hello, &#34;</span> <span style="color:#666">..</span> name <span style="color:#666">..</span> <span style="color:#4070a0">&#34;!&#34;</span>)  <span style="color:#60a0b0;font-style:italic">-- String concatenation using &#34;..&#34;</span>
 </span></span></code></pre></div><p>Note that <code>io.read()</code> will wait for the user to type something and press Enter before proceeding.  More sophisticated input methods are available using modules like <code>io</code> for file input/output or other libraries for more interactive input.</p>
 <h2 class="heading" id="control-structures">
@@ -327,7 +327,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
   <a class="anchor" href="#conditional-statements-if-else-elseif">#</a>
 </h3>
 <p>Lua provides <code>if</code>, <code>else</code>, and <code>elseif</code> statements for controlling the flow of execution based on conditions.  The syntax is straightforward:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> condition1 <span style="color:#007020;font-weight:bold">then</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> condition1 <span style="color:#007020;font-weight:bold">then</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute if condition1 is true</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">elseif</span> condition2 <span style="color:#007020;font-weight:bold">then</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute if condition2 is true</span>
@@ -335,7 +335,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute if none of the above conditions are true</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span></code></pre></div><p>Conditions are boolean expressions that evaluate to <code>true</code> or <code>false</code>.  For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#40a070">10</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>x <span style="color:#666">=</span> <span style="color:#40a070">10</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> x <span style="color:#666">&gt;</span> <span style="color:#40a070">5</span> <span style="color:#007020;font-weight:bold">then</span>
 </span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;x is greater than 5&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">elseif</span> x <span style="color:#666">==</span> <span style="color:#40a070">5</span> <span style="color:#007020;font-weight:bold">then</span>
@@ -352,7 +352,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 <ul>
 <li>
 <p><strong><code>for</code> loop (numeric):</strong> This loop iterates a specific number of times.  It has two forms:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Form 1:  Iterates from start to end, incrementing by step</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Form 1:  Iterates from start to end, incrementing by step</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#666">=</span> start, <span style="color:#007020;font-weight:bold">end</span>, step <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute in each iteration</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
@@ -362,17 +362,17 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute for each element in my_table</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span></code></pre></div><p>Example of Form 1:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#666">=</span> <span style="color:#40a070">1</span>, <span style="color:#40a070">10</span>, <span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">do</span>  <span style="color:#60a0b0;font-style:italic">-- Iterates 1, 3, 5, 7, 9</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> i <span style="color:#666">=</span> <span style="color:#40a070">1</span>, <span style="color:#40a070">10</span>, <span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">do</span>  <span style="color:#60a0b0;font-style:italic">-- Iterates 1, 3, 5, 7, 9</span>
 </span></span><span style="display:flex;"><span>  print(i)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span></code></pre></div></li>
 <li>
 <p><strong><code>while</code> loop:</strong> This loop repeats as long as a condition is true.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> condition <span style="color:#007020;font-weight:bold">do</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> condition <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute while condition is true</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span></code></pre></div><p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>count <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>count <span style="color:#666">=</span> <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> count <span style="color:#666">&lt;</span> <span style="color:#40a070">5</span> <span style="color:#007020;font-weight:bold">do</span>
 </span></span><span style="display:flex;"><span>  print(count)
 </span></span><span style="display:flex;"><span>  count <span style="color:#666">=</span> count <span style="color:#666">+</span> <span style="color:#40a070">1</span>
@@ -380,11 +380,11 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 </span></span></code></pre></div></li>
 <li>
 <p><strong><code>repeat-until</code> loop:</strong> This loop executes the code block at least once, and then repeats as long as a condition is false.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">repeat</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">repeat</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Code to execute</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">until</span> condition
 </span></span></code></pre></div><p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>count <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>count <span style="color:#666">=</span> <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">repeat</span>
 </span></span><span style="display:flex;"><span>  print(count)
 </span></span><span style="display:flex;"><span>  count <span style="color:#666">=</span> count <span style="color:#666">+</span> <span style="color:#40a070">1</span>
@@ -401,7 +401,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
   <a class="anchor" href="#creating-and-accessing-tables">#</a>
 </h3>
 <p>Tables in Lua are the primary data structure.  They&rsquo;re associative arrays, meaning they can store key-value pairs.  Keys can be any Lua value, while values can be any Lua value.  Tables are created using curly braces <code>{}</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Creating an empty table</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Creating an empty table</span>
 </span></span><span style="display:flex;"><span>empty_table <span style="color:#666">=</span> {}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Creating a table with some key-value pairs</span>
@@ -429,7 +429,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 </li>
 </ul>
 <p>Example using <code>pairs()</code> and <code>ipairs()</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>my_table <span style="color:#666">=</span> {name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>, age <span style="color:#666">=</span> <span style="color:#40a070">25</span>, city <span style="color:#666">=</span> <span style="color:#4070a0">&#34;London&#34;</span>}
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>my_table <span style="color:#666">=</span> {name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Alice&#34;</span>, age <span style="color:#666">=</span> <span style="color:#40a070">25</span>, city <span style="color:#666">=</span> <span style="color:#4070a0">&#34;London&#34;</span>}
 </span></span><span style="display:flex;"><span>array_table <span style="color:#666">=</span> {<span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>, <span style="color:#40a070">30</span>, <span style="color:#40a070">40</span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
@@ -457,7 +457,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 <ul>
 <li><strong>Arrays:</strong>  When used as arrays, table keys are sequential integers (1, 2, 3,&hellip;).  You can create arrays directly or by adding elements to a table using numerical indexes.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Array creation</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Array creation</span>
 </span></span><span style="display:flex;"><span>my_array <span style="color:#666">=</span> {<span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>, <span style="color:#40a070">30</span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Accessing array elements</span>
@@ -468,7 +468,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 </span></span></code></pre></div><ul>
 <li><strong>Dictionaries:</strong>  When used as dictionaries, tables store data using arbitrary keys (strings, numbers, etc.). Keys act as labels or identifiers for the corresponding values.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Dictionary creation</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Dictionary creation</span>
 </span></span><span style="display:flex;"><span>my_dictionary <span style="color:#666">=</span> {name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Bob&#34;</span>, age <span style="color:#666">=</span> <span style="color:#40a070">40</span>, city <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Paris&#34;</span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- Accessing dictionary values</span>
@@ -483,12 +483,12 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
   <a class="anchor" href="#defining-functions">#</a>
 </h3>
 <p>Functions in Lua are defined using the <code>function</code> keyword.  They can accept arguments and return values.  The basic syntax is:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">function_name</span>(argument1, argument2, ...)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">function_name</span>(argument1, argument2, ...)
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Function body: code to be executed</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> value1, value2, ...
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span></code></pre></div><p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">add</span>(a, b)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">add</span>(a, b)
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">+</span> b
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
@@ -501,7 +501,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 </h3>
 <p>Functions can accept zero or more arguments.  Arguments are passed by value (except for tables, which are passed by reference).  A function can return zero or more values.  If no <code>return</code> statement is specified, the function implicitly returns <code>nil</code>.</p>
 <p>Example with multiple return values:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">get_coordinates</span>()
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">get_coordinates</span>()
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
@@ -512,13 +512,13 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
   <a class="anchor" href="#anonymous-functions-closures">#</a>
 </h3>
 <p>Anonymous functions are functions that are not named.  They are often used as arguments to other functions or created on the fly.  In Lua, they&rsquo;re defined using the <code>function</code> keyword without a name:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> doubler <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">function</span>(x)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> doubler <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">function</span>(x)
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> x <span style="color:#666">*</span> <span style="color:#40a070">2</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(doubler(<span style="color:#40a070">5</span>)) <span style="color:#60a0b0;font-style:italic">-- Output: 10</span>
 </span></span></code></pre></div><p>Anonymous functions can access variables from their surrounding scope (lexical scoping), creating closures. A closure &ldquo;closes over&rdquo; variables from its enclosing environment.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">create_counter</span>()
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">create_counter</span>()
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">local</span> count <span style="color:#666">=</span> <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">function</span>()
 </span></span><span style="display:flex;"><span>    count <span style="color:#666">=</span> count <span style="color:#666">+</span> <span style="color:#40a070">1</span>
@@ -536,7 +536,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
   <a class="anchor" href="#variadic-functions">#</a>
 </h3>
 <p>Variadic functions can accept a variable number of arguments.  This is achieved using the three dots (<code>...</code>) as the last parameter:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">sum</span>(...)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">sum</span>(...)
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">local</span> total <span style="color:#666">=</span> <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">for</span> i, v <span style="color:#007020;font-weight:bold">in</span> ipairs{...} <span style="color:#007020;font-weight:bold">do</span>  <span style="color:#60a0b0;font-style:italic">-- The three dots unpack the arguments into an array</span>
 </span></span><span style="display:flex;"><span>    total <span style="color:#666">=</span> total <span style="color:#666">+</span> v
@@ -556,7 +556,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 </h3>
 <p>Modules in Lua provide a way to organize code into reusable units.  A module is simply a Lua file that defines functions, variables, and other entities.  To create a module, write your Lua code in a file (e.g., <code>mymodule.lua</code>) and then use the <code>return</code> statement to export the elements you want to make available to other parts of your program.</p>
 <p>Example: <code>mymodule.lua</code></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> my_variable <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello from module&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> my_variable <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hello from module&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">my_function</span>(x)
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> x <span style="color:#666">*</span> <span style="color:#40a070">2</span>
@@ -573,7 +573,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 </h3>
 <p>To use a module in another Lua file, you use the <code>require()</code> function.  <code>require()</code> searches for the module file (adding <code>.lua</code> if necessary) in a predefined search path.</p>
 <p>Example: <code>main.lua</code></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> mymodule <span style="color:#666">=</span> require(<span style="color:#4070a0">&#34;mymodule&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> mymodule <span style="color:#666">=</span> require(<span style="color:#4070a0">&#34;mymodule&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(mymodule.my_variable) <span style="color:#60a0b0;font-style:italic">-- Accessing the variable from the module</span>
 </span></span><span style="display:flex;"><span>print(mymodule.my_function(<span style="color:#40a070">5</span>)) <span style="color:#60a0b0;font-style:italic">-- Calling the function from the module</span>
@@ -587,7 +587,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 <pre tabindex="0"><code>./?.lua;./?/init.lua;;
 </code></pre><p>This means Lua will first search in the current directory (<code>.</code>) for a file named after the module, then for an <code>init.lua</code> file within the module subdirectory.  The two consecutive semicolons signify the end of standard search locations.</p>
 <p>You can modify <code>package.path</code> to include additional directories where your modules are located.  This is often done at the start of your main script:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>package.path <span style="color:#666">=</span> package.path <span style="color:#666">..</span> <span style="color:#4070a0">&#34;;/path/to/my/modules/?.lua&#34;</span>  <span style="color:#60a0b0;font-style:italic">-- Adjust the path as needed</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>package.path <span style="color:#666">=</span> package.path <span style="color:#666">..</span> <span style="color:#4070a0">&#34;;/path/to/my/modules/?.lua&#34;</span>  <span style="color:#60a0b0;font-style:italic">-- Adjust the path as needed</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> mymodule <span style="color:#666">=</span> require <span style="color:#4070a0">&#34;mymodule&#34;</span> <span style="color:#60a0b0;font-style:italic">-- Now require will search the new directory as well.</span>
 </span></span></code></pre></div><p>Lua also uses <code>package.cpath</code> for searching C-based modules (shared libraries).  The mechanics are similar, but involve shared object files (<code>.so</code>, <code>.dll</code>, etc.) instead of <code>.lua</code> files.  Properly setting these paths is crucial for your Lua application to successfully locate and load modules, particularly in larger projects.</p>
@@ -600,7 +600,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
   <a class="anchor" href="#reading-from-files">#</a>
 </h3>
 <p>Lua provides the <code>io</code> library for file input and output. To read from a file, you first need to open it using <code>io.open()</code>. This function returns a file handle, which is used for subsequent read operations.  If the file doesn&rsquo;t exist, <code>io.open()</code> will return <code>nil</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> file <span style="color:#666">=</span> io.open(<span style="color:#4070a0">&#34;mydata.txt&#34;</span>, <span style="color:#4070a0">&#34;r&#34;</span>)  <span style="color:#60a0b0;font-style:italic">-- Open the file in read mode (&#34;r&#34;)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> file <span style="color:#666">=</span> io.open(<span style="color:#4070a0">&#34;mydata.txt&#34;</span>, <span style="color:#4070a0">&#34;r&#34;</span>)  <span style="color:#60a0b0;font-style:italic">-- Open the file in read mode (&#34;r&#34;)</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> file <span style="color:#007020;font-weight:bold">then</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">-- Read the entire file contents as a single string</span>
@@ -614,7 +614,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 </span></span><span style="display:flex;"><span>    print(<span style="color:#4070a0">&#34;Unknown error.&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span></code></pre></div><p>The <code>:read(&quot;*a&quot;)</code> method reads the entire file content.  You can also read line by line using <code>file:read(&quot;*l&quot;)</code> which will return nil once the end of file is reached.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> file <span style="color:#666">=</span> io.open(<span style="color:#4070a0">&#34;mydata.txt&#34;</span>, <span style="color:#4070a0">&#34;r&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> file <span style="color:#666">=</span> io.open(<span style="color:#4070a0">&#34;mydata.txt&#34;</span>, <span style="color:#4070a0">&#34;r&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> file <span style="color:#007020;font-weight:bold">then</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">local</span> line
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">repeat</span>
@@ -632,7 +632,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
   <a class="anchor" href="#writing-to-files">#</a>
 </h3>
 <p>To write to a file, open it in write mode (&ldquo;w&rdquo;) or append mode (&ldquo;a&rdquo;). &ldquo;w&rdquo; overwrites the file if it exists; &ldquo;a&rdquo; adds to the end of the file if it exists.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> file <span style="color:#666">=</span> io.open(<span style="color:#4070a0">&#34;output.txt&#34;</span>, <span style="color:#4070a0">&#34;w&#34;</span>)  <span style="color:#60a0b0;font-style:italic">-- Open in write mode</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> file <span style="color:#666">=</span> io.open(<span style="color:#4070a0">&#34;output.txt&#34;</span>, <span style="color:#4070a0">&#34;w&#34;</span>)  <span style="color:#60a0b0;font-style:italic">-- Open in write mode</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> file <span style="color:#007020;font-weight:bold">then</span>
 </span></span><span style="display:flex;"><span>  file:write(<span style="color:#4070a0">&#34;This is some text.</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)
@@ -654,7 +654,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 <ul>
 <li><strong><code>pcall()</code>:</strong>  <code>pcall()</code> takes a function and its arguments as input. It returns <code>true</code> if the function executes successfully, or <code>false</code> if an error occurs. If an error happens, the error message is returned as the second value.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> status, result <span style="color:#666">=</span> pcall(<span style="color:#007020;font-weight:bold">function</span>()
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> status, result <span style="color:#666">=</span> pcall(<span style="color:#007020;font-weight:bold">function</span>()
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">local</span> a <span style="color:#666">=</span> <span style="color:#40a070">10</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">local</span> b <span style="color:#666">=</span> <span style="color:#40a070">0</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">/</span> b <span style="color:#60a0b0;font-style:italic">-- This will cause a division by zero error</span>
@@ -668,7 +668,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 </span></span></code></pre></div><ul>
 <li><strong><code>xpcall()</code>:</strong> <code>xpcall()</code> is similar to <code>pcall()</code>, but it allows you to specify an error handler function.  This function is called if an error occurs.  It receives the error message as an argument.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">my_error_handler</span>(err)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">my_error_handler</span>(err)
 </span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;An error occurred:&#34;</span>, err)
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#4070a0">&#34;Error handled&#34;</span> <span style="color:#60a0b0;font-style:italic">-- The return value of the error handler is returned by xpcall</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
@@ -713,7 +713,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 </h3>
 <p>Metatables and metamethods provide a powerful mechanism for extending Lua&rsquo;s behavior and customizing the way operators and functions interact with your data. A metatable is a regular Lua table that is associated with another table (its &ldquo;child table&rdquo;).  Metamethods are functions defined within the metatable that are automatically called when certain operations are performed on the child table.</p>
 <p>For example, to redefine addition for a custom type, you would create a metatable with an <code>__add</code> metamethod:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> my_table <span style="color:#666">=</span> {}  <span style="color:#60a0b0;font-style:italic">--Our child table</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> my_table <span style="color:#666">=</span> {}  <span style="color:#60a0b0;font-style:italic">--Our child table</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">-- create a metatable</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> mt <span style="color:#666">=</span> {}
@@ -738,7 +738,7 @@ Lua is a powerful, lightweight, and embeddable scripting language.  Its design e
 </h3>
 <p>Coroutines in Lua are a form of concurrency that enables cooperative multitasking.  Unlike threads, which run concurrently, coroutines cooperate by explicitly yielding control to each other. This makes them easier to manage and reduces the risk of race conditions.</p>
 <p>A coroutine is created using <code>coroutine.create()</code>.  It&rsquo;s started using <code>coroutine.resume()</code>, and it can yield control back to the caller using <code>coroutine.yield()</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> co <span style="color:#666">=</span> coroutine.create(<span style="color:#007020;font-weight:bold">function</span>()
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">local</span> co <span style="color:#666">=</span> coroutine.create(<span style="color:#007020;font-weight:bold">function</span>()
 </span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Coroutine started&#34;</span>)
 </span></span><span style="display:flex;"><span>  coroutine.yield(<span style="color:#4070a0">&#34;Hello from coroutine&#34;</span>)
 </span></span><span style="display:flex;"><span>  print(<span style="color:#4070a0">&#34;Coroutine resuming&#34;</span>)
